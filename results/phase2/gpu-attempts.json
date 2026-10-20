@@ -1,0 +1,41 @@
+[
+  {
+    "run_id": "phase2-20261020",
+    "status": "budget_stopped",
+    "started_unix": 1792527961.5623271,
+    "previous_seconds": 0,
+    "call_id": "fc-01M5DFW410PVHGP2EA5MN9HRSE",
+    "function_seconds": 222.41223455,
+    "wall_seconds": 236.76328216699767,
+    "ended_unix": 1792528198.327229
+  },
+  {
+    "run_id": "phase2-compact-20261020",
+    "status": "not_spawned",
+    "started_unix": 1792528367.431961,
+    "previous_seconds": 236.76328216699767,
+    "wall_seconds": 0.0,
+    "ended_unix": 1792528404.4257238,
+    "reason": "Unsupported startup_timeout override rejected before spawn; no container"
+  },
+  {
+    "run_id": "phase2-compact-v2-20261020",
+    "status": "failed_or_cancelled",
+    "started_unix": 1792528410.435721,
+    "previous_seconds": 236.76328216699767,
+    "call_id": "fc-01M5DG9THCCSVRS6M9PGR2902B",
+    "wall_seconds": 1203.928518624998,
+    "ended_unix": 1792529614.32965,
+    "reason": "Discarded before test generation: incomplete configured EOS set"
+  },
+  {
+    "run_id": "phase2-eos-20261020",
+    "status": "completed",
+    "started_unix": 1792529638.962751,
+    "previous_seconds": 1440.6918007919958,
+    "call_id": "fc-01M5DHFA837971TAT7YDWFVCGQ",
+    "function_seconds": 5600.000297166001,
+    "wall_seconds": 5608.622159624996,
+    "ended_unix": 1792535247.534411
+  }
+]

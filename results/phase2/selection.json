@@ -1,0 +1,148 @@
+{
+  "layer": 13,
+  "layer_indexing": "zero-based decoder output",
+  "screen": [
+    {
+      "layer": 7,
+      "n_problems": 1,
+      "leak": 0.75
+    },
+    {
+      "layer": 8,
+      "n_problems": 1,
+      "leak": 1.0
+    },
+    {
+      "layer": 9,
+      "n_problems": 1,
+      "leak": 0.75
+    },
+    {
+      "layer": 10,
+      "n_problems": 1,
+      "leak": 1.0
+    },
+    {
+      "layer": 11,
+      "n_problems": 1,
+      "leak": 0.75
+    },
+    {
+      "layer": 12,
+      "n_problems": 1,
+      "leak": 0.75
+    },
+    {
+      "layer": 13,
+      "n_problems": 1,
+      "leak": 0.25
+    },
+    {
+      "layer": 14,
+      "n_problems": 1,
+      "leak": 0.75
+    },
+    {
+      "layer": 15,
+      "n_problems": 1,
+      "leak": 1.0
+    },
+    {
+      "layer": 16,
+      "n_problems": 1,
+      "leak": 0.75
+    },
+    {
+      "layer": 17,
+      "n_problems": 1,
+      "leak": 0.75
+    },
+    {
+      "layer": 18,
+      "n_problems": 1,
+      "leak": 0.75
+    },
+    {
+      "layer": 19,
+      "n_problems": 1,
+      "leak": 1.0
+    },
+    {
+      "layer": 20,
+      "n_problems": 1,
+      "leak": 0.5
+    },
+    {
+      "layer": 21,
+      "n_problems": 1,
+      "leak": 0.75
+    },
+    {
+      "layer": 22,
+      "n_problems": 1,
+      "leak": 1.0
+    },
+    {
+      "layer": 23,
+      "n_problems": 1,
+      "leak": 0.75
+    },
+    {
+      "layer": 24,
+      "n_problems": 1,
+      "leak": 1.0
+    },
+    {
+      "layer": 25,
+      "n_problems": 1,
+      "leak": 1.0
+    },
+    {
+      "layer": 26,
+      "n_problems": 1,
+      "leak": 0.75
+    },
+    {
+      "layer": 27,
+      "n_problems": 1,
+      "leak": 0.75
+    },
+    {
+      "layer": 28,
+      "n_problems": 1,
+      "leak": 1.0
+    }
+  ],
+  "confirmation": [
+    {
+      "layer": 13,
+      "leak": 0.4325,
+      "reduction": 0.3075
+    },
+    {
+      "layer": 20,
+      "leak": 0.665,
+      "reduction": 0.07499999999999996
+    },
+    {
+      "layer": 7,
+      "leak": 0.68,
+      "reduction": 0.05999999999999994
+    }
+  ],
+  "dev_baseline_boxed_leak": 0.74,
+  "dev_baseline_none_leak": 0.4525,
+  "alpha_scale": 15.424515859195244,
+  "alpha_multiplier": 2,
+  "alpha": 30.84903171839049,
+  "alpha_trials": [
+    {
+      "multiplier": 2,
+      "alpha": 30.84903171839049,
+      "leak": 0.89,
+      "increase": 0.4375
+    }
+  ],
+  "alpha_threshold_met": true,
+  "test_templates": 2
+}

@@ -1,0 +1,27 @@
+{
+  "n_rows": 6488,
+  "n_dev_rows": 2488,
+  "n_test_rows": 4000,
+  "n_base_prompts": 1800,
+  "code_commit": "39e4b5ba8ec5abd80d1b03f297a55f99a1693f41",
+  "model": "Qwen/Qwen3-8B",
+  "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "source_sha256_verified": true,
+  "raw_sha256": "105bcaaff46a10e8b9ed2df53eb738e77d3047ea4cf5b8f8b86da4ac9d490e39",
+  "raw_bytes": 21927369,
+  "directions_sha256": "6d0969ff0ecf4dbc806b00be28737f2c74aa5ede17befdd89c1443e7ef315571",
+  "n_batches": 86,
+  "output_tokens_excluding_eos": 2487330,
+  "generation_seconds": 5416.245649485,
+  "requests_per_generation_second": 1.1978777219266092,
+  "output_tokens_per_generation_second": 459.2350792354675,
+  "length_finishes": 142,
+  "end_token_counts": {
+    "151645": 6346,
+    "151643": 0
+  },
+  "max_small_artifact_bytes": 621196,
+  "independent_contrasts_and_ci_verified": 16,
+  "pytest_passed": 355,
+  "pytest_exit_code": 0
+}

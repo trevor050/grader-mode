@@ -1,0 +1,9 @@
+{
+  "src/phase2.py": "1fb19b1c9fbb77cbfc8f4373c67cfdab9a58238503de7382ced635b128b8f5b0",
+  "src/modal_app_2.py": "989c0a7ff92b3fa566100a8d27cc80c0610376066e5f3a9473b6154550cd5a6d",
+  "src/hf_decode.py": "85f6e7980f0685ad78961ce02db86dc9fdc59a0c95544f393c03f1b1ed4d77c7",
+  "DESIGN.md": "da6685c2f423fe96e1a19450a1d4898f193d6cabd9413e30ef41650caae79464",
+  "prompts/system_tutor.txt": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11",
+  "prompts/templates.json": "637fb8aa1312f4485d410241fe6087cbbe9c6150a4267bfb8a71e418f7af0ed1",
+  "prompts/templates_2.json": "25284cc7a054aa1843e9e2f6fb6a58a1c84f7aac6c811f9a32c0a142bf239885"
+}

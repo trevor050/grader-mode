@@ -1,0 +1,8 @@
+{
+  "status": "discarded",
+  "n_rows": 1016,
+  "n_test_rows": 0,
+  "used_in_selection": false,
+  "used_in_inference": false,
+  "reason": "Incomplete configured EOS set"
+}

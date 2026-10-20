@@ -1,0 +1,10 @@
+{
+  "screen_problems": 1,
+  "test_templates": 2,
+  "projected_requests_upper": 7688,
+  "seconds_per_request": 0.867872215998375,
+  "spent_seconds": 2094.239828794996,
+  "reserve_seconds": 180,
+  "projected_gpu_seconds": 9606.024309549268,
+  "projected_usd": 5.20326316767252
+}

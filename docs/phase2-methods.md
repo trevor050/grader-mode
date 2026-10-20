@@ -37,3 +37,7 @@ Analysis validates exactly 100 test problems and 20 cells per problem/template. 
 The initial non-compacting pilot stopped after one batch: 128 responses, 768 padded decode steps, 179.336 seconds, mean 388.508 output tokens. Its allocation time remains charged to the Phase 2 cap. These pilot generations do not enter layer/alpha selection or test inference in the subsequent compacting run.
 
 The first compacting attempt was discarded before test generation after audit found single-token EOS handling; 1,016 development rows were excluded in full. Its allocated time remains in the cap. The final attempt reruns development with both configured EOS IDs. Small-screen planning charges at least 25% of a full batch per candidate, even when fewer rows are screened; the 15% timing margin and baseline re-accounting make the projection conservative.
+
+## Final budget limitations
+
+The final run screens all 22 candidate layers on the first development problem and all four templates. Three candidates receive full confirmation on 100 development problems × four templates each. Direction capture uses all 100 development problems × four templates per format. Test generation uses template indices 0 and 1: 100 problems × two templates × 20 cells = 4,000 responses. All five random directions and all three held-out formats are retained. Multiplier 2 meets the development threshold, so one full alpha trial is required.
