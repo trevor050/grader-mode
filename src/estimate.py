@@ -25,7 +25,7 @@ def estimate(metrics, config):
             'total_gpu_usd': sum(r['estimated_gpu_usd'] for r in rows),
             'equal_throughput_scenario': {'gpu_seconds': equal_time * len(rows),
                 'gpu_usd': sum(equal_time / 3600 * config['hourly_usd'][r['gpu']] for r in rows)},
-            'measured_smoke': metrics}
+            'measured_smoke': {key: value for key, value in metrics.items() if key != 'manifest'}}
 
 
 def main():

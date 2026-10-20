@@ -11,16 +11,27 @@ image = (
     modal.Image.from_registry('nvidia/cuda:12.9.0-devel-ubuntu22.04', add_python='3.12')
     .entrypoint([])
     .uv_pip_install('vllm==0.21.0')
-    .env({'HF_HOME': '/hf', 'HF_XET_HIGH_PERFORMANCE': '1', 'VLLM_USAGE_STATS_NO_USAGE_STATS': '1',
+    .env({'HF_HOME': '/hf', 'HF_XET_HIGH_PERFORMANCE': '1',
           'DO_NOT_TRACK': '1', 'VLLM_WORKER_MULTIPROC_METHOD': 'spawn'})
     .add_local_python_source('src')
 )
 
 
+def package_versions():
+    import importlib.metadata
+    versions = {}
+    for package in ('vllm', 'torch', 'transformers', 'modal'):
+        try:
+            versions[package] = importlib.metadata.version(package)
+        except importlib.metadata.PackageNotFoundError:
+            # Modal injects its runtime source without a dist-info installation.
+            versions[package] = getattr(modal, '__version__', 'runtime-injected') if package == 'modal' else 'unavailable'
+    return versions
+
+
 def generate(model, requests, run_id, manifest, model_config):
     """Shared implementation; only the two GPU-decorated wrappers execute remotely."""
     import hashlib
-    import importlib.metadata
     import random
     import time
     started = time.monotonic()
@@ -83,6 +94,8 @@ def generate(model, requests, run_id, manifest, model_config):
             eta = elapsed / completed * (len(ordered) - completed)
             print(f'{model}: {completed}/{len(ordered)} elapsed={elapsed:.1f}s ETA={eta:.1f}s '
                   f'output_tokens/s={total_tokens/generation_seconds:.1f}', flush=True)
+    # Preserve completed generations before any optional metadata/reporting work.
+    raw_volume.commit()
     elapsed = time.monotonic() - started
     stats = {'model': model, 'model_revision': revision, 'gpu': model_config['gpu'],
              'requests': completed, 'output_tokens': total_tokens, 'prompt_tokens': prompt_tokens,
@@ -92,7 +105,7 @@ def generate(model, requests, run_id, manifest, model_config):
              'sampling': {'temperature': 0.7, 'top_p': 0.95, 'top_k': -1, 'max_tokens': 768,
                           'enable_thinking': False, 'dtype': 'bfloat16', 'quantization': None},
              'engine': {'batch_size': batch_size, 'enforce_eager': True, 'max_model_len': 2048},
-             'versions': {p: importlib.metadata.version(p) for p in ['vllm', 'torch', 'transformers', 'modal']},
+             'versions': package_versions(),
              'manifest': manifest}
     stats_path = directory / f'{slug}.metrics.json'
     stats_path.write_text(json.dumps(stats, indent=2) + '\n')
