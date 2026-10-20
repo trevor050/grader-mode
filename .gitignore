@@ -1,3 +1,5 @@
 results/raw/
 __pycache__/
 .venv/
+# Phase 1b manual-audit CSVs contain sampled final replies, not summaries.
+results/phase1b*/handcheck_*.csv

@@ -8,3 +8,4 @@
 - Raw identity: `(model, id)`; request ID encodes original GSM8K row, cue, format, template, arm. Gold and original question stay attached. Smoke is a prefix of the fixed 200-problem sample.
 - `docs/analysis-methods.md` records implementation choices left open by the pre-registration; do not silently change estimands after seeing data.
 - Phase 1b: `uv run python -m src.run --phase phase1b --models all --limit-problems 200 --run-id phase1b-full --output-dir results/phase1b`; analysis in `src/analyze_1b.py` includes gold >= 10. Thinking-on output may omit the opening think tag; never score its reasoning.
+- Phase 1b smoke completed: 120 rows, 2 truncated empty finals, GPU estimate $0.1187. Existing parameter-scaled projection $28.91 exceeded the $15 cutoff; `phase1b-full` was not launched. `results/phase1b/summary.*` are explicitly smoke-only. Pre-existing Phase 1 app was left untouched.

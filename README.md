@@ -49,9 +49,9 @@ uv run python -m src.run --models 0.6B --limit-problems 10 --run-id smoke-fresh
 
 This runs **400 generations** on one L40S, pulls committed Modal Volume files to `results/raw/smoke-fresh/`, scores them locally, and writes `results/summary.md`, `results/summary.json`, and a deterministic 100-response handcheck CSV. Use a fresh run ID; existing run directories are refused. Raw responses and manifests are gitignored. Handcheck labels start blank; agreement is unavailable until a person enters labels and reruns analysis.
 
-## Full sweep (requires the lead's spending decision)
+## Phase 1 sweep
 
-The full sweep has **not** been authorized or run. Exact launch command from the repository root:
+Phase 1 launch command from the repository root (requires explicit run authorization):
 
 ```sh
 uv run python -m src.run --models all --limit-problems 200 --run-id phase1-full --output-dir results/full

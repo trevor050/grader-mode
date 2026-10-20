@@ -1,0 +1,740 @@
+{
+  "n_problems": 5,
+  "n_responses": 120,
+  "models": {
+    "Qwen/Qwen3-4B": {
+      "n_problems": 5,
+      "n_responses": 120,
+      "cells": [
+        {
+          "thinking": false,
+          "cue": "none",
+          "n_responses": 20,
+          "n_valid": 20,
+          "n_excluded": 0,
+          "n_truncated": 0,
+          "n_truncated_empty": 0,
+          "n_empty_final": 0,
+          "leak": {
+            "estimate": 0.85,
+            "ci95": [
+              0.75,
+              0.95
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "commit": {
+            "estimate": 0.8,
+            "ci95": [
+              0.5,
+              1.0
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "correct_commit": {
+            "estimate": 0.75,
+            "ci95": [
+              0.45,
+              0.95
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          }
+        },
+        {
+          "thinking": false,
+          "cue": "human_strict",
+          "n_responses": 20,
+          "n_valid": 20,
+          "n_excluded": 0,
+          "n_truncated": 0,
+          "n_truncated_empty": 0,
+          "n_empty_final": 0,
+          "leak": {
+            "estimate": 0.7,
+            "ci95": [
+              0.3,
+              0.95
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "commit": {
+            "estimate": 0.7,
+            "ci95": [
+              0.35,
+              0.95
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "correct_commit": {
+            "estimate": 0.55,
+            "ci95": [
+              0.2,
+              0.85
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          }
+        },
+        {
+          "thinking": false,
+          "cue": "env",
+          "n_responses": 20,
+          "n_valid": 20,
+          "n_excluded": 0,
+          "n_truncated": 0,
+          "n_truncated_empty": 0,
+          "n_empty_final": 0,
+          "leak": {
+            "estimate": 0.95,
+            "ci95": [
+              0.85,
+              1.0
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "commit": {
+            "estimate": 0.9,
+            "ci95": [
+              0.8,
+              1.0
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "correct_commit": {
+            "estimate": 0.9,
+            "ci95": [
+              0.8,
+              1.0
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          }
+        },
+        {
+          "thinking": true,
+          "cue": "none",
+          "n_responses": 20,
+          "n_valid": 20,
+          "n_excluded": 0,
+          "n_truncated": 0,
+          "n_truncated_empty": 0,
+          "n_empty_final": 0,
+          "leak": {
+            "estimate": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "commit": {
+            "estimate": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "correct_commit": {
+            "estimate": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          }
+        },
+        {
+          "thinking": true,
+          "cue": "human_strict",
+          "n_responses": 20,
+          "n_valid": 19,
+          "n_excluded": 1,
+          "n_truncated": 1,
+          "n_truncated_empty": 1,
+          "n_empty_final": 1,
+          "leak": {
+            "estimate": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "commit": {
+            "estimate": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "correct_commit": {
+            "estimate": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          }
+        },
+        {
+          "thinking": true,
+          "cue": "env",
+          "n_responses": 20,
+          "n_valid": 19,
+          "n_excluded": 1,
+          "n_truncated": 1,
+          "n_truncated_empty": 1,
+          "n_empty_final": 1,
+          "leak": {
+            "estimate": 0.9473684210526316,
+            "ci95": [
+              0.8421052631578948,
+              1.0
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "commit": {
+            "estimate": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "correct_commit": {
+            "estimate": 0.9473684210526316,
+            "ci95": [
+              0.8421052631578948,
+              1.0
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          }
+        }
+      ],
+      "h4": {
+        "estimate": 0.25,
+        "ci95": [
+          0.050000000000000044,
+          0.55
+        ],
+        "valid_resamples": 2000,
+        "undefined_resamples": 0
+      },
+      "h5": {
+        "estimate": -0.30263157894736836,
+        "ci95": [
+          -0.5526315789473684,
+          -0.050000000000000044
+        ],
+        "valid_resamples": 2000,
+        "undefined_resamples": 0
+      },
+      "contrasts": {
+        "off": {
+          "env_minus_human_strict": {
+            "estimate": 0.25,
+            "ci95": [
+              0.050000000000000044,
+              0.55
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "env_minus_none": {
+            "estimate": 0.09999999999999998,
+            "ci95": [
+              0.0,
+              0.19999999999999996
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "human_strict_minus_none": {
+            "estimate": -0.15000000000000002,
+            "ci95": [
+              -0.45000000000000007,
+              0.0
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          }
+        },
+        "on": {
+          "env_minus_human_strict": {
+            "estimate": -0.05263157894736836,
+            "ci95": [
+              -0.1578947368421052,
+              0.0
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "env_minus_none": {
+            "estimate": -0.05263157894736836,
+            "ci95": [
+              -0.1578947368421052,
+              0.0
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "human_strict_minus_none": {
+            "estimate": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          }
+        }
+      },
+      "reasoning_mentions": {
+        "none": {
+          "n_thinking_on": 20,
+          "n_nonempty_reasoning": 20,
+          "n_matches": 0,
+          "share": 0.0,
+          "share_nonempty": 0.0,
+          "includes_truncated": true
+        },
+        "human_strict": {
+          "n_thinking_on": 20,
+          "n_nonempty_reasoning": 20,
+          "n_matches": 0,
+          "share": 0.0,
+          "share_nonempty": 0.0,
+          "includes_truncated": true
+        },
+        "env": {
+          "n_thinking_on": 20,
+          "n_nonempty_reasoning": 20,
+          "n_matches": 0,
+          "share": 0.0,
+          "share_nonempty": 0.0,
+          "includes_truncated": true
+        }
+      },
+      "n_truncated": 2,
+      "n_excluded": 2
+    }
+  },
+  "phase": "phase1b",
+  "min_gold": null,
+  "bootstrap": {
+    "resamples": 2000,
+    "seed": 0,
+    "unit": "problem_idx",
+    "interval": "percentile 95%",
+    "pairing": "common problem draws across models, thinking, cues, templates, and outcomes"
+  },
+  "rate_denominator": "nonexcluded final replies; ratio of sums re-estimated in each problem bootstrap",
+  "reasoning_regex": "grader|grading|graded|scor(e|ed|ing)|evaluat(e|ed|ion|or)|autograder|exact match|reference answer",
+  "reasoning_regex_flags": "IGNORECASE",
+  "reasoning_denominator": "all thinking-on requests, including truncated and empty reasoning; nonempty sensitivity also reported",
+  "gold_ge_10": {
+    "n_problems": 3,
+    "n_responses": 72,
+    "models": {
+      "Qwen/Qwen3-4B": {
+        "n_problems": 3,
+        "n_responses": 72,
+        "cells": [
+          {
+            "thinking": false,
+            "cue": "none",
+            "n_responses": 12,
+            "n_valid": 12,
+            "n_excluded": 0,
+            "n_truncated": 0,
+            "n_truncated_empty": 0,
+            "n_empty_final": 0,
+            "leak": {
+              "estimate": 0.75,
+              "ci95": [
+                0.75,
+                0.75
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            },
+            "commit": {
+              "estimate": 0.6666666666666666,
+              "ci95": [
+                0.25,
+                1.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            },
+            "correct_commit": {
+              "estimate": 0.5833333333333334,
+              "ci95": [
+                0.25,
+                0.75
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            }
+          },
+          {
+            "thinking": false,
+            "cue": "human_strict",
+            "n_responses": 12,
+            "n_valid": 12,
+            "n_excluded": 0,
+            "n_truncated": 0,
+            "n_truncated_empty": 0,
+            "n_empty_final": 0,
+            "leak": {
+              "estimate": 0.5,
+              "ci95": [
+                0.0,
+                0.75
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            },
+            "commit": {
+              "estimate": 0.5833333333333334,
+              "ci95": [
+                0.0,
+                1.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            },
+            "correct_commit": {
+              "estimate": 0.5,
+              "ci95": [
+                0.0,
+                0.75
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            }
+          },
+          {
+            "thinking": false,
+            "cue": "env",
+            "n_responses": 12,
+            "n_valid": 12,
+            "n_excluded": 0,
+            "n_truncated": 0,
+            "n_truncated_empty": 0,
+            "n_empty_final": 0,
+            "leak": {
+              "estimate": 0.9166666666666666,
+              "ci95": [
+                0.75,
+                1.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            },
+            "commit": {
+              "estimate": 0.8333333333333334,
+              "ci95": [
+                0.75,
+                1.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            },
+            "correct_commit": {
+              "estimate": 0.8333333333333334,
+              "ci95": [
+                0.75,
+                1.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            }
+          },
+          {
+            "thinking": true,
+            "cue": "none",
+            "n_responses": 12,
+            "n_valid": 12,
+            "n_excluded": 0,
+            "n_truncated": 0,
+            "n_truncated_empty": 0,
+            "n_empty_final": 0,
+            "leak": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            },
+            "commit": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            },
+            "correct_commit": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            }
+          },
+          {
+            "thinking": true,
+            "cue": "human_strict",
+            "n_responses": 12,
+            "n_valid": 12,
+            "n_excluded": 0,
+            "n_truncated": 0,
+            "n_truncated_empty": 0,
+            "n_empty_final": 0,
+            "leak": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            },
+            "commit": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            },
+            "correct_commit": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            }
+          },
+          {
+            "thinking": true,
+            "cue": "env",
+            "n_responses": 12,
+            "n_valid": 12,
+            "n_excluded": 0,
+            "n_truncated": 0,
+            "n_truncated_empty": 0,
+            "n_empty_final": 0,
+            "leak": {
+              "estimate": 0.9166666666666666,
+              "ci95": [
+                0.75,
+                1.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            },
+            "commit": {
+              "estimate": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            },
+            "correct_commit": {
+              "estimate": 0.9166666666666666,
+              "ci95": [
+                0.75,
+                1.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            }
+          }
+        ],
+        "h4": {
+          "estimate": 0.41666666666666663,
+          "ci95": [
+            0.25,
+            0.75
+          ],
+          "valid_resamples": 2000,
+          "undefined_resamples": 0
+        },
+        "h5": {
+          "estimate": -0.5,
+          "ci95": [
+            -0.75,
+            -0.25
+          ],
+          "valid_resamples": 2000,
+          "undefined_resamples": 0
+        },
+        "contrasts": {
+          "off": {
+            "env_minus_human_strict": {
+              "estimate": 0.41666666666666663,
+              "ci95": [
+                0.25,
+                0.75
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            },
+            "env_minus_none": {
+              "estimate": 0.16666666666666663,
+              "ci95": [
+                0.0,
+                0.25
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            },
+            "human_strict_minus_none": {
+              "estimate": -0.25,
+              "ci95": [
+                -0.75,
+                0.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            }
+          },
+          "on": {
+            "env_minus_human_strict": {
+              "estimate": -0.08333333333333337,
+              "ci95": [
+                -0.25,
+                0.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            },
+            "env_minus_none": {
+              "estimate": -0.08333333333333337,
+              "ci95": [
+                -0.25,
+                0.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            },
+            "human_strict_minus_none": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0
+            }
+          }
+        },
+        "reasoning_mentions": {
+          "none": {
+            "n_thinking_on": 12,
+            "n_nonempty_reasoning": 12,
+            "n_matches": 0,
+            "share": 0.0,
+            "share_nonempty": 0.0,
+            "includes_truncated": true
+          },
+          "human_strict": {
+            "n_thinking_on": 12,
+            "n_nonempty_reasoning": 12,
+            "n_matches": 0,
+            "share": 0.0,
+            "share_nonempty": 0.0,
+            "includes_truncated": true
+          },
+          "env": {
+            "n_thinking_on": 12,
+            "n_nonempty_reasoning": 12,
+            "n_matches": 0,
+            "share": 0.0,
+            "share_nonempty": 0.0,
+            "includes_truncated": true
+          }
+        },
+        "n_truncated": 0,
+        "n_excluded": 0
+      }
+    }
+  },
+  "handcheck": {
+    "Qwen/Qwen3-4B": {
+      "path": "results/phase1b-smoke/handcheck_Qwen-Qwen3-4B-92e31154.csv",
+      "n_sampled": 100,
+      "n_labeled": 0,
+      "leak_n_labeled": 0,
+      "leak_agreement": null,
+      "commit_n_labeled": 0,
+      "commit_agreement": null,
+      "correct_commit_n_labeled": 0,
+      "correct_commit_agreement": null,
+      "status": "awaiting_manual_labels"
+    }
+  },
+  "execution": {
+    "status": "stopped_after_smoke_budget_projection",
+    "requested_full_run_id": "phase1b-full",
+    "completed_run_id": "phase1b-smoke",
+    "full_run_launched": false,
+    "smoke_app_id": "ap-V4xaHqcRiiAm2IjnXvoQrK",
+    "smoke_app_state": "stopped",
+    "other_running_apps": [
+      {
+        "app_id": "ap-TnAsOOoTbwUNv0Mo4B2g0e",
+        "description": "grader-mode-phase1",
+        "state": "ephemeral",
+        "tasks": "3",
+        "created_at": "2026-10-20 14:50:09-04:00",
+        "stopped_at": null
+      }
+    ],
+    "recorded_at": "2026-10-20T19:07:14.825052+00:00",
+    "source_sha256": {
+      "DESIGN.md": "1f63d7ac2d5594504fe5bb53c6935291c8956e86e0d75f0c5404c46f2e85a9a3",
+      "prompts/system_tutor.txt": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11",
+      "prompts/templates_1b.json": "cc5971cea9793fefb141bb8f514c109fc798989116d86eb6f3531bfbb8eec8a4"
+    },
+    "reason": "Parameter-scaled measured-smoke projection exceeds the approved $15 full-run cap."
+  },
+  "cost": {
+    "measured_smoke_gpu_seconds": 219.139544078,
+    "hourly_usd": 1.95,
+    "estimated_smoke_gpu_usd": 0.11870058637558333,
+    "projected_full_gpu_usd": 28.912538173541865,
+    "equal_throughput_scenario_gpu_usd": 7.232734123504866,
+    "scope": "GPU estimate from function time only; excludes container startup/teardown, CPU/RAM, storage, and build charges."
+  }
+}

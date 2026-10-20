@@ -1,0 +1,20 @@
+[
+  {
+    "container_id": "ta-01M5DBATY3QF228MMWPNT6WEER",
+    "app_id": "ap-TnAsOOoTbwUNv0Mo4B2g0e",
+    "app_name": "grader-mode-phase1",
+    "start_time": "2026-10-20 15:06:43-04:00"
+  },
+  {
+    "container_id": "ta-01M5DACQ8HPH19V1EPBPKVC4NR",
+    "app_id": "ap-TnAsOOoTbwUNv0Mo4B2g0e",
+    "app_name": "grader-mode-phase1",
+    "start_time": "2026-10-20 14:50:16-04:00"
+  },
+  {
+    "container_id": "ta-01M5DACPK56A86TM12RSENQQMR",
+    "app_id": "ap-TnAsOOoTbwUNv0Mo4B2g0e",
+    "app_name": "grader-mode-phase1",
+    "start_time": "2026-10-20 14:50:16-04:00"
+  }
+]

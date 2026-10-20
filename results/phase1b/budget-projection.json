@@ -1,0 +1,107 @@
+{
+  "phase": "phase1b",
+  "projected_requests_per_model": 4800,
+  "method": "Planning heuristic: same response length; generation time proportional to model parameter count relative to 4B; same setup time per model. No hardware speedup assumed.",
+  "limitations": "Only 4B/L40S is measured for this projection. Larger models and RTX-PRO-6000 are unmeasured. Output lengths, GPU efficiency, larger batching, download/load time, and queueing can differ. These scenarios are not confidence bounds or a spending cap. CPU/RAM, storage and build charges are excluded.",
+  "hourly_usd": {
+    "L40S": 1.95,
+    "A100-80GB": 2.5,
+    "RTX-PRO-6000": 3.03,
+    "H100": 3.95
+  },
+  "models": [
+    {
+      "model": "Qwen/Qwen3-4B",
+      "gpu": "L40S",
+      "parameters_billions": 4.0,
+      "estimated_generation_seconds": 2783.92347352,
+      "estimated_function_seconds": 2932.1895095289997,
+      "estimated_gpu_usd": 1.5882693176615414
+    },
+    {
+      "model": "Qwen/Qwen3-8B",
+      "gpu": "L40S",
+      "parameters_billions": 8.0,
+      "estimated_generation_seconds": 5567.84694704,
+      "estimated_function_seconds": 5716.112983049,
+      "estimated_gpu_usd": 3.096227865818208
+    },
+    {
+      "model": "Qwen/Qwen3-14B",
+      "gpu": "L40S",
+      "parameters_billions": 14.0,
+      "estimated_generation_seconds": 9743.732157319999,
+      "estimated_function_seconds": 9891.998193328998,
+      "estimated_gpu_usd": 5.358165688053208
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "gpu": "RTX-PRO-6000",
+      "parameters_billions": 32.0,
+      "estimated_generation_seconds": 22271.38778816,
+      "estimated_function_seconds": 22419.653824169,
+      "estimated_gpu_usd": 18.869875302008907
+    }
+  ],
+  "total_gpu_seconds": 40959.954510076,
+  "total_gpu_usd": 28.912538173541865,
+  "equal_throughput_scenario": {
+    "gpu_seconds": 11728.758038115999,
+    "gpu_usd": 7.232734123504866
+  },
+  "measured_smoke": {
+    "model": "Qwen/Qwen3-4B",
+    "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "gpu": "L40S",
+    "requests": 120,
+    "output_tokens": 118081,
+    "prompt_tokens": 24006,
+    "generation_seconds": 69.598086838,
+    "setup_seconds": 148.266036009,
+    "function_seconds": 219.139544078,
+    "output_tokens_per_second": 1696.612728376446,
+    "requests_per_second": 1.7241853253713428,
+    "by_thinking": {
+      "false": {
+        "requests": 60,
+        "output_tokens": 20921,
+        "length_finishes": 0
+      },
+      "true": {
+        "requests": 60,
+        "output_tokens": 97160,
+        "length_finishes": 2
+      }
+    },
+    "sampling": {
+      "temperature": 0.7,
+      "top_p": 0.95,
+      "top_k": -1,
+      "max_tokens": 768,
+      "enable_thinking": false,
+      "dtype": "bfloat16",
+      "quantization": null,
+      "thinking_on": {
+        "enable_thinking": true,
+        "max_tokens": 3072
+      }
+    },
+    "engine": {
+      "batch_size": 256,
+      "enforce_eager": false,
+      "chunk_size": 2048,
+      "max_model_len": 4096
+    },
+    "versions": {
+      "vllm": "0.21.0",
+      "torch": "2.11.0",
+      "transformers": "4.57.6",
+      "modal": "1.6.2"
+    }
+  },
+  "budget_gate": {
+    "limit_usd": 15,
+    "launch_full": false,
+    "basis": "parameter-scaled projection; equal-throughput scenario is diagnostic only"
+  }
+}
