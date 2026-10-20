@@ -307,3 +307,17 @@ Main calls run sequentially with timeouts capped at 5,400 seconds and a share
 of the remaining budget; no warm containers or pools. GPU cost from function
 timers is an estimate at $1.95/h, not a Modal invoice; container allocation
 lifetimes are separately recorded where available.
+
+Budget enforcement also records every new GPU attempt, including failures, in
+`results/phase1c/gpu-attempts.json`. Wall time starts before spawn and includes
+queue/startup/pull time, conservatively bounding GPU allocation. Before each
+spawn, remaining budget subtracts all finished attempts plus any older run
+metrics not already in the ledger, and retains the 600-second reserve. A local
+`call.get(timeout=...)` deadline includes startup (unlike Modal's function
+execution timeout); failure cancels the container and records elapsed time.
+An unfinished ledger entry fails closed until reconciled. Automatic retries
+are disabled. Main-run timeout shares follow measured ladder costs, rather
+than giving fast and slow ladders equal time. Existing remote raw paths are
+rejected before model imports/download/loading. Manual scorer-audit CSVs use
+100 eligible final replies/checkpoint with blank human labels, are ignored by
+Git, and never imply completed manual agreement.

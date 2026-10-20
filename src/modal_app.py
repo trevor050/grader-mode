@@ -52,6 +52,12 @@ def generate(model, requests, run_id, manifest, model_config):
     import random
     import time
     started = time.monotonic()
+    slug = model.split('/')[-1]
+    directory = Path('/raw') / run_id
+    directory.mkdir(parents=True, exist_ok=True)
+    raw_path = directory / f'{slug}.jsonl'
+    if raw_path.exists():
+        raise FileExistsError(f'Refusing to overwrite {raw_path}')
     from huggingface_hub import snapshot_download
     from vllm import LLM, SamplingParams
     from transformers import AutoTokenizer
@@ -73,12 +79,6 @@ def generate(model, requests, run_id, manifest, model_config):
     loaded = time.monotonic()
     ordered = list(requests)
     random.Random(0).shuffle(ordered)
-    slug = model.split('/')[-1]
-    directory = Path('/raw') / run_id
-    directory.mkdir(parents=True, exist_ok=True)
-    raw_path = directory / f'{slug}.jsonl'
-    if raw_path.exists():
-        raise FileExistsError(f'Refusing to overwrite {raw_path}')
     batch_size = model_config['batch_size']
     # vLLM batches continuously within a generate() call; chunks exist only for progress logs and crash safety.
     chunk_size = batch_size * 8
