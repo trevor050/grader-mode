@@ -45,8 +45,7 @@ def run_model(model: str, requests: list, run_id: str, manifest: dict):
     return generate(model, requests, run_id, manifest, {'gpu':'L40S','batch_size':256})
 
 
-@app.local_entrypoint()
-def main(models: str = 'rlvr', stage: str = 'smoke', run_id: str = '',
+def _run_stage(models: str = 'rlvr', stage: str = 'smoke', run_id: str = '',
          calibration_path: str = 'results/phase1c/calibration.json', timeout_seconds: int = 5400):
     if stage == 'preflight':
         result = preflight.remote()
@@ -67,9 +66,14 @@ def main(models: str = 'rlvr', stage: str = 'smoke', run_id: str = '',
     if stage in ('smoke','calibration') and any(MODELS_1C[m]['checkpoint'] != 'RLVR' for m in selected):
         raise ValueError('Smoke/calibration must use RLVR checkpoints only')
     if stage == 'full':
+        from src.phase1c import project_budget, metrics_for, accounted_seconds, write_json
         projection = json.loads(Path('results/phase1c/budget-projection.json').read_text())
         if not projection.get('launch_full') or projection['total_gpu_usd'] > 10:
             raise ValueError('budget projection blocks full generation')
+        projection=project_budget(metrics_for('phase1c-smoke'),accounted_seconds())
+        write_json('results/phase1c/budget-projection.json',projection)
+        if not projection['launch_full']:
+            raise ValueError('Current budget projection blocks full generation')
         if set(selected) != set(MODELS_1C):
             raise ValueError('Full run requires all six checkpoints')
         if not 1 <= timeout_seconds <= 5400:
@@ -116,3 +120,11 @@ def main(models: str = 'rlvr', stage: str = 'smoke', run_id: str = '',
     finally:
         for call in calls:
             call.cancel(terminate_containers=True)
+
+
+@app.local_entrypoint()
+def main(models: str = 'rlvr', stage: str = 'smoke', run_id: str = '',
+         calibration_path: str = 'results/phase1c/calibration.json', timeout_seconds: int = 5400):
+    from src.phase1c import launch_lock
+    with launch_lock():
+        return _run_stage(models,stage,run_id,calibration_path,timeout_seconds)

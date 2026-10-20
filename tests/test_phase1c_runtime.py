@@ -126,3 +126,38 @@ def test_remote_overwrite_is_rejected_before_loading_gpu_dependencies(tmp_path, 
     with pytest.raises(FileExistsError):
         modal_app.generate('allenai/Olmo-3-7B-Instruct',[{'id':'x'}],'existing',{},
                            {'gpu':'L40S','batch_size':256})
+
+
+def test_budget_stop_summary_never_treats_smoke_or_calibration_as_main_data(tmp_path):
+    from src.phase1c import write_budget_stop
+    import json
+    projection={'total_gpu_usd':11,'launch_full':False,'budget_usd':10}
+    write_budget_stop(tmp_path,projection,{'ladders':{l:{'system_prompt':'prompts/system_tutor.txt'} for l in ('instruct','think')}})
+    result=json.loads((tmp_path/'summary.json').read_text())
+    assert result['main_responses']==0 and result['calibration_data_included'] is False
+    assert result['status']=='budget_stop_after_calibration'
+    assert (tmp_path/'summary_gold_ge_10.md').exists()
+
+
+def test_gpu_launch_lock_refuses_a_second_launcher(tmp_path,monkeypatch):
+    from src.phase1c import launch_lock
+    monkeypatch.chdir(tmp_path)
+    with launch_lock():
+        with pytest.raises(ValueError,match='launcher'):
+            with launch_lock():pass
+
+
+def test_direct_full_refreshes_approval_after_failed_attempt_spending(tmp_path,monkeypatch):
+    import json
+    from src import phase1c, modal_app_1c, build_prompts
+    monkeypatch.chdir(tmp_path)
+    out=tmp_path/'results/phase1c';out.mkdir(parents=True)
+    (out/'budget-projection.json').write_text(json.dumps({'launch_full':True,'total_gpu_usd':5.74}))
+    metrics=[dict(model=f'allenai/Olmo-3-7B-{l}',requests=156,output_tokens=62400,
+                  generation_seconds=40,setup_seconds=120) for l in ('Instruct','Think')]
+    monkeypatch.setattr(phase1c,'metrics_for',lambda _:metrics)
+    monkeypatch.setattr(phase1c,'accounted_seconds',lambda:10000)
+    monkeypatch.setattr(build_prompts,'build_1c',lambda *a,**k: (_ for _ in ()).throw(RuntimeError('spawn reached')))
+    with pytest.raises(ValueError,match='Current budget'):
+        modal_app_1c.main.info.raw_f(models='all',stage='full',run_id='test-full')
+    assert json.loads((out/'budget-projection.json').read_text())['launch_full'] is False

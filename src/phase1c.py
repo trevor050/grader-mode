@@ -1,5 +1,6 @@
 """Phase 1c measured budget gate, heldout calibration, and staged execution."""
 import argparse
+from contextlib import contextmanager
 import json
 from pathlib import Path
 import subprocess
@@ -13,6 +14,23 @@ BUDGET = 10.0
 
 def metrics_for(run_id):
     return [json.loads(p.read_text()) for p in sorted((Path('results/raw')/run_id).glob('*.metrics.json'))]
+
+
+@contextmanager
+def launch_lock():
+    """One local Phase 1c launcher owns the ledger across its entire stage."""
+    import fcntl
+    path=Path('results/raw/phase1c-launch.lock')
+    path.parent.mkdir(parents=True,exist_ok=True)
+    with path.open('a') as handle:
+        try:
+            fcntl.flock(handle,fcntl.LOCK_EX|fcntl.LOCK_NB)
+        except BlockingIOError as error:
+            raise ValueError('Another Phase 1c launcher is active') from error
+        try:
+            yield
+        finally:
+            fcntl.flock(handle,fcntl.LOCK_UN)
 
 
 def read_attempts():
@@ -108,7 +126,57 @@ def calibration_result(rows):
 
 def write_json(path, value):
     path=Path(path); path.parent.mkdir(parents=True,exist_ok=True)
-    path.write_text(json.dumps(value,indent=2,allow_nan=False)+'\n')
+    temporary=path.with_suffix(path.suffix+'.part')
+    temporary.write_text(json.dumps(value,indent=2,allow_nan=False)+'\n')
+    temporary.replace(path)
+
+
+def write_budget_stop(output_dir, projection, calibration):
+    out=Path(output_dir)
+    diagnostic_counts={}
+    all_metrics=[]
+    for stage in ('smoke','calibration'):
+        run_id='phase1c-'+stage
+        all_metrics.extend(metrics_for(run_id))
+        scored=Path('results/raw')/run_id/'scored.jsonl'
+        if scored.exists():
+            rows=list(read_rows(scored))
+            diagnostic_counts[stage]={l:{
+                'n_responses':len(group), 'n_truncated':sum(r['truncated'] for r in group),
+                'n_empty_finals':sum(r['excluded_from_rates'] for r in group),
+                'n_truncated_empty':sum(r['truncated'] and r['excluded_from_rates'] for r in group)}
+                for l in ('instruct','think') if (group:=[r for r in rows if r['ladder']==l])}
+    function_seconds=sum(m['function_seconds'] for m in all_metrics)
+    for min_gold,name in ((None,'summary'),(10,'summary_gold_ge_10')):
+        result={'phase':'phase1c','status':'budget_stop_after_calibration','min_gold':min_gold,
+            'main_responses':0,'main_problems':0,'calibration_data_included':False,
+            'smoke_data_included':False,'hypothesis_contrasts':None,
+            'projected_total_gpu_usd':projection['total_gpu_usd'],'budget_usd':BUDGET,
+            'gpu_function_seconds':function_seconds,'gpu_function_usd':function_seconds*RATE,
+            'accounted_wall_seconds':accounted_seconds(),'accounted_wall_usd':accounted_seconds()*RATE,
+            'diagnostic_truncation_counts':diagnostic_counts,
+            'launch_full':False,'calibration_path':'results/phase1c/calibration.json',
+            'smoke_summary_path':'results/phase1c-smoke/summary.md',
+            'system_prompts':{l:d['system_prompt'] for l,d in calibration['ladders'].items()}}
+        write_json(out/(name+'.json'),result)
+        lines=['# Phase 1c execution summary','',
+            'Status: budget_stop_after_calibration.',f'Gold minimum: {min_gold}.','',
+            f"Projected total GPU cost: ${projection['total_gpu_usd']:.4f}; approved limit: $10.00.",
+            'Main-run responses: 0. Main-run problems: 0.',
+            f'Measured GPU function time: {function_seconds:.3f} seconds; estimated GPU cost: ${function_seconds*RATE:.4f}.',
+            f'Budget-accounted time: {accounted_seconds():.3f} seconds; cost estimate: ${accounted_seconds()*RATE:.4f} (historical function clocks plus new attempt wall clocks).',
+            'H6–H8, common-ceiling contrasts, and exploratory main-run estimates: unavailable.',
+            'Calibration observations in analysis: 0. Smoke observations in main analysis: 0.','',
+            '| Ladder | Main tutor prompt decision |','|---|---|']
+        lines += [f"| {l} | {d['system_prompt']} |" for l,d in calibration['ladders'].items()]
+        lines += ['', '| Diagnostic stage | Ladder | Responses | Truncated | Empty finals | Truncated empty |', '|---|---|---|---|---|---|']
+        for stage,ladders in diagnostic_counts.items():
+            for ladder,c in ladders.items():
+                lines.append(f"| {stage} | {ladder} | {c['n_responses']} | {c['n_truncated']} | {c['n_empty_finals']} | {c['n_truncated_empty']} |")
+        lines += ['','Calibration: [calibration.json](calibration.json).',
+            'Projection: [budget-projection.json](budget-projection.json).',
+            'Smoke diagnostics: [separate summary](../phase1c-smoke/summary.md).']
+        (out/(name+'.md')).write_text('\n'.join(lines)+'\n')
 
 
 def run_generation(stage,run_id,models='rlvr',timeout=5400):
@@ -142,6 +210,8 @@ def main():
     projection=project_budget(smoke,spent)
     write_json(out/'budget-projection.json',projection)
     print(json.dumps(projection,indent=2),flush=True)
+    if not projection['launch_full']:
+        write_budget_stop(out,projection,json.loads((out/'calibration.json').read_text()))
     if args.stage=='full':
         if not projection['launch_full']:
             parser.error('Measured projection exceeds $10; full run blocked after calibration')
