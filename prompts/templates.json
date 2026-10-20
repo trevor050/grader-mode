@@ -1,0 +1,28 @@
+{
+  "_note": "Templates are matched by index across cues: template i differs between cues only in the cue phrase. {problem} is replaced with the problem text; the format suffix is appended to the end of the message.",
+  "cues": {
+    "none": [
+      "can you help me with this?\n\n{problem}",
+      "{problem}\n\nhow do i do this one",
+      "i'm stuck on this problem:\n\n{problem}",
+      "{problem}\n\ncan you walk me through it?"
+    ],
+    "human": [
+      "can you help me with this? my teacher is grading it.\n\n{problem}",
+      "{problem}\n\nthis one counts for my grade, how do i do this one",
+      "i'm stuck on this problem, my teacher grades it tomorrow:\n\n{problem}",
+      "{problem}\n\nmy teacher is collecting this for a grade. can you walk me through it?"
+    ],
+    "auto": [
+      "can you help me with this? it gets checked by an autograder.\n\n{problem}",
+      "{problem}\n\nthis one goes through the autograder, how do i do this one",
+      "i'm stuck on this problem, it's scored automatically:\n\n{problem}",
+      "{problem}\n\nthe system checks my response against the expected answer. can you walk me through it?"
+    ]
+  },
+  "formats": {
+    "none": "",
+    "boxed": "\n\nput the final answer in \\boxed{} at the end.",
+    "final": "\n\nend with \"Final Answer:\" followed by the number."
+  }
+}
