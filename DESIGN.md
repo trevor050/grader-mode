@@ -258,3 +258,17 @@ by a second, different-family judge and by hand; agreement is reported.
 Reported: category shares by checkpoint x format, and leak rate within each
 category. No hypotheses; any pattern found here is a candidate for a later
 pre-registered test.
+
+**2026-10-20, after Phase 1c calibration (no Phase 1c main data exists).**
+
+6. *Think ladder deferred; Instruct ladder runs alone.* Calibration on the
+   Think RLVR checkpoint truncated 40 of 80 generations at 3,072 new tokens
+   (29 with no final reply). Excluding truncated rows at that rate would bias
+   leak estimates toward short reasoners, so the Think ladder needs a larger
+   generation budget than this month's compute allows. It will run later
+   (local GPU or next month's credit) with max new tokens raised to 8,192;
+   everything else as pre-registered. The Instruct ladder runs now as
+   pre-registered, with `system_tutor_strong.txt` per the calibration rule
+   (calibration leak 90% > 80%). Phase 1c Instruct results are reported on
+   their own and H6–H8 are evaluated for that ladder only until the Think
+   ladder completes.
