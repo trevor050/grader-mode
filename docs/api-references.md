@@ -7,3 +7,5 @@
 - [vLLM SamplingParams](https://docs.vllm.ai/en/stable/api/vllm/sampling_params/): explicit seed per request. Reproducibility is scoped to pinned model/software/hardware/batch configuration, not guaranteed bit-identical across GPU architectures.
 - [Qwen3 model card](https://huggingface.co/Qwen/Qwen3-0.6B): `apply_chat_template(..., enable_thinking=False)`. Sampling follows DESIGN.md rather than model-card recommendations.
 - All six original dense model IDs and revisions in `src/models.py` were confirmed through the Hugging Face API, as was the GSM8K dataset revision. These original post-trained models support the requested non-thinking switch; no base or later thinking-only variant is substituted.
+
+- [Modal GPU strings](https://modal.com/docs/guide/gpu): the exact 96GB RTX PRO 6000 selector is `RTX-PRO-6000`. User steering selects this for 32B; `config/gpus.json` is the per-model mapping. GPU rate assumptions are the supplied hourly rates, not a billing receipt.

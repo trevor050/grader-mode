@@ -7,7 +7,7 @@ from src.models import select_models, gpu_for
 def test_ladder_and_gpu_routing():
     models = select_models('all')
     assert len(models) == 6
-    assert [gpu_for(m) for m in models] == ['L40S'] * 5 + ['A100-80GB']
+    assert [gpu_for(m) for m in models] == ['L40S'] * 5 + ['RTX-PRO-6000']
     assert select_models('0.6B,Qwen3-32B') == [models[0], models[-1]]
     with pytest.raises(ValueError):
         select_models('0.6B,0.6B')
@@ -21,7 +21,7 @@ def test_no_warm_or_unbounded_gpu_functions():
     decorators = [d for node in ast.walk(tree) if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef))
                   for d in node.decorator_list if isinstance(d, ast.Call)
                   and isinstance(d.func, ast.Attribute) and d.func.attr == 'function']
-    assert len(decorators) == 2
+    assert len(decorators) == 1
     for d in decorators:
         kw = {k.arg: k.value for k in d.keywords}
         assert isinstance(kw['timeout'], ast.Constant) and kw['timeout'].value > 0

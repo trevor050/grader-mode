@@ -17,7 +17,21 @@ def select_models(value):
     return selected
 
 
-def gpu_for(model):
-    if model not in MODELS:
-        raise ValueError(f'Unknown model: {model}')
-    return 'A100-80GB' if model == 'Qwen/Qwen3-32B' else 'L40S'
+
+def load_gpu_config(path=None):
+    import json
+    from pathlib import Path
+    source = Path(path) if path else Path(__file__).resolve().parents[1] / 'config/gpus.json'
+    config = json.loads(source.read_text())
+    if set(config['models']) != set(MODELS):
+        raise ValueError('GPU config must cover exactly the registered ladder')
+    for spec in config['models'].values():
+        if spec['gpu'] not in {'L40S', 'A100-80GB', 'RTX-PRO-6000'}:
+            raise ValueError('GPU must be L40S, A100-80GB, or RTX-PRO-6000')
+        if not isinstance(spec['batch_size'], int) or not 1 <= spec['batch_size'] <= 512:
+            raise ValueError('batch_size must be between 1 and 512')
+    return config
+
+
+def gpu_for(model, config=None):
+    return (config or load_gpu_config())['models'][model]['gpu']
