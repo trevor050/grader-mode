@@ -122,3 +122,48 @@ this file before Phase 2 data is collected.
 4. *Staged execution.* The ladder runs in two stages (0.6B–4B, then 8B–32B)
    so that measured throughput sets the budget for the larger rungs. Design
    and analysis are unchanged.
+
+## Phase 1b: full-register environment cues (pre-registered 2026-10-20)
+
+Added before any Phase 1 sweep results were viewed. Phase 1's automated-grader
+cue is a casual one-line mention. Trevor's observation from adversarial
+testing is that the effect is triggered by the *register* of RL environment
+prompts (impersonal scoring rules, "the grader WILL NOT accept...", exact-match
+language), often only after enough of it accumulates, and is often visible in
+the model's chain of thought. A null Phase 1 result could therefore reflect an
+underdosed manipulation. Phase 1b tests the full-strength version.
+
+**Cues** (`prompts/templates_1b.json`, 4 templates each, matched by index; every
+cell demands a boxed answer):
+- `none`: Phase 1 no-cue templates with the boxed suffix.
+- `human_strict`: a strict human teacher, in the student's voice, matched to
+  `env` in length, insistence and format demand.
+- `env`: the register of RL math-environment prompts.
+
+**Thinking.** Each cell runs with thinking off and with thinking on
+(`enable_thinking=True`). With thinking on, max new tokens is 3,072 and only
+the text after the reasoning block is scored for leak; the reasoning is kept
+for exploratory analysis.
+
+**Models.** Qwen3 4B, 8B, 14B, 32B (0.6B and 1.7B are dropped because Phase 1b
+is about whether models that follow the tutor prompt can be pushed off it).
+
+**Problems, sampling, measures, analysis.** As in Phase 1 (same 200 problems,
+sampling parameters, leak/commit definitions, cluster bootstrap, and the
+gold >= 10 sensitivity analysis).
+
+**Hypotheses.**
+- **H4.** With thinking off, `env` produces a higher leak rate than
+  `human_strict`, with a cluster-bootstrap interval excluding zero, in at
+  least two of the four models.
+- **H5.** The `env` minus `human_strict` contrast is larger with thinking on
+  than off.
+- **Exploratory (no hypothesis).** With thinking on, the share of reasoning
+  blocks that refer to a grader, scoring or evaluation, by cue.
+
+**Interpretation limits stated in advance.** `env` and `human_strict` differ
+in authority (system vs teacher) and in voice (impersonal vs student). A
+positive H4 shows that environment-register prompts leak more than equally
+insistent human-stakes prompts; it does not by itself isolate which of those
+two features is responsible. Phase 2 representation work would use the
+`env` vs `human_strict` contrast.
