@@ -128,7 +128,8 @@ def test_remote_overwrite_is_rejected_before_loading_gpu_dependencies(tmp_path, 
                            {'gpu':'L40S','batch_size':256})
 
 
-def test_budget_stop_summary_never_treats_smoke_or_calibration_as_main_data(tmp_path):
+def test_budget_stop_summary_never_treats_smoke_or_calibration_as_main_data(tmp_path,monkeypatch):
+    monkeypatch.chdir(tmp_path)
     from src.phase1c import write_budget_stop
     import json
     projection={'total_gpu_usd':11,'launch_full':False,'budget_usd':10}
@@ -161,3 +162,12 @@ def test_direct_full_refreshes_approval_after_failed_attempt_spending(tmp_path,m
     with pytest.raises(ValueError,match='Current budget'):
         modal_app_1c.main.info.raw_f(models='all',stage='full',run_id='test-full')
     assert json.loads((out/'budget-projection.json').read_text())['launch_full'] is False
+
+
+def test_projection_labels_ledger_time_as_accounted_not_pure_function_time():
+    from src.phase1c import project_budget
+    metrics=[dict(model=f'allenai/Olmo-3-7B-{l}',requests=156,output_tokens=62400,
+                  generation_seconds=40,setup_seconds=120) for l in ('Instruct','Think')]
+    result=project_budget(metrics,spent_seconds=1000)
+    assert result['spent_accounted_seconds']==1000
+    assert 'spent_function_seconds' not in result

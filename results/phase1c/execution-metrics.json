@@ -1,0 +1,128 @@
+{
+  "gpu_hourly_usd": 1.95,
+  "gpu_function_seconds": 1904.662611136,
+  "gpu_function_cost_usd": 1.0316922476986665,
+  "budget_accounted_seconds": 1922.021618271997,
+  "budget_accounted_cost_usd": 1.0410950432306652,
+  "sequential_gpu_app_lifetime_upper_seconds": 1969.0,
+  "sequential_gpu_app_lifetime_upper_cost_usd": 1.0665416666666667,
+  "cost_scope": "GPU only; function clocks measured, app lifetimes conservatively bound allocation because GPU calls were sequential. Not a Modal invoice. CPU/RAM/storage excluded.",
+  "n_diagnostic_responses": 472,
+  "n_truncated": 158,
+  "n_empty_final_excluded": 83,
+  "n_truncated_empty": 83,
+  "n_main_responses": 0,
+  "phase1c_live_containers": 0,
+  "phase1c_nonstopped_apps": 0,
+  "other_live_containers": 2,
+  "attempts": [
+    {
+      "stage": "smoke",
+      "model": "allenai/Olmo-3-7B-Instruct",
+      "model_revision": "6e5971d9eba42665f5bd5a0fcf047f299ce1dccc",
+      "gpu": "L40S",
+      "requests": 156,
+      "output_tokens": 64524,
+      "prompt_tokens": 27618,
+      "generation_seconds": 41.099281829999995,
+      "setup_seconds": 231.17022567799998,
+      "function_seconds": 273.204591403,
+      "output_tokens_per_second": 1569.9544402476972,
+      "engine": {
+        "batch_size": 256,
+        "enforce_eager": false,
+        "chunk_size": 2048,
+        "max_model_len": 8192
+      },
+      "versions": {
+        "vllm": "0.21.0",
+        "torch": "2.11.0",
+        "transformers": "4.57.6",
+        "modal": "1.6.2"
+      },
+      "source_path": "results/raw/phase1c-smoke/Olmo-3-7B-Instruct.metrics.json",
+      "source_sha256": "ca3fb8ad265df249730b57f7f2d3af84d962defcc8d6ff230e554c786aeb1e34"
+    },
+    {
+      "stage": "smoke",
+      "model": "allenai/Olmo-3-7B-Think",
+      "model_revision": "d97e442d7cc678210054dbcc9b440894d62c89a4",
+      "gpu": "L40S",
+      "requests": 156,
+      "output_tokens": 375631,
+      "prompt_tokens": 30246,
+      "generation_seconds": 672.101109069,
+      "setup_seconds": 226.688610601,
+      "function_seconds": 899.942341578,
+      "output_tokens_per_second": 558.8906117419255,
+      "engine": {
+        "batch_size": 256,
+        "enforce_eager": false,
+        "chunk_size": 2048,
+        "max_model_len": 8192
+      },
+      "versions": {
+        "vllm": "0.21.0",
+        "torch": "2.11.0",
+        "transformers": "4.57.6",
+        "modal": "1.6.2"
+      },
+      "source_path": "results/raw/phase1c-smoke/Olmo-3-7B-Think.metrics.json",
+      "source_sha256": "e746e28bbe543b8f83a02e4041789ec34b13e23798bd04e4d464522a10e4f4b4"
+    },
+    {
+      "stage": "calibration",
+      "model": "allenai/Olmo-3-7B-Instruct",
+      "model_revision": "6e5971d9eba42665f5bd5a0fcf047f299ce1dccc",
+      "gpu": "L40S",
+      "requests": 80,
+      "output_tokens": 44079,
+      "prompt_tokens": 14540,
+      "generation_seconds": 31.348179310999996,
+      "setup_seconds": 120.74272330599999,
+      "function_seconds": 153.004924777,
+      "output_tokens_per_second": 1406.1103696868543,
+      "engine": {
+        "batch_size": 256,
+        "enforce_eager": false,
+        "chunk_size": 2048,
+        "max_model_len": 8192
+      },
+      "versions": {
+        "vllm": "0.21.0",
+        "torch": "2.11.0",
+        "transformers": "4.57.6",
+        "modal": "1.6.2"
+      },
+      "source_path": "results/raw/phase1c-calibration/Olmo-3-7B-Instruct.metrics.json",
+      "source_sha256": "f4f025ee89868bdcfb35ec2b15e37145fa2e10933e34bad2babd3508434308bc"
+    },
+    {
+      "stage": "calibration",
+      "model": "allenai/Olmo-3-7B-Think",
+      "model_revision": "d97e442d7cc678210054dbcc9b440894d62c89a4",
+      "gpu": "L40S",
+      "requests": 80,
+      "output_tokens": 205654,
+      "prompt_tokens": 15980,
+      "generation_seconds": 400.83928338499993,
+      "setup_seconds": 176.501236558,
+      "function_seconds": 578.510753378,
+      "output_tokens_per_second": 513.0584963212613,
+      "engine": {
+        "batch_size": 256,
+        "enforce_eager": false,
+        "chunk_size": 2048,
+        "max_model_len": 8192
+      },
+      "versions": {
+        "vllm": "0.21.0",
+        "torch": "2.11.0",
+        "transformers": "4.57.6",
+        "modal": "1.6.2"
+      },
+      "source_path": "results/raw/phase1c-calibration/Olmo-3-7B-Think.metrics.json",
+      "source_sha256": "4be7c70e181454646c13d7ebd74a1bf57a14119dd4627b4bb25727b81f03fe95"
+    }
+  ]
+}

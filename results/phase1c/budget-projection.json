@@ -1,0 +1,32 @@
+{
+  "budget_usd": 10.0,
+  "hourly_usd": 1.95,
+  "spent_accounted_seconds": 1922.021618271997,
+  "ladder_estimates": {
+    "instruct": {
+      "requests_per_checkpoint": 10400,
+      "mean_output_tokens": 413.61538461538464,
+      "output_tokens_per_second": 1569.9544402476972,
+      "generation_seconds_per_checkpoint": 2739.9521219999997,
+      "setup_seconds_per_checkpoint": 231.17022567799998,
+      "gpu_seconds_three_checkpoints": 8913.367043033999
+    },
+    "think": {
+      "requests_per_checkpoint": 5200,
+      "mean_output_tokens": 2407.891025641026,
+      "output_tokens_per_second": 558.8906117419255,
+      "generation_seconds_per_checkpoint": 22403.3703023,
+      "setup_seconds_per_checkpoint": 226.688610601,
+      "gpu_seconds_three_checkpoints": 67890.176738703
+    }
+  },
+  "main_function_seconds": 76803.543781737,
+  "allocation_reserve_seconds": 600,
+  "total_gpu_seconds": 79325.565400009,
+  "total_gpu_usd": 42.96801459167154,
+  "launch_full": false,
+  "method": "Observed tokens/request and output tok/s from each ladder smoke, same measured throughput for its three checkpoints; no parameter scaling.",
+  "phase1_qwen8b_reference_output_tokens_per_second": 3900,
+  "reference_only_main_generation_seconds": 12940.48717948718,
+  "limitations": "Point projection from ordinary-tutor smoke lengths; selected strong-prompt lengths, other checkpoints, and full batching are unmeasured. Startup reserve is an allowance, not measured GPU billing. CPU/RAM/storage excluded."
+}

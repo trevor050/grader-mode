@@ -106,3 +106,9 @@ gold>=10 sensitivity summaries go to `results/phase1c/`; smoke summaries go
 to `results/phase1c-smoke/`. Raw JSONL, prompts, and metrics remain gitignored
 under `results/raw/` and the Modal results Volume. Run IDs refuse overwrites;
 do not blindly rerun a generation stage after a partial failure.
+
+A single-launcher lock and persistent `gpu-attempts.json` budget ledger count
+failed calls and startup/queue time. An interrupted ledger entry blocks more
+GPU work until reconciled. When projection exceeds $10, primary and gold>=10
+summaries explicitly report zero main-run observations, with smoke diagnostics
+kept separate. GPU cost estimates exclude CPU/RAM/storage charges.

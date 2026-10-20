@@ -1,0 +1,74 @@
+[
+  {
+    "app_id": "ap-eVQuZ7Ao72FvrIdUIxP6T1",
+    "description": "grader-mode-phase1",
+    "state": "ephemeral",
+    "tasks": "2",
+    "created_at": "2026-10-20 15:08:16-04:00",
+    "stopped_at": null
+  },
+  {
+    "app_id": "ap-wJ6o4sLXyVNcpK6W1oX6gA",
+    "description": "grader-mode-phase1c",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-20 15:37:02-04:00",
+    "stopped_at": "2026-10-20 15:49:37-04:00"
+  },
+  {
+    "app_id": "ap-UiZFRj41KffrFiI8ZGyI14",
+    "description": "grader-mode-phase1c",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-20 15:16:23-04:00",
+    "stopped_at": "2026-10-20 15:36:37-04:00"
+  },
+  {
+    "app_id": "ap-FjvqinfHUpgFgztjsaSHEO",
+    "description": "grader-mode-phase1c",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-20 15:15:34-04:00",
+    "stopped_at": "2026-10-20 15:16:06-04:00"
+  },
+  {
+    "app_id": "ap-has7CRaWG13N9EqgAC22TM",
+    "description": "grader-mode-phase1c",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-20 15:14:50-04:00",
+    "stopped_at": "2026-10-20 15:15:10-04:00"
+  },
+  {
+    "app_id": "ap-V4xaHqcRiiAm2IjnXvoQrK",
+    "description": "grader-mode-phase1",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-20 15:00:10-04:00",
+    "stopped_at": "2026-10-20 15:04:00-04:00"
+  },
+  {
+    "app_id": "ap-TnAsOOoTbwUNv0Mo4B2g0e",
+    "description": "grader-mode-phase1",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-20 14:50:09-04:00",
+    "stopped_at": "2026-10-20 15:15:34-04:00"
+  },
+  {
+    "app_id": "ap-hHDLmP04VJ7W2g6Nt3x5av",
+    "description": "grader-mode-phase1",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-20 14:44:18-04:00",
+    "stopped_at": "2026-10-20 14:55:45-04:00"
+  },
+  {
+    "app_id": "ap-FOudNRK8F0Sc3N7mhpSAYL",
+    "description": "grader-mode-phase1",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-20 14:20:37-04:00",
+    "stopped_at": "2026-10-20 14:33:17-04:00"
+  }
+]

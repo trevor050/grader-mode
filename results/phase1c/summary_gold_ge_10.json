@@ -1,0 +1,61 @@
+{
+  "phase": "phase1c",
+  "status": "budget_stop_after_calibration",
+  "min_gold": 10,
+  "main_responses": 0,
+  "main_problems": 0,
+  "calibration_data_included": false,
+  "smoke_data_included": false,
+  "hypothesis_contrasts": null,
+  "projected_total_gpu_usd": 42.96801459167154,
+  "budget_usd": 10.0,
+  "gpu_function_seconds": 1904.662611136,
+  "gpu_function_usd": 1.0316922476986665,
+  "accounted_wall_seconds": 1922.021618271997,
+  "accounted_wall_usd": 1.0410950432306652,
+  "diagnostic_truncation_counts": {
+    "smoke": {
+      "instruct": {
+        "n_responses": 156,
+        "n_truncated": 35,
+        "n_empty_finals": 0,
+        "n_truncated_empty": 0
+      },
+      "think": {
+        "n_responses": 156,
+        "n_truncated": 71,
+        "n_empty_finals": 54,
+        "n_truncated_empty": 54
+      }
+    },
+    "calibration": {
+      "instruct": {
+        "n_responses": 80,
+        "n_truncated": 12,
+        "n_empty_finals": 0,
+        "n_truncated_empty": 0
+      },
+      "think": {
+        "n_responses": 80,
+        "n_truncated": 40,
+        "n_empty_finals": 29,
+        "n_truncated_empty": 29
+      }
+    }
+  },
+  "launch_full": false,
+  "calibration_path": "results/phase1c/calibration.json",
+  "smoke_summary_path": "results/phase1c-smoke/summary.md",
+  "system_prompts": {
+    "instruct": "prompts/system_tutor_strong.txt",
+    "think": "prompts/system_tutor.txt"
+  },
+  "execution_metrics_path": "results/phase1c/execution-metrics.json",
+  "gpu_allocation_upper_seconds": 1969.0,
+  "gpu_allocation_upper_cost_usd": 1.0665416666666667,
+  "verification": {
+    "tests_passed": 187,
+    "phase1c_live_containers": 0,
+    "phase1c_nonstopped_apps": 0
+  }
+}

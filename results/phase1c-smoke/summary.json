@@ -1,0 +1,4792 @@
+{
+  "n_problems": 3,
+  "n_responses": 312,
+  "ladders": {
+    "instruct": {
+      "n_problems": 3,
+      "problem_indices": [
+        88,
+        847,
+        923
+      ],
+      "n_responses": 156,
+      "checkpoints": {
+        "RLVR": {
+          "n_problems": 3,
+          "n_responses": 156,
+          "cells": [
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "none",
+              "n_responses": 12,
+              "n_valid": 12,
+              "n_excluded": 0,
+              "n_truncated": 4,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 1.0,
+                "ci95": [
+                  1.0,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.0,
+                "ci95": [
+                  0.0,
+                  0.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.0,
+                "ci95": [
+                  0.0,
+                  0.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "boxed",
+              "n_responses": 12,
+              "n_valid": 12,
+              "n_excluded": 0,
+              "n_truncated": 5,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 1.0,
+                "ci95": [
+                  1.0,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.3333333333333333,
+                "ci95": [
+                  0.0,
+                  0.5
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.3333333333333333,
+                "ci95": [
+                  0.0,
+                  0.5
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "dapo",
+              "n_responses": 12,
+              "n_valid": 12,
+              "n_excluded": 0,
+              "n_truncated": 3,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 1.0,
+                "ci95": [
+                  1.0,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.6666666666666666,
+                "ci95": [
+                  0.5,
+                  0.75
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.6666666666666666,
+                "ci95": [
+                  0.5,
+                  0.75
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "answer_tag",
+              "n_responses": 12,
+              "n_valid": 12,
+              "n_excluded": 0,
+              "n_truncated": 3,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 1.0,
+                "ci95": [
+                  1.0,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.4166666666666667,
+                "ci95": [
+                  0.25,
+                  0.5
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.4166666666666667,
+                "ci95": [
+                  0.25,
+                  0.5
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "result_tag",
+              "n_responses": 12,
+              "n_valid": 12,
+              "n_excluded": 0,
+              "n_truncated": 3,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 1.0,
+                "ci95": [
+                  1.0,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.5833333333333334,
+                "ci95": [
+                  0.25,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.5833333333333334,
+                "ci95": [
+                  0.25,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "boxed_step",
+              "n_responses": 12,
+              "n_valid": 12,
+              "n_excluded": 0,
+              "n_truncated": 0,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.0,
+                "ci95": [
+                  0.0,
+                  0.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.08333333333333333,
+                "ci95": [
+                  0.0,
+                  0.25
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.0,
+                "ci95": [
+                  0.0,
+                  0.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "none",
+              "n_responses": 12,
+              "n_valid": 12,
+              "n_excluded": 0,
+              "n_truncated": 5,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.9166666666666666,
+                "ci95": [
+                  0.75,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.16666666666666666,
+                "ci95": [
+                  0.0,
+                  0.5
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.08333333333333333,
+                "ci95": [
+                  0.0,
+                  0.25
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "boxed",
+              "n_responses": 12,
+              "n_valid": 12,
+              "n_excluded": 0,
+              "n_truncated": 2,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 1.0,
+                "ci95": [
+                  1.0,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.4166666666666667,
+                "ci95": [
+                  0.25,
+                  0.5
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.4166666666666667,
+                "ci95": [
+                  0.25,
+                  0.5
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "dapo",
+              "n_responses": 12,
+              "n_valid": 12,
+              "n_excluded": 0,
+              "n_truncated": 4,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 1.0,
+                "ci95": [
+                  1.0,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.25,
+                "ci95": [
+                  0.0,
+                  0.75
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.25,
+                "ci95": [
+                  0.0,
+                  0.75
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "answer_tag",
+              "n_responses": 12,
+              "n_valid": 12,
+              "n_excluded": 0,
+              "n_truncated": 1,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.9166666666666666,
+                "ci95": [
+                  0.75,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.4166666666666667,
+                "ci95": [
+                  0.0,
+                  0.75
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.4166666666666667,
+                "ci95": [
+                  0.0,
+                  0.75
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "result_tag",
+              "n_responses": 12,
+              "n_valid": 12,
+              "n_excluded": 0,
+              "n_truncated": 1,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 1.0,
+                "ci95": [
+                  1.0,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.3333333333333333,
+                "ci95": [
+                  0.25,
+                  0.5
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.3333333333333333,
+                "ci95": [
+                  0.25,
+                  0.5
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "boxed_step",
+              "n_responses": 12,
+              "n_valid": 12,
+              "n_excluded": 0,
+              "n_truncated": 0,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.0,
+                "ci95": [
+                  0.0,
+                  0.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.16666666666666666,
+                "ci95": [
+                  0.0,
+                  0.5
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.0,
+                "ci95": [
+                  0.0,
+                  0.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "ceiling",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "none",
+              "n_responses": 12,
+              "n_valid": 12,
+              "n_excluded": 0,
+              "n_truncated": 4,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 1.0,
+                "ci95": [
+                  1.0,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.75,
+                "ci95": [
+                  0.25,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.75,
+                "ci95": [
+                  0.25,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            }
+          ],
+          "n_excluded": 0,
+          "n_truncated": 35
+        }
+      },
+      "contrasts": {
+        "plain_format_effects": {
+          "SFT": {
+            "boxed": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            },
+            "dapo": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            },
+            "answer_tag": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            },
+            "result_tag": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            },
+            "boxed_step": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            },
+            "pooled_rl": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            }
+          },
+          "DPO": {
+            "boxed": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "dapo": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "answer_tag": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "result_tag": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "boxed_step": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "pooled_rl": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            }
+          },
+          "RLVR": {
+            "boxed": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "dapo": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "answer_tag": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "result_tag": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "boxed_step": {
+              "estimate": -1.0,
+              "ci95": [
+                -1.0,
+                -1.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "pooled_rl": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            }
+          }
+        },
+        "h6": {
+          "estimate": null,
+          "ci95": [
+            null,
+            null
+          ],
+          "valid_resamples": 0,
+          "undefined_resamples": 2000,
+          "status": "unavailable",
+          "missing_checkpoints": [
+            "DPO"
+          ]
+        },
+        "h7": {
+          "rlvr_specificity": {
+            "estimate": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "status": "ok"
+          },
+          "difference_in_differences": {
+            "estimate": null,
+            "ci95": [
+              null,
+              null
+            ],
+            "valid_resamples": 0,
+            "undefined_resamples": 2000,
+            "status": "unavailable",
+            "missing_checkpoints": [
+              "DPO"
+            ]
+          }
+        },
+        "h8": {
+          "estimate": -1.0,
+          "ci95": [
+            -1.0,
+            -1.0
+          ],
+          "valid_resamples": 2000,
+          "undefined_resamples": 0,
+          "status": "ok"
+        },
+        "per_format_h6": {
+          "boxed": {
+            "estimate": null,
+            "ci95": [
+              null,
+              null
+            ],
+            "valid_resamples": 0,
+            "undefined_resamples": 2000,
+            "status": "unavailable",
+            "missing_checkpoints": [
+              "DPO"
+            ]
+          },
+          "dapo": {
+            "estimate": null,
+            "ci95": [
+              null,
+              null
+            ],
+            "valid_resamples": 0,
+            "undefined_resamples": 2000,
+            "status": "unavailable",
+            "missing_checkpoints": [
+              "DPO"
+            ]
+          },
+          "answer_tag": {
+            "estimate": null,
+            "ci95": [
+              null,
+              null
+            ],
+            "valid_resamples": 0,
+            "undefined_resamples": 2000,
+            "status": "unavailable",
+            "missing_checkpoints": [
+              "DPO"
+            ]
+          }
+        },
+        "env_format_interactions": {
+          "SFT": {
+            "boxed": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            },
+            "dapo": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            },
+            "answer_tag": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            },
+            "result_tag": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            },
+            "boxed_step": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            },
+            "pooled_rl": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            }
+          },
+          "DPO": {
+            "boxed": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "dapo": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "answer_tag": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "result_tag": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "boxed_step": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "pooled_rl": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            }
+          },
+          "RLVR": {
+            "boxed": {
+              "estimate": 0.08333333333333337,
+              "ci95": [
+                0.0,
+                0.25
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "dapo": {
+              "estimate": 0.08333333333333337,
+              "ci95": [
+                0.0,
+                0.25
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "answer_tag": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "result_tag": {
+              "estimate": 0.08333333333333337,
+              "ci95": [
+                0.0,
+                0.25
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "boxed_step": {
+              "estimate": 0.08333333333333337,
+              "ci95": [
+                0.0,
+                0.25
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "pooled_rl": {
+              "estimate": 0.05555555555555558,
+              "ci95": [
+                0.0,
+                0.16666666666666666
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            }
+          }
+        },
+        "sft_dpo_format_changes": {
+          "boxed": {
+            "estimate": null,
+            "ci95": [
+              null,
+              null
+            ],
+            "valid_resamples": 0,
+            "undefined_resamples": 2000,
+            "status": "unavailable",
+            "missing_checkpoints": [
+              "SFT",
+              "DPO"
+            ]
+          },
+          "dapo": {
+            "estimate": null,
+            "ci95": [
+              null,
+              null
+            ],
+            "valid_resamples": 0,
+            "undefined_resamples": 2000,
+            "status": "unavailable",
+            "missing_checkpoints": [
+              "SFT",
+              "DPO"
+            ]
+          },
+          "answer_tag": {
+            "estimate": null,
+            "ci95": [
+              null,
+              null
+            ],
+            "valid_resamples": 0,
+            "undefined_resamples": 2000,
+            "status": "unavailable",
+            "missing_checkpoints": [
+              "SFT",
+              "DPO"
+            ]
+          },
+          "result_tag": {
+            "estimate": null,
+            "ci95": [
+              null,
+              null
+            ],
+            "valid_resamples": 0,
+            "undefined_resamples": 2000,
+            "status": "unavailable",
+            "missing_checkpoints": [
+              "SFT",
+              "DPO"
+            ]
+          },
+          "boxed_step": {
+            "estimate": null,
+            "ci95": [
+              null,
+              null
+            ],
+            "valid_resamples": 0,
+            "undefined_resamples": 2000,
+            "status": "unavailable",
+            "missing_checkpoints": [
+              "SFT",
+              "DPO"
+            ]
+          },
+          "pooled_rl": {
+            "estimate": null,
+            "ci95": [
+              null,
+              null
+            ],
+            "valid_resamples": 0,
+            "undefined_resamples": 2000,
+            "status": "unavailable",
+            "missing_checkpoints": [
+              "SFT",
+              "DPO"
+            ]
+          }
+        }
+      },
+      "available_checkpoints": [
+        "RLVR"
+      ],
+      "missing_checkpoints": [
+        "SFT",
+        "DPO"
+      ],
+      "checkpoint_status": "partial",
+      "models": {
+        "RLVR": "allenai/Olmo-3-7B-Instruct"
+      },
+      "thinking": false,
+      "inference": {
+        "eligible": false,
+        "required_problems": 200,
+        "source_n_problems": 3,
+        "complete_checkpoints": false
+      },
+      "common_ceiling_solved": {
+        "status": "unavailable",
+        "missing_checkpoints": [
+          "SFT",
+          "DPO"
+        ],
+        "n_problems": null,
+        "problem_indices": [],
+        "checkpoints": {},
+        "contrasts": {}
+      }
+    },
+    "think": {
+      "n_problems": 3,
+      "problem_indices": [
+        88,
+        847,
+        923
+      ],
+      "n_responses": 156,
+      "checkpoints": {
+        "RLVR": {
+          "n_problems": 3,
+          "n_responses": 156,
+          "cells": [
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "none",
+              "n_responses": 12,
+              "n_valid": 4,
+              "n_excluded": 8,
+              "n_truncated": 10,
+              "n_truncated_empty": 8,
+              "n_empty_final": 8,
+              "leak": {
+                "estimate": 0.75,
+                "ci95": [
+                  0.5,
+                  1.0
+                ],
+                "valid_resamples": 1937,
+                "undefined_resamples": 63
+              },
+              "commit": {
+                "estimate": 0.0,
+                "ci95": [
+                  0.0,
+                  0.0
+                ],
+                "valid_resamples": 1937,
+                "undefined_resamples": 63
+              },
+              "correct_commit": {
+                "estimate": 0.0,
+                "ci95": [
+                  0.0,
+                  0.0
+                ],
+                "valid_resamples": 1937,
+                "undefined_resamples": 63
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "boxed",
+              "n_responses": 12,
+              "n_valid": 9,
+              "n_excluded": 3,
+              "n_truncated": 5,
+              "n_truncated_empty": 3,
+              "n_empty_final": 3,
+              "leak": {
+                "estimate": 0.7777777777777778,
+                "ci95": [
+                  0.6666666666666666,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.7777777777777778,
+                "ci95": [
+                  0.6666666666666666,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.7777777777777778,
+                "ci95": [
+                  0.6666666666666666,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "dapo",
+              "n_responses": 12,
+              "n_valid": 10,
+              "n_excluded": 2,
+              "n_truncated": 6,
+              "n_truncated_empty": 2,
+              "n_empty_final": 2,
+              "leak": {
+                "estimate": 0.6,
+                "ci95": [
+                  0.0,
+                  0.75
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.39999999999999997,
+                "ci95": [
+                  0.0,
+                  0.5
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.39999999999999997,
+                "ci95": [
+                  0.0,
+                  0.5
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "answer_tag",
+              "n_responses": 12,
+              "n_valid": 10,
+              "n_excluded": 2,
+              "n_truncated": 4,
+              "n_truncated_empty": 2,
+              "n_empty_final": 2,
+              "leak": {
+                "estimate": 0.7999999999999999,
+                "ci95": [
+                  0.5,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.7000000000000001,
+                "ci95": [
+                  0.5,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.7000000000000001,
+                "ci95": [
+                  0.5,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "result_tag",
+              "n_responses": 12,
+              "n_valid": 9,
+              "n_excluded": 3,
+              "n_truncated": 5,
+              "n_truncated_empty": 3,
+              "n_empty_final": 3,
+              "leak": {
+                "estimate": 0.7777777777777778,
+                "ci95": [
+                  0.5,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.7777777777777778,
+                "ci95": [
+                  0.5,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.7777777777777778,
+                "ci95": [
+                  0.5,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "boxed_step",
+              "n_responses": 12,
+              "n_valid": 6,
+              "n_excluded": 6,
+              "n_truncated": 6,
+              "n_truncated_empty": 6,
+              "n_empty_final": 6,
+              "leak": {
+                "estimate": 0.0,
+                "ci95": [
+                  0.0,
+                  0.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.5,
+                "ci95": [
+                  0.0,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.0,
+                "ci95": [
+                  0.0,
+                  0.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "none",
+              "n_responses": 12,
+              "n_valid": 8,
+              "n_excluded": 4,
+              "n_truncated": 5,
+              "n_truncated_empty": 4,
+              "n_empty_final": 4,
+              "leak": {
+                "estimate": 0.8750000000000001,
+                "ci95": [
+                  0.6666666666666666,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.0,
+                "ci95": [
+                  0.0,
+                  0.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.0,
+                "ci95": [
+                  0.0,
+                  0.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "boxed",
+              "n_responses": 12,
+              "n_valid": 8,
+              "n_excluded": 4,
+              "n_truncated": 5,
+              "n_truncated_empty": 4,
+              "n_empty_final": 4,
+              "leak": {
+                "estimate": 0.8750000000000001,
+                "ci95": [
+                  0.6666666666666666,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.8750000000000001,
+                "ci95": [
+                  0.6666666666666666,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.8750000000000001,
+                "ci95": [
+                  0.6666666666666666,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "dapo",
+              "n_responses": 12,
+              "n_valid": 8,
+              "n_excluded": 4,
+              "n_truncated": 4,
+              "n_truncated_empty": 4,
+              "n_empty_final": 4,
+              "leak": {
+                "estimate": 1.0,
+                "ci95": [
+                  1.0,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.375,
+                "ci95": [
+                  0.0,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.375,
+                "ci95": [
+                  0.0,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "answer_tag",
+              "n_responses": 12,
+              "n_valid": 8,
+              "n_excluded": 4,
+              "n_truncated": 6,
+              "n_truncated_empty": 4,
+              "n_empty_final": 4,
+              "leak": {
+                "estimate": 0.75,
+                "ci95": [
+                  0.0,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.6250000000000001,
+                "ci95": [
+                  0.0,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.6250000000000001,
+                "ci95": [
+                  0.0,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "result_tag",
+              "n_responses": 12,
+              "n_valid": 11,
+              "n_excluded": 1,
+              "n_truncated": 2,
+              "n_truncated_empty": 1,
+              "n_empty_final": 1,
+              "leak": {
+                "estimate": 0.9090909090909092,
+                "ci95": [
+                  0.75,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.9090909090909092,
+                "ci95": [
+                  0.75,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.9090909090909092,
+                "ci95": [
+                  0.75,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "boxed_step",
+              "n_responses": 12,
+              "n_valid": 4,
+              "n_excluded": 8,
+              "n_truncated": 8,
+              "n_truncated_empty": 8,
+              "n_empty_final": 8,
+              "leak": {
+                "estimate": 0.25,
+                "ci95": [
+                  0.0,
+                  1.0
+                ],
+                "valid_resamples": 1916,
+                "undefined_resamples": 84
+              },
+              "commit": {
+                "estimate": 0.25,
+                "ci95": [
+                  0.0,
+                  1.0
+                ],
+                "valid_resamples": 1916,
+                "undefined_resamples": 84
+              },
+              "correct_commit": {
+                "estimate": 0.25,
+                "ci95": [
+                  0.0,
+                  1.0
+                ],
+                "valid_resamples": 1916,
+                "undefined_resamples": 84
+              }
+            },
+            {
+              "arm": "ceiling",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "none",
+              "n_responses": 12,
+              "n_valid": 7,
+              "n_excluded": 5,
+              "n_truncated": 5,
+              "n_truncated_empty": 5,
+              "n_empty_final": 5,
+              "leak": {
+                "estimate": 1.0,
+                "ci95": [
+                  1.0,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 1.0,
+                "ci95": [
+                  1.0,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 1.0,
+                "ci95": [
+                  1.0,
+                  1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            }
+          ],
+          "n_excluded": 54,
+          "n_truncated": 71
+        }
+      },
+      "contrasts": {
+        "plain_format_effects": {
+          "SFT": {
+            "boxed": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            },
+            "dapo": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            },
+            "answer_tag": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            },
+            "result_tag": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            },
+            "boxed_step": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            },
+            "pooled_rl": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            }
+          },
+          "DPO": {
+            "boxed": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "dapo": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "answer_tag": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "result_tag": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "boxed_step": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "pooled_rl": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            }
+          },
+          "RLVR": {
+            "boxed": {
+              "estimate": 0.02777777777777779,
+              "ci95": [
+                -0.33333333333333337,
+                0.3750000000000001
+              ],
+              "valid_resamples": 1937,
+              "undefined_resamples": 63,
+              "status": "ok"
+            },
+            "dapo": {
+              "estimate": -0.15000000000000002,
+              "ci95": [
+                -0.5,
+                0.09999999999999998
+              ],
+              "valid_resamples": 1937,
+              "undefined_resamples": 63,
+              "status": "ok"
+            },
+            "answer_tag": {
+              "estimate": 0.04999999999999993,
+              "ci95": [
+                0.0,
+                0.25
+              ],
+              "valid_resamples": 1937,
+              "undefined_resamples": 63,
+              "status": "ok"
+            },
+            "result_tag": {
+              "estimate": 0.02777777777777779,
+              "ci95": [
+                -0.25,
+                0.16666666666666663
+              ],
+              "valid_resamples": 1937,
+              "undefined_resamples": 63,
+              "status": "ok"
+            },
+            "boxed_step": {
+              "estimate": -0.75,
+              "ci95": [
+                -1.0,
+                -0.5
+              ],
+              "valid_resamples": 1937,
+              "undefined_resamples": 63,
+              "status": "ok"
+            },
+            "pooled_rl": {
+              "estimate": -0.0240740740740741,
+              "ci95": [
+                -0.19444444444444445,
+                0.2416666666666667
+              ],
+              "valid_resamples": 1937,
+              "undefined_resamples": 63,
+              "status": "ok"
+            }
+          }
+        },
+        "h6": {
+          "estimate": null,
+          "ci95": [
+            null,
+            null
+          ],
+          "valid_resamples": 0,
+          "undefined_resamples": 2000,
+          "status": "unavailable",
+          "missing_checkpoints": [
+            "DPO"
+          ]
+        },
+        "h7": {
+          "rlvr_specificity": {
+            "estimate": -0.05185185185185193,
+            "ci95": [
+              -0.24999999999999994,
+              0.41666666666666663
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "status": "ok"
+          },
+          "difference_in_differences": {
+            "estimate": null,
+            "ci95": [
+              null,
+              null
+            ],
+            "valid_resamples": 0,
+            "undefined_resamples": 2000,
+            "status": "unavailable",
+            "missing_checkpoints": [
+              "DPO"
+            ]
+          }
+        },
+        "h8": {
+          "estimate": -0.75,
+          "ci95": [
+            -1.0,
+            -0.5
+          ],
+          "valid_resamples": 1937,
+          "undefined_resamples": 63,
+          "status": "ok"
+        },
+        "per_format_h6": {
+          "boxed": {
+            "estimate": null,
+            "ci95": [
+              null,
+              null
+            ],
+            "valid_resamples": 0,
+            "undefined_resamples": 2000,
+            "status": "unavailable",
+            "missing_checkpoints": [
+              "DPO"
+            ]
+          },
+          "dapo": {
+            "estimate": null,
+            "ci95": [
+              null,
+              null
+            ],
+            "valid_resamples": 0,
+            "undefined_resamples": 2000,
+            "status": "unavailable",
+            "missing_checkpoints": [
+              "DPO"
+            ]
+          },
+          "answer_tag": {
+            "estimate": null,
+            "ci95": [
+              null,
+              null
+            ],
+            "valid_resamples": 0,
+            "undefined_resamples": 2000,
+            "status": "unavailable",
+            "missing_checkpoints": [
+              "DPO"
+            ]
+          }
+        },
+        "env_format_interactions": {
+          "SFT": {
+            "boxed": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            },
+            "dapo": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            },
+            "answer_tag": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            },
+            "result_tag": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            },
+            "boxed_step": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            },
+            "pooled_rl": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT"
+              ]
+            }
+          },
+          "DPO": {
+            "boxed": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "dapo": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "answer_tag": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "result_tag": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "boxed_step": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "pooled_rl": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            }
+          },
+          "RLVR": {
+            "boxed": {
+              "estimate": -0.02777777777777779,
+              "ci95": [
+                -0.5178571428571429,
+                0.33333333333333337
+              ],
+              "valid_resamples": 1937,
+              "undefined_resamples": 63,
+              "status": "ok"
+            },
+            "dapo": {
+              "estimate": 0.2749999999999999,
+              "ci95": [
+                0.04285714285714293,
+                0.8333333333333334
+              ],
+              "valid_resamples": 1937,
+              "undefined_resamples": 63,
+              "status": "ok"
+            },
+            "answer_tag": {
+              "estimate": -0.17500000000000004,
+              "ci95": [
+                -0.5071428571428571,
+                0.33333333333333337
+              ],
+              "valid_resamples": 1937,
+              "undefined_resamples": 63,
+              "status": "ok"
+            },
+            "result_tag": {
+              "estimate": 0.0063131313131312705,
+              "ci95": [
+                -0.09292929292929286,
+                0.25
+              ],
+              "valid_resamples": 1937,
+              "undefined_resamples": 63,
+              "status": "ok"
+            },
+            "boxed_step": {
+              "estimate": 0.12499999999999989,
+              "ci95": [
+                -0.11111111111111116,
+                0.75
+              ],
+              "valid_resamples": 1853,
+              "undefined_resamples": 147,
+              "status": "ok"
+            },
+            "pooled_rl": {
+              "estimate": 0.024074074074074026,
+              "ci95": [
+                -0.3273809523809524,
+                0.41666666666666663
+              ],
+              "valid_resamples": 1937,
+              "undefined_resamples": 63,
+              "status": "ok"
+            }
+          }
+        },
+        "sft_dpo_format_changes": {
+          "boxed": {
+            "estimate": null,
+            "ci95": [
+              null,
+              null
+            ],
+            "valid_resamples": 0,
+            "undefined_resamples": 2000,
+            "status": "unavailable",
+            "missing_checkpoints": [
+              "SFT",
+              "DPO"
+            ]
+          },
+          "dapo": {
+            "estimate": null,
+            "ci95": [
+              null,
+              null
+            ],
+            "valid_resamples": 0,
+            "undefined_resamples": 2000,
+            "status": "unavailable",
+            "missing_checkpoints": [
+              "SFT",
+              "DPO"
+            ]
+          },
+          "answer_tag": {
+            "estimate": null,
+            "ci95": [
+              null,
+              null
+            ],
+            "valid_resamples": 0,
+            "undefined_resamples": 2000,
+            "status": "unavailable",
+            "missing_checkpoints": [
+              "SFT",
+              "DPO"
+            ]
+          },
+          "result_tag": {
+            "estimate": null,
+            "ci95": [
+              null,
+              null
+            ],
+            "valid_resamples": 0,
+            "undefined_resamples": 2000,
+            "status": "unavailable",
+            "missing_checkpoints": [
+              "SFT",
+              "DPO"
+            ]
+          },
+          "boxed_step": {
+            "estimate": null,
+            "ci95": [
+              null,
+              null
+            ],
+            "valid_resamples": 0,
+            "undefined_resamples": 2000,
+            "status": "unavailable",
+            "missing_checkpoints": [
+              "SFT",
+              "DPO"
+            ]
+          },
+          "pooled_rl": {
+            "estimate": null,
+            "ci95": [
+              null,
+              null
+            ],
+            "valid_resamples": 0,
+            "undefined_resamples": 2000,
+            "status": "unavailable",
+            "missing_checkpoints": [
+              "SFT",
+              "DPO"
+            ]
+          }
+        }
+      },
+      "available_checkpoints": [
+        "RLVR"
+      ],
+      "missing_checkpoints": [
+        "SFT",
+        "DPO"
+      ],
+      "checkpoint_status": "partial",
+      "models": {
+        "RLVR": "allenai/Olmo-3-7B-Think"
+      },
+      "thinking": true,
+      "inference": {
+        "eligible": false,
+        "required_problems": 100,
+        "source_n_problems": 3,
+        "complete_checkpoints": false
+      },
+      "common_ceiling_solved": {
+        "status": "unavailable",
+        "missing_checkpoints": [
+          "SFT",
+          "DPO"
+        ],
+        "n_problems": null,
+        "problem_indices": [],
+        "checkpoints": {},
+        "contrasts": {}
+      }
+    }
+  },
+  "phase": "phase1c",
+  "min_gold": null,
+  "bootstrap": {
+    "resamples": 2000,
+    "seed": 0,
+    "unit": "problem_idx",
+    "interval": "percentile 95%",
+    "pairing": "common whole-problem draws across checkpoints, cells, templates, and outcomes within each ladder/subset"
+  },
+  "rate_denominator": "nonexcluded final replies; ratio of sums re-estimated in each problem bootstrap",
+  "pooled_formats": [
+    "boxed",
+    "dapo",
+    "answer_tag"
+  ],
+  "pooling": "equal-weight mean of format-specific effects",
+  "common_ceiling_rule": "at least one nonexcluded correct commit among four ceiling templates in each of SFT, DPO, RLVR; membership fixed before resampling",
+  "calibration_data_included": false,
+  "gold_ge_10": {
+    "n_problems": 2,
+    "n_responses": 208,
+    "ladders": {
+      "instruct": {
+        "n_problems": 2,
+        "problem_indices": [
+          88,
+          847
+        ],
+        "n_responses": 104,
+        "checkpoints": {
+          "RLVR": {
+            "n_problems": 2,
+            "n_responses": 104,
+            "cells": [
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "none",
+                "n_responses": 8,
+                "n_valid": 8,
+                "n_excluded": 0,
+                "n_truncated": 0,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 1.0,
+                  "ci95": [
+                    1.0,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.0,
+                  "ci95": [
+                    0.0,
+                    0.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.0,
+                  "ci95": [
+                    0.0,
+                    0.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "boxed",
+                "n_responses": 8,
+                "n_valid": 8,
+                "n_excluded": 0,
+                "n_truncated": 1,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 1.0,
+                  "ci95": [
+                    1.0,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.5,
+                  "ci95": [
+                    0.5,
+                    0.5
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.5,
+                  "ci95": [
+                    0.5,
+                    0.5
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "dapo",
+                "n_responses": 8,
+                "n_valid": 8,
+                "n_excluded": 0,
+                "n_truncated": 1,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 1.0,
+                  "ci95": [
+                    1.0,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.75,
+                  "ci95": [
+                    0.75,
+                    0.75
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.75,
+                  "ci95": [
+                    0.75,
+                    0.75
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "answer_tag",
+                "n_responses": 8,
+                "n_valid": 8,
+                "n_excluded": 0,
+                "n_truncated": 1,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 1.0,
+                  "ci95": [
+                    1.0,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.375,
+                  "ci95": [
+                    0.25,
+                    0.5
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.375,
+                  "ci95": [
+                    0.25,
+                    0.5
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "result_tag",
+                "n_responses": 8,
+                "n_valid": 8,
+                "n_excluded": 0,
+                "n_truncated": 0,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 1.0,
+                  "ci95": [
+                    1.0,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.75,
+                  "ci95": [
+                    0.5,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.75,
+                  "ci95": [
+                    0.5,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "boxed_step",
+                "n_responses": 8,
+                "n_valid": 8,
+                "n_excluded": 0,
+                "n_truncated": 0,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.0,
+                  "ci95": [
+                    0.0,
+                    0.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.125,
+                  "ci95": [
+                    0.0,
+                    0.25
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.0,
+                  "ci95": [
+                    0.0,
+                    0.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "none",
+                "n_responses": 8,
+                "n_valid": 8,
+                "n_excluded": 0,
+                "n_truncated": 2,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.875,
+                  "ci95": [
+                    0.75,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.0,
+                  "ci95": [
+                    0.0,
+                    0.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.0,
+                  "ci95": [
+                    0.0,
+                    0.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "boxed",
+                "n_responses": 8,
+                "n_valid": 8,
+                "n_excluded": 0,
+                "n_truncated": 0,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 1.0,
+                  "ci95": [
+                    1.0,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.375,
+                  "ci95": [
+                    0.25,
+                    0.5
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.375,
+                  "ci95": [
+                    0.25,
+                    0.5
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "dapo",
+                "n_responses": 8,
+                "n_valid": 8,
+                "n_excluded": 0,
+                "n_truncated": 0,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 1.0,
+                  "ci95": [
+                    1.0,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.375,
+                  "ci95": [
+                    0.0,
+                    0.75
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.375,
+                  "ci95": [
+                    0.0,
+                    0.75
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "answer_tag",
+                "n_responses": 8,
+                "n_valid": 8,
+                "n_excluded": 0,
+                "n_truncated": 0,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.875,
+                  "ci95": [
+                    0.75,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.25,
+                  "ci95": [
+                    0.0,
+                    0.5
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.25,
+                  "ci95": [
+                    0.0,
+                    0.5
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "result_tag",
+                "n_responses": 8,
+                "n_valid": 8,
+                "n_excluded": 0,
+                "n_truncated": 0,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 1.0,
+                  "ci95": [
+                    1.0,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.25,
+                  "ci95": [
+                    0.25,
+                    0.25
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.25,
+                  "ci95": [
+                    0.25,
+                    0.25
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "boxed_step",
+                "n_responses": 8,
+                "n_valid": 8,
+                "n_excluded": 0,
+                "n_truncated": 0,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.0,
+                  "ci95": [
+                    0.0,
+                    0.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.0,
+                  "ci95": [
+                    0.0,
+                    0.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.0,
+                  "ci95": [
+                    0.0,
+                    0.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "ceiling",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "none",
+                "n_responses": 8,
+                "n_valid": 8,
+                "n_excluded": 0,
+                "n_truncated": 1,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 1.0,
+                  "ci95": [
+                    1.0,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 1.0,
+                  "ci95": [
+                    1.0,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 1.0,
+                  "ci95": [
+                    1.0,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              }
+            ],
+            "n_excluded": 0,
+            "n_truncated": 6
+          }
+        },
+        "contrasts": {
+          "plain_format_effects": {
+            "SFT": {
+              "boxed": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              },
+              "dapo": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              },
+              "answer_tag": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              },
+              "result_tag": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              },
+              "boxed_step": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              },
+              "pooled_rl": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              }
+            },
+            "DPO": {
+              "boxed": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              },
+              "dapo": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              },
+              "answer_tag": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              },
+              "result_tag": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              },
+              "boxed_step": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              },
+              "pooled_rl": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              }
+            },
+            "RLVR": {
+              "boxed": {
+                "estimate": 0.0,
+                "ci95": [
+                  0.0,
+                  0.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "dapo": {
+                "estimate": 0.0,
+                "ci95": [
+                  0.0,
+                  0.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "answer_tag": {
+                "estimate": 0.0,
+                "ci95": [
+                  0.0,
+                  0.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "result_tag": {
+                "estimate": 0.0,
+                "ci95": [
+                  0.0,
+                  0.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "boxed_step": {
+                "estimate": -1.0,
+                "ci95": [
+                  -1.0,
+                  -1.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "pooled_rl": {
+                "estimate": 0.0,
+                "ci95": [
+                  0.0,
+                  0.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              }
+            }
+          },
+          "h6": {
+            "estimate": null,
+            "ci95": [
+              null,
+              null
+            ],
+            "valid_resamples": 0,
+            "undefined_resamples": 2000,
+            "status": "unavailable",
+            "missing_checkpoints": [
+              "DPO"
+            ]
+          },
+          "h7": {
+            "rlvr_specificity": {
+              "estimate": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "difference_in_differences": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            }
+          },
+          "h8": {
+            "estimate": -1.0,
+            "ci95": [
+              -1.0,
+              -1.0
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "status": "ok"
+          },
+          "per_format_h6": {
+            "boxed": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "dapo": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "answer_tag": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            }
+          },
+          "env_format_interactions": {
+            "SFT": {
+              "boxed": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              },
+              "dapo": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              },
+              "answer_tag": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              },
+              "result_tag": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              },
+              "boxed_step": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              },
+              "pooled_rl": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              }
+            },
+            "DPO": {
+              "boxed": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              },
+              "dapo": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              },
+              "answer_tag": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              },
+              "result_tag": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              },
+              "boxed_step": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              },
+              "pooled_rl": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              }
+            },
+            "RLVR": {
+              "boxed": {
+                "estimate": 0.125,
+                "ci95": [
+                  0.0,
+                  0.25
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "dapo": {
+                "estimate": 0.125,
+                "ci95": [
+                  0.0,
+                  0.25
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "answer_tag": {
+                "estimate": 0.0,
+                "ci95": [
+                  0.0,
+                  0.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "result_tag": {
+                "estimate": 0.125,
+                "ci95": [
+                  0.0,
+                  0.25
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "boxed_step": {
+                "estimate": 0.125,
+                "ci95": [
+                  0.0,
+                  0.25
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "pooled_rl": {
+                "estimate": 0.08333333333333333,
+                "ci95": [
+                  0.0,
+                  0.16666666666666666
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              }
+            }
+          },
+          "sft_dpo_format_changes": {
+            "boxed": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT",
+                "DPO"
+              ]
+            },
+            "dapo": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT",
+                "DPO"
+              ]
+            },
+            "answer_tag": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT",
+                "DPO"
+              ]
+            },
+            "result_tag": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT",
+                "DPO"
+              ]
+            },
+            "boxed_step": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT",
+                "DPO"
+              ]
+            },
+            "pooled_rl": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT",
+                "DPO"
+              ]
+            }
+          }
+        },
+        "available_checkpoints": [
+          "RLVR"
+        ],
+        "missing_checkpoints": [
+          "SFT",
+          "DPO"
+        ],
+        "checkpoint_status": "partial",
+        "models": {
+          "RLVR": "allenai/Olmo-3-7B-Instruct"
+        },
+        "thinking": false,
+        "inference": {
+          "eligible": false,
+          "required_problems": 200,
+          "source_n_problems": 3,
+          "complete_checkpoints": false
+        },
+        "common_ceiling_solved": {
+          "status": "unavailable",
+          "missing_checkpoints": [
+            "SFT",
+            "DPO"
+          ],
+          "n_problems": null,
+          "problem_indices": [],
+          "checkpoints": {},
+          "contrasts": {}
+        }
+      },
+      "think": {
+        "n_problems": 2,
+        "problem_indices": [
+          88,
+          847
+        ],
+        "n_responses": 104,
+        "checkpoints": {
+          "RLVR": {
+            "n_problems": 2,
+            "n_responses": 104,
+            "cells": [
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "none",
+                "n_responses": 8,
+                "n_valid": 4,
+                "n_excluded": 4,
+                "n_truncated": 6,
+                "n_truncated_empty": 4,
+                "n_empty_final": 4,
+                "leak": {
+                  "estimate": 0.75,
+                  "ci95": [
+                    0.5,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.0,
+                  "ci95": [
+                    0.0,
+                    0.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.0,
+                  "ci95": [
+                    0.0,
+                    0.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "boxed",
+                "n_responses": 8,
+                "n_valid": 7,
+                "n_excluded": 1,
+                "n_truncated": 3,
+                "n_truncated_empty": 1,
+                "n_empty_final": 1,
+                "leak": {
+                  "estimate": 0.7142857142857143,
+                  "ci95": [
+                    0.6666666666666666,
+                    0.75
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.7142857142857143,
+                  "ci95": [
+                    0.6666666666666666,
+                    0.75
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.7142857142857143,
+                  "ci95": [
+                    0.6666666666666666,
+                    0.75
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "dapo",
+                "n_responses": 8,
+                "n_valid": 6,
+                "n_excluded": 2,
+                "n_truncated": 5,
+                "n_truncated_empty": 2,
+                "n_empty_final": 2,
+                "leak": {
+                  "estimate": 0.5,
+                  "ci95": [
+                    0.0,
+                    0.75
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.3333333333333333,
+                  "ci95": [
+                    0.0,
+                    0.5
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.3333333333333333,
+                  "ci95": [
+                    0.0,
+                    0.5
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "answer_tag",
+                "n_responses": 8,
+                "n_valid": 8,
+                "n_excluded": 0,
+                "n_truncated": 1,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.75,
+                  "ci95": [
+                    0.5,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.75,
+                  "ci95": [
+                    0.5,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.75,
+                  "ci95": [
+                    0.5,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "result_tag",
+                "n_responses": 8,
+                "n_valid": 7,
+                "n_excluded": 1,
+                "n_truncated": 2,
+                "n_truncated_empty": 1,
+                "n_empty_final": 1,
+                "leak": {
+                  "estimate": 0.8571428571428571,
+                  "ci95": [
+                    0.6666666666666666,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.8571428571428571,
+                  "ci95": [
+                    0.6666666666666666,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.8571428571428571,
+                  "ci95": [
+                    0.6666666666666666,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "boxed_step",
+                "n_responses": 8,
+                "n_valid": 4,
+                "n_excluded": 4,
+                "n_truncated": 4,
+                "n_truncated_empty": 4,
+                "n_empty_final": 4,
+                "leak": {
+                  "estimate": 0.0,
+                  "ci95": [
+                    0.0,
+                    0.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.25,
+                  "ci95": [
+                    0.0,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.0,
+                  "ci95": [
+                    0.0,
+                    0.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "none",
+                "n_responses": 8,
+                "n_valid": 6,
+                "n_excluded": 2,
+                "n_truncated": 3,
+                "n_truncated_empty": 2,
+                "n_empty_final": 2,
+                "leak": {
+                  "estimate": 0.8333333333333334,
+                  "ci95": [
+                    0.6666666666666666,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.0,
+                  "ci95": [
+                    0.0,
+                    0.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.0,
+                  "ci95": [
+                    0.0,
+                    0.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "boxed",
+                "n_responses": 8,
+                "n_valid": 5,
+                "n_excluded": 3,
+                "n_truncated": 3,
+                "n_truncated_empty": 3,
+                "n_empty_final": 3,
+                "leak": {
+                  "estimate": 1.0,
+                  "ci95": [
+                    1.0,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 1.0,
+                  "ci95": [
+                    1.0,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 1.0,
+                  "ci95": [
+                    1.0,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "dapo",
+                "n_responses": 8,
+                "n_valid": 5,
+                "n_excluded": 3,
+                "n_truncated": 3,
+                "n_truncated_empty": 3,
+                "n_empty_final": 3,
+                "leak": {
+                  "estimate": 1.0,
+                  "ci95": [
+                    1.0,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.6,
+                  "ci95": [
+                    0.3333333333333333,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.6,
+                  "ci95": [
+                    0.3333333333333333,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "answer_tag",
+                "n_responses": 8,
+                "n_valid": 7,
+                "n_excluded": 1,
+                "n_truncated": 2,
+                "n_truncated_empty": 1,
+                "n_empty_final": 1,
+                "leak": {
+                  "estimate": 0.8571428571428571,
+                  "ci95": [
+                    0.75,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.7142857142857143,
+                  "ci95": [
+                    0.5,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.7142857142857143,
+                  "ci95": [
+                    0.5,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "result_tag",
+                "n_responses": 8,
+                "n_valid": 7,
+                "n_excluded": 1,
+                "n_truncated": 2,
+                "n_truncated_empty": 1,
+                "n_empty_final": 1,
+                "leak": {
+                  "estimate": 0.8571428571428571,
+                  "ci95": [
+                    0.75,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.8571428571428571,
+                  "ci95": [
+                    0.75,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.8571428571428571,
+                  "ci95": [
+                    0.75,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "boxed_step",
+                "n_responses": 8,
+                "n_valid": 3,
+                "n_excluded": 5,
+                "n_truncated": 5,
+                "n_truncated_empty": 5,
+                "n_empty_final": 5,
+                "leak": {
+                  "estimate": 0.0,
+                  "ci95": [
+                    0.0,
+                    0.0
+                  ],
+                  "valid_resamples": 1502,
+                  "undefined_resamples": 498
+                },
+                "commit": {
+                  "estimate": 0.0,
+                  "ci95": [
+                    0.0,
+                    0.0
+                  ],
+                  "valid_resamples": 1502,
+                  "undefined_resamples": 498
+                },
+                "correct_commit": {
+                  "estimate": 0.0,
+                  "ci95": [
+                    0.0,
+                    0.0
+                  ],
+                  "valid_resamples": 1502,
+                  "undefined_resamples": 498
+                }
+              },
+              {
+                "arm": "ceiling",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "none",
+                "n_responses": 8,
+                "n_valid": 6,
+                "n_excluded": 2,
+                "n_truncated": 2,
+                "n_truncated_empty": 2,
+                "n_empty_final": 2,
+                "leak": {
+                  "estimate": 1.0,
+                  "ci95": [
+                    1.0,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 1.0,
+                  "ci95": [
+                    1.0,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 1.0,
+                  "ci95": [
+                    1.0,
+                    1.0
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              }
+            ],
+            "n_excluded": 29,
+            "n_truncated": 41
+          }
+        },
+        "contrasts": {
+          "plain_format_effects": {
+            "SFT": {
+              "boxed": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              },
+              "dapo": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              },
+              "answer_tag": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              },
+              "result_tag": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              },
+              "boxed_step": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              },
+              "pooled_rl": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              }
+            },
+            "DPO": {
+              "boxed": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              },
+              "dapo": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              },
+              "answer_tag": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              },
+              "result_tag": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              },
+              "boxed_step": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              },
+              "pooled_rl": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              }
+            },
+            "RLVR": {
+              "boxed": {
+                "estimate": -0.0357142857142857,
+                "ci95": [
+                  -0.33333333333333337,
+                  0.25
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "dapo": {
+                "estimate": -0.25,
+                "ci95": [
+                  -0.5,
+                  -0.25
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "answer_tag": {
+                "estimate": 0.0,
+                "ci95": [
+                  0.0,
+                  0.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "result_tag": {
+                "estimate": 0.1071428571428571,
+                "ci95": [
+                  0.0,
+                  0.16666666666666663
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "boxed_step": {
+                "estimate": -0.75,
+                "ci95": [
+                  -1.0,
+                  -0.5
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "pooled_rl": {
+                "estimate": -0.09523809523809523,
+                "ci95": [
+                  -0.19444444444444445,
+                  -0.08333333333333333
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              }
+            }
+          },
+          "h6": {
+            "estimate": null,
+            "ci95": [
+              null,
+              null
+            ],
+            "valid_resamples": 0,
+            "undefined_resamples": 2000,
+            "status": "unavailable",
+            "missing_checkpoints": [
+              "DPO"
+            ]
+          },
+          "h7": {
+            "rlvr_specificity": {
+              "estimate": -0.20238095238095233,
+              "ci95": [
+                -0.24999999999999994,
+                -0.19444444444444453
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "difference_in_differences": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            }
+          },
+          "h8": {
+            "estimate": -0.75,
+            "ci95": [
+              -1.0,
+              -0.5
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "status": "ok"
+          },
+          "per_format_h6": {
+            "boxed": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "dapo": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            },
+            "answer_tag": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "DPO"
+              ]
+            }
+          },
+          "env_format_interactions": {
+            "SFT": {
+              "boxed": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              },
+              "dapo": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              },
+              "answer_tag": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              },
+              "result_tag": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              },
+              "boxed_step": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              },
+              "pooled_rl": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "SFT"
+                ]
+              }
+            },
+            "DPO": {
+              "boxed": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              },
+              "dapo": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              },
+              "answer_tag": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              },
+              "result_tag": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              },
+              "boxed_step": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              },
+              "pooled_rl": {
+                "estimate": null,
+                "ci95": [
+                  null,
+                  null
+                ],
+                "valid_resamples": 0,
+                "undefined_resamples": 2000,
+                "status": "unavailable",
+                "missing_checkpoints": [
+                  "DPO"
+                ]
+              }
+            },
+            "RLVR": {
+              "boxed": {
+                "estimate": 0.20238095238095233,
+                "ci95": [
+                  0.08333333333333337,
+                  0.33333333333333337
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "dapo": {
+                "estimate": 0.41666666666666663,
+                "ci95": [
+                  0.25,
+                  0.8333333333333334
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "answer_tag": {
+                "estimate": 0.023809523809523725,
+                "ci95": [
+                  -0.25,
+                  0.33333333333333337
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "result_tag": {
+                "estimate": -0.08333333333333337,
+                "ci95": [
+                  -0.08333333333333337,
+                  0.0
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "boxed_step": {
+                "estimate": -0.08333333333333337,
+                "ci95": [
+                  -0.08333333333333337,
+                  0.0
+                ],
+                "valid_resamples": 1502,
+                "undefined_resamples": 498,
+                "status": "ok"
+              },
+              "pooled_rl": {
+                "estimate": 0.21428571428571425,
+                "ci95": [
+                  0.11111111111111112,
+                  0.41666666666666663
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              }
+            }
+          },
+          "sft_dpo_format_changes": {
+            "boxed": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT",
+                "DPO"
+              ]
+            },
+            "dapo": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT",
+                "DPO"
+              ]
+            },
+            "answer_tag": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT",
+                "DPO"
+              ]
+            },
+            "result_tag": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT",
+                "DPO"
+              ]
+            },
+            "boxed_step": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT",
+                "DPO"
+              ]
+            },
+            "pooled_rl": {
+              "estimate": null,
+              "ci95": [
+                null,
+                null
+              ],
+              "valid_resamples": 0,
+              "undefined_resamples": 2000,
+              "status": "unavailable",
+              "missing_checkpoints": [
+                "SFT",
+                "DPO"
+              ]
+            }
+          }
+        },
+        "available_checkpoints": [
+          "RLVR"
+        ],
+        "missing_checkpoints": [
+          "SFT",
+          "DPO"
+        ],
+        "checkpoint_status": "partial",
+        "models": {
+          "RLVR": "allenai/Olmo-3-7B-Think"
+        },
+        "thinking": true,
+        "inference": {
+          "eligible": false,
+          "required_problems": 100,
+          "source_n_problems": 3,
+          "complete_checkpoints": false
+        },
+        "common_ceiling_solved": {
+          "status": "unavailable",
+          "missing_checkpoints": [
+            "SFT",
+            "DPO"
+          ],
+          "n_problems": null,
+          "problem_indices": [],
+          "checkpoints": {},
+          "contrasts": {}
+        }
+      }
+    },
+    "phase": "phase1c",
+    "min_gold": 10,
+    "bootstrap": {
+      "resamples": 2000,
+      "seed": 0,
+      "unit": "problem_idx",
+      "interval": "percentile 95%",
+      "pairing": "common whole-problem draws across checkpoints, cells, templates, and outcomes within each ladder/subset"
+    },
+    "rate_denominator": "nonexcluded final replies; ratio of sums re-estimated in each problem bootstrap",
+    "pooled_formats": [
+      "boxed",
+      "dapo",
+      "answer_tag"
+    ],
+    "pooling": "equal-weight mean of format-specific effects",
+    "common_ceiling_rule": "at least one nonexcluded correct commit among four ceiling templates in each of SFT, DPO, RLVR; membership fixed before resampling",
+    "calibration_data_included": false
+  },
+  "handcheck": {
+    "allenai/Olmo-3-7B-Instruct": {
+      "path": "results/phase1c-smoke/handcheck_allenai-Olmo-3-7B-Instruct-3c5f9867.csv",
+      "n_sampled": 100,
+      "n_labeled": 0,
+      "leak_n_labeled": 0,
+      "leak_agreement": null,
+      "commit_n_labeled": 0,
+      "commit_agreement": null,
+      "correct_commit_n_labeled": 0,
+      "correct_commit_agreement": null,
+      "status": "awaiting_manual_labels"
+    },
+    "allenai/Olmo-3-7B-Think": {
+      "path": "results/phase1c-smoke/handcheck_allenai-Olmo-3-7B-Think-84370f26.csv",
+      "n_sampled": 100,
+      "n_labeled": 0,
+      "leak_n_labeled": 0,
+      "leak_agreement": null,
+      "commit_n_labeled": 0,
+      "commit_agreement": null,
+      "correct_commit_n_labeled": 0,
+      "correct_commit_agreement": null,
+      "status": "awaiting_manual_labels"
+    }
+  }
+}

@@ -78,7 +78,7 @@ def project_budget(smoke_metrics, spent_seconds=0):
     allocation_reserve_seconds=600
     main_seconds=sum(e['gpu_seconds_three_checkpoints'] for e in estimates.values())
     projected=spent_seconds+main_seconds+allocation_reserve_seconds
-    return {'budget_usd':BUDGET,'hourly_usd':1.95,'spent_function_seconds':spent_seconds,
+    return {'budget_usd':BUDGET,'hourly_usd':1.95,'spent_accounted_seconds':spent_seconds,
         'ladder_estimates':estimates,'main_function_seconds':main_seconds,
         'allocation_reserve_seconds':allocation_reserve_seconds,
         'total_gpu_seconds':projected,'total_gpu_usd':projected*RATE,
@@ -86,12 +86,12 @@ def project_budget(smoke_metrics, spent_seconds=0):
         'method':'Observed tokens/request and output tok/s from each ladder smoke, same measured throughput for its three checkpoints; no parameter scaling.',
         'phase1_qwen8b_reference_output_tokens_per_second':3900,
         'reference_only_main_generation_seconds':sum(e['requests_per_checkpoint']*e['mean_output_tokens']*3/3900 for e in estimates.values()),
-        'limitations':'Point projection; other checkpoints and full batching may differ. Startup reserve is an allowance, not measured GPU billing. CPU/RAM/storage excluded.'}
+        'limitations':'Point projection from ordinary-tutor smoke lengths; selected strong-prompt lengths, other checkpoints, and full batching are unmeasured. Startup reserve is an allowance, not measured GPU billing. CPU/RAM/storage excluded.'}
 
 
 def allocate_timeouts(projection):
     """Distribute remaining budget by measured runtime, capped at 5,400 s/call."""
-    remaining=BUDGET/RATE-projection['spent_function_seconds']-projection.get('allocation_reserve_seconds',600)
+    remaining=BUDGET/RATE-projection.get('spent_accounted_seconds',projection.get('spent_function_seconds'))-projection.get('allocation_reserve_seconds',600)
     if remaining <= 0 or projection['main_function_seconds'] <= 0:
         raise ValueError('No remaining GPU budget')
     return {ladder:min(5400,int(remaining*(spec['gpu_seconds_three_checkpoints']/3)/projection['main_function_seconds']))

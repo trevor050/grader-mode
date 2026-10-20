@@ -1,0 +1,25 @@
+{
+  "model": "Qwen/Qwen3-8B",
+  "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "gpu": "L40S",
+  "requests": 8000,
+  "output_tokens": 2959026,
+  "generation_seconds": 752.416291762,
+  "output_tokens_per_second": 3932.697939156243,
+  "setup_seconds": 220.932773366,
+  "engine": {
+    "batch_size": 256,
+    "enforce_eager": false,
+    "chunk_size": 2048,
+    "max_model_len": 2048
+  },
+  "versions": {
+    "vllm": "0.21.0",
+    "torch": "2.11.0",
+    "transformers": "4.57.6",
+    "modal": "1.6.2"
+  },
+  "source_path": "results/raw/phase1-stage2/Qwen3-8B.metrics.json",
+  "source_sha256": "b6d86eaa9f448f2354223bd9b090dda768f08eca94d06d0b941052aac13f5174",
+  "role": "reference-only; Phase 1c budget gate uses OLMo smoke throughput"
+}

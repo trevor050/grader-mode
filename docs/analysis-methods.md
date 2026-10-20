@@ -321,3 +321,7 @@ than giving fast and slow ladders equal time. Existing remote raw paths are
 rejected before model imports/download/loading. Manual scorer-audit CSVs use
 100 eligible final replies/checkpoint with blank human labels, are ignored by
 Git, and never imply completed manual agreement.
+The local entrypoint holds a nonblocking process lock across each whole stage,
+preventing concurrent launchers from losing ledger updates. Ledger writes use
+atomic replacement. Direct full-run invocation recomputes approval from current
+spending before deriving its measured-runtime timeout shares.
