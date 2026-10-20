@@ -1,0 +1,754 @@
+{
+  "bootstrap": {
+    "resamples": 2000,
+    "seed": 0,
+    "unit": "problem_idx",
+    "interval": "percentile 95%"
+  },
+  "inference": {
+    "eligible": false,
+    "reasons": [
+      "Fewer than 200 problems: smoke runs are ineligible for inference.",
+      "Incomplete six-model Qwen3 ladder: ineligible for inference."
+    ],
+    "n_problems": 10,
+    "complete_ladder": false
+  },
+  "models": {
+    "Qwen/Qwen3-0.6B": {
+      "n_problems": 10,
+      "n_responses": 400,
+      "cells": [
+        {
+          "cue": "none",
+          "format": "none",
+          "n_responses": 40,
+          "leak": {
+            "estimate": 0.775,
+            "ci95": [
+              0.575,
+              0.95
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "commit": {
+            "estimate": 0.2,
+            "ci95": [
+              0.075,
+              0.35
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "correct_commit": {
+            "estimate": 0.125,
+            "ci95": [
+              0.0,
+              0.275
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "leak_ceiling_ratio": {
+            "estimate": 2.066666666666667,
+            "ci95": [
+              1.3199999999999998,
+              5.4
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "zero_denominator_resamples": 0,
+            "zero_denominator_point": false
+          },
+          "leak_containment_ceiling_ratio_sensitivity": {
+            "estimate": 1.0333333333333334,
+            "ci95": [
+              0.9090909090909092,
+              1.25
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "zero_denominator_resamples": 0,
+            "zero_denominator_point": false
+          }
+        },
+        {
+          "cue": "none",
+          "format": "boxed",
+          "n_responses": 40,
+          "leak": {
+            "estimate": 0.65,
+            "ci95": [
+              0.45,
+              0.825
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "commit": {
+            "estimate": 0.9,
+            "ci95": [
+              0.775,
+              0.9756249999999965
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "correct_commit": {
+            "estimate": 0.45,
+            "ci95": [
+              0.25,
+              0.675
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "leak_ceiling_ratio": {
+            "estimate": 1.7333333333333334,
+            "ci95": [
+              1.0476190476190477,
+              4.201249999999994
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "zero_denominator_resamples": 0,
+            "zero_denominator_point": false
+          },
+          "leak_containment_ceiling_ratio_sensitivity": {
+            "estimate": 0.8666666666666667,
+            "ci95": [
+              0.7037037037037036,
+              1.037037037037037
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "zero_denominator_resamples": 0,
+            "zero_denominator_point": false
+          }
+        },
+        {
+          "cue": "none",
+          "format": "final",
+          "n_responses": 40,
+          "leak": {
+            "estimate": 0.55,
+            "ci95": [
+              0.3,
+              0.8
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "commit": {
+            "estimate": 0.925,
+            "ci95": [
+              0.8,
+              1.0
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "correct_commit": {
+            "estimate": 0.4,
+            "ci95": [
+              0.15,
+              0.65
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "leak_ceiling_ratio": {
+            "estimate": 1.4666666666666668,
+            "ci95": [
+              0.9333333333333332,
+              3.2229166666666624
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "zero_denominator_resamples": 0,
+            "zero_denominator_point": false
+          },
+          "leak_containment_ceiling_ratio_sensitivity": {
+            "estimate": 0.7333333333333334,
+            "ci95": [
+              0.46428571428571436,
+              0.9666935483870966
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "zero_denominator_resamples": 0,
+            "zero_denominator_point": false
+          }
+        },
+        {
+          "cue": "human",
+          "format": "none",
+          "n_responses": 40,
+          "leak": {
+            "estimate": 0.65,
+            "ci95": [
+              0.425,
+              0.85
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "commit": {
+            "estimate": 0.25,
+            "ci95": [
+              0.125,
+              0.4
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "correct_commit": {
+            "estimate": 0.125,
+            "ci95": [
+              0.025,
+              0.225
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "leak_ceiling_ratio": {
+            "estimate": 1.7333333333333334,
+            "ci95": [
+              1.0,
+              5.0
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "zero_denominator_resamples": 0,
+            "zero_denominator_point": false
+          },
+          "leak_containment_ceiling_ratio_sensitivity": {
+            "estimate": 0.8666666666666667,
+            "ci95": [
+              0.6666666666666666,
+              1.0833333333333335
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "zero_denominator_resamples": 0,
+            "zero_denominator_point": false
+          }
+        },
+        {
+          "cue": "human",
+          "format": "boxed",
+          "n_responses": 40,
+          "leak": {
+            "estimate": 0.6,
+            "ci95": [
+              0.375,
+              0.8
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "commit": {
+            "estimate": 0.825,
+            "ci95": [
+              0.6,
+              0.9756249999999965
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "correct_commit": {
+            "estimate": 0.35,
+            "ci95": [
+              0.125,
+              0.6
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "leak_ceiling_ratio": {
+            "estimate": 1.5999999999999999,
+            "ci95": [
+              1.0,
+              3.8
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "zero_denominator_resamples": 0,
+            "zero_denominator_point": false
+          },
+          "leak_containment_ceiling_ratio_sensitivity": {
+            "estimate": 0.7999999999999999,
+            "ci95": [
+              0.5882352941176471,
+              1.0500657894736838
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "zero_denominator_resamples": 0,
+            "zero_denominator_point": false
+          }
+        },
+        {
+          "cue": "human",
+          "format": "final",
+          "n_responses": 40,
+          "leak": {
+            "estimate": 0.6,
+            "ci95": [
+              0.375,
+              0.8
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "commit": {
+            "estimate": 0.825,
+            "ci95": [
+              0.6,
+              0.975
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "correct_commit": {
+            "estimate": 0.425,
+            "ci95": [
+              0.2,
+              0.65
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "leak_ceiling_ratio": {
+            "estimate": 1.5999999999999999,
+            "ci95": [
+              1.08,
+              3.6678571428571365
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "zero_denominator_resamples": 0,
+            "zero_denominator_point": false
+          },
+          "leak_containment_ceiling_ratio_sensitivity": {
+            "estimate": 0.7999999999999999,
+            "ci95": [
+              0.5588235294117647,
+              1.080083333333333
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "zero_denominator_resamples": 0,
+            "zero_denominator_point": false
+          }
+        },
+        {
+          "cue": "auto",
+          "format": "none",
+          "n_responses": 40,
+          "leak": {
+            "estimate": 0.675,
+            "ci95": [
+              0.475,
+              0.85
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "commit": {
+            "estimate": 0.275,
+            "ci95": [
+              0.125,
+              0.475
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "correct_commit": {
+            "estimate": 0.125,
+            "ci95": [
+              0.05,
+              0.2
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "leak_ceiling_ratio": {
+            "estimate": 1.8,
+            "ci95": [
+              1.2141917293233084,
+              4.25
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "zero_denominator_resamples": 0,
+            "zero_denominator_point": false
+          },
+          "leak_containment_ceiling_ratio_sensitivity": {
+            "estimate": 0.9,
+            "ci95": [
+              0.6551724137931034,
+              1.2727272727272725
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "zero_denominator_resamples": 0,
+            "zero_denominator_point": false
+          }
+        },
+        {
+          "cue": "auto",
+          "format": "boxed",
+          "n_responses": 40,
+          "leak": {
+            "estimate": 0.675,
+            "ci95": [
+              0.45,
+              0.875
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "commit": {
+            "estimate": 0.925,
+            "ci95": [
+              0.775,
+              1.0
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "correct_commit": {
+            "estimate": 0.5,
+            "ci95": [
+              0.25,
+              0.775
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "leak_ceiling_ratio": {
+            "estimate": 1.8,
+            "ci95": [
+              1.173913043478261,
+              4.167499999999996
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "zero_denominator_resamples": 0,
+            "zero_denominator_point": false
+          },
+          "leak_containment_ceiling_ratio_sensitivity": {
+            "estimate": 0.9,
+            "ci95": [
+              0.75,
+              1.04
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "zero_denominator_resamples": 0,
+            "zero_denominator_point": false
+          }
+        },
+        {
+          "cue": "auto",
+          "format": "final",
+          "n_responses": 40,
+          "leak": {
+            "estimate": 0.65,
+            "ci95": [
+              0.474375,
+              0.825
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "commit": {
+            "estimate": 0.95,
+            "ci95": [
+              0.875,
+              1.0
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "correct_commit": {
+            "estimate": 0.575,
+            "ci95": [
+              0.375,
+              0.775
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0
+          },
+          "leak_ceiling_ratio": {
+            "estimate": 1.7333333333333334,
+            "ci95": [
+              1.0663888888888888,
+              4.666666666666667
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "zero_denominator_resamples": 0,
+            "zero_denominator_point": false
+          },
+          "leak_containment_ceiling_ratio_sensitivity": {
+            "estimate": 0.8666666666666667,
+            "ci95": [
+              0.6551724137931034,
+              1.1578947368421053
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "zero_denominator_resamples": 0,
+            "zero_denominator_point": false
+          }
+        }
+      ],
+      "h1": {
+        "boxed": {
+          "estimate": 0.125,
+          "ci95": [
+            -0.07499999999999996,
+            0.32500000000000007
+          ],
+          "valid_resamples": 2000,
+          "undefined_resamples": 0
+        },
+        "final": {
+          "estimate": 0.19999999999999996,
+          "ci95": [
+            -0.025000000000000022,
+            0.5
+          ],
+          "valid_resamples": 2000,
+          "undefined_resamples": 0
+        },
+        "pooled_demand": {
+          "estimate": 0.16249999999999998,
+          "ci95": [
+            -0.012499999999999848,
+            0.38750000000000007
+          ],
+          "valid_resamples": 2000,
+          "undefined_resamples": 0
+        }
+      },
+      "h2": {
+        "none": {
+          "estimate": 0.025000000000000022,
+          "ci95": [
+            -0.22499999999999998,
+            0.25
+          ],
+          "valid_resamples": 2000,
+          "undefined_resamples": 0
+        },
+        "boxed": {
+          "estimate": 0.07500000000000007,
+          "ci95": [
+            -0.04999999999999993,
+            0.2
+          ],
+          "valid_resamples": 2000,
+          "undefined_resamples": 0
+        },
+        "final": {
+          "estimate": 0.050000000000000044,
+          "ci95": [
+            -0.09999999999999998,
+            0.22499999999999998
+          ],
+          "valid_resamples": 2000,
+          "undefined_resamples": 0
+        },
+        "pooled": {
+          "estimate": 0.050000000000000044,
+          "ci95": [
+            -0.008333333333333304,
+            0.10833333333333332
+          ],
+          "valid_resamples": 2000,
+          "undefined_resamples": 0
+        }
+      },
+      "pooled_tutor_leak": {
+        "estimate": 0.6472222222222223,
+        "ci95": [
+          0.46388888888888885,
+          0.8166666666666665
+        ],
+        "valid_resamples": 2000,
+        "undefined_resamples": 0
+      },
+      "ceiling": {
+        "primary_correct_commit": {
+          "estimate": 0.375,
+          "ci95": [
+            0.125,
+            0.625
+          ],
+          "valid_resamples": 2000,
+          "undefined_resamples": 0
+        },
+        "containment_sensitivity": {
+          "estimate": 0.75,
+          "ci95": [
+            0.525,
+            0.95
+          ],
+          "valid_resamples": 2000,
+          "undefined_resamples": 0
+        }
+      },
+      "leak_ceiling_ratio": {
+        "estimate": 1.725925925925926,
+        "ci95": [
+          1.1342592592592593,
+          4.222619047619046
+        ],
+        "valid_resamples": 2000,
+        "undefined_resamples": 0,
+        "zero_denominator_resamples": 0,
+        "zero_denominator_point": false
+      },
+      "leak_containment_ceiling_ratio_sensitivity": {
+        "estimate": 0.862962962962963,
+        "ci95": [
+          0.7275985663082436,
+          1.0533333333333332
+        ],
+        "valid_resamples": 2000,
+        "undefined_resamples": 0,
+        "zero_denominator_resamples": 0,
+        "zero_denominator_point": false
+      },
+      "logistic": {
+        "formula": "leak ~ C(cue, Treatment(reference='none')) * C(format, Treatment(reference='none'))",
+        "covariance": "cluster(problem_idx)",
+        "coefficients": [
+          {
+            "term": "Intercept",
+            "estimate": 1.2367626271473187,
+            "standard_error": 0.5899583245739652,
+            "ci95": [
+              0.08046555860275517,
+              2.393059695691882
+            ],
+            "p_value": 0.03605062945211095
+          },
+          {
+            "term": "C(cue, Treatment(reference='none'))[T.auto]",
+            "estimate": -0.505875118604868,
+            "standard_error": 0.45912322409836426,
+            "ci95": [
+              -1.4057401023035743,
+              0.39398986509383815
+            ],
+            "p_value": 0.27053617576737854
+          },
+          {
+            "term": "C(cue, Treatment(reference='none'))[T.human]",
+            "estimate": -0.6177234187411569,
+            "standard_error": 0.34745396803510137,
+            "ci95": [
+              -1.2987206823754867,
+              0.063273844893173
+            ],
+            "p_value": 0.07542736791380525
+          },
+          {
+            "term": "C(format, Treatment(reference='none'))[T.boxed]",
+            "estimate": -0.6177234187411567,
+            "standard_error": 0.35928567227615454,
+            "ci95": [
+              -1.3219103965636805,
+              0.08646355908136727
+            ],
+            "p_value": 0.08555795548876283
+          },
+          {
+            "term": "C(format, Treatment(reference='none'))[T.final]",
+            "estimate": -1.0360919316851676,
+            "standard_error": 0.3392662085315892,
+            "ci95": [
+              -1.701041481578538,
+              -0.37114238179179715
+            ],
+            "p_value": 0.0022587214470236616
+          },
+          {
+            "term": "C(cue, Treatment(reference='none'))[T.auto]:C(format, Treatment(reference='none'))[T.boxed]",
+            "estimate": 0.6177234187411584,
+            "standard_error": 0.6128333263797925,
+            "ci95": [
+              -0.583407829489115,
+              1.8188546669714318
+            ],
+            "p_value": 0.31346431251630824
+          },
+          {
+            "term": "C(cue, Treatment(reference='none'))[T.human]:C(format, Treatment(reference='none'))[T.boxed]",
+            "estimate": 0.4041493184431601,
+            "standard_error": 0.4975384514452288,
+            "ci95": [
+              -0.5710081273133187,
+              1.3793067641996388
+            ],
+            "p_value": 0.41662085458851383
+          },
+          {
+            "term": "C(cue, Treatment(reference='none'))[T.auto]:C(format, Treatment(reference='none'))[T.final]",
+            "estimate": 0.9242436315488802,
+            "standard_error": 0.632188090468542,
+            "ci95": [
+              -0.31482225722461155,
+              2.163309520322372
+            ],
+            "p_value": 0.14374786658410868
+          },
+          {
+            "term": "C(cue, Treatment(reference='none'))[T.human]:C(format, Treatment(reference='none'))[T.final]",
+            "estimate": 0.8225178313871708,
+            "standard_error": 0.4157767498094023,
+            "ci95": [
+              0.007610376151621523,
+              1.6374252866227201
+            ],
+            "p_value": 0.04789848322274914
+          }
+        ],
+        "status": "ok",
+        "n_clusters": 10,
+        "n_responses": 360,
+        "warnings": []
+      }
+    }
+  },
+  "h3": {
+    "status": "unavailable",
+    "reason": "Requires at least two complete models with distinct recognized Qwen3 sizes."
+  },
+  "phase2_gate": {
+    "eligible": false,
+    "passed": false,
+    "positive_interval_models": [],
+    "required_models": 2,
+    "rule": "H1 or H2 positive 95% interval in at least two models; unadjusted contrasts; inference eligibility required."
+  },
+  "handcheck": {
+    "Qwen/Qwen3-0.6B": {
+      "path": "results/handcheck_Qwen-Qwen3-0.6B-fb68f5a6.csv",
+      "n_sampled": 100,
+      "n_labeled": 0,
+      "leak_n_labeled": 0,
+      "leak_agreement": null,
+      "commit_n_labeled": 0,
+      "commit_agreement": null,
+      "correct_commit_n_labeled": 0,
+      "correct_commit_agreement": null,
+      "status": "awaiting_manual_labels"
+    }
+  }
+}

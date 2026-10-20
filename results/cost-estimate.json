@@ -1,0 +1,109 @@
+{
+  "method": "Planning heuristic: same response length; generation time proportional to model parameter count relative to 0.6B; same setup time per model. No hardware speedup assumed.",
+  "limitations": "Only 0.6B/L40S is measured. Larger models and RTX-PRO-6000 are unmeasured. Output lengths, GPU efficiency, larger batching, download/load time, and queueing can differ. These scenarios are not confidence bounds or a spending cap. CPU/RAM, storage and build charges are excluded.",
+  "hourly_usd": {
+    "L40S": 1.95,
+    "A100-80GB": 2.5,
+    "RTX-PRO-6000": 3.03,
+    "H100": 3.95
+  },
+  "models": [
+    {
+      "model": "Qwen/Qwen3-0.6B",
+      "gpu": "L40S",
+      "parameters_billions": 0.6,
+      "estimated_generation_seconds": 1786.2791152867487,
+      "estimated_function_seconds": 1919.9651595224113,
+      "estimated_gpu_usd": 1.0399811280746396
+    },
+    {
+      "model": "Qwen/Qwen3-1.7B",
+      "gpu": "L40S",
+      "parameters_billions": 1.7,
+      "estimated_generation_seconds": 5061.124159979122,
+      "estimated_function_seconds": 5194.810204214785,
+      "estimated_gpu_usd": 2.813855527283008
+    },
+    {
+      "model": "Qwen/Qwen3-4B",
+      "gpu": "L40S",
+      "parameters_billions": 4.0,
+      "estimated_generation_seconds": 11908.527435244994,
+      "estimated_function_seconds": 12042.213479480657,
+      "estimated_gpu_usd": 6.522865634718689
+    },
+    {
+      "model": "Qwen/Qwen3-8B",
+      "gpu": "L40S",
+      "parameters_billions": 8.0,
+      "estimated_generation_seconds": 23817.05487048999,
+      "estimated_function_seconds": 23950.74091472565,
+      "estimated_gpu_usd": 12.973317995476394
+    },
+    {
+      "model": "Qwen/Qwen3-14B",
+      "gpu": "L40S",
+      "parameters_billions": 14.0,
+      "estimated_generation_seconds": 41679.84602335748,
+      "estimated_function_seconds": 41813.53206759314,
+      "estimated_gpu_usd": 22.64899653661295
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "gpu": "RTX-PRO-6000",
+      "parameters_billions": 32.0,
+      "estimated_generation_seconds": 95268.21948195995,
+      "estimated_function_seconds": 95401.90552619561,
+      "estimated_gpu_usd": 80.2966038178813
+    }
+  ],
+  "total_gpu_seconds": 180323.16735173226,
+  "total_gpu_usd": 126.29562064004699,
+  "equal_throughput_scenario": {
+    "gpu_seconds": 11519.79095713447,
+    "gpu_usd": 6.815876316304561
+  },
+  "measured_smoke": {
+    "model": "Qwen/Qwen3-0.6B",
+    "model_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+    "gpu": "L40S",
+    "actual_device": "NVIDIA L40S (confirmed via nvidia-smi on existing container)",
+    "requests": 400,
+    "output_tokens": 91261,
+    "prompt_tokens": 73550,
+    "generation_seconds": 89.31395576433745,
+    "setup_seconds": 133.68604423566256,
+    "function_seconds": 223,
+    "output_tokens_per_second": 1021.8,
+    "requests_per_second": 4.478583403644492,
+    "sampling": {
+      "temperature": 0.7,
+      "top_p": 0.95,
+      "top_k": -1,
+      "max_tokens": 768,
+      "enable_thinking": false,
+      "dtype": "bfloat16",
+      "quantization": null
+    },
+    "engine": {
+      "batch_size": 64,
+      "enforce_eager": true,
+      "max_model_len": 2048
+    },
+    "versions": {
+      "vllm": "0.21.0",
+      "torch": "2.11.0",
+      "transformers": "4.57.6",
+      "modal": "runtime-injected; local CLI 1.6.2"
+    },
+    "metrics_recovery": {
+      "reason": "All 400 generations completed; post-generation distribution metadata lookup for injected modal raised PackageNotFoundError. Raw outputs were recovered from the automatically committed Volume; no generation was repeated.",
+      "output_tokens_per_second": "Final remote progress log, rounded to 0.1 tokens/s; includes cold first-batch kernel compilation.",
+      "generation_seconds": "Reconstructed approximately from exact output-token count divided by logged rounded throughput.",
+      "function_seconds": "Approximate container start 2026-10-20 14:29:28-04:00 to completed generation/error 14:33:11-04:00; not an exact invocation duration or billing receipt.",
+      "setup_seconds": "Approximate remainder of container interval after reconstructed generation time.",
+      "versions": "Pinned image build logs and runtime startup logs; Modal runtime has no installed distribution metadata."
+    },
+    "raw_sha256": "309b1b22fe839fdaf14ceb33f86961f5a59001a93b94bc654bd91893d085e78f"
+  }
+}
