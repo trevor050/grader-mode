@@ -102,7 +102,7 @@ def expand_requests_1c(problems, templates, system, ladder='instruct', checkpoin
                 messages = [] if arm == 'ceiling' else [{'role': 'system', 'content': system}]
                 messages.append({'role': 'user', 'content': user})
                 result.append({**p, 'id': rid, 'phase': phase, 'ladder': ladder, 'checkpoint': checkpoint,
-                               'thinking': ladder == 'think', 'cue': cue, 'format': fmt, 'template_idx': i,
+                               'thinking': ladder == 'think', 'cue': cue, 'prose': cue, 'format': fmt, 'template_idx': i,
                                'arm': arm, 'seed': request_seed(rid), 'messages': messages})
     return result
 

@@ -84,3 +84,25 @@ The 10-problem smoke is a prefix of the fixed seed-0 sample of 200, not a new sa
 Sampling is temperature 0.7, top-p 0.95, maximum 768 new tokens, bf16, no quantization, and `enable_thinking=False`. Top-k is disabled explicitly and model-specific generation defaults are bypassed. No repetition penalty, retries of failed generations, or output cleanup changes the registered sampling. Engine concurrency is 256 sequences, submitted in chunks of 2,048 with CUDA graphs enabled; metrics distinguish engine generation time from setup/function elapsed time.
 
 See [analysis methods](docs/analysis-methods.md) for ceiling extraction, H1/H2 contrasts, regression failures, bootstrap pairing, and the descriptive-only smoke caveat. See [API references](docs/api-references.md) for the verified current APIs. `DESIGN.md` and both registered prompt files remain unchanged.
+
+### Phase 1c
+
+Pinned OLMo 3 Instruct/Think SFT → DPO → RLVR ladders use a separate ephemeral
+`grader-mode-phase1c` Modal app. `DESIGN.md` and `prompts/` remain authoritative.
+
+```sh
+uv run modal run -m src.modal_app_1c --stage preflight
+uv run python -m src.phase1c --stage smoke
+uv run python -m src.phase1c --stage calibration
+# Only launches when the measured smoke + calibration projection is <= $10:
+uv run python -m src.phase1c --stage full
+uv run pytest
+```
+
+Smoke uses three Phase 1 problems on each RLVR checkpoint. Calibration uses
+20 disjoint heldout problems per RLVR checkpoint and records each ladder's
+system-prompt decision in `results/phase1c/calibration.json`. Main results and
+gold>=10 sensitivity summaries go to `results/phase1c/`; smoke summaries go
+to `results/phase1c-smoke/`. Raw JSONL, prompts, and metrics remain gitignored
+under `results/raw/` and the Modal results Volume. Run IDs refuse overwrites;
+do not blindly rerun a generation stage after a partial failure.

@@ -124,6 +124,8 @@ def score_row(row: dict) -> dict:
         return row | score_response(row['response'], row['gold'])
     if not isinstance(row.get('thinking'), bool) or row.get('finish_reason') not in ('stop', 'length'):
         raise ValueError(f'{phase} requires boolean thinking and stop/length finish_reason')
+    if phase.startswith('phase1c'):
+        row = {'prose': row['cue'], **row}
     reasoning, final = split_thinking(row['response']) if row['thinking'] else ('', row['response'])
     return row | score_response(final, row['gold']) | {
         'reasoning': reasoning, 'final_reply': final,

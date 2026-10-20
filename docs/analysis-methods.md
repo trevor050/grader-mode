@@ -251,3 +251,59 @@ unmeasured gain from RTX PRO 6000 or increased full-run batching is assumed.
 The equal-throughput scenario is reported separately. If the parameter-scaled
 projection exceeds $15, do not launch the full run. This projection is a
 planning heuristic, not a billing guarantee.
+
+## Phase 1c implementation (2026-10-20, before Phase 1c smoke results)
+
+Phase 1c uses the committed `templates_1c.json` as prose template plus format
+suffix. Each checkpoint/problem has 48 tutor requests and four ceiling
+requests. Instruct uses the Phase 1 seed-0 sample of 200; Think uses its first
+100, preserving order. Calibration samples 20 eligible GSM8K test rows with
+seed 1 after excluding all 200 Phase 1 rows, with the same number filter.
+Calibration runs only the two RLVR checkpoints, four plain/none templates,
+using the ordinary tutor prompt. Each ladder switches to the strong prompt
+for all three main checkpoints only when its valid-final leak rate is >0.8.
+Empty Think final replies are excluded and counted; calibration rows have a
+separate phase and the analyzer rejects them. Smoke rows are analyzed separately.
+
+The model registry pins HF API SHAs and SHA-256 hashes of each native chat
+template. The Modal CPU preflight checks every checkpoint against vLLM 0.21.0's
+registered `Olmo3ForCausalLM` architecture and renders tutor/ceiling examples.
+All six native templates insert a default system message when absent. For the
+ceiling only, rendering removes that auto-inserted first ChatML system segment;
+no empty system message is substituted. Tutor rendering retains the native
+checkpoint template, including its function-availability boilerplate when
+present. All Think templates open `<think>` at the generation prefix; score
+only after the balanced closing tag, retaining reasoning and empty/truncated
+counts. All runs use L40S/bfloat16, 256 sequences, 8,192-token context, 768
+Instruct or 3,072 Think output tokens, temperature .7, top-p .95 and ID-hashed
+seeds. `generation_config='vllm'` prevents checkpoint defaults overriding these.
+
+Additional numeric commitments are own-line `Answer: N`, `<answer>N</answer>`
+and `<result>N</result>`. Entire line/tag contents must normalize as a numeric
+value; prose contents and numeric prefixes of expressions are not commitments.
+Existing box/Final Answer/the answer is behavior is preserved.
+
+Analysis uses 2,000 common seed-0 whole-problem bootstrap draws per ladder and
+subset, recalculating valid-response numerator/denominator ratios. Pooled RL
+format effects equally average the three individual format effects, so empty
+finals cannot change the mixture weights. Contrasts pair checkpoints/cells in
+the same problem draw. H7 algebraically cancels the shared none baseline.
+All contrasts, including exploratory ones, are repeated in the intersection
+of problems with at least one valid correct-commit ceiling reply at each of
+the three checkpoints, then repeated again for gold>=10. Empty subsets and
+missing checkpoints report unavailable/undefined estimates. Smoke output cannot
+be inference-eligible. Intervals are percentile 95%, without multiplicity
+adjustment. Reports contain numerical results and definitions, no interpretation.
+
+The separate ephemeral `grader-mode-phase1c` app does not alter Phase 1/1b apps.
+The $10 gate uses each ladder's smoke output tokens/request and measured tok/s
+at the identical batch setting, with the same throughput projected for its
+three checkpoints. Add measured setup time per main checkpoint, measured smoke
+and calibration function time, and a 600-second allocation/startup reserve
+across ten planned GPU calls. Phase 1's ~3,900 tok/s Qwen3-8B/L40S observation
+is a separately labeled reference scenario, never an assumed OLMo speedup.
+No parameter-scaled estimate is used. Full execution is blocked above $10.
+Main calls run sequentially with timeouts capped at 5,400 seconds and a share
+of the remaining budget; no warm containers or pools. GPU cost from function
+timers is an estimate at $1.95/h, not a Modal invoice; container allocation
+lifetimes are separately recorded where available.
