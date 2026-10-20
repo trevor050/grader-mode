@@ -11,6 +11,7 @@ no ceiling arm: **4,800 requests per model**. `--models all` selects 4B, 8B,
 
 ```sh
 uv run python -m src.run --phase phase1b --models 4B --limit-problems 5 --run-id phase1b-smoke --output-dir results/phase1b-smoke
+uv run python -m src.estimate --phase phase1b --metrics results/raw/phase1b-smoke/Qwen3-4B.metrics.json --output results/phase1b/budget-projection.json
 # Launch only after the smoke-based full-run projection is <= $15:
 uv run python -m src.run --phase phase1b --models all --limit-problems 200 --run-id phase1b-full --output-dir results/phase1b
 ```

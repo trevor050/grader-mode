@@ -242,3 +242,12 @@ the share conditional on nonempty reasoning too. This is a substring regex,
 without word boundaries or semantic classification. It does not affect scoring.
 The manual-audit CSV samples 100 eligible final replies per model with blank
 human labels. Automated runs do not claim completed manual agreement.
+
+The Phase 1b budget gate reuses `src.estimate`'s existing parameter-scaled
+planning heuristic, with the measured 4B smoke as its base and 4,800 requests
+per model. Scale generation time by request count and model size / 4B; add
+one measured setup time per model and apply configured GPU hourly rates. No
+unmeasured gain from RTX PRO 6000 or increased full-run batching is assumed.
+The equal-throughput scenario is reported separately. If the parameter-scaled
+projection exceeds $15, do not launch the full run. This projection is a
+planning heuristic, not a billing guarantee.
