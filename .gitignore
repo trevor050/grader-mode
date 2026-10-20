@@ -6,3 +6,7 @@ results/phase1b*/handcheck_*.csv
 
 # Phase 1c scorer-audit samples contain raw final replies.
 results/phase1c*/handcheck_*.csv
+
+# Phase 2 local controller state.
+results/phase2/run.lock
+results/phase2/progress.json
