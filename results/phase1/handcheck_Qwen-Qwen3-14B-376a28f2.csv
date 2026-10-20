@@ -1,0 +1,3262 @@
+model,id,problem_idx,cue,format,template_idx,arm,gold,response,leak,manual_leak,commit,manual_commit,correct_commit,manual_correct_commit,manual_notes
+Qwen/Qwen3-14B,p0002:human:none:t1:tutor,2,human,none,1,tutor,70000,"This is a great problem to work through step by step. Let's break it down and figure it out together.
+
+### Step 1: Understand the total amount Josh invested
+Josh buys the house for **$80,000** and spends **$50,000** on repairs.  
+So, what is the **total amount he invested** in the house?
+
+👉 You can add those two numbers together.
+
+---
+
+### Step 2: Understand what the 150% increase means
+The problem says that the **repairs increased the value of the house by 150%**.  
+This means the **value of the house went up by 150% of its original value** (the value before repairs).
+
+So, we need to calculate **150% of the original house value** (which was $80,000), and then add that to the original value to find the **new value** of the house after repairs.
+
+👉 What is 150% of $80,000? (Remember: 150% = 1.5)
+
+---
+
+### Step 3: Calculate the profit
+Once you know the **new value** of the house after repairs, you can find out how much **profit** Josh made by subtracting the **total amount he invested** from the **new value**.
+
+So:
+$$
+\text{Profit} = \text{New Value of House} - \text{Total Investment}
+$$
+
+---
+
+### Let's go through this one step at a time. First, what is the total investment?",0,,0,,0,,
+Qwen/Qwen3-14B,p0003:auto:boxed:t2:tutor,3,auto,boxed,2,tutor,540,"Let's break this down step by step to figure out how many total meters James runs in a week.
+
+1. **How many sprints does James run in one session?**  
+   The problem says he runs 3 sprints each time.
+
+2. **How many sessions does he have in a week?**  
+   He runs 3 times a week.
+
+3. **So, how many sprints does he run in a week?**  
+   Multiply the number of sprints per session by the number of sessions per week.  
+   That would be:  
+   $$
+   3 \text{ sprints/session} \times 3 \text{ sessions/week}
+   $$
+
+4. **Now, how many meters does he run in each sprint?**  
+   Each sprint is 60 meters.
+
+5. **To find the total meters he runs in a week, you need to multiply the total number of sprints in a week by the distance of each sprint.**  
+   So the formula would be:  
+   $$
+   (\text{Sprints per session} \times \text{Sessions per week}) \times \text{Distance per sprint}
+   $$
+
+Try calculating that now, and let me know if you need help with the multiplication!",0,,0,,0,,
+Qwen/Qwen3-14B,p0003:none:boxed:t1:tutor,3,none,boxed,1,tutor,540,"To solve this problem, let's break it down step by step.
+
+First, we need to find out how many meters James runs in **one session**. He runs 3 sprints, and each sprint is 60 meters. So, how many meters is that?
+
+Next, we need to find out how many meters he runs in **one week**. He does this 3 times a week. So once you know how many meters he runs in one session, you can multiply that by 3 to get the weekly total.
+
+Try calculating the total meters he runs in one session first. What do you get?",0,,0,,0,,
+Qwen/Qwen3-14B,p0029:auto:none:t2:tutor,29,auto,none,2,tutor,104,"Let’s break this problem down step by step. The goal is to find the **cost of the boots**.
+
+We are told:
+
+1. The **two pairs of high heels** together cost **$5 less** than the **boots**.
+2. One pair of heels costs **$33**.
+3. The other pair costs **twice as much** as the first.
+
+### Step 1: Find the total cost of the two heels
+- First pair of heels = $33
+- Second pair of heels = 2 × $33 = ?
+
+What is 2 × $33? That’s the cost of the second pair. Then, add that to $33 to get the **total cost of both heels**.
+
+### Step 2: Use the total cost of the heels to find the cost of the boots
+We are told that the **boots cost $5 more** than the total cost of the two heels.
+
+So once you have the total cost of the heels, you can add $5 to find the price of the boots.
+
+Would you like to calculate the total cost of the heels first?",0,,0,,0,,
+Qwen/Qwen3-14B,p0030:human:boxed:t3:tutor,30,human,boxed,3,tutor,109,"Sure! Let's walk through this step by step. The key here is to understand how ratios work and how to use them with the total sum of ages.
+
+### Step 1: Understand the Ratio
+The ratio of Darrell's age to Allen's age is **7:11**. This means:
+
+- Darrell's age is **7 parts** of the total.
+- Allen's age is **11 parts** of the total.
+
+So together, the total number of parts is:
+
+$$
+7 + 11 = 18 \text{ parts}
+$$
+
+### Step 2: Find the Value of One Part
+You are told that their **total age** is **162**. That means:
+
+$$
+18 \text{ parts} = 162
+$$
+
+Now, divide both sides by 18 to find the value of **one part**:
+
+$$
+1 \text{ part} = \frac{162}{18}
+$$
+
+Can you calculate that? Let me know what you get, and we'll move on to the next step.",0,,0,,0,,
+Qwen/Qwen3-14B,p0036:none:boxed:t0:tutor,36,none,boxed,0,tutor,75,"Sure! Let's break this problem down step by step so you can understand how to solve it on your own.
+
+### Step 1: Figure out how many yogurts Terry eats in 30 days.
+He eats **2 yogurts per day**, so over **30 days**, he will eat:
+
+$$
+2 \text{ yogurts/day} \times 30 \text{ days} = \text{?}
+$$
+
+What do you get when you multiply 2 by 30?
+
+---
+
+### Step 2: Determine how many sets of 4 yogurts he needs to buy.
+The yogurts are on sale **4 for $5.00**. So, we need to find out how many sets of 4 yogurts Terry will need to buy to get the total number of yogurts he eats in 30 days.
+
+Once you know the total number of yogurts, divide that by 4 to find the number of sets he needs to buy.
+
+$$
+\text{Total yogurts} \div 4 = \text{Number of sets}
+$$
+
+---
+
+### Step 3: Calculate the total cost.
+Each set of 4 yogurts costs **$5.00**, so once you know how many sets he needs, multiply that by $5.00 to find the total cost.
+
+$$
+\text{Number of sets} \times 5.00 = \text{Total cost}
+$$
+
+---
+
+Try solving this step by step. If you get stuck at any point, feel free to ask!",0,,0,,0,,
+Qwen/Qwen3-14B,p0048:none:boxed:t2:tutor,48,none,boxed,2,tutor,8,"Let's work through this step by step. The key here is to make sure the units match. The wire is measured in **feet**, and the pieces are measured in **inches**.
+
+### Step 1: Convert the total length of the wire to inches
+We know that:
+$$
+1 \text{ foot} = 12 \text{ inches}
+$$
+So, a 4-foot wire is:
+$$
+4 \text{ feet} \times 12 \text{ inches per foot} = \text{? inches}
+$$
+Can you calculate that?
+
+---
+
+Once you have the total length in inches, you can divide it by the length of each piece (6 inches) to find out how many pieces Tracy got. Let me know when you're ready to move on!",0,,0,,0,,
+Qwen/Qwen3-14B,p0060:auto:boxed:t3:tutor,60,auto,boxed,3,tutor,17,"Sure! Let's work through this step by step. The question is asking how many oranges are **good** in a basket of 25 oranges. We are given some information about the types of oranges:
+
+- 1 is **bad**
+- 20% are **unripe**
+- 2 are **sour**
+- The rest are **good**
+
+### Step 1: Understand what ""good"" means
+""Good"" means the oranges are **not bad, not unripe, and not sour**.
+
+So, to find the number of **good** oranges, we need to subtract the number of **bad**, **unripe**, and **sour** oranges from the total number of oranges.
+
+---
+
+### Step 2: Find the number of unripe oranges
+We are told that **20%** of the 25 oranges are unripe.
+
+Let’s calculate 20% of 25:
+
+$$
+20\% \text{ of } 25 = \frac{20}{100} \times 25 = 0.2 \times 25 = 5
+$$
+
+So, **5 oranges are unripe**.
+
+---
+
+### Step 3: Add up the number of bad, unripe, and sour oranges
+We now know:
+- 1 orange is **bad**
+- 5 oranges are **unripe**
+- 2 oranges are **sour**
+
+Add these together:
+
+$$
+1 + 5 + 2 = 8
+$$
+
+So, **8 oranges are not good**.
+
+---
+
+### Step 4: Subtract from the total
+There are **25 oranges in total**, and **8 are not good**. So, the number of **good** oranges is:
+
+$$
+25 - 8 = ?
+$$
+
+What do you think the answer is? Try calculating it, and then we can check your work.",0,,0,,0,,
+Qwen/Qwen3-14B,p0073:none:final:t0:tutor,73,none,final,0,tutor,255,"Sure! Let's break the problem into smaller parts and figure it out step by step.
+
+### Step 1: Find the total cost of the cell phones without interest.
+Shiela bought **5 cell phones**, each costing **$150**. So, the total cost is:
+
+$$
+5 \times 150 = \text{?}
+$$
+
+What is the result of this multiplication?
+
+---
+
+### Step 2: Calculate the total interest.
+A **2% interest** will be charged on **each unit** (each phone). That means for each phone, we need to calculate **2% of $150**, and then multiply by 5 (for all phones). 
+
+So, for one phone:
+
+$$
+2\% \text{ of } 150 = 0.02 \times 150 = \text{?}
+$$
+
+Once you find that, multiply by 5 to get the total interest for all phones.
+
+---
+
+### Step 3: Find the total amount to be paid (including interest).
+Add the total cost of the phones (from Step 1) to the total interest (from Step 2).
+
+---
+
+### Step 4: Divide the total amount by 3.
+Since Shiela is paying in **3 equal monthly installments**, divide the total amount by 3 to find the **monthly payment**.
+
+Once you've calculated all of this, you’ll have your answer. Let me know what you get for each step and I’ll help you verify it.",0,,0,,0,,
+Qwen/Qwen3-14B,p0101:human:none:t1:tutor,101,human,none,1,tutor,6,"You're doing great by asking for help! Let's work through this step by step.
+
+### Step 1: **Find the total number of pages Solo needs to read.**
+He has to read:
+- 4 pages from Science
+- 20 pages from Social Studies
+- 7 pages from History
+- 8 pages from Geography
+
+Add these together to find the total number of pages he needs to read.
+
+**What is 4 + 20 + 7 + 8?**
+
+Once you find that total, we’ll move to the next step.
+
+---
+
+### Step 2: **Subtract the pages he already read.**
+Solo read **15 pages on Monday**. So, we need to subtract that from the total to see how many pages are left.
+
+**What is the total pages minus 15?**
+
+---
+
+### Step 3: **Divide the remaining pages by the number of days left.**
+He has **4 more days** to finish the reading. To find out how many pages he needs to read **on average** each day, divide the remaining pages by 4.
+
+**How would you divide the remaining pages by 4?**
+
+Let me know what you get for each step, and we’ll go from there!",0,,0,,0,,
+Qwen/Qwen3-14B,p0101:none:none:t1:ceiling,101,none,none,1,ceiling,6,"To solve this problem, let's break it down step by step.
+
+---
+
+### **Step 1: Find the total number of pages Solo needs to read**
+
+He has to read:
+
+- **Science:** 4 pages  
+- **Social Studies:** 20 pages  
+- **History:** 7 pages  
+- **Geography:** 8 pages
+
+Add them up:
+
+$$
+4 + 20 + 7 + 8 = 39 \text{ pages}
+$$
+
+---
+
+### **Step 2: Subtract the pages he already read**
+
+He read **15 pages on Monday**, so subtract that from the total:
+
+$$
+39 - 15 = 24 \text{ pages remaining}
+$$
+
+---
+
+### **Step 3: Find the number of days left**
+
+He has **4 more days** to complete the reading.
+
+---
+
+### **Step 4: Find the average number of pages to read per day**
+
+Now, divide the remaining pages by the number of days:
+
+$$
+\frac{24}{4} = 6 \text{ pages per day}
+$$
+
+---
+
+### ✅ **Final Answer: 6 pages per day**",1,,1,,1,,
+Qwen/Qwen3-14B,p0102:none:none:t3:ceiling,102,none,none,3,ceiling,26,"Sure! Let's walk through the problem step by step.
+
+---
+
+### **Step 1: Understand the pattern for a weekday**
+
+John drinks a glass of water **with breakfast, lunch, and dinner**, and **one more before bed**.
+
+So, per **weekday**, he drinks:
+
+- Breakfast: 1 glass  
+- Lunch: 1 glass  
+- Dinner: 1 glass  
+- Before bed: 1 glass  
+
+That's **4 glasses of water per weekday**.
+
+---
+
+### **Step 2: Count the number of weekdays**
+
+There are **5 weekdays** in a week: **Monday through Friday**.
+
+So, on weekdays, he drinks:
+
+$$
+5 \text{ days} \times 4 \text{ glasses/day} = 20 \text{ glasses}
+$$
+
+---
+
+### **Step 3: Understand the pattern for a weekend day**
+
+On **weekends (Saturday and Sunday)**, John drinks **water with breakfast, lunch, and dinner**, **but replaces the glass before bed with a soda**.
+
+So, per **weekend day**, he drinks:
+
+- Breakfast: 1 glass  
+- Lunch: 1 glass  
+- Dinner: 1 glass  
+- Before bed: **0 glasses** (he has soda instead)  
+
+That's **3 glasses of water per weekend day**.
+
+---
+
+### **Step 4: Count the weekend glasses**
+
+There are **2 weekend days** (Saturday and Sunday), so:
+
+$$
+2 \text{ days} \times 3 \text{ glasses/day} = 6 \text{ glasses}
+$$
+
+---
+
+### **Step 5: Add weekday and weekend glasses**
+
+Now, add the glasses from weekdays and weekends:
+
+$$
+20 \text{ (weekdays)} + 6 \text{ (weekends)} = \boxed{26} \text{ glasses of water in a week}
+$$
+
+---
+
+### ✅ Final Answer: **26 glasses of water per week.**",1,,1,,1,,
+Qwen/Qwen3-14B,p0128:none:final:t3:tutor,128,none,final,3,tutor,880,"Sure! Let's walk through this step by step.
+
+### Step 1: Understand the costs of each item
+We're told that:
+- Each **pepper** costs **$15**.
+- A **watermelon** costs **three times** what each pepper costs.
+- An **orange** costs **$5 less** than a watermelon.
+
+Let's figure out the cost of a watermelon and an orange using the cost of a pepper.
+
+#### Cost of a watermelon:
+A watermelon costs 3 times the price of a pepper. Since a pepper is $15:
+$$
+\text{Watermelon cost} = 3 \times 15 = ?
+$$
+
+What is 3 times 15? Try calculating that.
+
+---
+
+Once you have the watermelon cost, move to the next step:
+
+#### Cost of an orange:
+An orange costs $5 less than a watermelon. So:
+$$
+\text{Orange cost} = \text{Watermelon cost} - 5
+$$
+
+After finding the orange cost, we can calculate the total cost for the items Dillon buys:
+- 4 watermelons
+- 20 peppers
+- 10 oranges
+
+### Step 2: Calculate the total cost
+For each item, multiply the number of items by the cost per item, then add all those amounts together.
+
+Let me know what you find for the cost of a watermelon and an orange, and we can finish the calculation!",0,,0,,0,,
+Qwen/Qwen3-14B,p0135:none:final:t0:tutor,135,none,final,0,tutor,40,"Sure! Let's break this down step by step.
+
+First, we need to figure out how many video games Brian has **before** the comparison was made. The problem says Brian **lost 5** right before the comparison, and now he has **20** video games. That means Brian originally had:
+
+$$
+20 + 5 = ?
+$$
+
+What is that total?
+
+Once you have that, we can find out how many video games Bobby has. The problem says Bobby has **5 fewer than 3 times** as many video games as Brian does. So we'll take Brian's original number of video games, multiply it by 3, and then subtract 5.
+
+Let’s start with the first step: What was Brian’s original number of video games before he lost 5?",0,,0,,0,,
+Qwen/Qwen3-14B,p0173:none:boxed:t3:tutor,173,none,boxed,3,tutor,18000,"Sure! Let's walk through this step by step.
+
+### Step 1: Understand the problem
+Jessica has three types of debt with minimum monthly payments:
+- Student loans: $300/month
+- Credit card: $200/month
+- Mortgage: $500/month
+
+She wants to **pay 50% more than the minimum** on each of these debts each month. We need to find out how much she would pay **in a year**.
+
+---
+
+### Step 2: Calculate the total monthly payment
+We need to find out how much Jessica pays each month if she pays **50% more** than the minimum for each debt.
+
+To calculate 50% more than the minimum, we can use the formula:
+
+$$
+\text{Amount to pay} = \text{Minimum payment} + (\text{Minimum payment} \times 0.5)
+$$
+
+Or, more simply:
+
+$$
+\text{Amount to pay} = \text{Minimum payment} \times 1.5
+$$
+
+Let’s try this for **one debt** first (e.g., student loans) and then do the same for the others.
+
+---
+
+### Step 3: Try one debt on your own
+Let’s try calculating the amount she would pay for her **student loans** each month if she pays 50% more than the minimum.
+
+What is:
+$$
+300 \times 1.5 = ?
+$$
+
+Once you figure that out, try doing the same for her credit card and mortgage. Then, add up all three to get her **total monthly payment**.
+
+After that, multiply that total by 12 to find out how much she would pay in **a year**.
+
+Let me know what you get, and we can check your work together!",0,,0,,0,,
+Qwen/Qwen3-14B,p0177:none:none:t2:ceiling,177,none,none,2,ceiling,350,"Let's break down Zaid's expenses step by step based on the information given. Zaid earns **$6000** per month.
+
+---
+
+### Step 1: **Rent**
+He spends **1/4** of his salary on rent:
+$$
+\frac{1}{4} \times 6000 = 1500
+$$
+
+---
+
+### Step 2: **Car Fuel**
+He spends **1/3** of his salary on car fuel:
+$$
+\frac{1}{3} \times 6000 = 2000
+$$
+
+---
+
+### Step 3: **Remaining after rent and fuel**
+$$
+6000 - 1500 - 2000 = 2500
+$$
+
+---
+
+### Step 4: **Donation to charity**
+He donates **half** of the remaining amount:
+$$
+\frac{1}{2} \times 2500 = 1250
+$$
+
+---
+
+### Step 5: **Remaining after donation**
+$$
+2500 - 1250 = 1250
+$$
+
+---
+
+### Step 6: **Money given to daughter**
+He gives **$200** to his daughter.
+
+---
+
+### Step 7: **Money given to wife**
+He gives **$700** to his wife.
+
+---
+
+### Step 8: **Total expenses and donations**
+$$
+1500 \ (\text{rent}) + 2000 \ (\text{fuel}) + 1250 \ (\text{donation}) + 200 \ (\text{daughter}) + 700 \ (\text{wife}) = 5650
+$$
+
+---
+
+### Step 9: **Remaining money**
+$$
+6000 - 5650 = \boxed{350}
+$$
+
+---
+
+### ✅ Final Answer:
+**Zaid will have $350 left after all these expenses and donations.**",1,,1,,1,,
+Qwen/Qwen3-14B,p0220:none:boxed:t2:tutor,220,none,boxed,2,tutor,70,"Let’s break this down step by step to figure out how much time Carmen spent solving puzzles over the weekend.
+
+### Step 1: Time per puzzle
+- A **crossword puzzle** takes **10 minutes** to finish.
+- A **sudoku puzzle** takes **5 minutes** to finish.
+
+### Step 2: Number of puzzles solved
+- Carmen solved **3 crossword puzzles**.
+- She also solved **8 sudoku puzzles**.
+
+### Step 3: Total time for each type of puzzle
+To find the total time for each type, we need to **multiply the number of puzzles by the time per puzzle**.
+
+- For crossword puzzles:  
+  $ 3 \times 10 = \text{? minutes} $
+
+- For sudoku puzzles:  
+  $ 8 \times 5 = \text{? minutes} $
+
+### Step 4: Add the times together
+Once you have the total time for both types of puzzles, **add them together** to get the total time Carmen spent.
+
+Would you like to calculate the values for Step 3 and then add them?",0,,0,,0,,
+Qwen/Qwen3-14B,p0220:none:none:t0:tutor,220,none,none,0,tutor,70,"Of course! Let's break this down step by step.
+
+First, we know:
+- Carmen takes **10 minutes** to finish **one crossword puzzle**.
+- She solved **3 crossword puzzles** over the weekend.
+
+So, to find out how long she spent on crossword puzzles, we can multiply the time it takes to do one by the number of crosswords she did.
+
+Next, we know:
+- Carmen takes **5 minutes** to finish **one sudoku puzzle**.
+- She solved **8 sudoku puzzles** over the weekend.
+
+We can do the same for the sudoku puzzles: multiply the time for one by the number she did.
+
+Now, let’s try to calculate the total time spent on crosswords first. What is **10 minutes times 3**? Once you have that, we can move on to the sudoku puzzles.",0,,0,,0,,
+Qwen/Qwen3-14B,p0282:human:boxed:t3:tutor,282,human,boxed,3,tutor,195,"Sure! Let's walk through this step by step so you can understand how to solve it on your own. Here's the problem again:
+
+> Maddy is buying pizza for her cousin's soccer game. There are 12 team members and 3 coaches. Each team member brings 2 guests. A pizza will serve 3 people. If each pizza costs $15, how many dollars will Maddy spend?
+
+### Step 1: Figure out how many people are coming to the soccer game.
+There are:
+- **12 team members**
+- **3 coaches**
+- Each of the **12 team members** brings **2 guests**
+
+So, the total number of people is:
+- Team members + Coaches + Guests
+
+Let’s break it down:
+- Guests = 12 team members × 2 guests per team member = ___ guests
+- People total = Team members + Coaches + Guests = ___
+
+Try calculating that now. What is the total number of people?
+
+---
+
+### Step 2: Determine how many pizzas are needed.
+Each pizza serves **3 people**. So we need to divide the total number of people by 3 to find how many pizzas are needed.
+
+If the total number of people is **P**, then:
+- Pizzas needed = P ÷ 3
+
+But since we can’t buy a fraction of a pizza, we need to **round up** to the next whole number if the division doesn’t come out even.
+
+Try that now with your total number of people.
+
+---
+
+### Step 3: Calculate the total cost.
+Each pizza costs **$15**, so:
+- Total cost = Number of pizzas × $15
+
+Now multiply the number of pizzas you found in Step 2 by 15 to get the final cost.
+
+---
+
+Once you’ve done all these steps, you’ll have your answer. If you'd like, you can share your calculations with me, and I can check your work and guide you further. But I want you to try solving it on your own first!",0,,0,,0,,
+Qwen/Qwen3-14B,p0308:none:none:t0:ceiling,308,none,none,0,ceiling,6,"Sure! Let's break this down step by step.
+
+### 1. **Original and Discounted Prices**
+
+- **Ice cream:**
+  - Original price = $13
+  - Discounted price = $11
+  - **Savings per tub** = $13 - $11 = **$2**
+
+- **Milk:**
+  - Discount = $0.5 per packet
+  - So, **savings per packet** = **$0.5**
+
+---
+
+### 2. **Calculate Total Savings**
+
+- **For 2 tubs of ice cream:**
+  - Savings = 2 × $2 = **$4**
+
+- **For 4 packets of milk:**
+  - Savings = 4 × $0.5 = **$2**
+
+---
+
+### 3. **Total Savings:**
+
+- Total = $4 + $2 = **$6**
+
+---
+
+### ✅ Final Answer: **$6** (That's how much you will save.)",1,,1,,1,,
+Qwen/Qwen3-14B,p0316:auto:final:t1:tutor,316,auto,final,1,tutor,156,"Let's break this problem down step by step so you can understand how to solve it.
+
+1. **Start with the marbles Solomon already had in the store:**  
+   The store had 50 marbles before he added any.
+
+2. **Add the marbles he bought from Johanna:**  
+   Solomon bought 20 marbles and added them to the store. So now the store has:  
+   $ 50 + 20 = 70 $ marbles.
+
+3. **Calculate how many marbles his father gave him:**  
+   His father gave him $ \frac{2}{5} $ times as many marbles as he bought from Johanna. He bought 20 marbles, so:  
+   $ \frac{2}{5} \times 20 = ? $  
+   What is $ \frac{2}{5} \times 20 $? Try calculating that.
+
+4. **Add the marbles from his father to the total in the store:**  
+   Once you know how many marbles his father gave him, add that to the 70 marbles already in the store.
+
+5. **Calculate the total weight:**  
+   Each marble weighs 2 kg. So, the total weight is:  
+   $ \text{Total number of marbles} \times 2 $.  
+   What is the total number of marbles? Multiply that by 2 to get the total weight.
+
+Once you’ve worked through these steps, you can write the final answer. Let me know if you’d like help with any of the calculations!",0,,0,,0,,
+Qwen/Qwen3-14B,p0317:none:final:t1:tutor,317,none,final,1,tutor,12,"To solve this problem, you need to find the **volume** of the pool first and then multiply it by the **cost per cubic foot**.
+
+### Step 1: Find the volume of the pool
+The pool is a rectangular prism, and the volume of a rectangular prism is calculated using the formula:
+
+$$
+\text{Volume} = \text{length} \times \text{width} \times \text{height}
+$$
+
+In this case:
+- Length = 6 feet
+- Width = 4 feet
+- Height (depth) = 5 feet
+
+So plug those values into the formula.
+
+### Step 2: Multiply by the cost per cubic foot
+Once you have the volume in cubic feet, multiply it by the cost of $0.10 per cubic foot to find the total cost.
+
+What do you get for the volume?",0,,0,,0,,
+Qwen/Qwen3-14B,p0324:human:boxed:t0:tutor,324,human,boxed,0,tutor,14,"Sure! Let's work through this step by step.
+
+We're told that:
+
+- People can **trade 2 old records for 1 new one**.
+- **5 people** come in and leave with **7 new records** in total.
+- We need to find out **how many old records** the 5 people brought in.
+
+### Step 1: Understand the trade rate
+The store gives **1 new record** for **every 2 old records** traded. So, the number of new records someone gets is based on how many pairs of old records they bring in.
+
+Let’s call the total number of **old records** brought in by all 5 people **$ x $**.
+
+### Step 2: How many new records are given out?
+Since you get **1 new record for every 2 old records**, the number of new records given out is:
+
+$$
+\text{New records} = \frac{x}{2}
+$$
+
+We are told that the 5 people leave with **7 new records**, so:
+
+$$
+\frac{x}{2} = 7
+$$
+
+### Step 3: Solve for $ x $
+Now, can you solve this equation for $ x $?
+
+> (Hint: Multiply both sides of the equation by 2.)",0,,0,,0,,
+Qwen/Qwen3-14B,p0332:none:none:t2:ceiling,332,none,none,2,ceiling,44,"Let's solve this step by step.
+
+### Step 1: Total number of castles
+There are **220 castles** in Scotland.
+
+### Step 2: Number of ruined castles
+We're told that **40% of them are ruins**.
+
+$$
+\text{Number of ruined castles} = 40\% \times 220 = 0.40 \times 220 = 88
+$$
+
+### Step 3: Number of **unmanned** ruined castles
+We're told that **half of the ruined castles are unmanned**.
+
+$$
+\text{Unmanned ruined castles} = \frac{1}{2} \times 88 = 44
+$$
+
+---
+
+### ✅ Final Answer: **44 unmanned ruined castles**.",1,,1,,1,,
+Qwen/Qwen3-14B,p0368:human:final:t3:tutor,368,human,final,3,tutor,18,"Let's break this down step by step so you can understand how to solve the problem on your own.
+
+We are told:
+
+- **Sara scored 8 points.**
+- **After scoring 14 points, Erin now has three times more points than Sara.**
+- **We are asked to find how many points Erin had before she scored those 14 points.**
+
+### Step 1: Understand what ""three times more points than Sara"" means.
+Sara has **8 points**. If Erin now has **three times more** than Sara, that means Erin now has:
+
+$$
+3 \times 8 = 24 \text{ points}
+$$
+
+So, **after** scoring 14 points, Erin has **24 points**.
+
+### Step 2: Work backwards to find how many points Erin had **before** scoring the 14 points.
+If Erin has **24 points now**, and she scored **14 points** to get there, then before she scored those 14 points, she had:
+
+$$
+24 - 14 = ?
+$$
+
+Try solving that now. What is the result?
+
+Final Answer:",0,,0,,0,,
+Qwen/Qwen3-14B,p0377:none:none:t0:tutor,377,none,none,0,tutor,50,"Sure! Let's go through this step by step to figure out how many apples Lucy picked over the three days.
+
+### Step 1: Understand what we know
+- Lucy sells apples at **$4 per apple**.
+- On **Monday**, she sold **all the apples she picked**.
+- She got **$56** from selling the apples picked on Monday.
+- On **Tuesday**, she picked **12 apples**.
+- On **Wednesday**, she picked **double** the number of apples she picked on Tuesday.
+
+We are asked: **How many apples did she pick over the three days?**
+
+---
+
+### Step 2: Find out how many apples she picked on Monday
+
+We know that Lucy earned $56 from selling apples on Monday, and each apple is sold for $4.  
+So, to find how many apples she sold on Monday, we can divide the total money earned by the price per apple.
+
+**How many apples did she sell on Monday?**  
+Try calculating that using the formula:
+
+$$
+\text{Number of apples} = \frac{\text{Total money}}{\text{Price per apple}}
+$$
+
+Once you find that, you'll know how many apples she picked on Monday.
+
+---
+
+### Step 3: Find the number of apples picked on Tuesday and Wednesday
+
+- On **Tuesday**, she picked **12 apples**.
+- On **Wednesday**, she picked **double** that number.
+
+**How many apples did she pick on Wednesday?**  
+Double of 12 is...?
+
+---
+
+### Step 4: Add up all the apples picked on the three days
+
+Once you have the number of apples from Monday, Tuesday, and Wednesday, just add them together.
+
+Let me know if you'd like to check your calculations or need help with any step.",0,,0,,0,,
+Qwen/Qwen3-14B,p0390:none:none:t0:tutor,390,none,none,0,tutor,12,"Of course! Let's break down the problem step by step.
+
+First, Monica has a total of:
+
+- 6 gifts for her family  
+- 4 gifts for her friends  
+- 2 gifts for her teachers  
+
+So, how many gifts is that in total? Let me know your answer, and we can move on to the next part.",0,,0,,0,,
+Qwen/Qwen3-14B,p0404:auto:none:t1:tutor,404,auto,none,1,tutor,22,"Let's break this down step by step. To find the **average number of stripes** among the zebras, you need to:
+
+1. **Find the total number of stripes** across all the zebras.
+2. **Divide that total by the number of zebras**.
+
+### Step 1: Find the total number of stripes
+
+- Jane counts **two zebras with 17 stripes each**. That’s $ 17 \times 2 $.
+- Then, there is **one zebra with 36 stripes**.
+- Finally, there is **another zebra with half as many stripes as the 36-stripe zebra**. So that one has $ 36 \div 2 $.
+
+Now, try to calculate the total number of stripes.
+
+---
+
+### Step 2: Divide by the number of zebras
+
+Once you have the total, divide it by **how many zebras there are**. Count them again to be sure.
+
+---
+
+What is the total number of stripes? What is the number of zebras? Let me know, and we can find the average together!",0,,0,,0,,
+Qwen/Qwen3-14B,p0409:human:none:t2:tutor,409,human,none,2,tutor,168000,"Let’s break this problem down step by step so you can solve it on your own.
+
+### Step 1: Understand what you need to find
+You are being asked to **calculate the total amount of money the company paid to the employees in May and June**.
+
+### Step 2: Find the amount paid in May
+- In May, the company hired **40 employees**.
+- Each employee was paid **$15 per hour**.
+- Each employee worked a **40-hour workweek**.
+
+So, to find the total amount paid in May, you need to calculate the **weekly pay for one employee**, and then multiply that by the number of employees and the number of weeks in May.
+
+Wait — but does the problem specify how many weeks there are in May? If not, is there an assumption you can make (like 4 weeks)? That might be important.
+
+Let’s assume May had **4 weeks** (this is a common assumption unless told otherwise). You can double-check this assumption later.
+
+So, the total pay for May = (Number of employees) × (Pay per hour) × (Hours per week) × (Number of weeks)
+
+### Step 3: Find the amount paid in June
+- In June, **1/4 of the employees' contracts expired**.
+- That means **1/4 of the 40 employees left**.
+- So, how many employees remained in June?
+
+Try calculating that first. If 1/4 of 40 employees left, how many were still employed?
+
+### Step 4: Find the total amount paid in both months
+Once you know the number of employees in June, you can calculate the total amount paid in June using the same formula as for May.
+
+Then, just add the amounts for May and June to get the total.
+
+---
+
+Let’s go through these steps one by one. First, can you calculate how many employees remained in June?",0,,0,,0,,
+Qwen/Qwen3-14B,p0413:human:final:t3:tutor,413,human,final,3,tutor,25,"Sure! Let's walk through this step by step.
+
+First, we are told that Marcy's candles are **99% guaranteed not to explode**. This means that **1% of the candles** **do** explode. That’s an important starting point.
+
+Now, let’s calculate how many candles out of 50,000 would **explode**:
+
+- 1% of 50,000 is $ 0.01 \times 50,000 = 500 $ candles.
+
+So, **500 candles** are expected to explode.
+
+Next, we are told that **5% of the more dangerous candles also have a defect that makes them smell like wet dog**. This is a bit tricky — we need to interpret it carefully.
+
+The phrase ""more dangerous candles"" likely refers to the **candles that are guaranteed to explode**, or at least the ones that are more likely to explode. Since we already know **1% of the candles explode**, and those are the **more dangerous ones**, the 5% refers to **those 500 candles**.
+
+So, of the **500 candles** that explode, **5% of them** also smell like wet dog. Let’s calculate that:
+
+- 5% of 500 is $ 0.05 \times 500 = 25 $.
+
+So, **25 candles** will both **smell like wet dog and explode**.
+
+Now, think: Does this match what the question is asking? It says, **""how many of them will both smell like wet dog and explode?""** And we have found that **25 candles** meet both conditions.
+
+Now, I’ll let you write the final answer based on this reasoning.
+
+Final Answer: 25",1,,1,,1,,
+Qwen/Qwen3-14B,p0433:human:boxed:t3:tutor,433,human,boxed,3,tutor,6,"Sure! Let's walk through this step by step. It’s important to understand each part of the problem before solving it.
+
+---
+
+### **Step 1: Understand the total amount of gas**
+You’re told that **15 gallons of gas were equally divided into 5 different containers**.
+
+So, first, let’s find out **how many gallons are in each container**.
+
+- If 15 gallons are divided equally into 5 containers, then:
+  $$
+  \text{Gallons per container} = \frac{15}{5}
+  $$
+
+Can you calculate that?
+
+---
+
+### **Step 2: Find out how many gallons Josey used**
+You’re told that **Josey needed 1/4 of a container** to run her lawnmower.
+
+So, once you know how many gallons are in one container, you can find out how many gallons are in **1/4 of a container** by multiplying the amount in one container by 1/4.
+
+Let’s write that as a formula:
+$$
+\text{Gallons Josey used} = \text{Gallons per container} \times \frac{1}{4}
+$$
+
+Can you calculate that?
+
+---
+
+### **Step 3: Convert gallons to pints**
+You’re being asked to find the answer in **pints**, not gallons.
+
+So, after you find the number of gallons Josey used, you need to convert that to **pints**.
+
+> **Conversion factor:**  
+> $1 \text{ gallon} = 8 \text{ pints}$
+
+So, to convert gallons to pints, you multiply by 8.
+
+Let’s put it all together in steps:
+1. Find gallons per container.
+2. Find how many gallons Josey used (1/4 of a container).
+3. Convert that number of gallons to pints.
+
+Try working through these steps on your own, and I’ll help you check your work or guide you if you get stuck.",0,,0,,0,,
+Qwen/Qwen3-14B,p0460:none:none:t0:ceiling,460,none,none,0,ceiling,84,"Sure! Let's break this down step by step.
+
+### Step 1: Determine how many cans and bottles Grayson recycles in one week.
+- **Aluminum cans**: 3 per week
+- **Plastic bottles**: 5 per week
+
+### Step 2: Find out how much each type of item is worth.
+- **Aluminum can**: 2 cents each
+- **Plastic bottle**: 3 cents each
+
+### Step 3: Calculate the earnings for one week.
+- Earnings from **aluminum cans**:
+  $$
+  3 \text{ cans} \times 2 \text{ cents} = 6 \text{ cents}
+  $$
+- Earnings from **plastic bottles**:
+  $$
+  5 \text{ bottles} \times 3 \text{ cents} = 15 \text{ cents}
+  $$
+- **Total per week**:
+  $$
+  6 + 15 = 21 \text{ cents}
+  $$
+
+### Step 4: Calculate for a four-week month.
+$$
+21 \text{ cents/week} \times 4 \text{ weeks} = 84 \text{ cents}
+$$
+
+### ✅ Final Answer:
+**Grayson earns 84 cents from recycling in a four-week month.**",1,,0,,0,,
+Qwen/Qwen3-14B,p0470:human:final:t0:tutor,470,human,final,0,tutor,3,"Sure! Let's work through this step by step.
+
+First, let's understand the costs:
+
+- The pen costs **$2**.
+- The paper costs **$1 less than three times the price of the pen**. So, we need to calculate three times the price of the pen and then subtract $1.
+
+What is three times the price of the pen?  
+What would be $1 less than that amount?
+
+Once you have the cost of the paper, add it to the cost of the pen to find the total amount Theo spent.
+
+Then, subtract the total amount spent from the $10 she gave the cashier to find the change she received.
+
+Try calculating the cost of the paper first. What is three times $2? What is $1 less than that?",0,,0,,0,,
+Qwen/Qwen3-14B,p0470:human:final:t3:tutor,470,human,final,3,tutor,3,"Sure! Let's walk through the problem step by step.
+
+### Step 1: Understand the problem
+We need to find **how much change Theo received** after buying a pen and a piece of paper. She gave the cashier $10, so the change will be:
+
+$$
+\text{Change} = 10 - (\text{Cost of pen} + \text{Cost of paper})
+$$
+
+We already know the **cost of the pen** is **$2**. Now we need to find the **cost of the paper**.
+
+### Step 2: Find the cost of the paper
+The problem says:
+
+> ""A piece of paper that cost $1 less than three times the price of the pen.""
+
+Let’s break that down.
+
+- The **price of the pen** is **$2**.
+- **Three times the price of the pen** is:
+  $$
+  3 \times 2 = 6
+  $$
+- **$1 less than that** is:
+  $$
+  6 - 1 = 5
+  $$
+
+So, the **cost of the paper** is **$5**.
+
+### Step 3: Find the total cost
+Now that we know the cost of both items, let's find the **total cost**:
+$$
+\text{Total cost} = \text{Cost of pen} + \text{Cost of paper} = 2 + 5 = 7
+$$
+
+### Step 4: Find the change
+Theo gave the cashier **$10**, so the change is:
+$$
+\text{Change} = 10 - 7 = ?
+$$
+
+What is the answer? Try calculating it now.
+
+Final Answer: 3",1,,1,,1,,
+Qwen/Qwen3-14B,p0478:auto:none:t3:tutor,478,auto,none,3,tutor,621,"Sure! Let's walk through this step by step.
+
+### Step 1: Understand the problem
+We are told that:
+
+- There are **3 groups** of employees.
+- Each group has **200 employees**.
+- Each group is assigned **7 tour guides**.
+
+We are asked to find the **total number of people** going on the tour.
+
+### Step 2: Find the total number of employees
+Since there are 3 groups, and each group has 200 employees, we can multiply:
+
+$$
+\text{Total employees} = 3 \times 200
+$$
+
+What do you get when you multiply 3 by 200?
+
+---
+
+### Step 3: Find the total number of tour guides
+There are 3 groups, and each group has 7 tour guides. So, we multiply:
+
+$$
+\text{Total tour guides} = 3 \times 7
+$$
+
+What is the result of this multiplication?
+
+---
+
+### Step 4: Add employees and tour guides
+Once you have the total number of employees and the total number of tour guides, you can add them together to get the **total number of people** going on the tour.
+
+Would you like to calculate the numbers now?",0,,0,,0,,
+Qwen/Qwen3-14B,p0479:human:final:t1:tutor,479,human,final,1,tutor,15400,"Let's break this problem down step by step so you can understand how to solve it on your own.
+
+### Step 1: Calculate the cost of the plane tickets
+Tom and his wife each need a ticket, and each ticket costs **$5000**. So, the total cost for both tickets is:
+$$
+5000 \times 2 = ?
+$$
+What is the total for the plane tickets?
+
+---
+
+### Step 2: Calculate the hotel cost for one day
+The **normal price** of the hotel is **$1500 per day**, but it is **20% more expensive** this weekend. To find the increased price, calculate:
+$$
+1500 + (1500 \times 0.20) = ?
+$$
+What is the price of the hotel per day during the busy weekend?
+
+---
+
+### Step 3: Calculate the total hotel cost for 3 days
+Now that you have the **increased daily hotel price**, multiply that by **3** to find the total hotel cost for the trip.
+
+---
+
+### Step 4: Add the costs
+Finally, add the **total cost of the plane tickets** and the **total hotel cost** to find the total cost of the trip.
+
+Would you like to try calculating each step on your own, or would you like a hint for one of the steps?",0,,0,,0,,
+Qwen/Qwen3-14B,p0482:auto:boxed:t3:tutor,482,auto,boxed,3,tutor,26,"Sure! Let's walk through this step by step to figure out how much more Keegan and Tashay need to earn to reach their goal.
+
+### Step 1: Understand the goal
+They need to raise a total of **$200** for the baseball camp.
+
+### Step 2: Find out how much they have already earned
+- Keegan earned **$83**
+- Tashay earned **$91**
+
+So, together, they have earned:
+$$
+83 + 91 = ?
+$$
+Try calculating that. What is the sum?
+
+---
+
+### Step 3: Subtract the amount earned from the goal
+Once you know how much they have earned in total, subtract that from the **$200** goal to find out how much more they need to earn.
+
+Let’s do that once you have the total amount they’ve earned so far. What do you get?
+
+---
+
+Let me know your result, and we’ll continue from there!",0,,0,,0,,
+Qwen/Qwen3-14B,p0482:auto:none:t1:tutor,482,auto,none,1,tutor,26,"To solve this problem, you need to figure out how much money Keegan and Tashay have earned together and then determine how much more they need to reach their goal of $200.
+
+### Step 1: Add the amounts that Keegan and Tashay earned.
+- Keegan earned $83.
+- Tashay earned $91.
+
+What is $83 + $91?
+
+### Step 2: Subtract the total they have earned from their goal of $200.
+Once you find the total amount they have earned, subtract that from $200 to find out how much more they need to raise.
+
+Try working through these steps and let me know if you need help with the calculations!",0,,0,,0,,
+Qwen/Qwen3-14B,p0485:auto:boxed:t2:tutor,485,auto,boxed,2,tutor,220,"Let's break this down step by step so you can solve it on your own.
+
+You're told that Jillian's handbag cost **$20 less than 3 times as much as her shoes cost**. That gives us a relationship between the cost of the bag and the cost of the shoes.
+
+### Step 1: Understand the relationship
+The phrase **""3 times as much as her shoes cost""** means you multiply the shoe cost by 3.
+
+Then, **""$20 less than""** means you subtract 20 from that amount.
+
+So, if the shoes cost **$80**, what would be **3 times** that?
+
+### Step 2: Try that calculation
+What is **3 times 80**?
+
+Once you have that, subtract **$20** to find the cost of the handbag.
+
+Let me know what you get, and I can help check your work!",0,,0,,0,,
+Qwen/Qwen3-14B,p0522:none:none:t2:ceiling,522,none,none,2,ceiling,29,"Let's break the problem down step by step.
+
+We are given the following:
+
+- **Tony** can pick **6 quarts per hour**.
+- **Bobby** picks **one less quart per hour** than Tony.
+- **Kathy** picks **twice as many quarts per hour** as Bobby.
+- **Ricky** picks **two fewer quarts per hour** than Kathy.
+
+---
+
+### Step 1: Find Bobby's rate
+Bobby picks one less quart than Tony:
+
+$$
+\text{Bobby} = 6 - 1 = 5 \text{ quarts/hour}
+$$
+
+---
+
+### Step 2: Find Kathy's rate
+Kathy picks twice as many quarts as Bobby:
+
+$$
+\text{Kathy} = 2 \times 5 = 10 \text{ quarts/hour}
+$$
+
+---
+
+### Step 3: Find Ricky's rate
+Ricky picks two fewer quarts than Kathy:
+
+$$
+\text{Ricky} = 10 - 2 = 8 \text{ quarts/hour}
+$$
+
+---
+
+### Step 4: Add all their rates together
+
+$$
+\text{Total} = \text{Tony} + \text{Bobby} + \text{Kathy} + \text{Ricky}
+$$
+$$
+\text{Total} = 6 + 5 + 10 + 8 = 29 \text{ quarts/hour}
+$$
+
+---
+
+### ✅ Final Answer:
+$$
+\boxed{29} \text{ quarts per hour}
+$$",1,,1,,1,,
+Qwen/Qwen3-14B,p0524:human:boxed:t0:tutor,524,human,boxed,0,tutor,9,"Sure, I'd be happy to help! Let's work through this step by step.
+
+### Step 1: Understand the problem
+Jackson is planting two types of tulips:
+- **Red tulips:** He can plant **6 red tulips in a row**.
+- **Blue tulips:** He can plant **8 blue tulips in a row**.
+
+He has:
+- **36 red tulips**
+- **24 blue tulips**
+
+We need to find out **how many rows** of flowers he will plant.
+
+---
+
+### Step 2: Ask yourself
+- How many **rows of red tulips** can he plant with 36 red tulips if each row has 6?
+- How many **rows of blue tulips** can he plant with 24 blue tulips if each row has 8?
+- Once you find both, **add them together** to find the total number of rows.
+
+---
+
+### Step 3: Try solving it now
+Let me know what you get for the number of rows of red tulips and blue tulips. Then we can add them to find the total.",0,,0,,0,,
+Qwen/Qwen3-14B,p0570:none:boxed:t1:tutor,570,none,boxed,1,tutor,23,"Let's break this problem down step by step so you can understand how to solve it on your own.
+
+### Step 1: Understand the total amount of money Peter has
+Peter has **$70** to spend over the course of one week.
+
+### Step 2: Figure out how much he spends each day
+He wants to **spend an equal amount each day for one week**. A week has **7 days**, so you can divide the total amount of money by 7 to find how much he spends each day.
+
+Try calculating that now. What is $70 divided by 7?
+
+---
+
+Once you know how much he spends each day, you can move on to the next step.
+
+### Step 3: Determine how much he spends from Sunday through Wednesday
+He spends that daily amount on **wooden action figures** from **Sunday through Wednesday**. That’s **4 days**.
+
+So, calculate how much he spends in total on wooden action figures. Then, divide that total by the cost of one wooden action figure ($5) to find how many he buys.
+
+---
+
+### Step 4: Determine how much he spends for the rest of the week
+The rest of the week is **Thursday through Saturday**, which is **3 days**. Calculate the total amount he spends on plastic action figures during these 3 days.
+
+Then divide that total by the cost of one plastic action figure ($2) to find how many he buys.
+
+---
+
+### Step 5: Add the number of wooden and plastic action figures together
+Once you have the number of wooden and plastic action figures, add them together to find the **total number of action figures** he will have by the end of the week.
+
+---
+
+Let me know how far you’ve gotten, and I can help you check your work or move forward!",0,,0,,0,,
+Qwen/Qwen3-14B,p0604:human:final:t3:tutor,604,human,final,3,tutor,12,"Sure! Let's walk through this step by step so you can understand how to solve the problem on your own.
+
+### Step 1: Understand the Problem
+Howard starts with $100. Each day, he spends money at the arcade:
+- On **Monday**, he spends **$8**.
+- On **Tuesday**, he spends **twice as much** as Monday.
+- On **Wednesday**, he spends **4 times as much** as Tuesday.
+
+We need to calculate how much he has **left** after spending money on all three days.
+
+---
+
+### Step 2: Calculate How Much He Spent Each Day
+Let’s break it down:
+
+- **Monday**: He spends $8.
+- **Tuesday**: He spends **twice** as much as Monday. That means:
+  $$
+  2 \times 8 = ?
+  $$
+  What is 2 times 8?
+
+- **Wednesday**: He spends **4 times** as much as Tuesday. So once you find how much he spent on Tuesday, multiply it by 4:
+  $$
+  4 \times (\text{Tuesday's spending}) = ?
+  $$
+
+---
+
+### Step 3: Add Up All the Money He Spent
+After you know how much he spent each day, add the amounts together to find the total amount spent over the three days.
+
+---
+
+### Step 4: Subtract the Total Spent from $100
+Once you have the total spent, subtract it from $100 to find how much money he has left.
+
+---
+
+Now, try calculating each step on your own, and I’ll help you check your work!
+
+What is 2 times 8?",0,,0,,0,,
+Qwen/Qwen3-14B,p0615:none:none:t1:ceiling,615,none,none,1,ceiling,33,"To find out how much Scarlett spent in total, you need to add up all of her expenses step by step. Let's break it down:
+
+---
+
+### 1. **Aquarium (from yard sale):**
+- Cost = **$10.00**
+
+---
+
+### 2. **Rocks from the pet store:**
+- 2 bags at **$2.50 each**
+- Cost = 2 × $2.50 = **$5.00**
+
+---
+
+### 3. **Coral from the pet store:**
+- 3 pieces at **$2.00 each**
+- Cost = 3 × $2.00 = **$6.00**
+
+---
+
+### 4. **Fish from the pet store:**
+- 20 fish at **$0.50 each**
+- Cost = 20 × $0.50 = **$10.00**
+
+---
+
+### 5. **Fish food:**
+- Cost = **$2.00**
+
+---
+
+### Now, **add all the costs together**:
+
+$$
+\$10.00 \ (\text{aquarium}) + \$5.00 \ (\text{rocks}) + \$6.00 \ (\text{coral}) + \$10.00 \ (\text{fish}) + \$2.00 \ (\text{fish food}) = \boxed{\$33.00}
+$$
+
+---
+
+### ✅ **Answer:** Scarlett spent **\$33.00** in total.",1,,1,,1,,
+Qwen/Qwen3-14B,p0635:none:boxed:t1:tutor,635,none,boxed,1,tutor,4,"Let's break this problem down step by step so you can understand how to solve it.
+
+### Step 1: Understand the total cost
+Manny signed up for Karate classes for **$60** in total.
+
+### Step 2: Understand the cost per class condition
+His parents say they **won't sign him up again** if the cost ends up being **more than $10 per class**.
+
+So, we need to find the **maximum number of classes** he can attend so that the **cost per class is $10 or less**.
+
+### Step 3: Total number of classes
+There are **10 total classes** in the session.
+
+### Step 4: Think about what happens if he **misses some classes**
+If he **misses** some classes, he's only attending **fewer than 10 classes**, and the $60 cost is spread out over **fewer classes**. That means the **cost per class would go up**.
+
+So, the more classes he **misses**, the **higher** the cost per class becomes.
+
+We need to find the **maximum number of classes he can miss** such that the **cost per class is still $10 or less**.
+
+### Step 5: Try to find the cost per class
+Let’s say he attends **x** classes. Then:
+
+$$
+\text{Cost per class} = \frac{60}{x}
+$$
+
+We want this to be **less than or equal to $10**:
+
+$$
+\frac{60}{x} \leq 10
+$$
+
+Can you solve this inequality for **x**? What is the **maximum number of classes he can attend** to keep the cost per class under $10?
+
+Once you find that, subtract it from 10 to find how many classes he can **miss**. Let me know your answer, and I’ll help you check it!",1,,0,,0,,
+Qwen/Qwen3-14B,p0637:none:final:t0:tutor,637,none,final,0,tutor,17,"Sure! Let's break this down step by step.
+
+We are told:
+- **Paisley ran 4 miles.**
+- **Reggie ran 5 times what Paisley ran.**
+- **Reggie also ran 3 miles farther than Lynn.**
+
+### Step 1: Find how far Reggie ran
+Since Reggie ran **5 times** what Paisley ran, and Paisley ran **4 miles**, we can calculate Reggie’s distance as:
+
+$$
+\text{Reggie's distance} = 5 \times \text{Paisley's distance} = 5 \times 4 = 20 \text{ miles}
+$$
+
+### Step 2: Use the relationship between Reggie and Lynn
+We are told that **Reggie ran 3 miles farther than Lynn**, so if we let **Lynn’s distance** be $ x $, then:
+
+$$
+\text{Reggie's distance} = x + 3
+$$
+
+We already know Reggie ran **20 miles**, so:
+
+$$
+x + 3 = 20
+$$
+
+Now, solve for $ x $ to find how far Lynn ran.
+
+What should you do next to solve for $ x $?",0,,0,,0,,
+Qwen/Qwen3-14B,p0637:none:none:t3:tutor,637,none,none,3,tutor,17,"Sure! Let's break this problem down step by step.
+
+### Step 1: Understand what we know
+We are given the following information:
+
+- **Paisley ran 4 miles.**
+- **Reggie ran 5 times what Paisley ran.**
+- **Reggie also ran 3 miles farther than Lynn.**
+
+We are asked to find **how many miles Lynn ran**.
+
+---
+
+### Step 2: Write down what we know in math terms
+
+Let’s define:
+
+- Let **P** be the number of miles **Paisley** ran.
+- Let **R** be the number of miles **Reggie** ran.
+- Let **L** be the number of miles **Lynn** ran.
+
+From the problem:
+
+- **P = 4** (Paisley ran 4 miles)
+- **R = 5 × P** (Reggie ran 5 times what Paisley ran)
+- **R = L + 3** (Reggie ran 3 miles farther than Lynn)
+
+---
+
+### Step 3: Plug in the known value
+
+We know **P = 4**, so we can find **R**:
+
+- **R = 5 × P = 5 × 4 = 20**
+
+So, **Reggie ran 20 miles**.
+
+Now use the second equation:
+
+- **R = L + 3**
+
+We know **R = 20**, so plug that in:
+
+- **20 = L + 3**
+
+Now, what should we do next to find **L**?",0,,0,,0,,
+Qwen/Qwen3-14B,p0681:human:final:t1:tutor,681,human,final,1,tutor,298,"Let's break this down step by step. You are given information about how many cookies each person has **relative to others**, and you're told **how many cookies Katarina has**. From that, you can figure out how many cookies the others have, and then add them all up for the total.
+
+### Step 1: Start with what you know
+You are told that **Katarina has 68 cookies**, and she has **5 less cookies than Max**.
+
+So, if Katarina has 5 less than Max, then Max must have:
+$$
+\text{Max's cookies} = \text{Katarina's cookies} + 5
+$$
+What is Max's number of cookies?
+
+---
+
+### Step 2: Use Max's cookies to find Cookie Monster's
+You are also told that **Max has 12 more cookies than the Cookie Monster**.
+
+So, if Max has that many cookies, how many cookies does the Cookie Monster have?
+
+---
+
+### Step 3: Use Max's cookies to find Summer's
+You're told that **Summer has 23 more cookies than Max**.
+
+So, if Max has that many cookies, how many does Summer have?
+
+---
+
+### Step 4: Add them all up
+Once you know how many cookies each person has, you can add them all together to find the **total number of cookies**.
+
+Try solving each step one at a time, and let me know if you'd like to check your answers as you go.",0,,0,,0,,
+Qwen/Qwen3-14B,p0681:none:boxed:t3:tutor,681,none,boxed,3,tutor,298,"Sure! Let's break this problem down step by step.
+
+### Step 1: Understand what we know
+We are told:
+
+- Katarina has **5 less** cookies than Max.
+- Max has **12 more** cookies than the Cookie Monster.
+- Summer has **23 more** cookies than Max.
+- **Katarina has 68 cookies.**
+
+We are asked to find the **total number of cookies** that **Katarina, Max, the Cookie Monster, and Summer** have together.
+
+---
+
+### Step 2: Use Katarina’s cookies to find Max’s
+We know:
+> Katarina has 5 less than Max.
+
+Let’s write that as an equation:
+
+$$
+\text{Katarina's cookies} = \text{Max's cookies} - 5
+$$
+
+We are told that Katarina has **68 cookies**, so:
+
+$$
+68 = \text{Max's cookies} - 5
+$$
+
+Now, solve for **Max's cookies**:
+
+$$
+\text{Max's cookies} = 68 + 5 = \boxed{73}
+$$
+
+---
+
+### Step 3: Use Max’s cookies to find Cookie Monster’s
+We are told:
+> Max has 12 more cookies than the Cookie Monster.
+
+So:
+
+$$
+\text{Max's cookies} = \text{Cookie Monster's cookies} + 12
+$$
+
+We now know Max has **73 cookies**, so:
+
+$$
+73 = \text{Cookie Monster's cookies} + 12
+$$
+
+Now, solve for **Cookie Monster's cookies**:
+
+$$
+\text{Cookie Monster's cookies} = 73 - 12 = \boxed{61}
+$$
+
+---
+
+### Step 4: Use Max’s cookies to find Summer’s
+We are told:
+> Summer has 23 more cookies than Max.
+
+So:
+
+$$
+\text{Summer's cookies} = \text{Max's cookies} + 23
+$$
+
+We now know Max has **73 cookies**, so:
+
+$$
+\text{Summer's cookies} = 73 + 23 = \boxed{96}
+$$
+
+---
+
+### Step 5: Add all the cookies together
+Now that we have the number of cookies for each person:
+
+- Katarina: **68**
+- Max: **73**
+- Cookie Monster: **61**
+- Summer: **96**
+
+Add them up:
+
+$$
+\text{Total cookies} = 68 + 73 + 61 + 96
+$$
+
+Can you calculate this sum? Let me know when you're ready!",0,,1,,0,,
+Qwen/Qwen3-14B,p0683:none:none:t3:tutor,683,none,none,3,tutor,50,"Sure! Let's work through this step by step.
+
+### Step 1: Understand the problem
+Chris can mow the entire lawn in:
+- **Turtle mode:** 1 hour = **60 minutes**
+- **Rabbit mode:** 40 minutes
+
+Today, he mowed **half the lawn** in **turtle mode** and the other **half** in **rabbit mode**.
+
+We want to find out **how many minutes** it took him to mow the **whole lawn** using this method.
+
+---
+
+### Step 2: Think about rates
+This is a **rate problem**. The key is to find out **how much of the lawn Chris can mow in one minute** in each mode.
+
+- In **turtle mode**, he can mow the **whole lawn in 60 minutes**, so his rate is:
+  $$
+  \text{Rate (turtle)} = \frac{1 \text{ lawn}}{60 \text{ minutes}} = \frac{1}{60} \text{ lawn per minute}
+  $$
+
+- In **rabbit mode**, he can mow the **whole lawn in 40 minutes**, so his rate is:
+  $$
+  \text{Rate (rabbit)} = \frac{1 \text{ lawn}}{40 \text{ minutes}} = \frac{1}{40} \text{ lawn per minute}
+  $$
+
+---
+
+### Step 3: Time to mow half the lawn in each mode
+
+We now want to find **how long it takes to mow half the lawn** in each mode.
+
+Let’s think:  
+If he mows **half the lawn**, then he is mowing **1/2 of a lawn**.
+
+So, the time it takes to mow **1/2 lawn** in **turtle mode** is:
+
+$$
+\text{Time (turtle)} = \frac{1/2 \text{ lawn}}{1/60 \text{ lawn per minute}} = \frac{1/2}{1/60} = \frac{1}{2} \times 60 = 30 \text{ minutes}
+$$
+
+Similarly, the time to mow **1/2 lawn** in **rabbit mode** is:
+
+$$
+\text{Time (rabbit)} = \frac{1/2 \text{ lawn}}{1/40 \text{ lawn per minute}} = \frac{1/2}{1/40} = \frac{1}{2} \times 40 = 20 \text{ minutes}
+$$
+
+---
+
+### Step 4: Add the times together
+Now, just add the time for the turtle part and the rabbit part:
+
+$$
+\text{Total time} = 30 \text{ minutes (turtle)} + 20 \text{ minutes (rabbit)} = 50 \text{ minutes}
+$$
+
+---
+
+### Final question to check your understanding:
+Would you say that mowing half the lawn in each mode takes less time than mowing the whole lawn in rabbit mode? Why or why not?
+
+Let me know if you'd like to try a similar problem or explain something more!",1,,0,,0,,
+Qwen/Qwen3-14B,p0695:human:final:t1:tutor,695,human,final,1,tutor,5,"To solve this problem, you can break it down into smaller steps:
+
+1. **Find the number of bucks**:
+   - You are told that 50% of the 50 deer are bucks. What is 50% of 50?
+
+2. **Find the number of 8-point bucks**:
+   - You are told that 20% of the bucks are 8 points. Once you know how many bucks there are, you can find 20% of that number.
+
+Try solving the first step first — what is 50% of 50?
+
+Final Answer:",0,,0,,0,,
+Qwen/Qwen3-14B,p0695:none:boxed:t0:tutor,695,none,boxed,0,tutor,5,"Sure! Let's break this problem down step by step.
+
+We're told there are **50 deer** in total, and **50% of them are bucks**. That means half of the deer are bucks.
+
+### Step 1: Find the number of bucks
+What is 50% of 50? (This is the same as half of 50.)
+
+Can you calculate that? Once you have the number of bucks, we'll move on to the next part.
+
+### Step 2: Find how many of the bucks are 8 points
+We're told that **20% of the bucks** are 8 points. Once you know how many bucks there are, you can find 20% of that number.
+
+Would you like to try calculating the number of bucks first?",0,,0,,0,,
+Qwen/Qwen3-14B,p0710:none:none:t1:ceiling,710,none,none,1,ceiling,45,"To find Marcus' total bill, follow these steps:
+
+---
+
+### **Step 1: Calculate the cost of each item**
+
+- **Croissants:**  
+  $ 5 \times 3.00 = 15.00 $
+
+- **Cinnamon Rolls:**  
+  $ 4 \times 2.50 = 10.00 $
+
+- **Mini Quiches:**  
+  $ 3 \times 4.00 = 12.00 $
+
+- **Blueberry Muffins:**  
+  $ 13 \times 1.00 = 13.00 $
+
+---
+
+### **Step 2: Add up all the costs**
+
+$$
+15.00 + 10.00 + 12.00 + 13.00 = 50.00
+$$
+
+So, the **pre-discount total** is **$50.00**.
+
+---
+
+### **Step 3: Apply the 10% discount**
+
+$$
+10\% \text{ of } 50.00 = 0.10 \times 50.00 = 5.00
+$$
+
+---
+
+### **Step 4: Subtract the discount from the total**
+
+$$
+50.00 - 5.00 = 45.00
+$$
+
+---
+
+### ✅ **Final Answer: $45.00** is Marcus' total bill.",1,,1,,1,,
+Qwen/Qwen3-14B,p0713:none:none:t0:tutor,713,none,none,0,tutor,576,"Sure! Let's break the problem down step by step so you can understand how to solve it on your own.
+
+### Step 1: Find the area to be tiled
+Mr. Boarden is only tiling **two-thirds** of his bathroom, which is **36 square feet** in total. So, we need to find **two-thirds of 36 square feet**.
+
+- What is **one-third** of 36?
+- Then, multiply that by **2** to get **two-thirds**.
+
+### Step 2: Calculate the number of tiles needed
+Once you know the area to be tiled (in square feet), you can figure out how many tiles are needed. The problem says **24 tiles are needed per square foot**.
+
+- If one square foot takes 24 tiles, how many tiles will be needed for the area you just calculated?
+
+Would you like to try calculating the area first?",0,,0,,0,,
+Qwen/Qwen3-14B,p0736:auto:boxed:t1:tutor,736,auto,boxed,1,tutor,3,"Let's work through this step by step. First, let’s understand what we're being asked:
+
+We have two people: **Boris** and **Beck**. Initially, Boris has 100 apples. Beck has **23 fewer apples** than Boris. Then, Boris gives Beck **10 apples**. The question is: **How many fewer apples does Beck have than Boris now?**
+
+### Step 1: Find out how many apples Beck has at the beginning.
+Boris has 100 apples. Beck has 23 fewer than Boris. So:
+
+$$
+\text{Beck's apples} = \text{Boris's apples} - 23
+$$
+
+What is Beck’s original number of apples? Try calculating that first.",0,,0,,0,,
+Qwen/Qwen3-14B,p0739:human:boxed:t0:tutor,739,human,boxed,0,tutor,98,"Sure, I can help you work through this step by step. Let's start by breaking down the information given and figuring out what needs to be done.
+
+### Step 1: Understand the relationship between the prices
+You're told that:
+- A **gallon jar costs $2 more** than a **half-gallon jar**.
+- A **gallon jar costs $5**.
+
+From this, can you figure out how much a **half-gallon jar** costs?
+
+> **Clue:** If a gallon jar is $2 more than a half-gallon jar, and the gallon jar costs $5, then the half-gallon jar must cost $5 minus $2.
+
+Try calculating the cost of a half-gallon jar.
+
+---
+
+### Step 2: Calculate the cost of 10 gallon jars
+Once you have the price of a gallon jar, you can multiply it by 10 to find the total cost of 10 gallon jars.
+
+---
+
+### Step 3: Calculate the cost of 16 half-gallon jars
+Once you have the price of a half-gallon jar, multiply it by 16 to find the total cost of 16 half-gallon jars.
+
+---
+
+### Step 4: Add the two totals
+Finally, add the cost of the 10 gallon jars and the 16 half-gallon jars to find the **total amount Cecelia spent**.
+
+Let me know what you get for each step, and I’ll help you check your work!",0,,0,,0,,
+Qwen/Qwen3-14B,p0772:none:boxed:t2:tutor,772,none,boxed,2,tutor,50,"Let’s break this problem down step by step and figure it out together.
+
+### Step 1: Total time available
+Tatiana has:
+- 7 hours on **Saturday**
+- 5 hours on **Sunday**
+
+So, the **total time** she has for the weekend is:
+$$
+7 + 5 = 12 \text{ hours}
+$$
+
+### Step 2: Time spent reading
+She spends **3 hours reading**. So, the **remaining time** after reading is:
+$$
+12 - 3 = 9 \text{ hours}
+$$
+
+### Step 3: Time spent playing video games
+She plays video games for **1/3 of the remaining time**. That would be:
+$$
+\frac{1}{3} \times 9 = 3 \text{ hours}
+$$
+
+So now, we know:
+- Reading: 3 hours
+- Video games: 3 hours
+
+### Step 4: Time spent playing soccer
+Now, subtract the time spent reading and playing video games from the total time to find how much time she has left for soccer:
+$$
+12 - 3 - 3 = 6 \text{ hours}
+$$
+
+### Step 5: Percentage of time spent playing soccer
+To find the **percentage** of her weekend spent playing soccer, we use the formula:
+$$
+\text{Percentage} = \left( \frac{\text{Time spent on soccer}}{\text{Total time}} \right) \times 100
+$$
+
+Now, plug in the numbers and calculate. Let me know if you'd like help with that next step!",0,,0,,0,,
+Qwen/Qwen3-14B,p0779:auto:boxed:t0:tutor,779,auto,boxed,0,tutor,255,"Sure! Let's break this down step by step.
+
+### Step 1: Understand what is given
+- Total time for the trip: **6 hours**
+- Driving speed: **50 miles per hour**
+- Hiking speed: **5 miles per hour less than half their driving speed**
+- Time spent hiking: **1.5 hours**
+
+We are asked to find the **total distance** to the vacation spot.
+
+---
+
+### Step 2: Find the hiking speed
+
+We are told that the hiking speed is **5 miles per hour less than half their driving speed**.
+
+- Driving speed = 50 mph
+- Half of that = 50 ÷ 2 = **25 mph**
+- Subtract 5 mph: 25 - 5 = **20 mph**
+
+So, the hiking speed is **20 mph**.
+
+---
+
+### Step 3: Use the formula for distance
+
+We know:
+$$
+\text{Distance} = \text{Speed} \times \text{Time}
+$$
+
+Let’s find the **distance they hiked** first.
+
+- Hiking speed = 20 mph
+- Hiking time = 1.5 hours
+
+So, the distance they hiked is:
+$$
+20 \times 1.5 = \text{?}
+$$
+
+Try calculating that. What do you get?
+
+---
+
+Once you have the distance they hiked, we can subtract the hiking time from the total time to find out how long they spent driving.
+
+- Total time = 6 hours
+- Time hiking = 1.5 hours
+- So, driving time = 6 - 1.5 = **4.5 hours**
+
+Then we can find the **distance they drove** using the driving speed and driving time.
+
+- Driving speed = 50 mph
+- Driving time = 4.5 hours
+
+So, the distance they drove is:
+$$
+50 \times 4.5 = \text{?}
+$$
+
+Once you have both distances (driving and hiking), **add them together** to get the total distance to the vacation spot.
+
+Let me know if you'd like help with the calculations or if you’d like to check your work!",0,,0,,0,,
+Qwen/Qwen3-14B,p0789:human:boxed:t0:tutor,789,human,boxed,0,tutor,4,"Of course, I'm here to help you work through this step by step. Let's break the problem down and figure it out together.
+
+### Step 1: Understand the temperature change
+The problem says that it's **33 degrees colder at night** than it is during the day. The temperature during the day is **45 degrees**. So, we need to find the temperature at night.
+
+- What would the nighttime temperature be if it's 33 degrees colder than 45 degrees?
+
+Once you figure that out, we can move to the next part.
+
+### Step 2: Determine if the pipes are in danger
+The pipes will freeze if the temperature drops below **32 degrees**. So, we need to see if the nighttime temperature is below 32 degrees.
+
+- Is the nighttime temperature below 32 degrees? If yes, then Carson needs to burn logs to warm the house.
+
+### Step 3: Calculate how many logs are needed
+Each log heats the house by **5 degrees**. So, if the temperature is below 32 degrees, we need to calculate how many degrees above 32 the temperature needs to be, and then divide that by 5 (the heating effect of one log).
+
+Let me know what you think the nighttime temperature is, and we can go from there.",0,,0,,0,,
+Qwen/Qwen3-14B,p0791:human:none:t3:tutor,791,human,none,3,tutor,100,"Of course! Let's walk through this step by step. You're being asked to figure out how many people are on the train after two stops. Let's break the problem into parts and think through it carefully.
+
+---
+
+### **Step 1: Start with the original number of people**
+The train begins with **172 people**.
+
+**Question to think about:**  
+What happens to the number of people on the train at the first stop?
+
+---
+
+### **Step 2: First stop**
+At the first stop, **47 people get off**, and then **13 people get on**.
+
+So, the number of people changes in two steps:
+1. Subtract 47 (people getting off).
+2. Add 13 (people getting on).
+
+Let’s do that calculation together.  
+Start with 172 people.  
+Subtract 47:  
+172 - 47 = ?  
+Then add 13 to that result.
+
+**Try this:** What is 172 - 47?  
+Then, add 13 to that result. What do you get?
+
+---
+
+### **Step 3: Second stop**
+After the first stop, we now have a new number of people on the train.  
+At the **second stop**, **38 people get off**.  
+So, from the number of people you found in Step 2, subtract 38.
+
+**Question to think about:**  
+After subtracting 38, what is the final number of people on the train?
+
+---
+
+Once you've done all that, you'll have the answer. Let me know if you want to check your calculations or need help with any of the steps!",0,,0,,0,,
+Qwen/Qwen3-14B,p0815:auto:final:t1:tutor,815,auto,final,1,tutor,4,"Let's break down the problem step by step. We need to find how many ounces of oil Tanya uses in her salt scrub.
+
+We are told that the total amount of the scrub is **10 ounces**, and the ingredients are:
+- Salt
+- Oil
+- Fragrance
+- Citrus zest
+- Sugar
+
+Let’s define the amount of **zest** as **x** ounces. Since Tanya uses the **same amount of citrus zest as fragrance**, the fragrance is also **x** ounces.
+
+Now, the problem says:
+- She uses **the same amount of salt as sugar**, so salt = sugar.
+- She uses **twice as much oil as salt**, so oil = 2 × salt.
+- She uses **twice as much salt as zest**, so salt = 2 × zest = 2x.
+
+So now we can write expressions for each ingredient in terms of **x**:
+- Zest = **x**
+- Fragrance = **x**
+- Salt = **2x**
+- Sugar = **2x**
+- Oil = **2 × salt = 2 × 2x = 4x**
+
+Now, let’s add all these together and set them equal to the total amount of the scrub, which is **10 ounces**:
+
+$$
+x + x + 2x + 2x + 4x = 10
+$$
+
+Simplify the left side:
+
+$$
+10x = 10
+$$
+
+Now, solve for **x**.
+
+Once you find **x**, you can use it to find the amount of oil, which is **4x**.
+
+What is the value of **x**?",0,,0,,0,,
+Qwen/Qwen3-14B,p0815:none:none:t0:tutor,815,none,none,0,tutor,4,"Sure! Let's break this down step by step and think through what we know.
+
+We are told that Tanya makes a **10-ounce** salt scrub using **five ingredients**:  
+- Salt  
+- Oil  
+- Fragrance  
+- Citrus zest  
+- Sugar  
+
+We are also given a few relationships between the amounts of these ingredients. Let’s try to write them out in terms of variables so we can work with them.
+
+Let’s define:  
+- Let **z** = amount of **citrus zest** (in ounces).  
+- Since she uses the **same amount of citrus zest as fragrance**, then **fragrance = z**.  
+- She uses the **same amount of salt as sugar**, so if **salt = s**, then **sugar = s**.  
+- She uses **twice as much oil as salt**, so **oil = 2s**.  
+- She uses **twice as much salt as zest**, so **s = 2z**.
+
+Now, the total amount of the scrub is **10 ounces**, so the sum of all the ingredients is 10:
+
+$$
+\text{salt} + \text{oil} + \text{fragrance} + \text{citrus zest} + \text{sugar} = 10
+$$
+
+Let’s plug in the variables in terms of **z**:
+
+- Salt = **s = 2z**  
+- Sugar = **s = 2z**  
+- Fragrance = **z**  
+- Citrus zest = **z**  
+- Oil = **2s = 2(2z) = 4z**
+
+Now substitute all of these into the total:
+
+$$
+2z + 4z + z + z + 2z = 10
+$$
+
+Now simplify and solve for **z**. What is the total of all the terms on the left?
+
+Let me know if you’d like to try solving for **z** now!",0,,0,,0,,
+Qwen/Qwen3-14B,p0847:human:final:t1:tutor,847,human,final,1,tutor,975,"To solve this problem, we need to understand **simple interest**. Simple interest is calculated using the formula:
+
+$$
+I = P \times r \times t
+$$
+
+Where:  
+- $ I $ is the interest  
+- $ P $ is the principal (original amount invested)  
+- $ r $ is the rate of interest (in decimal form)  
+- $ t $ is the time in years  
+
+Then, the **total amount** $ A $ is:
+
+$$
+A = P + I
+$$
+
+Now, let's break down the information in the problem:
+
+- $ P = 300 $  
+- The interest rate is **three-quarters of the original amount per year**. That means the rate is $ \frac{3}{4} \times P $, but this is **not** the interest rate in decimal form — it’s actually the **interest earned per year**.  
+- Time $ t = 3 $ years  
+
+So, the **interest per year** is $ \frac{3}{4} \times 300 = 225 $.
+
+Since this is **simple interest**, the interest is the same each year. So for 3 years:
+
+$$
+I = 225 \times 3
+$$
+
+Now calculate that, and then add it to the principal to find the total amount $ A $.
+
+What is $ I $? What is $ A $?",0,,0,,0,,
+Qwen/Qwen3-14B,p0847:human:none:t3:tutor,847,human,none,3,tutor,975,"Sure! Let's walk through this step by step. The problem is about **simple interest**, which is a type of interest where the interest is calculated only on the original amount (called the **principal**) and doesn't include interest on the interest.
+
+---
+
+### Step 1: Understand the formula for simple interest
+
+The formula for **simple interest** is:
+
+$$
+I = P \times r \times t
+$$
+
+Where:
+
+- $ I $ is the **interest** earned
+- $ P $ is the **principal** (original amount invested)
+- $ r $ is the **annual interest rate** (as a decimal)
+- $ t $ is the **time** in years
+
+Then, the **total amount** (principal + interest) is:
+
+$$
+A = P + I = P + (P \times r \times t) = P(1 + rt)
+$$
+
+---
+
+### Step 2: Identify the values from the question
+
+Let’s break down the information:
+
+- **Principal (P)** = $300
+- **Rate (r)** = ""three-quarters of the original amount per year""
+
+Wait a second — that wording is a bit tricky. It says the **rate is three-quarters of the original amount per year**.
+
+Let’s clarify that. If the **rate is three-quarters of the original amount**, that means:
+
+$$
+r = \frac{3}{4} \times P
+$$
+
+So:
+
+$$
+r = \frac{3}{4} \times 300 = 225
+$$
+
+But that can’t be right — **interest rates are usually given as a percentage (or decimal) of the principal**, not as a fixed dollar amount like $225.
+
+Let’s re-express the rate more clearly:
+
+> ""Accumulates simple interest at the rate of three-quarters of the original amount per year.""
+
+That likely means:
+
+$$
+r = \frac{3}{4} = 0.75 \text{ or } 75\%
+$$
+
+So, the rate is **75% per year**.
+
+That makes more sense for an interest rate. So we can now say:
+
+- $ P = 300 $
+- $ r = 0.75 $
+- $ t = 3 $ years
+
+---
+
+### Step 3: Plug the values into the formula
+
+Now, use the formula for total amount:
+
+$$
+A = P(1 + rt)
+$$
+
+Let’s plug in the numbers and compute the value. I’ll walk you through it, but **you’ll need to do the calculation** to ensure you understand the steps.
+
+What is $ r \times t $? That's $ 0.75 \times 3 $. What is that equal to?
+
+Once you have that, add 1 to it and multiply by the principal.
+
+After that, you'll have the total amount Brenda will have after 3 years.
+
+Would you like to try calculating this step by step now?",0,,0,,0,,
+Qwen/Qwen3-14B,p0853:human:final:t1:tutor,853,human,final,1,tutor,15,"To solve this problem, let's break it down step by step:
+
+1. **How many rooms are you cleaning?**  
+   You're cleaning one-half of the 90 rooms. What is half of 90?
+
+2. **How long does it take to clean one room?**  
+   It takes 20 minutes per room. So, for the number of rooms you found in step 1, how many total minutes will it take?
+
+3. **Convert minutes to hours.**  
+   There are 60 minutes in an hour. Divide the total number of minutes by 60 to find the number of hours.
+
+Try working through these steps, and let me know if you need help with any part!  
+Final Answer:",0,,0,,0,,
+Qwen/Qwen3-14B,p0876:none:none:t1:tutor,876,none,none,1,tutor,41,"This problem involves calculating the total score Amy gets on her history test based on her performance on different types of questions and their point values. Let's break it down step by step.
+
+### Step 1: Understand the question
+Amy answers different types of questions with different success rates:
+
+- **Multiple-choice questions:** 80% correct, 1 point each.
+- **True/false questions:** 90% correct, 1 point each.
+- **Long-answer questions:** 60% correct, 5 points each.
+
+There are:
+
+- 10 multiple-choice questions.
+- 20 true/false questions.
+- 5 long-answer questions.
+
+We need to find **how many total points Amy scores**.
+
+---
+
+### Step 2: Think about how to calculate points
+To find the total score, you need to:
+
+1. **Find how many questions Amy answered correctly** of each type.
+2. **Multiply the number of correct answers by the point value** for that type of question.
+3. **Add up all the points** from each question type.
+
+Let’s try to find how many questions Amy answered correctly for each type.
+
+---
+
+### Step 3: Try calculating the correct answers for each type
+- For **multiple-choice questions**, she answers **80%** of 10 correctly.
+- For **true/false questions**, she answers **90%** of 20 correctly.
+- For **long-answer questions**, she answers **60%** of 5 correctly.
+
+Can you calculate the number of correct answers for each type? For example, what is 80% of 10?",0,,0,,0,,
+Qwen/Qwen3-14B,p0891:auto:none:t0:tutor,891,auto,none,0,tutor,55,"Sure! Let's break this down step by step. First, let's understand the relationships between the spinning objects:
+
+1. A **whirligig** spins **5 times faster** than a **thingamabob**.
+2. A **whatchamacallit** spins **11 times faster** than a **thingamabob**.
+3. A **whatchamacallit** spins at **121 meters per second**.
+
+### Step 1: Define the unknown
+Let’s call the speed of a **thingamabob** as **T** (in meters per second). Then:
+
+- The speed of a **whirligig** = **5 × T**
+- The speed of a **whatchamacallit** = **11 × T**
+
+We’re told the **whatchamacallit** spins at **121 m/s**, so we can write:
+
+**11 × T = 121**
+
+### Step 2: Solve for T
+What is the value of **T**? Once you find **T**, you can use it to find the speed of the **whirligig**.
+
+Try solving for **T** first. What do you get?",0,,0,,0,,
+Qwen/Qwen3-14B,p0901:auto:none:t1:tutor,901,auto,none,1,tutor,1,"This problem is about **ratios** and **proportions** — specifically, comparing how much soup different people consume based on the size of their bowls. Let's break it down step by step.
+
+### Step 1: Understand the relationships
+We are told:
+- The pot of soup can fill **4 adult bowls** or **8 child bowls**.
+- So, the **amount of soup in one adult bowl is equal to the amount in two child bowls** (because 4 adult bowls = 8 child bowls, so 1 adult bowl = 2 child bowls).
+
+### Step 2: Figure out how many people are eating
+Calvin is eating with:
+- His **adult wife** (so 2 adults total),
+- Their **two children**.
+
+So, in total, **2 adults and 2 children** will be eating one bowl each.
+
+### Step 3: Calculate how much soup will be used
+- The **2 adults** will each have **1 adult bowl**, so that's **2 adult bowls**.
+- The **2 children** will each have **1 child bowl**, so that's **2 child bowls**.
+
+Now, convert everything to **child bowls** to compare with the total amount of soup available.
+
+- 2 adult bowls = **4 child bowls** (because 1 adult bowl = 2 child bowls).
+- 2 child bowls = **2 child bowls**.
+
+So, **total soup used** = 4 + 2 = **6 child bowls** worth of soup.
+
+### Step 4: Figure out how much soup is leftover
+We know the pot has **8 child bowls** worth of soup in total.
+
+So, **leftover soup** = 8 (total) − 6 (used) = **2 child bowls** worth of soup.
+
+### Step 5: Determine how many times each child can have a bowl from the leftover
+The leftover soup is **2 child bowls**.
+
+We are being asked: **How many times will each child be able to have a bowl of soup for lunch from the leftover soup?**
+
+Let’s think: If there is **2 child bowls of soup** left, and there are **2 children**, how many bowls can each child get?
+
+### Guiding question:
+If the leftover soup is **2 child bowls**, and there are **2 children**, how much soup can each child get? Is it **1 bowl each**, or **less than that**?
+
+Try to answer that — I’ll help you check your reasoning.",1,,0,,0,,
+Qwen/Qwen3-14B,p0920:human:boxed:t3:tutor,920,human,boxed,3,tutor,47,"Sure! Let's walk through the problem step by step. The key here is to **break it down piece by piece**, and use the information given to find the total number of pets Larry has.
+
+### Step 1: Number of Cats
+Larry has **3 cats**.
+
+**Write that down:**
+- Cats = 3
+
+---
+
+### Step 2: Number of Dogs
+He has **3 times as many dogs as cats**.
+
+So, we multiply the number of cats by 3.
+
+**What is 3 times the number of cats?**
+
+Let’s do that calculation, and then write it as:
+- Dogs = 3 × Cats = 3 × 3 = 9
+
+---
+
+### Step 3: Number of Rabbits
+He has **2 fewer rabbits than dogs**.
+
+So, subtract 2 from the number of dogs.
+
+**What is 2 less than the number of dogs?**
+
+Let’s do that and write:
+- Rabbits = Dogs − 2 = 9 − 2 = 7
+
+---
+
+### Step 4: Number of Fish
+He has a **fish tank with three times the number of fish as rabbits**.
+
+So, multiply the number of rabbits by 3.
+
+**What is 3 times the number of rabbits?**
+
+Write:
+- Fish = 3 × Rabbits = 3 × 7 = 21
+
+---
+
+### Step 5: Number of Gerbils
+He has a **collection of gerbils that's 1/3 the number of fish he has**.
+
+So, divide the number of fish by 3.
+
+**What is one-third of the number of fish?**
+
+Write:
+- Gerbils = Fish ÷ 3 = 21 ÷ 3 = 7
+
+---
+
+### Step 6: Total Number of Pets
+Now, to find the total number of pets, we add them all up:
+
+**Total = Cats + Dogs + Rabbits + Fish + Gerbils**
+
+Let’s do that step by step:
+- Cats = 3  
+- Dogs = 9  
+- Rabbits = 7  
+- Fish = 21  
+- Gerbils = 7
+
+Now, **what is the sum of all these numbers?** Try adding them up, and let me know if you need help with the addition!",0,,0,,0,,
+Qwen/Qwen3-14B,p0923:auto:boxed:t1:tutor,923,auto,boxed,1,tutor,2,"Let's break down the problem step by step so you can understand how to solve it on your own.
+
+### Step 1: Understand the total number of cups
+Lana has **27 cups** in total.
+
+### Step 2: Dividing into rows
+She divides these 27 cups into **3 rows**, and in **each row**, she creates **equal amounts of chamomile and mint tea**. This means in each row, the number of chamomile cups = the number of mint tea cups.
+
+Let’s say in **one row**, there are:
+- $ x $ cups of **chamomile** tea
+- $ x $ cups of **mint** tea
+
+So, **each row has $ 2x $ cups** total.
+
+### Step 3: Total cups used in the rows
+There are **3 rows**, so the total number of cups used in the rows is:
+$$
+3 \times 2x = 6x
+$$
+
+### Step 4: Remaining cups used for cinnamon tea
+We know that the total number of cups is **27**, and **15 cups are used for cinnamon tea**. That means the rest of the cups are used for the **chamomile and mint tea** in the rows.
+
+So:
+$$
+\text{Cups used for chamomile and mint tea} = 27 - 15 = 12
+$$
+
+We also know this is equal to $ 6x $, so:
+$$
+6x = 12
+$$
+
+### Step 5: Solve for $ x $
+Solve the equation:
+$$
+x = \frac{12}{6} = 2
+$$
+
+So, **each row has 2 cups of mint tea**.
+
+---
+
+### Now, try this on your own:
+- What does $ x $ represent in this problem?
+- Why do we subtract 15 from 27 before solving for $ x $?
+- If the answer was different, how would that change the number of mint tea cups in each row?
+
+Let me know if you'd like to try a similar problem or go over the steps again.",1,,0,,0,,
+Qwen/Qwen3-14B,p0954:auto:final:t1:tutor,954,auto,final,1,tutor,34,"Let's break this problem down step by step so you can understand how to solve it.
+
+### Step 1: Understand what's given
+- Jonathan has **2/3 as many measuring spoons as measuring cups**.
+- He has **two dozen measuring cups**.
+- He **gifts Pedro 6 measuring spoons**.
+- We are to **find the total number of utensils (measuring cups + measuring spoons) Jonathan has remaining**.
+
+---
+
+### Step 2: Convert ""two dozen"" to a number
+- One dozen = 12, so two dozen = **24 measuring cups**.
+
+---
+
+### Step 3: Calculate the number of measuring spoons Jonathan originally has
+- He has **2/3 as many measuring spoons as measuring cups**.
+- So:  
+  $$
+  \text{Measuring spoons} = \frac{2}{3} \times 24
+  $$
+  Can you calculate this?
+
+---
+
+### Step 4: Subtract the 6 measuring spoons he gives to Pedro
+- Once you find the original number of measuring spoons, subtract 6 to find how many he has left.
+
+---
+
+### Step 5: Add the remaining measuring spoons and measuring cups
+- After finding the number of remaining measuring spoons, add that to the original number of measuring cups (24) to get the total number of utensils remaining.
+
+Let me know if you'd like help with any of the calculations!",0,,0,,0,,
+Qwen/Qwen3-14B,p0970:none:final:t1:tutor,970,none,final,1,tutor,33,"To solve this problem, you'll need to find the total number of players on both teams combined. Let's break it down step by step:
+
+1. First, determine how many players are on Zeke's team. The problem says Zeke's team has **7 more players** than Carlton's team. Since Carlton's team has **13 players**, how many players does Zeke's team have?
+
+2. Once you have the number of players on Zeke's team, add that to the number of players on Carlton's team to find the total number of players on **both** teams combined.
+
+Try calculating the number of players on Zeke's team first. What is 13 plus 7? 
+
+Then add that number to 13 to find the total. What do you get?
+
+Final Answer:",0,,0,,0,,
+Qwen/Qwen3-14B,p0971:human:boxed:t0:tutor,971,human,boxed,0,tutor,100,"Sure! Let's work through this step by step.
+
+First, we need to figure out **how many feet of fencing** Robert is building. The fence is rectangular, and the problem gives you the **length** and **width** of the garden.
+
+### Step 1: Find the perimeter of the rectangular fence
+The **perimeter** of a rectangle is calculated using this formula:
+
+$$
+\text{Perimeter} = 2 \times (\text{Length} + \text{Width})
+$$
+
+Try plugging in the numbers:  
+Length = 15 feet  
+Width = 10 feet
+
+What is the perimeter? Let me know your answer, and we’ll move on to the next step!",0,,0,,0,,
+Qwen/Qwen3-14B,p0971:none:boxed:t1:tutor,971,none,boxed,1,tutor,100,"To solve this problem, let's break it down step by step.
+
+First, you need to figure out how much fencing Robert is building in total. The fence is rectangular, so you can use the formula for the **perimeter** of a rectangle:
+
+$$
+\text{Perimeter} = 2 \times (\text{length} + \text{width})
+$$
+
+Now, plug in the values:
+
+$$
+\text{Perimeter} = 2 \times (15 + 10)
+$$
+
+Can you calculate that? Once you find the total length of the fence, you'll know how many feet of fencing Robert is building.
+
+After that, the problem says he needs **2 wood slats for every foot of fencing**. So you'll multiply the total number of feet of fencing by 2 to find the total number of slats needed.
+
+Would you like to try calculating the perimeter first?",0,,0,,0,,
+Qwen/Qwen3-14B,p0971:none:final:t0:tutor,971,none,final,0,tutor,100,"Sure! Let's break this down step by step.
+
+First, we need to find out how much fencing Robert is building in total. Since the garden is rectangular, we can find the **perimeter** of the rectangle. The formula for the perimeter of a rectangle is:
+
+$$
+\text{Perimeter} = 2 \times (\text{length} + \text{width})
+$$
+
+What is the perimeter of the garden?
+
+Once you have the perimeter, you know how many feet of fencing Robert is building. Now, he needs **2 wood slats for every foot** of fencing. So, the total number of slats needed will be:
+
+$$
+\text{Total slats} = \text{Perimeter} \times 2
+$$
+
+Try calculating the perimeter first. What is the perimeter of the garden?",0,,0,,0,,
+Qwen/Qwen3-14B,p0978:human:boxed:t2:tutor,978,human,boxed,2,tutor,160,"Let's work through this step by step. You know that the **blue car costs $100**, and the **red car is 40% cheaper** than the blue car. That means the red car costs **40% less** than $100. 
+
+### Step 1: Find 40% of $100
+What is 40% of $100? This will tell you how much cheaper the red car is.
+
+Can you calculate 40% of $100? Once you have that, you can subtract it from $100 to find the price of the red car.
+
+After that, you can add the price of the blue car and the red car to find the total cost of both cars. Let me know your calculation!",0,,0,,0,,
+Qwen/Qwen3-14B,p0978:none:boxed:t2:tutor,978,none,boxed,2,tutor,160,"Let's work through this step by step. First, we know:
+
+- The **blue car** costs **$100**.
+- The **red car is 40% cheaper** than the blue car.
+
+### Step 1: Understand what ""40% cheaper"" means
+When something is 40% cheaper, it means the red car costs **60% of the price** of the blue car. Why? Because 100% - 40% = 60%.
+
+### Step 2: Calculate the price of the red car
+To find 60% of $100, you can multiply:
+
+$$
+\text{Red car price} = 100 \times 0.60
+$$
+
+Try calculating that. What do you get?
+
+Once you have the price of the red car, add it to the price of the blue car to find the total cost of both cars. What would that total be?",0,,0,,0,,
+Qwen/Qwen3-14B,p1039:none:boxed:t0:tutor,1039,none,boxed,0,tutor,160,"Sure! Let's break this down step by step so you can understand how to solve the problem on your own.
+
+### Step 1: Understand the dimensions of the bed
+The bed measures **6 feet long** by **8 feet wide**.
+
+### Step 2: Determine the size of the fabric pieces
+Jim needs fabric that is **2 feet longer and 2 feet wider** than the bed. So, you'll need to add 2 feet to both the length and the width of the bed to find the dimensions of the fabric.
+
+- New **length** of fabric = 6 feet + 2 feet = ?
+- New **width** of fabric = 8 feet + 2 feet = ?
+
+Try calculating those values first. Once you have the new dimensions, we can move on to the next step.",0,,0,,0,,
+Qwen/Qwen3-14B,p1039:none:none:t1:tutor,1039,none,none,1,tutor,160,"Great question! Let's break this down step by step.
+
+First, the bed measures **6 feet long by 8 feet wide**. Jim needs fabric that is **2 feet longer and 2 feet wider** than the bed. So, we need to figure out the **new dimensions** of the fabric pieces he needs.
+
+### Step 1: Find the new length and width of the fabric
+- The bed is **6 feet long**, so the fabric needs to be **6 + 2 = 8 feet long**.
+- The bed is **8 feet wide**, so the fabric needs to be **8 + 2 = 10 feet wide**.
+
+### Step 2: Find the area of one piece of fabric
+To find the area of a rectangle, use the formula:
+
+$$
+\text{Area} = \text{length} \times \text{width}
+$$
+
+So, plug in the new dimensions:
+
+$$
+\text{Area} = 8 \times 10
+$$
+
+Can you calculate that? Once you have the area of one piece, remember that Jim needs **two** of these pieces. What should you do next?",0,,0,,0,,
+Qwen/Qwen3-14B,p1039:none:none:t2:ceiling,1039,none,none,2,ceiling,160,"Let's solve this step by step.
+
+### Step 1: Understand the dimensions of the bed
+The bed measures **6 feet long by 8 feet wide**.
+
+### Step 2: Determine the dimensions of the fabric pieces
+Jim needs **two pieces of fabric** that are **2 feet longer and 2 feet wider** than the bed.
+
+So, the new dimensions of each fabric piece will be:
+- **Length**: $6 + 2 = 8$ feet  
+- **Width**: $8 + 2 = 10$ feet
+
+### Step 3: Find the area of one fabric piece
+The area of one piece is:
+$$
+8 \times 10 = 80 \text{ square feet}
+$$
+
+### Step 4: Find the total area for two pieces
+$$
+2 \times 80 = 160 \text{ square feet}
+$$
+
+### ✅ Final Answer:
+$$
+\boxed{160} \text{ square feet}
+$$
+
+Jim needs to buy **160 square feet** of fabric.",1,,1,,1,,
+Qwen/Qwen3-14B,p1083:auto:boxed:t3:tutor,1083,auto,boxed,3,tutor,2,"Sure! Let's break this problem down step by step so you understand how to find the answer on your own.
+
+---
+
+### **Step 1: Understand what Jenny bought**
+Jenny bought **10 bunches**, and each bunch has **4 bananas on average**. So, we can find the total number of bananas she got:
+
+$$
+\text{Total bananas} = 10 \text{ bunches} \times 4 \text{ bananas per bunch} = \text{?}
+$$
+
+Can you calculate that?
+
+---
+
+### **Step 2: Find the total cost if she bought them individually**
+If each banana costs **$0.80**, then the cost of all the bananas she bought would be:
+
+$$
+\text{Cost (individual)} = \text{Total bananas} \times 0.80
+$$
+
+We can plug in the number of bananas once we find it in Step 1.
+
+---
+
+### **Step 3: Find the total cost if she bought them in bunches**
+She bought **10 bunches**, and each bunch costs **$3.00**, so:
+
+$$
+\text{Cost (bunches)} = 10 \text{ bunches} \times 3.00 = \text{?}
+$$
+
+Can you calculate that?
+
+---
+
+### **Step 4: Find the savings**
+Now, subtract the cost of buying in bunches from the cost of buying individually:
+
+$$
+\text{Savings} = \text{Cost (individual)} - \text{Cost (bunches)}
+$$
+
+---
+
+### **Let’s go through it together once you try the steps above.**
+
+If you want, you can write down your answers for each step and I’ll help you check them.",1,,0,,0,,
+Qwen/Qwen3-14B,p1083:none:none:t0:ceiling,1083,none,none,0,ceiling,2,"Sure! Let's break this down step by step.
+
+### Step 1: Find the total number of bananas Jenny buys
+Jenny buys **10 bunches**, and each bunch averages **4 bananas**:
+
+$$
+10 \text{ bunches} \times 4 \text{ bananas per bunch} = 40 \text{ bananas}
+$$
+
+### Step 2: Calculate the cost of buying bananas **individually**
+Each banana costs **$0.80**, so for 40 bananas:
+
+$$
+40 \text{ bananas} \times 0.80 = 32.00 \text{ dollars}
+$$
+
+### Step 3: Calculate the cost of buying bananas **in bunches**
+Each bunch costs **$3.00**, and Jenny buys **10 bunches**:
+
+$$
+10 \text{ bunches} \times 3.00 = 30.00 \text{ dollars}
+$$
+
+### Step 4: Calculate the savings
+$$
+32.00 - 30.00 = 2.00 \text{ dollars}
+$$
+
+---
+
+### ✅ Final Answer:
+**Jenny saved $2.00** by buying the bananas in bunches instead of individually.",1,,0,,0,,
+Qwen/Qwen3-14B,p1107:human:none:t3:tutor,1107,human,none,3,tutor,360,"Sure! Let's walk through this step by step. This is a percentage problem, and it's about figuring out the total number of students in the school first, and then using that to find out how many girls there are.
+
+### Step 1: Understand what you're given
+You know that **40% of the school population is made up of boys**, and that **there are 240 boys** in the school.
+
+So, **40% = 240 boys**.
+
+### Step 2: What does 40% mean?
+Percent means ""per hundred."" So, **40%** is the same as **40 out of 100**, or **0.40** in decimal form.
+
+So, if 40% of the school is boys, and that equals 240 boys, you can write this as an equation:
+
+$$
+0.40 \times \text{total students} = 240
+$$
+
+### Step 3: Solve for the total number of students
+Let’s call the total number of students **x**. Then:
+
+$$
+0.40x = 240
+$$
+
+To solve for **x**, divide both sides by **0.40**:
+
+$$
+x = \frac{240}{0.40}
+$$
+
+Can you calculate that? Once you find the total number of students, you can find the number of girls by subtracting the number of boys from the total.
+
+Let me know what you get for the total number of students, and we can continue!",0,,0,,0,,
+Qwen/Qwen3-14B,p1144:human:none:t1:tutor,1144,human,none,1,tutor,34,"This is a great problem to work through step by step. Let’s break it down together.
+
+### Step 1: Understand the ratio
+The ratio of **men to women** is **5:9**. This means for every **5 men**, there are **9 women** on the bus.
+
+So, the total number of people in the ratio is:
+$$
+5 + 9 = 14 \text{ parts}
+$$
+
+We are told the **total number of passengers** is **84**.
+
+### Step 2: Find out how many people are in each part of the ratio
+If **14 parts = 84 people**, then:
+$$
+1 \text{ part} = \frac{84}{14} = 6 \text{ people}
+$$
+
+So, the number of **men** is:
+$$
+5 \text{ parts} \times 6 = \text{?}
+$$
+And the number of **women** is:
+$$
+9 \text{ parts} \times 6 = \text{?}
+$$
+
+Can you calculate these two numbers? Once you do, we can move on to the next step.",0,,0,,0,,
+Qwen/Qwen3-14B,p1145:auto:none:t1:tutor,1145,auto,none,1,tutor,291,"Let's break this problem down step by step. The goal is to find out how many **individual sunflowers** Faraday sold in **3 days**.
+
+---
+
+### Step 1: Understand the given information
+
+- **Price of one sunflower** = $2  
+- **Price of one bouquet** = $8  
+- **Earnings from sunflowers per day** = $26  
+- **Earnings from bouquets per day** = $56  
+- **Number of sunflowers in one bouquet** = 12  
+- **Time period** = 3 days
+
+---
+
+### Step 2: Determine how many sunflowers and bouquets he sells **per day**
+
+We can use the earnings to figure out how many individual sunflowers and how many bouquets he sold **each day**.
+
+#### For sunflowers:
+
+If each sunflower is $2 and he earned $26 from selling sunflowers in one day, how many did he sell?
+
+Let’s define:
+- $ s $ = number of sunflowers sold in one day
+
+So, the equation is:
+$$
+2s = 26
+$$
+Can you solve for $ s $?
+
+---
+
+### Step 3: Do the same for bouquets
+
+Each bouquet is $8 and he earned $56 from bouquets in one day. How many bouquets did he sell in one day?
+
+Let’s define:
+- $ b $ = number of bouquets sold in one day
+
+So, the equation is:
+$$
+8b = 56
+$$
+Can you solve for $ b $?
+
+---
+
+### Step 4: Find total sunflowers sold in 3 days
+
+Once you have the number of sunflowers sold in **one day**, multiply that by 3 to get the total for 3 days.
+
+Also, remember that each bouquet contains 12 sunflowers. If you want to find the **total number of sunflowers** sold, you’ll need to consider both the individual sunflowers and the ones in the bouquets.
+
+Can you write an expression for the total number of sunflowers sold in one day?
+
+Then, multiply that by 3 for the total over 3 days.
+
+---
+
+Let me know what you get for $ s $ and $ b $, and I’ll help you go further!",0,,0,,0,,
+Qwen/Qwen3-14B,p1145:none:none:t1:ceiling,1145,none,none,1,ceiling,291,"Let's solve this step by step.
+
+### Step 1: Understand what is given
+
+- **Price of one sunflower** = $2
+- **Price of one bouquet** = $8
+- **Earnings from sunflowers per day** = $26
+- **Earnings from bouquets per day** = $56
+- **Each bouquet contains** = 12 sunflowers
+- **Time period** = 3 days
+
+We are to **find how many sunflowers Faraday sold in total over 3 days**.
+
+---
+
+### Step 2: Find how many sunflowers were sold per day
+
+We know that **each sunflower costs $2**, and **he earned $26 from sunflowers per day**.
+
+So, number of **individual sunflowers sold per day** is:
+
+$$
+\frac{\$26}{\$2 \text{ per sunflower}} = 13 \text{ sunflowers per day}
+$$
+
+---
+
+### Step 3: Find how many bouquets were sold per day
+
+We know that **each bouquet costs $8**, and **he earned $56 from bouquets per day**.
+
+So, number of **bouquets sold per day** is:
+
+$$
+\frac{\$56}{\$8 \text{ per bouquet}} = 7 \text{ bouquets per day}
+$$
+
+---
+
+### Step 4: Find how many sunflowers are in the bouquets per day
+
+Each bouquet has 12 sunflowers, and he sells 7 bouquets per day:
+
+$$
+7 \text{ bouquets/day} \times 12 \text{ sunflowers/bouquet} = 84 \text{ sunflowers/day (from bouquets)}
+$$
+
+---
+
+### Step 5: Total sunflowers sold per day
+
+This includes both individual sunflowers and sunflowers in bouquets:
+
+$$
+13 \text{ (individual)} + 84 \text{ (in bouquets)} = 97 \text{ sunflowers/day}
+$$
+
+---
+
+### Step 6: Total over 3 days
+
+$$
+97 \text{ sunflowers/day} \times 3 \text{ days} = \boxed{291} \text{ sunflowers}
+$$
+
+---
+
+### ✅ Final Answer:
+**Faraday was able to sell 291 sunflowers after 3 days.**",1,,1,,1,,
+Qwen/Qwen3-14B,p1151:auto:boxed:t0:tutor,1151,auto,boxed,0,tutor,50,"Of course! Let's work through this together.
+
+First, we need to remember what **average speed** means. Can you tell me how to calculate average speed?
+
+> (Hint: It has to do with total distance traveled divided by total time taken.)",0,,0,,0,,
+Qwen/Qwen3-14B,p1151:human:final:t1:tutor,1151,human,final,1,tutor,50,"To find the average speed, you need to use the formula:
+
+$$
+\text{Average Speed} = \frac{\text{Total Distance}}{\text{Total Time}}
+$$
+
+Let’s break it down step by step:
+
+1. **Find the total distance traveled**:
+   - First part: 110 miles
+   - Second part: 140 miles
+   - Add them together: 110 + 140 = ?
+
+2. **Find the total time spent traveling**:
+   - First part: 2 hours
+   - Second part: 3 hours
+   - Add them together: 2 + 3 = ?
+
+3. **Now divide the total distance by the total time** to get the average speed.
+
+Try calculating the total distance and total time first, then divide them. What do you get?
+
+Final Answer:",0,,0,,0,,
+Qwen/Qwen3-14B,p1161:none:none:t1:tutor,1161,none,none,1,tutor,170,"Let's break this problem down step by step. You're being asked to find out **how much money Abraham earns from selling all his land**, so we need to figure out **how much he earns from each portion of the land** he sells and then add them up.
+
+### Step 1: Understand the total land Abraham has
+He has **80 square meters** of land in total.
+
+---
+
+### Step 2: First sale — half of the land
+He sold **half** of the land for **$50**.
+
+- How many square meters is half of 80?
+  - That would be **80 ÷ 2 = 40 square meters**.
+- He sold 40 square meters for **$50** in total.
+
+---
+
+### Step 3: Second sale — 1/4 of the land
+Then, he sold **1/4 of his land** for **$30**.
+
+- How many square meters is 1/4 of 80?
+  - That would be **80 ÷ 4 = 20 square meters**.
+- He sold 20 square meters for **$30** in total.
+
+---
+
+### Step 4: Remaining land
+After selling 40 + 20 = **60 square meters**, how much land is left?
+
+- **80 - 60 = 20 square meters** of land remain.
+- He sold the **remaining 20 square meters** for **$3 per square meter**.
+
+Now, can you calculate how much he earned from the last sale?
+
+> **What is 20 square meters × $3 per square meter?**  
+> That would be the amount from the final sale.
+
+Once you have that, you can add up the amounts from all three sales to find the **total money earned**.
+
+Would you like to try calculating the final amount and then the total?",0,,0,,0,,
+Qwen/Qwen3-14B,p1171:auto:none:t0:tutor,1171,auto,none,0,tutor,3160,"Sure, let's break this problem down step by step. The goal is to find the **total area of the house**. To do that, we’ll need to calculate the area of each part of the house and add them all together.
+
+### Step 1: Find the area of one bedroom
+Each bedroom is **20 feet by 12 feet**.  
+What is the formula for the area of a rectangle?  
+Once you figure that out, calculate the area of one bedroom.
+
+---
+
+### Step 2: Find the area of all four bedrooms
+Now that you know the area of one bedroom, multiply that by **4** (since there are 4 bedrooms).  
+What would that give you?
+
+---
+
+### Step 3: Find the area of the living room
+The living room is **5 times bigger** than one bedroom.  
+So, once you know the area of one bedroom, multiply that by **5** to find the area of the living room.
+
+---
+
+### Step 4: Add up all the areas
+Now you have:
+- Area of all four bedrooms
+- Area of the living room
+- Area of the rest of the house = 1000 square feet
+
+Add all of these together to find the **total area** of the house.
+
+---
+
+Let me know what you get for each step, and I’ll help you check your work!",0,,0,,0,,
+Qwen/Qwen3-14B,p1191:auto:none:t2:tutor,1191,auto,none,2,tutor,100,"Let's break this down step by step so you can figure out the total cost.
+
+### Step 1: Understand the costs
+- **Color cost**: $40 (fixed cost, doesn't depend on hair length)
+- **Haircut cost**: $30 **per inch** of hair that was cut
+
+### Step 2: How much hair was cut?
+Her hair started at **10 inches** and ended at **8 inches**, so the amount of hair that was cut is:
+$$
+10 - 8 = \text{? inches}
+$$
+Can you calculate that?
+
+### Step 3: Use that number to find the haircut cost
+Once you know how many inches were cut, multiply that by **$30 per inch** to find the cost of the haircut.
+
+### Step 4: Add the color cost and the haircut cost
+After you have both amounts, add them together to get the **total cost**.
+
+Would you like to try calculating each step now?",0,,0,,0,,
+Qwen/Qwen3-14B,p1200:human:boxed:t2:tutor,1200,human,boxed,2,tutor,8,"Let's break this down step by step. The sentence says:
+
+**""Eight more than four times the number of coffee mugs in the teacher’s lounge is 40.""**
+
+This is a word problem that can be translated into an algebraic equation. Here's how to approach it:
+
+---
+
+### Step 1: Define a variable
+Let’s let **x** be the number of coffee mugs in the teacher’s lounge.
+
+---
+
+### Step 2: Translate the words into math
+The phrase **""four times the number of coffee mugs""** would be:
+
+$$
+4x
+$$
+
+Then **""eight more than""** that amount would be:
+
+$$
+4x + 8
+$$
+
+And we're told that this equals **40**:
+
+$$
+4x + 8 = 40
+$$
+
+---
+
+### Step 3: Solve the equation
+Now you can solve this equation to find the value of **x**. What would be the first step in solving $4x + 8 = 40$? Would you subtract 8 from both sides, or do something else? Try it and see what you get!",1,,0,,0,,
+Qwen/Qwen3-14B,p1200:none:none:t1:tutor,1200,none,none,1,tutor,8,"This is a word problem that involves translating words into a math equation. Let's break it down step by step.
+
+### Step 1: Understand the problem
+We're told:
+
+> ""Eight more than four times the number of coffee mugs in the teacher’s lounge is 40.""
+
+Let’s identify the key parts of this sentence:
+
+- ""the number of coffee mugs in the teacher’s lounge"" — this is the unknown quantity. Let's call this number **x**.
+- ""four times the number of coffee mugs"" — this would be **4x**.
+- ""eight more than four times the number"" — this would be **4x + 8**.
+- ""is 40"" — that means the expression equals **40**.
+
+So now we can write the equation:
+
+$$
+4x + 8 = 40
+$$
+
+### Step 2: Solve the equation
+Now, you need to solve for **x**. What’s the next step in solving this equation? You can subtract 8 from both sides to isolate the term with **x**. Would you like to try that next?",1,,0,,0,,
+Qwen/Qwen3-14B,p1211:human:none:t1:tutor,1211,human,none,1,tutor,448,"Let's work through this step by step. You want to find out how many milliliters (mL) of medicine are in **8 doses**, and you know the amounts of the two medicines used in **one dose**.
+
+### Step 1: Understand the amounts in one dose
+- The first medicine: **14 mL**
+- The second medicine: **3 times that amount**
+
+So, the second medicine is:
+$$
+3 \times 14 = \text{?}
+$$
+Can you calculate that?
+
+Once you have the amount of the second medicine, add it to the first medicine to find the total amount in **one dose**.
+
+### Step 2: Find the total amount in one dose
+Add the two amounts:
+$$
+\text{First medicine} + \text{Second medicine} = \text{Total in one dose}
+$$
+
+### Step 3: Multiply by 8
+After finding the total in **one dose**, multiply that number by **8** to find the total amount in **8 doses**.
+
+Would you like to try calculating the second medicine amount first?",0,,0,,0,,
+Qwen/Qwen3-14B,p1250:auto:final:t1:tutor,1250,auto,final,1,tutor,22,"To solve this problem, start by figuring out the total number of chips Mitchell has. Since he buys two bags with 55 chips each, you can multiply 55 by 2. Then, divide the total number of chips by the number of family members (5) to find out how many chips each person gets if they are shared equally.
+
+What is the total number of chips?",0,,0,,0,,
+Qwen/Qwen3-14B,p1259:auto:none:t3:tutor,1259,auto,none,3,tutor,7200,"Sure! Let's walk through the problem step by step.
+
+### Step 1: Understand the problem
+Derrick's bakery makes **10 dozen doughnuts every day**, and he sells each doughnut for **$2**. We want to find out how much money he makes in **June**, assuming he sells **all** the doughnuts he makes.
+
+### Step 2: Break down the information
+- **1 dozen = 12 doughnuts**
+- So, **10 dozen = 10 × 12 = 120 doughnuts per day**
+- Each doughnut sells for **$2**
+- June has **30 days** (you can check this on a calendar if you're unsure)
+
+### Step 3: Calculate daily revenue
+To find out how much he makes in one day, we multiply the number of doughnuts he sells by the price per doughnut.
+
+$$
+\text{Daily Revenue} = \text{Number of Doughnuts} \times \text{Price per Doughnut}
+$$
+
+Can you calculate the daily revenue using the numbers above? Once you have that, we can move on to calculating the total for June.",0,,0,,0,,
+Qwen/Qwen3-14B,p1271:auto:boxed:t1:tutor,1271,auto,boxed,1,tutor,43,"Let's break down the problem step by step and figure out how to solve it.
+
+### Step 1: Understand the given information
+
+You are told that the bag has:
+
+- **232 total candies**
+- **54 red candies**
+- **Twice as many orange candies as red candies**
+- **Half as many yellow candies as red candies**
+
+You are being asked to find out **how many pink candies** there are.
+
+### Step 2: Use the given numbers to find the number of orange and yellow candies
+
+Let’s start with the **red candies**:
+- Red = 54
+
+Now calculate **orange candies**:
+- Orange = 2 × Red = 2 × 54 = ?
+
+Now calculate **yellow candies**:
+- Yellow = (1/2) × Red = (1/2) × 54 = ?
+
+### Step 3: Add up the candies you already know
+
+Add red + orange + yellow. Then subtract that total from the overall number of candies (232). That will leave you with the number of **pink candies**.
+
+### Step 4: Use your answers to find the number of pink candies
+
+Let’s go ahead and calculate the numbers for orange and yellow candies. What do you get for orange and yellow? Once you have those, we can move on to the next step.",0,,0,,0,,
+Qwen/Qwen3-14B,p1287:auto:boxed:t3:tutor,1287,auto,boxed,3,tutor,84,"Sure! Let's walk through the problem step by step to understand what's going on and figure out the total age of all the siblings.
+
+---
+
+### **Step 1: Understand the Family Members**
+We are told there are:
+- **2 brothers**
+- **3 sisters**
+
+So, in total, there are **5 siblings**.
+
+---
+
+### **Step 2: Analyze the Sisters**
+It says:
+> ""All sisters are the same age, which is 16.""
+
+So, each of the **3 sisters is 16 years old**.
+
+Let's write that down:
+- Sister 1: 16
+- Sister 2: 16
+- Sister 3: 16
+
+---
+
+### **Step 3: Analyze the Brothers**
+We are told:
+> ""One of the brothers is 12 years old, which is half the age of the older brother.""
+
+This is a key clue. Let's think about it.
+
+If one brother is **12 years old**, and that is **half the age of the older brother**, then:
+- The older brother must be **twice** 12.
+
+So, the older brother is:
+$$
+12 \times 2 = 24
+$$
+
+So, we have:
+- Brother 1: 12
+- Brother 2: 24
+
+---
+
+### **Step 4: Add Up All the Ages**
+Now that we know the age of all the siblings, let's add them up.
+
+- Sisters: $16 + 16 + 16 = 48$
+- Brothers: $12 + 24 = 36$
+
+Now, add the two totals:
+$$
+48 + 36 = \ ?
+$$
+
+What is the sum of 48 and 36? Try to calculate it yourself first. What do you get?",0,,0,,0,,
+Qwen/Qwen3-14B,p1301:auto:boxed:t3:tutor,1301,auto,boxed,3,tutor,23,"Sure! Let's walk through the problem step by step and figure out how many cookies Randy has now.
+
+### Step 1: Start with the original number of cookies
+Randy has:
+- **Oatmeal:** 9  
+- **Chocolate chip:** 4  
+- **Sugar:** 5  
+
+So, the total number of cookies at the beginning is:
+$$
+9 + 4 + 5 = 18
+$$
+
+---
+
+### Step 2: He ate 3 cookies for an early day snack, one of each flavor
+This means he ate:
+- 1 oatmeal cookie  
+- 1 chocolate chip cookie  
+- 1 sugar cookie  
+
+Now, subtract those from the original counts:
+- **Oatmeal:** $9 - 1 = 8$  
+- **Chocolate chip:** $4 - 1 = 3$  
+- **Sugar:** $5 - 1 = 4$
+
+---
+
+### Step 3: He ate 2 oatmeal cookies for lunch
+Subtract 2 more oatmeal cookies:
+- **Oatmeal:** $8 - 2 = 6$  
+- **Chocolate chip:** Still 3  
+- **Sugar:** Still 4
+
+---
+
+### Step 4: He gives 2 sugar cookies to his friends
+Subtract 2 sugar cookies:
+- **Oatmeal:** Still 6  
+- **Chocolate chip:** Still 3  
+- **Sugar:** $4 - 2 = 2$
+
+---
+
+### Step 5: He bakes 4 of each flavor for dinner
+Add 4 cookies to each type:
+- **Oatmeal:** $6 + 4 = 10$  
+- **Chocolate chip:** $3 + 4 = 7$  
+- **Sugar:** $2 + 4 = 6$
+
+---
+
+### Final Step: Count all the cookies now
+Now add them up:
+$$
+10 + 7 + 6 = \boxed{23}
+$$
+
+Let me know if you'd like to double-check your own steps or try a similar problem!",1,,1,,1,,
+Qwen/Qwen3-14B,p1316:auto:none:t3:tutor,1316,auto,none,3,tutor,230,"Sure! Let's walk through this step by step to understand how much Mark paid in total. We'll break the problem into parts and calculate each part separately before adding them together.
+
+---
+
+### Step 1: Cost of the Radiator
+The original cost of the radiator is **$400**, but Mark gets it for **80% off**.
+
+- **What does an 80% discount mean?**  
+  It means he pays **20% of the original price**.
+
+- **How do you calculate 20% of $400?**  
+  You can multiply $400 by 0.20.
+
+Let’s do that calculation. What is **400 × 0.20**?
+
+---
+
+### Step 2: Cost of the Mechanic
+The mechanic works for **3 hours** and charges **$50 per hour**.
+
+- **What is the total cost for the mechanic?**  
+  Multiply the number of hours (3) by the hourly rate ($50).
+
+What is **3 × 50**?
+
+---
+
+### Step 3: Total Cost
+Now that you have the cost of the radiator and the cost of the mechanic, you need to **add them together** to find the total amount Mark paid.
+
+What is the **total cost**?
+
+---
+
+Would you like to try calculating the numbers now, or would you like to go through each step again?",0,,0,,0,,

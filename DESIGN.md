@@ -230,3 +230,16 @@ changes; per-format breakdown of H6.
 released RLVR stage, as a whole, increased sensitivity to these formats. It
 does not identify which RLVR data or reward caused it, and it is two ladders
 from one lab and one base model.
+
+**2026-10-20, after Phase 1 results (both stages) were viewed.**
+
+5. *Phase 2 gate, as implemented, is too permissive; we do not rely on it.* The
+   analysis code passes the gate when any of seven sub-contrasts per model
+   (H1: boxed, final, pooled; H2: none, boxed, final, pooled) has a positive
+   interval in two models, with no multiplicity correction. On the six-model
+   ladder it passes via four positive intervals (0.6B H1 boxed and pooled;
+   14B H1 final; 32B H1 boxed), all 3–5.5 points, alongside six negative
+   intervals (8B H1 final and pooled, 8B H2 final and pooled, 1.7B H2 final,
+   32B H1 final). We treat this as no coherent support for H1 or H2 and do not
+   use the Phase 1 cue contrast for Phase 2. The Phase 2 contrast will be
+   chosen from Phase 1b/1c results and pre-registered separately.
