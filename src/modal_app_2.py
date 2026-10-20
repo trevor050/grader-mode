@@ -85,6 +85,9 @@ def study(requests: list, manifest: dict, run_id: str, progress: modal.Dict,
     model = AutoModelForCausalLM.from_pretrained(MODEL, revision=MODELS[MODEL],
              torch_dtype=torch.bfloat16, device_map='cuda', attn_implementation='sdpa').eval()
     hf_cache.commit()
+    eos_ids=model.generation_config.eos_token_id
+    eos_ids=[eos_ids] if isinstance(eos_ids,int) else list(eos_ids)
+    stats['eos_token_ids']=eos_ids
     layers = model.model.layers
     depth, hidden_size = len(layers), model.config.hidden_size
     # Small tensor runtime test covers actual torch hook path, including tuple output.
@@ -112,7 +115,7 @@ def study(requests: list, manifest: dict, run_id: str, progress: modal.Dict,
     with torch.inference_mode():
         reference=model.generate(**parity_input,do_sample=False,max_new_tokens=8,
                     logits_to_keep=1,pad_token_id=tokenizer.pad_token_id)
-        actual,parity_meta=compact_generate(model,parity_input,eos_token_id=tokenizer.eos_token_id,
+        actual,parity_meta=compact_generate(model,parity_input,eos_token_id=eos_ids,
                     max_new_tokens=8,deadline=deadline,sample=False)
     assert torch.equal(reference[:,parity_input.input_ids.shape[1]:],actual)
     del reference,actual,parity_input
@@ -190,7 +193,7 @@ def study(requests: list, manifest: dict, run_id: str, progress: modal.Dict,
                                     'function_seconds':time.monotonic()-started,'batches':len(completed_batches),
                                     'decoding_cell':cell,'decode_step':step,'active_rows':active}
                         generated,decode_meta=compact_generate(model,encoded,
-                          eos_token_id=tokenizer.eos_token_id,max_new_tokens=768,deadline=deadline,
+                          eos_token_id=eos_ids,max_new_tokens=768,deadline=deadline,
                           progress=decode_progress)
                     torch.cuda.synchronize()
                 except torch.cuda.OutOfMemoryError:
@@ -213,13 +216,13 @@ def study(requests: list, manifest: dict, run_id: str, progress: modal.Dict,
                               'prompt_width':prompt_width,**decode_meta}
                 completed_batches.append(batch_record)
                 for request,ids in zip(batch,tokens):
-                    eos=tokenizer.eos_token_id
-                    stop=ids.index(eos) if eos in ids else len(ids)
+                    stop=next((i for i,tok in enumerate(ids) if tok in eos_ids),len(ids))
                     text=tokenizer.decode(ids[:stop],skip_special_tokens=True)
                     item={**request,'id':f"{request['id']}:{cell}",'intervention':cell,
                           'model':MODEL,'model_revision':MODELS[MODEL],'run_id':run_id,
                           'response':text,'output_tokens':stop,'finish_reason':'stop' if stop<len(ids) else 'length',
                           'budget_terminated':decode_meta['budget_terminated'],
+                          'end_token_id':ids[stop] if stop<len(ids) else None,
                           'batch_seed':seed,'layer':layer,'alpha':alpha,
                           'rendered_prompt_sha256':hashlib.sha256(rendered[request['id']].encode()).hexdigest(),
                           **score_response(text,request['gold']),**degeneration(text,request['question'])}

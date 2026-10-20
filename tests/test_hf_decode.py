@@ -47,3 +47,12 @@ def test_registered_length_limit_and_budget_are_distinct():
     tokens,stats=compact_generate(Model(),encoded,eos_token_id=0,max_new_tokens=8,
                                  deadline=time.monotonic()-1,sample=False)
     assert tokens.shape==(1,0) and stats['budget_terminated']
+
+
+def test_all_configured_eos_tokens_stop_rows():
+    encoded={'input_ids':torch.tensor([[0,1],[0,3]]),'attention_mask':torch.tensor([[0,1],[0,1]])}
+    model=Model()
+    tokens,stats=compact_generate(model,encoded,eos_token_id=[0,4],max_new_tokens=8,
+                                 deadline=time.monotonic()+20,sample=False)
+    assert tokens.tolist()==[[4],[4]]
+    assert model.sizes==[2] and not stats['budget_terminated']

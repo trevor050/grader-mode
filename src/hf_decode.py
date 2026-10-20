@@ -8,11 +8,13 @@ def compact_generate(model, encoded, *, eos_token_id, max_new_tokens=768,
     if sample:
         from transformers.generation.logits_process import TopPLogitsWarper
         nucleus = TopPLogitsWarper(.95)
+    eos_ids = [eos_token_id] if isinstance(eos_token_id,int) else list(eos_token_id)
+    if not eos_ids:raise ValueError('At least one EOS token required')
     ids, mask = encoded['input_ids'], encoded['attention_mask']
     positions = mask.long().cumsum(-1)-1
     positions.masked_fill_(mask==0,1)
     active = torch.arange(len(ids),device=ids.device)
-    tokens = torch.full((len(ids),max_new_tokens),eos_token_id,dtype=torch.long,device=ids.device)
+    tokens = torch.full((len(ids),max_new_tokens),eos_ids[0],dtype=torch.long,device=ids.device)
     cache = None
     steps = 0
     budget_terminated = False
@@ -32,7 +34,8 @@ def compact_generate(model, encoded, *, eos_token_id, max_new_tokens=768,
         tokens[active,step]=next_ids
         steps=step+1
         cache=out.past_key_values
-        done=next_ids.eq(eos_token_id)
+        done=next_ids.eq(eos_ids[0])
+        for token in eos_ids[1:]:done |= next_ids.eq(token)
         if step%32==0:
             active_counts.append([step,len(active)])
             if progress:progress(step,len(active))
