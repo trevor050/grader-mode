@@ -345,3 +345,25 @@ rule all 15 steered cells are "not interpretable", and that is reported. Because
 this correction was made after viewing results, the findings report both the
 registered verdict and the corrected one, and label the corrected one as
 post hoc.
+
+**2026-10-20, before any Think-ladder main data exists.**
+
+10. *Think ladder runs a reduced, hypothesis-only grid on rented hardware.*
+    OLMo 3 7B uses full multi-head attention (32 KV heads), so decoding
+    multi-thousand-token reasoning traces is bound by KV-cache reads: roughly
+    0.7–1k tokens/s on a single A100/RTX 5090-class GPU regardless of batch
+    size. The registered Think grid (3 checkpoints × 100 problems × 52 cells,
+    about 4k tokens per response at the 8,192 cap) is about 60M output tokens,
+    over the remaining budget. Cells not needed for H6–H8 or the solvability
+    control are dropped. Stage A: DPO and RLVR checkpoints, plain prose, all six
+    formats, templates 0–1, 100 problems; ceiling arm, templates 0–1, for all
+    three checkpoints (3,000 responses). Stage B, run only if Stage A's measured
+    cost leaves room within a $5 cap: templates 2–3 for the same cells. The
+    stage decision uses token counts and spend only; no leak rates are computed
+    until generation ends. Env prose and SFT tutor cells are not run, so the
+    exploratory env × format and SFT -> DPO analyses are not reported for the
+    Think ladder. The solvability control uses the ceiling templates that ran.
+    Hardware: one rented single-GPU vast.ai machine running the same vLLM 0.21.0
+    generation code as the Modal runs, with sampling unchanged and max new tokens
+    8,192 (Deviation 6). The tutor prompt is `system_tutor.txt`, per the
+    calibration rule (74.5% <= 80%).
