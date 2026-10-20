@@ -1,0 +1,8 @@
+{
+  "_note": "Phase 2 held-out formats, never used to estimate or select the direction. Appended to the Phase 1 no-cue templates exactly like Phase 1 format suffixes.",
+  "heldout_formats": {
+    "boxed_alt_1": "\n\nwrap the final answer in \\boxed{}.",
+    "boxed_alt_2": "\n\ngive me the result as \\boxed{N} at the end.",
+    "final": "\n\nend with \"Final Answer:\" followed by the number."
+  }
+}

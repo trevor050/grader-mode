@@ -56,29 +56,72 @@ def remaining_gpu_seconds():
     return BUDGET/RATE-accounted_seconds()-600
 
 
-def project_budget(smoke_metrics, spent_seconds=0):
-    """Use observed tokens/request and tok/s, with no model-size heuristics."""
+def select_ladders(ladders='both'):
+    if ladders == 'both':
+        return ('instruct', 'think')
+    if ladders not in ('instruct', 'think'):
+        raise ValueError('Unknown ladder selection')
+    return (ladders,)
+
+
+def measured_projection(progress, checkpoints=3):
+    seconds = checkpoints * (progress['setup_seconds'] +
+        progress['generation_seconds'] * progress['requests'] / progress['completed']) + 60 * checkpoints
+    return {'total_gpu_seconds': seconds, 'total_gpu_usd': seconds * RATE,
+            'output_tokens_per_second': progress['output_tokens'] / progress['generation_seconds'],
+            'mean_output_tokens': progress['output_tokens'] / progress['completed']}
+
+
+def project_budget(smoke_metrics, spent_seconds=0, ladders='both', max_tokens_think=3072):
+    allowed=select_ladders(ladders)
+    if ladders == 'instruct':
+        reference=json.loads(Path('results/phase1c/phase1-throughput-reference.json').read_text())
+        metric=next(m for m in smoke_metrics if MODELS_1C[m['model']]['ladder']=='instruct')
+        avg=metric['output_tokens']/metric['requests']
+        throughput=reference['output_tokens_per_second']
+        generation=10400*avg/throughput
+        main=3*(generation+metric['setup_seconds'])
+        return {'budget_usd':5.0,'hourly_usd':1.95,'spent_accounted_seconds':0,
+            'historical_accounted_seconds':spent_seconds,'ladders':['instruct'],
+            'ladder_estimates':{'instruct':{'requests_per_checkpoint':10400,
+                'mean_output_tokens':avg,'output_tokens_per_second':throughput,
+                'generation_seconds_per_checkpoint':generation,
+                'setup_seconds_per_checkpoint':metric['setup_seconds'],
+                'gpu_seconds_three_checkpoints':main}},
+            'main_output_tokens':3*10400*avg,'main_function_seconds':main,
+            'allocation_reserve_seconds':180,'total_gpu_seconds':main+180,
+            'total_gpu_usd':(main+180)*RATE,'launch_full':(main+180)*RATE<=5,
+            'method':'Phase 1 Qwen3-8B L40S batched reference (max_num_seqs 256), OLMo smoke mean output tokens; replaced by measured full-batch progress during execution.',
+            'reference_path':'results/phase1c/phase1-throughput-reference.json',
+            'limitations':'Historical smoke/calibration excluded from the new $5 run cap. CPU/RAM/storage excluded; allocation reserve is an allowance.'}
+    # Future Think runs retain the measured smoke gate, scaling the token
+    # allowance when the requested output ceiling differs from the smoke.
     estimates={}
     for metric in smoke_metrics:
         ladder=MODELS_1C[metric['model']]['ladder']
+        if ladder not in allowed:
+            continue
         throughput=metric['output_tokens']/metric['generation_seconds']
         # At most measured smoke throughput; Phase 1's observed 3,900 tok/s is
         # retained as a reference scenario, never assumed as an OLMo speedup.
         avg=metric['output_tokens']/metric['requests']
+        if ladder=='think':
+            avg*=max_tokens_think/metric.get('sampling',{}).get('max_tokens',3072)
         requests=52*(200 if ladder=='instruct' else 100)
         generation=requests*avg/throughput
         estimates[ladder]={'requests_per_checkpoint':requests,'mean_output_tokens':avg,
             'output_tokens_per_second':throughput,'generation_seconds_per_checkpoint':generation,
             'setup_seconds_per_checkpoint':metric['setup_seconds'],
             'gpu_seconds_three_checkpoints':3*(generation+metric['setup_seconds'])}
-    if set(estimates)!={'instruct','think'}:
-        raise ValueError('Both ladders require measured smoke throughput')
+    if set(estimates)!=set(allowed):
+        raise ValueError('Selected ladders require measured smoke throughput')
     # Explicit allowance for startup/billing outside function timer: 60 s per
     # GPU invocation across two smoke, two calibration, and six main calls.
-    allocation_reserve_seconds=600
+    allocation_reserve_seconds=300*len(allowed)
     main_seconds=sum(e['gpu_seconds_three_checkpoints'] for e in estimates.values())
     projected=spent_seconds+main_seconds+allocation_reserve_seconds
     return {'budget_usd':BUDGET,'hourly_usd':1.95,'spent_accounted_seconds':spent_seconds,
+        'ladders':list(allowed),'max_tokens_think':max_tokens_think,
         'ladder_estimates':estimates,'main_function_seconds':main_seconds,
         'allocation_reserve_seconds':allocation_reserve_seconds,
         'total_gpu_seconds':projected,'total_gpu_usd':projected*RATE,
@@ -98,10 +141,10 @@ def allocate_timeouts(projection):
             for ladder,spec in projection['ladder_estimates'].items()}
 
 
-def calibration_result(rows):
+def calibration_result(rows, ladders="both"):
     result={'phase':'phase1c-calibration','threshold':0.8,'comparison':'>',
             'analysis_included':False,'ladders':{}}
-    for ladder in ('instruct','think'):
+    for ladder in select_ladders(ladders):
         group=[r for r in rows if r.get('ladder')==ladder]
         if len({r['id'] for r in group}) != len(group):
             raise ValueError('duplicate calibration IDs')
@@ -151,7 +194,7 @@ def write_budget_stop(output_dir, projection, calibration):
         result={'phase':'phase1c','status':'budget_stop_after_calibration','min_gold':min_gold,
             'main_responses':0,'main_problems':0,'calibration_data_included':False,
             'smoke_data_included':False,'hypothesis_contrasts':None,
-            'projected_total_gpu_usd':projection['total_gpu_usd'],'budget_usd':BUDGET,
+            'projected_total_gpu_usd':projection['total_gpu_usd'],'budget_usd':projection.get('budget_usd',BUDGET),
             'gpu_function_seconds':function_seconds,'gpu_function_usd':function_seconds*RATE,
             'accounted_wall_seconds':accounted_seconds(),'accounted_wall_usd':accounted_seconds()*RATE,
             'diagnostic_truncation_counts':diagnostic_counts,
@@ -161,7 +204,7 @@ def write_budget_stop(output_dir, projection, calibration):
         write_json(out/(name+'.json'),result)
         lines=['# Phase 1c execution summary','',
             'Status: budget_stop_after_calibration.',f'Gold minimum: {min_gold}.','',
-            f"Projected total GPU cost: ${projection['total_gpu_usd']:.4f}; approved limit: $10.00.",
+            f"Projected total GPU cost: ${projection['total_gpu_usd']:.4f}; approved limit: ${projection.get('budget_usd',BUDGET):.2f}.",
             'Main-run responses: 0. Main-run problems: 0.',
             f'Measured GPU function time: {function_seconds:.3f} seconds; estimated GPU cost: ${function_seconds*RATE:.4f}.',
             f'Budget-accounted time: {accounted_seconds():.3f} seconds; cost estimate: ${accounted_seconds()*RATE:.4f} (historical function clocks plus new attempt wall clocks).',
@@ -179,9 +222,10 @@ def write_budget_stop(output_dir, projection, calibration):
         (out/(name+'.md')).write_text('\n'.join(lines)+'\n')
 
 
-def run_generation(stage,run_id,models='rlvr',timeout=5400):
+def run_generation(stage,run_id,models='rlvr',timeout=5400,ladders='both',max_tokens_think=3072):
     subprocess.run([sys.executable,'-m','modal','run','-m','src.modal_app_1c',
-        '--stage',stage,'--run-id',run_id,'--models',models,'--timeout-seconds',str(timeout)],check=True)
+        '--stage',stage,'--run-id',run_id,'--models',models,'--timeout-seconds',str(timeout),
+        '--ladders',ladders,'--max-tokens-think',str(max_tokens_think)],check=True)
     raw=Path('results/raw')/run_id
     score_file(raw,raw/'scored.jsonl')
     return list(read_rows(raw/'scored.jsonl'))
@@ -190,33 +234,38 @@ def run_generation(stage,run_id,models='rlvr',timeout=5400):
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--stage',choices=('smoke','calibration','full'),required=True)
+    parser.add_argument('--ladders',choices=('both','instruct','think'),default='both')
+    parser.add_argument('--max-tokens-think',type=int,default=3072)
     args=parser.parse_args()
+    if args.max_tokens_think < 1:
+        parser.error('--max-tokens-think must be positive')
     out=Path('results/phase1c');out.mkdir(parents=True,exist_ok=True)
     if args.stage=='smoke':
-        run_generation('smoke','phase1c-smoke')
+        run_generation('smoke','phase1c-smoke',ladders=args.ladders,max_tokens_think=args.max_tokens_think)
         subprocess.run([sys.executable,'-m','src.analyze_1c','--input','results/raw/phase1c-smoke/scored.jsonl',
             '--output-dir','results/phase1c-smoke'],check=True)
         return
     smoke=metrics_for('phase1c-smoke')
-    if len(smoke)!=2:
-        parser.error('Run the two-checkpoint smoke first')
+    required=set(select_ladders(args.ladders))
+    if required - {MODELS_1C[m['model']]['ladder'] for m in smoke}:
+        parser.error('Run smoke for the selected ladders first')
     if args.stage=='calibration':
-        rows=run_generation('calibration','phase1c-calibration')
-        write_json(out/'calibration.json',calibration_result(rows))
+        rows=run_generation('calibration','phase1c-calibration',ladders=args.ladders,max_tokens_think=args.max_tokens_think)
+        write_json(out/'calibration.json',calibration_result(rows,args.ladders))
     calibration=metrics_for('phase1c-calibration')
-    if len(calibration)!=2 or not (out/'calibration.json').exists():
+    if required - {MODELS_1C[m['model']]['ladder'] for m in calibration} or not (out/'calibration.json').exists():
         parser.error('Complete calibration before the full run')
     spent=accounted_seconds()
-    projection=project_budget(smoke,spent)
+    projection=project_budget(smoke,spent,args.ladders,args.max_tokens_think)
     write_json(out/'budget-projection.json',projection)
     print(json.dumps(projection,indent=2),flush=True)
     if not projection['launch_full']:
         write_budget_stop(out,projection,json.loads((out/'calibration.json').read_text()))
     if args.stage=='full':
         if not projection['launch_full']:
-            parser.error('Measured projection exceeds $10; full run blocked after calibration')
-        # The Modal entrypoint allocates per-ladder timeouts from this budget.
-        run_generation('full','phase1c-full',models='all')
+            parser.error(f"Projection exceeds ${projection['budget_usd']}; full run blocked")
+        # The Modal entrypoint monitors measured progress under fixed timeouts.
+        run_generation('full','phase1c-full',models='all',ladders=args.ladders,max_tokens_think=args.max_tokens_think)
         subprocess.run([sys.executable,'-m','src.analyze_1c','--input','results/raw/phase1c-full/scored.jsonl',
             '--output-dir',str(out)],check=True)
 

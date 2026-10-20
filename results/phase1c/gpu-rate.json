@@ -1,0 +1,6 @@
+{
+  "gpu": "L40S",
+  "hourly_usd": "1.95000",
+  "checked_at": "2026-10-20T20:00:38.894574+00:00",
+  "command": "uv run modal billing rates --json"
+}

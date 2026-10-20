@@ -1,32 +1,28 @@
 {
-  "budget_usd": 10.0,
+  "budget_usd": 5.0,
   "hourly_usd": 1.95,
-  "spent_accounted_seconds": 1922.021618271997,
+  "spent_accounted_seconds": 0,
+  "historical_accounted_seconds": 1922.021618271997,
+  "ladders": [
+    "instruct"
+  ],
   "ladder_estimates": {
     "instruct": {
       "requests_per_checkpoint": 10400,
       "mean_output_tokens": 413.61538461538464,
-      "output_tokens_per_second": 1569.9544402476972,
-      "generation_seconds_per_checkpoint": 2739.9521219999997,
+      "output_tokens_per_second": 3932.697939156243,
+      "generation_seconds_per_checkpoint": 1093.8038126881681,
       "setup_seconds_per_checkpoint": 231.17022567799998,
-      "gpu_seconds_three_checkpoints": 8913.367043033999
-    },
-    "think": {
-      "requests_per_checkpoint": 5200,
-      "mean_output_tokens": 2407.891025641026,
-      "output_tokens_per_second": 558.8906117419255,
-      "generation_seconds_per_checkpoint": 22403.3703023,
-      "setup_seconds_per_checkpoint": 226.688610601,
-      "gpu_seconds_three_checkpoints": 67890.176738703
+      "gpu_seconds_three_checkpoints": 3974.922115098504
     }
   },
-  "main_function_seconds": 76803.543781737,
-  "allocation_reserve_seconds": 600,
-  "total_gpu_seconds": 79325.565400009,
-  "total_gpu_usd": 42.96801459167154,
-  "launch_full": false,
-  "method": "Observed tokens/request and output tok/s from each ladder smoke, same measured throughput for its three checkpoints; no parameter scaling.",
-  "phase1_qwen8b_reference_output_tokens_per_second": 3900,
-  "reference_only_main_generation_seconds": 12940.48717948718,
-  "limitations": "Point projection from ordinary-tutor smoke lengths; selected strong-prompt lengths, other checkpoints, and full batching are unmeasured. Startup reserve is an allowance, not measured GPU billing. CPU/RAM/storage excluded."
+  "main_output_tokens": 12904800.0,
+  "main_function_seconds": 3974.922115098504,
+  "allocation_reserve_seconds": 180,
+  "total_gpu_seconds": 4154.922115098504,
+  "total_gpu_usd": 2.250582812345023,
+  "launch_full": true,
+  "method": "Phase 1 Qwen3-8B L40S batched reference (max_num_seqs 256), OLMo smoke mean output tokens; replaced by measured full-batch progress during execution.",
+  "reference_path": "results/phase1c/phase1-throughput-reference.json",
+  "limitations": "Historical smoke/calibration excluded from the new $5 run cap. CPU/RAM/storage excluded; allocation reserve is an allowance."
 }

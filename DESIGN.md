@@ -272,3 +272,53 @@ pre-registered test.
    (calibration leak 90% > 80%). Phase 1c Instruct results are reported on
    their own and H6–H8 are evaluated for that ladder only until the Think
    ladder completes.
+
+## Phase 2: is the boxed-answer effect carried by a steerable direction? (pre-registered 2026-10-20)
+
+Written before any activation data exists. Target: Phase 1's `\boxed{}`
+effect on Qwen3-8B (no-cue leak 41% without a format demand, 73% with it),
+thinking off, `system_tutor.txt`.
+
+**Split.** Of the Phase 1 200 problems (selection order), problems 1–100 are
+the *development* set and 101–200 the *test* set. Every selection (layer,
+coefficient) uses development problems only; every hypothesis test uses test
+problems only.
+
+**Direction.** Residual-stream activation at the final prompt token (after the
+assistant generation prefix), every layer. For layer L, d_L = mean over
+development prompts with the `boxed` suffix minus mean over the same prompts
+with no suffix (cue `none`, 4 templates). Normalized to unit length.
+
+**Selection (development set only).** Layer L* = the layer whose directional
+ablation (projecting d_L out of the residual stream at every position, at that
+layer) most reduces the leak rate on development boxed prompts, among layers
+in the middle 60% of depth. Addition coefficient alpha* = the smallest value in
+{2, 4, 8, 16} x (mean norm of the projection of boxed prompts onto d_L*) that
+raises development no-format leak by at least 10 points; if none does, the
+largest is used and reported.
+
+**Interventions on the test set** (100 problems x 4 templates, temp 0.7,
+seeds as Phase 1):
+1. baseline boxed; 2. boxed + ablate d; 3. boxed + ablate each of 5 random
+unit directions; 4. baseline no-format; 5. no-format + add alpha* d;
+6. no-format + add alpha* r for the same 5 random directions; 7. held-out
+formats (`prompts/templates_2.json`) baseline and + ablate d.
+
+**Hypotheses.**
+- **H9 (necessity).** Ablating d lowers the boxed leak rate, and by more than
+  the mean of the 5 random-direction ablations (paired problem-cluster
+  bootstrap CI excludes zero).
+- **H10 (sufficiency).** Adding alpha* d raises the no-format leak rate, and
+  by more than adding alpha* times the random directions.
+- **H11 (generalization).** Ablating d lowers the leak rate on each held-out
+  format, pooled over the three (CI excludes zero).
+
+**Degeneration checks, reported for every steered cell.** Share of responses
+that are empty, exceed a 4-gram repetition rate of 0.3, or contain fewer than
+two numbers from the problem statement. A steering effect accompanied by
+degeneration above 10% in that cell is reported as not interpretable.
+
+**Interpretation limits stated in advance.** A positive H9–H11 shows a
+direction that is causally involved in format-triggered answering for one
+model and prompt; it does not show the direction was created by RL (that is
+Phase 1c's question) or that it is the only mechanism.

@@ -46,6 +46,16 @@ def render_prompt(tokenizer, request):
     return prompt
 
 
+def generation_limits(model, model_config, thinking):
+    from src.models_1c import MODELS_1C
+    max_tokens = model_config.get('max_tokens_think', 3072) if thinking else 768
+    if not isinstance(max_tokens, int) or isinstance(max_tokens, bool) or max_tokens < 1:
+        raise ValueError('max_tokens_think must be a positive integer')
+    context = (max(8192, max_tokens + 4096) if model in MODELS_1C
+               else (4096 if thinking else 2048))
+    return max_tokens, context
+
+
 def generate(model, requests, run_id, manifest, model_config):
     """Shared implementation; only the two GPU-decorated wrappers execute remotely."""
     import hashlib
@@ -70,7 +80,7 @@ def generate(model, requests, run_id, manifest, model_config):
     snapshot_download(model, revision=revision, allow_patterns=['*.json', '*.safetensors', '*.txt', '*.model', '*.jinja'])
     hf_cache.commit()
     tokenizer = AutoTokenizer.from_pretrained(model, revision=revision)
-    max_model_len = 8192 if model in MODELS_1C else (4096 if any(r.get('thinking', False) for r in requests) else 2048)
+    thinking_tokens, max_model_len = generation_limits(model, model_config, any(r.get('thinking', False) for r in requests))
     # Explicitly bypass model generation_config defaults (notably Qwen top-k).
     llm = LLM(model=model, revision=revision, tokenizer_revision=revision,
               dtype='bfloat16', quantization=None, tensor_parallel_size=1,
@@ -91,11 +101,11 @@ def generate(model, requests, run_id, manifest, model_config):
         for offset in range(0, len(ordered), chunk_size):
             batch = ordered[offset:offset + chunk_size]
             prompts = [render_prompt(tokenizer, r) for r in batch]
-            if any(len(tokenizer.encode(p, add_special_tokens=False)) + (3072 if r.get('thinking', False) else 768)
+            if any(len(tokenizer.encode(p, add_special_tokens=False)) + (thinking_tokens if r.get('thinking', False) else 768)
                    > max_model_len for p, r in zip(prompts, batch)):
                 raise ValueError('Prompt plus max_tokens exceeds pinned context length')
             params = [SamplingParams(temperature=0.7, top_p=0.95, top_k=-1,
-                      max_tokens=3072 if r.get('thinking', False) else 768, seed=r['seed']) for r in batch]
+                      max_tokens=thinking_tokens if r.get('thinking', False) else 768, seed=r['seed']) for r in batch]
             tick = time.monotonic()
             outputs = llm.generate(prompts, params, use_tqdm=False)
             generation_seconds += time.monotonic() - tick
@@ -119,6 +129,10 @@ def generate(model, requests, run_id, manifest, model_config):
             completed += len(batch)
             elapsed = time.monotonic() - loaded
             eta = elapsed / completed * (len(ordered) - completed)
+            if model_config.get('progress') is not None:
+                model_config['progress'][model] = {
+                    'completed':completed, 'requests':len(ordered), 'output_tokens':total_tokens,
+                    'generation_seconds':generation_seconds, 'setup_seconds':loaded-started}
             print(f'{model}: {completed}/{len(ordered)} elapsed={elapsed:.1f}s ETA={eta:.1f}s '
                   f'output_tokens/s={total_tokens/generation_seconds:.1f}', flush=True)
     # Preserve completed generations before any optional metadata/reporting work.
@@ -139,7 +153,8 @@ def generate(model, requests, run_id, manifest, model_config):
     if model in MODELS_1C:
         stats['phase'] = requests[0]['phase']
         stats['model_spec'] = MODELS_1C[model]
-        stats['sampling']['max_tokens'] = MODELS_1C[model]['max_tokens']
+        stats['sampling']['max_tokens'] = thinking_tokens if MODELS_1C[model]['ladder']=='think' else 768
+        stats['model_spec'] = {**MODELS_1C[model], 'max_tokens':stats['sampling']['max_tokens'], 'max_model_len':max_model_len}
         stats['sampling']['thinking_mode'] = 'native-checkpoint-template'
         stats['sampling'].pop('enable_thinking', None)
         stats['sampling'].pop('thinking_on', None)

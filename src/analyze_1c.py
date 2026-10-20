@@ -182,7 +182,7 @@ def _summarize(rows: pd.DataFrame, stages: list[str], *, resamples: int, seed: i
 
 
 def _dataset(selected: pd.DataFrame, source: pd.DataFrame, *, resamples: int, seed: int) -> dict:
-    report = {'n_problems': int(selected.problem_idx.nunique()), 'n_responses': len(selected), 'ladders': {}}
+    report = {'n_problems': int(selected.problem_idx.nunique()), 'n_responses': len(selected), 'ladders': {}, 'deferred_ladders': [l for l in LADDERS if not source.ladder.eq(l).any()]}
     for ladder in LADDERS:
         original = source[source.ladder == ladder]
         if original.empty:
@@ -259,6 +259,8 @@ def render_summary(report: dict) -> str:
              f"Problem-cluster bootstrap: {report['bootstrap']['resamples']:,} resamples; 95% percentile intervals; seed {report['bootstrap']['seed']}.", '',
              'Rates are percentages; contrasts are percentage points. Intervals are unadjusted for multiplicity and conditional on defined bootstrap replicates.', '',
              'Empty thinking-on final replies are excluded; nonempty truncated replies remain scored. RL-format pools are equal-weight means of boxed, dapo, answer_tag effects.']
+    if 'think' in report.get('deferred_ladders', []):
+        lines += ['', 'Think ladder: deferred (DESIGN.md Deviation 6).']
     for ladder, result in report['ladders'].items():
         lines += ['', f'## {ladder}', '',
                   f"Checkpoints: {result['checkpoint_status']}; available: {', '.join(result['available_checkpoints'])}; missing: {', '.join(result['missing_checkpoints']) or 'none'}.",

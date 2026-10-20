@@ -1,0 +1,9 @@
+{
+  "base_function_id": "fu-ore0HGJJvCFZzp9Wt9xCHi",
+  "variant_function_id": "fu-mUqLiEdtHprLg902oEvH9B",
+  "min_containers": 0,
+  "buffer_containers": 0,
+  "max_containers": 2,
+  "scaledown_window": 2,
+  "after_sft": true
+}

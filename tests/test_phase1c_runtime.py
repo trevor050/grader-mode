@@ -171,3 +171,122 @@ def test_projection_labels_ledger_time_as_accounted_not_pure_function_time():
     result=project_budget(metrics,spent_seconds=1000)
     assert result['spent_accounted_seconds']==1000
     assert 'spent_function_seconds' not in result
+
+
+def test_instruct_projection_uses_batched_reference_and_new_run_cap():
+    from src.phase1c import project_budget
+    metric=dict(model='allenai/Olmo-3-7B-Instruct',requests=156,
+                output_tokens=64524,generation_seconds=41.099,setup_seconds=231.17)
+    result=project_budget([metric],spent_seconds=1904,ladders='instruct')
+    spec=result['ladder_estimates']['instruct']
+    assert spec['output_tokens_per_second']==pytest.approx(3932.697939156243)
+    assert spec['mean_output_tokens']==pytest.approx(413.6153846)
+    assert set(result['ladder_estimates'])=={'instruct'}
+    assert result['budget_usd']==5 and result['spent_accounted_seconds']==0
+    assert 2 < result['total_gpu_usd'] < 3 and result['launch_full']
+    assert result['historical_accounted_seconds']==1904
+
+
+def test_live_projection_replaces_reference_with_measured_chunk_runtime():
+    from src.phase1c import measured_projection
+    progress=dict(completed=2048,requests=10400,output_tokens=850000,
+                  generation_seconds=220,setup_seconds=230)
+    result=measured_projection(progress,checkpoints=3)
+    assert result['total_gpu_seconds']==pytest.approx(3*(230+220*10400/2048)+180)
+    assert result['total_gpu_usd']<5
+    progress['generation_seconds']=650
+    assert measured_projection(progress,checkpoints=3)['total_gpu_usd']>5
+
+
+def test_ladder_selection_and_future_think_context():
+    from src.phase1c import select_ladders
+    from src.modal_app import generation_limits
+    assert select_ladders('both')==('instruct','think')
+    assert select_ladders('instruct')==('instruct',)
+    with pytest.raises(ValueError): select_ladders('typo')
+    instruct=generation_limits('allenai/Olmo-3-7B-Instruct',{},False)
+    think=generation_limits('allenai/Olmo-3-7B-Think',{'max_tokens_think':8192},True)
+    assert instruct==(768,8192)
+    assert think[0]==8192 and think[1]>=8192+4096
+
+
+@pytest.mark.parametrize('over_budget', [False, True])
+def test_instruct_full_spawns_all_three_before_collect_and_cancels_on_projection(tmp_path, monkeypatch, over_budget):
+    import json
+    from contextlib import contextmanager
+    from src import phase1c, modal_app_1c, build_prompts
+    monkeypatch.chdir(tmp_path)
+    out=tmp_path/'results/phase1c';out.mkdir(parents=True)
+    (out/'calibration.json').write_text(json.dumps({'ladders':{
+        'instruct':{'system_prompt':'prompts/system_tutor_strong.txt'}}}))
+    (out/'budget-projection.json').write_text(json.dumps({'launch_full':True,'total_gpu_usd':2.3}))
+    monkeypatch.setattr(phase1c,'metrics_for',lambda _:[])
+    monkeypatch.setattr(phase1c,'accounted_seconds',lambda:0)
+    monkeypatch.setattr(phase1c,'project_budget',lambda *a:{'launch_full':True,'total_gpu_usd':2.3})
+    prompts=[]
+    def build(path,ladder,checkpoint,**kwargs):
+        prompts.append((ladder,checkpoint,kwargs['system_path']))
+        return [{'id':'test'}],{}
+    monkeypatch.setattr(build_prompts,'build_1c',build)
+    spawned=[];cancelled=[]
+    monkeypatch.setattr(modal_app_1c.time,'sleep',lambda _:None)
+    class Call:
+        pending=True
+        def get(self,**kwargs):
+            assert len(spawned)==3
+            if self.pending:
+                self.pending=False
+                raise TimeoutError()
+            return {}
+        def cancel(self,**kwargs): cancelled.append(self)
+    class Function:
+        def with_options(self,**kwargs):
+            assert kwargs=={'timeout':5400,'retries':0}
+            return self
+        def spawn(self,model,requests,run_id,manifest,config):
+            spawned.append(model)
+            assert config['max_tokens_think']==8192
+            return Call()
+    monkeypatch.setattr(modal_app_1c,'run_model',Function())
+    class Progress:
+        def items(self):
+            return [(spawned[0],dict(completed=2048,requests=10400,output_tokens=850000,
+                generation_seconds=650 if over_budget else 220,setup_seconds=230))]
+    @contextmanager
+    def ephemeral(): yield Progress()
+    monkeypatch.setattr(modal_app_1c.modal.Dict,'ephemeral',ephemeral)
+    def run():
+        modal_app_1c._run_stage(models='all',stage='full',run_id='test-full',
+                               ladders='instruct',max_tokens_think=8192)
+    if over_budget:
+        with pytest.raises(ValueError,match='cancelling'): run()
+        assert len(cancelled)==3
+    else:
+        run()
+        assert not cancelled
+    assert len(spawned)==3 and all('Think' not in m for m in spawned)
+    assert prompts==[('instruct',c,'prompts/system_tutor_strong.txt') for c in ('SFT','DPO','RLVR')]
+    ledger=json.loads((out/'gpu-attempts.json').read_text())
+    assert {a['status'] for a in ledger}==({'cancelled'} if over_budget else {'completed'})
+
+
+def test_future_think_selection_projects_only_think_without_running_it():
+    from src.phase1c import project_budget
+    metric=dict(model='allenai/Olmo-3-7B-Think',requests=156,
+                output_tokens=156*2000,generation_seconds=180,setup_seconds=200,
+                sampling={'max_tokens':3072})
+    result=project_budget([metric],ladders='think',max_tokens_think=8192)
+    assert set(result['ladder_estimates'])=={'think'}
+    assert result['ladder_estimates']['think']['mean_output_tokens']==pytest.approx(2000*8192/3072)
+    assert result['max_tokens_think']==8192
+
+
+def test_budget_stop_reports_selected_run_cap(tmp_path,monkeypatch):
+    import json
+    from src.phase1c import write_budget_stop
+    monkeypatch.chdir(tmp_path)
+    write_budget_stop(tmp_path,{'budget_usd':5,'total_gpu_usd':6},
+                      {'ladders':{'instruct':{'system_prompt':'prompts/system_tutor_strong.txt'}}})
+    result=json.loads((tmp_path/'summary.json').read_text())
+    assert result['budget_usd']==5
+    assert 'approved limit: $5.00' in (tmp_path/'summary.md').read_text()

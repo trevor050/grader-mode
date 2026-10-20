@@ -76,3 +76,17 @@ def test_parallel_window_caps_writers_and_cancels_on_failure(tmp_path, monkeypat
         modal_app.main.info.raw_f(models='all', limit_problems=10, run_id='unit-failure')
     assert len(failed.cancelled) == 5
     assert not failed.active
+
+
+def test_phase1c_explicitly_disables_idle_buffers():
+    tree=ast.parse(Path('src/modal_app_1c.py').read_text())
+    for node in tree.body:
+        if not isinstance(node,ast.FunctionDef) or node.name not in ('preflight','run_model'):
+            continue
+        decorator=node.decorator_list[0]
+        kw={k.arg:ast.literal_eval(k.value) for k in decorator.keywords if k.arg in
+            ('min_containers','buffer_containers','scaledown_window','timeout')}
+        assert kw['min_containers']==0
+        assert kw['buffer_containers']==0
+        assert kw['scaledown_window']==2
+        assert kw['timeout']==(5400 if node.name=='run_model' else 600)

@@ -11,7 +11,7 @@ app = modal.App('grader-mode-phase1c')
 
 
 @app.function(image=image, volumes={'/hf': hf_cache}, timeout=600,
-              single_use_containers=True, min_containers=0)
+              single_use_containers=True, min_containers=0, buffer_containers=0, scaledown_window=2)
 def preflight():
     import hashlib
     from transformers import AutoConfig, AutoTokenizer
@@ -40,13 +40,14 @@ def preflight():
 
 @app.function(image=image, gpu='L40S', volumes={'/hf': hf_cache, '/raw': raw_volume},
               timeout=5400, startup_timeout=1200, single_use_containers=True,
-              min_containers=0, max_containers=2, cpu=4, memory=32768)
-def run_model(model: str, requests: list, run_id: str, manifest: dict):
-    return generate(model, requests, run_id, manifest, {'gpu':'L40S','batch_size':256})
+              min_containers=0, buffer_containers=0, scaledown_window=2, max_containers=3, cpu=4, memory=32768)
+def run_model(model: str, requests: list, run_id: str, manifest: dict, config: dict):
+    return generate(model, requests, run_id, manifest, {'gpu':'L40S','batch_size':256, **config})
 
 
 def _run_stage(models: str = 'rlvr', stage: str = 'smoke', run_id: str = '',
-         calibration_path: str = 'results/phase1c/calibration.json', timeout_seconds: int = 5400):
+         calibration_path: str = 'results/phase1c/calibration.json', timeout_seconds: int = 5400,
+         ladders: str = 'both', max_tokens_think: int = 3072):
     if stage == 'preflight':
         result = preflight.remote()
         target = Path('results/phase1c/runtime-preflight.json')
@@ -57,7 +58,11 @@ def _run_stage(models: str = 'rlvr', stage: str = 'smoke', run_id: str = '',
     from src.build_prompts import build_1c
     if stage not in ('smoke','calibration','full'):
         raise ValueError('Unknown stage')
-    selected = [m for m,s in MODELS_1C.items() if models=='all' or (models=='rlvr' and s['checkpoint']=='RLVR') or m in models.split(',')]
+    from src.phase1c import select_ladders
+    allowed = select_ladders(ladders)
+    if max_tokens_think < 1:
+        raise ValueError('max_tokens_think must be positive')
+    selected = [m for m,s in MODELS_1C.items() if s['ladder'] in allowed and (models=='all' or (models=='rlvr' and s['checkpoint']=='RLVR') or m in models.split(','))]
     if not selected or not run_id or not run_id.replace('-','').replace('_','').isalnum():
         raise ValueError('Choose registered models and a safe nonempty fresh run ID')
     local = Path('results/raw') / run_id
@@ -65,66 +70,94 @@ def _run_stage(models: str = 'rlvr', stage: str = 'smoke', run_id: str = '',
         raise FileExistsError(local)
     if stage in ('smoke','calibration') and any(MODELS_1C[m]['checkpoint'] != 'RLVR' for m in selected):
         raise ValueError('Smoke/calibration must use RLVR checkpoints only')
+    from src.phase1c import project_budget, metrics_for, accounted_seconds, read_attempts, write_json, measured_projection, RATE
     if stage == 'full':
-        from src.phase1c import project_budget, metrics_for, accounted_seconds, write_json
-        projection = json.loads(Path('results/phase1c/budget-projection.json').read_text())
-        if not projection.get('launch_full') or projection['total_gpu_usd'] > 10:
+        previous = json.loads(Path('results/phase1c/budget-projection.json').read_text())
+        cap = 5 if ladders == 'instruct' else 10
+        if not previous.get('launch_full') or previous['total_gpu_usd'] > cap:
             raise ValueError('budget projection blocks full generation')
-        projection=project_budget(metrics_for('phase1c-smoke'),accounted_seconds())
+        projection=project_budget(metrics_for('phase1c-smoke'),accounted_seconds(),ladders,max_tokens_think)
         write_json('results/phase1c/budget-projection.json',projection)
         if not projection['launch_full']:
             raise ValueError('Current budget projection blocks full generation')
-        if set(selected) != set(MODELS_1C):
-            raise ValueError('Full run requires all six checkpoints')
-        if not 1 <= timeout_seconds <= 5400:
-            raise ValueError('Invalid timeout')
-    from src.phase1c import allocate_timeouts, remaining_gpu_seconds, read_attempts, write_json
-    timeouts = allocate_timeouts(projection) if stage == 'full' else {}
+        if set(selected) != {m for m,s in MODELS_1C.items() if s['ladder'] in allowed}:
+            raise ValueError('Full run requires all three checkpoints per selected ladder')
+    else:
+        cap = 10
+        accounted_seconds()  # Reject unresolved prior attempts.
+    if timeout_seconds != 5400:
+        raise ValueError('Phase 1c GPU timeouts must remain 5400 seconds')
     decisions = json.loads(Path(calibration_path).read_text()) if stage=='full' else None
-    calls=[]
-    try:
-        for model in selected:
-            spec=MODELS_1C[model]
-            system=decisions['ladders'][spec['ladder']]['system_prompt'] if decisions else 'prompts/system_tutor.txt'
-            requests,manifest=build_1c(local/model.split('/')[-1],spec['ladder'],spec['checkpoint'],
-                limit_problems=3 if stage=='smoke' else None, system_path=system, calibration=stage=='calibration')
-            remaining=remaining_gpu_seconds()
-            if remaining < 120:
-                raise ValueError('Insufficient remaining total GPU budget before spawn')
-            remote_timeout=min(5400,timeout_seconds,timeouts.get(spec['ladder'],5400),int(remaining))
-            attempts=read_attempts()
-            attempt={'stage':stage,'run_id':run_id,'model':model,'status':'running',
-                'started_at':datetime.now(timezone.utc).isoformat(),'timeout_seconds':remote_timeout}
-            attempts.append(attempt)
-            write_json('results/phase1c/gpu-attempts.json',attempts)
-            tick=time.monotonic()
-            try:
-                call=run_model.with_options(timeout=remote_timeout,retries=0).spawn(model,requests,run_id,manifest)
-                calls.append(call)
-                # Include startup/queue time in a local deadline; remote timeout
-                # alone excludes startup and cannot enforce a cumulative budget.
-                files=call.get(timeout=min(remote_timeout+1200,remaining))
-                for remote in files.values():
-                    pull_file(remote,local/Path(remote).name)
-                calls.remove(call)
-                attempt['status']='completed'
-            finally:
-                if attempt['status']=='running':
-                    attempt['status']='failed'
-                    for active in calls:
-                        active.cancel(terminate_containers=True)
-                    calls.clear()
-                attempt['wall_seconds']=time.monotonic()-tick
-                attempt['ended_at']=datetime.now(timezone.utc).isoformat()
-                write_json('results/phase1c/gpu-attempts.json',attempts)
-    finally:
-        for call in calls:
-            call.cancel(terminate_containers=True)
+    attempts=read_attempts()
+    active=[]
+    current=[]
+    def save():
+        write_json('results/phase1c/gpu-attempts.json',attempts)
+    def finish(item, status):
+        item['attempt'].update(status=status, wall_seconds=time.monotonic()-item['tick'],
+                              ended_at=datetime.now(timezone.utc).isoformat())
+        save()
+    # The ephemeral dictionary receives numerical progress only, never responses.
+    with modal.Dict.ephemeral() as progress:
+        try:
+            for model in selected:
+                spec=MODELS_1C[model]
+                system=decisions['ladders'][spec['ladder']]['system_prompt'] if decisions else 'prompts/system_tutor.txt'
+                requests,manifest=build_1c(local/model.split('/')[-1],spec['ladder'],spec['checkpoint'],
+                    limit_problems=3 if stage=='smoke' else None, system_path=system, calibration=stage=='calibration')
+                attempt={'stage':stage,'run_id':run_id,'model':model,'status':'running',
+                    'started_at':datetime.now(timezone.utc).isoformat(),'timeout_seconds':5400}
+                attempts.append(attempt)
+                tick=time.monotonic()
+                current.append({'attempt':attempt,'tick':tick})
+                save()
+                call=run_model.with_options(timeout=5400,retries=0).spawn(model,requests,run_id,manifest,
+                    {'max_tokens_think':max_tokens_think,'progress':progress})
+                active.append({'call':call,'attempt':attempt,'tick':tick})
+            seen={}
+            while active:
+                for model, snapshot in progress.items():
+                    if seen.get(model)==snapshot['completed']:
+                        continue
+                    seen[model]=snapshot['completed']
+                    measured=measured_projection(snapshot,len(selected))
+                    record={'model':model,**snapshot,**measured,'budget_usd':cap}
+                    write_json(local/(model.split('/')[-1]+'.progress.json'),record)
+                    print('BUDGET_PROGRESS '+json.dumps(record),flush=True)
+                    if stage=='full' and measured['total_gpu_usd']>cap:
+                        write_json('results/phase1c/budget-stop.json',record)
+                        raise ValueError(f'Measured progress projects above ${cap}; cancelling all Phase 1c calls')
+                elapsed=sum(item['attempt'].get('wall_seconds', time.monotonic()-item['tick']) for item in current)
+                historical = (projection['spent_accounted_seconds']
+                              if stage=='full' and ladders!='instruct' else 0)
+                if (elapsed+historical+60*len(selected))*RATE >= cap:
+                    raise ValueError('Elapsed GPU allocation upper estimate reached cap; cancelling Phase 1c')
+                for item in list(active):
+                    try:
+                        files=item['call'].get(timeout=0)
+                    except TimeoutError:
+                        continue
+                    for remote in files.values():
+                        pull_file(remote,local/Path(remote).name)
+                    finish(item,'completed')
+                    active.remove(item)
+                if active:
+                    time.sleep(2)
+        finally:
+            for item in active:
+                try:
+                    item['call'].cancel(terminate_containers=True)
+                finally:
+                    finish(item,'cancelled')
+            for item in current:
+                if item['attempt']['status']=='running':
+                    finish(item,'failed')
 
 
 @app.local_entrypoint()
 def main(models: str = 'rlvr', stage: str = 'smoke', run_id: str = '',
-         calibration_path: str = 'results/phase1c/calibration.json', timeout_seconds: int = 5400):
+         calibration_path: str = 'results/phase1c/calibration.json', timeout_seconds: int = 5400,
+         ladders: str = 'both', max_tokens_think: int = 3072):
     from src.phase1c import launch_lock
     with launch_lock():
-        return _run_stage(models,stage,run_id,calibration_path,timeout_seconds)
+        return _run_stage(models,stage,run_id,calibration_path,timeout_seconds,ladders,max_tokens_think)

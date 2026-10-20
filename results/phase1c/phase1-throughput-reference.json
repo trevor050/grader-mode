@@ -21,5 +21,5 @@
   },
   "source_path": "results/raw/phase1-stage2/Qwen3-8B.metrics.json",
   "source_sha256": "b6d86eaa9f448f2354223bd9b090dda768f08eca94d06d0b941052aac13f5174",
-  "role": "reference-only; Phase 1c budget gate uses OLMo smoke throughput"
+  "role": "Batched throughput reference for the approved Instruct-only run; replaced by measured Phase 1c full-batch progress during execution."
 }

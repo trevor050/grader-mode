@@ -299,3 +299,12 @@ def test_real_scored_rows_flow_into_analysis_without_reasoning_leaks():
     assert cell(result, 'SFT')['leak']['estimate'] == 0
     assert result['contrasts']['h6']['estimate'] == .25
     assert result['common_ceiling_solved']['n_problems'] == 2
+
+
+def test_instruct_only_marks_think_deferred_without_hypotheses():
+    report=module().analyze(grid(),resamples=10)
+    assert report['deferred_ladders']==['think']
+    assert set(report['ladders'])=={'instruct'}
+    assert report['ladders']['instruct']['contrasts']['h6']['status']=='ok'
+    assert report['gold_ge_10']['deferred_ladders']==['think']
+    assert 'Think ladder: deferred' in module().render_summary(report)
