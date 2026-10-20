@@ -29,6 +29,23 @@ def package_versions():
     return versions
 
 
+def render_prompt(tokenizer, request):
+    """Use native template, removing auto-injected system only for OLMo ceiling."""
+    olmo = request.get('phase', '').startswith('phase1c')
+    kwargs = {} if olmo else {'enable_thinking': request.get('thinking', False)}
+    prompt = tokenizer.apply_chat_template(request['messages'], tokenize=False,
+                                           add_generation_prompt=True, **kwargs)
+    if olmo and request['arm'] == 'ceiling':
+        if any(m['role'] == 'system' for m in request['messages']):
+            raise ValueError('Ceiling requests must not contain a system message')
+        prefix = '<|im_start|>system\n'
+        if prompt.startswith(prefix):
+            prompt = prompt.split('<|im_end|>\n', 1)[1]
+        if not prompt.startswith('<|im_start|>user\n'):
+            raise ValueError('Unexpected OLMo ceiling template')
+    return prompt
+
+
 def generate(model, requests, run_id, manifest, model_config):
     """Shared implementation; only the two GPU-decorated wrappers execute remotely."""
     import hashlib
@@ -39,13 +56,15 @@ def generate(model, requests, run_id, manifest, model_config):
     from vllm import LLM, SamplingParams
     from transformers import AutoTokenizer
 
-    if model not in MODELS or not requests:
+    from src.models_1c import MODELS_1C
+    registry = {**MODELS, **{m: s['revision'] for m, s in MODELS_1C.items()}}
+    if model not in registry or not requests:
         raise ValueError('Expected a registered model and nonempty requests')
-    revision = MODELS[model]
-    snapshot_download(model, revision=revision, allow_patterns=['*.json', '*.safetensors', '*.txt', '*.model'])
+    revision = registry[model]
+    snapshot_download(model, revision=revision, allow_patterns=['*.json', '*.safetensors', '*.txt', '*.model', '*.jinja'])
     hf_cache.commit()
     tokenizer = AutoTokenizer.from_pretrained(model, revision=revision)
-    max_model_len = 4096 if any(r.get('thinking', False) for r in requests) else 2048
+    max_model_len = 8192 if model in MODELS_1C else (4096 if any(r.get('thinking', False) for r in requests) else 2048)
     # Explicitly bypass model generation_config defaults (notably Qwen top-k).
     llm = LLM(model=model, revision=revision, tokenizer_revision=revision,
               dtype='bfloat16', quantization=None, tensor_parallel_size=1,
@@ -71,8 +90,7 @@ def generate(model, requests, run_id, manifest, model_config):
     with raw_path.open('x') as out:
         for offset in range(0, len(ordered), chunk_size):
             batch = ordered[offset:offset + chunk_size]
-            prompts = [tokenizer.apply_chat_template(r['messages'], tokenize=False,
-                       add_generation_prompt=True, enable_thinking=r.get('thinking', False)) for r in batch]
+            prompts = [render_prompt(tokenizer, r) for r in batch]
             if any(len(tokenizer.encode(p, add_special_tokens=False)) + (3072 if r.get('thinking', False) else 768)
                    > max_model_len for p, r in zip(prompts, batch)):
                 raise ValueError('Prompt plus max_tokens exceeds pinned context length')
@@ -118,6 +136,13 @@ def generate(model, requests, run_id, manifest, model_config):
              'engine': {'batch_size': batch_size, 'enforce_eager': False, 'chunk_size': chunk_size, 'max_model_len': max_model_len},
              'versions': package_versions(),
              'manifest': manifest}
+    if model in MODELS_1C:
+        stats['phase'] = requests[0]['phase']
+        stats['model_spec'] = MODELS_1C[model]
+        stats['sampling']['max_tokens'] = MODELS_1C[model]['max_tokens']
+        stats['sampling']['thinking_mode'] = 'native-checkpoint-template'
+        stats['sampling'].pop('enable_thinking', None)
+        stats['sampling'].pop('thinking_on', None)
     stats_path = directory / f'{slug}.metrics.json'
     stats_path.write_text(json.dumps(stats, indent=2) + '\n')
     raw_volume.commit()

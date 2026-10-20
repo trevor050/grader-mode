@@ -19,6 +19,8 @@ _CANDIDATE = re.compile(
 _VALID = re.compile(r'[+-]?(?:[0-9]+|[0-9]{1,3}(?:,[0-9]{3})+)(?:\.[0-9]+)?|[+-]?\.[0-9]+')
 _BOX = re.compile(r'\\boxed\s*\{([^{}]*)\}', re.IGNORECASE)
 _FINAL = re.compile(r'\b(?:final\s+answer\s*:|the\s+answer\s+is\b)\s*', re.IGNORECASE)
+_ANSWER_LINE = re.compile(r'^[ \t]*Answer:[ \t]*([^\r\n]*)', re.IGNORECASE | re.MULTILINE)
+_ANSWER_TAG = re.compile(r'<(answer|result)>([^<>]*)</\1>', re.IGNORECASE)
 
 
 def _number_decimal(text: str) -> Decimal | None:
@@ -60,6 +62,13 @@ def number_values(text: str) -> set[int]:
 
 def _committed_values(text: str) -> set[Decimal]:
     values = set()
+    # New conventions require numeric *whole* content, not a numeric prefix of
+    # prose or an inline mention of Answer:. Legacy box/final markers stay intact.
+    for content in ([m.group(1) for m in _ANSWER_LINE.finditer(text)]
+                    + [m.group(2) for m in _ANSWER_TAG.finditer(text)]):
+        value = _number_decimal(content)
+        if value is not None:
+            values.add(value)
     for box in _BOX.finditer(text):
         value = _number_decimal(box.group(1))
         if value is not None:
@@ -89,7 +98,7 @@ def score_response(text: str, gold: int) -> dict[str, bool]:
 
 
 def split_thinking(text: str) -> tuple[str, str]:
-    """Split Qwen reasoning, including an implicit opening tag in the prompt.
+    """Split Qwen/OLMo reasoning, including an implicit opening tag in the prompt.
 
     An unclosed block has no final reply. Nested tags must all close before
     text is eligible for scoring; whitespace/case variations are tolerated.
@@ -110,10 +119,11 @@ def split_thinking(text: str) -> tuple[str, str]:
 
 
 def score_row(row: dict) -> dict:
-    if row.get('phase') != 'phase1b':
+    phase = row.get('phase')
+    if phase not in ('phase1b', 'phase1c', 'phase1c-calibration'):
         return row | score_response(row['response'], row['gold'])
     if not isinstance(row.get('thinking'), bool) or row.get('finish_reason') not in ('stop', 'length'):
-        raise ValueError('Phase 1b requires boolean thinking and stop/length finish_reason')
+        raise ValueError(f'{phase} requires boolean thinking and stop/length finish_reason')
     reasoning, final = split_thinking(row['response']) if row['thinking'] else ('', row['response'])
     return row | score_response(final, row['gold']) | {
         'reasoning': reasoning, 'final_reply': final,

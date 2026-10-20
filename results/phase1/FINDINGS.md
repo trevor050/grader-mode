@@ -28,5 +28,10 @@ agreement (LLM labeler; see `results/handcheck-audit-4B.md`).
 5. **H3 (scale) is moot.** The H2 contrast is near zero at every size, so its
    slope across the ladder is zero ([-0.01, 0.00] per log-parameter).
 
+**Gold >= 10 sensitivity** (`results/phase1-gold10/`): all conclusions hold. At
+14B and 32B most baseline "leaks" were small-number false positives: excluding
+problems with answers below 10, baseline leak is 1.6% (14B) and 0.6% (32B), and
+32B's "Final Answer:" effect remains (0.6% to 13.6%).
+
 Limits: one generic tutor prompt (not a production prompt), one model family,
 GSM8K only, thinking disabled.
