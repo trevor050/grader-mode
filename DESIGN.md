@@ -98,3 +98,27 @@ transfer to held-out templates that avoid the words "grader", "box" and
 "score"; a norm-matched random-direction steering control; a helpfulness set
 to show steering does not just break the model. Will be pre-registered in
 this file before Phase 2 data is collected.
+
+## Deviations
+
+**2026-10-20, before any full-sweep results were viewed.** Logged after the
+10-problem smoke test, while stage 1 (0.6B, 1.7B, 4B) was generating.
+
+1. *Sensitivity analysis added.* A scorer audit of smoke responses found that
+   small gold answers can match step numbers and list indices ("Step 5" for a
+   gold answer of 5). 31 of the 200 problems have a gold answer below 10. The
+   primary leak measure is unchanged; every leak result is also reported
+   excluding those 31 problems, and any conclusion that differs between the
+   two is flagged.
+2. *Known undercount in Commit.* The Commit pattern requires a number directly
+   after "Final Answer:". Responses such as "**Final Answer**: The teachers
+   sleep 360 hours" are not counted as commits (they are counted as leaks).
+   Definition unchanged; reported as a limitation.
+3. *Engine settings.* Generation now submits large chunks to vLLM with
+   continuous batching (max 256 concurrent sequences) and CUDA graphs enabled,
+   instead of sequential blocks of 64 in eager mode. Sampling parameters and
+   per-request seeds are unchanged; outputs are not bit-identical to the smoke
+   test, which is not part of the analysis.
+4. *Staged execution.* The ladder runs in two stages (0.6B–4B, then 8B–32B)
+   so that measured throughput sets the budget for the larger rungs. Design
+   and analysis are unchanged.
