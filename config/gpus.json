@@ -2,27 +2,27 @@
   "models": {
     "Qwen/Qwen3-0.6B": {
       "gpu": "L40S",
-      "batch_size": 64
+      "batch_size": 256
     },
     "Qwen/Qwen3-1.7B": {
       "gpu": "L40S",
-      "batch_size": 64
+      "batch_size": 256
     },
     "Qwen/Qwen3-4B": {
       "gpu": "L40S",
-      "batch_size": 64
+      "batch_size": 256
     },
     "Qwen/Qwen3-8B": {
       "gpu": "L40S",
-      "batch_size": 64
+      "batch_size": 256
     },
     "Qwen/Qwen3-14B": {
       "gpu": "L40S",
-      "batch_size": 64
+      "batch_size": 256
     },
     "Qwen/Qwen3-32B": {
       "gpu": "RTX-PRO-6000",
-      "batch_size": 128
+      "batch_size": 256
     }
   },
   "hourly_usd": {

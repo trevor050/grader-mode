@@ -49,7 +49,7 @@ def generate(model, requests, run_id, manifest, model_config):
     llm = LLM(model=model, revision=revision, tokenizer_revision=revision,
               dtype='bfloat16', quantization=None, tensor_parallel_size=1,
               max_model_len=2048, max_num_seqs=model_config['batch_size'], gpu_memory_utilization=0.90,
-              enforce_eager=True, generation_config='vllm', seed=0)
+              generation_config='vllm', seed=0)
     loaded = time.monotonic()
     ordered = list(requests)
     random.Random(0).shuffle(ordered)
@@ -60,13 +60,15 @@ def generate(model, requests, run_id, manifest, model_config):
     if raw_path.exists():
         raise FileExistsError(f'Refusing to overwrite {raw_path}')
     batch_size = model_config['batch_size']
+    # vLLM batches continuously within a generate() call; chunks exist only for progress logs and crash safety.
+    chunk_size = batch_size * 8
     total_tokens = 0
     generation_seconds = 0.0
     prompt_tokens = 0
     completed = 0
     with raw_path.open('x') as out:
-        for offset in range(0, len(ordered), batch_size):
-            batch = ordered[offset:offset + batch_size]
+        for offset in range(0, len(ordered), chunk_size):
+            batch = ordered[offset:offset + chunk_size]
             prompts = [tokenizer.apply_chat_template(r['messages'], tokenize=False,
                        add_generation_prompt=True, enable_thinking=False) for r in batch]
             if any(len(tokenizer.encode(p, add_special_tokens=False)) + 768 > 2048 for p in prompts):
@@ -104,7 +106,7 @@ def generate(model, requests, run_id, manifest, model_config):
              'requests_per_second': completed / generation_seconds,
              'sampling': {'temperature': 0.7, 'top_p': 0.95, 'top_k': -1, 'max_tokens': 768,
                           'enable_thinking': False, 'dtype': 'bfloat16', 'quantization': None},
-             'engine': {'batch_size': batch_size, 'enforce_eager': True, 'max_model_len': 2048},
+             'engine': {'batch_size': batch_size, 'enforce_eager': False, 'chunk_size': chunk_size, 'max_model_len': 2048},
              'versions': package_versions(),
              'manifest': manifest}
     stats_path = directory / f'{slug}.metrics.json'
@@ -114,7 +116,7 @@ def generate(model, requests, run_id, manifest, model_config):
 
 
 @app.function(image=image, gpu='L40S', volumes={'/hf': hf_cache, '/raw': raw_volume},
-              timeout=14400, startup_timeout=1200, single_use_containers=True,
+              timeout=5400, startup_timeout=1200, single_use_containers=True,
               max_containers=6, cpu=4, memory=32768)
 def run_model(model: str, requests: list, run_id: str, manifest: dict, model_config: dict):
     return generate(model, requests, run_id, manifest, model_config)
