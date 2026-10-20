@@ -167,3 +167,66 @@ positive H4 shows that environment-register prompts leak more than equally
 insistent human-stakes prompts; it does not by itself isolate which of those
 two features is responsible. Phase 2 representation work would use the
 `env` vs `human_strict` contrast.
+
+## Phase 1c: does the RLVR stage create format-triggered answering? (pre-registered 2026-10-20)
+
+Written before any Phase 1c data, and before Phase 1b full results or stage 2
+(8B–32B) results were viewed. Motivation: in Phase 1 stage 1 (0.6B–4B), grading
+language had no measurable effect, while a `\boxed{}` demand raised 4B's leak
+rate from 44% to 72% regardless of cue. This was not a pre-registered
+hypothesis. In many RLVR pipelines the grader is external and never appears in
+the prompt, but the answer convention does. Phase 1c tests whether RL training
+on verifiable rewards makes models more responsive to the answer conventions it
+was rewarded under, using released checkpoints from before and after RLVR.
+
+**Models.** Two OLMo 3 7B post-training ladders, each SFT -> DPO -> RLVR, all
+released by Ai2 from the same base (`allenai/Olmo-3-1025-7B`):
+- Instruct: `Olmo-3-7B-Instruct-SFT`, `-Instruct-DPO`, `Olmo-3-7B-Instruct`.
+- Think: `Olmo-3-7B-Think-SFT`, `-Think-DPO`, `Olmo-3-7B-Think`.
+Revisions pinned at run time. Replication on Skywork-OR1-7B vs
+DeepSeek-R1-Distill-Qwen-7B is a later phase, pre-registered separately.
+
+**Conditions** (`prompts/templates_1c.json`): prose {plain, env} x format
+{none, boxed, dapo, answer_tag, result_tag, boxed_step} x 4 templates. `boxed`,
+`dapo` and `answer_tag` are the *RL-associated* formats (documented in
+DeepSeekMath/OpenR1, DAPO, and OpenR1 format rewards). `result_tag` is the
+*novel* control, matched in length and directness. `boxed_step` asks for only
+the next step in a box. Plus a ceiling arm per checkpoint: plain prose, no
+format, no system prompt.
+
+**Problems.** Instruct ladder: the Phase 1 200 problems. Think ladder: the
+first 100 of them (cost). Think-ladder generations get max 3,072 new tokens;
+only text after the reasoning block is scored, truncated empty replies are
+excluded and counted.
+
+**Calibration and the tutor prompt (decision rule fixed now).** Before the main
+run, each ladder's RLVR checkpoint runs the plain/none cells on 20 GSM8K test
+problems *outside* the 200 with `system_tutor.txt`. If its leak rate exceeds
+80%, that ladder's main run uses `prompts/system_tutor_strong.txt` instead, for
+all three of its checkpoints. The calibration result and the prompt used are
+reported. Calibration data is not used in any analysis.
+
+**Measures and analysis.** As in Phase 1 (leak, commit, correct commit;
+problem-cluster bootstrap, 2,000 resamples; gold >= 10 sensitivity). Format
+effect *F(c, f) = leak(c, f) - leak(c, none)* for checkpoint c, plain prose.
+
+**Hypotheses** (each tested per ladder; "holds" = 95% CI excludes zero):
+- **H6 (RLVR amplifies RL-format effects).** Pooled over the three
+  RL-associated formats, *F(RLVR) - F(DPO) > 0*.
+- **H7 (specificity).** In the RLVR checkpoint, the pooled RL-associated
+  format effect exceeds the `result_tag` effect; and this gap is larger in
+  RLVR than in DPO (difference-in-differences).
+- **H8 (box token alone).** In the RLVR checkpoint, `boxed_step` raises the
+  leak rate over `none`.
+
+**Controls for solving ability.** Every Phase 1c contrast is also reported
+restricted to problems that all three checkpoints of the ladder solve (correct
+commit) in at least one of the four ceiling-arm templates.
+
+**Exploratory, no hypotheses.** Env-prose x format interaction; SFT -> DPO
+changes; per-format breakdown of H6.
+
+**Interpretation limits stated in advance.** A positive H6/H7 shows that the
+released RLVR stage, as a whole, increased sensitivity to these formats. It
+does not identify which RLVR data or reward caused it, and it is two ladders
+from one lab and one base model.

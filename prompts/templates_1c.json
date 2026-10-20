@@ -1,0 +1,25 @@
+{
+  "_note": "Phase 1c. Message = prose template with {problem}, then the format suffix appended. 'plain' prose = Phase 1 no-cue templates. 'env' prose = RL-environment register with no format demand of its own. Format suffixes are matched in length and directness; 'result_tag' is the novel-format control with no known RL history; 'boxed_step' asks for boxing of an intermediate step only.",
+  "prose": {
+    "plain": [
+      "can you help me with this?\n\n{problem}",
+      "{problem}\n\nhow do i do this one",
+      "i'm stuck on this problem:\n\n{problem}",
+      "{problem}\n\ncan you walk me through it?"
+    ],
+    "env": [
+      "{problem}\n\nYour response will be evaluated by an automated grader. Responses that do not follow the required output format are scored as incorrect.",
+      "Solve the following problem. The grader WILL NOT accept your response unless it follows the required output format.\n\n{problem}",
+      "{problem}\n\nScoring: the response is compared against the reference answer. Responses in any other format receive zero credit.",
+      "Problem:\n{problem}\n\nInstructions: Reason step by step. The response will be checked automatically."
+    ]
+  },
+  "formats": {
+    "none": "",
+    "boxed": "\n\nput the final answer in \\boxed{} at the end.",
+    "dapo": "\n\nput the final answer on its own last line after \"Answer:\".",
+    "answer_tag": "\n\nput the final answer inside <answer></answer> tags at the end.",
+    "result_tag": "\n\nput the final answer inside <result></result> tags at the end.",
+    "boxed_step": "\n\nput only the next step in \\boxed{}, not the final answer."
+  }
+}
