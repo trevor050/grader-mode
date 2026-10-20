@@ -244,7 +244,7 @@ from one lab and one base model.
    use the Phase 1 cue contrast for Phase 2. The Phase 2 contrast will be
    chosen from Phase 1b/1c results and pre-registered separately.
 
-### Phase 1c addendum: reasoning-trace coding (exploratory, added 2026-10-20 before any Phase 1c data)
+### Phase 1c addendum: reasoning-trace coding (exploratory, added 2026-10-20; only the 3-problem pipeline smoke existed, unviewed and excluded from analysis)
 
 For the Think ladder, each reasoning block is classified into exactly one of:
 (a) *conflict noticed, tutor rule followed*: the trace identifies tension
