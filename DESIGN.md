@@ -322,3 +322,26 @@ degeneration above 10% in that cell is reported as not interpretable.
 direction that is causally involved in format-triggered answering for one
 model and prompt; it does not show the direction was created by RL (that is
 Phase 1c's question) or that it is the only mechanism.
+
+### Phase 2 deviations
+
+**2026-10-20, budget reductions applied by the pre-registered cost rule before
+any test generation.** (7) The layer screen used 1 development problem × 4
+templates per candidate layer instead of 25 problems; three finalists were then
+confirmed on all 100 development problems, and L* was chosen from the
+confirmations as registered. (8) Test generation used templates 0 and 1 only
+(100 problems × 2 templates × 20 cells = 4,000 responses). All five random
+directions and all three held-out formats were kept.
+
+**2026-10-20, after the test results were viewed.** (9) *The off-problem
+degeneration check is invalid as specified.* The registered check flags a
+response that reproduces fewer than two numbers from the problem statement.
+17 of the 100 test problems contain fewer than two numerals (for example,
+fractions written as words), so every response to them is flagged by
+construction. Unsteered baseline cells are flagged at the same rate (17.0–17.5%)
+as steered cells (17.0–18.0%), and on the 83 problems with at least two numerals
+the flag fires on 0–2 of roughly 166 responses per cell. Under the registered
+rule all 15 steered cells are "not interpretable", and that is reported. Because
+this correction was made after viewing results, the findings report both the
+registered verdict and the corrected one, and label the corrected one as
+post hoc.
