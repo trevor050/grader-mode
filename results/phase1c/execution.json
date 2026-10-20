@@ -1,0 +1,401 @@
+{
+  "phase": "phase1c",
+  "run_id": "phase1c-full",
+  "app_id": "ap-sx6oGAw8PkE9Otc8OZncyq",
+  "recorded_at": "2026-10-20T20:30:32.450554+00:00",
+  "last_gpu_container_finished_at": "2026-10-20T20:28:21.818993+00:00",
+  "ladders": [
+    "instruct"
+  ],
+  "deferred_ladders": [
+    "think"
+  ],
+  "budget_usd": 5,
+  "gpu_hourly_usd": 1.95,
+  "gpu_function_seconds": 4564.39252372,
+  "gpu_function_hours": 1.2678868121444444,
+  "gpu_function_cost_estimate_usd": 2.4723792836816667,
+  "gpu_container_seconds": 4683.137593746185,
+  "gpu_container_hours": 1.3008715538183848,
+  "gpu_container_cost_estimate_usd": 2.5366995299458504,
+  "idle_replacement_count": 2,
+  "idle_replacement_gpu_seconds": 101.75354504585266,
+  "idle_replacement_gpu_cost_estimate_usd": 0.05511650356650352,
+  "main_call_wall_seconds": 4605.730268084,
+  "allocation_wall_upper_seconds": 4707.483813129853,
+  "allocation_wall_upper_cost_estimate_usd": 2.5498870654453367,
+  "billing_reported_resources_usd": {
+    "L40S": 2.53607492,
+    "CPU": 0.24729585,
+    "Network Egress": 0.04496923,
+    "Memory": 0.33294112
+  },
+  "billing_reported_total_usd": 3.16128112,
+  "billing_reported_gpu_seconds": 4681.984467692308,
+  "n_responses": 31200,
+  "output_tokens": 9164453,
+  "checkpoints": {
+    "DPO": {
+      "model": "allenai/Olmo-3-7B-Instruct-DPO",
+      "model_revision": "b33130b7de49f0c2553b5c2b3bc8409ff3e627d1",
+      "requests": 10400,
+      "output_tokens": 3785759,
+      "prompt_tokens": 2384128,
+      "setup_seconds": 193.01429384800002,
+      "generation_seconds": 1759.4737537790002,
+      "function_seconds": 1959.962653224,
+      "output_tokens_per_second": 2151.642780614909,
+      "by_thinking": {
+        "false": {
+          "requests": 10400,
+          "output_tokens": 3785759,
+          "length_finishes": 704
+        },
+        "true": {
+          "requests": 0,
+          "output_tokens": 0,
+          "length_finishes": 0
+        }
+      },
+      "sampling": {
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "top_k": -1,
+        "max_tokens": 768,
+        "dtype": "bfloat16",
+        "quantization": null,
+        "thinking_mode": "native-checkpoint-template"
+      },
+      "engine": {
+        "batch_size": 256,
+        "enforce_eager": false,
+        "chunk_size": 2048,
+        "max_model_len": 8192
+      }
+    },
+    "SFT": {
+      "model": "allenai/Olmo-3-7B-Instruct-SFT",
+      "model_revision": "e1452fc572d51966ff4aaeb25118b891eb93e549",
+      "requests": 10400,
+      "output_tokens": 2301084,
+      "prompt_tokens": 2384128,
+      "setup_seconds": 222.255072722,
+      "generation_seconds": 841.8570091790001,
+      "function_seconds": 1072.504805555,
+      "output_tokens_per_second": 2733.34304390252,
+      "by_thinking": {
+        "false": {
+          "requests": 10400,
+          "output_tokens": 2301084,
+          "length_finishes": 92
+        },
+        "true": {
+          "requests": 0,
+          "output_tokens": 0,
+          "length_finishes": 0
+        }
+      },
+      "sampling": {
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "top_k": -1,
+        "max_tokens": 768,
+        "dtype": "bfloat16",
+        "quantization": null,
+        "thinking_mode": "native-checkpoint-template"
+      },
+      "engine": {
+        "batch_size": 256,
+        "enforce_eager": false,
+        "chunk_size": 2048,
+        "max_model_len": 8192
+      }
+    },
+    "RLVR": {
+      "model": "allenai/Olmo-3-7B-Instruct",
+      "model_revision": "6e5971d9eba42665f5bd5a0fcf047f299ce1dccc",
+      "requests": 10400,
+      "output_tokens": 3077610,
+      "prompt_tokens": 2384128,
+      "setup_seconds": 164.41212489900002,
+      "generation_seconds": 1358.960035093,
+      "function_seconds": 1531.9250649409998,
+      "output_tokens_per_second": 2264.680285310513,
+      "by_thinking": {
+        "false": {
+          "requests": 10400,
+          "output_tokens": 3077610,
+          "length_finishes": 491
+        },
+        "true": {
+          "requests": 0,
+          "output_tokens": 0,
+          "length_finishes": 0
+        }
+      },
+      "sampling": {
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "top_k": -1,
+        "max_tokens": 768,
+        "dtype": "bfloat16",
+        "quantization": null,
+        "thinking_mode": "native-checkpoint-template"
+      },
+      "engine": {
+        "batch_size": 256,
+        "enforce_eager": false,
+        "chunk_size": 2048,
+        "max_model_len": 8192
+      }
+    }
+  },
+  "measured_budget_progress": [
+    {
+      "model": "allenai/Olmo-3-7B-Instruct-SFT",
+      "completed": 2048,
+      "requests": 10400,
+      "output_tokens": 450167,
+      "generation_seconds": 168.615585195,
+      "setup_seconds": 222.255072722,
+      "total_gpu_seconds": 3415.5182738710782,
+      "total_gpu_usd": 1.850072398346834,
+      "output_tokens_per_second": 2669.7828642553554,
+      "mean_output_tokens": 219.80810546875,
+      "budget_usd": 5
+    },
+    {
+      "model": "allenai/Olmo-3-7B-Instruct",
+      "completed": 2048,
+      "requests": 10400,
+      "output_tokens": 602703,
+      "generation_seconds": 269.82643532,
+      "setup_seconds": 164.41212489900002,
+      "total_gpu_seconds": 4783.873475275124,
+      "total_gpu_usd": 2.5912647991073587,
+      "output_tokens_per_second": 2233.669207708377,
+      "mean_output_tokens": 294.28857421875,
+      "budget_usd": 5
+    },
+    {
+      "model": "allenai/Olmo-3-7B-Instruct-DPO",
+      "completed": 2048,
+      "requests": 10400,
+      "output_tokens": 738568,
+      "generation_seconds": 344.422048612,
+      "setup_seconds": 193.01429384800002,
+      "total_gpu_seconds": 6006.097528367438,
+      "total_gpu_usd": 3.2533028278656952,
+      "output_tokens_per_second": 2144.3691046388703,
+      "mean_output_tokens": 360.62890625,
+      "budget_usd": 5
+    },
+    {
+      "model": "allenai/Olmo-3-7B-Instruct-SFT",
+      "completed": 4096,
+      "requests": 10400,
+      "output_tokens": 900986,
+      "generation_seconds": 330.38504847999997,
+      "setup_seconds": 222.255072722,
+      "total_gpu_seconds": 3363.3700796347493,
+      "total_gpu_usd": 1.8218254598021557,
+      "output_tokens_per_second": 2727.078613711969,
+      "mean_output_tokens": 219.96728515625,
+      "budget_usd": 5
+    },
+    {
+      "model": "allenai/Olmo-3-7B-Instruct",
+      "completed": 4096,
+      "requests": 10400,
+      "output_tokens": 1220960,
+      "generation_seconds": 543.8089422599999,
+      "setup_seconds": 164.41212489900002,
+      "total_gpu_seconds": 4815.531052068093,
+      "total_gpu_usd": 2.6084126532035503,
+      "output_tokens_per_second": 2245.2002994394456,
+      "mean_output_tokens": 298.0859375,
+      "budget_usd": 5
+    },
+    {
+      "model": "allenai/Olmo-3-7B-Instruct-SFT",
+      "completed": 6144,
+      "requests": 10400,
+      "output_tokens": 1356684,
+      "generation_seconds": 494.4789846080001,
+      "setup_seconds": 222.255072722,
+      "total_gpu_seconds": 3357.7913118785,
+      "total_gpu_usd": 1.8188036272675208,
+      "output_tokens_per_second": 2743.663618132358,
+      "mean_output_tokens": 220.814453125,
+      "budget_usd": 5
+    },
+    {
+      "model": "allenai/Olmo-3-7B-Instruct-SFT",
+      "completed": 8192,
+      "requests": 10400,
+      "output_tokens": 1809997,
+      "generation_seconds": 656.0938492380001,
+      "setup_seconds": 222.255072722,
+      "total_gpu_seconds": 3345.560151787289,
+      "total_gpu_usd": 1.8121784155514482,
+      "output_tokens_per_second": 2758.747094035655,
+      "mean_output_tokens": 220.9468994140625,
+      "budget_usd": 5
+    },
+    {
+      "model": "allenai/Olmo-3-7B-Instruct-DPO",
+      "completed": 4096,
+      "requests": 10400,
+      "output_tokens": 1490675,
+      "generation_seconds": 695.082700189,
+      "setup_seconds": 193.01429384800002,
+      "total_gpu_seconds": 6053.618136889899,
+      "total_gpu_usd": 3.2790431574820285,
+      "output_tokens_per_second": 2144.6009224437184,
+      "mean_output_tokens": 363.934326171875,
+      "budget_usd": 5
+    },
+    {
+      "model": "allenai/Olmo-3-7B-Instruct",
+      "completed": 6144,
+      "requests": 10400,
+      "output_tokens": 1822145,
+      "generation_seconds": 808.0745016939999,
+      "setup_seconds": 164.41212489900002,
+      "total_gpu_seconds": 4776.739703611844,
+      "total_gpu_usd": 2.5874006727897485,
+      "output_tokens_per_second": 2254.9220352580887,
+      "mean_output_tokens": 296.5730794270833,
+      "budget_usd": 5
+    },
+    {
+      "model": "allenai/Olmo-3-7B-Instruct-SFT",
+      "completed": 10240,
+      "requests": 10400,
+      "output_tokens": 2261669,
+      "generation_seconds": 816.234899591,
+      "setup_seconds": 222.255072722,
+      "total_gpu_seconds": 3333.7309278573284,
+      "total_gpu_usd": 1.8057709192560527,
+      "output_tokens_per_second": 2770.8555479963916,
+      "mean_output_tokens": 220.86611328125,
+      "budget_usd": 5
+    },
+    {
+      "model": "allenai/Olmo-3-7B-Instruct-SFT",
+      "completed": 10400,
+      "requests": 10400,
+      "output_tokens": 2301084,
+      "generation_seconds": 841.8570091790001,
+      "setup_seconds": 222.255072722,
+      "total_gpu_seconds": 3372.336245703,
+      "total_gpu_usd": 1.8266821330891247,
+      "output_tokens_per_second": 2733.34304390252,
+      "mean_output_tokens": 221.2580769230769,
+      "budget_usd": 5
+    },
+    {
+      "model": "allenai/Olmo-3-7B-Instruct-DPO",
+      "completed": 6144,
+      "requests": 10400,
+      "output_tokens": 2237857,
+      "generation_seconds": 1040.517017604,
+      "setup_seconds": 193.01429384800002,
+      "total_gpu_seconds": 6042.918361564313,
+      "total_gpu_usd": 3.2732474458473364,
+      "output_tokens_per_second": 2150.7163863144847,
+      "mean_output_tokens": 364.2345377604167,
+      "budget_usd": 5
+    },
+    {
+      "model": "allenai/Olmo-3-7B-Instruct",
+      "completed": 8192,
+      "requests": 10400,
+      "output_tokens": 2436456,
+      "generation_seconds": 1077.5205406179998,
+      "setup_seconds": 164.41212489900002,
+      "total_gpu_seconds": 4777.074371191335,
+      "total_gpu_usd": 2.587581951061973,
+      "output_tokens_per_second": 2261.1689598071125,
+      "mean_output_tokens": 297.4189453125,
+      "budget_usd": 5
+    },
+    {
+      "model": "allenai/Olmo-3-7B-Instruct",
+      "completed": 10240,
+      "requests": 10400,
+      "output_tokens": 3027166,
+      "generation_seconds": 1328.913333522,
+      "setup_seconds": 164.41212489900002,
+      "total_gpu_seconds": 4722.2691877718435,
+      "total_gpu_usd": 2.5578958100430818,
+      "output_tokens_per_second": 2277.925823783516,
+      "mean_output_tokens": 295.6216796875,
+      "budget_usd": 5
+    },
+    {
+      "model": "allenai/Olmo-3-7B-Instruct",
+      "completed": 10400,
+      "requests": 10400,
+      "output_tokens": 3077610,
+      "generation_seconds": 1358.960035093,
+      "setup_seconds": 164.41212489900002,
+      "total_gpu_seconds": 4750.116479976,
+      "total_gpu_usd": 2.5729797599869997,
+      "output_tokens_per_second": 2264.680285310513,
+      "mean_output_tokens": 295.9240384615385,
+      "budget_usd": 5
+    },
+    {
+      "model": "allenai/Olmo-3-7B-Instruct-DPO",
+      "completed": 8192,
+      "requests": 10400,
+      "output_tokens": 2989004,
+      "generation_seconds": 1389.9285469590002,
+      "setup_seconds": 193.01429384800002,
+      "total_gpu_seconds": 6052.71605843863,
+      "total_gpu_usd": 3.2785545316542577,
+      "output_tokens_per_second": 2150.4731351403557,
+      "mean_output_tokens": 364.86865234375,
+      "budget_usd": 5
+    },
+    {
+      "model": "allenai/Olmo-3-7B-Instruct-DPO",
+      "completed": 10240,
+      "requests": 10400,
+      "output_tokens": 3724936,
+      "generation_seconds": 1725.475944789,
+      "setup_seconds": 193.01429384800002,
+      "total_gpu_seconds": 6016.352400822985,
+      "total_gpu_usd": 3.2588575504457835,
+      "output_tokens_per_second": 2158.78755728206,
+      "mean_output_tokens": 363.76328125,
+      "budget_usd": 5
+    },
+    {
+      "model": "allenai/Olmo-3-7B-Instruct-DPO",
+      "completed": 10400,
+      "requests": 10400,
+      "output_tokens": 3785759,
+      "generation_seconds": 1759.4737537790002,
+      "setup_seconds": 193.01429384800002,
+      "total_gpu_seconds": 6037.464142881,
+      "total_gpu_usd": 3.270293077393875,
+      "output_tokens_per_second": 2151.642780614909,
+      "mean_output_tokens": 364.0152884615385,
+      "budget_usd": 5
+    }
+  ],
+  "phase1c_containers_after": 0,
+  "phase1_app_after": [
+    {
+      "app_id": "ap-eVQuZ7Ao72FvrIdUIxP6T1",
+      "description": "grader-mode-phase1",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-20 15:08:16-04:00",
+      "stopped_at": "2026-10-20 16:13:46-04:00"
+    }
+  ],
+  "billing_report_command": "uv run modal billing report --for today --resolution h --show-resources --json"
+}

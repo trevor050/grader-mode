@@ -1,61 +1,4497 @@
 {
-  "phase": "phase1c",
-  "status": "budget_stop_after_calibration",
-  "min_gold": 10,
-  "main_responses": 0,
-  "main_problems": 0,
-  "calibration_data_included": false,
-  "smoke_data_included": false,
-  "hypothesis_contrasts": null,
-  "projected_total_gpu_usd": 42.96801459167154,
-  "budget_usd": 10.0,
-  "gpu_function_seconds": 1904.662611136,
-  "gpu_function_usd": 1.0316922476986665,
-  "accounted_wall_seconds": 1922.021618271997,
-  "accounted_wall_usd": 1.0410950432306652,
-  "diagnostic_truncation_counts": {
-    "smoke": {
-      "instruct": {
-        "n_responses": 156,
-        "n_truncated": 35,
-        "n_empty_finals": 0,
-        "n_truncated_empty": 0
+  "n_problems": 169,
+  "n_responses": 26364,
+  "ladders": {
+    "instruct": {
+      "n_problems": 169,
+      "problem_indices": [
+        2,
+        3,
+        27,
+        29,
+        30,
+        36,
+        50,
+        60,
+        73,
+        80,
+        85,
+        86,
+        88,
+        102,
+        128,
+        135,
+        137,
+        138,
+        153,
+        155,
+        159,
+        163,
+        173,
+        176,
+        177,
+        180,
+        196,
+        199,
+        200,
+        204,
+        207,
+        216,
+        220,
+        222,
+        238,
+        251,
+        252,
+        254,
+        255,
+        260,
+        268,
+        270,
+        282,
+        293,
+        302,
+        303,
+        316,
+        317,
+        324,
+        332,
+        342,
+        345,
+        365,
+        368,
+        377,
+        390,
+        398,
+        400,
+        404,
+        409,
+        411,
+        413,
+        415,
+        417,
+        444,
+        460,
+        478,
+        479,
+        482,
+        483,
+        485,
+        516,
+        522,
+        525,
+        529,
+        531,
+        533,
+        548,
+        570,
+        571,
+        595,
+        603,
+        604,
+        615,
+        630,
+        637,
+        660,
+        661,
+        665,
+        681,
+        683,
+        693,
+        701,
+        710,
+        713,
+        724,
+        732,
+        739,
+        740,
+        754,
+        772,
+        776,
+        779,
+        787,
+        790,
+        791,
+        818,
+        833,
+        847,
+        853,
+        854,
+        861,
+        876,
+        891,
+        910,
+        920,
+        935,
+        936,
+        954,
+        958,
+        970,
+        971,
+        978,
+        984,
+        990,
+        1007,
+        1028,
+        1035,
+        1037,
+        1039,
+        1048,
+        1049,
+        1054,
+        1068,
+        1069,
+        1075,
+        1081,
+        1107,
+        1116,
+        1124,
+        1144,
+        1145,
+        1151,
+        1161,
+        1167,
+        1171,
+        1184,
+        1186,
+        1191,
+        1202,
+        1208,
+        1211,
+        1228,
+        1230,
+        1246,
+        1249,
+        1250,
+        1259,
+        1262,
+        1263,
+        1271,
+        1278,
+        1286,
+        1287,
+        1291,
+        1292,
+        1301,
+        1305,
+        1316
+      ],
+      "n_responses": 26364,
+      "checkpoints": {
+        "SFT": {
+          "n_problems": 169,
+          "n_responses": 8788,
+          "cells": [
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "none",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 5,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.8002958579881657,
+                "ci95": [
+                  0.7588387573964498,
+                  0.8387573964497042
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.04437869822485207,
+                "ci95": [
+                  0.029585798816568046,
+                  0.0621301775147929
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.034023668639053255,
+                "ci95": [
+                  0.020710059171597635,
+                  0.04881656804733728
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "boxed",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 1,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.8550295857988166,
+                "ci95": [
+                  0.8150887573964497,
+                  0.8920118343195266
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.7381656804733728,
+                "ci95": [
+                  0.6996671597633136,
+                  0.7766272189349113
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.6405325443786982,
+                "ci95": [
+                  0.5946745562130178,
+                  0.6849112426035503
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "dapo",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 3,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.8121301775147929,
+                "ci95": [
+                  0.7662352071005918,
+                  0.8535502958579881
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.48372781065088755,
+                "ci95": [
+                  0.4408284023668639,
+                  0.5236686390532544
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.4245562130177515,
+                "ci95": [
+                  0.3772189349112426,
+                  0.46893491124260356
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "answer_tag",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 4,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.764792899408284,
+                "ci95": [
+                  0.7233727810650887,
+                  0.8076923076923077
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.38461538461538464,
+                "ci95": [
+                  0.344637573964497,
+                  0.4260355029585799
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.32988165680473375,
+                "ci95": [
+                  0.2869822485207101,
+                  0.371301775147929
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "result_tag",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 5,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.7662721893491125,
+                "ci95": [
+                  0.7218934911242604,
+                  0.8091715976331361
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.48668639053254437,
+                "ci95": [
+                  0.4467455621301775,
+                  0.5281065088757396
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.42159763313609466,
+                "ci95": [
+                  0.378698224852071,
+                  0.46597633136094674
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "boxed_step",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 1,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.22189349112426035,
+                "ci95": [
+                  0.1908284023668639,
+                  0.2559171597633136
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.20710059171597633,
+                "ci95": [
+                  0.17307692307692307,
+                  0.2441198224852069
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.08136094674556213,
+                "ci95": [
+                  0.060650887573964495,
+                  0.10798816568047337
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "none",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 5,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.7041420118343196,
+                "ci95": [
+                  0.658284023668639,
+                  0.75
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.07692307692307693,
+                "ci95": [
+                  0.057692307692307696,
+                  0.09619082840236667
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.06804733727810651,
+                "ci95": [
+                  0.04881656804733728,
+                  0.08579881656804733
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "boxed",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 11,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.8165680473372781,
+                "ci95": [
+                  0.7736686390532544,
+                  0.856508875739645
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.5562130177514792,
+                "ci95": [
+                  0.5177514792899408,
+                  0.5976331360946746
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.48372781065088755,
+                "ci95": [
+                  0.44079142011834316,
+                  0.5281065088757396
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "dapo",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 10,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.7130177514792899,
+                "ci95": [
+                  0.6701183431952663,
+                  0.7515162721893489
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.6020710059171598,
+                "ci95": [
+                  0.5621301775147929,
+                  0.643491124260355
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.47928994082840237,
+                "ci95": [
+                  0.4378328402366864,
+                  0.522189349112426
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "answer_tag",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 6,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.658284023668639,
+                "ci95": [
+                  0.6124260355029586,
+                  0.7041420118343196
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.2455621301775148,
+                "ci95": [
+                  0.21449704142011836,
+                  0.27662721893491127
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.19822485207100593,
+                "ci95": [
+                  0.16715976331360946,
+                  0.22928994082840237
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "result_tag",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 11,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.7115384615384616,
+                "ci95": [
+                  0.6642011834319527,
+                  0.7559171597633136
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.2529585798816568,
+                "ci95": [
+                  0.21597633136094674,
+                  0.28846153846153844
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.1997041420118343,
+                "ci95": [
+                  0.16568047337278108,
+                  0.23224852071005916
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "boxed_step",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 1,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.14349112426035504,
+                "ci95": [
+                  0.11538461538461539,
+                  0.17307692307692307
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.21597633136094674,
+                "ci95": [
+                  0.1834319526627219,
+                  0.25
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.04585798816568047,
+                "ci95": [
+                  0.03106508875739645,
+                  0.0621301775147929
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "ceiling",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "none",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 4,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.8727810650887574,
+                "ci95": [
+                  0.8313609467455622,
+                  0.9112426035502958
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.5369822485207101,
+                "ci95": [
+                  0.4985207100591716,
+                  0.5739644970414202
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.46745562130177515,
+                "ci95": [
+                  0.4245562130177515,
+                  0.5088757396449705
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            }
+          ],
+          "n_excluded": 0,
+          "n_truncated": 67
+        },
+        "DPO": {
+          "n_problems": 169,
+          "n_responses": 8788,
+          "cells": [
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "none",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 83,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.7071005917159763,
+                "ci95": [
+                  0.6642011834319527,
+                  0.7485207100591716
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.01775147928994083,
+                "ci95": [
+                  0.0073964497041420114,
+                  0.029585798816568046
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.016272189349112426,
+                "ci95": [
+                  0.005917159763313609,
+                  0.028106508875739646
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "boxed",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 66,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.7041420118343196,
+                "ci95": [
+                  0.658284023668639,
+                  0.75
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.15532544378698224,
+                "ci95": [
+                  0.1242603550295858,
+                  0.1863905325443787
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.14201183431952663,
+                "ci95": [
+                  0.11386834319526627,
+                  0.17011834319526628
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "dapo",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 45,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.6819526627218935,
+                "ci95": [
+                  0.6331360946745562,
+                  0.727810650887574
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.06804733727810651,
+                "ci95": [
+                  0.04881656804733728,
+                  0.08727810650887574
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.05917159763313609,
+                "ci95": [
+                  0.042899408284023666,
+                  0.07840236686390532
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "answer_tag",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 56,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.6375739644970414,
+                "ci95": [
+                  0.5887573964497042,
+                  0.6863905325443787
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.08284023668639054,
+                "ci95": [
+                  0.06360946745562131,
+                  0.10355029585798817
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.07544378698224852,
+                "ci95": [
+                  0.057692307692307696,
+                  0.09467455621301775
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "result_tag",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 43,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.6553254437869822,
+                "ci95": [
+                  0.6035502958579881,
+                  0.7026627218934911
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.26331360946745563,
+                "ci95": [
+                  0.2307322485207101,
+                  0.2988165680473373
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.22041420118343194,
+                "ci95": [
+                  0.1878698224852071,
+                  0.2559171597633136
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "boxed_step",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 11,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.038461538461538464,
+                "ci95": [
+                  0.023668639053254437,
+                  0.05621301775147929
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.14349112426035504,
+                "ci95": [
+                  0.11538461538461539,
+                  0.17459319526627198
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.011834319526627219,
+                "ci95": [
+                  0.004437869822485207,
+                  0.019230769230769232
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "none",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 34,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.46893491124260356,
+                "ci95": [
+                  0.4171597633136095,
+                  0.5192307692307693
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.014792899408284023,
+                "ci95": [
+                  0.0073964497041420114,
+                  0.023668639053254437
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.013313609467455622,
+                "ci95": [
+                  0.005917159763313609,
+                  0.022189349112426034
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "boxed",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 45,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.6005917159763313,
+                "ci95": [
+                  0.5532174556213019,
+                  0.6494082840236687
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.06656804733727811,
+                "ci95": [
+                  0.04881656804733728,
+                  0.08579881656804733
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.05621301775147929,
+                "ci95": [
+                  0.03994082840236687,
+                  0.07396449704142012
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "dapo",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 36,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.5088757396449705,
+                "ci95": [
+                  0.46005917159763315,
+                  0.5606508875739645
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.09171597633136094,
+                "ci95": [
+                  0.07248520710059171,
+                  0.11242603550295859
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.07692307692307693,
+                "ci95": [
+                  0.057692307692307696,
+                  0.09615384615384616
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "answer_tag",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 26,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.4881656804733728,
+                "ci95": [
+                  0.4378698224852071,
+                  0.5370192307692306
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.07248520710059171,
+                "ci95": [
+                  0.051775147928994084,
+                  0.09323224852070987
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.0621301775147929,
+                "ci95": [
+                  0.042899408284023666,
+                  0.08136094674556213
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "result_tag",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 28,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.5207100591715976,
+                "ci95": [
+                  0.46893491124260356,
+                  0.5724852071005917
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.15828402366863906,
+                "ci95": [
+                  0.13165680473372782,
+                  0.1863905325443787
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.11982248520710059,
+                "ci95": [
+                  0.09467455621301775,
+                  0.14644970414201183
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "boxed_step",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 9,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.03254437869822485,
+                "ci95": [
+                  0.019230769230769232,
+                  0.047337278106508875
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.15532544378698224,
+                "ci95": [
+                  0.1227810650887574,
+                  0.1908284023668639
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.008875739644970414,
+                "ci95": [
+                  0.0029585798816568047,
+                  0.016272189349112426
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "ceiling",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "none",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 65,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.900887573964497,
+                "ci95": [
+                  0.8624260355029586,
+                  0.9363905325443787
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.3757396449704142,
+                "ci95": [
+                  0.32840236686390534,
+                  0.4230769230769231
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.35798816568047337,
+                "ci95": [
+                  0.3106508875739645,
+                  0.4068047337278107
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            }
+          ],
+          "n_excluded": 0,
+          "n_truncated": 547
+        },
+        "RLVR": {
+          "n_problems": 169,
+          "n_responses": 8788,
+          "cells": [
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "none",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 64,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.5724852071005917,
+                "ci95": [
+                  0.5251479289940828,
+                  0.6198224852071006
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.029585798816568046,
+                "ci95": [
+                  0.016272189349112426,
+                  0.042899408284023666
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.022189349112426034,
+                "ci95": [
+                  0.011834319526627219,
+                  0.034023668639053255
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "boxed",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 47,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.5872781065088757,
+                "ci95": [
+                  0.5369822485207101,
+                  0.636094674556213
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.08431952662721894,
+                "ci95": [
+                  0.0621301775147929,
+                  0.10798816568047337
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.07544378698224852,
+                "ci95": [
+                  0.05473372781065089,
+                  0.09615384615384616
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "dapo",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 33,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.46745562130177515,
+                "ci95": [
+                  0.4171597633136095,
+                  0.5177514792899408
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.14497041420118342,
+                "ci95": [
+                  0.11538461538461539,
+                  0.1760355029585799
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.13165680473372782,
+                "ci95": [
+                  0.10059171597633136,
+                  0.16420118343195267
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "answer_tag",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 33,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.4556213017751479,
+                "ci95": [
+                  0.40384615384615385,
+                  0.507396449704142
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.05917159763313609,
+                "ci95": [
+                  0.04142011834319527,
+                  0.07840236686390532
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.05029585798816568,
+                "ci95": [
+                  0.034023668639053255,
+                  0.06804733727810651
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "result_tag",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 36,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.5088757396449705,
+                "ci95": [
+                  0.46005917159763315,
+                  0.5591715976331361
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.128698224852071,
+                "ci95": [
+                  0.10355029585798817,
+                  0.15532544378698224
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.10798816568047337,
+                "ci95": [
+                  0.08431952662721894,
+                  0.1301775147928994
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "boxed_step",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 2,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.020710059171597635,
+                "ci95": [
+                  0.010355029585798817,
+                  0.034023668639053255
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.15088757396449703,
+                "ci95": [
+                  0.1227810650887574,
+                  0.17899408284023668
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.011834319526627219,
+                "ci95": [
+                  0.004437869822485207,
+                  0.020710059171597635
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "none",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 26,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.28846153846153844,
+                "ci95": [
+                  0.2411242603550296,
+                  0.33875739644970415
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.005917159763313609,
+                "ci95": [
+                  0.0014792899408284023,
+                  0.011834319526627219
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.005917159763313609,
+                "ci95": [
+                  0.0014792899408284023,
+                  0.011834319526627219
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "boxed",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 20,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.4393491124260355,
+                "ci95": [
+                  0.3831360946745562,
+                  0.4940828402366864
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.08136094674556213,
+                "ci95": [
+                  0.057692307692307696,
+                  0.10798816568047337
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.0650887573964497,
+                "ci95": [
+                  0.04437869822485207,
+                  0.08875739644970414
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "dapo",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 9,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.3431952662721893,
+                "ci95": [
+                  0.29289940828402367,
+                  0.39349112426035504
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.17899408284023668,
+                "ci95": [
+                  0.15088757396449703,
+                  0.20710059171597633
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.14644970414201183,
+                "ci95": [
+                  0.11982248520710059,
+                  0.17455621301775148
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "answer_tag",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 19,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.28550295857988167,
+                "ci95": [
+                  0.23816568047337278,
+                  0.3328402366863905
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.07396449704142012,
+                "ci95": [
+                  0.05621301775147929,
+                  0.09319526627218935
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.04585798816568047,
+                "ci95": [
+                  0.029585798816568046,
+                  0.060650887573964495
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "result_tag",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 21,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.35502958579881655,
+                "ci95": [
+                  0.30177514792899407,
+                  0.40532544378698226
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.10059171597633136,
+                "ci95": [
+                  0.07840236686390532,
+                  0.12281804733727791
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.0695266272189349,
+                "ci95": [
+                  0.05029585798816568,
+                  0.09023668639053255
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "tutor",
+              "prose": "env",
+              "cue": "env",
+              "format": "boxed_step",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 1,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.004437869822485207,
+                "ci95": [
+                  0.0,
+                  0.010355029585798817
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.11834319526627218,
+                "ci95": [
+                  0.08875739644970414,
+                  0.15088757396449703
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.0029585798816568047,
+                "ci95": [
+                  0.0,
+                  0.0073964497041420114
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            },
+            {
+              "arm": "ceiling",
+              "prose": "plain",
+              "cue": "plain",
+              "format": "none",
+              "n_responses": 676,
+              "n_valid": 676,
+              "n_excluded": 0,
+              "n_truncated": 62,
+              "n_truncated_empty": 0,
+              "n_empty_final": 0,
+              "leak": {
+                "estimate": 0.9112426035502958,
+                "ci95": [
+                  0.8742603550295858,
+                  0.9438239644970413
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "commit": {
+                "estimate": 0.7795857988165681,
+                "ci95": [
+                  0.7411242603550295,
+                  0.8180473372781065
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              },
+              "correct_commit": {
+                "estimate": 0.7366863905325444,
+                "ci95": [
+                  0.6908284023668639,
+                  0.7795857988165681
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0
+              }
+            }
+          ],
+          "n_excluded": 0,
+          "n_truncated": 373
+        }
       },
-      "think": {
-        "n_responses": 156,
-        "n_truncated": 71,
-        "n_empty_finals": 54,
-        "n_truncated_empty": 54
-      }
-    },
-    "calibration": {
-      "instruct": {
-        "n_responses": 80,
-        "n_truncated": 12,
-        "n_empty_finals": 0,
-        "n_truncated_empty": 0
+      "contrasts": {
+        "plain_format_effects": {
+          "SFT": {
+            "boxed": {
+              "estimate": 0.05473372781065089,
+              "ci95": [
+                0.023668639053254448,
+                0.08727810650887569
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "dapo": {
+              "estimate": 0.011834319526627168,
+              "ci95": [
+                -0.026627218934911157,
+                0.047337278106508784
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "answer_tag": {
+              "estimate": -0.03550295857988173,
+              "ci95": [
+                -0.07396449704142016,
+                0.00295857988165682
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "result_tag": {
+              "estimate": -0.03402366863905326,
+              "ci95": [
+                -0.06804733727810652,
+                0.0
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "boxed_step": {
+              "estimate": -0.5784023668639053,
+              "ci95": [
+                -0.6227810650887574,
+                -0.5310650887573964
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "pooled_rl": {
+              "estimate": 0.010355029585798778,
+              "ci95": [
+                -0.0167652859960552,
+                0.03994082840236687
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            }
+          },
+          "DPO": {
+            "boxed": {
+              "estimate": -0.002958579881656709,
+              "ci95": [
+                -0.04289940828402361,
+                0.03846153846153855
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "dapo": {
+              "estimate": -0.025147928994082802,
+              "ci95": [
+                -0.0650887573964497,
+                0.013313609467455634
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "answer_tag": {
+              "estimate": -0.06952662721893488,
+              "ci95": [
+                -0.10946745562130178,
+                -0.031065088757396442
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "result_tag": {
+              "estimate": -0.05177514792899407,
+              "ci95": [
+                -0.09171597633136097,
+                -0.011834319526627168
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "boxed_step": {
+              "estimate": -0.6686390532544378,
+              "ci95": [
+                -0.7086168639053254,
+                -0.6257396449704142
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "pooled_rl": {
+              "estimate": -0.032544378698224796,
+              "ci95": [
+                -0.06460798816568052,
+                -0.0014792899408284284
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            }
+          },
+          "RLVR": {
+            "boxed": {
+              "estimate": 0.014792899408283988,
+              "ci95": [
+                -0.032544378698224796,
+                0.06068786982248504
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "dapo": {
+              "estimate": -0.10502958579881655,
+              "ci95": [
+                -0.1538831360946746,
+                -0.054733727810650945
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "answer_tag": {
+              "estimate": -0.11686390532544377,
+              "ci95": [
+                -0.16272189349112431,
+                -0.07100591715976329
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "result_tag": {
+              "estimate": -0.06360946745562124,
+              "ci95": [
+                -0.11094674556213013,
+                -0.0177144970414203
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "boxed_step": {
+              "estimate": -0.5517751479289941,
+              "ci95": [
+                -0.599112426035503,
+                -0.5044378698224852
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "pooled_rl": {
+              "estimate": -0.06903353057199212,
+              "ci95": [
+                -0.11095907297830376,
+                -0.02909270216962528
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            }
+          }
+        },
+        "h6": {
+          "estimate": -0.03648915187376732,
+          "ci95": [
+            -0.08876972386587777,
+            0.014312130177514756
+          ],
+          "valid_resamples": 2000,
+          "undefined_resamples": 0,
+          "status": "ok"
+        },
+        "h7": {
+          "rlvr_specificity": {
+            "estimate": -0.005424063116370892,
+            "ci95": [
+              -0.0414201183431952,
+              0.031065088757396442
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "status": "ok"
+          },
+          "difference_in_differences": {
+            "estimate": -0.024654832347140165,
+            "ci95": [
+              -0.07692307692307693,
+              0.024654832347140165
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "status": "ok"
+          }
+        },
+        "h8": {
+          "estimate": -0.5517751479289941,
+          "ci95": [
+            -0.599112426035503,
+            -0.5044378698224852
+          ],
+          "valid_resamples": 2000,
+          "undefined_resamples": 0,
+          "status": "ok"
+        },
+        "per_format_h6": {
+          "boxed": {
+            "estimate": 0.017751479289940697,
+            "ci95": [
+              -0.04585798816568054,
+              0.07840236686390534
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "status": "ok"
+          },
+          "dapo": {
+            "estimate": -0.07988165680473375,
+            "ci95": [
+              -0.1420118343195267,
+              -0.01623520710059189
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "status": "ok"
+          },
+          "answer_tag": {
+            "estimate": -0.047337278106508895,
+            "ci95": [
+              -0.1065088757396449,
+              0.01331360946745569
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "status": "ok"
+          }
+        },
+        "env_format_interactions": {
+          "SFT": {
+            "boxed": {
+              "estimate": 0.0576923076923076,
+              "ci95": [
+                0.007396449704141994,
+                0.10650887573964496
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "dapo": {
+              "estimate": -0.00295857988165682,
+              "ci95": [
+                -0.062130177514792884,
+                0.05473372781065078
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "answer_tag": {
+              "estimate": -0.010355029585798814,
+              "ci95": [
+                -0.0650887573964497,
+                0.04585798816568054
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "result_tag": {
+              "estimate": 0.041420118343195256,
+              "ci95": [
+                -0.011834319526627172,
+                0.09319526627218944
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "boxed_step": {
+              "estimate": 0.017751479289940808,
+              "ci95": [
+                -0.041420118343195256,
+                0.07396449704142005
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "pooled_rl": {
+              "estimate": 0.014792899408283986,
+              "ci95": [
+                -0.02810650887573955,
+                0.05869082840236678
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            }
+          },
+          "DPO": {
+            "boxed": {
+              "estimate": 0.13461538461538447,
+              "ci95": [
+                0.07988165680473375,
+                0.19234467455621285
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "dapo": {
+              "estimate": 0.0650887573964497,
+              "ci95": [
+                0.0014792899408283544,
+                0.1346523668639052
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "answer_tag": {
+              "estimate": 0.0887573964497041,
+              "ci95": [
+                0.031028106508875736,
+                0.15384615384615374
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "result_tag": {
+              "estimate": 0.10355029585798814,
+              "ci95": [
+                0.0399408284023669,
+                0.1701183431952662
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "boxed_step": {
+              "estimate": 0.23224852071005914,
+              "ci95": [
+                0.1849112426035503,
+                0.28254437869822485
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "pooled_rl": {
+              "estimate": 0.09615384615384609,
+              "ci95": [
+                0.04732495069033527,
+                0.14940828402366862
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            }
+          },
+          "RLVR": {
+            "boxed": {
+              "estimate": 0.1360946745562131,
+              "ci95": [
+                0.07840236686390528,
+                0.19822485207100587
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "dapo": {
+              "estimate": 0.15976331360946744,
+              "ci95": [
+                0.09615384615384615,
+                0.2219304733727809
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "answer_tag": {
+              "estimate": 0.11390532544378701,
+              "ci95": [
+                0.0517751479289941,
+                0.17603550295857995
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "result_tag": {
+              "estimate": 0.13017751479289935,
+              "ci95": [
+                0.07396449704142011,
+                0.18639053254437865
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "boxed_step": {
+              "estimate": 0.26775147928994086,
+              "ci95": [
+                0.2189349112426036,
+                0.31804733727810647
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "pooled_rl": {
+              "estimate": 0.13658777120315585,
+              "ci95": [
+                0.08677268244575938,
+                0.1888560157790926
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            }
+          }
+        },
+        "sft_dpo_format_changes": {
+          "boxed": {
+            "estimate": -0.0576923076923076,
+            "ci95": [
+              -0.10798816568047331,
+              -0.00887573964497046
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "status": "ok"
+          },
+          "dapo": {
+            "estimate": -0.03698224852070997,
+            "ci95": [
+              -0.0872781065088758,
+              0.01183431952662728
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "status": "ok"
+          },
+          "answer_tag": {
+            "estimate": -0.03402366863905315,
+            "ci95": [
+              -0.08583579881656804,
+              0.016272189349112454
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "status": "ok"
+          },
+          "result_tag": {
+            "estimate": -0.017751479289940808,
+            "ci95": [
+              -0.06656804733727817,
+              0.032544378698224685
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "status": "ok"
+          },
+          "boxed_step": {
+            "estimate": -0.0902366863905325,
+            "ci95": [
+              -0.1405325443786981,
+              -0.038461538461538436
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "status": "ok"
+          },
+          "pooled_rl": {
+            "estimate": -0.042899408284023575,
+            "ci95": [
+              -0.0823471400394477,
+              -0.005917159763313564
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "status": "ok"
+          }
+        }
       },
-      "think": {
-        "n_responses": 80,
-        "n_truncated": 40,
-        "n_empty_finals": 29,
-        "n_truncated_empty": 29
+      "available_checkpoints": [
+        "SFT",
+        "DPO",
+        "RLVR"
+      ],
+      "missing_checkpoints": [],
+      "checkpoint_status": "complete",
+      "models": {
+        "SFT": "allenai/Olmo-3-7B-Instruct-SFT",
+        "DPO": "allenai/Olmo-3-7B-Instruct-DPO",
+        "RLVR": "allenai/Olmo-3-7B-Instruct"
+      },
+      "thinking": false,
+      "inference": {
+        "eligible": true,
+        "required_problems": 200,
+        "source_n_problems": 200,
+        "complete_checkpoints": true
+      },
+      "common_ceiling_solved": {
+        "n_problems": 105,
+        "problem_indices": [
+          2,
+          27,
+          29,
+          30,
+          36,
+          50,
+          60,
+          85,
+          86,
+          88,
+          128,
+          135,
+          137,
+          138,
+          153,
+          155,
+          163,
+          176,
+          177,
+          180,
+          196,
+          199,
+          204,
+          207,
+          216,
+          222,
+          238,
+          251,
+          254,
+          255,
+          268,
+          270,
+          293,
+          302,
+          317,
+          332,
+          342,
+          345,
+          377,
+          398,
+          400,
+          404,
+          409,
+          411,
+          413,
+          415,
+          444,
+          460,
+          478,
+          482,
+          483,
+          485,
+          516,
+          522,
+          525,
+          531,
+          533,
+          548,
+          595,
+          604,
+          630,
+          637,
+          660,
+          681,
+          683,
+          693,
+          713,
+          732,
+          739,
+          740,
+          787,
+          791,
+          818,
+          833,
+          847,
+          861,
+          876,
+          920,
+          954,
+          958,
+          970,
+          971,
+          978,
+          1007,
+          1049,
+          1068,
+          1081,
+          1107,
+          1116,
+          1124,
+          1144,
+          1167,
+          1191,
+          1208,
+          1228,
+          1230,
+          1246,
+          1259,
+          1263,
+          1271,
+          1278,
+          1287,
+          1291,
+          1305,
+          1316
+        ],
+        "n_responses": 16380,
+        "checkpoints": {
+          "SFT": {
+            "n_problems": 105,
+            "n_responses": 5460,
+            "cells": [
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "none",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 1,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.8547619047619047,
+                  "ci95": [
+                    0.8166666666666667,
+                    0.8904761904761904
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.047619047619047616,
+                  "ci95": [
+                    0.02857142857142857,
+                    0.06904761904761905
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.0380952380952381,
+                  "ci95": [
+                    0.02142857142857143,
+                    0.05714285714285714
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "boxed",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 0,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.9214285714285714,
+                  "ci95": [
+                    0.8857142857142857,
+                    0.9547619047619048
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.7571428571428571,
+                  "ci95": [
+                    0.7095238095238096,
+                    0.7976785714285711
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.7119047619047619,
+                  "ci95": [
+                    0.6619047619047619,
+                    0.7595238095238095
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "dapo",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 2,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.8785714285714286,
+                  "ci95": [
+                    0.8380952380952381,
+                    0.9166666666666666
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.5285714285714286,
+                  "ci95": [
+                    0.4785714285714286,
+                    0.580952380952381
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.5,
+                  "ci95": [
+                    0.44761904761904764,
+                    0.5548214285714282
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "answer_tag",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 2,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.819047619047619,
+                  "ci95": [
+                    0.7761904761904762,
+                    0.861904761904762
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.40714285714285714,
+                  "ci95": [
+                    0.3476190476190476,
+                    0.46196428571428544
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.38333333333333336,
+                  "ci95": [
+                    0.3261904761904762,
+                    0.44047619047619047
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "result_tag",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 1,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.8214285714285714,
+                  "ci95": [
+                    0.77375,
+                    0.8666666666666667
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.5238095238095238,
+                  "ci95": [
+                    0.47619047619047616,
+                    0.5714285714285714
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.5047619047619047,
+                  "ci95": [
+                    0.45714285714285713,
+                    0.5523809523809524
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "boxed_step",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 1,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.23333333333333334,
+                  "ci95": [
+                    0.19047619047619047,
+                    0.2761904761904762
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.18095238095238095,
+                  "ci95": [
+                    0.1357142857142857,
+                    0.23095238095238096
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.08571428571428572,
+                  "ci95": [
+                    0.05476190476190476,
+                    0.11904761904761904
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "none",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 3,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.7404761904761905,
+                  "ci95": [
+                    0.6880952380952381,
+                    0.7904761904761904
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.08095238095238096,
+                  "ci95": [
+                    0.05476190476190476,
+                    0.10952380952380952
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.08095238095238096,
+                  "ci95": [
+                    0.05476190476190476,
+                    0.10952380952380952
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "boxed",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 6,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.8785714285714286,
+                  "ci95": [
+                    0.8380952380952381,
+                    0.9142857142857143
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.569047619047619,
+                  "ci95": [
+                    0.5214285714285715,
+                    0.6167261904761902
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.5380952380952381,
+                  "ci95": [
+                    0.4880952380952381,
+                    0.5880952380952381
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "dapo",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 5,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.7761904761904762,
+                  "ci95": [
+                    0.735654761904762,
+                    0.8167261904761901
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.6190476190476191,
+                  "ci95": [
+                    0.5666666666666667,
+                    0.6714285714285714
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.5428571428571428,
+                  "ci95": [
+                    0.49047619047619045,
+                    0.5952380952380952
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "answer_tag",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 0,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.6976190476190476,
+                  "ci95": [
+                    0.6428571428571429,
+                    0.75
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.2571428571428571,
+                  "ci95": [
+                    0.21666666666666667,
+                    0.30238095238095236
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.23095238095238096,
+                  "ci95": [
+                    0.19285714285714287,
+                    0.2714880952380949
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "result_tag",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 4,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.7571428571428571,
+                  "ci95": [
+                    0.7047619047619048,
+                    0.8071428571428572
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.24761904761904763,
+                  "ci95": [
+                    0.1999404761904762,
+                    0.3
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.2261904761904762,
+                  "ci95": [
+                    0.18095238095238095,
+                    0.27380952380952384
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "boxed_step",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 1,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.15476190476190477,
+                  "ci95": [
+                    0.11666666666666667,
+                    0.19529761904761872
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.20714285714285716,
+                  "ci95": [
+                    0.16666666666666666,
+                    0.24761904761904763
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.05,
+                  "ci95": [
+                    0.030952380952380953,
+                    0.07142857142857142
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "ceiling",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "none",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 1,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.9642857142857143,
+                  "ci95": [
+                    0.9452380952380952,
+                    0.9809523809523809
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.6142857142857143,
+                  "ci95": [
+                    0.5714285714285714,
+                    0.6571428571428571
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.5880952380952381,
+                  "ci95": [
+                    0.5428571428571428,
+                    0.6333333333333333
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              }
+            ],
+            "n_excluded": 0,
+            "n_truncated": 27
+          },
+          "DPO": {
+            "n_problems": 105,
+            "n_responses": 5460,
+            "cells": [
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "none",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 31,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.7595238095238095,
+                  "ci95": [
+                    0.7142857142857143,
+                    0.8071428571428572
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.016666666666666666,
+                  "ci95": [
+                    0.004761904761904762,
+                    0.030952380952380953
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.016666666666666666,
+                  "ci95": [
+                    0.004761904761904762,
+                    0.030952380952380953
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "boxed",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 23,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.7261904761904762,
+                  "ci95": [
+                    0.6714285714285714,
+                    0.778630952380952
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.15476190476190477,
+                  "ci95": [
+                    0.11666666666666667,
+                    0.19523809523809524
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.14523809523809525,
+                  "ci95": [
+                    0.10714285714285714,
+                    0.18333333333333332
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "dapo",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 12,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.7309523809523809,
+                  "ci95": [
+                    0.6785714285714286,
+                    0.780952380952381
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.07380952380952381,
+                  "ci95": [
+                    0.052321428571428574,
+                    0.09761904761904762
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.06904761904761905,
+                  "ci95": [
+                    0.04523809523809524,
+                    0.09285714285714286
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "answer_tag",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 26,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.6928571428571428,
+                  "ci95": [
+                    0.6357142857142857,
+                    0.75
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.09761904761904762,
+                  "ci95": [
+                    0.07142857142857142,
+                    0.1261904761904762
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.0880952380952381,
+                  "ci95": [
+                    0.06428571428571428,
+                    0.11428571428571428
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "result_tag",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 11,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.6952380952380952,
+                  "ci95": [
+                    0.6451785714285715,
+                    0.7476190476190476
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.2761904761904762,
+                  "ci95": [
+                    0.2357142857142857,
+                    0.32142857142857145
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.24761904761904763,
+                  "ci95": [
+                    0.20714285714285716,
+                    0.2904761904761905
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "boxed_step",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 5,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.0380952380952381,
+                  "ci95": [
+                    0.01904761904761905,
+                    0.06190476190476191
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.16428571428571428,
+                  "ci95": [
+                    0.1261904761904762,
+                    0.20238095238095238
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.011904761904761904,
+                  "ci95": [
+                    0.002380952380952381,
+                    0.023809523809523808
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "none",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 9,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.4928571428571429,
+                  "ci95": [
+                    0.42857142857142855,
+                    0.5595238095238095
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.014285714285714285,
+                  "ci95": [
+                    0.004761904761904762,
+                    0.02619047619047619
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.011904761904761904,
+                  "ci95": [
+                    0.002380952380952381,
+                    0.023809523809523808
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "boxed",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 15,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.6357142857142857,
+                  "ci95": [
+                    0.5738095238095238,
+                    0.6928571428571428
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.06428571428571428,
+                  "ci95": [
+                    0.04285714285714286,
+                    0.0880952380952381
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.05952380952380952,
+                  "ci95": [
+                    0.04047619047619048,
+                    0.08095238095238096
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "dapo",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 8,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.5166666666666667,
+                  "ci95": [
+                    0.4523809523809524,
+                    0.5833333333333334
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.08333333333333333,
+                  "ci95": [
+                    0.05714285714285714,
+                    0.11190476190476191
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.06904761904761905,
+                  "ci95": [
+                    0.04517857142857143,
+                    0.09523809523809523
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "answer_tag",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 5,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.5071428571428571,
+                  "ci95": [
+                    0.44285714285714284,
+                    0.5738095238095238
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.06666666666666667,
+                  "ci95": [
+                    0.04047619047619048,
+                    0.09523809523809523
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.05238095238095238,
+                  "ci95": [
+                    0.02857142857142857,
+                    0.07857142857142857
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "result_tag",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 5,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.530952380952381,
+                  "ci95": [
+                    0.4642857142857143,
+                    0.5952976190476187
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.1523809523809524,
+                  "ci95": [
+                    0.11666666666666667,
+                    0.1880952380952381
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.12380952380952381,
+                  "ci95": [
+                    0.09047619047619047,
+                    0.15476190476190477
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "boxed_step",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 4,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.030952380952380953,
+                  "ci95": [
+                    0.016666666666666666,
+                    0.0476785714285711
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.17857142857142858,
+                  "ci95": [
+                    0.1357142857142857,
+                    0.22142857142857142
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.011904761904761904,
+                  "ci95": [
+                    0.002380952380952381,
+                    0.023809523809523808
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "ceiling",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "none",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 22,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.9785714285714285,
+                  "ci95": [
+                    0.9619047619047619,
+                    0.9928571428571429
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.55,
+                  "ci95": [
+                    0.5071428571428571,
+                    0.5976190476190476
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.5476190476190477,
+                  "ci95": [
+                    0.5047619047619047,
+                    0.5952380952380952
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              }
+            ],
+            "n_excluded": 0,
+            "n_truncated": 176
+          },
+          "RLVR": {
+            "n_problems": 105,
+            "n_responses": 5460,
+            "cells": [
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "none",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 23,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.6047619047619047,
+                  "ci95": [
+                    0.5452380952380952,
+                    0.6619047619047619
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.023809523809523808,
+                  "ci95": [
+                    0.009523809523809525,
+                    0.04285714285714286
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.01904761904761905,
+                  "ci95": [
+                    0.007142857142857143,
+                    0.03333333333333333
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "boxed",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 12,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.6285714285714286,
+                  "ci95": [
+                    0.5689880952380952,
+                    0.6904761904761905
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.07857142857142857,
+                  "ci95": [
+                    0.05238095238095238,
+                    0.10714285714285714
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.07857142857142857,
+                  "ci95": [
+                    0.05238095238095238,
+                    0.10714285714285714
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "dapo",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 8,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.4928571428571429,
+                  "ci95": [
+                    0.42857142857142855,
+                    0.5547619047619048
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.14047619047619048,
+                  "ci95": [
+                    0.10476190476190476,
+                    0.17863095238095206
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.13333333333333333,
+                  "ci95": [
+                    0.09523809523809523,
+                    0.1714880952380949
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "answer_tag",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 12,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.4785714285714286,
+                  "ci95": [
+                    0.4142857142857143,
+                    0.5404761904761904
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.05714285714285714,
+                  "ci95": [
+                    0.03333333333333333,
+                    0.08095238095238096
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.05476190476190476,
+                  "ci95": [
+                    0.03333333333333333,
+                    0.07857142857142857
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "result_tag",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 10,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.5261904761904762,
+                  "ci95": [
+                    0.46190476190476193,
+                    0.5880952380952381
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.11904761904761904,
+                  "ci95": [
+                    0.09041666666666667,
+                    0.15
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.11190476190476191,
+                  "ci95": [
+                    0.08333333333333333,
+                    0.14285714285714285
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "boxed_step",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 1,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.02619047619047619,
+                  "ci95": [
+                    0.009523809523809525,
+                    0.04523809523809524
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.16428571428571428,
+                  "ci95": [
+                    0.12380952380952381,
+                    0.20714285714285716
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.014285714285714285,
+                  "ci95": [
+                    0.004761904761904762,
+                    0.02619047619047619
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "none",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 7,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.2976190476190476,
+                  "ci95": [
+                    0.24041666666666667,
+                    0.3595238095238095
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.004761904761904762,
+                  "ci95": [
+                    0.0,
+                    0.011904761904761904
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.004761904761904762,
+                  "ci95": [
+                    0.0,
+                    0.011904761904761904
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "boxed",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 8,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.4523809523809524,
+                  "ci95": [
+                    0.38095238095238093,
+                    0.5190476190476191
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.05952380952380952,
+                  "ci95": [
+                    0.03571428571428571,
+                    0.08571428571428572
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.05714285714285714,
+                  "ci95": [
+                    0.03571428571428571,
+                    0.08095238095238096
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "dapo",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 4,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.3261904761904762,
+                  "ci95": [
+                    0.2642857142857143,
+                    0.3881547619047616
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.14761904761904762,
+                  "ci95": [
+                    0.11190476190476191,
+                    0.18571428571428572
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.1380952380952381,
+                  "ci95": [
+                    0.10476190476190476,
+                    0.1761904761904762
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "answer_tag",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 5,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.29285714285714287,
+                  "ci95": [
+                    0.23095238095238096,
+                    0.35714285714285715
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.06428571428571428,
+                  "ci95": [
+                    0.04285714285714286,
+                    0.0880952380952381
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.05,
+                  "ci95": [
+                    0.030952380952380953,
+                    0.07380952380952381
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "result_tag",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 8,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.3238095238095238,
+                  "ci95": [
+                    0.25476190476190474,
+                    0.3904761904761905
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.0761904761904762,
+                  "ci95": [
+                    0.05238095238095238,
+                    0.10238095238095238
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.05476190476190476,
+                  "ci95": [
+                    0.03333333333333333,
+                    0.07857142857142857
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "tutor",
+                "prose": "env",
+                "cue": "env",
+                "format": "boxed_step",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 1,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.004761904761904762,
+                  "ci95": [
+                    0.0,
+                    0.011904761904761904
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.10714285714285714,
+                  "ci95": [
+                    0.07142857142857142,
+                    0.15005952380952348
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.002380952380952381,
+                  "ci95": [
+                    0.0,
+                    0.007142857142857143
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              },
+              {
+                "arm": "ceiling",
+                "prose": "plain",
+                "cue": "plain",
+                "format": "none",
+                "n_responses": 420,
+                "n_valid": 420,
+                "n_excluded": 0,
+                "n_truncated": 21,
+                "n_truncated_empty": 0,
+                "n_empty_final": 0,
+                "leak": {
+                  "estimate": 0.9785714285714285,
+                  "ci95": [
+                    0.9642857142857143,
+                    0.9904761904761905
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "commit": {
+                  "estimate": 0.861904761904762,
+                  "ci95": [
+                    0.8238095238095238,
+                    0.8976190476190476
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                },
+                "correct_commit": {
+                  "estimate": 0.861904761904762,
+                  "ci95": [
+                    0.8238095238095238,
+                    0.8976190476190476
+                  ],
+                  "valid_resamples": 2000,
+                  "undefined_resamples": 0
+                }
+              }
+            ],
+            "n_excluded": 0,
+            "n_truncated": 120
+          }
+        },
+        "contrasts": {
+          "plain_format_effects": {
+            "SFT": {
+              "boxed": {
+                "estimate": 0.06666666666666665,
+                "ci95": [
+                  0.033333333333333326,
+                  0.09999999999999998
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "dapo": {
+                "estimate": 0.023809523809523836,
+                "ci95": [
+                  -0.014285714285714346,
+                  0.06190476190476191
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "answer_tag": {
+                "estimate": -0.0357142857142857,
+                "ci95": [
+                  -0.07857142857142863,
+                  0.00952380952380949
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "result_tag": {
+                "estimate": -0.033333333333333326,
+                "ci95": [
+                  -0.07619047619047614,
+                  0.0071428571428571175
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "boxed_step": {
+                "estimate": -0.6214285714285714,
+                "ci95": [
+                  -0.6714285714285715,
+                  -0.5714285714285714
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "pooled_rl": {
+                "estimate": 0.018253968253968262,
+                "ci95": [
+                  -0.010317460317460357,
+                  0.047619047619047596
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              }
+            },
+            "DPO": {
+              "boxed": {
+                "estimate": -0.033333333333333326,
+                "ci95": [
+                  -0.080952380952381,
+                  0.01666666666666672
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "dapo": {
+                "estimate": -0.02857142857142858,
+                "ci95": [
+                  -0.07619047619047625,
+                  0.01904761904761898
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "answer_tag": {
+                "estimate": -0.06666666666666665,
+                "ci95": [
+                  -0.11904761904761907,
+                  -0.01666666666666672
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "result_tag": {
+                "estimate": -0.06428571428571428,
+                "ci95": [
+                  -0.11428571428571432,
+                  -0.016666666666666607
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "boxed_step": {
+                "estimate": -0.7214285714285714,
+                "ci95": [
+                  -0.769047619047619,
+                  -0.6761309523809528
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "pooled_rl": {
+                "estimate": -0.04285714285714285,
+                "ci95": [
+                  -0.08412698412698409,
+                  -0.003948412698412794
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              }
+            },
+            "RLVR": {
+              "boxed": {
+                "estimate": 0.023809523809523836,
+                "ci95": [
+                  -0.03809523809523818,
+                  0.09047619047619049
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "dapo": {
+                "estimate": -0.11190476190476184,
+                "ci95": [
+                  -0.17380952380952386,
+                  -0.04761904761904767
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "answer_tag": {
+                "estimate": -0.12619047619047613,
+                "ci95": [
+                  -0.1833333333333333,
+                  -0.06428571428571428
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "result_tag": {
+                "estimate": -0.07857142857142851,
+                "ci95": [
+                  -0.14047619047619042,
+                  -0.01666666666666672
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "boxed_step": {
+                "estimate": -0.5785714285714285,
+                "ci95": [
+                  -0.6333333333333333,
+                  -0.5214285714285714
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "pooled_rl": {
+                "estimate": -0.07142857142857138,
+                "ci95": [
+                  -0.12380952380952377,
+                  -0.015079365079365062
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              }
+            }
+          },
+          "h6": {
+            "estimate": -0.028571428571428532,
+            "ci95": [
+              -0.0952380952380952,
+              0.04126984126984122
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "status": "ok"
+          },
+          "h7": {
+            "rlvr_specificity": {
+              "estimate": 0.0071428571428571175,
+              "ci95": [
+                -0.036507936507936434,
+                0.052400793650793524
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "difference_in_differences": {
+              "estimate": -0.014285714285714346,
+              "ci95": [
+                -0.07303571428571447,
+                0.04682539682539666
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            }
+          },
+          "h8": {
+            "estimate": -0.5785714285714285,
+            "ci95": [
+              -0.6333333333333333,
+              -0.5214285714285714
+            ],
+            "valid_resamples": 2000,
+            "undefined_resamples": 0,
+            "status": "ok"
+          },
+          "per_format_h6": {
+            "boxed": {
+              "estimate": 0.05714285714285716,
+              "ci95": [
+                -0.02619047619047621,
+                0.14761904761904754
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "dapo": {
+              "estimate": -0.08333333333333326,
+              "ci95": [
+                -0.16190476190476194,
+                0.0023809523809523725
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "answer_tag": {
+              "estimate": -0.05952380952380948,
+              "ci95": [
+                -0.1333333333333333,
+                0.01666666666666672
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            }
+          },
+          "env_format_interactions": {
+            "SFT": {
+              "boxed": {
+                "estimate": 0.0714285714285714,
+                "ci95": [
+                  0.016607142857142803,
+                  0.13095238095238093
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "dapo": {
+                "estimate": 0.011904761904761862,
+                "ci95": [
+                  -0.05714285714285705,
+                  0.080952380952381
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "answer_tag": {
+                "estimate": -0.0071428571428572285,
+                "ci95": [
+                  -0.07619047619047625,
+                  0.06190476190476191
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "result_tag": {
+                "estimate": 0.04999999999999993,
+                "ci95": [
+                  -0.019047619047619094,
+                  0.1166666666666667
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "boxed_step": {
+                "estimate": 0.0357142857142857,
+                "ci95": [
+                  -0.03339285714285724,
+                  0.10952380952380958
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "pooled_rl": {
+                "estimate": 0.025396825396825345,
+                "ci95": [
+                  -0.02541666666666672,
+                  0.08015873015873017
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              }
+            },
+            "DPO": {
+              "boxed": {
+                "estimate": 0.17619047619047612,
+                "ci95": [
+                  0.1070833333333333,
+                  0.24999999999999994
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "dapo": {
+                "estimate": 0.05238095238095242,
+                "ci95": [
+                  -0.030952380952380953,
+                  0.14047619047619053
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "answer_tag": {
+                "estimate": 0.08095238095238089,
+                "ci95": [
+                  -5.9523809523860054e-05,
+                  0.161904761904762
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "result_tag": {
+                "estimate": 0.10238095238095235,
+                "ci95": [
+                  0.014285714285714346,
+                  0.19047619047619058
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "boxed_step": {
+                "estimate": 0.2595238095238095,
+                "ci95": [
+                  0.1952380952380952,
+                  0.32619047619047625
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "pooled_rl": {
+                "estimate": 0.10317460317460314,
+                "ci95": [
+                  0.03807539682539678,
+                  0.17063492063492056
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              }
+            },
+            "RLVR": {
+              "boxed": {
+                "estimate": 0.13095238095238093,
+                "ci95": [
+                  0.05238095238095236,
+                  0.20952380952380945
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "dapo": {
+                "estimate": 0.14047619047619042,
+                "ci95": [
+                  0.05708333333333325,
+                  0.2238095238095238
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "answer_tag": {
+                "estimate": 0.12142857142857139,
+                "ci95": [
+                  0.0404761904761905,
+                  0.19761904761904758
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "result_tag": {
+                "estimate": 0.10476190476190472,
+                "ci95": [
+                  0.030952380952380953,
+                  0.17619047619047618
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "boxed_step": {
+                "estimate": 0.28571428571428564,
+                "ci95": [
+                  0.22142857142857142,
+                  0.35
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              },
+              "pooled_rl": {
+                "estimate": 0.13095238095238093,
+                "ci95": [
+                  0.060317460317460325,
+                  0.19761904761904758
+                ],
+                "valid_resamples": 2000,
+                "undefined_resamples": 0,
+                "status": "ok"
+              }
+            }
+          },
+          "sft_dpo_format_changes": {
+            "boxed": {
+              "estimate": -0.09999999999999998,
+              "ci95": [
+                -0.15476190476190477,
+                -0.0452380952380953
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "dapo": {
+              "estimate": -0.05238095238095242,
+              "ci95": [
+                -0.11428571428571421,
+                0.00952380952380949
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "answer_tag": {
+              "estimate": -0.030952380952380953,
+              "ci95": [
+                -0.09999999999999998,
+                0.0357142857142857
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "result_tag": {
+              "estimate": -0.030952380952380953,
+              "ci95": [
+                -0.09047619047619049,
+                0.02619047619047621
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "boxed_step": {
+              "estimate": -0.09999999999999998,
+              "ci95": [
+                -0.16666666666666663,
+                -0.033333333333333326
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            },
+            "pooled_rl": {
+              "estimate": -0.061111111111111116,
+              "ci95": [
+                -0.11111111111111112,
+                -0.013492063492063446
+              ],
+              "valid_resamples": 2000,
+              "undefined_resamples": 0,
+              "status": "ok"
+            }
+          }
+        },
+        "status": "ok"
       }
     }
   },
-  "launch_full": false,
-  "calibration_path": "results/phase1c/calibration.json",
-  "smoke_summary_path": "results/phase1c-smoke/summary.md",
-  "system_prompts": {
-    "instruct": "prompts/system_tutor_strong.txt",
-    "think": "prompts/system_tutor.txt"
+  "deferred_ladders": [
+    "think"
+  ],
+  "phase": "phase1c",
+  "min_gold": 10,
+  "bootstrap": {
+    "resamples": 2000,
+    "seed": 0,
+    "unit": "problem_idx",
+    "interval": "percentile 95%",
+    "pairing": "common whole-problem draws across checkpoints, cells, templates, and outcomes within each ladder/subset"
   },
-  "execution_metrics_path": "results/phase1c/execution-metrics.json",
-  "gpu_allocation_upper_seconds": 1969.0,
-  "gpu_allocation_upper_cost_usd": 1.0665416666666667,
-  "verification": {
-    "tests_passed": 187,
-    "phase1c_live_containers": 0,
-    "phase1c_nonstopped_apps": 0
+  "rate_denominator": "nonexcluded final replies; ratio of sums re-estimated in each problem bootstrap",
+  "pooled_formats": [
+    "boxed",
+    "dapo",
+    "answer_tag"
+  ],
+  "pooling": "equal-weight mean of format-specific effects",
+  "common_ceiling_rule": "at least one nonexcluded correct commit among four ceiling templates in each of SFT, DPO, RLVR; membership fixed before resampling",
+  "calibration_data_included": false,
+  "execution": {
+    "phase": "phase1c",
+    "run_id": "phase1c-full",
+    "app_id": "ap-sx6oGAw8PkE9Otc8OZncyq",
+    "recorded_at": "2026-10-20T20:30:32.450554+00:00",
+    "last_gpu_container_finished_at": "2026-10-20T20:28:21.818993+00:00",
+    "ladders": [
+      "instruct"
+    ],
+    "deferred_ladders": [
+      "think"
+    ],
+    "budget_usd": 5,
+    "gpu_hourly_usd": 1.95,
+    "gpu_function_seconds": 4564.39252372,
+    "gpu_function_hours": 1.2678868121444444,
+    "gpu_function_cost_estimate_usd": 2.4723792836816667,
+    "gpu_container_seconds": 4683.137593746185,
+    "gpu_container_hours": 1.3008715538183848,
+    "gpu_container_cost_estimate_usd": 2.5366995299458504,
+    "idle_replacement_count": 2,
+    "idle_replacement_gpu_seconds": 101.75354504585266,
+    "idle_replacement_gpu_cost_estimate_usd": 0.05511650356650352,
+    "main_call_wall_seconds": 4605.730268084,
+    "allocation_wall_upper_seconds": 4707.483813129853,
+    "allocation_wall_upper_cost_estimate_usd": 2.5498870654453367,
+    "billing_reported_resources_usd": {
+      "L40S": 2.53607492,
+      "CPU": 0.24729585,
+      "Network Egress": 0.04496923,
+      "Memory": 0.33294112
+    },
+    "billing_reported_total_usd": 3.16128112,
+    "billing_reported_gpu_seconds": 4681.984467692308,
+    "n_responses": 31200,
+    "output_tokens": 9164453,
+    "phase1c_containers_after": 0,
+    "billing_report_command": "uv run modal billing report --for today --resolution h --show-resources --json"
+  },
+  "system_prompts": {
+    "instruct": "prompts/system_tutor_strong.txt"
   }
 }
