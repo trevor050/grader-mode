@@ -329,11 +329,18 @@ def main() -> None:
     parser.add_argument('--output-dir', required=True, type=Path)
     parser.add_argument('--resamples', type=int, default=2000)
     parser.add_argument('--seed', type=int, default=0)
+    parser.add_argument('--min-gold', type=int, default=None,
+                        help='Sensitivity analysis: keep only problems whose gold answer is at least this value.')
     args = parser.parse_args()
     try:
         df = pd.DataFrame(list(read_rows(args.input)))
+        if args.min_gold is not None:
+            df = df[df['gold'] >= args.min_gold].reset_index(drop=True)
+        args.output_dir.mkdir(parents=True, exist_ok=True)
         report = analyze(df, resamples=args.resamples, seed=args.seed)
-        report['handcheck'] = handcheck(df, args.output_dir, seed=args.seed)
+        report['min_gold'] = args.min_gold
+        if args.min_gold is None:
+            report['handcheck'] = handcheck(df, args.output_dir, seed=args.seed)
         destination = args.output_dir / 'summary.json'
         destination.write_text(json.dumps(report, indent=2, ensure_ascii=False, allow_nan=False) + '\n', encoding='utf-8')
         (args.output_dir / 'summary.md').write_text(render_summary(report), encoding='utf-8')
