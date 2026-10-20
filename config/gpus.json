@@ -1,11 +1,35 @@
 {
   "models": {
-    "Qwen/Qwen3-0.6B": {"gpu": "L40S", "batch_size": 64},
-    "Qwen/Qwen3-1.7B": {"gpu": "L40S", "batch_size": 64},
-    "Qwen/Qwen3-4B": {"gpu": "L40S", "batch_size": 64},
-    "Qwen/Qwen3-8B": {"gpu": "L40S", "batch_size": 64},
-    "Qwen/Qwen3-14B": {"gpu": "L40S", "batch_size": 64},
-    "Qwen/Qwen3-32B": {"gpu": "RTX-PRO-6000", "batch_size": 128}
+    "Qwen/Qwen3-0.6B": {
+      "gpu": "L40S",
+      "batch_size": 64
+    },
+    "Qwen/Qwen3-1.7B": {
+      "gpu": "L40S",
+      "batch_size": 64
+    },
+    "Qwen/Qwen3-4B": {
+      "gpu": "L40S",
+      "batch_size": 64
+    },
+    "Qwen/Qwen3-8B": {
+      "gpu": "L40S",
+      "batch_size": 64
+    },
+    "Qwen/Qwen3-14B": {
+      "gpu": "L40S",
+      "batch_size": 64
+    },
+    "Qwen/Qwen3-32B": {
+      "gpu": "RTX-PRO-6000",
+      "batch_size": 128
+    }
   },
-  "hourly_usd": {"L40S": 1.95, "A100-80GB": 2.50, "RTX-PRO-6000": 3.03, "H100": 3.95}
+  "hourly_usd": {
+    "L40S": 1.95,
+    "A100-80GB": 2.5,
+    "RTX-PRO-6000": 3.03,
+    "H100": 3.95
+  },
+  "max_parallel_models": 5
 }

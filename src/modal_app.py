@@ -134,17 +134,23 @@ def main(models: str = '0.6B', limit_problems: int = 200, run_id: str = '', gpu_
     requests, manifest = build(local, limit_problems)
     print(f'Run {run_id}: {len(requests)} requests/model; models={selected}', flush=True)
     calls = []
+    def collect(call):
+        files = call.get()
+        for remote in files.values():
+            pull_file(remote, local / Path(remote).name)
+            print(f'Pulled {remote} to {local}', flush=True)
+
     try:
         for model in selected:
+            if len(calls) >= config.get('max_parallel_models', 5):
+                collect(calls[0])
+                calls.pop(0)
             spec = config['models'][model]
             fn = run_model.with_options(gpu=spec['gpu'])
             calls.append(fn.spawn(model, requests, run_id, manifest, spec))
-        # All calls have been submitted before waiting, subject to workspace GPU quotas.
+        # Bound shared-Volume writers to five while keeping independent models parallel.
         for call in calls:
-            files = call.get()
-            for remote in files.values():
-                pull_file(remote, local / Path(remote).name)
-                print(f'Pulled {remote} to {local}', flush=True)
+            collect(call)
     finally:
         # Abort siblings on exceptions/interrupt; no detached calls survive this entrypoint.
         for call in calls:

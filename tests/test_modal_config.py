@@ -28,3 +28,51 @@ def test_no_warm_or_unbounded_gpu_functions():
         assert ast.literal_eval(kw['single_use_containers']) is True
         assert not {'min_containers', 'keep_warm', 'buffer_containers'} & kw.keys()
     assert 'H100' not in source
+
+
+def test_parallel_window_caps_writers_and_cancels_on_failure(tmp_path, monkeypatch):
+    from src import modal_app, build_prompts
+    from src.models import load_gpu_config
+    config = load_gpu_config()
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(modal_app, 'load_gpu_config', lambda _: config)
+    monkeypatch.setattr(build_prompts, 'build', lambda *args: ([{'id': 'fixture'}], {}))
+
+    class FakeFunction:
+        def __init__(self, fail=False):
+            self.active, self.peak, self.cancelled, self.calls = set(), 0, [], []
+            self.fail = fail
+        def with_options(self, **kwargs):
+            self.gpu = kwargs['gpu']
+            return self
+        def spawn(self, model, *args):
+            owner = self
+            class Call:
+                def get(self):
+                    if owner.fail:
+                        raise RuntimeError('remote failed')
+                    owner.active.discard(self)
+                    return {}
+                def cancel(self, terminate_containers):
+                    assert terminate_containers
+                    owner.cancelled.append(self)
+                    owner.active.discard(self)
+            call = Call()
+            self.calls.append((model, self.gpu, call))
+            self.active.add(call)
+            self.peak = max(self.peak, len(self.active))
+            return call
+
+    fake = FakeFunction()
+    monkeypatch.setattr(modal_app, 'run_model', fake)
+    modal_app.main.info.raw_f(models='all', limit_problems=10, run_id='unit-only')
+    assert fake.peak == 5
+    assert len(fake.calls) == 6
+    assert fake.calls[-1][1] == 'RTX-PRO-6000'
+    assert not fake.active
+    failed = FakeFunction(fail=True)
+    monkeypatch.setattr(modal_app, 'run_model', failed)
+    with pytest.raises(RuntimeError, match='remote failed'):
+        modal_app.main.info.raw_f(models='all', limit_problems=10, run_id='unit-failure')
+    assert len(failed.cancelled) == 5
+    assert not failed.active

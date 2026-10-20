@@ -30,6 +30,8 @@ def load_gpu_config(path=None):
             raise ValueError('GPU must be L40S, A100-80GB, or RTX-PRO-6000')
         if not isinstance(spec['batch_size'], int) or not 1 <= spec['batch_size'] <= 512:
             raise ValueError('batch_size must be between 1 and 512')
+    if not 1 <= config.get('max_parallel_models', 5) <= 5:
+        raise ValueError('max_parallel_models must be between 1 and 5 for shared Volumes')
     return config
 
 
