@@ -53,20 +53,42 @@ def expand_requests(problems, templates, system):
     return result
 
 
-def build(output_dir, limit_problems=200):
+def expand_requests_1b(problems, templates, system):
+    cues = ('none', 'human_strict', 'env')
+    if set(templates['cues']) != set(cues) or any(len(v) != 4 for v in templates['cues'].values()):
+        raise ValueError('Phase 1b requires three cues with four matched templates each')
+    result = []
+    for p in problems:
+        for thinking in (False, True):
+            for cue in cues:
+                for i, template in enumerate(templates['cues'][cue]):
+                    rid = f"phase1b:p{p['problem_idx']:04d}:{cue}:boxed:t{i}:tutor:thinking-{int(thinking)}"
+                    result.append({**p, 'id': rid, 'phase': 'phase1b', 'thinking': thinking,
+                                   'cue': cue, 'format': 'boxed', 'template_idx': i, 'arm': 'tutor',
+                                   'seed': request_seed(rid), 'messages': [
+                                       {'role': 'system', 'content': system},
+                                       {'role': 'user', 'content': template.replace('{problem}', p['question'])}]})
+    return result
+
+
+def build(output_dir, limit_problems=200, phase='phase1'):
     from datasets import load_dataset
     if not 1 <= limit_problems <= 200:
         raise ValueError('limit-problems must be between 1 and 200')
+    if phase not in ('phase1', 'phase1b'):
+        raise ValueError('Unknown phase')
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     rows = load_dataset('openai/gsm8k', 'main', split='test', revision=DATASET_REVISION)
     problems = sample_problems(rows)
     system = (ROOT / 'prompts/system_tutor.txt').read_text()
-    templates = json.loads((ROOT / 'prompts/templates.json').read_text())
-    requests = expand_requests(problems[:limit_problems], templates, system)
+    template_path = 'prompts/templates_1b.json' if phase == 'phase1b' else 'prompts/templates.json'
+    templates = json.loads((ROOT / template_path).read_text())
+    expand = expand_requests_1b if phase == 'phase1b' else expand_requests
+    requests = expand(problems[:limit_problems], templates, system)
     hashes = {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
-              for name in ('DESIGN.md', 'prompts/system_tutor.txt', 'prompts/templates.json')}
-    manifest = {'dataset': 'openai/gsm8k', 'config': 'main', 'split': 'test',
+              for name in ('DESIGN.md', 'prompts/system_tutor.txt', template_path)}
+    manifest = {'phase': phase, 'dataset': 'openai/gsm8k', 'config': 'main', 'split': 'test',
                 'revision': DATASET_REVISION, 'sample_seed': 0, 'sample_size': 200,
                 'limit_problems': limit_problems, 'requests': len(requests),
                 'source_sha256': hashes, 'sample': problems}
@@ -79,8 +101,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output-dir', default='results/raw/prompts')
     parser.add_argument('--limit-problems', type=int, default=200)
+    parser.add_argument('--phase', choices=('phase1', 'phase1b'), default='phase1')
     args = parser.parse_args()
-    requests, _ = build(args.output_dir, args.limit_problems)
+    requests, _ = build(args.output_dir, args.limit_problems, args.phase)
     print(f'Wrote {len(requests)} requests to {args.output_dir}')
 
 

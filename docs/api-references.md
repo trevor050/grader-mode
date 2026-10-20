@@ -11,3 +11,5 @@
 - [Modal GPU strings](https://modal.com/docs/guide/gpu): the exact 96GB RTX PRO 6000 selector is `RTX-PRO-6000`. User steering selects this for 32B; `config/gpus.json` is the per-model mapping. GPU rate assumptions are the supplied hourly rates, not a billing receipt.
 
 - [Volume concurrency](https://modal.com/docs/guide/volumes): cap concurrent model invocations at five so both shared caches and result Volumes stay within the recommended number of concurrent writers.
+
+- [Qwen3 quickstart](https://github.com/QwenLM/Qwen3/blob/main/docs/source/getting_started/quickstart.md): reasoning output can lack an opening `<think>` tag; split on the closing tag and retain the reasoning separately. Phase 1b explicitly sets the chat-template thinking switch per request.

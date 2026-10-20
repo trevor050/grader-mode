@@ -88,6 +88,40 @@ def score_response(text: str, gold: int) -> dict[str, bool]:
     return dict(leak=gold in number_values(text), commit=bool(committed), correct_commit=gold in committed)
 
 
+def split_thinking(text: str) -> tuple[str, str]:
+    """Split Qwen reasoning, including an implicit opening tag in the prompt.
+
+    An unclosed block has no final reply. Nested tags must all close before
+    text is eligible for scoring; whitespace/case variations are tolerated.
+    Raw response text is retained separately for auditability.
+    """
+    tags = list(re.finditer(r'<\s*(/?)\s*think\s*>', text, re.IGNORECASE))
+    explicit = bool(tags and not tags[0].group(1) and not text[:tags[0].start()].strip())
+    depth = 0 if explicit else 1
+    reasoning, start = [], 0
+    for tag in tags:
+        reasoning.append(text[start:tag.start()])
+        depth += -1 if tag.group(1) else 1
+        start = tag.end()
+        if depth == 0:
+            return ''.join(reasoning).strip(), text[start:].strip()
+    reasoning.append(text[start:])
+    return ''.join(reasoning).strip(), ''
+
+
+def score_row(row: dict) -> dict:
+    if row.get('phase') != 'phase1b':
+        return row | score_response(row['response'], row['gold'])
+    if not isinstance(row.get('thinking'), bool) or row.get('finish_reason') not in ('stop', 'length'):
+        raise ValueError('Phase 1b requires boolean thinking and stop/length finish_reason')
+    reasoning, final = split_thinking(row['response']) if row['thinking'] else ('', row['response'])
+    return row | score_response(final, row['gold']) | {
+        'reasoning': reasoning, 'final_reply': final,
+        'truncated': row['finish_reason'] == 'length',
+        'excluded_from_rates': row['thinking'] and not final.strip(),
+    }
+
+
 def read_rows(path: str | Path, *, exclude: Path | None = None) -> Iterable[dict]:
     """Read a JSONL file, JSON array, or recursively collected JSONL run files."""
     path = Path(path)
@@ -118,7 +152,7 @@ def score_file(source: str | Path, output: str | Path) -> int:
         if identity in seen:
             raise ValueError(f'duplicate ID per model: {identity}')
         seen.add(identity)
-        rows.append(row | score_response(row['response'], row['gold']))
+        rows.append(score_row(row))
     if not rows:
         raise ValueError('input contains no responses')
     output.parent.mkdir(parents=True, exist_ok=True)

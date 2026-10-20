@@ -45,10 +45,11 @@ def generate(model, requests, run_id, manifest, model_config):
     snapshot_download(model, revision=revision, allow_patterns=['*.json', '*.safetensors', '*.txt', '*.model'])
     hf_cache.commit()
     tokenizer = AutoTokenizer.from_pretrained(model, revision=revision)
+    max_model_len = 4096 if any(r.get('thinking', False) for r in requests) else 2048
     # Explicitly bypass model generation_config defaults (notably Qwen top-k).
     llm = LLM(model=model, revision=revision, tokenizer_revision=revision,
               dtype='bfloat16', quantization=None, tensor_parallel_size=1,
-              max_model_len=2048, max_num_seqs=model_config['batch_size'], gpu_memory_utilization=0.90,
+              max_model_len=max_model_len, max_num_seqs=model_config['batch_size'], gpu_memory_utilization=0.90,
               generation_config='vllm', seed=0)
     loaded = time.monotonic()
     ordered = list(requests)
@@ -66,15 +67,17 @@ def generate(model, requests, run_id, manifest, model_config):
     generation_seconds = 0.0
     prompt_tokens = 0
     completed = 0
+    by_thinking = {str(t).lower(): {'requests': 0, 'output_tokens': 0, 'length_finishes': 0} for t in (False, True)}
     with raw_path.open('x') as out:
         for offset in range(0, len(ordered), chunk_size):
             batch = ordered[offset:offset + chunk_size]
             prompts = [tokenizer.apply_chat_template(r['messages'], tokenize=False,
-                       add_generation_prompt=True, enable_thinking=False) for r in batch]
-            if any(len(tokenizer.encode(p, add_special_tokens=False)) + 768 > 2048 for p in prompts):
+                       add_generation_prompt=True, enable_thinking=r.get('thinking', False)) for r in batch]
+            if any(len(tokenizer.encode(p, add_special_tokens=False)) + (3072 if r.get('thinking', False) else 768)
+                   > max_model_len for p, r in zip(prompts, batch)):
                 raise ValueError('Prompt plus max_tokens exceeds pinned context length')
             params = [SamplingParams(temperature=0.7, top_p=0.95, top_k=-1,
-                      max_tokens=768, seed=r['seed']) for r in batch]
+                      max_tokens=3072 if r.get('thinking', False) else 768, seed=r['seed']) for r in batch]
             tick = time.monotonic()
             outputs = llm.generate(prompts, params, use_tqdm=False)
             generation_seconds += time.monotonic() - tick
@@ -85,6 +88,10 @@ def generate(model, requests, run_id, manifest, model_config):
                 n = len(completion.token_ids)
                 total_tokens += n
                 prompt_tokens += len(output.prompt_token_ids)
+                group = by_thinking[str(request.get('thinking', False)).lower()]
+                group['requests'] += 1
+                group['output_tokens'] += n
+                group['length_finishes'] += int(completion.finish_reason == 'length')
                 row = {**request, 'model': model, 'model_revision': revision, 'run_id': run_id,
                        'response': completion.text, 'output_tokens': n,
                        'prompt_tokens': len(output.prompt_token_ids), 'finish_reason': completion.finish_reason,
@@ -104,9 +111,11 @@ def generate(model, requests, run_id, manifest, model_config):
              'generation_seconds': generation_seconds, 'setup_seconds': loaded - started,
              'function_seconds': elapsed, 'output_tokens_per_second': total_tokens / generation_seconds,
              'requests_per_second': completed / generation_seconds,
+             'by_thinking': by_thinking,
              'sampling': {'temperature': 0.7, 'top_p': 0.95, 'top_k': -1, 'max_tokens': 768,
-                          'enable_thinking': False, 'dtype': 'bfloat16', 'quantization': None},
-             'engine': {'batch_size': batch_size, 'enforce_eager': False, 'chunk_size': chunk_size, 'max_model_len': 2048},
+                          'enable_thinking': False, 'dtype': 'bfloat16', 'quantization': None,
+                          'thinking_on': {'enable_thinking': True, 'max_tokens': 3072}},
+             'engine': {'batch_size': batch_size, 'enforce_eager': False, 'chunk_size': chunk_size, 'max_model_len': max_model_len},
              'versions': package_versions(),
              'manifest': manifest}
     stats_path = directory / f'{slug}.metrics.json'
@@ -134,10 +143,15 @@ def pull_file(remote, destination):
 
 
 @app.local_entrypoint()
-def main(models: str = '0.6B', limit_problems: int = 200, run_id: str = '', gpu_config: str = 'config/gpus.json'):
+def main(models: str = '0.6B', limit_problems: int = 200, run_id: str = '', gpu_config: str = 'config/gpus.json',
+         phase: str = 'phase1'):
     from datetime import datetime, timezone
     from src.build_prompts import build
-    selected = select_models(models)
+    if phase not in ('phase1', 'phase1b'):
+        raise ValueError('Unknown phase')
+    selected = select_models('4B,8B,14B,32B' if phase == 'phase1b' and models == 'all' else models)
+    if phase == 'phase1b' and any(m.endswith(('-0.6B', '-1.7B')) for m in selected):
+        raise ValueError('Phase 1b models are 4B, 8B, 14B, 32B')
     config = load_gpu_config(gpu_config)
     if not run_id:
         run_id = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
@@ -146,7 +160,7 @@ def main(models: str = '0.6B', limit_problems: int = 200, run_id: str = '', gpu_
     local = Path('results/raw') / run_id
     if local.exists():
         raise FileExistsError(f'Refusing to mix runs in {local}')
-    requests, manifest = build(local, limit_problems)
+    requests, manifest = build(local, limit_problems, phase) if phase == 'phase1b' else build(local, limit_problems)
     print(f'Run {run_id}: {len(requests)} requests/model; models={selected}', flush=True)
     calls = []
     def collect(call):
