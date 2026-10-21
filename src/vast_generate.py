@@ -35,6 +35,10 @@ def _install_modal_stub():
 def main():
     path, checkpoint, run_id, max_tokens = sys.argv[1], sys.argv[2], sys.argv[3], int(sys.argv[4])
     _install_modal_stub()
+    # Progress bar only, for live cost tracking; sampling is unaffected.
+    import vllm
+    _generate = vllm.LLM.generate
+    vllm.LLM.generate = lambda self, *a, **k: _generate(self, *a, **{**k, 'use_tqdm': True})
     from src.modal_app import generate
     from src.models_1c import MODELS_1C
     spec = json.load(open(path))[checkpoint]

@@ -367,3 +367,13 @@ post hoc.
     generation code as the Modal runs, with sampling unchanged and max new tokens
     8,192 (Deviation 6). The tutor prompt is `system_tutor.txt`, per the
     calibration rule (74.5% <= 80%).
+
+**2026-10-21, during Think Stage A generation; no leak, commit or correctness
+rate has been computed for any Think output.**
+
+11. *Stage B budget cap raised from $5 to $8.* The account owner added credit.
+    Stage A is projected at about $2.80 (measured: RLVR 1,400 responses in 6,479
+    generation seconds at 595 output tokens/s; 34 truncated at 8,192). Stage B
+    (templates 2–3 for the Stage A cells, 3,000 responses, about $3) therefore
+    runs, under a separate run ID, queued after Stage A. The only quantities
+    viewed so far are token counts, finish reasons and throughput.
