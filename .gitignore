@@ -14,3 +14,4 @@ results/phase2/progress.json
 # Phase 3 local controller state.
 results/phase3/run.lock
 results/phase3/progress.json
+external/
