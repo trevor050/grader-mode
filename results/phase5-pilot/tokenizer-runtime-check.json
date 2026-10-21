@@ -1,0 +1,71 @@
+{
+  "transformers": "5.19.0",
+  "comparison_transformers": "5.20.2",
+  "all_prompts_byte_identical": true,
+  "checks": [
+    {
+      "model": "google/gemma-4-12B-it",
+      "arm": "main",
+      "thinking": false,
+      "request_type": "plain",
+      "prefill": "none",
+      "prompt_sha256": "323ae76607ffe4636160be37c3360538f851c5f76b41725c8aa8ca0230d5c832"
+    },
+    {
+      "model": "google/gemma-4-12B-it",
+      "arm": "main",
+      "thinking": false,
+      "request_type": "explicit",
+      "prefill": "none",
+      "prompt_sha256": "4b145ac6650049a36782f4b97fd6263e11ec40878bd3b066fe6c9e32036f47ba"
+    },
+    {
+      "model": "google/gemma-4-12B-it",
+      "arm": "main",
+      "thinking": true,
+      "request_type": "plain",
+      "prefill": "none",
+      "prompt_sha256": "f1865785f1141f2646d61876924eb176fe061975c30d4f49af865f917cf07983"
+    },
+    {
+      "model": "google/gemma-4-12B-it",
+      "arm": "main",
+      "thinking": true,
+      "request_type": "explicit",
+      "prefill": "none",
+      "prompt_sha256": "ccd7ef6821058c334df8d820efef1d20983de8caf30d27aae970995822f136bd"
+    },
+    {
+      "model": "google/gemma-4-12B-it",
+      "arm": "prefill",
+      "thinking": true,
+      "request_type": "explicit",
+      "prefill": "empty",
+      "prompt_sha256": "3c3903b92e358fa46f88960e8297412d2bd5b1135070685dbecf272e9ed9961b"
+    },
+    {
+      "model": "google/gemma-4-12B-it",
+      "arm": "prefill",
+      "thinking": true,
+      "request_type": "explicit",
+      "prefill": "reminder",
+      "prompt_sha256": "d9d304879a1b1c0796473efa78f894f356e24269f6333a332c6d88964461b8d9"
+    },
+    {
+      "model": "google/gemma-4-12B-it",
+      "arm": "prefill",
+      "thinking": true,
+      "request_type": "explicit",
+      "prefill": "neutral",
+      "prompt_sha256": "91724f5326e1d7021c22cdb39fdec6a06ba395c189c48d5a5150ef1f91f43f7c"
+    },
+    {
+      "model": "google/gemma-4-12B-it",
+      "arm": "prefill",
+      "thinking": true,
+      "request_type": "explicit",
+      "prefill": "irrelevant",
+      "prompt_sha256": "dde4c752cfe6e36ea357ebb643556357c0244bfcbbb61c2994d961d104f49e4f"
+    }
+  ]
+}

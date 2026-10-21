@@ -1,0 +1,109 @@
+{
+  "phase": "phase5",
+  "stage": "pilot",
+  "full_grid_started": false,
+  "inference_eligible": false,
+  "cap_usd": 9.0,
+  "original_cap_usd": 6.8,
+  "models": {
+    "gemma": {
+      "model": "google/gemma-4-12B-it",
+      "replies": 16,
+      "output_tokens": 12175,
+      "generation_seconds": 56.70973921500001,
+      "setup_seconds": 171.006856226,
+      "aggregate_tokens_per_second": 214.68975467938054,
+      "mean_generated_tokens": 760.9375,
+      "hourly_usd": 2.3952,
+      "mean_generated_tokens_by_cell": {
+        "gemma/prefill/reminder": 1111.5,
+        "gemma/prefill/irrelevant": 1038,
+        "gemma/main/on/plain": 852.5,
+        "gemma/main/off/plain": 136.5,
+        "gemma/prefill/empty": 904,
+        "gemma/main/off/explicit": 249.5,
+        "gemma/prefill/neutral": 946,
+        "gemma/main/on/explicit": 849.5
+      },
+      "package_versions": {
+        "vllm": "0.32.0",
+        "transformers": "5.19.0",
+        "tokenizers": "0.23.3",
+        "jinja2": "3.1.6",
+        "torch": "2.13.0",
+        "huggingface-hub": "1.31.0"
+      },
+      "engine": {
+        "batch_size": 16,
+        "chunk_size": 16,
+        "max_model_len": 8192,
+        "tensor_parallel_size": 1,
+        "gpu_memory_utilization": 0.9,
+        "generation_config": "vllm",
+        "enforce_eager": true
+      },
+      "parse_status_counts": {
+        "ok": 16
+      },
+      "no_final": 0,
+      "cap_hit": 0,
+      "cap_hit_no_final": 0,
+      "protocol_failure": 0
+    }
+  },
+  "projections": [
+    {
+      "scope": "gemma_only",
+      "dropped_cells": [],
+      "models": {
+        "gemma": {
+          "projected_generated_tokens": 2435000.0,
+          "projected_generation_seconds": 11341.947843000004,
+          "projected_cost_usd": 9.169187719526901,
+          "projected_cost_at_launch_reservation_rate_usd": 10.336008200869504
+        }
+      },
+      "prior_exposure_usd": 0.282284,
+      "teardown_and_delayed_charge_reserve_usd": 0.3,
+      "projected_measured_models_lifetime_total_usd": 9.7514717195269,
+      "measured_models_fit_cap": false,
+      "remaining_for_unmeasured_model_usd": -0.7514717195269007,
+      "combined_fits_cap": null
+    },
+    {
+      "scope": "gemma_only",
+      "dropped_cells": [
+        "gemma/prefill/neutral",
+        "gemma/prefill/irrelevant"
+      ],
+      "models": {
+        "gemma": {
+          "projected_generated_tokens": 1641400.0,
+          "projected_generation_seconds": 7645.451001848133,
+          "projected_cost_usd": 6.217904641551248,
+          "projected_cost_at_launch_reservation_rate_usd": 7.00916104383282
+        }
+      },
+      "prior_exposure_usd": 0.282284,
+      "teardown_and_delayed_charge_reserve_usd": 0.3,
+      "projected_measured_models_lifetime_total_usd": 6.800188641551248,
+      "measured_models_fit_cap": true,
+      "remaining_for_unmeasured_model_usd": 2.199811358448752,
+      "combined_fits_cap": null
+    }
+  ],
+  "registered_fallback_needed": null,
+  "minimum_grid_affordable": null,
+  "gemma_budget_required_drop": [
+    "gemma/prefill/neutral",
+    "gemma/prefill/irrelevant"
+  ],
+  "measured_models_minimum_grid_affordable": true,
+  "previous_exposure_usd": 0.282284,
+  "combined_grid_projection_complete": false,
+  "H20_H21_status": "Nemotron_registered_GLM_unused_fallback_no_pilot_authorized",
+  "generation_runtime_multiplier": 1.2,
+  "pilot_rows_reused_for_main": false,
+  "projection_limit": "Sixteen prompts per model measure a small batch; lengths and throughput may vary on 200 problems.",
+  "spending_limit": "Ledger is conservative metered exposure, not settled billing. Consult provider balance snapshots separately."
+}

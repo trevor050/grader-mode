@@ -15,3 +15,6 @@ results/phase2/progress.json
 results/phase3/run.lock
 results/phase3/progress.json
 external/
+
+# Phase 5 ledger lock is local synchronization, the ledger itself is evidence.
+results/phase5/*.lock

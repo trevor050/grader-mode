@@ -1,0 +1,41 @@
+{
+  "pilot_only": true,
+  "gpu": "L40S",
+  "model": "google/gemma-4-12B-it",
+  "dtype": "bfloat16",
+  "python": "3.12",
+  "pins": [
+    "vllm==0.32.0",
+    "torch==2.13.0",
+    "transformers==5.19.0",
+    "tokenizers==0.23.3",
+    "huggingface-hub==1.31.0",
+    "safetensors==0.8.0",
+    "numpy==2.3.5",
+    "jinja2==3.1.6",
+    "datasets==4.8.3"
+  ],
+  "timeout_seconds": 900,
+  "startup_seconds": 120,
+  "teardown_seconds": 120,
+  "min_containers": 0,
+  "buffer_containers": 0,
+  "max_containers": 1,
+  "single_use_containers": true,
+  "retries": 0,
+  "ledger": "/Users/user/codeprojects/grader-mode/results/phase5/aggregate-ledger.json",
+  "lifetime_cap_usd": 9.0,
+  "reservation_usd": 0.855,
+  "result_volume": "grader-mode-phase5-results",
+  "generation_command": [
+    "python",
+    "-m",
+    "src.vast_generate_5",
+    "--model",
+    "gemma",
+    "--pilot",
+    "--output-dir",
+    "/phase5/<run-id>"
+  ],
+  "full_run_requires_new_authorization": true
+}

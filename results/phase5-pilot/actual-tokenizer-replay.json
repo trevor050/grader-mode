@@ -1,0 +1,150 @@
+{
+  "model": "google/gemma-4-12B-it",
+  "transformers": "5.19.0",
+  "checks": [
+    {
+      "id": "phase5:p0847:t0:gemma-4-12B-it:prefill:thinking-1:explicit:reminder",
+      "prompt_bytes_match_native_template": true,
+      "prompt_ids_match": true,
+      "raw_ids_decode_exactly": true,
+      "saved_span_split_matches_real_tokenizer": true,
+      "final_present": true,
+      "parse_status": "ok"
+    },
+    {
+      "id": "phase5:p0847:t0:gemma-4-12B-it:prefill:thinking-1:explicit:irrelevant",
+      "prompt_bytes_match_native_template": true,
+      "prompt_ids_match": true,
+      "raw_ids_decode_exactly": true,
+      "saved_span_split_matches_real_tokenizer": true,
+      "final_present": true,
+      "parse_status": "ok"
+    },
+    {
+      "id": "phase5:p0847:t1:gemma-4-12B-it:main:thinking-1:plain:none",
+      "prompt_bytes_match_native_template": true,
+      "prompt_ids_match": true,
+      "raw_ids_decode_exactly": true,
+      "saved_span_split_matches_real_tokenizer": true,
+      "final_present": true,
+      "parse_status": "ok"
+    },
+    {
+      "id": "phase5:p0847:t1:gemma-4-12B-it:main:thinking-0:plain:none",
+      "prompt_bytes_match_native_template": true,
+      "prompt_ids_match": true,
+      "raw_ids_decode_exactly": true,
+      "saved_span_split_matches_real_tokenizer": true,
+      "final_present": true,
+      "parse_status": "ok"
+    },
+    {
+      "id": "phase5:p0847:t1:gemma-4-12B-it:prefill:thinking-1:explicit:empty",
+      "prompt_bytes_match_native_template": true,
+      "prompt_ids_match": true,
+      "raw_ids_decode_exactly": true,
+      "saved_span_split_matches_real_tokenizer": true,
+      "final_present": true,
+      "parse_status": "ok"
+    },
+    {
+      "id": "phase5:p0847:t0:gemma-4-12B-it:main:thinking-0:explicit:none",
+      "prompt_bytes_match_native_template": true,
+      "prompt_ids_match": true,
+      "raw_ids_decode_exactly": true,
+      "saved_span_split_matches_real_tokenizer": true,
+      "final_present": true,
+      "parse_status": "ok"
+    },
+    {
+      "id": "phase5:p0847:t1:gemma-4-12B-it:main:thinking-0:explicit:none",
+      "prompt_bytes_match_native_template": true,
+      "prompt_ids_match": true,
+      "raw_ids_decode_exactly": true,
+      "saved_span_split_matches_real_tokenizer": true,
+      "final_present": true,
+      "parse_status": "ok"
+    },
+    {
+      "id": "phase5:p0847:t1:gemma-4-12B-it:prefill:thinking-1:explicit:reminder",
+      "prompt_bytes_match_native_template": true,
+      "prompt_ids_match": true,
+      "raw_ids_decode_exactly": true,
+      "saved_span_split_matches_real_tokenizer": true,
+      "final_present": true,
+      "parse_status": "ok"
+    },
+    {
+      "id": "phase5:p0847:t1:gemma-4-12B-it:prefill:thinking-1:explicit:neutral",
+      "prompt_bytes_match_native_template": true,
+      "prompt_ids_match": true,
+      "raw_ids_decode_exactly": true,
+      "saved_span_split_matches_real_tokenizer": true,
+      "final_present": true,
+      "parse_status": "ok"
+    },
+    {
+      "id": "phase5:p0847:t1:gemma-4-12B-it:main:thinking-1:explicit:none",
+      "prompt_bytes_match_native_template": true,
+      "prompt_ids_match": true,
+      "raw_ids_decode_exactly": true,
+      "saved_span_split_matches_real_tokenizer": true,
+      "final_present": true,
+      "parse_status": "ok"
+    },
+    {
+      "id": "phase5:p0847:t0:gemma-4-12B-it:prefill:thinking-1:explicit:empty",
+      "prompt_bytes_match_native_template": true,
+      "prompt_ids_match": true,
+      "raw_ids_decode_exactly": true,
+      "saved_span_split_matches_real_tokenizer": true,
+      "final_present": true,
+      "parse_status": "ok"
+    },
+    {
+      "id": "phase5:p0847:t0:gemma-4-12B-it:main:thinking-1:plain:none",
+      "prompt_bytes_match_native_template": true,
+      "prompt_ids_match": true,
+      "raw_ids_decode_exactly": true,
+      "saved_span_split_matches_real_tokenizer": true,
+      "final_present": true,
+      "parse_status": "ok"
+    },
+    {
+      "id": "phase5:p0847:t0:gemma-4-12B-it:main:thinking-0:plain:none",
+      "prompt_bytes_match_native_template": true,
+      "prompt_ids_match": true,
+      "raw_ids_decode_exactly": true,
+      "saved_span_split_matches_real_tokenizer": true,
+      "final_present": true,
+      "parse_status": "ok"
+    },
+    {
+      "id": "phase5:p0847:t0:gemma-4-12B-it:main:thinking-1:explicit:none",
+      "prompt_bytes_match_native_template": true,
+      "prompt_ids_match": true,
+      "raw_ids_decode_exactly": true,
+      "saved_span_split_matches_real_tokenizer": true,
+      "final_present": true,
+      "parse_status": "ok"
+    },
+    {
+      "id": "phase5:p0847:t1:gemma-4-12B-it:prefill:thinking-1:explicit:irrelevant",
+      "prompt_bytes_match_native_template": true,
+      "prompt_ids_match": true,
+      "raw_ids_decode_exactly": true,
+      "saved_span_split_matches_real_tokenizer": true,
+      "final_present": true,
+      "parse_status": "ok"
+    },
+    {
+      "id": "phase5:p0847:t0:gemma-4-12B-it:prefill:thinking-1:explicit:neutral",
+      "prompt_bytes_match_native_template": true,
+      "prompt_ids_match": true,
+      "raw_ids_decode_exactly": true,
+      "saved_span_split_matches_real_tokenizer": true,
+      "final_present": true,
+      "parse_status": "ok"
+    }
+  ]
+}

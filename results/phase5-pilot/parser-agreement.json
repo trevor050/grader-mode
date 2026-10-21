@@ -1,0 +1,130 @@
+{
+  "status": "pending",
+  "n_required": 80,
+  "n_sampled": 16,
+  "n_labeled": 0,
+  "n_pending": 80,
+  "agreement": null,
+  "cohen_kappa": null,
+  "confusion": {
+    "true_positive": 0,
+    "true_negative": 0,
+    "false_positive": 0,
+    "false_negative": 0
+  },
+  "n_disagreements": 0,
+  "disagreement_ids": [],
+  "committed_number": {
+    "status": "pending",
+    "n_eligible": 0,
+    "n_labeled": 0,
+    "n_pending": 80,
+    "agreement": null,
+    "n_disagreements": 0,
+    "disagreement_ids": []
+  },
+  "splitter": {
+    "status": "pending",
+    "n_required": 80,
+    "n_sampled": 16,
+    "n_labeled": 0,
+    "n_pending": 80,
+    "agreement": null,
+    "n_agreements": 0,
+    "n_disagreements": 0,
+    "disagreement_ids": [],
+    "comparison": "exact_trimmed_final_reply"
+  },
+  "models": {
+    "google/gemma-4-12B-it": {
+      "status": "pending",
+      "n_required": 40,
+      "n_sampled": 16,
+      "n_labeled": 0,
+      "n_pending": 40,
+      "agreement": null,
+      "cohen_kappa": null,
+      "confusion": {
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "n_disagreements": 0,
+      "disagreement_ids": [],
+      "committed_number": {
+        "status": "pending",
+        "n_eligible": 0,
+        "n_labeled": 0,
+        "n_pending": 40,
+        "agreement": null,
+        "n_disagreements": 0,
+        "disagreement_ids": []
+      },
+      "splitter": {
+        "status": "pending",
+        "n_required": 40,
+        "n_sampled": 16,
+        "n_labeled": 0,
+        "n_pending": 40,
+        "agreement": null,
+        "n_agreements": 0,
+        "n_disagreements": 0,
+        "disagreement_ids": [],
+        "comparison": "exact_trimmed_final_reply"
+      }
+    },
+    "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4": {
+      "status": "pending",
+      "n_required": 40,
+      "n_sampled": 0,
+      "n_labeled": 0,
+      "n_pending": 40,
+      "agreement": null,
+      "cohen_kappa": null,
+      "confusion": {
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "n_disagreements": 0,
+      "disagreement_ids": [],
+      "committed_number": {
+        "status": "pending",
+        "n_eligible": 0,
+        "n_labeled": 0,
+        "n_pending": 40,
+        "agreement": null,
+        "n_disagreements": 0,
+        "disagreement_ids": []
+      },
+      "splitter": {
+        "status": "pending",
+        "n_required": 40,
+        "n_sampled": 0,
+        "n_labeled": 0,
+        "n_pending": 40,
+        "agreement": null,
+        "n_agreements": 0,
+        "n_disagreements": 0,
+        "disagreement_ids": [],
+        "comparison": "exact_trimmed_final_reply"
+      }
+    }
+  },
+  "sampling": {
+    "seed": 0,
+    "size_per_model": 40,
+    "strata": [
+      "model",
+      "arm",
+      "thinking",
+      "format",
+      "prefill",
+      "attempt"
+    ],
+    "allocation": "round_robin_nonempty_strata",
+    "blind_id": "sha256(model,id)[:24]"
+  }
+}

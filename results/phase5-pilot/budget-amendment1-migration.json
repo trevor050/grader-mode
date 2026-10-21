@@ -1,0 +1,18 @@
+{
+  "registration_commit": "c3e705068f0c3622c3b5d4cb9575530004ad68ae",
+  "old_cap_usd": 6.8,
+  "new_cap_usd": 9.0,
+  "spent_usd_before": 0.282284,
+  "spent_usd_after": 0.282284,
+  "attempts_preserved_sha256": "da8e800b76d4dd0675e38de690c6de4e0fa9e18fc8de3759ae37cec77deb0b68",
+  "registration_upgrades": [
+    {
+      "old_cap_microusd": 6800000,
+      "new_cap_microusd": 9000000,
+      "old_registration_commit": "f15dcc41904f6fad858bdab6c8b7daac09238520",
+      "registration_commit": "c3e705068f0c3622c3b5d4cb9575530004ad68ae",
+      "unix": 1792610970.109046
+    }
+  ],
+  "resource_launches": 0
+}

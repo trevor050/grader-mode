@@ -1,0 +1,33 @@
+{
+  "command": "uv run pytest -q",
+  "passed": 1041,
+  "duration_seconds": 172.88,
+  "exit_code": 0,
+  "test_log_sha256": "e512d9048f31819e3b80cff6b3af5a8e380b2e0ab4736c0aeed17a7d6ea7fbe7",
+  "source_sha256": {
+    "src/analyze_5.py": "9caf3a1f72eb8f0250360e86f5c9de335d82e4c2d3ddeeaf2b2ca09dbe38b23c",
+    "src/modal_app_5.py": "df765af3ea969dc41aceff855020044115767b2034f7d20ac849b2c95f6f4c98",
+    "src/models_5.py": "f087db2706c68087c804b0ce50fe4fed39be644908f43f604e5ad910e1991804",
+    "src/phase5_control.py": "bd99c9a0e591d55ab210abeef399e1bad1351ffc1692abaaf4ede6f024cbf62c",
+    "src/phase5_parser_agreement.py": "ff938ce1d616291f51788adec8aeb651fddfd33094d087a9431f4ecac11c3866",
+    "src/phase5_pilot_report.py": "403873e47b1b057c0f82f97913818519fe1ef063ada9403d35f1da4a10e60038",
+    "src/phase5_split.py": "5739523aabc58b7f855c3f6cafc6dba984209e84887e68fc00d6a5490731434f",
+    "src/score_5.py": "8b29457fa83b56d711e8460fef2a82c78cb5660dca0d0dc2559d50df3b13cd31",
+    "src/vast_generate_5.py": "ee31bbf1fcd2ac794a9f2eafdee59efc8acc4c823464f4a8a19378e0da189959",
+    "tests/test_phase5_analysis.py": "224ad6aee957f09e69890e471e4eb3da58ee9dcc96a583ef0b1ee59083c71550",
+    "tests/test_phase5_boundary_audit.py": "88432dff5a3e0034d6efd435d8214630a830de94a027a6d612855f0f66e7bed0",
+    "tests/test_phase5_control.py": "893e22e49cb397cd08ac6e3955185da2a10d566baebba786fead998c6a898d79",
+    "tests/test_phase5_formats.py": "6f2a064ee0ca29a12ac312c6a14a84018ab65d8be8719281ee8287f532a20b52",
+    "tests/test_phase5_requests.py": "7dc2e5a53c0d133afe5f62963f34822de1633c1ebc3e51d257ab82cdac6c61bf",
+    "tests/test_phase5_runtime_contract.py": "4b8b5ff793f8dcfa985ca2e7a8e4217c1b56f8f6776bb19a23f8b80e01a7ee85",
+    "tests/test_phase5_score.py": "ba696d111a52b8cbc4dd5feb564f04556f1817f158fed2168d634d8cc72bb863"
+  },
+  "raw_artifact_sha256": {
+    "pilot-execution.json": "489647139e8c87891384c47d842d8280b7f768424d428012c328ae006da53f31",
+    "gemma-4-12B-it.jsonl": "8175dcb97b0b3f9a69fe8470820bbf86d6b61906f3e3b275c30a68d72fc85b39",
+    "generation.log": "ac932616bda77919ca013af9d632a5eccdc1c2d5a7644637be23caa8b6f7b251",
+    "gemma-4-12B-it.metrics.json": "62c99eeecef8f2db5d1846f923da4242057692cf322453382c0a69bf35dff9f6",
+    "gemma-4-12B-it.progress.json": "abb26f2189706290b8b48fd61803d52632f9f518f2fd55fdebbfaf04757c4472"
+  },
+  "captured_unix": 1792611538.9710631
+}

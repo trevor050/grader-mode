@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "cap_microusd": 9000000,
+  "attempts": [
+    {
+      "attempt_id": "phase5-gemma-pilot-20261021-a",
+      "provider": "modal",
+      "status": "completed",
+      "reserved_microusd": 855000,
+      "reserved_usd": 0.855,
+      "charged_microusd": 282284,
+      "hourly_usd": 2.7,
+      "started_unix": 1792610061.445159,
+      "startup_seconds": 120.0,
+      "runtime_seconds": 900.0,
+      "teardown_seconds": 120.0,
+      "startup_deadline_unix": 1792610181.445159,
+      "work_deadline_unix": 1792611081.445159,
+      "deadline_unix": 1792611201.445159,
+      "resource_id": "ap-FckHbbVTlPcie116OwqSgz",
+      "resource_label": "phase5-phase5-gemma-pilot-20261021-a",
+      "teardown_verified": true,
+      "events": [
+        {
+          "unix": 1792610061.4478452,
+          "watchdog_pid": 3691
+        },
+        {
+          "unix": 1792610124.0578601,
+          "function_call_id": "fc-01M5FY7G8BF2RBCRR4KJFX4NBN"
+        },
+        {
+          "unix": 1792610127.404995,
+          "startup_complete": true
+        },
+        {
+          "unix": 1792610377.2856681,
+          "teardown": {
+            "app_id": "ap-FckHbbVTlPcie116OwqSgz",
+            "containers_after": [],
+            "stop_errors": []
+          }
+        },
+        {
+          "unix": 1792610474.375755,
+          "independent_final_teardown": {
+            "app_id": "ap-FckHbbVTlPcie116OwqSgz",
+            "app_stop_confirmed": true,
+            "containers_after": [],
+            "stop_errors": [
+              "Command '['/Users/user/codeprojects/grader-mode/.venv/bin/python3', '-m', 'modal', 'app', 'stop', '--yes', 'ap-FckHbbVTlPcie116OwqSgz']' returned non-zero exit status 1."
+            ]
+          }
+        },
+        {
+          "unix": 1792610545.933801,
+          "billing_snapshot_delta_usd": "0.28228356",
+          "billing_snapshot_provisional": true
+        }
+      ],
+      "ended_unix": 1792610377.354756,
+      "observed_wall_seconds": 315.909597158432
+    }
+  ],
+  "created_unix": 1792609801.754432,
+  "registration_upgrades": [
+    {
+      "old_cap_microusd": 6800000,
+      "new_cap_microusd": 9000000,
+      "old_registration_commit": "f15dcc41904f6fad858bdab6c8b7daac09238520",
+      "registration_commit": "c3e705068f0c3622c3b5d4cb9575530004ad68ae",
+      "unix": 1792610970.109046
+    }
+  ],
+  "registration_commit": "c3e705068f0c3622c3b5d4cb9575530004ad68ae"
+}

@@ -1,0 +1,14 @@
+{
+  "registration_commit": "f15dcc4",
+  "source_sha256": {
+    "DESIGN.md": "70ebfbcacced4f1f33473813dbdfb3a8fa1f0cb4bb0e53ef4a1f7cfd28511ceb",
+    "prompts/system_neutral.txt": "7460e45c0d100bd1c477aedf6b4be3d2fcc5823a73a5c8122c3ff26735842eca",
+    "prompts/system_tutor.txt": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11",
+    "prompts/system_tutor_strong.txt": "1ac90444d38726447da7d5a681063fa1410f731d84cc294b74c1c5f970961812",
+    "prompts/templates.json": "637fb8aa1312f4485d410241fe6087cbbe9c6150a4267bfb8a71e418f7af0ed1",
+    "prompts/templates_1b.json": "cc5971cea9793fefb141bb8f514c109fc798989116d86eb6f3531bfbb8eec8a4",
+    "prompts/templates_1c.json": "986fcd0ad98743abf69a8a96dbc05810c2b0a527e91e0a12530689fd09620b6a",
+    "prompts/templates_2.json": "25284cc7a054aa1843e9e2f6fb6a58a1c84f7aac6c811f9a32c0a142bf239885",
+    "prompts/templates_4.json": "6cd003a8b8bf96456428084a1abeedb5c66ee5774443bcb6fdf31d7d65a8fd31"
+  }
+}
