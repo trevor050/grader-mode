@@ -657,3 +657,14 @@ metadata, templates and cost estimates, no outcomes.
   drop order in the main Phase 5 section applies to whatever does not fit,
   in reverse of this priority. The combined cap rises to about $9; the
   increase is the cost of the H21 grid.
+
+### Phase 5 correction to amendment 1 (2026-10-21)
+
+Amendment 1 says it was recorded "before any Phase 5 generation". That is not
+accurate: a 16-reply Gemma smoke and throughput pilot (one problem, all eight
+Gemma cells) finished at 15:19 ET, three minutes before the amendment commit
+at 15:22 ET. The pilot's replies were not read or scored by the lead before
+the amendment, the amendment concerns only the second family, which had
+produced no output, and pilot replies are excluded from all analyses. The
+pilot ran under the original registration (f15dcc4) and its manifest records
+that.
