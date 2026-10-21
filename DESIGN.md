@@ -456,3 +456,26 @@ tutor-versus-neutral prompt contrast are a proxy for "the tutor role", not a
 complete account of it. A positive H12–H14 shows that this signal fades during
 reasoning and that propping it up reduces leaking in one model and condition;
 it does not show why reasoning suppresses it.
+
+### Phase 3 deviations and addendum
+
+**2026-10-21, after development dose selection; no test generation exists.**
+
+12. *H14 not tested.* No development dose met the 10-point rule (development
+    leak: baseline 49.0%, c = 1: 44.9%, 2: 47.5%, 4: 51.0%, 8: 40.6%), so
+    c* = 8 as registered. Measured throughput projected test generation at
+    $8.70 for template 0 alone, above the $7 cap even after the registered
+    template reduction, so the run stopped before any test generation. H14 is
+    reported as not tested. The development doses are reported descriptively.
+
+**Exploratory addendum (registered before it is run).** H12's reference
+level is the tutor neurons' activation while reading the prompt, so the
+level drop at the start of reasoning could be a reading-versus-generation
+context effect. Control: the same 400 test traces are teacher-forced again
+with `system_neutral.txt` in place of the tutor prompt (response tokens
+unchanged), and T(t) is computed with the same z-scoring. Reported: the per-
+decile difference in T (tutor-prompt run minus neutral-prompt run), with
+problem-cluster bootstrap CIs, overall and by leak outcome. If the difference
+is near zero at the start of reasoning, the tutor neurons carry no
+system-prompt information during reasoning; if it is positive and shrinks
+over the trace, the system prompt's influence on them fades. No hypotheses.
