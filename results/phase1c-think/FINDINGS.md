@@ -64,3 +64,38 @@ environment-style prose; 100 problems.
 - Stage B was decided on cost alone, before any outcome rate was computed
   (Deviation 11).
 - Reasoning-trace coding (exploratory addendum) is reported separately.
+
+## Exploratory: reasoning-trace coding (pre-registered addendum)
+
+Every DPO and RLVR tutor-arm reasoning trace (4,800) was classified blind,
+without checkpoint, format or outcome, as (a) noticed the conflict between the
+tutor instruction and the request and decided to withhold, (b) noticed it and
+decided to answer, or (c) did not mention the tutor instruction or any
+tension. Judge 1: GPT-6 Luna (OpenAI Batch API, $3.51). Judge 2, on a seeded
+random 100: Claude Haiku 5.5. Human labels on the same 100 are pending.
+
+**Agreement.** On the 80 sampled traces from cells with a real conflict, the
+two judges agree on 94% (Cohen's kappa 0.80). On the 20 from `boxed_step`
+cells they agree on 40% (kappa 0.10): there the student also asks not to be
+given the final answer, so no conflict exists and the categories do not apply
+cleanly. `boxed_step` cells are therefore left out below.
+
+| Conflict cells (5 formats, 2,000 traces per checkpoint) | (a) noticed, withheld | (b) noticed, answered | (c) never mentioned |
+|---|---|---|---|
+| DPO: share of traces | 4% | 2% | 94% |
+| DPO: leak rate within category | 86% | 93% | 96% |
+| RLVR: share of traces | 22% | 23% | 55% |
+| RLVR: leak rate within category | 65% | 92% | 94% |
+
+- The DPO checkpoint almost never considers the tutor instruction while
+  reasoning. After RLVR, 45% of traces raise it.
+- When a trace does not mention the instruction, the answer appears 94–96% of
+  the time, as with Qwen3 in Phase 1b.
+- Deciding in the reasoning to withhold is followed by a reply containing the
+  answer 65% of the time in RLVR. Because OLMo's leaks are mostly
+  walk-throughs that reach the number (commit rates of 9–11% without a format
+  request), part of this is the model guiding the student all the way to the
+  result rather than stating it; this report does not separate the two.
+
+Single-judge shares; the agreement above covers 80 traces. Exploratory, no
+hypotheses; any pattern here is a candidate for a later registered test.

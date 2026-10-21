@@ -1,0 +1,17 @@
+{
+  "judge1": "gpt-6-luna (OpenAI Batch, reasoning low)",
+  "judge2": "claude-haiku-5-5 (4 independent annotators x 25)",
+  "hand": "pending (Trevor)",
+  "all_100": {
+    "agreement": 0.83,
+    "kappa": 0.55
+  },
+  "conflict_cells_80": {
+    "agreement": 0.94,
+    "kappa": 0.8
+  },
+  "boxed_step_20": {
+    "agreement": 0.4,
+    "kappa": 0.1
+  }
+}

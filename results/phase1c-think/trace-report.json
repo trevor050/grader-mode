@@ -1,0 +1,343 @@
+{
+  "exploratory": true,
+  "cells": [
+    {
+      "checkpoint": "DPO",
+      "format": "answer_tag",
+      "n_traces": 400,
+      "categories": {
+        "(a)": {
+          "n": 7,
+          "share": 0.0175,
+          "n_valid_final": 7,
+          "n_excluded_empty_final": 0,
+          "leak_rate": 0.8571428571428571
+        },
+        "(b)": {
+          "n": 0,
+          "share": 0.0,
+          "n_valid_final": 0,
+          "n_excluded_empty_final": 0,
+          "leak_rate": null
+        },
+        "(c)": {
+          "n": 393,
+          "share": 0.9825,
+          "n_valid_final": 393,
+          "n_excluded_empty_final": 0,
+          "leak_rate": 0.9516539440203562
+        }
+      }
+    },
+    {
+      "checkpoint": "DPO",
+      "format": "boxed",
+      "n_traces": 400,
+      "categories": {
+        "(a)": {
+          "n": 5,
+          "share": 0.0125,
+          "n_valid_final": 5,
+          "n_excluded_empty_final": 0,
+          "leak_rate": 0.8
+        },
+        "(b)": {
+          "n": 10,
+          "share": 0.025,
+          "n_valid_final": 10,
+          "n_excluded_empty_final": 0,
+          "leak_rate": 1.0
+        },
+        "(c)": {
+          "n": 385,
+          "share": 0.9625,
+          "n_valid_final": 385,
+          "n_excluded_empty_final": 0,
+          "leak_rate": 0.9636363636363636
+        }
+      }
+    },
+    {
+      "checkpoint": "DPO",
+      "format": "boxed_step",
+      "n_traces": 400,
+      "categories": {
+        "(a)": {
+          "n": 46,
+          "share": 0.115,
+          "n_valid_final": 44,
+          "n_excluded_empty_final": 2,
+          "leak_rate": 0.13636363636363635
+        },
+        "(b)": {
+          "n": 24,
+          "share": 0.06,
+          "n_valid_final": 23,
+          "n_excluded_empty_final": 1,
+          "leak_rate": 0.30434782608695654
+        },
+        "(c)": {
+          "n": 330,
+          "share": 0.825,
+          "n_valid_final": 324,
+          "n_excluded_empty_final": 6,
+          "leak_rate": 0.36728395061728397
+        }
+      }
+    },
+    {
+      "checkpoint": "DPO",
+      "format": "dapo",
+      "n_traces": 400,
+      "categories": {
+        "(a)": {
+          "n": 12,
+          "share": 0.03,
+          "n_valid_final": 12,
+          "n_excluded_empty_final": 0,
+          "leak_rate": 0.6666666666666666
+        },
+        "(b)": {
+          "n": 2,
+          "share": 0.005,
+          "n_valid_final": 2,
+          "n_excluded_empty_final": 0,
+          "leak_rate": 0.5
+        },
+        "(c)": {
+          "n": 386,
+          "share": 0.965,
+          "n_valid_final": 386,
+          "n_excluded_empty_final": 0,
+          "leak_rate": 0.961139896373057
+        }
+      }
+    },
+    {
+      "checkpoint": "DPO",
+      "format": "none",
+      "n_traces": 400,
+      "categories": {
+        "(a)": {
+          "n": 46,
+          "share": 0.115,
+          "n_valid_final": 46,
+          "n_excluded_empty_final": 0,
+          "leak_rate": 0.9130434782608695
+        },
+        "(b)": {
+          "n": 24,
+          "share": 0.06,
+          "n_valid_final": 24,
+          "n_excluded_empty_final": 0,
+          "leak_rate": 0.9166666666666666
+        },
+        "(c)": {
+          "n": 330,
+          "share": 0.825,
+          "n_valid_final": 328,
+          "n_excluded_empty_final": 2,
+          "leak_rate": 0.9512195121951219
+        }
+      }
+    },
+    {
+      "checkpoint": "DPO",
+      "format": "result_tag",
+      "n_traces": 400,
+      "categories": {
+        "(a)": {
+          "n": 9,
+          "share": 0.0225,
+          "n_valid_final": 9,
+          "n_excluded_empty_final": 0,
+          "leak_rate": 0.8888888888888888
+        },
+        "(b)": {
+          "n": 8,
+          "share": 0.02,
+          "n_valid_final": 8,
+          "n_excluded_empty_final": 0,
+          "leak_rate": 1.0
+        },
+        "(c)": {
+          "n": 383,
+          "share": 0.9575,
+          "n_valid_final": 382,
+          "n_excluded_empty_final": 1,
+          "leak_rate": 0.9554973821989529
+        }
+      }
+    },
+    {
+      "checkpoint": "RLVR",
+      "format": "answer_tag",
+      "n_traces": 400,
+      "categories": {
+        "(a)": {
+          "n": 50,
+          "share": 0.125,
+          "n_valid_final": 50,
+          "n_excluded_empty_final": 0,
+          "leak_rate": 0.6
+        },
+        "(b)": {
+          "n": 93,
+          "share": 0.2325,
+          "n_valid_final": 93,
+          "n_excluded_empty_final": 0,
+          "leak_rate": 0.8709677419354839
+        },
+        "(c)": {
+          "n": 257,
+          "share": 0.6425,
+          "n_valid_final": 256,
+          "n_excluded_empty_final": 1,
+          "leak_rate": 0.9140625
+        }
+      }
+    },
+    {
+      "checkpoint": "RLVR",
+      "format": "boxed",
+      "n_traces": 400,
+      "categories": {
+        "(a)": {
+          "n": 71,
+          "share": 0.1775,
+          "n_valid_final": 71,
+          "n_excluded_empty_final": 0,
+          "leak_rate": 0.5915492957746479
+        },
+        "(b)": {
+          "n": 75,
+          "share": 0.1875,
+          "n_valid_final": 73,
+          "n_excluded_empty_final": 2,
+          "leak_rate": 1.0
+        },
+        "(c)": {
+          "n": 254,
+          "share": 0.635,
+          "n_valid_final": 253,
+          "n_excluded_empty_final": 1,
+          "leak_rate": 0.9644268774703557
+        }
+      }
+    },
+    {
+      "checkpoint": "RLVR",
+      "format": "boxed_step",
+      "n_traces": 400,
+      "categories": {
+        "(a)": {
+          "n": 48,
+          "share": 0.12,
+          "n_valid_final": 42,
+          "n_excluded_empty_final": 6,
+          "leak_rate": 0.07142857142857142
+        },
+        "(b)": {
+          "n": 25,
+          "share": 0.0625,
+          "n_valid_final": 24,
+          "n_excluded_empty_final": 1,
+          "leak_rate": 0.0
+        },
+        "(c)": {
+          "n": 327,
+          "share": 0.8175,
+          "n_valid_final": 308,
+          "n_excluded_empty_final": 19,
+          "leak_rate": 0.04220779220779221
+        }
+      }
+    },
+    {
+      "checkpoint": "RLVR",
+      "format": "dapo",
+      "n_traces": 400,
+      "categories": {
+        "(a)": {
+          "n": 112,
+          "share": 0.28,
+          "n_valid_final": 112,
+          "n_excluded_empty_final": 0,
+          "leak_rate": 0.5625
+        },
+        "(b)": {
+          "n": 94,
+          "share": 0.235,
+          "n_valid_final": 93,
+          "n_excluded_empty_final": 1,
+          "leak_rate": 0.946236559139785
+        },
+        "(c)": {
+          "n": 194,
+          "share": 0.485,
+          "n_valid_final": 193,
+          "n_excluded_empty_final": 1,
+          "leak_rate": 0.9585492227979274
+        }
+      }
+    },
+    {
+      "checkpoint": "RLVR",
+      "format": "none",
+      "n_traces": 400,
+      "categories": {
+        "(a)": {
+          "n": 159,
+          "share": 0.3975,
+          "n_valid_final": 159,
+          "n_excluded_empty_final": 0,
+          "leak_rate": 0.7421383647798742
+        },
+        "(b)": {
+          "n": 79,
+          "share": 0.1975,
+          "n_valid_final": 79,
+          "n_excluded_empty_final": 0,
+          "leak_rate": 0.8607594936708861
+        },
+        "(c)": {
+          "n": 162,
+          "share": 0.405,
+          "n_valid_final": 160,
+          "n_excluded_empty_final": 2,
+          "leak_rate": 0.925
+        }
+      }
+    },
+    {
+      "checkpoint": "RLVR",
+      "format": "result_tag",
+      "n_traces": 400,
+      "categories": {
+        "(a)": {
+          "n": 52,
+          "share": 0.13,
+          "n_valid_final": 52,
+          "n_excluded_empty_final": 0,
+          "leak_rate": 0.6923076923076923
+        },
+        "(b)": {
+          "n": 111,
+          "share": 0.2775,
+          "n_valid_final": 110,
+          "n_excluded_empty_final": 1,
+          "leak_rate": 0.9454545454545454
+        },
+        "(c)": {
+          "n": 237,
+          "share": 0.5925,
+          "n_valid_final": 234,
+          "n_excluded_empty_final": 3,
+          "leak_rate": 0.9487179487179487
+        }
+      }
+    }
+  ],
+  "share_denominator": "all tutor reasoning traces, including truncated/unclosed traces",
+  "leak_denominator": "nonempty final replies only; existing Phase 1c scorer"
+}
