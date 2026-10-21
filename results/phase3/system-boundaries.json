@@ -1,0 +1,1402 @@
+[
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0847:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0088:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p1124:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0891:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p1049:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p1278:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p1109:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0617:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0207:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p1167:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0317:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0216:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0724:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p1228:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0779:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0693:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p1211:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p1144:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0137:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0030:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0876:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p1083:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0533:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0138:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p1246:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0522:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p1191:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0199:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0701:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p1075:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0661:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0637:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p1200:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p1184:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p1199:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0630:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0200:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0695:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0529:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0398:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0404:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0570:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0153:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0282:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0085:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0861:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0604:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p0516:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p1291:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "tutor",
+    "first_id": "phase1b:p1271:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103,
+      103
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0847:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0088:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p1124:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0891:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p1049:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p1278:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p1109:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0617:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0207:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p1167:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0317:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0216:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0724:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p1228:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0779:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0693:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p1211:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p1144:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0137:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0030:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0876:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p1083:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0533:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0138:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p1246:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0522:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p1191:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0199:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0701:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p1075:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0661:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0637:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p1200:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p1184:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p1199:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0630:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0200:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0695:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0529:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0398:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0404:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0570:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0153:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0282:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0085:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0861:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0604:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p0516:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p1291:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  },
+  {
+    "system": "neutral",
+    "first_id": "phase1b:p1271:none:boxed:t0:tutor:thinking-1",
+    "system_end_token_counts": [
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ]
+  }
+]

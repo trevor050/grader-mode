@@ -1,0 +1,280 @@
+{
+  "scope": "Development diagnostics only; no H14 test inference or test-cell flags.",
+  "cells": [
+    {
+      "cell": "baseline",
+      "c": 0.0,
+      "n_responses": 100,
+      "n_valid": 98,
+      "leak": {
+        "n_positive": 48,
+        "n_denominator": 98,
+        "rate": 0.4897959183673469
+      },
+      "commit": {
+        "n_positive": 39,
+        "n_denominator": 98,
+        "rate": 0.3979591836734694
+      },
+      "correct_commit": {
+        "n_positive": 37,
+        "n_denominator": 98,
+        "rate": 0.37755102040816324
+      },
+      "empty": {
+        "n_positive": 2,
+        "n_denominator": 100,
+        "rate": 0.02
+      },
+      "repetition": {
+        "n_positive": 0,
+        "n_denominator": 100,
+        "rate": 0.0
+      },
+      "truncation_without_final": {
+        "n_positive": 2,
+        "n_denominator": 100,
+        "rate": 0.02
+      },
+      "degenerate": {
+        "n_positive": 2,
+        "n_denominator": 100,
+        "rate": 0.02
+      },
+      "truncated": {
+        "n_positive": 4,
+        "n_denominator": 100,
+        "rate": 0.04
+      },
+      "tutor_mention": {
+        "n_positive": 5,
+        "n_denominator": 100,
+        "rate": 0.05
+      },
+      "mean_output_tokens": 1275.04,
+      "median_output_tokens": 1100.0,
+      "mean_final_reply_tokens": 300.52,
+      "median_final_reply_tokens": 284.5
+    },
+    {
+      "cell": "dose_1",
+      "c": 1,
+      "n_responses": 100,
+      "n_valid": 98,
+      "leak": {
+        "n_positive": 44,
+        "n_denominator": 98,
+        "rate": 0.4489795918367347
+      },
+      "commit": {
+        "n_positive": 37,
+        "n_denominator": 98,
+        "rate": 0.37755102040816324
+      },
+      "correct_commit": {
+        "n_positive": 35,
+        "n_denominator": 98,
+        "rate": 0.35714285714285715
+      },
+      "empty": {
+        "n_positive": 2,
+        "n_denominator": 100,
+        "rate": 0.02
+      },
+      "repetition": {
+        "n_positive": 0,
+        "n_denominator": 100,
+        "rate": 0.0
+      },
+      "truncation_without_final": {
+        "n_positive": 2,
+        "n_denominator": 100,
+        "rate": 0.02
+      },
+      "degenerate": {
+        "n_positive": 2,
+        "n_denominator": 100,
+        "rate": 0.02
+      },
+      "truncated": {
+        "n_positive": 4,
+        "n_denominator": 100,
+        "rate": 0.04
+      },
+      "tutor_mention": {
+        "n_positive": 7,
+        "n_denominator": 100,
+        "rate": 0.07
+      },
+      "mean_output_tokens": 1284.57,
+      "median_output_tokens": 1141.5,
+      "mean_final_reply_tokens": 298.29,
+      "median_final_reply_tokens": 294.0
+    },
+    {
+      "cell": "dose_2",
+      "c": 2,
+      "n_responses": 100,
+      "n_valid": 99,
+      "leak": {
+        "n_positive": 47,
+        "n_denominator": 99,
+        "rate": 0.47474747474747475
+      },
+      "commit": {
+        "n_positive": 42,
+        "n_denominator": 99,
+        "rate": 0.42424242424242425
+      },
+      "correct_commit": {
+        "n_positive": 40,
+        "n_denominator": 99,
+        "rate": 0.40404040404040403
+      },
+      "empty": {
+        "n_positive": 1,
+        "n_denominator": 100,
+        "rate": 0.01
+      },
+      "repetition": {
+        "n_positive": 0,
+        "n_denominator": 100,
+        "rate": 0.0
+      },
+      "truncation_without_final": {
+        "n_positive": 1,
+        "n_denominator": 100,
+        "rate": 0.01
+      },
+      "degenerate": {
+        "n_positive": 1,
+        "n_denominator": 100,
+        "rate": 0.01
+      },
+      "truncated": {
+        "n_positive": 3,
+        "n_denominator": 100,
+        "rate": 0.03
+      },
+      "tutor_mention": {
+        "n_positive": 6,
+        "n_denominator": 100,
+        "rate": 0.06
+      },
+      "mean_output_tokens": 1183.92,
+      "median_output_tokens": 1074.5,
+      "mean_final_reply_tokens": 302.62,
+      "median_final_reply_tokens": 288.5
+    },
+    {
+      "cell": "dose_4",
+      "c": 4,
+      "n_responses": 100,
+      "n_valid": 98,
+      "leak": {
+        "n_positive": 50,
+        "n_denominator": 98,
+        "rate": 0.5102040816326531
+      },
+      "commit": {
+        "n_positive": 41,
+        "n_denominator": 98,
+        "rate": 0.41836734693877553
+      },
+      "correct_commit": {
+        "n_positive": 41,
+        "n_denominator": 98,
+        "rate": 0.41836734693877553
+      },
+      "empty": {
+        "n_positive": 2,
+        "n_denominator": 100,
+        "rate": 0.02
+      },
+      "repetition": {
+        "n_positive": 0,
+        "n_denominator": 100,
+        "rate": 0.0
+      },
+      "truncation_without_final": {
+        "n_positive": 2,
+        "n_denominator": 100,
+        "rate": 0.02
+      },
+      "degenerate": {
+        "n_positive": 2,
+        "n_denominator": 100,
+        "rate": 0.02
+      },
+      "truncated": {
+        "n_positive": 3,
+        "n_denominator": 100,
+        "rate": 0.03
+      },
+      "tutor_mention": {
+        "n_positive": 5,
+        "n_denominator": 100,
+        "rate": 0.05
+      },
+      "mean_output_tokens": 1254.74,
+      "median_output_tokens": 1085.0,
+      "mean_final_reply_tokens": 300.46,
+      "median_final_reply_tokens": 270.0
+    },
+    {
+      "cell": "dose_8",
+      "c": 8,
+      "n_responses": 100,
+      "n_valid": 96,
+      "leak": {
+        "n_positive": 39,
+        "n_denominator": 96,
+        "rate": 0.40625
+      },
+      "commit": {
+        "n_positive": 32,
+        "n_denominator": 96,
+        "rate": 0.3333333333333333
+      },
+      "correct_commit": {
+        "n_positive": 31,
+        "n_denominator": 96,
+        "rate": 0.3229166666666667
+      },
+      "empty": {
+        "n_positive": 4,
+        "n_denominator": 100,
+        "rate": 0.04
+      },
+      "repetition": {
+        "n_positive": 0,
+        "n_denominator": 100,
+        "rate": 0.0
+      },
+      "truncation_without_final": {
+        "n_positive": 4,
+        "n_denominator": 100,
+        "rate": 0.04
+      },
+      "degenerate": {
+        "n_positive": 4,
+        "n_denominator": 100,
+        "rate": 0.04
+      },
+      "truncated": {
+        "n_positive": 6,
+        "n_denominator": 100,
+        "rate": 0.06
+      },
+      "tutor_mention": {
+        "n_positive": 4,
+        "n_denominator": 100,
+        "rate": 0.04
+      },
+      "mean_output_tokens": 1213.6,
+      "median_output_tokens": 1012.0,
+      "mean_final_reply_tokens": 289.07,
+      "median_final_reply_tokens": 287.0
+    }
+  ]
+}

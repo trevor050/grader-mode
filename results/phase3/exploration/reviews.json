@@ -1,0 +1,13 @@
+{
+  "generation_explorer": {
+    "independent_review": "no high or blocking findings",
+    "focused_tests_passed": 20
+  },
+  "logit_probe": {
+    "finding": "per-attempt additional allowance could reset on a fresh logit run ID",
+    "response": "one logit allocation only; reject any prior phase3-logit-* attempt before source reads or GPU submission",
+    "regression": "failed before fix, passed after fix for both closed failed and completed prior attempts",
+    "focused_tests_passed": 9
+  },
+  "frozen_preregistered_sources_edited": false
+}

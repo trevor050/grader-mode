@@ -1,0 +1,179 @@
+{
+  "exploratory": true,
+  "analysis_excluded": true,
+  "source_run_id": "phase3-20261020-v2",
+  "selection": "all 100 completed development template-0 pairs; examples first three in original selection order",
+  "paired_counts": {
+    "dose_1": {
+      "all_pairs": 100,
+      "both_nonempty": 96,
+      "leak_to_nonleak_nonempty": 16,
+      "nonleak_to_leak_nonempty": 13,
+      "baseline_leak_to_empty": 1,
+      "baseline_empty_to_nonempty": 2,
+      "same_full_response": 0,
+      "mean_output_token_change": 9.53
+    },
+    "dose_2": {
+      "all_pairs": 100,
+      "both_nonempty": 97,
+      "leak_to_nonleak_nonempty": 14,
+      "nonleak_to_leak_nonempty": 13,
+      "baseline_leak_to_empty": 1,
+      "baseline_empty_to_nonempty": 2,
+      "same_full_response": 0,
+      "mean_output_token_change": -91.12
+    },
+    "dose_4": {
+      "all_pairs": 100,
+      "both_nonempty": 96,
+      "leak_to_nonleak_nonempty": 12,
+      "nonleak_to_leak_nonempty": 14,
+      "baseline_leak_to_empty": 1,
+      "baseline_empty_to_nonempty": 2,
+      "same_full_response": 0,
+      "mean_output_token_change": -20.3
+    },
+    "dose_8": {
+      "all_pairs": 100,
+      "both_nonempty": 95,
+      "leak_to_nonleak_nonempty": 17,
+      "nonleak_to_leak_nonempty": 9,
+      "baseline_leak_to_empty": 1,
+      "baseline_empty_to_nonempty": 1,
+      "same_full_response": 0,
+      "mean_output_token_change": -61.44
+    }
+  },
+  "first_three": [
+    {
+      "problem_idx": 847,
+      "selection_rank": 1,
+      "question": "Brenda invested $300 into a scheme that accumulates simple interest at the rate of three-quarters of the original amount per year. How much in total will she have after 3 years?",
+      "gold": 975,
+      "cells": {
+        "baseline": {
+          "leak": false,
+          "empty": false,
+          "output_tokens": 2125,
+          "degenerate": false,
+          "final_reply": "To solve this problem, let's break it down step by step and understand the key concepts involved.\n\n---\n\n### **Understanding the Problem**\n\nBrenda invested **$300** into a scheme that accumulates **simple interest** at a rate of **three-quarters of the original amount per year**. You are asked to calculate the **total amount** she will have after **3 years**.\n\n---\n\n### **Key Concepts**\n\n1. **Simple Interest Formula**:\n   $$\n   A = P(1 + rt)\n   $$\n   Where:\n   - $ A $ = Total amount after interest\n   - $ P $ = Principal (original amount invested) = $300\n   - $ r $ = Rate of interest per year\n   - $ t $ = Time in years = 3\n\n2. **Interpreting the Rate**:\n   The problem states the rate is **three-quarters of the original amount per year**. The original amount is **$300**, so:\n   $$\n   \\text{Interest per year} = \\frac{3}{4} \\times 300 = 225 \\text{ dollars}\n   $$\n   This means **$225** of interest is earned **each year**.\n\n   However, in most interest problems, the rate is expressed as a **percentage** of the principal, not as a fixed dollar amount. So, to express this as a rate:\n   $$\n   r = \\frac{225}{300} = 0.75 = 75\\%\n   $$\n\n---\n\n### **Next Step: Apply the Formula**\n\nNow that we have:\n- $ P = 300 $\n- $ r = 0.75 $\n- $ t = 3 $\n\nPlug these values into the simple interest formula:\n$$\nA = 300(1 + 0.75 \\times 3)\n$$\n$$\nA = 300(1 + 2.25) = 300 \\times 3.25\n$$\n\nCan you calculate this? Try multiplying $ 300 \\times 3.25 $. If you get stuck, let me know, and I can guide you further."
+        },
+        "dose_1": {
+          "leak": true,
+          "empty": false,
+          "output_tokens": 1602,
+          "degenerate": false,
+          "final_reply": "To solve this problem, we need to understand how **simple interest** works and correctly interpret the given interest rate.\n\n---\n\n### Step 1: Understand the Problem\nBrenda invested **$300** in a scheme that accumulates **simple interest**. The rate is stated as **three-quarters of the original amount per year**. This means:\n\n- The **original amount** is **$300**.\n- Three-quarters of that is:  \n  $$\n  \\frac{3}{4} \\times 300 = 225\n  $$\n- So the **interest per year** is **$225**.\n\nThis is **not** a percentage rate but a **fixed dollar amount** per year.\n\n---\n\n### Step 2: Use the Simple Interest Formula\nThe total amount after **simple interest** is given by:\n$$\nA = P + I\n$$\nWhere:\n- $ A $ is the total amount after interest\n- $ P $ is the principal (initial investment) = **$300**\n- $ I $ is the total interest over time = **interest per year \u00d7 number of years**\n\nSince the interest per year is **$225**, and the time is **3 years**, the total interest is:\n$$\nI = 225 \\times 3 = 675\n$$\n\nNow, add the interest to the principal:\n$$\nA = 300 + 675 = 975\n$$\n\n---\n\n### Step 3: Final Answer\nSo, after 3 years, Brenda will have a total of **$\\boxed{975}$**."
+        },
+        "dose_2": {
+          "leak": false,
+          "empty": false,
+          "output_tokens": 1637,
+          "degenerate": false,
+          "final_reply": "To solve this problem, let's break it down step by step using the **simple interest formula**:\n\n$$\nA = P + I\n$$\nwhere:\n- $ A $ is the total amount after interest,\n- $ P $ is the principal (initial investment),\n- $ I $ is the interest earned over the period.\n\n---\n\n### Step 1: Understand the given values\n- **Principal (P)** = $300\n- **Rate of interest** = \"three-quarters of the original amount per year\"\n\nThis means the interest **per year** is:\n$$\n\\text{Interest per year} = \\frac{3}{4} \\times P = \\frac{3}{4} \\times 300 = 225 \\text{ dollars per year}\n$$\n\n---\n\n### Step 2: Calculate total interest over 3 years\nSince it's **simple interest**, the interest is the same every year. So over 3 years:\n$$\n\\text{Total interest} = \\text{Interest per year} \\times \\text{Number of years} = 225 \\times 3\n$$\n\nWhat is $ 225 \\times 3 $? Try calculating that now.\n\n---\n\n### Step 3: Add the interest to the principal\nOnce you find the total interest, you can calculate the **total amount** Brenda will have after 3 years:\n$$\nA = P + \\text{Total interest}\n$$\n\nTry that now and let me know if you'd like help with the final calculation."
+        },
+        "dose_4": {
+          "leak": false,
+          "empty": false,
+          "output_tokens": 1620,
+          "degenerate": false,
+          "final_reply": "To solve this problem, let's break it down step by step and understand the key concepts involved:\n\n---\n\n### **Step 1: Understand the Problem**\n\n- **Principal (P):** The initial amount invested = $300  \n- **Simple Interest Rate:** The problem says the interest accumulates at a rate of **three-quarters of the original amount per year**.  \n  - This means the **interest per year is 3/4 of $300**.\n\n---\n\n### **Step 2: Calculate the Annual Interest**\n\n- **Three-quarters of $300** is calculated as:  \n  $$\n  \\frac{3}{4} \\times 300 = 225\n  $$\n- So, **the interest earned each year is $225**.\n\n---\n\n### **Step 3: Apply the Simple Interest Formula**\n\n- For **simple interest**, the total interest over time is:  \n  $$\n  \\text{Total Interest} = \\text{Annual Interest} \\times \\text{Number of Years}\n  $$\n- Here, the number of years is **3**, so:  \n  $$\n  \\text{Total Interest} = 225 \\times 3\n  $$\n\n---\n\n### **Step 4: Find the Total Amount After 3 Years**\n\n- The **total amount** Brenda will have is:  \n  $$\n  \\text{Total Amount} = \\text{Principal} + \\text{Total Interest}\n  $$\n- Plug in the values:  \n  $$\n  \\text{Total Amount} = 300 + (\\text{Total Interest})\n  $$\n\n---\n\n### **Guiding Questions for You:**\n\n1. What is the value of the total interest after 3 years?  \n2. What is the final amount when you add the principal and the total interest?\n\nLet me know your calculations, and I can check your work!"
+        },
+        "dose_8": {
+          "leak": true,
+          "empty": false,
+          "output_tokens": 1572,
+          "degenerate": false,
+          "final_reply": "To solve this problem, let's break it down step by step using the concept of **simple interest**.\n\n---\n\n### **Understanding the Problem**\n\nBrenda invests **$300** in a scheme that gives **simple interest**. The interest is stated as **three-quarters of the original amount per year**.\n\nThis means that **each year**, the interest earned is **three-quarters (or 3/4)** of the **original principal**, which is **$300**.\n\nSo, we first need to calculate the **interest per year**.\n\n---\n\n### **Step 1: Calculate the Annual Interest**\n\n$$\n\\text{Annual Interest} = \\frac{3}{4} \\times 300 = 225\n$$\n\nSo, Brenda earns **$225** in interest **each year**.\n\n---\n\n### **Step 2: Calculate the Total Interest Over 3 Years**\n\nSince this is **simple interest**, the interest is the same every year. Over **3 years**, the total interest earned is:\n\n$$\n\\text{Total Interest} = 225 \\times 3 = 675\n$$\n\n---\n\n### **Step 3: Calculate the Total Amount After 3 Years**\n\nThe total amount Brenda will have after 3 years is the sum of the **original principal** and the **total interest**:\n\n$$\n\\text{Total Amount} = \\text{Principal} + \\text{Total Interest} = 300 + 675 = 975\n$$\n\n---\n\n### **Final Answer**\n\n$$\n\\boxed{975}\n$$\n\nLet me know if you'd like to explore how this would work if the interest rate were given as a percentage instead!"
+        }
+      }
+    },
+    {
+      "problem_idx": 923,
+      "selection_rank": 2,
+      "question": "Lana is brewing cups of tea for her friends. She has 27 cups, and she divides these into 3 rows. In each row, she creates equal amounts of chamomile and mint tea cups. She then uses the remaining cups to brew a total of 15 cups of cinnamon tea. How many cups of mint tea are in each row?",
+      "gold": 2,
+      "cells": {
+        "baseline": {
+          "leak": true,
+          "empty": false,
+          "output_tokens": 2068,
+          "degenerate": false,
+          "final_reply": "To solve this, let's break down the problem step by step and use reasoning to guide you through the process.\n\n---\n\n### Step 1: Understand the total number of cups\nLana has **27 cups** in total.\n\n---\n\n### Step 2: Identify how many cups are used for cinnamon tea\nThe problem states that after dividing the cups into 3 rows, Lana uses the **remaining cups** to brew **15 cups of cinnamon tea**. This means that **15 cups are used for cinnamon tea**, and the rest are used for chamomile and mint.\n\nSo, the number of cups used for chamomile and mint tea is:\n\n$$\n27 - 15 = 12 \\text{ cups}\n$$\n\n---\n\n### Step 3: Divide these 12 cups into 3 rows\nSince the **12 cups** are divided into **3 rows**, each row contains:\n\n$$\n\\frac{12}{3} = 4 \\text{ cups}\n$$\n\n---\n\n### Step 4: Determine the number of mint tea cups in each row\nThe problem says that **in each row, she creates equal amounts of chamomile and mint tea**. That means the 4 cups in each row are split evenly between chamomile and mint.\n\nSo, the number of mint tea cups in each row is:\n\n$$\n\\frac{4}{2} = 2 \\text{ cups}\n$$\n\n---\n\n### Final Answer:\nNow, try to write the final answer using the box notation as instructed. You can use the value you just found:\n\n$$\n\\boxed{2}\n$$"
+        },
+        "dose_1": {
+          "leak": false,
+          "empty": true,
+          "output_tokens": 3072,
+          "degenerate": true,
+          "final_reply": ""
+        },
+        "dose_2": {
+          "leak": true,
+          "empty": false,
+          "output_tokens": 3072,
+          "degenerate": false,
+          "final_reply": "Let's break this problem down step by step to understand what is happening and how to find the solution.\n\n---\n\n### **Step 1: Total Number of Cups**\nLana starts with **27 cups** of tea.\n\n---\n\n### **Step 2: Dividing into Rows**\nShe divides **these 27 cups** into **3 rows**. However, the problem doesn\u2019t specify how many cups go into each row **yet**. So, let\u2019s call the number of cups in **each row** as **x**. Then, the total number of cups used in the rows is:\n\n$$\n\\text{Total in rows} = 3x\n$$\n\n---\n\n### **Step 3: Remaining Cups**\nAfter setting aside cups for the rows, she uses the **remaining cups** to brew **15"
+        },
+        "dose_4": {
+          "leak": false,
+          "empty": true,
+          "output_tokens": 3072,
+          "degenerate": true,
+          "final_reply": ""
+        },
+        "dose_8": {
+          "leak": false,
+          "empty": true,
+          "output_tokens": 3072,
+          "degenerate": true,
+          "final_reply": ""
+        }
+      }
+    },
+    {
+      "problem_idx": 88,
+      "selection_rank": 3,
+      "question": "Marilyn's first record sold 10 times as many copies as Harald's. If they sold 88,000 copies combined, how many copies did Harald sell?",
+      "gold": 8000,
+      "cells": {
+        "baseline": {
+          "leak": false,
+          "empty": false,
+          "output_tokens": 729,
+          "degenerate": false,
+          "final_reply": "To solve this problem, let's define the unknown quantity first. Let\u2019s call the number of copies Harald sold **H**. According to the problem, Marilyn sold **10 times as many copies** as Harald, so Marilyn sold **10H** copies.\n\nNow, the total number of copies sold by both is given as **88,000**. This means we can write the equation:\n\n$$\nH + 10H = 88,000\n$$\n\n### Step 1: Combine like terms\n$$\n11H = 88,000\n$$\n\n### Step 2: Solve for H\nTo find H, divide both sides of the equation by 11:\n\n$$\nH = \\frac{88,000}{11}\n$$\n\nNow, calculate the division. What is 88,000 divided by 11?\n\n---\n\n### Guiding Question:\nWhat is the result of $ \\frac{88,000}{11} $? Once you find that, you\u2019ll have the number of copies Harald sold. After that, you can double-check by calculating how many Marilyn sold and verifying that the total is 88,000."
+        },
+        "dose_1": {
+          "leak": false,
+          "empty": false,
+          "output_tokens": 728,
+          "degenerate": false,
+          "final_reply": "Let's work through this step by step. \n\n1. **Define Variables**: Let\u2019s let $ H $ represent the number of copies Harald sold. According to the problem, Marilyn sold 10 times as many copies as Harald, so Marilyn sold $ 10H $ copies.\n\n2. **Set Up the Equation**: The total number of copies sold by both is given as 88,000. This means:\n   $$\n   H + 10H = 88,000\n   $$\n\n3. **Simplify the Equation**: Combine like terms:\n   $$\n   11H = 88,000\n   $$\n\n4. **Solve for $ H $**: Divide both sides of the equation by 11 to isolate $ H $:\n   $$\n   H = \\frac{88,000}{11}\n   $$\n\n   What is $ \\frac{88,000}{11} $? Try calculating this value. Once you find $ H $, you can confirm your answer by checking if $ H + 10H = 88,000 $.\n\nWould you like to calculate $ \\frac{88,000}{11} $ now?"
+        },
+        "dose_2": {
+          "leak": false,
+          "empty": false,
+          "output_tokens": 754,
+          "degenerate": false,
+          "final_reply": "To solve this problem, start by defining a variable for the unknown quantity. Let\u2019s let **H** represent the number of copies Harald sold. According to the problem, Marilyn sold **10 times as many** copies as Harald, so Marilyn sold **10H** copies. \n\nNow, the total number of copies sold by both is given as **88,000**. This gives us the equation:\n\n$$\nH + 10H = 88,000\n$$\n\nSimplify the left side of the equation:\n\n$$\n11H = 88,000\n$$\n\nTo find **H**, divide both sides of the equation by 11:\n\n$$\nH = \\frac{88,000}{11}\n$$\n\nNow, calculate the value of **H**. What is **88,000 \u00f7 11**? Once you find this, that will be the number of copies Harald sold. After finding **H**, you can check your answer by calculating Marilyn\u2019s sales (10 \u00d7 H) and verifying that the total matches 88,000. \n\nTry solving this step-by-step and let me know if you need help with the calculation!"
+        },
+        "dose_4": {
+          "leak": false,
+          "empty": false,
+          "output_tokens": 843,
+          "degenerate": false,
+          "final_reply": "To solve this problem, let's break it down step by step. \n\n1. **Define Variables**: Let $ H $ represent the number of copies Harald sold. Since Marilyn sold 10 times as many copies as Harald, Marilyn sold $ 10H $ copies.\n\n2. **Set Up the Equation**: The total number of copies sold by both is given as 88,000. This means:\n   $$\n   H + 10H = 88,000\n   $$\n\n3. **Simplify the Equation**: Combine like terms:\n   $$\n   11H = 88,000\n   $$\n\n4. **Solve for $ H $**: Divide both sides of the equation by 11 to find $ H $:\n   $$\n   H = \\frac{88,000}{11}\n   $$\n\n   Perform the division to find the value of $ H $.\n\n5. **Verify the Answer**: Once you calculate $ H $, check your answer by multiplying it by 10 (to find Marilyn's sales) and adding it to $ H $ to ensure the total is 88,000.\n\nNow, try calculating $ H $ using the equation above. What do you get?"
+        },
+        "dose_8": {
+          "leak": false,
+          "empty": false,
+          "output_tokens": 878,
+          "degenerate": false,
+          "final_reply": "To solve this problem, let's define the unknown quantity and set up an equation based on the information given.\n\n---\n\n### Step 1: Define the Variables\n\nLet\u2019s let **H** represent the number of copies Harald sold. According to the problem, Marilyn sold **10 times as many copies** as Harald. So Marilyn sold **10H** copies.\n\n---\n\n### Step 2: Use the Total Sales\n\nThe problem states that **together**, Harald and Marilyn sold **88,000** copies. So, we can write the equation:\n\n$$\nH + 10H = 88,000\n$$\n\nCombine like terms:\n\n$$\n11H = 88,000\n$$\n\n---\n\n### Step 3: Solve for H\n\nNow, solve for **H** by dividing both sides of the equation by 11:\n\n$$\nH = \\frac{88,000}{11}\n$$\n\nCan you compute that value? Once you find **H**, that will give you the number of copies Harald sold.\n\n---\n\n### Step 4: Verify Your Answer\n\nAfter finding **H**, you can check your answer by calculating Marilyn's sales as **10H** and adding it to **H** to ensure the total is **88,000**.\n\nLet me know if you'd like help with the division step or verifying your answer!"
+        }
+      }
+    }
+  ]
+}

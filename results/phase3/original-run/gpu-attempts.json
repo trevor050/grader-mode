@@ -1,0 +1,38 @@
+[
+  {
+    "run_id": "phase3-20261020",
+    "status": "failed_or_cancelled",
+    "started_unix": 1792549321.7601862,
+    "previous_seconds": 0,
+    "gpu": "L40S",
+    "rate_usd_per_hour": 1.9511999999999998,
+    "timeout_seconds": 12615,
+    "call_id": "fc-01M5E47ZQ234ZMW5M3MJ841399",
+    "observed_wall_seconds": 287.20493287499994,
+    "wall_seconds": 348.52836084365845,
+    "accounting_basis": "observed allocation wall time",
+    "ended_unix": 1792549670.288548,
+    "discarded": true,
+    "reason": "padding EOS token mistaken for real system turn end during screening",
+    "zero_containers_verified_unix": 1792549670.288546
+  },
+  {
+    "run_id": "phase3-20261020-v2",
+    "status": "failed",
+    "started_unix": 1792549699.264543,
+    "previous_seconds": 348.52836084365845,
+    "gpu": "L40S",
+    "rate_usd_per_hour": 1.9511999999999998,
+    "timeout_seconds": 12266,
+    "call_id": "fc-01M5E4KGC0HGY4YRCJ41BRE5GF",
+    "function_seconds": 4940.205334442,
+    "observed_wall_seconds": 4944.944508332992,
+    "wall_seconds": 4947.122383117676,
+    "accounting_basis": "allocation start through first observed zero containers; includes provisioning, controller and shutdown",
+    "ended_unix": 1792554646.3869262,
+    "zero_containers_verified_unix": 1792554646.3869262,
+    "controller_wall_seconds": 4944.944508332992,
+    "shutdown_observer_terminal_unix": 1792554645.41769,
+    "controller_ended_unix": 1792554644.155574
+  }
+]

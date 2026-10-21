@@ -10,3 +10,7 @@ results/phase1c*/handcheck_*.csv
 # Phase 2 local controller state.
 results/phase2/run.lock
 results/phase2/progress.json
+
+# Phase 3 local controller state.
+results/phase3/run.lock
+results/phase3/progress.json

@@ -1,0 +1,56 @@
+[
+  {
+    "eligible": true,
+    "rendered_prompt_sha256": "518d57c90ce478e071eaf8e599e004500a72ddffbec63710c18e728d983a3f32",
+    "response_sha256": "5a5a99646713033f7a9eb966a6f23db2e3bc4f243ea79618cd113d6e4964f21f",
+    "final_char_offset": 6139,
+    "full_char_offset": 6965,
+    "response_prefix_sha256": "eb6eb8e9f4321595d24d9b60bc872dbff1dc21f3a3181cf9e2a2bf765192b0dd",
+    "full_prefix_sha256": "eec80bc49659166f5600cfbfbfc0f7b04a2f6e36812614cf907911afeabe49c4",
+    "token_prefix_sha256": "7cebdfc070e484aac4a60b87e66bcd89d8de61996df35eb88da9d0d148b7e8e3",
+    "token_prefix_verified": true,
+    "prompt_token_count": 172,
+    "input_token_count": 1838,
+    "last_input_offset": [
+      6963,
+      6965
+    ],
+    "actual_next_token_id": 1249,
+    "probe_index": 0,
+    "source_request_id": "phase1b:p0847:none:boxed:t0:tutor:thinking-1",
+    "explorer_baseline_id": "phase3-explore-20261021-a:phase1b:p0847:none:boxed:t0:tutor:thinking-1:baseline",
+    "baseline_row_sha256": "343e32027ae6f7af5854012462886dfc399c0576fec5bb451c6136302f820d9c"
+  },
+  {
+    "eligible": false,
+    "rendered_prompt_sha256": "09e9ffb3a121c84c7e8748823fe95fe7e230c43c2b24dd8fa4e4cdb5a00ed68b",
+    "response_sha256": "6073daf0808ca790f00cd43202e76a75d5f5ffdc1c0943782b36b9eed72f620f",
+    "exclusion": "missing_closed_think",
+    "probe_index": 1,
+    "source_request_id": "phase1b:p0923:none:boxed:t0:tutor:thinking-1",
+    "explorer_baseline_id": "phase3-explore-20261021-a:phase1b:p0923:none:boxed:t0:tutor:thinking-1:baseline",
+    "baseline_row_sha256": "0688fca3d4767af28314e3f7b20c8e429a6dc1025a0dd3dcd99cf8985a2ba563"
+  },
+  {
+    "eligible": true,
+    "rendered_prompt_sha256": "cd86d44d4d501236f762b16f6a5557cf8777da6ae3fa2e545a53eed2112e3512",
+    "response_sha256": "15e5d5c1b4a7f6c806d739fb75291b3de058428dfaca75079e6f068c884b9739",
+    "final_char_offset": 1828,
+    "full_char_offset": 2611,
+    "response_prefix_sha256": "fbe80e10fa493b5eaa31aec035a679a1b6166d15ba0c6d69b04eebd6198121fe",
+    "full_prefix_sha256": "93aca1725bd1647a4de8791249cdacb5f8d6aa2ebd9d393e1c16e96540c7c1cb",
+    "token_prefix_sha256": "951094cf5859581dd172167e103af09b14e9c98d74378eca5f3df7d8c127eb03",
+    "token_prefix_verified": true,
+    "prompt_token_count": 171,
+    "input_token_count": 793,
+    "last_input_offset": [
+      2609,
+      2611
+    ],
+    "actual_next_token_id": 1249,
+    "probe_index": 2,
+    "source_request_id": "phase1b:p0088:none:boxed:t0:tutor:thinking-1",
+    "explorer_baseline_id": "phase3-explore-20261021-a:phase1b:p0088:none:boxed:t0:tutor:thinking-1:baseline",
+    "baseline_row_sha256": "6d02b81df14ecac6afc12436c8d019abe5007b4d18048c8823dd1d2ae4b6ec72"
+  }
+]

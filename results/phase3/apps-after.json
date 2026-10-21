@@ -1,0 +1,42 @@
+[
+  {
+    "app_id": "ap-f4Gt8vBGwRvQk3mXMm5E5T",
+    "description": "grader-mode-phase3-logit-probe",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-21 00:21:14-04:00",
+    "stopped_at": "2026-10-21 00:23:02-04:00"
+  },
+  {
+    "app_id": "ap-2c4KY1e0RwC34bs1g2NY1D",
+    "description": "grader-mode-phase3-explore",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-21 00:06:09-04:00",
+    "stopped_at": "2026-10-21 00:20:42-04:00"
+  },
+  {
+    "app_id": "ap-UyfB6mVem7KpN4onaCg0En",
+    "description": "grader-mode-phase3-resume",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-20 23:56:25-04:00",
+    "stopped_at": "2026-10-21 00:01:20-04:00"
+  },
+  {
+    "app_id": "ap-ug4Ofcja2FG63GBvGbA3Fx",
+    "description": "grader-mode-phase3",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-20 22:28:15-04:00",
+    "stopped_at": "2026-10-20 23:50:48-04:00"
+  },
+  {
+    "app_id": "ap-OfoccdxriqmaPqO9UpCFDQ",
+    "description": "grader-mode-phase3",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-20 22:21:56-04:00",
+    "stopped_at": "2026-10-20 22:26:56-04:00"
+  }
+]

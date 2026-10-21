@@ -1,0 +1,9 @@
+{
+  "exit_code": 0,
+  "started_unix": 1792550611.249037,
+  "finished_unix": 1792550656.214983,
+  "command": "uv run pytest -q",
+  "passed": 702,
+  "elapsed_seconds": 163.04,
+  "scope": "full suite after all final source changes, including the no-retry logit-budget regression"
+}

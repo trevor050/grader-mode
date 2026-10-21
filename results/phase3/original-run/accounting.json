@@ -1,0 +1,127 @@
+{
+  "recorded_at_utc": "2026-10-21T03:53:58.813457+00:00",
+  "run_id": "phase3-20261020-v2",
+  "rate_usd_per_gpu_second": 0.000542,
+  "rate_usd_per_gpu_hour": 1.9512,
+  "rate_source": "https://modal.com/pricing",
+  "prior_phase2_rounded_usd_per_hour": 1.95,
+  "cap_gpu_usd": 7,
+  "gpu_allocation_seconds_upper": 5295.650743961334,
+  "gpu_allocation_hours_upper": 1.471014095544815,
+  "gpu_usd_upper": 2.870242703227043,
+  "remaining_cap_usd": 4.129757296772957,
+  "cap_respected": true,
+  "completed_function_seconds": 4940.205334442,
+  "completed_function_seconds_basis": "Elapsed reported by the returned Modal call; study status is recorded separately.",
+  "study_status": "failed",
+  "experiment_completed": false,
+  "current_function_seconds": 4940.205334442,
+  "discarded_or_failed_allocation_seconds": 5295.650743961334,
+  "current_attempt_allocation_seconds": 4947.122383117676,
+  "n_attempts": 2,
+  "n_nonspawned_attempts": 0,
+  "phase3_running_containers": 0,
+  "workspace_running_containers": 0,
+  "phase3_running_apps": 0,
+  "zero_containers_observed_unix": 1792554646.3869262,
+  "allocation_bound_includes_provisioning_pull_and_all_discarded_runs": true,
+  "cpu_memory_separate_from_gpu_cap": true,
+  "cpu_memory_requested_resources": {
+    "physical_cpu_cores": 4,
+    "memory_gib": 32
+  },
+  "cpu_memory_reference_rates": {
+    "cpu_usd_per_core_second": 1.31e-05,
+    "memory_usd_per_gib_second": 2.22e-06
+  },
+  "cpu_memory_request_rate_usd_per_second": 0.00012344,
+  "cpu_memory_request_rate_times_conservative_allocation_wall_usd": 0.653695127834587,
+  "cpu_memory_accounting_note": "Request-rate reference over conservative wall time; not actual billed cost or an upper bound. CPU/memory are metered at higher of requested and used resources. Billing is workspace-wide and may lag; no per-run CPU/memory split is exposed in these snapshots.",
+  "workspace_billing_before": {
+    "metered_cost": "21.59343289",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "-0.30343289",
+      "credits": "-21.29000000",
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "llm_tokens": "0E-8",
+      "ephemeral_apps": "21.59232977",
+      "volumes": "0E-8"
+    }
+  },
+  "workspace_billing_at_launch": {
+    "metered_cost": "21.84343303",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "free_storage": "-0E-8",
+      "credits": "-21.54000000",
+      "network_egress_allowance": "-0.30343303",
+      "reservation_adjustment": "-0E-8",
+      "plan_cost": "0E-8"
+    },
+    "metered_cost_breakdown": {
+      "volumes": "0E-8",
+      "llm_tokens": "0E-8",
+      "ephemeral_apps": "21.84648690"
+    }
+  },
+  "workspace_billing_after": {
+    "metered_cost": "25.35343315",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "reservation_adjustment": "-0E-8",
+      "plan_cost": "0E-8",
+      "credits": "-25.05000000",
+      "free_storage": "-0E-8",
+      "network_egress_allowance": "-0.30343315"
+    },
+    "metered_cost_breakdown": {
+      "ephemeral_apps": "25.34880293",
+      "llm_tokens": "0E-8",
+      "volumes": "0E-8"
+    }
+  },
+  "workspace_billing_delta_from_before": {
+    "metered_cost": "3.76000026",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "free_storage": "0E-8",
+      "network_egress_allowance": "-2.6E-7",
+      "reservation_adjustment": "0E-8",
+      "plan_cost": "0E-8",
+      "credits": "-3.76000000"
+    },
+    "metered_cost_breakdown": {
+      "ephemeral_apps": "3.75647316",
+      "volumes": "0E-8",
+      "llm_tokens": "0E-8"
+    }
+  },
+  "workspace_billing_delta_from_current_launch": {
+    "metered_cost": "3.51000012",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "free_storage": "0E-8",
+      "network_egress_allowance": "-1.2E-7",
+      "reservation_adjustment": "0E-8",
+      "plan_cost": "0E-8",
+      "credits": "-3.51000000"
+    },
+    "metered_cost_breakdown": {
+      "ephemeral_apps": "3.50231603",
+      "volumes": "0E-8",
+      "llm_tokens": "0E-8"
+    }
+  },
+  "workspace_metered_cost": "25.35343315",
+  "workspace_billed_cost": "0E-8",
+  "billing_snapshot_unix": 1792554647.552017,
+  "workspace_billing_note": "Snapshots include other apps, adjustments and delayed updates; deltas do not replace the independent GPU allocation bound.",
+  "discarded_allocation_seconds": 348.52836084365845,
+  "original_v2_budget_gate_stopped_allocation_seconds": 4947.122383117676,
+  "original_v2_valid_tracking_and_development_retained": true
+}

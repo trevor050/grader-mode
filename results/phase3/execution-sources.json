@@ -1,0 +1,19 @@
+{
+  "DESIGN.md": "77b9124116fcdc11c6b7a25f40d6b3fb78d0e9d510442d3cdde0226ba2fbe4eb",
+  "AGENTS.md": "6d1186453b269c8471f0e0547b4e44f90e258b31599ad08c6b41ce20715a0c6a",
+  "docs/phase3-methods.md": "a3c2eebfe3a8469ad3207cee6b4cd52b03d6c6e8d15547af1484dae42dcd772d",
+  "prompts/system_tutor.txt": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11",
+  "prompts/system_neutral.txt": "7460e45c0d100bd1c477aedf6b4be3d2fcc5823a73a5c8122c3ff26735842eca",
+  "prompts/templates_1b.json": "cc5971cea9793fefb141bb8f514c109fc798989116d86eb6f3531bfbb8eec8a4",
+  "src/models.py": "3bd7b2223a6f793821d33ec63a5c0b7634a4bc57219f706a3220713f0a18b3d7",
+  "src/phase3.py": "5af0bd178b28a1929fc4b2f67aebfbf1200463abea3c485391a81a24e60cf6e6",
+  "src/modal_app_3.py": "faad784fa66b41ec46199f2c10fe705afab3608c26df6e2c7369ea6a5c625aa2",
+  "src/analyze_3.py": "23db5266a563310709def630bcb58c18dd6c24b8504e512f1e727ff8ecce1335",
+  "src/phase3_validation.py": "b99332c8f279ebd09c7b44fca219f61d1cc13cbe6493ab92a0c704bf3623376e",
+  "src/hf_decode.py": "85f6e7980f0685ad78961ce02db86dc9fdc59a0c95544f393c03f1b1ed4d77c7",
+  "src/score.py": "f8669db7bdfeb1e2009bf178c79e8c23ce76cdd3c43c8aae4ea42c8441deca07",
+  "src/analyze.py": "4cd74f45292313b5d1bdece1e4c109add53d5128587e5e4a4908d1e1bcccb4d1",
+  "tests/test_phase3.py": "544fb4c458f2d6a23903c21a445de09c63b9e3619a662f80987b47ac789a15e7",
+  "tests/test_analyze_3.py": "6c3a976e588e0e77a131c1e855621b08e52c67751567d2ea15bb05d794b3cba3",
+  "tests/test_phase3_validation.py": "d0784f542a106640c93dbe1c829d24cf88b467d28698ab15fd7d5dbdf770ad22"
+}

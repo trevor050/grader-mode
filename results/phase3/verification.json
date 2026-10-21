@@ -1,0 +1,45 @@
+{
+  "completed": false,
+  "h14_missing": true,
+  "validation_scope": "Original tracking and complete development batches; existing analyze API with generation_rows=None, not a full-generation CLI validation.",
+  "original_status": "failed",
+  "original_stop_reason": "ValueError: Reduced test grid exceeds GPU budget",
+  "n_tracking_rows": 400,
+  "n_source_labels_verified": 400,
+  "n_source_files_verified": 11,
+  "n_trajectories_verified": 400,
+  "n_dev_rows": 500,
+  "n_test_rows": 0,
+  "all_generation_scores_recomputed": 500,
+  "all_generation_prompt_hashes_match_phase1b": true,
+  "n_completed_batches": 25,
+  "independent_tracking_estimates_and_ci_verified": 6,
+  "original_controller_lock_released": true,
+  "pytest_passed": 702,
+  "pytest_scope": "full suite after all final source changes",
+  "raw_artifacts": {
+    "tracking.jsonl": {
+      "sha256": "3e942675283e38e9c2330fdeeeae6cec24f3052bed28a953fe79ac9c10f558e5",
+      "bytes": 759893
+    },
+    "generations.jsonl": {
+      "sha256": "cb976239a7fc236ad4a18aff631e3970e59b630eb1fe77105d337c74cf1a1e12",
+      "bytes": 5331548
+    },
+    "trajectories.npz": {
+      "sha256": "14aadc070fd5ea038b592b0ce5abf2001ee4ad5ed8af75807bfc38aa60e22c82",
+      "bytes": 9171188
+    }
+  },
+  "reproducible_partial_report_verified": true,
+  "partial_report_command": "uv run python -m src.phase3_report --source-run-id phase3-20261020-v2 --output-dir <fresh-directory>",
+  "h12_h13_h14_and_gold_ge_10_exact_reproduction": true,
+  "decile_rows_exact_reproduction": 180,
+  "exploratory_generation_rows_independently_rescored": 15,
+  "exploration_generated_cell_source_hashes_verified": true,
+  "exploratory_logit_contrasts_independently_recomputed": 20,
+  "exploratory_logit_maximum_recomputation_absolute_error": 1.1920928955078125e-07,
+  "all_attempts_closed_and_shutdown_charged": true,
+  "final_workspace_running_containers": 0,
+  "final_cap_respected": true
+}

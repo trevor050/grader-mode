@@ -1,0 +1,10 @@
+{
+  "source": "https://modal.com/pricing",
+  "checked_at_utc": "2026-10-21T02:42:15.222073+00:00",
+  "gpu": "L40S",
+  "gpu_usd_per_second": 0.000542,
+  "gpu_usd_per_hour": 1.9512,
+  "cpu_usd_per_physical_core_second": 1.31e-05,
+  "memory_usd_per_gib_second": 2.22e-06,
+  "billing_basis": "CPU and memory billed at requested resources or usage, whichever is higher; CPU physical cores equal two vCPUs. These charges are separate from the GPU cap."
+}

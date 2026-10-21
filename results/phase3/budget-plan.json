@@ -1,0 +1,31 @@
+{
+  "original_gate_failed": true,
+  "test_rows": 0,
+  "selected_templates": null,
+  "timing_seconds_per_request_with_20pct_headroom": 11.319902474771999,
+  "spent_seconds_at_gate_bounds": [
+    5286.892782126659,
+    5287.803518254658
+  ],
+  "reserve_seconds": 300,
+  "cap_gpu_usd": 7,
+  "gate_time_note": "Exact gate elapsed time was not persisted. Bounds use the last completed-development checkpoint and final unchanged function metrics.",
+  "projections": {
+    "2": {
+      "n_responses": 1400,
+      "test_seconds": 15847.863464680799,
+      "gpu_usd_bounds": [
+        11.617637885769641,
+        11.618131504751018
+      ]
+    },
+    "1": {
+      "n_responses": 700,
+      "test_seconds": 7923.931732340399,
+      "gpu_usd_bounds": [
+        7.322866886841145,
+        7.323360505822521
+      ]
+    }
+  }
+}

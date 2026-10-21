@@ -1,0 +1,13 @@
+{
+  "screen_dimensions": [
+    40,
+    17408
+  ],
+  "global_top20_and_all_control_sets_signs_verified": true,
+  "boundaries_verified": 800,
+  "system_token_counts": {
+    "tutor": 103,
+    "neutral": 96
+  },
+  "global_neuron_delta_and_cohen_d_formulas_verified": 696320
+}

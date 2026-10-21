@@ -1,0 +1,18 @@
+[
+  {
+    "app_id": "ap-ug4Ofcja2FG63GBvGbA3Fx",
+    "description": "grader-mode-phase3",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-20 22:28:15-04:00",
+    "stopped_at": "2026-10-20 23:50:48-04:00"
+  },
+  {
+    "app_id": "ap-OfoccdxriqmaPqO9UpCFDQ",
+    "description": "grader-mode-phase3",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-20 22:21:56-04:00",
+    "stopped_at": "2026-10-20 22:26:56-04:00"
+  }
+]
