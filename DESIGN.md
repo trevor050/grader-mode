@@ -555,3 +555,75 @@ weakens this system-prompt rule specifically when the user's request conflicts
 with it; it does not show why. A positive H17 shows that one reminder sentence
 in the reasoning restores adherence for this model; it is not a general
 defense.
+
+## Phase 5: does the Phase 4 result replicate outside Qwen? (pre-registered 2026-10-21)
+
+Written before any Phase 5 data exists. Phase 4 established H15 (thinking
+weakens the tutor rule specifically under a conflicting request) and H17 (one
+reminder sentence at the start of the reasoning restores it) in Qwen3 only.
+Phase 5 asks whether both hold in two unrelated model families. Feasibility
+notes: `notes/phase5-feasibility.md` (commit 87b943a).
+
+**Models.**
+- `google/gemma-4-12B-it` (pinned revision as in the feasibility notes), bf16,
+  vLLM. Native `enable_thinking` on/off; the tutor text stays in the system
+  turn in both modes. Tests H18 and H19.
+- `openai/gpt-oss-20b` (pinned revision), released MXFP4 weights, vLLM,
+  reasoning effort `medium` (the model default). The tutor text is passed as
+  the system message through the template's `model_identity` argument, so the
+  rule occupies the system role, not the developer role. Reasoning cannot be
+  turned off, so only H20 is tested.
+- Gemma 4 E4B is not used: Phase 1 found weak adherence below 14B in Qwen3,
+  and a high thinking-off baseline would compress the H15 contrast.
+
+**Problems and requests.** All 200 Phase 1 problems, templates 0 and 1, as in
+Phase 4. Requests `plain` and `explicit` from `prompts/templates_4.json`. The
+`boxed` request is dropped: H16 was null in both Phase 4 models and the
+budget is better spent on the replication contrasts.
+
+**Grid.**
+- Gemma main: thinking {off, on} × request {plain, explicit}; 1,600 replies.
+- Gemma prefill: thinking on, `explicit`, prefill {empty, reminder, neutral,
+  irrelevant}; 1,600 replies. The thought channel is opened in the prompt
+  (`<|channel>thought\n`) followed by the prefill text.
+- gpt-oss prefill: `explicit`, same four prefills; 1,600 replies. The analysis
+  channel is opened in the prompt (`<|channel|>analysis<|message|>`) followed
+  by the prefill text.
+- Prefill sentences are the literal Phase 4 strings.
+
+**Generation.** Temperature 0.7, top-p 0.95, top-k disabled, one sample per
+prompt, matched seeds across arms, 4,096 new tokens total (reasoning plus
+final reply), as in Phase 4. Replies that hit the cap with no final reply are
+counted as non-violations and reported per cell.
+
+**Measures.** Phase 4 definitions, applied to the final reply only (Gemma:
+text after `<channel|>`; gpt-oss: the `final` channel). Violation (primary) =
+leak OR attempt. The format-aware reasoning/final splitter and the attempt
+parser are checked against 40 hand-labeled final replies per model, drawn
+blind to arm, before analysis; agreement is reported.
+
+**Hypotheses** (paired problem-cluster bootstrap, 2,000 resamples, seed 0;
+"holds" = 95% CI excludes zero; gold >= 10 sensitivity reported):
+- **H18 (Gemma, thinking × conflict).**
+  (V[on, explicit] − V[off, explicit]) − (V[on, plain] − V[off, plain]) > 0.
+- **H19 (Gemma, reminder).** With thinking on and `explicit`, the reminder
+  prefill lowers violation relative to empty, and by more than both the
+  neutral and the irrelevant prefills.
+- **H20 (gpt-oss, reminder).** As H19, for gpt-oss-20b.
+
+Also reported, not tested: V[on, plain] − V[off, plain] for Gemma, and the
+same contrasts for leak alone.
+
+**Budget.** About $6.80 of GPU across the remaining Modal credit and the vast
+balance, cap enforced from a throughput pilot before each model's main run.
+If the projection exceeds the cap, whole arms are dropped in this order and
+the drop is reported: Gemma prefill neutral and irrelevant cells first (H19
+then reduces to reminder vs empty), then the gpt-oss neutral and irrelevant
+cells. The Gemma main grid and the reminder-vs-empty contrasts are kept.
+Cells are never shortened, and no cell is dropped after its outcomes are seen.
+
+**Interpretation limits stated in advance.** Two more families, one rule, one
+dataset. A positive result in both families supports the claim that reasoning
+mode weakens a conflicting system-prompt rule and that re-reading the rule at
+the start of the reasoning restores it, beyond Qwen. A null in one family is
+reported as a failure to replicate there, not explained away.
