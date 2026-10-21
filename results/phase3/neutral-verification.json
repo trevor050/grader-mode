@@ -1,0 +1,26 @@
+{
+  "identical_saved_token_arrays": true,
+  "identical_offsets": true,
+  "identical_trace_order": true,
+  "n_traces": 400,
+  "n_reasoning_tokens": 398783,
+  "n_closed_reasoning": 374,
+  "n_source_excluded": 26,
+  "independent_tutor_overall_checks": [
+    "slope",
+    "decile_1",
+    "decile_2",
+    "decile_3",
+    "decile_4",
+    "decile_5",
+    "decile_6",
+    "decile_7",
+    "decile_8",
+    "decile_9",
+    "decile_10",
+    "reading"
+  ],
+  "reference": "numpy.linalg.lstsq slopes; direct raw-token bin means; src.analyze.bootstrap_estimate whole-problem sums/counts",
+  "tolerance": 1e-12,
+  "pytest": "713 passed"
+}

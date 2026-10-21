@@ -1,0 +1,76 @@
+{
+  "run_id": "phase3-neutral-20261021-v2",
+  "attempts": [
+    {
+      "run_id": "phase3-neutral-20261021",
+      "status": "failed_or_cancelled",
+      "started_unix": 1792557220.9182248,
+      "gpu": "L40S",
+      "previous_seconds": 0,
+      "exposure_seconds": 4612.546125461255,
+      "timeout_seconds": 4372,
+      "absolute_deadline_unix": 1792561713.4643502,
+      "call_id": "fc-01M5EBS1W7SSACPWYC76WM26SS",
+      "error": "RemoteError: ",
+      "zero_containers_verified_unix": 1792557254.411327,
+      "ended_unix": 1792557254.411339,
+      "observed_wall_seconds": 33.49311327934265,
+      "wall_seconds": 33.49311327934265
+    },
+    {
+      "run_id": "phase3-neutral-20261021-v2",
+      "status": "completed",
+      "started_unix": 1792557284.680577,
+      "gpu": "L40S",
+      "previous_seconds": 33.49311327934265,
+      "exposure_seconds": 4579.053012181912,
+      "timeout_seconds": 4339,
+      "absolute_deadline_unix": 1792561743.7335892,
+      "call_id": "fc-01M5EBV05S5Z9FKW5WGJP4SMTF",
+      "function_seconds": 216.792962598,
+      "n_traces": 400,
+      "zero_containers_verified_unix": 1792557543.8133261,
+      "ended_unix": 1792557543.813351,
+      "observed_wall_seconds": 259.1327669620514,
+      "wall_seconds": 259.1327669620514
+    }
+  ],
+  "gpu_usd_upper": 0.15860322709083555,
+  "zero_containers_verified": true,
+  "cap_gpu_usd": 2.5,
+  "rate_usd_per_gpu_second": 0.000542,
+  "accounting_basis": "local submission through verified zero containers, including provisioning and failures",
+  "billing_before": {
+    "metered_cost": "25.90343350",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "network_egress_allowance": "-0.30343350",
+      "credits": "-25.60000000",
+      "plan_cost": "0E-8",
+      "reservation_adjustment": "-0E-8",
+      "free_storage": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "volumes": "0E-8",
+      "ephemeral_apps": "25.90807086",
+      "llm_tokens": "0E-8"
+    }
+  },
+  "billing_after": {
+    "metered_cost": "25.99343361",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8",
+      "credits": "-25.69000000",
+      "network_egress_allowance": "-0.30343361",
+      "plan_cost": "0E-8"
+    },
+    "metered_cost_breakdown": {
+      "ephemeral_apps": "25.98924221",
+      "llm_tokens": "0E-8",
+      "volumes": "0E-8"
+    }
+  },
+  "recovery_errors": []
+}

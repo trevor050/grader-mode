@@ -1,0 +1,12 @@
+{
+  "run_id": "phase3-neutral-20261021",
+  "app_id": "ap-3vqKxkDia3xbdmMA7vWBx7",
+  "stage": "worker_import",
+  "error": "ModuleNotFoundError: No module named 'pandas'",
+  "import_chain": ["src.modal_app_3_neutral", "src.phase3_neutral", "src.analyze_3", "pandas"],
+  "data_collected": false,
+  "recovery_error": "NotFoundError: No such file or directory",
+  "shutdown": "app stopped; zero containers verified in neutral-gpu-attempts.json",
+  "correction": "Import local analysis dependency only inside CPU-only functions; regression blocks pandas/scipy/statsmodels during worker import.",
+  "charged_to_same_cap": true
+}

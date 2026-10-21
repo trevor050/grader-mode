@@ -1,0 +1,2957 @@
+{
+  "bootstrap": {
+    "resamples": 2000,
+    "seed": 0,
+    "unit": "problem_idx",
+    "interval": "percentile 95%",
+    "paired": true
+  },
+  "n_traces": 400,
+  "n_problems": 100,
+  "token_identity_verified": 400,
+  "weighting": "trace mean; whole-problem paired resamples; source empty-final labels excluded only from outcome strata",
+  "deciles": [
+    {
+      "set": "tutor",
+      "outcome": "all",
+      "estimate": 0.19989535848842047,
+      "ci95": [
+        0.18727236931503027,
+        0.21335242289689443
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 1
+    },
+    {
+      "set": "tutor",
+      "outcome": "leak",
+      "estimate": 0.18164372973977477,
+      "ci95": [
+        0.1685680062417811,
+        0.1950387045159498
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 1
+    },
+    {
+      "set": "tutor",
+      "outcome": "nonleak",
+      "estimate": 0.22042844083064697,
+      "ci95": [
+        0.20083784597026175,
+        0.2409198310208811
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 1
+    },
+    {
+      "set": "control_0",
+      "outcome": "all",
+      "estimate": -0.1475434197341383,
+      "ci95": [
+        -0.16891533977160111,
+        -0.12714416744673263
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 1
+    },
+    {
+      "set": "control_0",
+      "outcome": "leak",
+      "estimate": -0.1282168165619707,
+      "ci95": [
+        -0.15076909700893917,
+        -0.10760520470780027
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 1
+    },
+    {
+      "set": "control_0",
+      "outcome": "nonleak",
+      "estimate": -0.1692858483028268,
+      "ci95": [
+        -0.2006454206566541,
+        -0.13556526840866712
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 1
+    },
+    {
+      "set": "control_1",
+      "outcome": "all",
+      "estimate": 0.08341191092633005,
+      "ci95": [
+        0.07168920464932062,
+        0.09512977274176994
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 1
+    },
+    {
+      "set": "control_1",
+      "outcome": "leak",
+      "estimate": 0.05682044404473881,
+      "ci95": [
+        0.04840309805882743,
+        0.0659242490855236
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 1
+    },
+    {
+      "set": "control_1",
+      "outcome": "nonleak",
+      "estimate": 0.1133273111681202,
+      "ci95": [
+        0.09571182403807654,
+        0.13041357093723588
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 1
+    },
+    {
+      "set": "control_2",
+      "outcome": "all",
+      "estimate": -0.08191137385771226,
+      "ci95": [
+        -0.0918292321487166,
+        -0.07227851168414397
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 1
+    },
+    {
+      "set": "control_2",
+      "outcome": "leak",
+      "estimate": -0.07465944323232848,
+      "ci95": [
+        -0.08494371797309852,
+        -0.06463250621572916
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 1
+    },
+    {
+      "set": "control_2",
+      "outcome": "nonleak",
+      "estimate": -0.09006979581126898,
+      "ci95": [
+        -0.10477286656650553,
+        -0.07599976057520486
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 1
+    },
+    {
+      "set": "control_3",
+      "outcome": "all",
+      "estimate": 0.020044929601018557,
+      "ci95": [
+        0.012753080276205035,
+        0.02731111065143813
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 1
+    },
+    {
+      "set": "control_3",
+      "outcome": "leak",
+      "estimate": 0.0087298593221567,
+      "ci95": [
+        0.001430993052587021,
+        0.015619214644487942
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 1
+    },
+    {
+      "set": "control_3",
+      "outcome": "nonleak",
+      "estimate": 0.032774383664738144,
+      "ci95": [
+        0.021724602431745527,
+        0.04408455598820089
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 1
+    },
+    {
+      "set": "control_4",
+      "outcome": "all",
+      "estimate": -0.17709308136908705,
+      "ci95": [
+        -0.1891952447547854,
+        -0.16535819378838107
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 1
+    },
+    {
+      "set": "control_4",
+      "outcome": "leak",
+      "estimate": -0.17107698381606215,
+      "ci95": [
+        -0.1849299649549397,
+        -0.1573891937936766
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 1
+    },
+    {
+      "set": "control_4",
+      "outcome": "nonleak",
+      "estimate": -0.18386119111624016,
+      "ci95": [
+        -0.2009776411317927,
+        -0.16645601121257153
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 1
+    },
+    {
+      "set": "tutor",
+      "outcome": "all",
+      "estimate": 0.12595425887252232,
+      "ci95": [
+        0.11164551411023907,
+        0.140275729319675
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 2
+    },
+    {
+      "set": "tutor",
+      "outcome": "leak",
+      "estimate": 0.10927162154124391,
+      "ci95": [
+        0.09712928940989786,
+        0.1212940319902002
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 2
+    },
+    {
+      "set": "tutor",
+      "outcome": "nonleak",
+      "estimate": 0.14472222587021052,
+      "ci95": [
+        0.12171295068726402,
+        0.16760026838162528
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 2
+    },
+    {
+      "set": "control_0",
+      "outcome": "all",
+      "estimate": -0.02830441151496128,
+      "ci95": [
+        -0.0426745046439466,
+        -0.014399279091985188
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 2
+    },
+    {
+      "set": "control_0",
+      "outcome": "leak",
+      "estimate": -0.02978184933496832,
+      "ci95": [
+        -0.0470237771881316,
+        -0.012963216803749126
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 2
+    },
+    {
+      "set": "control_0",
+      "outcome": "nonleak",
+      "estimate": -0.026642293967453354,
+      "ci95": [
+        -0.04672278127840187,
+        -0.007592131801009521
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 2
+    },
+    {
+      "set": "control_1",
+      "outcome": "all",
+      "estimate": 0.021497871314741835,
+      "ci95": [
+        0.016338960511239963,
+        0.026554263772267307
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 2
+    },
+    {
+      "set": "control_1",
+      "outcome": "leak",
+      "estimate": 0.018250175742658515,
+      "ci95": [
+        0.01249382677856318,
+        0.024134823381256384
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 2
+    },
+    {
+      "set": "control_1",
+      "outcome": "nonleak",
+      "estimate": 0.025151528833335567,
+      "ci95": [
+        0.017222932439931053,
+        0.0330241399029402
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 2
+    },
+    {
+      "set": "control_2",
+      "outcome": "all",
+      "estimate": -0.04428123335043632,
+      "ci95": [
+        -0.052055699937553254,
+        -0.037354988348130926
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 2
+    },
+    {
+      "set": "control_2",
+      "outcome": "leak",
+      "estimate": -0.03720680265423152,
+      "ci95": [
+        -0.04590586485666932,
+        -0.029794516721581024
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 2
+    },
+    {
+      "set": "control_2",
+      "outcome": "nonleak",
+      "estimate": -0.05223996788366667,
+      "ci95": [
+        -0.06251682079458183,
+        -0.041702329385483655
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 2
+    },
+    {
+      "set": "control_3",
+      "outcome": "all",
+      "estimate": 0.0012479619764921856,
+      "ci95": [
+        -0.004191291234543157,
+        0.007158102898771469
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 2
+    },
+    {
+      "set": "control_3",
+      "outcome": "leak",
+      "estimate": -0.006937907241804522,
+      "ci95": [
+        -0.013129246575644035,
+        -0.0010227756723130439
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 2
+    },
+    {
+      "set": "control_3",
+      "outcome": "nonleak",
+      "estimate": 0.01045706484707598,
+      "ci95": [
+        0.0029224421982153325,
+        0.01907422588532374
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 2
+    },
+    {
+      "set": "control_4",
+      "outcome": "all",
+      "estimate": -0.1402616365035333,
+      "ci95": [
+        -0.15263812734218232,
+        -0.12826467069550673
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 2
+    },
+    {
+      "set": "control_4",
+      "outcome": "leak",
+      "estimate": -0.11862279915973534,
+      "ci95": [
+        -0.13143755110873456,
+        -0.1058553138415454
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 2
+    },
+    {
+      "set": "control_4",
+      "outcome": "nonleak",
+      "estimate": -0.16460532851530604,
+      "ci95": [
+        -0.18334053490529112,
+        -0.14577077010647727
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 2
+    },
+    {
+      "set": "tutor",
+      "outcome": "all",
+      "estimate": 0.15736937272328347,
+      "ci95": [
+        0.1402959209394804,
+        0.17406851574041085
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 3
+    },
+    {
+      "set": "tutor",
+      "outcome": "leak",
+      "estimate": 0.13874383953491298,
+      "ci95": [
+        0.12252292585142288,
+        0.15580850733431853
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 3
+    },
+    {
+      "set": "tutor",
+      "outcome": "nonleak",
+      "estimate": 0.1783230975602003,
+      "ci95": [
+        0.15385728244040991,
+        0.20254295530673416
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 3
+    },
+    {
+      "set": "control_0",
+      "outcome": "all",
+      "estimate": -0.01887810617169046,
+      "ci95": [
+        -0.03387041749111989,
+        -0.004398555925317417
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 3
+    },
+    {
+      "set": "control_0",
+      "outcome": "leak",
+      "estimate": -0.031101156719960377,
+      "ci95": [
+        -0.046857279948462296,
+        -0.016349394230951757
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 3
+    },
+    {
+      "set": "control_0",
+      "outcome": "nonleak",
+      "estimate": -0.005127174304886805,
+      "ci95": [
+        -0.027629037292238506,
+        0.01727742090479547
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 3
+    },
+    {
+      "set": "control_1",
+      "outcome": "all",
+      "estimate": 0.026817994661348304,
+      "ci95": [
+        0.021710723097813644,
+        0.031622630483831134
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 3
+    },
+    {
+      "set": "control_1",
+      "outcome": "leak",
+      "estimate": 0.02666192174270749,
+      "ci95": [
+        0.021126585123295037,
+        0.03214204388577087
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 3
+    },
+    {
+      "set": "control_1",
+      "outcome": "nonleak",
+      "estimate": 0.026993576694819225,
+      "ci95": [
+        0.018513615153202934,
+        0.035537035683735924
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 3
+    },
+    {
+      "set": "control_2",
+      "outcome": "all",
+      "estimate": -0.028445127736656067,
+      "ci95": [
+        -0.035037505410271466,
+        -0.022217497807226445
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 3
+    },
+    {
+      "set": "control_2",
+      "outcome": "leak",
+      "estimate": -0.025185842367307764,
+      "ci95": [
+        -0.031103942342643378,
+        -0.019800835058965245
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 3
+    },
+    {
+      "set": "control_2",
+      "outcome": "nonleak",
+      "estimate": -0.03211182377717292,
+      "ci95": [
+        -0.04334497883478277,
+        -0.020556590900016665
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 3
+    },
+    {
+      "set": "control_3",
+      "outcome": "all",
+      "estimate": -0.004207577367031662,
+      "ci95": [
+        -0.009302238515873822,
+        0.00047794614011784857
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 3
+    },
+    {
+      "set": "control_3",
+      "outcome": "leak",
+      "estimate": -0.008162069612760205,
+      "ci95": [
+        -0.014693544773943386,
+        -0.002494112575727834
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 3
+    },
+    {
+      "set": "control_3",
+      "outcome": "nonleak",
+      "estimate": 0.00024122640941294895,
+      "ci95": [
+        -0.006485972185478868,
+        0.007084690576330447
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 3
+    },
+    {
+      "set": "control_4",
+      "outcome": "all",
+      "estimate": -0.11625963493687275,
+      "ci95": [
+        -0.1288124746416843,
+        -0.10485629395605482
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 3
+    },
+    {
+      "set": "control_4",
+      "outcome": "leak",
+      "estimate": -0.09332190341325179,
+      "ci95": [
+        -0.10521383213804002,
+        -0.08189006978174294
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 3
+    },
+    {
+      "set": "control_4",
+      "outcome": "nonleak",
+      "estimate": -0.14206458290094626,
+      "ci95": [
+        -0.16033020275429424,
+        -0.12404399715122513
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 3
+    },
+    {
+      "set": "tutor",
+      "outcome": "all",
+      "estimate": 0.16069649379599338,
+      "ci95": [
+        0.14388730715641887,
+        0.17921969989751668
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 4
+    },
+    {
+      "set": "tutor",
+      "outcome": "leak",
+      "estimate": 0.1453086174454079,
+      "ci95": [
+        0.1263355017099656,
+        0.16561422892416552
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 4
+    },
+    {
+      "set": "tutor",
+      "outcome": "nonleak",
+      "estimate": 0.17800785469040198,
+      "ci95": [
+        0.1519630209209542,
+        0.20570451282731525
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 4
+    },
+    {
+      "set": "control_0",
+      "outcome": "all",
+      "estimate": -0.01245956132095869,
+      "ci95": [
+        -0.026787844731682345,
+        0.0009211074986356273
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 4
+    },
+    {
+      "set": "control_0",
+      "outcome": "leak",
+      "estimate": -0.026432630108354522,
+      "ci95": [
+        -0.041076141115894006,
+        -0.011146059532633175
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 4
+    },
+    {
+      "set": "control_0",
+      "outcome": "nonleak",
+      "estimate": 0.0032601410648616176,
+      "ci95": [
+        -0.018464494972367657,
+        0.02388680980506131
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 4
+    },
+    {
+      "set": "control_1",
+      "outcome": "all",
+      "estimate": 0.0272098098199552,
+      "ci95": [
+        0.02216710959057136,
+        0.03246150342224197
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 4
+    },
+    {
+      "set": "control_1",
+      "outcome": "leak",
+      "estimate": 0.030391468489651522,
+      "ci95": [
+        0.02482300803596495,
+        0.03603105103663014
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 4
+    },
+    {
+      "set": "control_1",
+      "outcome": "nonleak",
+      "estimate": 0.02363044381654684,
+      "ci95": [
+        0.01583592075801823,
+        0.03119061116919877
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 4
+    },
+    {
+      "set": "control_2",
+      "outcome": "all",
+      "estimate": -0.030484419780800447,
+      "ci95": [
+        -0.036719891809957377,
+        -0.0244958387051818
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 4
+    },
+    {
+      "set": "control_2",
+      "outcome": "leak",
+      "estimate": -0.025931757398372515,
+      "ci95": [
+        -0.032098262466385426,
+        -0.02061612501724916
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 4
+    },
+    {
+      "set": "control_2",
+      "outcome": "nonleak",
+      "estimate": -0.03560616496103187,
+      "ci95": [
+        -0.046542483954107955,
+        -0.025809243555875196
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 4
+    },
+    {
+      "set": "control_3",
+      "outcome": "all",
+      "estimate": -0.007190501855815098,
+      "ci95": [
+        -0.011307444201426264,
+        -0.003359912792392093
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 4
+    },
+    {
+      "set": "control_3",
+      "outcome": "leak",
+      "estimate": -0.007749675246861109,
+      "ci95": [
+        -0.013279763378727386,
+        -0.0023973092997084215
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 4
+    },
+    {
+      "set": "control_3",
+      "outcome": "nonleak",
+      "estimate": -0.006561431790888336,
+      "ci95": [
+        -0.01207291610256386,
+        -0.0012438521322675523
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 4
+    },
+    {
+      "set": "control_4",
+      "outcome": "all",
+      "estimate": -0.10397871819396812,
+      "ci95": [
+        -0.11492074346630722,
+        -0.09311846557117509
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 4
+    },
+    {
+      "set": "control_4",
+      "outcome": "leak",
+      "estimate": -0.08196408032062777,
+      "ci95": [
+        -0.09150731477795034,
+        -0.07274041994383858
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 4
+    },
+    {
+      "set": "control_4",
+      "outcome": "nonleak",
+      "estimate": -0.128745185801476,
+      "ci95": [
+        -0.1448380489158335,
+        -0.11181873071120862
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 4
+    },
+    {
+      "set": "tutor",
+      "outcome": "all",
+      "estimate": 0.18804019055341017,
+      "ci95": [
+        0.1607859943744491,
+        0.2171531371040653
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 5
+    },
+    {
+      "set": "tutor",
+      "outcome": "leak",
+      "estimate": 0.14680215964884952,
+      "ci95": [
+        0.12488346868545047,
+        0.17185226377916504
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 5
+    },
+    {
+      "set": "tutor",
+      "outcome": "nonleak",
+      "estimate": 0.2344329753210409,
+      "ci95": [
+        0.18879897179055158,
+        0.28173854868141374
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 5
+    },
+    {
+      "set": "control_0",
+      "outcome": "all",
+      "estimate": -0.02132785848733471,
+      "ci95": [
+        -0.036424705953362085,
+        -0.007665061791320534
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 5
+    },
+    {
+      "set": "control_0",
+      "outcome": "leak",
+      "estimate": -0.031732269439732105,
+      "ci95": [
+        -0.046536064825101635,
+        -0.018343587267315314
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 5
+    },
+    {
+      "set": "control_0",
+      "outcome": "nonleak",
+      "estimate": -0.009622896165887632,
+      "ci95": [
+        -0.03271617394713623,
+        0.013182137667053626
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 5
+    },
+    {
+      "set": "control_1",
+      "outcome": "all",
+      "estimate": 0.03666262476379242,
+      "ci95": [
+        0.03224013338692041,
+        0.041602485077103186
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 5
+    },
+    {
+      "set": "control_1",
+      "outcome": "leak",
+      "estimate": 0.0338804904644709,
+      "ci95": [
+        0.028858731378497704,
+        0.039092521933624294
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 5
+    },
+    {
+      "set": "control_1",
+      "outcome": "nonleak",
+      "estimate": 0.03979252585052912,
+      "ci95": [
+        0.03248572527298872,
+        0.04720309037991852
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 5
+    },
+    {
+      "set": "control_2",
+      "outcome": "all",
+      "estimate": -0.03967876095109298,
+      "ci95": [
+        -0.048329941355141605,
+        -0.031646129030337256
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 5
+    },
+    {
+      "set": "control_2",
+      "outcome": "leak",
+      "estimate": -0.03148316536433092,
+      "ci95": [
+        -0.03882183263071097,
+        -0.024543455347318166
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 5
+    },
+    {
+      "set": "control_2",
+      "outcome": "nonleak",
+      "estimate": -0.04889880598620031,
+      "ci95": [
+        -0.06541586881104994,
+        -0.034531244819115375
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 5
+    },
+    {
+      "set": "control_3",
+      "outcome": "all",
+      "estimate": 0.00019032150824891585,
+      "ci95": [
+        -0.003947939380544894,
+        0.004406907918894144
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 5
+    },
+    {
+      "set": "control_3",
+      "outcome": "leak",
+      "estimate": -0.0030978973117093108,
+      "ci95": [
+        -0.008684548731057529,
+        0.0022083702241920845
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 5
+    },
+    {
+      "set": "control_3",
+      "outcome": "nonleak",
+      "estimate": 0.0038895676807019215,
+      "ci95": [
+        -0.001444006628832829,
+        0.009489034484070364
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 5
+    },
+    {
+      "set": "control_4",
+      "outcome": "all",
+      "estimate": -0.0977117324734237,
+      "ci95": [
+        -0.10871346585538343,
+        -0.0866748934846908
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 5
+    },
+    {
+      "set": "control_4",
+      "outcome": "leak",
+      "estimate": -0.07406183950485101,
+      "ci95": [
+        -0.08391231531207613,
+        -0.06499585909078764
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 5
+    },
+    {
+      "set": "control_4",
+      "outcome": "nonleak",
+      "estimate": -0.12431786206306797,
+      "ci95": [
+        -0.1391734673869013,
+        -0.10790752536877304
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 5
+    },
+    {
+      "set": "tutor",
+      "outcome": "all",
+      "estimate": 0.19380829957591184,
+      "ci95": [
+        0.16533311990794344,
+        0.22224018944755758
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 6
+    },
+    {
+      "set": "tutor",
+      "outcome": "leak",
+      "estimate": 0.1544224326300815,
+      "ci95": [
+        0.12392531875046388,
+        0.18790002139023998
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 6
+    },
+    {
+      "set": "tutor",
+      "outcome": "nonleak",
+      "estimate": 0.23811739988997094,
+      "ci95": [
+        0.1981046409589117,
+        0.27681924022533455
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 6
+    },
+    {
+      "set": "control_0",
+      "outcome": "all",
+      "estimate": -0.019038581846715676,
+      "ci95": [
+        -0.032930251405577905,
+        -0.00515783023353801
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 6
+    },
+    {
+      "set": "control_0",
+      "outcome": "leak",
+      "estimate": -0.021759801062744954,
+      "ci95": [
+        -0.038165326525571225,
+        -0.0054582055434095654
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 6
+    },
+    {
+      "set": "control_0",
+      "outcome": "nonleak",
+      "estimate": -0.015977210228682735,
+      "ci95": [
+        -0.03803114608603093,
+        0.0049351955139543295
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 6
+    },
+    {
+      "set": "control_1",
+      "outcome": "all",
+      "estimate": 0.039773793181899234,
+      "ci95": [
+        0.03475656624126603,
+        0.04482345911181665
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 6
+    },
+    {
+      "set": "control_1",
+      "outcome": "leak",
+      "estimate": 0.036405056474804964,
+      "ci95": [
+        0.03029204865358021,
+        0.04271838880512569
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 6
+    },
+    {
+      "set": "control_1",
+      "outcome": "nonleak",
+      "estimate": 0.043563621977380264,
+      "ci95": [
+        0.035409190091064066,
+        0.05103778423358813
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 6
+    },
+    {
+      "set": "control_2",
+      "outcome": "all",
+      "estimate": -0.05241969793376847,
+      "ci95": [
+        -0.060566870846429983,
+        -0.04446264136284066
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 6
+    },
+    {
+      "set": "control_2",
+      "outcome": "leak",
+      "estimate": -0.037003765793825444,
+      "ci95": [
+        -0.04417640081825643,
+        -0.030042752632449
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 6
+    },
+    {
+      "set": "control_2",
+      "outcome": "nonleak",
+      "estimate": -0.06976262159120437,
+      "ci95": [
+        -0.082648662857547,
+        -0.05671741279365913
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 6
+    },
+    {
+      "set": "control_3",
+      "outcome": "all",
+      "estimate": -0.006370785786130949,
+      "ci95": [
+        -0.012617633110153367,
+        -0.0006448019573151413
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 6
+    },
+    {
+      "set": "control_3",
+      "outcome": "leak",
+      "estimate": -0.009969874771989864,
+      "ci95": [
+        -0.019692634719198396,
+        -0.0013452301887075858
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 6
+    },
+    {
+      "set": "control_3",
+      "outcome": "nonleak",
+      "estimate": -0.002321810677039672,
+      "ci95": [
+        -0.011618775700444716,
+        0.006203760143379043
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 6
+    },
+    {
+      "set": "control_4",
+      "outcome": "all",
+      "estimate": -0.0880119214062953,
+      "ci95": [
+        -0.09775624540554073,
+        -0.07825246471205395
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 6
+    },
+    {
+      "set": "control_4",
+      "outcome": "leak",
+      "estimate": -0.06546180402915242,
+      "ci95": [
+        -0.07399766002028173,
+        -0.05717233321266771
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 6
+    },
+    {
+      "set": "control_4",
+      "outcome": "nonleak",
+      "estimate": -0.11338080345558108,
+      "ci95": [
+        -0.12717137811841064,
+        -0.0982949931172489
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 6
+    },
+    {
+      "set": "tutor",
+      "outcome": "all",
+      "estimate": 0.20650559038365432,
+      "ci95": [
+        0.17671054845964976,
+        0.23564896708099448
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 7
+    },
+    {
+      "set": "tutor",
+      "outcome": "leak",
+      "estimate": 0.16739471206007944,
+      "ci95": [
+        0.135001698865926,
+        0.20093645985189557
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 7
+    },
+    {
+      "set": "tutor",
+      "outcome": "nonleak",
+      "estimate": 0.2505053284976759,
+      "ci95": [
+        0.20557807843357975,
+        0.29630422095992703
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 7
+    },
+    {
+      "set": "control_0",
+      "outcome": "all",
+      "estimate": -0.006422584512819115,
+      "ci95": [
+        -0.019073384303291026,
+        0.00551869378990039
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 7
+    },
+    {
+      "set": "control_0",
+      "outcome": "leak",
+      "estimate": -0.013493950087309341,
+      "ci95": [
+        -0.02686794142182438,
+        -0.0008302431538232338
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 7
+    },
+    {
+      "set": "control_0",
+      "outcome": "nonleak",
+      "estimate": 0.001532701758482388,
+      "ci95": [
+        -0.018584810328416898,
+        0.020817478031055475
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 7
+    },
+    {
+      "set": "control_1",
+      "outcome": "all",
+      "estimate": 0.03636138267229699,
+      "ci95": [
+        0.029595383105518375,
+        0.04318995401112586
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 7
+    },
+    {
+      "set": "control_1",
+      "outcome": "leak",
+      "estimate": 0.030126507497406724,
+      "ci95": [
+        0.023657518494789562,
+        0.03654904106560517
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 7
+    },
+    {
+      "set": "control_1",
+      "outcome": "nonleak",
+      "estimate": 0.04337561724404854,
+      "ci95": [
+        0.03253608851838098,
+        0.054695360820114426
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 7
+    },
+    {
+      "set": "control_2",
+      "outcome": "all",
+      "estimate": -0.057269316257596015,
+      "ci95": [
+        -0.06589474922252228,
+        -0.048878965755065375
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 7
+    },
+    {
+      "set": "control_2",
+      "outcome": "leak",
+      "estimate": -0.04402146219531628,
+      "ci95": [
+        -0.05254636073639633,
+        -0.0367762826338053
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 7
+    },
+    {
+      "set": "control_2",
+      "outcome": "nonleak",
+      "estimate": -0.07217315207766073,
+      "ci95": [
+        -0.0864474742476129,
+        -0.05865839884392391
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 7
+    },
+    {
+      "set": "control_3",
+      "outcome": "all",
+      "estimate": -0.010642953663973102,
+      "ci95": [
+        -0.01776258590173559,
+        -0.003519955568955525
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 7
+    },
+    {
+      "set": "control_3",
+      "outcome": "leak",
+      "estimate": -0.012906475752988407,
+      "ci95": [
+        -0.022662292792562346,
+        -0.0034049339280711383
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 7
+    },
+    {
+      "set": "control_3",
+      "outcome": "nonleak",
+      "estimate": -0.008096491313830884,
+      "ci95": [
+        -0.017889104187783188,
+        0.0008468225550738161
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 7
+    },
+    {
+      "set": "control_4",
+      "outcome": "all",
+      "estimate": -0.06751733771967237,
+      "ci95": [
+        -0.08035382230164177,
+        -0.05360266152951222
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 7
+    },
+    {
+      "set": "control_4",
+      "outcome": "leak",
+      "estimate": -0.048725781372163955,
+      "ci95": [
+        -0.06422249704001723,
+        -0.030705347012741392
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 7
+    },
+    {
+      "set": "control_4",
+      "outcome": "nonleak",
+      "estimate": -0.08865783861061932,
+      "ci95": [
+        -0.10461036482614776,
+        -0.06943849390555439
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 7
+    },
+    {
+      "set": "tutor",
+      "outcome": "all",
+      "estimate": 0.19947666705691114,
+      "ci95": [
+        0.1680805789069142,
+        0.23346523827415175
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 8
+    },
+    {
+      "set": "tutor",
+      "outcome": "leak",
+      "estimate": 0.1440749008825595,
+      "ci95": [
+        0.11922016117776277,
+        0.1701417373299725
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 8
+    },
+    {
+      "set": "tutor",
+      "outcome": "nonleak",
+      "estimate": 0.26180365400305683,
+      "ci95": [
+        0.20504843909699197,
+        0.3256932637856906
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 8
+    },
+    {
+      "set": "control_0",
+      "outcome": "all",
+      "estimate": -0.003580727246206391,
+      "ci95": [
+        -0.015743202012721242,
+        0.007661854531907747
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 8
+    },
+    {
+      "set": "control_0",
+      "outcome": "leak",
+      "estimate": -0.011234094747208859,
+      "ci95": [
+        -0.02485272395418712,
+        0.0022247405286560684
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 8
+    },
+    {
+      "set": "control_0",
+      "outcome": "nonleak",
+      "estimate": 0.005029311192421385,
+      "ci95": [
+        -0.012450381190425937,
+        0.021299604421023032
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 8
+    },
+    {
+      "set": "control_1",
+      "outcome": "all",
+      "estimate": 0.04077881402041866,
+      "ci95": [
+        0.03403490460456261,
+        0.047714300335924394
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 8
+    },
+    {
+      "set": "control_1",
+      "outcome": "leak",
+      "estimate": 0.030755910615045543,
+      "ci95": [
+        0.02380030085922976,
+        0.03715707404131002
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 8
+    },
+    {
+      "set": "control_1",
+      "outcome": "nonleak",
+      "estimate": 0.052054580351463424,
+      "ci95": [
+        0.03994383785667549,
+        0.06456562732796581
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 8
+    },
+    {
+      "set": "control_2",
+      "outcome": "all",
+      "estimate": -0.05948447373734883,
+      "ci95": [
+        -0.06937473500956456,
+        -0.04988614423632108
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 8
+    },
+    {
+      "set": "control_2",
+      "outcome": "leak",
+      "estimate": -0.037636234493822016,
+      "ci95": [
+        -0.04588792162781415,
+        -0.03016544204543512
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 8
+    },
+    {
+      "set": "control_2",
+      "outcome": "nonleak",
+      "estimate": -0.0840637428863165,
+      "ci95": [
+        -0.09996631044049088,
+        -0.0683505974213895
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 8
+    },
+    {
+      "set": "control_3",
+      "outcome": "all",
+      "estimate": -0.008093806460939188,
+      "ci95": [
+        -0.016021953967019734,
+        -0.0004133957360262391
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 8
+    },
+    {
+      "set": "control_3",
+      "outcome": "leak",
+      "estimate": -0.007547625430805578,
+      "ci95": [
+        -0.01537118157429809,
+        -0.0008742026695470838
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 8
+    },
+    {
+      "set": "control_3",
+      "outcome": "nonleak",
+      "estimate": -0.008708260119839502,
+      "ci95": [
+        -0.024281039445251732,
+        0.005645569687256354
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 8
+    },
+    {
+      "set": "control_4",
+      "outcome": "all",
+      "estimate": -0.062283353093320025,
+      "ci95": [
+        -0.07125713273305566,
+        -0.053177876069746846
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 8
+    },
+    {
+      "set": "control_4",
+      "outcome": "leak",
+      "estimate": -0.048454361794066904,
+      "ci95": [
+        -0.06127325193561562,
+        -0.034446578376352545
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 8
+    },
+    {
+      "set": "control_4",
+      "outcome": "nonleak",
+      "estimate": -0.07784096830497976,
+      "ci95": [
+        -0.09026124157721412,
+        -0.06574129072719599
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 8
+    },
+    {
+      "set": "tutor",
+      "outcome": "all",
+      "estimate": 0.18761144408390576,
+      "ci95": [
+        0.1575258504129064,
+        0.21832295079339256
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 9
+    },
+    {
+      "set": "tutor",
+      "outcome": "leak",
+      "estimate": 0.15909572529992605,
+      "ci95": [
+        0.13044641645517324,
+        0.1926326065608575
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 9
+    },
+    {
+      "set": "tutor",
+      "outcome": "nonleak",
+      "estimate": 0.2196916277158829,
+      "ci95": [
+        0.17290782532801155,
+        0.26589291995779396
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 9
+    },
+    {
+      "set": "control_0",
+      "outcome": "all",
+      "estimate": 0.0020293537305354635,
+      "ci95": [
+        -0.010238598299707632,
+        0.013173009164966512
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 9
+    },
+    {
+      "set": "control_0",
+      "outcome": "leak",
+      "estimate": -0.010616996537266537,
+      "ci95": [
+        -0.02520293600904257,
+        0.0020297159635798896
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 9
+    },
+    {
+      "set": "control_0",
+      "outcome": "nonleak",
+      "estimate": 0.01625649778181271,
+      "ci95": [
+        -0.002511676532677724,
+        0.03480634169492998
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 9
+    },
+    {
+      "set": "control_1",
+      "outcome": "all",
+      "estimate": 0.04418931400249324,
+      "ci95": [
+        0.037576432112501564,
+        0.05049049449364842
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 9
+    },
+    {
+      "set": "control_1",
+      "outcome": "leak",
+      "estimate": 0.037272279144455245,
+      "ci95": [
+        0.029540314466252608,
+        0.04563887867174358
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 9
+    },
+    {
+      "set": "control_1",
+      "outcome": "nonleak",
+      "estimate": 0.051970978217786006,
+      "ci95": [
+        0.041357402026850176,
+        0.061942837364108036
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 9
+    },
+    {
+      "set": "control_2",
+      "outcome": "all",
+      "estimate": -0.05550396385390065,
+      "ci95": [
+        -0.06498919536387718,
+        -0.04571744966900124
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 9
+    },
+    {
+      "set": "control_2",
+      "outcome": "leak",
+      "estimate": -0.042435544724513004,
+      "ci95": [
+        -0.05193443613002797,
+        -0.033992899675445026
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 9
+    },
+    {
+      "set": "control_2",
+      "outcome": "nonleak",
+      "estimate": -0.07020593537446178,
+      "ci95": [
+        -0.0851659362760307,
+        -0.05449549081539008
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 9
+    },
+    {
+      "set": "control_3",
+      "outcome": "all",
+      "estimate": -0.004992791629209234,
+      "ci95": [
+        -0.010429421035855318,
+        0.0006466771909024201
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 9
+    },
+    {
+      "set": "control_3",
+      "outcome": "leak",
+      "estimate": -0.005072451295052681,
+      "ci95": [
+        -0.013892966843803532,
+        0.0025318475834635824
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 9
+    },
+    {
+      "set": "control_3",
+      "outcome": "nonleak",
+      "estimate": -0.004903174505135354,
+      "ci95": [
+        -0.012586007991552815,
+        0.0028233995551576723
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 9
+    },
+    {
+      "set": "control_4",
+      "outcome": "all",
+      "estimate": -0.05204860099796133,
+      "ci95": [
+        -0.06028771970236906,
+        -0.04320602241912827
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 9
+    },
+    {
+      "set": "control_4",
+      "outcome": "leak",
+      "estimate": -0.04010437567090091,
+      "ci95": [
+        -0.05052439698072889,
+        -0.02787155406418111
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 9
+    },
+    {
+      "set": "control_4",
+      "outcome": "nonleak",
+      "estimate": -0.06548585449090433,
+      "ci95": [
+        -0.07780143905841717,
+        -0.053318563857666146
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 9
+    },
+    {
+      "set": "tutor",
+      "outcome": "all",
+      "estimate": 0.3892795888276034,
+      "ci95": [
+        0.34478604618874775,
+        0.4344322907157028
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 10
+    },
+    {
+      "set": "tutor",
+      "outcome": "leak",
+      "estimate": 0.3052473400268429,
+      "ci95": [
+        0.27167561939109414,
+        0.34192780130220196
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 10
+    },
+    {
+      "set": "tutor",
+      "outcome": "nonleak",
+      "estimate": 0.48381586872845905,
+      "ci95": [
+        0.40670909667320926,
+        0.5591313575992237
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 10
+    },
+    {
+      "set": "control_0",
+      "outcome": "all",
+      "estimate": -0.001702516727661824,
+      "ci95": [
+        -0.011895278945189996,
+        0.007846459606642165
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 10
+    },
+    {
+      "set": "control_0",
+      "outcome": "leak",
+      "estimate": -0.009599361821407646,
+      "ci95": [
+        -0.021325548267841332,
+        0.0021579226512337757
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 10
+    },
+    {
+      "set": "control_0",
+      "outcome": "nonleak",
+      "estimate": 0.007181434002802228,
+      "ci95": [
+        -0.008268409933116701,
+        0.020454533791007454
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 10
+    },
+    {
+      "set": "control_1",
+      "outcome": "all",
+      "estimate": 0.053314406111142514,
+      "ci95": [
+        0.046460394736042694,
+        0.059900390733375476
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 10
+    },
+    {
+      "set": "control_1",
+      "outcome": "leak",
+      "estimate": 0.046823741233021354,
+      "ci95": [
+        0.03904198550481945,
+        0.0545898351642007
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 10
+    },
+    {
+      "set": "control_1",
+      "outcome": "nonleak",
+      "estimate": 0.06061640409902884,
+      "ci95": [
+        0.048822255846564355,
+        0.07233348741585532
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 10
+    },
+    {
+      "set": "control_2",
+      "outcome": "all",
+      "estimate": -0.07392273688392806,
+      "ci95": [
+        -0.08421578342482472,
+        -0.06354118458703698
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 10
+    },
+    {
+      "set": "control_2",
+      "outcome": "leak",
+      "estimate": -0.05507073371698563,
+      "ci95": [
+        -0.06432057467315139,
+        -0.04639744997516926
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 10
+    },
+    {
+      "set": "control_2",
+      "outcome": "nonleak",
+      "estimate": -0.09513124044673829,
+      "ci95": [
+        -0.11181532496428852,
+        -0.07857244327147152
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 10
+    },
+    {
+      "set": "control_3",
+      "outcome": "all",
+      "estimate": -0.004537269085844424,
+      "ci95": [
+        -0.014000926015609793,
+        0.004606010810436872
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 10
+    },
+    {
+      "set": "control_3",
+      "outcome": "leak",
+      "estimate": 3.986928897825529e-05,
+      "ci95": [
+        -0.007646964674075671,
+        0.007592499333782111
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 10
+    },
+    {
+      "set": "control_3",
+      "outcome": "nonleak",
+      "estimate": -0.009686549757519933,
+      "ci95": [
+        -0.028122426396778973,
+        0.007816360141520621
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 10
+    },
+    {
+      "set": "control_4",
+      "outcome": "all",
+      "estimate": -0.02962954495190591,
+      "ci95": [
+        -0.03631231573371648,
+        -0.022524863914208857
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0,
+      "decile": 10
+    },
+    {
+      "set": "control_4",
+      "outcome": "leak",
+      "estimate": -0.032468400879051444,
+      "ci95": [
+        -0.03965176099852765,
+        -0.02497122501302422
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "decile": 10
+    },
+    {
+      "set": "control_4",
+      "outcome": "nonleak",
+      "estimate": -0.026435832033867193,
+      "ci95": [
+        -0.03820130155913158,
+        -0.014942758985414683
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "decile": 10
+    }
+  ],
+  "reading": [
+    {
+      "set": "tutor",
+      "outcome": "all",
+      "estimate": 3.356550655035265,
+      "ci95": [
+        3.183123571422842,
+        3.5298380496183377
+      ],
+      "n_traces": 400,
+      "n_problems": 100,
+      "undefined_resamples": 0,
+      "tutor_mean": -0.08011096096612758,
+      "neutral_mean": -3.4366616160013916
+    },
+    {
+      "set": "tutor",
+      "outcome": "leak",
+      "estimate": 3.1879144669994384,
+      "ci95": [
+        2.994233593396252,
+        3.3882809479179965
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "tutor_mean": -0.1695518464446979,
+      "neutral_mean": -3.357466313444136
+    },
+    {
+      "set": "tutor",
+      "outcome": "nonleak",
+      "estimate": 3.6424098257617743,
+      "ci95": [
+        3.408359092171364,
+        3.8591919870874785
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "tutor_mean": 0.06039529746381469,
+      "neutral_mean": -3.5820145282979596
+    },
+    {
+      "set": "control_0",
+      "outcome": "all",
+      "estimate": -0.03618785900555254,
+      "ci95": [
+        -0.048635148932456705,
+        -0.023334882790894015
+      ],
+      "n_traces": 400,
+      "n_problems": 100,
+      "undefined_resamples": 0,
+      "tutor_mean": 0.032589484246220914,
+      "neutral_mean": 0.06877734325177345
+    },
+    {
+      "set": "control_0",
+      "outcome": "leak",
+      "estimate": -0.019985828827738018,
+      "ci95": [
+        -0.033659640356395876,
+        -0.00568999093271111
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "tutor_mean": 0.04731032404131658,
+      "neutral_mean": 0.06729615286905462
+    },
+    {
+      "set": "control_0",
+      "outcome": "nonleak",
+      "estimate": -0.060109449312195425,
+      "ci95": [
+        -0.07793312303415086,
+        -0.040615437727452595
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "tutor_mean": 0.023450989605497005,
+      "neutral_mean": 0.08356043891769242
+    },
+    {
+      "set": "control_1",
+      "outcome": "all",
+      "estimate": 0.03379229033267299,
+      "ci95": [
+        0.025461146279657215,
+        0.042037486042470075
+      ],
+      "n_traces": 400,
+      "n_problems": 100,
+      "undefined_resamples": 0,
+      "tutor_mean": 0.02182335182306326,
+      "neutral_mean": -0.01196893850960972
+    },
+    {
+      "set": "control_1",
+      "outcome": "leak",
+      "estimate": 0.028631528391543683,
+      "ci95": [
+        0.015429495424924153,
+        0.04093426963009561
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "tutor_mean": 0.05148189133389442,
+      "neutral_mean": 0.022850362942350735
+    },
+    {
+      "set": "control_1",
+      "outcome": "nonleak",
+      "estimate": 0.040503902882943824,
+      "ci95": [
+        0.02863067447286262,
+        0.05237072409594523
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "tutor_mean": 0.0146357654864768,
+      "neutral_mean": -0.025868137396467025
+    },
+    {
+      "set": "control_2",
+      "outcome": "all",
+      "estimate": -0.0206794384935576,
+      "ci95": [
+        -0.030484861643058955,
+        -0.010673065370609363
+      ],
+      "n_traces": 400,
+      "n_problems": 100,
+      "undefined_resamples": 0,
+      "tutor_mean": 0.012676145245264907,
+      "neutral_mean": 0.033355583738822504
+    },
+    {
+      "set": "control_2",
+      "outcome": "leak",
+      "estimate": -0.016810783858199847,
+      "ci95": [
+        -0.03104064094184978,
+        -0.0034189381420018047
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "tutor_mean": 0.020490211228361272,
+      "neutral_mean": 0.037300995086561116
+    },
+    {
+      "set": "control_2",
+      "outcome": "nonleak",
+      "estimate": -0.027904341332691297,
+      "ci95": [
+        -0.04059236374921023,
+        -0.013992093624696335
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "tutor_mean": 0.008302071293347313,
+      "neutral_mean": 0.03620641262603861
+    },
+    {
+      "set": "control_3",
+      "outcome": "all",
+      "estimate": 0.08373386582133245,
+      "ci95": [
+        0.07336644455334544,
+        0.09445265220229318
+      ],
+      "n_traces": 400,
+      "n_problems": 100,
+      "undefined_resamples": 0,
+      "tutor_mean": -0.02430483677347216,
+      "neutral_mean": -0.10803870259480458
+    },
+    {
+      "set": "control_3",
+      "outcome": "leak",
+      "estimate": 0.09152132543653808,
+      "ci95": [
+        0.07703399493046753,
+        0.10672537547299901
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "tutor_mean": -0.057969991573451646,
+      "neutral_mean": -0.14949131700998972
+    },
+    {
+      "set": "control_3",
+      "outcome": "nonleak",
+      "estimate": 0.07966123316965293,
+      "ci95": [
+        0.0667073290859583,
+        0.09265682574898516
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "tutor_mean": 0.009531677227948792,
+      "neutral_mean": -0.07012955594170413
+    },
+    {
+      "set": "control_4",
+      "outcome": "all",
+      "estimate": 0.06966328818043155,
+      "ci95": [
+        0.05594959214497198,
+        0.08300600679652402
+      ],
+      "n_traces": 400,
+      "n_problems": 100,
+      "undefined_resamples": 0,
+      "tutor_mean": 0.021215381272810065,
+      "neutral_mean": -0.048447906907621484
+    },
+    {
+      "set": "control_4",
+      "outcome": "leak",
+      "estimate": 0.06658210500176527,
+      "ci95": [
+        0.050889895554660614,
+        0.08151261335774744
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0,
+      "tutor_mean": 0.024937468702380967,
+      "neutral_mean": -0.041644636299384315
+    },
+    {
+      "set": "control_4",
+      "outcome": "nonleak",
+      "estimate": 0.0766474826125168,
+      "ci95": [
+        0.056620432204966084,
+        0.09654793315595452
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0,
+      "tutor_mean": 0.024486337557578255,
+      "neutral_mean": -0.05216114505493856
+    }
+  ],
+  "slopes": [
+    {
+      "set": "tutor",
+      "outcome": "all",
+      "estimate": 0.15275252992519744,
+      "ci95": [
+        0.11931021543515861,
+        0.18521126642232066
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0
+    },
+    {
+      "set": "tutor",
+      "outcome": "leak",
+      "estimate": 0.09675293220536132,
+      "ci95": [
+        0.06770868066261629,
+        0.12733597082794745
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0
+    },
+    {
+      "set": "tutor",
+      "outcome": "nonleak",
+      "estimate": 0.21575207736001312,
+      "ci95": [
+        0.1653108044807411,
+        0.26704003487308803
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0
+    },
+    {
+      "set": "control_0",
+      "outcome": "all",
+      "estimate": 0.10359494752459328,
+      "ci95": [
+        0.08723840125865431,
+        0.12011349603746539
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0
+    },
+    {
+      "set": "control_0",
+      "outcome": "leak",
+      "estimate": 0.08607400085302944,
+      "ci95": [
+        0.069301554184869,
+        0.10278544258810114
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0
+    },
+    {
+      "set": "control_0",
+      "outcome": "nonleak",
+      "estimate": 0.12330601253010261,
+      "ci95": [
+        0.09634294543899455,
+        0.14979123298358313
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0
+    },
+    {
+      "set": "control_1",
+      "outcome": "all",
+      "estimate": -0.0045248351291995404,
+      "ci95": [
+        -0.012023417561878209,
+        0.003427571875287644
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0
+    },
+    {
+      "set": "control_1",
+      "outcome": "leak",
+      "estimate": 0.0015459210195772136,
+      "ci95": [
+        -0.006356588389467094,
+        0.009708789423955023
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0
+    },
+    {
+      "set": "control_1",
+      "outcome": "nonleak",
+      "estimate": -0.011354435796573388,
+      "ci95": [
+        -0.0238978329732158,
+        0.0022587517478951298
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0
+    },
+    {
+      "set": "control_2",
+      "outcome": "all",
+      "estimate": -0.014635146319133477,
+      "ci95": [
+        -0.02631514201238502,
+        -0.003126358051488345
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0
+    },
+    {
+      "set": "control_2",
+      "outcome": "leak",
+      "estimate": 0.0023165737291701476,
+      "ci95": [
+        -0.007859043929060347,
+        0.012038100106477873
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0
+    },
+    {
+      "set": "control_2",
+      "outcome": "nonleak",
+      "estimate": -0.033705831373475055,
+      "ci95": [
+        -0.051601830954389055,
+        -0.015530085144678936
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0
+    },
+    {
+      "set": "control_3",
+      "outcome": "all",
+      "estimate": -0.01910376144889353,
+      "ci95": [
+        -0.029038001709987292,
+        -0.009128361684787584
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0
+    },
+    {
+      "set": "control_3",
+      "outcome": "leak",
+      "estimate": -0.005741122616980083,
+      "ci95": [
+        -0.016639064823859108,
+        0.00433459157065792
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0
+    },
+    {
+      "set": "control_3",
+      "outcome": "nonleak",
+      "estimate": -0.03413673013479615,
+      "ci95": [
+        -0.051090213242583955,
+        -0.01853707640404632
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0
+    },
+    {
+      "set": "control_4",
+      "outcome": "all",
+      "estimate": 0.14248031885562554,
+      "ci95": [
+        0.12997615276931943,
+        0.1549002121848139
+      ],
+      "n_traces": 374,
+      "n_problems": 97,
+      "undefined_resamples": 0
+    },
+    {
+      "set": "control_4",
+      "outcome": "leak",
+      "estimate": 0.12987267164434652,
+      "ci95": [
+        0.1145084067979011,
+        0.14569698981319762
+      ],
+      "n_traces": 198,
+      "n_problems": 77,
+      "undefined_resamples": 0
+    },
+    {
+      "set": "control_4",
+      "outcome": "nonleak",
+      "estimate": 0.15666392196831436,
+      "ci95": [
+        0.14099464036872456,
+        0.17348935489595171
+      ],
+      "n_traces": 176,
+      "n_problems": 74,
+      "undefined_resamples": 0
+    }
+  ],
+  "run_id": "phase3-neutral-20261021-v2",
+  "source_run_id": "phase3-20261020-v2",
+  "exploratory": true,
+  "manifest": {
+    "run_id": "phase3-neutral-20261021-v2",
+    "source_run_id": "phase3-20261020-v2",
+    "cap_gpu_usd": 2.5,
+    "rate_usd_per_gpu_second": 0.000542,
+    "payload_sha256": "cecc81b398fd723a0f8e6db282d49bf0d02e924c41357c39750c62993c41b0a4",
+    "source_hashes": {
+      "results/phase3/neurons.json": "fde38779fe8ab5b3781be573183ef86e4a0273f08f48c5d005e33db6f1bd83bb",
+      "results/phase3/selection.json": "686110949bd569af54b5fb943dc77baaaf19a58f442343af7150a8b62ee97d00",
+      "results/phase3/screen-statistics.npz": "39073dde8eedbe01d8e17bd6f501629797fec004922357a07360005cc8d78e98",
+      "results/phase3/manifest.json": "f3dc8818fb28d5b5906a37ffeb8f7979056d343bdec897cd03d990b3dfd2d134",
+      "results/raw/phase3-20261020-v2/tracking.jsonl": "3e942675283e38e9c2330fdeeeae6cec24f3052bed28a953fe79ac9c10f558e5",
+      "results/raw/phase3-20261020-v2/trajectories.npz": "14aadc070fd5ea038b592b0ce5abf2001ee4ad5ed8af75807bfc38aa60e22c82",
+      "DESIGN.md": "19c7b879909dc3aae0fd1855be244bb489c5fe3ffe0c4a85212a764fb74d9a69",
+      "src/phase3_neutral.py": "848d84d7f75d647c471fa0ac63d70704a9cb5d188cc7b1f0c37f05e465cab75e",
+      "src/modal_app_3_neutral.py": "e0be796d51ebd9cb098214c5aed11d27a64ef6d6c289e4b61eeb15368e55703b",
+      "prompts/system_neutral.txt": "7460e45c0d100bd1c477aedf6b4be3d2fcc5823a73a5c8122c3ff26735842eca"
+    },
+    "historical_source_hashes": {
+      "DESIGN.md": "77b9124116fcdc11c6b7a25f40d6b3fb78d0e9d510442d3cdde0226ba2fbe4eb",
+      "prompts/system_tutor.txt": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11",
+      "prompts/system_neutral.txt": "7460e45c0d100bd1c477aedf6b4be3d2fcc5823a73a5c8122c3ff26735842eca",
+      "prompts/templates_1b.json": "cc5971cea9793fefb141bb8f514c109fc798989116d86eb6f3531bfbb8eec8a4",
+      "src/models.py": "3bd7b2223a6f793821d33ec63a5c0b7634a4bc57219f706a3220713f0a18b3d7",
+      "src/phase3.py": "5af0bd178b28a1929fc4b2f67aebfbf1200463abea3c485391a81a24e60cf6e6",
+      "src/modal_app_3.py": "faad784fa66b41ec46199f2c10fe705afab3608c26df6e2c7369ea6a5c625aa2",
+      "src/hf_decode.py": "85f6e7980f0685ad78961ce02db86dc9fdc59a0c95544f393c03f1b1ed4d77c7",
+      "src/score.py": "f8669db7bdfeb1e2009bf178c79e8c23ce76cdd3c43c8aae4ea42c8441deca07",
+      "results/raw/phase1b-full/Qwen3-14B.jsonl": "a554e2069b3651241ed2ca5d60222f2361831fdb12769b12919f5265134cf134",
+      "results/raw/phase1b-full/scored.jsonl": "37428498d3b0bca2f2dce06053d4dc937d4f059b7f935480b4d3ada611def02a"
+    },
+    "pricing_source": "https://modal.com/pricing",
+    "pricing_checked": "2026-10-21",
+    "registered_addendum_commit": "843719c"
+  },
+  "execution": {
+    "run_id": "phase3-neutral-20261021-v2",
+    "attempts": [
+      {
+        "run_id": "phase3-neutral-20261021",
+        "status": "failed_or_cancelled",
+        "started_unix": 1792557220.9182248,
+        "gpu": "L40S",
+        "previous_seconds": 0,
+        "exposure_seconds": 4612.546125461255,
+        "timeout_seconds": 4372,
+        "absolute_deadline_unix": 1792561713.4643502,
+        "call_id": "fc-01M5EBS1W7SSACPWYC76WM26SS",
+        "error": "RemoteError: ",
+        "zero_containers_verified_unix": 1792557254.411327,
+        "ended_unix": 1792557254.411339,
+        "observed_wall_seconds": 33.49311327934265,
+        "wall_seconds": 33.49311327934265
+      },
+      {
+        "run_id": "phase3-neutral-20261021-v2",
+        "status": "completed",
+        "started_unix": 1792557284.680577,
+        "gpu": "L40S",
+        "previous_seconds": 33.49311327934265,
+        "exposure_seconds": 4579.053012181912,
+        "timeout_seconds": 4339,
+        "absolute_deadline_unix": 1792561743.7335892,
+        "call_id": "fc-01M5EBV05S5Z9FKW5WGJP4SMTF",
+        "function_seconds": 216.792962598,
+        "n_traces": 400,
+        "zero_containers_verified_unix": 1792557543.8133261,
+        "ended_unix": 1792557543.813351,
+        "observed_wall_seconds": 259.1327669620514,
+        "wall_seconds": 259.1327669620514
+      }
+    ],
+    "gpu_usd_upper": 0.15860322709083555,
+    "zero_containers_verified": true,
+    "cap_gpu_usd": 2.5,
+    "rate_usd_per_gpu_second": 0.000542,
+    "accounting_basis": "local submission through verified zero containers, including provisioning and failures",
+    "billing_before": {
+      "metered_cost": "25.90343350",
+      "billed_cost": "0E-8",
+      "adjustments": {
+        "network_egress_allowance": "-0.30343350",
+        "credits": "-25.60000000",
+        "plan_cost": "0E-8",
+        "reservation_adjustment": "-0E-8",
+        "free_storage": "-0E-8"
+      },
+      "metered_cost_breakdown": {
+        "volumes": "0E-8",
+        "ephemeral_apps": "25.90807086",
+        "llm_tokens": "0E-8"
+      }
+    },
+    "billing_after": {
+      "metered_cost": "25.99343361",
+      "billed_cost": "0E-8",
+      "adjustments": {
+        "free_storage": "-0E-8",
+        "reservation_adjustment": "-0E-8",
+        "credits": "-25.69000000",
+        "network_egress_allowance": "-0.30343361",
+        "plan_cost": "0E-8"
+      },
+      "metered_cost_breakdown": {
+        "ephemeral_apps": "25.98924221",
+        "llm_tokens": "0E-8",
+        "volumes": "0E-8"
+      }
+    },
+    "recovery_errors": []
+  },
+  "reasoning_tokens": 398783,
+  "pilot": {
+    "projected_gpu_usd": 0.36338363747651287,
+    "fits": true,
+    "headroom": 1.3,
+    "shutdown_reserve_seconds": 120,
+    "seconds": 3.486091473000002,
+    "ids": [
+      "phase1b:p1306:none:boxed:t3:tutor:thinking-1",
+      "phase1b:p0423:none:boxed:t0:tutor:thinking-1",
+      "phase1b:p0423:none:boxed:t1:tutor:thinking-1",
+      "phase1b:p0423:none:boxed:t2:tutor:thinking-1"
+    ],
+    "discarded": true
+  },
+  "reading_positions": "valid tokens strictly after system im_end, through rendered assistant prefix, before generated think tag"
+}

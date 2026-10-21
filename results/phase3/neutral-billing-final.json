@@ -1,0 +1,20 @@
+{
+  "checked_utc": "2026-10-21T04:40:38.534142+00:00",
+  "billing": {
+    "metered_cost": "26.14343361",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "network_egress_allowance": "-0.30343361",
+      "reservation_adjustment": "-0E-8",
+      "credits": "-25.84000000",
+      "plan_cost": "0E-8",
+      "free_storage": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "llm_tokens": "0E-8",
+      "ephemeral_apps": "26.14700933",
+      "volumes": "0E-8"
+    }
+  },
+  "containers": []
+}
