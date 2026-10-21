@@ -765,3 +765,16 @@ that shows the effect is absent in a current Qwen release, not why; lineage
 differences prevent attributing a change to post-training. If 3.8 shows it,
 the effect is not confined to 2025 models. H25 cannot establish that
 restating the rule causes adherence.
+
+### Phase 5 deviation: protocol-failure gate (2026-10-21)
+
+The Phase 5 analysis code withholds hypothesis decisions if any reply has a
+reasoning/final protocol failure. That gate is an implementation choice, not
+part of the registration. Two Nemotron thinking-off explicit replies emitted
+reasoning followed by `</think>` despite the off template. Decision, made
+after inspecting these two replies but before any hypothesis decision: a
+thinking-off reply containing `</think>` is scored on the text after its last
+`</think>` (both are non-violations under that rule; one is a tutoring reply,
+the other is cut off at the token cap before any answer), and both are also
+reported in a sensitivity analysis that counts them as violations. The gate
+is lifted for Phase 5 and Phase 6.
