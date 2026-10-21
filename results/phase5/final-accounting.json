@@ -1,0 +1,86 @@
+{
+  "captured_unix": 1792614946.938276,
+  "metering_provisional": true,
+  "modal": {
+    "before": {
+      "metered_cost": "26.26571729",
+      "billed_cost": "0E-8",
+      "adjustments": {
+        "plan_cost": "0E-8",
+        "reservation_adjustment": "-0E-8",
+        "credits": "-25.93000000",
+        "free_storage": "-0E-8",
+        "network_egress_allowance": "-0.33571729"
+      },
+      "metered_cost_breakdown": {
+        "volumes": "0E-8",
+        "network_egress": "0.33571729",
+        "ephemeral_apps": "25.93177087",
+        "llm_tokens": "0E-8"
+      }
+    },
+    "after": {
+      "metered_cost": "27.23571787",
+      "billed_cost": "0E-8",
+      "adjustments": {
+        "credits": "-26.90000000",
+        "plan_cost": "0E-8",
+        "free_storage": "-0E-8",
+        "network_egress_allowance": "-0.33571787",
+        "reservation_adjustment": "-0E-8"
+      },
+      "metered_cost_breakdown": {
+        "ephemeral_apps": "26.90287990",
+        "volumes": "0E-8",
+        "llm_tokens": "0E-8",
+        "network_egress": "0.33571787"
+      }
+    },
+    "main_metered_delta_usd": "0.97000058",
+    "retained_pilot_usd": "0.282284",
+    "phase5_including_pilot_usd": "1.25228458",
+    "ledger_conservative_usd": 1.452285,
+    "earlier_posted_main_snapshot_usd": "1.17000057",
+    "note": "Current account snapshot supersedes earlier provisional billing; ledger charge is retained without refund."
+  },
+  "vast": {
+    "before": {
+      "credit": 2.8247990722999967,
+      "balance": 0,
+      "total_spend": -7.175200927700003,
+      "billed_expected": 0.0
+    },
+    "after": {
+      "credit": 2.8068864014999964,
+      "total_spend": -7.193113598500004
+    },
+    "credit_delta_usd": "0.0179126708000003",
+    "ledger_conservative_usd": 2.895749,
+    "reserve_usd": 0.3
+  },
+  "total_observed_provider_usd": "1.2701972508000003",
+  "aggregate_ledger_usd": 4.348034,
+  "zero_resources": {
+    "modal_apps": [
+      {
+        "app_id": "ap-XyIMd5cQJyWwuQtlC1jO3q",
+        "description": "grader-mode-phase5-gemma-main",
+        "state": "stopped",
+        "tasks": "0",
+        "created_at": "2026-10-21 15:46:54-04:00",
+        "stopped_at": "2026-10-21 16:11:19-04:00"
+      },
+      {
+        "app_id": "ap-FckHbbVTlPcie116OwqSgz",
+        "description": "grader-mode-phase5-pilot",
+        "state": "stopped",
+        "tasks": "0",
+        "created_at": "2026-10-21 15:14:21-04:00",
+        "stopped_at": "2026-10-21 15:19:37-04:00"
+      }
+    ],
+    "modal_containers": [],
+    "vast_instances": [],
+    "active_modal_apps": 0
+  }
+}

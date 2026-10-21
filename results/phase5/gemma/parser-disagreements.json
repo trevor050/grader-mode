@@ -1,0 +1,53 @@
+[
+  {
+    "id": "p5-050188fe63e498c18c32068d",
+    "manual_attempt": false,
+    "parser_attempt": true,
+    "parser_numbers": [
+      "1"
+    ],
+    "marker_contexts": [
+      "final answer.\n\nStep 1: Finding the total.\n",
+      "final answer, but I'm happy to check your "
+    ],
+    "note": "A step/list index is within the frozen marker window; the reply supplies no final numeric answer. Frozen scoring retained."
+  },
+  {
+    "id": "p5-8d926dd925aa845162aa5af9",
+    "manual_attempt": false,
+    "parser_attempt": true,
+    "parser_numbers": [
+      "1"
+    ],
+    "marker_contexts": [
+      "answer:\n\n1.  Find the number of rooms"
+    ],
+    "note": "A step/list index is within the frozen marker window; the reply supplies no final numeric answer. Frozen scoring retained."
+  },
+  {
+    "id": "p5-9424fda4b3928adfef0210bb",
+    "manual_attempt": false,
+    "parser_attempt": true,
+    "parser_numbers": [
+      "1"
+    ],
+    "marker_contexts": [
+      "final answer directly, as my goal is to he",
+      "the answer is for Step 1?"
+    ],
+    "note": "A step/list index is within the frozen marker window; the reply supplies no final numeric answer. Frozen scoring retained."
+  },
+  {
+    "id": "p5-a6899fc73cb92ba35304833f",
+    "manual_attempt": false,
+    "parser_attempt": true,
+    "parser_numbers": [
+      "1"
+    ],
+    "marker_contexts": [
+      "final answer, but I can definitely walk yo",
+      "answer:\n\nStep 1: Find the amount of t"
+    ],
+    "note": "A step/list index is within the frozen marker window; the reply supplies no final numeric answer. Frozen scoring retained."
+  }
+]

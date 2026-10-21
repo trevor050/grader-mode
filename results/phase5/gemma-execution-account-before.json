@@ -1,0 +1,68 @@
+{
+  "captured_unix": 1792611983.195165,
+  "modal_billing": {
+    "start_timestamp": "2026-10-01T00:00:00Z",
+    "end_timestamp": "2026-11-01T00:00:00Z",
+    "metered_cost": "26.26571729",
+    "billed_cost": "0.00000000",
+    "metered_cost_breakdown": {
+      "LLM Tokens": "0.00000000",
+      "Ephemeral Apps": "25.93177087",
+      "Network Egress": "0.33571729",
+      "Volumes": "0.00000000"
+    },
+    "adjustments": {
+      "Reservation Adjustment": "-0.00000000",
+      "Credits": "-25.93000000",
+      "Plan Cost": "0.00000000",
+      "Free Storage": "-0.00000000",
+      "Network Egress Allowance": "-0.33571729"
+    }
+  },
+  "rates": {
+    "rates": {
+      "endpoints_zai_org_glm_5.3_completion_mtok_cost": "4.40",
+      "endpoints_thinkingmachines_inkling_nvfp4_completion_mtok_cost": "5",
+      "endpoints_zai_org_glm_5.3_flash_cached_prompt_mtok_cost": "0.09",
+      "gpu_hour_cost_l4": "0.80000",
+      "endpoints_moonshotai_kimi_k3_completion_mtok_cost": "15.00",
+      "gpu_hour_cost_h200": "4.54000",
+      "gpu_hour_cost_h100": "3.95000",
+      "endpoints_qwen_qwen3.8_2.4t_a95b_completion_mtok_cost": "6.00",
+      "cpu_hour_cost_sandbox": "0.141900",
+      "egress_gib_cost": "0.04000",
+      "endpoints_thinkingmachines_inkling_nvfp4_cached_prompt_mtok_cost": "0.27",
+      "gpu_hour_cost_t4": "0.59000",
+      "endpoints_qwen_qwen3.8_2.4t_a95b_cached_prompt_mtok_cost": "0.25",
+      "gpu_hour_cost_l40s": "1.95000",
+      "volume_storage_gib_month_cost": "0.09000",
+      "endpoints_qwen_qwen3.8_2.4t_a95b_prompt_mtok_cost": "2.00",
+      "gpu_hour_cost_a10g": "1.10000",
+      "endpoints_zai_org_glm_5.3_reasoning_mtok_cost": "4.40",
+      "endpoints_thinkingmachines_inkling_nvfp4_reasoning_mtok_cost": "5",
+      "endpoints_zai_org_glm_5.3_cached_prompt_mtok_cost": "0.26",
+      "gpu_hour_cost_a100_40gb": "2.10000",
+      "endpoints_moonshotai_kimi_k3_prompt_mtok_cost": "3.00",
+      "endpoints_nvidia_glm_5.2_nvfp4_reasoning_mtok_cost": "1",
+      "gpu_hour_cost_rtx6000": "3.03000",
+      "endpoints_zai_org_glm_5.3_flash_prompt_mtok_cost": "0.45",
+      "endpoints_nvidia_glm_5.2_nvfp4_cached_prompt_mtok_cost": "1",
+      "gpu_hour_cost_b300": "7.10000",
+      "endpoints_thinkingmachines_inkling_nvfp4_prompt_mtok_cost": "1.20",
+      "gpu_hour_cost_b200": "6.25000",
+      "endpoints_moonshotai_kimi_k3_reasoning_mtok_cost": "15.00",
+      "endpoints_moonshotai_kimi_k3_cached_prompt_mtok_cost": "0.30",
+      "gpu_hour_cost_a100_80gb": "2.50000",
+      "endpoints_qwen_qwen3.8_2.4t_a95b_reasoning_mtok_cost": "6.00",
+      "endpoints_zai_org_glm_5.3_prompt_mtok_cost": "1.40",
+      "cpu_hour_cost": "0.04730",
+      "endpoints_nvidia_glm_5.2_nvfp4_prompt_mtok_cost": "1",
+      "mem_gib_hour_cost_sandbox": "0.024000",
+      "endpoints_zai_org_glm_5.3_flash_completion_mtok_cost": "1.50",
+      "endpoints_nvidia_glm_5.2_nvfp4_completion_mtok_cost": "1",
+      "mem_gib_hour_cost": "0.00800",
+      "endpoints_zai_org_glm_5.3_flash_reasoning_mtok_cost": "1.50"
+    },
+    "formatted": "CPU:                                 $0.0473 / core / hour\nCPU (Sandbox):                       $0.1419 / core / hour\nMemory:                                $0.008 / GiB / hour\nMemory (Sandbox):                      $0.024 / GiB / hour\nGPUs:                                                     \n  Nvidia A100 (40 GB):                        $2.10 / hour\n  Nvidia A100 (80 GB):                        $2.50 / hour\n  Nvidia A10G:                                $1.10 / hour\n  Nvidia B200:                                $6.25 / hour\n  Nvidia B300:                                $7.10 / hour\n  Nvidia H100:                                $3.95 / hour\n  Nvidia H200:                                $4.54 / hour\n  Nvidia L4:                                  $0.80 / hour\n  Nvidia L40S:                                $1.95 / hour\n  Nvidia RTX PRO 6000:                        $3.03 / hour\n  Nvidia T4:                                  $0.59 / hour\nVolumes:                               $0.09 / GiB / month\nNetwork Egress:                                $0.04 / GiB\nLLM Tokens:                                               \n  moonshotai/Kimi-K3:                                     \n    Prompt:                                   $3.00 / MTok\n    Prompt (Cached):                          $0.30 / MTok\n    Completion:                              $15.00 / MTok\n    Reasoning:                               $15.00 / MTok\n  nvidia/GLM-5.2-NVFP4:                                   \n    Prompt:                                   $1.00 / MTok\n    Prompt (Cached):                          $1.00 / MTok\n    Completion:                               $1.00 / MTok\n    Reasoning:                                $1.00 / MTok\n  Qwen/Qwen3.8-2.4T-A95B:                                 \n    Prompt:                                   $2.00 / MTok\n    Prompt (Cached):                          $0.25 / MTok\n    Completion:                               $6.00 / MTok\n    Reasoning:                                $6.00 / MTok\n  thinkingmachines/Inkling-NVFP4:                         \n    Prompt:                                   $1.20 / MTok\n    Prompt (Cached):                          $0.27 / MTok\n    Completion:                               $5.00 / MTok\n    Reasoning:                                $5.00 / MTok\n  zai-org/GLM-5.3:                                        \n    Prompt:                                   $1.40 / MTok\n    Prompt (Cached):                          $0.26 / MTok\n    Completion:                               $4.40 / MTok\n    Reasoning:                                $4.40 / MTok\n  zai-org/GLM-5.3-Flash:                                  \n    Prompt:                                   $0.45 / MTok\n    Prompt (Cached):                          $0.09 / MTok\n    Completion:                               $1.50 / MTok\n    Reasoning:                                $1.50 / MTok"
+  }
+}

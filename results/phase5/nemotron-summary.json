@@ -1,0 +1,71 @@
+{
+  "phase": "phase5",
+  "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+  "revision": "bee7596271d1495f6992ae224aefde4410e816b8",
+  "status": "no_generation",
+  "inference": {
+    "eligible": false,
+    "reasons": [
+      "no_model_generation",
+      "no_complete_hypothesis"
+    ]
+  },
+  "n_responses": 0,
+  "cells": {
+    "prefill/empty": 0,
+    "prefill/reminder": 0,
+    "prefill/neutral": 0,
+    "prefill/irrelevant": 0,
+    "main/on/plain": 0,
+    "main/on/explicit": 0,
+    "main/off/plain": 0,
+    "main/off/explicit": 0
+  },
+  "fallback_selected": false,
+  "stopped_before_stages": [
+    "h20_core",
+    "h21_main",
+    "h20_controls"
+  ],
+  "hypotheses": {
+    "H20": {
+      "status": "unavailable",
+      "reason": "no_generation",
+      "estimate": null,
+      "ci95": [
+        null,
+        null
+      ],
+      "tested": false,
+      "holds": null
+    },
+    "H21": {
+      "status": "unavailable",
+      "reason": "no_generation",
+      "estimate": null,
+      "ci95": [
+        null,
+        null
+      ],
+      "tested": false,
+      "holds": null
+    }
+  },
+  "gold_ge_10": {
+    "status": "unavailable",
+    "reason": "no_generation"
+  },
+  "parser_agreement": {
+    "status": "unavailable",
+    "n_sampled": 0,
+    "n_labeled": 0,
+    "agreement": null
+  },
+  "splitter_agreement": {
+    "status": "unavailable",
+    "n_sampled": 0,
+    "n_labeled": 0,
+    "agreement": null
+  },
+  "execution_receipt": "nemotron-execution.json"
+}

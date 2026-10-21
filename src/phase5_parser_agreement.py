@@ -135,13 +135,17 @@ def _splitter_counts(pairs, *, sampled, target):
         'disagreement_ids':disagreements, 'comparison':'exact_trimmed_final_reply'}
 
 
-def agreement(rows, labels=(), *, sample=None, splitter_sample=None):
+def agreement(rows, labels=(), *, sample=None, splitter_sample=None, model_scope=None):
     selected = _selected(score_rows(rows))
     if sample is not None and sample != _export(selected):
         raise ValueError('audit sample differs from deterministic raw-row sample')
     if splitter_sample is not None and splitter_sample != _export_splitter(selected):
         raise ValueError('splitter sample differs from deterministic raw-row sample')
     models = active_models(selected)
+    if model_scope is not None:
+        if model_scope not in MODELS_5 or {r['model'] for r in rows} != {model_scope}:
+            raise ValueError('model_scope requires exactly one requested registered family')
+        models = (model_scope,)
     predictions = {_blind_id(r):r for r in selected}
     pairs, numeric_pairs, splitter_pairs, seen = [], [], [], set()
     for label in labels:

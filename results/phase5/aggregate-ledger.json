@@ -60,6 +60,269 @@
       ],
       "ended_unix": 1792610377.354756,
       "observed_wall_seconds": 315.909597158432
+    },
+    {
+      "attempt_id": "phase5-gemma-main-20261021-a",
+      "provider": "modal",
+      "status": "completed",
+      "reserved_microusd": 2642250,
+      "reserved_usd": 2.64225,
+      "charged_microusd": 1170001,
+      "hourly_usd": 2.7,
+      "started_unix": 1792612013.8750348,
+      "startup_seconds": 180.0,
+      "runtime_seconds": 3223.0,
+      "teardown_seconds": 120.0,
+      "startup_deadline_unix": 1792612193.8750348,
+      "work_deadline_unix": 1792615416.8750348,
+      "deadline_unix": 1792615536.8750348,
+      "resource_id": "ap-XyIMd5cQJyWwuQtlC1jO3q",
+      "resource_label": "phase5-phase5-gemma-main-20261021-a",
+      "teardown_verified": true,
+      "events": [
+        {
+          "unix": 1792612013.880078,
+          "watchdog_pid": 25827,
+          "model_cap_usd": 3.0,
+          "prior_gemma_usd": 0.282284,
+          "no_retries": true
+        },
+        {
+          "unix": 1792612016.660822,
+          "function_call_id": "fc-01M5G018FR30TCWQ049QQNYGF8"
+        },
+        {
+          "unix": 1792612023.061855,
+          "startup_complete": true
+        },
+        {
+          "unix": 1792612363.227948,
+          "prospective_budget_decision": {
+            "decision": "drop_controls",
+            "cap_usd": 3.0,
+            "prior_gemma_usd": 0.282284,
+            "current_attempt_elapsed_seconds": 347.24042892456055,
+            "current_attempt_cost_bound_usd": 0.2604303216934204,
+            "measured_rows": 256,
+            "measured_output_tokens": 92790,
+            "measured_generation_seconds": 103.47134727600002,
+            "measured_tokens_per_second": 896.7699990654559,
+            "setup_seconds": 216.400294716,
+            "mean_tokens_by_cell": {
+              "gemma/prefill/neutral": 946.0,
+              "gemma/prefill/irrelevant": 1038.0,
+              "gemma/main/off/plain": 136.5,
+              "gemma/prefill/reminder": 1111.5,
+              "gemma/prefill/empty": 904.0,
+              "gemma/main/off/explicit": 249.5,
+              "gemma/main/on/explicit": 849.5,
+              "gemma/main/on/plain": 852.5
+            },
+            "observed_means_by_cell": {
+              "gemma/main/off/plain": 99.83870967741936,
+              "gemma/main/off/explicit": 157.76119402985074,
+              "gemma/main/on/plain": 555.4,
+              "gemma/main/on/explicit": 651.7894736842105
+            },
+            "pilot_means_by_cell": {
+              "gemma/prefill/reminder": 1111.5,
+              "gemma/prefill/irrelevant": 1038,
+              "gemma/main/on/plain": 852.5,
+              "gemma/main/off/plain": 136.5,
+              "gemma/prefill/empty": 904,
+              "gemma/main/off/explicit": 249.5,
+              "gemma/prefill/neutral": 946,
+              "gemma/main/on/explicit": 849.5
+            },
+            "hourly_usd": 2.7,
+            "runtime_margin": 1.2,
+            "teardown_and_failure_reserve_usd": 0.3,
+            "dropped_cells": [
+              "gemma/prefill/neutral",
+              "gemma/prefill/irrelevant"
+            ],
+            "remaining_rows": 2144,
+            "projected_total_usd": 2.3562703075253335,
+            "projections": [
+              {
+                "dropped_cells": [],
+                "remaining_output_tokens": 2301724.0,
+                "remaining_generation_seconds": 2566.6826526296354,
+                "projected_total_usd": 3.152728709060092
+              },
+              {
+                "dropped_cells": [
+                  "gemma/prefill/neutral",
+                  "gemma/prefill/irrelevant"
+                ],
+                "remaining_output_tokens": 1508124.0,
+                "remaining_generation_seconds": 1681.7288731465703,
+                "projected_total_usd": 2.3562703075253335
+              }
+            ],
+            "controls_generated_before_decision": 0,
+            "decision_unix": 1792612361.1175385,
+            "inference_eligible": false,
+            "outcomes_read_or_scored": false
+          }
+        },
+        {
+          "unix": 1792613481.1926458,
+          "teardown": {
+            "app_id": "ap-XyIMd5cQJyWwuQtlC1jO3q",
+            "app_stop_confirmed": true,
+            "containers_after": [],
+            "stop_errors": [
+              "Command '['/Users/user/codeprojects/grader-mode/.venv/bin/python3', '-m', 'modal', 'app', 'stop', '--yes', 'ap-XyIMd5cQJyWwuQtlC1jO3q']' returned non-zero exit status 1."
+            ]
+          }
+        },
+        {
+          "unix": 1792613499.0313458,
+          "billing_snapshot": {
+            "captured_unix": 1792613499.0304818,
+            "modal_billing": {
+              "start_timestamp": "2026-10-01T00:00:00Z",
+              "end_timestamp": "2026-11-01T00:00:00Z",
+              "metered_cost": "27.43571786",
+              "billed_cost": "0.00000000",
+              "metered_cost_breakdown": {
+                "Network Egress": "0.33571786",
+                "LLM Tokens": "0.00000000",
+                "Volumes": "0.00000000",
+                "Ephemeral Apps": "27.10009622"
+              },
+              "adjustments": {
+                "Plan Cost": "0.00000000",
+                "Credits": "-27.10000000",
+                "Network Egress Allowance": "-0.33571786",
+                "Free Storage": "-0.00000000",
+                "Reservation Adjustment": "-0.00000000"
+              }
+            },
+            "metered_delta_from_before_usd": "1.17000057",
+            "credits_used_delta_usd": "1.17000000",
+            "billed_cash_delta_usd": "0E-8",
+            "prior_gemma_pilot_usd": ".282284",
+            "conservative_gemma_total_metered_usd": "1.45228457",
+            "provisional": true
+          }
+        }
+      ],
+      "ended_unix": 1792613483.694529,
+      "observed_wall_seconds": 1469.8194942474365
+    },
+    {
+      "attempt_id": "phase5-second-family-20261021-startup",
+      "provider": "vast",
+      "status": "failed",
+      "reserved_microusd": 2524260,
+      "reserved_usd": 2.52426,
+      "charged_microusd": 2524260,
+      "hourly_usd": 0.7370100027034334,
+      "started_unix": 1792614061.032347,
+      "startup_seconds": 900.0,
+      "runtime_seconds": 11310.0,
+      "teardown_seconds": 120.0,
+      "startup_deadline_unix": 1792614961.032347,
+      "work_deadline_unix": 1792626271.032347,
+      "deadline_unix": 1792626391.032347,
+      "resource_id": "57106643",
+      "resource_label": "phase5-phase5-second-family-20261021-startup",
+      "teardown_verified": true,
+      "events": [
+        {
+          "unix": 1792614061.0358138,
+          "watchdog_pid": 36760,
+          "watchdog_log": "/Users/user/codeprojects/grader-mode/results/phase5/phase5-second-family-20261021-startup-vast-main-watchdog.log"
+        },
+        {
+          "unix": 1792614117.1274161,
+          "provider_account_after": {
+            "credit": 2.8247990722999967,
+            "total_spend": -7.175200927700003
+          },
+          "conservative_all_costs_usd": 0.30182372445236016,
+          "teardown": {
+            "pulled": false,
+            "zero_instances": false,
+            "errors": [
+              "RuntimeError: artifact pull failed",
+              "JSONDecodeError: owned destroy failed",
+              "JSONDecodeError: zero-instance query failed",
+              "JSONDecodeError: owned destroy failed",
+              "JSONDecodeError: owned destroy failed",
+              "JSONDecodeError: zero-instance query failed"
+            ],
+            "unix": 1792614116.7252722
+          },
+          "error_type": "JSONDecodeError"
+        }
+      ],
+      "ended_unix": 1792614117.1303942,
+      "observed_wall_seconds": 56.09804725646973,
+      "teardown_evidence": {
+        "unix": 1792614171.2703419,
+        "instances": [],
+        "zero_instances": true,
+        "command": "vastai destroy instance 57106643 --yes --raw",
+        "account_after": {
+          "credit": 2.8247990722999967,
+          "total_spend": -7.175200927700003
+        }
+      },
+      "zero_verified_unix": 1792614171.272279
+    },
+    {
+      "attempt_id": "phase5-second-family-20261021-fix",
+      "provider": "vast",
+      "status": "failed",
+      "reserved_microusd": 2212710,
+      "reserved_usd": 2.21271,
+      "charged_microusd": 371489,
+      "hourly_usd": 0.7934809797345906,
+      "started_unix": 1792614255.4540002,
+      "startup_seconds": 900.0,
+      "runtime_seconds": 9019.0,
+      "teardown_seconds": 120.0,
+      "startup_deadline_unix": 1792615155.4540002,
+      "work_deadline_unix": 1792624174.4540002,
+      "deadline_unix": 1792624294.4540002,
+      "resource_id": "57107006",
+      "resource_label": "phase5-phase5-second-family-20261021-fix",
+      "teardown_verified": true,
+      "events": [
+        {
+          "unix": 1792614255.4567711,
+          "watchdog_pid": 37856,
+          "watchdog_log": "/Users/user/codeprojects/grader-mode/results/phase5/phase5-second-family-20261021-fix-vast-main-watchdog.log"
+        },
+        {
+          "unix": 1792614647.485462,
+          "recovery": {
+            "local_dir": "results/raw/phase5-second-family-20261021/fix",
+            "host": "ssh4.vast.ai",
+            "port": 23134
+          }
+        },
+        {
+          "unix": 1792614672.586026,
+          "provider_account_after": {
+            "credit": 2.814647317499996,
+            "total_spend": -7.185352682500004
+          },
+          "conservative_all_costs_usd": 0.3714881588456071,
+          "teardown": {
+            "pulled": true,
+            "zero_instances": true,
+            "errors": [],
+            "unix": 1792614672.171432
+          },
+          "error_type": "RuntimeError"
+        }
+      ],
+      "ended_unix": 1792614672.587623,
+      "observed_wall_seconds": 417.1336226463318
     }
   ],
   "created_unix": 1792609801.754432,

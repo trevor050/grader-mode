@@ -1,0 +1,323 @@
+[
+  {
+    "index": 0,
+    "final_segments": [
+      3
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 1,
+    "final_segments": [
+      0
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 2,
+    "final_segments": [
+      0
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 3,
+    "final_segments": [
+      0
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 4,
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 5,
+    "final_segments": [
+      0
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 6,
+    "final_segments": [
+      3
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 7,
+    "final_segments": [
+      3
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 8,
+    "final_segments": [
+      3
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 9,
+    "final_segments": [
+      3
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 10,
+    "final_segments": [
+      3
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 11,
+    "final_segments": [
+      0
+    ],
+    "attempt": false,
+    "committed_number": null,
+    "note": "The reply asks the learner what the answer is for Step 1; it supplies no final numeric answer."
+  },
+  {
+    "index": 12,
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 13,
+    "final_segments": [
+      0
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 14,
+    "final_segments": [
+      3
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 15,
+    "final_segments": [
+      0
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 16,
+    "final_segments": [
+      3
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 17,
+    "final_segments": [
+      0
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 18,
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 19,
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 20,
+    "final_segments": [
+      0
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 21,
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 22,
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 23,
+    "final_segments": [
+      0
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 24,
+    "final_segments": [
+      3
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 25,
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 26,
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 27,
+    "final_segments": [
+      0
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 28,
+    "final_segments": [
+      3
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 29,
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 30,
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 31,
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 32,
+    "final_segments": [
+      0
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 33,
+    "final_segments": [
+      0
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 34,
+    "final_segments": [
+      0
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 35,
+    "final_segments": [
+      3
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 36,
+    "final_segments": [
+      3
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 37,
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 38,
+    "final_segments": [
+      3
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 39,
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  }
+]

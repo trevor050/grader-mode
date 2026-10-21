@@ -1,0 +1,23 @@
+{
+  "fixed_initial_credit_ceiling_usd": 2.824799,
+  "reserve_usd": 0.3,
+  "max_hourly_usd": 0.8,
+  "provider_before": {
+    "credit": 2.8247990722999967,
+    "total_spend": -7.175200927700003
+  },
+  "provider_after": {
+    "credit": 2.8068864014999964,
+    "total_spend": -7.193113598500004
+  },
+  "provider_credit_delta_usd": 0.017912670800000363,
+  "provider_credit_delta_provisional": true,
+  "prior_gemma_ledger_usd": 1.452285,
+  "first_lost_reservation_retained_usd": 2.52426,
+  "fix_all_costs_ledger_usd": 0.371489,
+  "vast_total_conservative_ledger_usd": 2.895749,
+  "vast_elapsed_compute_storage_plus_full_network_envelopes_usd": 0.6831156147139552,
+  "aggregate_ledger_spent_usd": 4.348034,
+  "aggregate_ledger_outstanding_usd": 0.0,
+  "aggregate_cap_usd": 9.0
+}

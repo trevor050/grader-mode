@@ -1,0 +1,68 @@
+{
+  "decision": "drop_controls",
+  "cap_usd": 3.0,
+  "prior_gemma_usd": 0.282284,
+  "current_attempt_elapsed_seconds": 347.24042892456055,
+  "current_attempt_cost_bound_usd": 0.2604303216934204,
+  "measured_rows": 256,
+  "measured_output_tokens": 92790,
+  "measured_generation_seconds": 103.47134727600002,
+  "measured_tokens_per_second": 896.7699990654559,
+  "setup_seconds": 216.400294716,
+  "mean_tokens_by_cell": {
+    "gemma/prefill/neutral": 946.0,
+    "gemma/prefill/irrelevant": 1038.0,
+    "gemma/main/off/plain": 136.5,
+    "gemma/prefill/reminder": 1111.5,
+    "gemma/prefill/empty": 904.0,
+    "gemma/main/off/explicit": 249.5,
+    "gemma/main/on/explicit": 849.5,
+    "gemma/main/on/plain": 852.5
+  },
+  "observed_means_by_cell": {
+    "gemma/main/off/plain": 99.83870967741936,
+    "gemma/main/off/explicit": 157.76119402985074,
+    "gemma/main/on/plain": 555.4,
+    "gemma/main/on/explicit": 651.7894736842105
+  },
+  "pilot_means_by_cell": {
+    "gemma/prefill/reminder": 1111.5,
+    "gemma/prefill/irrelevant": 1038,
+    "gemma/main/on/plain": 852.5,
+    "gemma/main/off/plain": 136.5,
+    "gemma/prefill/empty": 904,
+    "gemma/main/off/explicit": 249.5,
+    "gemma/prefill/neutral": 946,
+    "gemma/main/on/explicit": 849.5
+  },
+  "hourly_usd": 2.7,
+  "runtime_margin": 1.2,
+  "teardown_and_failure_reserve_usd": 0.3,
+  "dropped_cells": [
+    "gemma/prefill/neutral",
+    "gemma/prefill/irrelevant"
+  ],
+  "remaining_rows": 2144,
+  "projected_total_usd": 2.3562703075253335,
+  "projections": [
+    {
+      "dropped_cells": [],
+      "remaining_output_tokens": 2301724.0,
+      "remaining_generation_seconds": 2566.6826526296354,
+      "projected_total_usd": 3.152728709060092
+    },
+    {
+      "dropped_cells": [
+        "gemma/prefill/neutral",
+        "gemma/prefill/irrelevant"
+      ],
+      "remaining_output_tokens": 1508124.0,
+      "remaining_generation_seconds": 1681.7288731465703,
+      "projected_total_usd": 2.3562703075253335
+    }
+  ],
+  "controls_generated_before_decision": 0,
+  "decision_unix": 1792612361.1175385,
+  "inference_eligible": false,
+  "outcomes_read_or_scored": false
+}

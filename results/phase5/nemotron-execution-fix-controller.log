@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<stdin>", line 23, in <module>
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 969, in candidate
+    raise failure
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 859, in candidate
+    smoke = wait_result('smoke', ticket['startup_deadline_unix'])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 844, in wait_result
+    raise RuntimeError('worker failed outside runtime smoke; no outcome-selected fallback')
+RuntimeError: worker failed outside runtime smoke; no outcome-selected fallback

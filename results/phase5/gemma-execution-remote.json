@@ -1,0 +1,12 @@
+{
+  "run_id": "phase5-gemma-main-20261021-a",
+  "status": "completed",
+  "inference_eligible": false,
+  "returncode": 0,
+  "ended_unix": 1792613476.3157673,
+  "kv_capacity_log": [
+    "(EngineCore pid=53) INFO 10-21 19:50:23 [gpu_worker.py:759] Available KV cache memory: 15.07 GiB",
+    "(EngineCore pid=53) INFO 10-21 19:50:23 [gpu_worker.py:774] CUDA graph memory profiling is enabled (default since v0.21.0). The current --gpu-memory-utilization=0.9000 is equivalent to --gpu-memory-utilization=0.8864 without CUDA graph memory profiling. To maintain the same effective KV cache size as before, increase --gpu-memory-utilization to 0.9136. To disable, set VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS=0.",
+    "(EngineCore pid=53) INFO 10-21 19:50:23 [kv_cache_utils.py:2327] GPU KV cache size: 46,952 tokens, Maximum concurrency for 8,192 tokens per request: 5.73x"
+  ]
+}

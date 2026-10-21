@@ -100,6 +100,28 @@ def _cell(row):
     return row['arm'], row['thinking'], row['request_type'], row['prefill']
 
 
+def order_requests(rows, policy='shuffle'):
+    """Deterministic execution order, independent of responses and matched seeds."""
+    ordered = list(rows)
+    random.Random(0).shuffle(ordered)
+    if policy == 'main_priority':
+        ordered.sort(key=lambda r: 0 if r['arm'] == 'main' else
+                     (1 if r['prefill'] in ('empty', 'reminder') else 2))
+    elif policy != 'shuffle':
+        raise ValueError('unknown ordering policy')
+    return ordered
+
+
+def engine_options(config):
+    batch, chunk = config.get('batch_size', 16), config.get('chunk_size', 16)
+    eager = config.get('enforce_eager', True)
+    if any(type(v) is not int or v < 1 for v in (batch, chunk)) or type(eager) is not bool:
+        raise ValueError('positive integer batching and boolean enforce_eager required')
+    return dict(batch_size=batch, chunk_size=chunk, enforce_eager=eager,
+                max_model_len=8192, tensor_parallel_size=1,
+                gpu_memory_utilization=.90, generation_config='vllm')
+
+
 def pilot_requests(rows):
     """16 throughput-only rows: every cell, equally represented in both templates.
 
@@ -224,9 +246,13 @@ def generate(model_key, requests, run_id, manifest, model_config=None):
     stage=manifest.get('stage',config.get('stage','main'))
     if stage not in ('main','pilot') or ('stage' in config and config['stage']!=stage):
         raise ValueError('stage must be main or pilot with consistent provenance')
-    batch_size, chunk_size = config.get('batch_size', 16), config.get('chunk_size', 16)
-    if any(type(v) is not int or v < 1 for v in (batch_size, chunk_size)):
-        raise ValueError('batch_size and chunk_size must be positive integers')
+    engine = engine_options(config)
+    batch_size, chunk_size = engine['batch_size'], engine['chunk_size']
+    ordering = config.get('ordering', 'shuffle')
+    ordered = order_requests(requests, ordering)
+    checkpoint = config.get('checkpoint', lambda: None)
+    first_chunk_gate = config.get('first_chunk_gate')
+    before_chunk = config.get('before_chunk', lambda: None)
     directory = Path(config.get('output_dir', Path('/raw') / run_id))
     slug = model.split('/')[-1]
     raw_path, metrics_path = directory / f'{slug}.jsonl', directory / f'{slug}.metrics.json'
@@ -244,30 +270,32 @@ def generate(model_key, requests, run_id, manifest, model_config=None):
     llm = LLM(model=model, tokenizer=model, revision=spec['revision'],
         tokenizer_revision=spec['tokenizer_revision'], dtype=spec['dtype'], quantization=spec['quantization'],
         tensor_parallel_size=1, max_model_len=spec['max_model_len'], max_num_seqs=batch_size,
-        gpu_memory_utilization=.90, generation_config='vllm', seed=0, enforce_eager=True)
+        gpu_memory_utilization=.90, generation_config='vllm', seed=0,
+        enforce_eager=engine['enforce_eager'])
     loaded = time.monotonic()
-    ordered = list(requests)
-    random.Random(0).shuffle(ordered)
     directory.mkdir(parents=True, exist_ok=True)
     total_tokens = prompt_tokens = completed = 0
     generation_seconds = 0.0
-    engine = {'batch_size':batch_size, 'chunk_size':chunk_size, 'max_model_len':spec['max_model_len'],
-              'tensor_parallel_size':1, 'gpu_memory_utilization':.90, 'generation_config':'vllm',
-              'enforce_eager':True}
+    per_cell = {}
+    selected_count = len(ordered)
+    dropped_cells = []
     provenance = {'model': model, 'model_revision':spec['revision'], 'tokenizer_revision':spec['tokenizer_revision'],
         'dtype':spec['dtype'], 'quantization':spec['quantization'], 'reasoning_effort':spec['reasoning_effort'],
         'sampling': {**SAMPLING, 'skip_special_tokens':False, 'stop_token_ids':spec['stop_token_ids']},
         'run_id':run_id, 'stage':stage, 'pilot':stage=='pilot',
         'generation_started_unix':time.time(),
         'render_date':RENDER_DATE, 'package_versions':versions,
-        'engine':engine, 'host':config.get('host',os.environ.get('PHASE5_HOST','unreported')),
+        'engine':engine, 'ordering':ordering,
+        'host':config.get('host',os.environ.get('PHASE5_HOST','unreported')),
         'gpu':config.get('gpu',os.environ.get('PHASE5_GPU','unreported')),
         'runtime_image':os.environ.get('PHASE5_RUNTIME_IMAGE', 'unreported'),
         'python_version':platform.python_version()}
 
     def metrics():
         elapsed = time.monotonic() - started
-        return {**provenance, 'phase':'phase5', 'requests':completed, 'requested_count':len(ordered),
+        return {**provenance, 'phase':'phase5', 'requests':completed, 'requested_count':selected_count,
+            'registered_count':len(requests), 'dropped_cells':list(dropped_cells),
+            'per_cell':{k:dict(v) for k,v in per_cell.items()},
             'output_tokens':total_tokens, 'prompt_tokens':prompt_tokens,
             'generation_seconds':generation_seconds, 'setup_seconds':loaded-started,
             'elapsed_seconds':elapsed, 'function_seconds':elapsed,
@@ -275,8 +303,9 @@ def generate(model_key, requests, run_id, manifest, model_config=None):
             'manifest':manifest}
 
     with raw_path.open('x') as out:
-        for offset in range(0,len(ordered),chunk_size):
-            batch = ordered[offset:offset+chunk_size]
+        while ordered:
+            before_chunk()
+            batch, ordered = ordered[:chunk_size], ordered[chunk_size:]
             rendered = [render_prompt(tokenizer,r) for r in batch]
             prompt_ids = [tokenizer.encode(p,add_special_tokens=False) for p in rendered]
             if any(len(ids)+SAMPLING['max_tokens'] > spec['max_model_len'] for ids in prompt_ids):
@@ -312,14 +341,35 @@ def generate(model_key, requests, run_id, manifest, model_config=None):
                 row.update(split_response(row,tokenizer))
                 out.write(json.dumps(row,ensure_ascii=False)+'\n')
                 completed+=1;total_tokens+=len(ids);prompt_tokens+=len(expected_ids)
+                mode = 'on' if request['thinking'] else 'off'
+                cell = ('gemma' if model == GEMMA else model.split('/')[-1]) + (
+                    f"/prefill/{request['prefill']}" if request['arm']=='prefill' else
+                    f"/main/{mode}/{request['request_type']}")
+                item = per_cell.setdefault(cell, dict(count=0, output_tokens=0))
+                item['count'] += 1
+                item['output_tokens'] += len(ids)
             out.flush()
+            os.fsync(out.fileno())
             # Persist after each completed chunk for controller timing and recovery.
             progress=metrics()
             (directory/f'{slug}.progress.json').write_text(json.dumps(progress,indent=2)+'\n')
+            checkpoint()
             print(json.dumps({k:progress[k] for k in ('model','requests','output_tokens','generation_seconds','elapsed_seconds')}),flush=True)
+            if completed == len(batch) and first_chunk_gate is not None:
+                dropped_cells = list(first_chunk_gate(progress, ordered))
+                # Decisions may remove only complete, unstarted control cells.
+                allowed = {'gemma/prefill/neutral', 'gemma/prefill/irrelevant'}
+                if dropped_cells and (set(dropped_cells) != allowed or model != GEMMA
+                        or any(cell in per_cell for cell in dropped_cells)):
+                    raise ValueError('only both unstarted Gemma control cells may be dropped')
+                if dropped_cells:
+                    ordered = [r for r in ordered if not (r['arm']=='prefill' and
+                               f"gemma/prefill/{r['prefill']}" in dropped_cells)]
+                    selected_count = completed + len(ordered)
     stats=metrics()
     with metrics_path.open('x') as out:
         out.write(json.dumps(stats,indent=2)+'\n')
+    checkpoint()
     return stats
 
 

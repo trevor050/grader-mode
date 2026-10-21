@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "per_cell_counts": {
+    "gemma/main/off/plain": 400,
+    "gemma/main/off/explicit": 400,
+    "gemma/main/on/plain": 400,
+    "gemma/main/on/explicit": 400,
+    "gemma/prefill/reminder": 400,
+    "gemma/prefill/empty": 400
+  },
+  "rows": 2400,
+  "complete_selected_grid": true,
+  "inference_eligible": false,
+  "human_audit_pending": true,
+  "ended_unix": 1792613472.2849083
+}

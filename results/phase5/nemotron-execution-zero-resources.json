@@ -1,0 +1,8 @@
+{
+  "captured_unix": 1792614768.041923,
+  "vast_instances": [],
+  "vast_instance_count": 0,
+  "vast_zero_confirmed": true,
+  "modal_zero_source": "parent verified activeModal=0/container=0; not independently requeried by this Vast-only controller",
+  "watchdog_processes_remaining": false
+}

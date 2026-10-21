@@ -1,0 +1,26 @@
+{
+  "captured_unix": 1792611969.600924,
+  "modal": {
+    "metered_cost": "26.26571729",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "plan_cost": "0E-8",
+      "reservation_adjustment": "-0E-8",
+      "credits": "-25.93000000",
+      "free_storage": "-0E-8",
+      "network_egress_allowance": "-0.33571729"
+    },
+    "metered_cost_breakdown": {
+      "volumes": "0E-8",
+      "network_egress": "0.33571729",
+      "ephemeral_apps": "25.93177087",
+      "llm_tokens": "0E-8"
+    }
+  },
+  "vast": {
+    "credit": 2.8247990722999967,
+    "balance": 0,
+    "total_spend": -7.175200927700003,
+    "billed_expected": 0.0
+  }
+}

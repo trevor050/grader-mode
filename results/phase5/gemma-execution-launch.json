@@ -1,0 +1,68 @@
+{
+  "run_id": "phase5-gemma-main-20261021-a",
+  "ticket": {
+    "attempt_id": "phase5-gemma-main-20261021-a",
+    "provider": "modal",
+    "status": "reserved",
+    "reserved_microusd": 2642250,
+    "reserved_usd": 2.64225,
+    "charged_microusd": 0,
+    "hourly_usd": 2.7,
+    "started_unix": 1792612013.8750348,
+    "startup_seconds": 180.0,
+    "runtime_seconds": 3223.0,
+    "teardown_seconds": 120.0,
+    "startup_deadline_unix": 1792612193.8750348,
+    "work_deadline_unix": 1792615416.8750348,
+    "deadline_unix": 1792615536.8750348,
+    "resource_id": null,
+    "resource_label": "phase5-phase5-gemma-main-20261021-a",
+    "teardown_verified": false,
+    "events": []
+  },
+  "model_cap_usd": 3.0,
+  "prior_gemma_usd": 0.282284,
+  "allocation": {
+    "startup_seconds": 180,
+    "runtime_seconds": 3223,
+    "teardown_seconds": 120,
+    "reserved_usd": 2.64225,
+    "external_delayed_charge_buffer_usd": 0.075
+  },
+  "source_sha256": {
+    "DESIGN.md": "6fa65ab1472815521f110446744d3908ef9ef8dca71ac351d3384bf64f03cb90",
+    "prompts/templates.json": "637fb8aa1312f4485d410241fe6087cbbe9c6150a4267bfb8a71e418f7af0ed1",
+    "prompts/templates_4.json": "6cd003a8b8bf96456428084a1abeedb5c66ee5774443bcb6fdf31d7d65a8fd31",
+    "prompts/system_tutor.txt": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11",
+    "src/models_5.py": "f087db2706c68087c804b0ce50fe4fed39be644908f43f604e5ad910e1991804",
+    "src/phase5_split.py": "5739523aabc58b7f855c3f6cafc6dba984209e84887e68fc00d6a5490731434f",
+    "src/vast_generate_5.py": "097e7b044ae72226ea3484fa6d2734e50e616be79e290293a1d6e62cf253ed49",
+    "src/modal_main_5.py": "f5b2cf23eb4d95e6a7955fd5dfd921209d938a70af77427dd16d449774f14914",
+    "src/modal_app_5.py": "df765af3ea969dc41aceff855020044115767b2034f7d20ac849b2c95f6f4c98",
+    "src/phase5_control.py": "bd99c9a0e591d55ab210abeef399e1bad1351ffc1692abaaf4ede6f024cbf62c"
+  },
+  "modal_apps_before": [
+    {
+      "app_id": "ap-FckHbbVTlPcie116OwqSgz",
+      "description": "grader-mode-phase5-pilot",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-21 15:14:21-04:00",
+      "stopped_at": "2026-10-21 15:19:37-04:00"
+    }
+  ],
+  "modal_containers_before": [],
+  "registered_rows": 3200,
+  "sampling": {
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "top_k": -1,
+    "max_tokens": 4096
+  },
+  "engine": {
+    "batch_size": 256,
+    "chunk_size": 256,
+    "enforce_eager": false,
+    "max_model_len": 8192
+  }
+}

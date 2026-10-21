@@ -1,0 +1,151 @@
+{
+  "authorization_id": "phase5-vast-execution-20261021-r4",
+  "run_id": "phase5-second-family-20261021",
+  "status": "stopped_before_model_load",
+  "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+  "model_revision": "bee7596271d1495f6992ae224aefde4410e816b8",
+  "registration_commit": "c3e705068f0c3622c3b5d4cb9575530004ad68ae",
+  "raw_directory": "/Users/user/codeprojects/grader-mode/results/raw/phase5-second-family-20261021",
+  "updated_unix": 1792614768.045281,
+  "outcomes_consulted": false,
+  "scoring_performed": false,
+  "fallback_selected": false,
+  "fallback_reason": "Neither rental entered unscored Nemotron load/generate; two prospective runtime failures are absent.",
+  "attempts": [
+    {
+      "stage": "startup",
+      "attempt_id": "phase5-second-family-20261021-startup",
+      "instance_id": "57106643",
+      "offer_id": 51954044,
+      "hourly_compute_storage_usd": 0.6518518518518519,
+      "reliability": 0.9940899,
+      "started_unix": 1792614061.032347,
+      "zero_verified_unix": 1792614171.2703419,
+      "wall_to_zero_seconds": 110.2379949092865,
+      "runtime_smoke_entered": false,
+      "smoke_requests": 0,
+      "throughput_requests": 0,
+      "error": "pre-model provider CLI JSONDecodeError; API 429 reproduced later; automatic destroy lacked --yes",
+      "teardown_verified": true,
+      "artifacts_pulled": false,
+      "ledger_charge_usd": 2.52426,
+      "ledger_reservation_usd": 2.52426,
+      "raw_operational_dir": "/Users/user/codeprojects/grader-mode/results/raw/phase5-second-family-20261021/startup",
+      "receipt_sha256": {
+        "execution-error.json": "4a8c41dfa272a1ece80b3584447187230308d42d923a0f0849ed4ea2a07b0ec0",
+        "manual-teardown.json": "3dbecb24f6b6bd2c28a1445f2748e58cfcd52c31fd6ba404c20539622865e7f3",
+        "teardown.json": "56ea5618cc91657695c3762dbd04558b3ec88e4f441dd4ee54c8b61bb7a9b90b"
+      }
+    },
+    {
+      "stage": "fix",
+      "attempt_id": "phase5-second-family-20261021-fix",
+      "instance_id": "57107006",
+      "offer_id": 56695172,
+      "hourly_compute_storage_usd": 0.6888888888888889,
+      "reliability": 0.9935535,
+      "started_unix": 1792614255.4540002,
+      "zero_verified_unix": 1792614672.171432,
+      "wall_to_zero_seconds": 416.71743178367615,
+      "runtime_smoke_entered": false,
+      "smoke_requests": 0,
+      "throughput_requests": 0,
+      "error": "PackageInstallError: no matching distribution for pinned vllm==0.32.0",
+      "teardown_verified": true,
+      "artifacts_pulled": true,
+      "ledger_charge_usd": 0.371489,
+      "ledger_reservation_usd": 2.21271,
+      "raw_operational_dir": "/Users/user/codeprojects/grader-mode/results/raw/phase5-second-family-20261021/fix",
+      "receipt_sha256": {
+        "error.json": "fa885db579578bb9526de79b179c1f09370622128783173c566c990f8d60ced9",
+        "execution-error.json": "9a710b8e3c7d203fee49fe410f7f0b8b292e5b9df663af39203e497f265518fe",
+        "worker-error.json": "b616393d8e5e2697fa098cb9dbffdcf15bf20043a17517932f7a87f9445bff85",
+        "bootstrap.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "install.log": "90c4a290ff0e72a68757ff825ee22eb3b925bbc3b48740ba237d0a0dc5d80bbd",
+        "teardown.json": "9bda2305cb092d06b910e4675d47ea7e9e0350c35073fe08ad26647cb65695d0"
+      }
+    }
+  ],
+  "main_raw_path": null,
+  "main_manifest_path": null,
+  "prospective_request_manifest_path": "/Users/user/codeprojects/grader-mode/results/raw/phase5-second-family-20261021/bundle.tar.requests.json",
+  "main_counts": {
+    "prefill/empty": 0,
+    "prefill/reminder": 0,
+    "prefill/neutral": 0,
+    "prefill/irrelevant": 0,
+    "main/on/plain": 0,
+    "main/on/explicit": 0,
+    "main/off/plain": 0,
+    "main/off/explicit": 0
+  },
+  "measured_throughput": null,
+  "model_setup_seconds": null,
+  "stage_decisions": [
+    {
+      "stage": "h20_core",
+      "status": "not_released",
+      "reason": "No successful smoke or measured 256-request throughput; no projection possible",
+      "rows": 800
+    },
+    {
+      "stage": "h21_main",
+      "status": "not_released",
+      "reason": "No successful smoke or measured 256-request throughput; no projection possible",
+      "rows": 1600
+    },
+    {
+      "stage": "h20_controls",
+      "status": "not_released",
+      "reason": "No successful smoke or measured 256-request throughput; no projection possible",
+      "rows": 800
+    }
+  ],
+  "registered_budget_drops_applied": false,
+  "inference_eligible": false,
+  "budget": {
+    "fixed_initial_credit_ceiling_usd": 2.824799,
+    "reserve_usd": 0.3,
+    "max_hourly_usd": 0.8,
+    "provider_before": {
+      "credit": 2.8247990722999967,
+      "total_spend": -7.175200927700003
+    },
+    "provider_after": {
+      "credit": 2.8068864014999964,
+      "total_spend": -7.193113598500004
+    },
+    "provider_credit_delta_usd": 0.017912670800000363,
+    "provider_credit_delta_provisional": true,
+    "prior_gemma_ledger_usd": 1.452285,
+    "first_lost_reservation_retained_usd": 2.52426,
+    "fix_all_costs_ledger_usd": 0.371489,
+    "vast_total_conservative_ledger_usd": 2.895749,
+    "vast_elapsed_compute_storage_plus_full_network_envelopes_usd": 0.6831156147139552,
+    "aggregate_ledger_spent_usd": 4.348034,
+    "aggregate_ledger_outstanding_usd": 0.0,
+    "aggregate_cap_usd": 9.0
+  },
+  "diagnosis": {
+    "package_error": "Remote pip could not find vllm==0.32.0; reported available versions through 0.31.0.",
+    "registry_release_exists": true,
+    "registry_requires_python": "<3.15,>=3.11",
+    "remote_python_version_recorded": false,
+    "limitation": "Remote interpreter/index details were not captured, so exact compatibility/index cause is unconfirmed.",
+    "registry_source": "https://pypi.org/pypi/vllm/0.32.0/json"
+  },
+  "controller_fixes": [
+    "Bounded retry of read-only malformed provider JSON; never retry create",
+    "Noninteractive --yes destruction; verify absence instead of requiring a JSON acknowledgement"
+  ],
+  "focused_tests": "59 passed in 16.41s",
+  "zero_resources": {
+    "captured_unix": 1792614768.041923,
+    "vast_instances": [],
+    "vast_instance_count": 0,
+    "vast_zero_confirmed": true,
+    "modal_zero_source": "parent verified activeModal=0/container=0; not independently requeried by this Vast-only controller",
+    "watchdog_processes_remaining": false
+  },
+  "no_commits_or_push": true
+}

@@ -1,0 +1,10 @@
+{
+  "author": "Codex gpt-6.1-sol",
+  "authorization": "User explicitly requested self-labeling blind to arm",
+  "independent_human_labels": false,
+  "method": "Manual reading of blind raw protocol spans; manual segment and attempt/number choices; no automatic parser labels copied",
+  "sample_sha256": "69df12e43424ba62f15628c58ce06212dffb5f71c0105c6759370718d4315dad",
+  "decisions_sha256": "6251b111a34c6e0001802c6ce0f27eeb7608ae20b0322772cef324c25dbf59c8",
+  "completed_unix": 1792613619.43186,
+  "attempt_label_target": "Manual judgment of a supplied final numeric commitment; questions and numbered roadmap steps are not supplied answers."
+}

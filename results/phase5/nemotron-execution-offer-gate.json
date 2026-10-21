@@ -1,0 +1,475 @@
+{
+  "captured_unix": 1792614050.958153,
+  "max_hourly_usd": 0.8,
+  "offers": [
+    {
+      "offer": {
+        "id": 51954044,
+        "gpu_name": "RTX 5090",
+        "num_gpus": 1,
+        "gpu_ram": 32607,
+        "reliability": 0.9940899,
+        "verification": "verified",
+        "rentable": true,
+        "dph_base": 0.64,
+        "dph_total": 0.6518518518518519,
+        "storage_cost": 0.10666666666666667,
+        "inet_down_cost": 0.0026041666666666665,
+        "inet_up_cost": 0.00390625,
+        "inet_down": 866.7,
+        "inet_up": 781.1,
+        "cuda_max_good": 13.0,
+        "disk_space": 1493.5
+      },
+      "costs": {
+        "hourly_usd": 0.6518518518518519,
+        "network_usd": 0.29166666666666663,
+        "download_gb": 100,
+        "upload_gb": 8,
+        "disk_gb": 80,
+        "ingress_usd_per_gb": 0.0026041666666666665,
+        "egress_usd_per_gb": 0.00390625
+      }
+    },
+    {
+      "offer": {
+        "id": 53423316,
+        "gpu_name": "RTX 5090",
+        "num_gpus": 1,
+        "gpu_ram": 32607,
+        "reliability": 0.9958318,
+        "verification": "verified",
+        "rentable": true,
+        "dph_base": 0.8733333333333334,
+        "dph_total": 0.9007407407407408,
+        "storage_cost": 0.24666666666666662,
+        "inet_down_cost": 0.00390625,
+        "inet_up_cost": 0.005208333333333333,
+        "inet_down": 478.4,
+        "inet_up": 138.5,
+        "cuda_max_good": 13.3,
+        "disk_space": 126.0
+      },
+      "costs": {
+        "hourly_usd": 0.9007407407407408,
+        "network_usd": 0.4322916666666667,
+        "download_gb": 100,
+        "upload_gb": 8,
+        "disk_gb": 80,
+        "ingress_usd_per_gb": 0.00390625,
+        "egress_usd_per_gb": 0.005208333333333333
+      }
+    },
+    {
+      "offer": {
+        "id": 54895822,
+        "gpu_name": "RTX 5090",
+        "num_gpus": 1,
+        "gpu_ram": 32607,
+        "reliability": 0.9980681,
+        "verification": "verified",
+        "rentable": true,
+        "dph_base": 0.8666666666666667,
+        "dph_total": 0.9111111111111111,
+        "storage_cost": 0.39999999999999997,
+        "inet_down_cost": 0.0026041666666666665,
+        "inet_up_cost": 0.00390625,
+        "inet_down": 892.7,
+        "inet_up": 761.7,
+        "cuda_max_good": 13.2,
+        "disk_space": 268.0
+      },
+      "costs": {
+        "hourly_usd": 0.9111111111111111,
+        "network_usd": 0.29166666666666663,
+        "download_gb": 100,
+        "upload_gb": 8,
+        "disk_gb": 80,
+        "ingress_usd_per_gb": 0.0026041666666666665,
+        "egress_usd_per_gb": 0.00390625
+      }
+    },
+    {
+      "offer": {
+        "id": 55789126,
+        "gpu_name": "RTX 5090",
+        "num_gpus": 1,
+        "gpu_ram": 32607,
+        "reliability": 0.9972339,
+        "verification": "verified",
+        "rentable": true,
+        "dph_base": 0.88,
+        "dph_total": 0.9392592592592592,
+        "storage_cost": 0.5333333333333332,
+        "inet_down_cost": 0.01,
+        "inet_up_cost": 0.01,
+        "inet_down": 8526.2,
+        "inet_up": 5355.6,
+        "cuda_max_good": 13.0,
+        "disk_space": 1621.0
+      },
+      "costs": {
+        "hourly_usd": 0.9392592592592592,
+        "network_usd": 1.08,
+        "download_gb": 100,
+        "upload_gb": 8,
+        "disk_gb": 80,
+        "ingress_usd_per_gb": 0.01,
+        "egress_usd_per_gb": 0.01
+      }
+    },
+    {
+      "offer": {
+        "id": 53709025,
+        "gpu_name": "RTX 5090",
+        "num_gpus": 1,
+        "gpu_ram": 32607,
+        "reliability": 0.9958045,
+        "verification": "verified",
+        "rentable": true,
+        "dph_base": 0.9333333333333332,
+        "dph_total": 0.9703703703703703,
+        "storage_cost": 0.3333333333333333,
+        "inet_down_cost": 0.013020833333333334,
+        "inet_up_cost": 0.013020833333333334,
+        "inet_down": 705.0,
+        "inet_up": 798.3,
+        "cuda_max_good": 13.2,
+        "disk_space": 865.8333333333333
+      },
+      "costs": {
+        "hourly_usd": 0.9703703703703703,
+        "network_usd": 1.4062500000000002,
+        "download_gb": 100,
+        "upload_gb": 8,
+        "disk_gb": 80,
+        "ingress_usd_per_gb": 0.013020833333333334,
+        "egress_usd_per_gb": 0.013020833333333334
+      }
+    },
+    {
+      "offer": {
+        "id": 56722781,
+        "gpu_name": "RTX 5090",
+        "num_gpus": 1,
+        "gpu_ram": 32607,
+        "reliability": 0.9919932,
+        "verification": "verified",
+        "rentable": true,
+        "dph_base": 0.9733333333333332,
+        "dph_total": 0.9955555555555554,
+        "storage_cost": 0.19999999999999998,
+        "inet_down_cost": 0.0026666666666666666,
+        "inet_up_cost": 0.004,
+        "inet_down": 710.3,
+        "inet_up": 166.4,
+        "cuda_max_good": 13.2,
+        "disk_space": 588.7
+      },
+      "costs": {
+        "hourly_usd": 0.9955555555555554,
+        "network_usd": 0.29866666666666664,
+        "download_gb": 100,
+        "upload_gb": 8,
+        "disk_gb": 80,
+        "ingress_usd_per_gb": 0.0026666666666666666,
+        "egress_usd_per_gb": 0.004
+      }
+    },
+    {
+      "offer": {
+        "id": 51969533,
+        "gpu_name": "RTX 5090",
+        "num_gpus": 1,
+        "gpu_ram": 32607,
+        "reliability": 0.994073,
+        "verification": "verified",
+        "rentable": true,
+        "dph_base": 1.1333333333333333,
+        "dph_total": 1.1481481481481481,
+        "storage_cost": 0.1333333333333333,
+        "inet_down_cost": 0.0,
+        "inet_up_cost": 0.0,
+        "inet_down": 784.2,
+        "inet_up": 679.7,
+        "cuda_max_good": 13.2,
+        "disk_space": 102.0
+      },
+      "costs": {
+        "hourly_usd": 1.1481481481481481,
+        "network_usd": 0.0,
+        "download_gb": 100,
+        "upload_gb": 8,
+        "disk_gb": 80,
+        "ingress_usd_per_gb": 0.0,
+        "egress_usd_per_gb": 0.0
+      }
+    },
+    {
+      "offer": {
+        "id": 44204688,
+        "gpu_name": "RTX 5090",
+        "num_gpus": 1,
+        "gpu_ram": 32607,
+        "reliability": 0.9946778,
+        "verification": "verified",
+        "rentable": true,
+        "dph_base": 1.2,
+        "dph_total": 1.234074074074074,
+        "storage_cost": 0.3066666666666667,
+        "inet_down_cost": 0.0390625,
+        "inet_up_cost": 0.0390625,
+        "inet_down": 6567.2,
+        "inet_up": 3092.0,
+        "cuda_max_good": 13.0,
+        "disk_space": 164.5
+      },
+      "costs": {
+        "hourly_usd": 1.234074074074074,
+        "network_usd": 4.21875,
+        "download_gb": 100,
+        "upload_gb": 8,
+        "disk_gb": 80,
+        "ingress_usd_per_gb": 0.0390625,
+        "egress_usd_per_gb": 0.0390625
+      }
+    },
+    {
+      "offer": {
+        "id": 56459917,
+        "gpu_name": "RTX 5090",
+        "num_gpus": 1,
+        "gpu_ram": 32607,
+        "reliability": 0.9943172,
+        "verification": "verified",
+        "rentable": true,
+        "dph_base": 1.2666666666666666,
+        "dph_total": 1.2888888888888888,
+        "storage_cost": 0.19999999999999998,
+        "inet_down_cost": 0.0026041666666666665,
+        "inet_up_cost": 0.00390625,
+        "inet_down": 7672.2,
+        "inet_up": 4142.8,
+        "cuda_max_good": 13.2,
+        "disk_space": 1737.0
+      },
+      "costs": {
+        "hourly_usd": 1.2888888888888888,
+        "network_usd": 0.29166666666666663,
+        "download_gb": 100,
+        "upload_gb": 8,
+        "disk_gb": 80,
+        "ingress_usd_per_gb": 0.0026041666666666665,
+        "egress_usd_per_gb": 0.00390625
+      }
+    },
+    {
+      "offer": {
+        "id": 55530462,
+        "gpu_name": "RTX 5090",
+        "num_gpus": 1,
+        "gpu_ram": 32607,
+        "reliability": 0.9987648,
+        "verification": "verified",
+        "rentable": true,
+        "dph_base": 1.2866666666666664,
+        "dph_total": 1.316296296296296,
+        "storage_cost": 0.2666666666666666,
+        "inet_down_cost": 0.013333333333333334,
+        "inet_up_cost": 0.013333333333333334,
+        "inet_down": 878.0,
+        "inet_up": 879.8,
+        "cuda_max_good": 13.0,
+        "disk_space": 3028.55
+      },
+      "costs": {
+        "hourly_usd": 1.316296296296296,
+        "network_usd": 1.4400000000000002,
+        "download_gb": 100,
+        "upload_gb": 8,
+        "disk_gb": 80,
+        "ingress_usd_per_gb": 0.013333333333333334,
+        "egress_usd_per_gb": 0.013333333333333334
+      }
+    },
+    {
+      "offer": {
+        "id": 56787191,
+        "gpu_name": "RTX 5090",
+        "num_gpus": 1,
+        "gpu_ram": 32607,
+        "reliability": 0.997945,
+        "verification": "verified",
+        "rentable": true,
+        "dph_base": 1.3333333333333333,
+        "dph_total": 1.3555555555555554,
+        "storage_cost": 0.19999999999999998,
+        "inet_down_cost": 0.013020833333333334,
+        "inet_up_cost": 0.013020833333333334,
+        "inet_down": 2416.8,
+        "inet_up": 1705.1,
+        "cuda_max_good": 13.4,
+        "disk_space": 1645.95
+      },
+      "costs": {
+        "hourly_usd": 1.3555555555555554,
+        "network_usd": 1.4062500000000002,
+        "download_gb": 100,
+        "upload_gb": 8,
+        "disk_gb": 80,
+        "ingress_usd_per_gb": 0.013020833333333334,
+        "egress_usd_per_gb": 0.013020833333333334
+      }
+    },
+    {
+      "offer": {
+        "id": 42893305,
+        "gpu_name": "RTX 5090",
+        "num_gpus": 1,
+        "gpu_ram": 32607,
+        "reliability": 0.9944096,
+        "verification": "verified",
+        "rentable": true,
+        "dph_base": 1.3310666666666666,
+        "dph_total": 1.390325925925926,
+        "storage_cost": 0.5333333333333332,
+        "inet_down_cost": 0.026041666666666668,
+        "inet_up_cost": 0.026041666666666668,
+        "inet_down": 933.5,
+        "inet_up": 916.7,
+        "cuda_max_good": 13.0,
+        "disk_space": 732.95
+      },
+      "costs": {
+        "hourly_usd": 1.390325925925926,
+        "network_usd": 2.8125000000000004,
+        "download_gb": 100,
+        "upload_gb": 8,
+        "disk_gb": 80,
+        "ingress_usd_per_gb": 0.026041666666666668,
+        "egress_usd_per_gb": 0.026041666666666668
+      }
+    },
+    {
+      "offer": {
+        "id": 54247040,
+        "gpu_name": "RTX 5090",
+        "num_gpus": 1,
+        "gpu_ram": 32607,
+        "reliability": 0.9977795,
+        "verification": "verified",
+        "rentable": true,
+        "dph_base": 1.4933333333333334,
+        "dph_total": 1.5525925925925927,
+        "storage_cost": 0.5333333333333332,
+        "inet_down_cost": 0.01,
+        "inet_up_cost": 0.01,
+        "inet_down": 11153.1,
+        "inet_up": 6236.1,
+        "cuda_max_good": 13.0,
+        "disk_space": 1415.0
+      },
+      "costs": {
+        "hourly_usd": 1.5525925925925927,
+        "network_usd": 1.08,
+        "download_gb": 100,
+        "upload_gb": 8,
+        "disk_gb": 80,
+        "ingress_usd_per_gb": 0.01,
+        "egress_usd_per_gb": 0.01
+      }
+    },
+    {
+      "offer": {
+        "id": 56464013,
+        "gpu_name": "RTX 5090",
+        "num_gpus": 1,
+        "gpu_ram": 32607,
+        "reliability": 0.9985971,
+        "verification": "verified",
+        "rentable": true,
+        "dph_base": 1.5999999999999999,
+        "dph_total": 1.6888888888888887,
+        "storage_cost": 0.7999999999999999,
+        "inet_down_cost": 0.04,
+        "inet_up_cost": 0.04,
+        "inet_down": 940.9,
+        "inet_up": 939.0,
+        "cuda_max_good": 13.4,
+        "disk_space": 278.95
+      },
+      "costs": {
+        "hourly_usd": 1.6888888888888887,
+        "network_usd": 4.32,
+        "download_gb": 100,
+        "upload_gb": 8,
+        "disk_gb": 80,
+        "ingress_usd_per_gb": 0.04,
+        "egress_usd_per_gb": 0.04
+      }
+    },
+    {
+      "offer": {
+        "id": 51326860,
+        "gpu_name": "RTX 5090",
+        "num_gpus": 1,
+        "gpu_ram": 32607,
+        "reliability": 0.9961962,
+        "verification": "verified",
+        "rentable": true,
+        "dph_base": 1.986666666666667,
+        "dph_total": 2.023703703703704,
+        "storage_cost": 0.3333333333333333,
+        "inet_down_cost": 0.0390625,
+        "inet_up_cost": 0.05333333333333334,
+        "inet_down": 5389.5,
+        "inet_up": 2251.1,
+        "cuda_max_good": 13.3,
+        "disk_space": 442.875
+      },
+      "costs": {
+        "hourly_usd": 2.023703703703704,
+        "network_usd": 4.332916666666667,
+        "download_gb": 100,
+        "upload_gb": 8,
+        "disk_gb": 80,
+        "ingress_usd_per_gb": 0.0390625,
+        "egress_usd_per_gb": 0.05333333333333334
+      }
+    },
+    {
+      "offer": {
+        "id": 56359056,
+        "gpu_name": "RTX 5090",
+        "num_gpus": 1,
+        "gpu_ram": 32607,
+        "reliability": 0.992067,
+        "verification": "verified",
+        "rentable": true,
+        "dph_base": 9.333333333333334,
+        "dph_total": 9.358370370370372,
+        "storage_cost": 0.2253333333333334,
+        "inet_down_cost": 0.009114583333333334,
+        "inet_up_cost": 0.009114583333333334,
+        "inet_down": 860.6,
+        "inet_up": 608.1,
+        "cuda_max_good": 13.4,
+        "disk_space": 838.5
+      },
+      "costs": {
+        "hourly_usd": 9.358370370370372,
+        "network_usd": 0.984375,
+        "download_gb": 100,
+        "upload_gb": 8,
+        "disk_gb": 80,
+        "ingress_usd_per_gb": 0.009114583333333334,
+        "egress_usd_per_gb": 0.009114583333333334
+      }
+    }
+  ],
+  "account": {
+    "credit": 2.8247990722999967,
+    "total_spend": -7.175200927700003
+  },
+  "instances": []
+}

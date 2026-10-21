@@ -1,7 +1,8 @@
 """Strict Phase 5 grids and final-only paired problem-cluster inference.
 
-Main analysis requires both models and the original 200 Phase 1 problems,
-with two templates per retained cell. Only the registered whole-cell drop
+Default main analysis requires both models and the original 200 Phase 1 problems,
+with two templates per retained cell. Explicit model_scope validates one complete
+family independently for sequential reporting, with the same sample/audit gates. Only the registered whole-cell drop
 stages are accepted, and only with --allow-cell-drops. --pilot allows partial
 collection for descriptive checks, never hypothesis decisions. Missing human
 attempt/numeric or human final-boundary labels keep inference pending; no
@@ -194,12 +195,15 @@ def validate_fallback_provenance(proof, *, allow_fixture=False):
 
 def validate_grid(rows, *, expected_problems=200, allow_cell_drops=False,
                   problem_manifest=None, pilot=False, allow_glm_fallback=False,
-                  fallback_provenance=None):
+                  fallback_provenance=None, model_scope=None):
     if type(expected_problems) is not int or expected_problems<1:
         raise ValueError('expected_problems must be positive integer')
-    models=active_models(rows)
+    pair=active_models(rows)
+    if model_scope is not None and (model_scope not in MODELS_5 or {r['model'] for r in rows}!={model_scope}):
+        raise ValueError('model_scope requires exactly the requested registered family')
+    models=(model_scope,) if model_scope else pair
     fallback_kind=None
-    if models[1]==GLM:
+    if GLM in models:
         if not allow_glm_fallback:
             raise ValueError('GLM fallback requires explicit allow_glm_fallback')
         fallback_kind=validate_fallback_provenance(fallback_provenance,
@@ -273,10 +277,14 @@ def validate_grid(rows, *, expected_problems=200, allow_cell_drops=False,
             dropped.extend({'model':model,'arm':'prefill','thinking':True,'format':'explicit','prefill':p}
                 for p in ('neutral','irrelevant'))
         if drop_stage==3:
-            dropped.extend({'model':models[1],'arm':a,'thinking':t,'format':f,'prefill':p} for a,t,f,p in MAIN)
+            dropped.extend({'model':pair[1],'arm':a,'thinking':t,'format':f,'prefill':p} for a,t,f,p in MAIN)
+    if model_scope and not pilot:
+        present_cells={_cell(r) for r in rows}
+        dropped=[dict(model=model_scope,arm=a,thinking=t,format=f,prefill=p)
+                 for a,t,f,p in MAIN+PREFILL if (a,t,f,p) not in present_cells]
     return {'mode':'pilot' if pilot else 'full' if not drop_stage else f'cell_drop_stage_{drop_stage}',
         'drop_stage':drop_stage,'dropped_cells':dropped,'n_problems':len(identities),
-        'models':list(models),'second_model':models[1],'fallback':fallback_kind,
+        'models':list(models),'second_model':pair[1],'model_scope':model_scope,'fallback':fallback_kind,
         'fallback_provenance':fallback_provenance,
         'expected_problems':expected_problems,'templates':[0,1],'n_responses':len(rows),
         'problem_manifest_checked':manifest_checked,
@@ -360,14 +368,14 @@ def _summarize(rows, *, eligible, pilot=False):
 
 def analyze(rows, *, expected_problems=200, allow_cell_drops=False,
             problem_manifest=None, pilot=False, labels=(), allow_glm_fallback=False,
-            fallback_provenance=None):
+            fallback_provenance=None, model_scope=None):
     if hasattr(rows,'to_dict'):
         rows = rows.to_dict('records')
     rows = score_rows(rows)
     grid = validate_grid(rows, expected_problems=expected_problems, allow_cell_drops=allow_cell_drops,
         problem_manifest=problem_manifest, pilot=pilot, allow_glm_fallback=allow_glm_fallback,
-        fallback_provenance=fallback_provenance)
-    audit = agreement(rows, labels)
+        fallback_provenance=fallback_provenance, model_scope=model_scope)
+    audit = agreement(rows, labels, model_scope=model_scope)
     reasons = []
     if pilot:
         reasons.append('pilot')
@@ -407,8 +415,8 @@ def render_markdown(report):
         '', 'Bootstrap: 2,000 paired problem resamples; seed 0; percentile 95% intervals.',
         '', 'Denominator: all requests, including cap-hit replies with no final. Length: characters.',
         '', f"Inference eligible: {report['inference']['eligible']}; reasons: {', '.join(report['inference']['reasons']) or 'none'}.",
-        '', f"Parser audit: {report['parser_agreement']['status']}; {report['parser_agreement']['n_labeled']}/80 labeled.",
-        '', f"Splitter audit: {report['parser_agreement']['splitter']['status']}; {report['parser_agreement']['splitter']['n_labeled']}/80 human finals; {report['parser_agreement']['splitter']['n_pending']} pending; {report['parser_agreement']['splitter']['n_disagreements']} disagreements.",
+        '', f"Parser audit: {report['parser_agreement']['status']}; {report['parser_agreement']['n_labeled']}/{report['parser_agreement']['n_required']} labeled.",
+        '', f"Splitter audit: {report['parser_agreement']['splitter']['status']}; {report['parser_agreement']['splitter']['n_labeled']}/{report['parser_agreement']['splitter']['n_required']} human finals; {report['parser_agreement']['splitter']['n_pending']} pending; {report['parser_agreement']['splitter']['n_disagreements']} disagreements.",
         '', 'Dropped cells: '+json.dumps(report['grid']['dropped_cells'])]
     for model,audit in report['parser_agreement']['models'].items():
         split = audit['splitter']
@@ -441,6 +449,7 @@ def main():
     parser.add_argument('--fallback-provenance',type=Path)
     parser.add_argument('--expected-problems',type=int,default=200,help='Non-200 counts are descriptive only')
     parser.add_argument('--labels',type=Path)
+    parser.add_argument('--model-scope',choices=tuple(MODELS_5),help='Validate one complete family independently')
     args = parser.parse_args()
     try:
         rows = score_rows(read_rows(args.input))
@@ -449,7 +458,7 @@ def main():
             allow_cell_drops=args.allow_cell_drops,pilot=args.pilot,
             allow_glm_fallback=args.allow_glm_fallback,
             fallback_provenance=json.loads(args.fallback_provenance.read_text()) if args.fallback_provenance else None,
-            labels=load_labels(args.labels) if args.labels else ())
+            labels=load_labels(args.labels) if args.labels else (), model_scope=args.model_scope)
         write_audit_sample(rows,args.output_dir/'parser-audit-sample.jsonl')
         write_splitter_sample(rows,args.output_dir/'splitter-audit-sample.jsonl')
         report['parser_agreement']['sample_path'] = str(args.output_dir/'parser-audit-sample.jsonl')

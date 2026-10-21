@@ -1,0 +1,25 @@
+{
+  "modal_apps": [
+    {
+      "app_id": "ap-XyIMd5cQJyWwuQtlC1jO3q",
+      "description": "grader-mode-phase5-gemma-main",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-21 15:46:54-04:00",
+      "stopped_at": "2026-10-21 16:11:19-04:00"
+    },
+    {
+      "app_id": "ap-FckHbbVTlPcie116OwqSgz",
+      "description": "grader-mode-phase5-pilot",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-21 15:14:21-04:00",
+      "stopped_at": "2026-10-21 15:19:37-04:00"
+    }
+  ],
+  "modal_containers": [],
+  "captured_unix": 1792613484.473141,
+  "source_hashes_unchanged": true,
+  "vast_instances": [],
+  "independent_final_check_unix": 1792613554.719884
+}

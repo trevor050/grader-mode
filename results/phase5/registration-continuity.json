@@ -1,0 +1,8 @@
+{
+  "phase5_registration_text_unchanged": true,
+  "unrelated_concurrent_appendix": "Phase 1c addendum deviation 13",
+  "launch_design_sha256": "6fa65ab1472815521f110446744d3908ef9ef8dca71ac351d3384bf64f03cb90",
+  "current_design_sha256": "6fa65ab1472815521f110446744d3908ef9ef8dca71ac351d3384bf64f03cb90",
+  "base_commit": "0bd271655a90f640542f10284d3dd1c27bdd3293",
+  "concurrent_head": "a7436d3242eeb139eeef6247951932db34a8669f"
+}

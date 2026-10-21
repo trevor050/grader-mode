@@ -1,0 +1,90 @@
+{
+  "status": "blocked_before_rental",
+  "reason": "no_fresh_qualifying_offer_under_authorized_hourly_ceiling",
+  "authorization_id": "phase5-vast-execution-20261021-r3",
+  "run_id": "phase5-second-family-20261021",
+  "max_hourly_usd": 0.65,
+  "cheapest_fresh_offer": {
+    "id": 45014282,
+    "gpu_name": "RTX 5090",
+    "num_gpus": 1,
+    "gpu_ram": 32607,
+    "reliability": 0.9968876,
+    "verification": "verified",
+    "rentable": true,
+    "dph_base": 0.7333333333333334,
+    "dph_total": 0.7466666666666667,
+    "storage_cost": 0.11999999999999998,
+    "inet_down_cost": 0.0007812499999999999,
+    "inet_up_cost": 0.0003255208333333333,
+    "inet_down": 1799.6,
+    "inet_up": 830.6,
+    "cuda_max_good": 13.2,
+    "disk_space": 440.25,
+    "costs": {
+      "hourly_usd": 0.7466666666666667,
+      "network_usd": 0.08072916666666667,
+      "download_gb": 100,
+      "upload_gb": 8,
+      "disk_gb": 80,
+      "ingress_usd_per_gb": 0.0007812499999999999,
+      "egress_usd_per_gb": 0.0003255208333333333
+    }
+  },
+  "scan_evidence": "results/phase5/nemotron-execution-offer-gate.json",
+  "scans": 3,
+  "selected_model": null,
+  "registered_primary": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+  "runtime_attempts": 0,
+  "targeted_fix_attempts": 0,
+  "fallback_selected": false,
+  "completed_main_counts_per_cell": {
+    "prefill/empty": 0,
+    "prefill/reminder": 0,
+    "prefill/neutral": 0,
+    "prefill/irrelevant": 0,
+    "main/off/plain": 0,
+    "main/off/explicit": 0,
+    "main/on/plain": 0,
+    "main/on/explicit": 0
+  },
+  "smoke_requests": 0,
+  "throughput_requests": 0,
+  "setup_seconds": null,
+  "throughput_tokens_per_second": null,
+  "stage_decisions": [],
+  "whole_stage_drops": [],
+  "stage_status": "not_reached_offer_gate_blocked_all_generation",
+  "raw_run_path": null,
+  "raw_run_directory_created": false,
+  "manifest_path": null,
+  "prospective_raw_run_path": "results/raw/phase5-second-family-20261021",
+  "account_before": {
+    "credit": 2.8247990722999967,
+    "total_spend": -7.175200927700003
+  },
+  "account_after": {
+    "credit": 2.8247990722999967,
+    "total_spend": -7.175200927700003
+  },
+  "provider_credit_delta_usd": 0.0,
+  "provider_signed_total_spend_delta_usd": 0.0,
+  "new_conservative_ledger_charge_usd": 0,
+  "ledger_after": {
+    "cap_microusd": 9000000,
+    "spent_usd": 1.452285,
+    "outstanding_usd": 0.0,
+    "available_usd": 7.547715
+  },
+  "prior_charges_preserved": true,
+  "reserve_usd": 0.3,
+  "tests": {
+    "passed": 57,
+    "log": "results/phase5/nemotron-execution-tests.log"
+  },
+  "zero_resource_evidence": "results/phase5/nemotron-execution-zero-resources.json",
+  "outcomes_consulted": false,
+  "protected_files_changed": [],
+  "controller_modified": false,
+  "commits_created": false
+}
