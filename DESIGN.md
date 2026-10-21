@@ -627,3 +627,33 @@ dataset. A positive result in both families supports the claim that reasoning
 mode weakens a conflicting system-prompt rule and that re-reading the rule at
 the start of the reasoning restores it, beyond Qwen. A null in one family is
 reported as a failure to replicate there, not explained away.
+
+### Phase 5 amendment 1 (2026-10-21, before any Phase 5 generation)
+
+Recorded before any Phase 5 model has produced a reply. Reason: gpt-oss-20b
+(released 2025-08) is an older model; a current, independently pretrained RL
+reasoning family is more informative, and one with a native thinking-off
+switch lets the second family test H15 as well as H17. Candidate review:
+`notes/phase5-model-options.md` (commit 90c6d6c). Selection used only
+metadata, templates and cost estimates, no outcomes.
+
+- **H20 model.** `nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4` (pinned
+  revision in the options note) replaces gpt-oss-20b. Official NVFP4 weights,
+  vLLM, one RTX 5090. The tutor text is a real system message; thinking is on
+  via the native template, and each prefill is appended after the native
+  reasoning opener exactly as rendered in the options note. H20 is otherwise
+  unchanged (explicit request, four prefills, 1,600 replies).
+- **New H21 (Nemotron, thinking × conflict).** Same grid and contrast as H18:
+  thinking {off, on} (native `enable_thinking`) × request {plain, explicit},
+  1,600 replies.
+- **Pre-committed runtime fallback.** If the Nemotron checkpoint cannot load
+  and generate correctly on the rented 5090 within one startup attempt plus
+  one fix attempt (a smoke run with no violation scoring), H20 and H21 move to
+  `zai-org/GLM-4.7-Flash` via `QuantTrio/GLM-4.7-Flash-AWQ` (pinned revision
+  in the options note), with the same grid. This choice is fixed now and is
+  not revisited after any outcomes.
+- **Budget and drop order.** Priority after the Gemma main grid: H20 reminder
+  vs empty, H21 grid, then the H19 and H20 neutral and irrelevant cells. The
+  drop order in the main Phase 5 section applies to whatever does not fit,
+  in reverse of this priority. The combined cap rises to about $9; the
+  increase is the cost of the H21 grid.
