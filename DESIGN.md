@@ -682,3 +682,14 @@ that.
     agreement with a human, and is reported that way. Judge 3 shares a vendor
     with judge 1 (`gpt-6-luna`), so the cross-family comparison is still judge
     2 (`claude-haiku-5-5`) against each OpenAI judge.
+
+### Phase 5 note on the second-family attempts (2026-10-21)
+
+The two rented instances failed before the model was loaded (provider CLI
+rate limit; the pinned vLLM release missing from the host's package index).
+Amendment 1's "one startup attempt plus one fix attempt" refers to loading
+and generating with the Nemotron checkpoint, so these provider and packaging
+failures do not count against it, and the GLM fallback is not triggered by
+them. Recorded before any Nemotron output exists. A new run may use a
+different container image or vLLM install route; generation settings stay as
+registered.
