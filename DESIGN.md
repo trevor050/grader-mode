@@ -377,3 +377,82 @@ rate has been computed for any Think output.**
     (templates 2–3 for the Stage A cells, 3,000 responses, about $3) therefore
     runs, under a separate run ID, queued after Stage A. The only quantities
     viewed so far are token counts, finish reasons and throughput.
+
+## Phase 3: is there a tutor-role signal that fades during reasoning? (pre-registered 2026-10-21)
+
+Written before any Phase 3 data exists. Motivation: in Phase 1b, Qwen3-14B with
+thinking on and a `\boxed{}` request (cue `none`) leaks on 52% of prompts
+(11% with thinking off), and a post hoc regex found that leaking traces rarely
+mention the tutoring role (6.8%, vs 16.6% of non-leaking traces). Phase 3 asks
+whether a neuron-level signal for the tutor role exists, whether it fades over
+the reasoning trace, and whether holding it up during reasoning reduces
+leaking. Those Phase 1b traces and their leak labels have been viewed in
+aggregate; every activation measure below is new.
+
+**Model and condition.** `Qwen/Qwen3-14B` (revision as Phase 1), bf16,
+thinking on, `system_tutor.txt`, Phase 1b cue `none` prompts (boxed suffix).
+Split as Phase 2: problems 1–100 development, 101–200 test.
+
+**Neurons.** MLP neurons: the SwiGLU intermediate activation
+act(gate(x)) · up(x), indexed L.N (40 layers × 17,408).
+
+**Screening (development set only).** Each development prompt is run twice:
+with `system_tutor.txt`, and with a neutral system prompt of matched length
+(`prompts/system_neutral.txt`, a general helpful-assistant prompt with no
+instruction about answers). For every neuron, its activation is averaged over
+the user-message tokens and the generation prefix (positions after the system
+prompt, so the neuron reflects how the request is read, not the system-prompt
+tokens themselves). Score = Cohen's d (tutor minus neutral) across the 400
+development prompts. The K = 20 neurons with the largest positive d are the
+*tutor neurons*. Their tutor-score T at a position is the mean of their
+activations there, each z-scored against that neuron's tutor-prompt reading
+distribution. *Control neurons*: 5 sets of 20 random neurons, each set matched
+to the tutor neurons' layers.
+
+**Tracking (teacher forcing, no generation).** The 400 existing Phase 1b
+14B thinking-on cue-`none` traces for test problems are fed back through the
+model. T(t) is computed at every reasoning token (text between `<think>` and
+`</think>`); traces with no closed reasoning block are excluded and counted.
+- **H12 (fading).** T declines over the reasoning trace: the per-trace least
+  squares slope of T on normalized position (0–1) is negative on average, and
+  more negative than the same slope for the control sets (paired
+  problem-cluster bootstrap CI excludes zero).
+- **H13 (prediction).** T averaged over the first quarter of the reasoning is
+  lower in leaking than in non-leaking traces, within problem: among test
+  problems with both outcomes across the 4 templates, the mean within-problem
+  difference (non-leaking minus leaking) is positive (CI excludes zero).
+  Correlational only; leaking traces may differ in content.
+
+**Holding the signal up (generation).** During generation, at every generated
+token, each tutor neuron's activation is increased by c · Δ_n, where Δ_n is
+that neuron's mean tutor-minus-neutral reading difference. Control: each
+control set receives pushes of the same magnitudes (tutor neurons' |c · Δ| in
+rank order, random sign). Dose c* = the smallest of {1, 2, 4, 8} that lowers
+development leak (template 0, 100 problems) by at least 10 points; if none
+does, 8 is used and reported. Test: 100 problems × templates 0–1, temp 0.7,
+Phase 1b seeds, max 3,072 new tokens; cells: baseline, tutor push c*, and each
+of the 5 control pushes.
+- **H14 (causal).** The tutor push lowers the leak rate, and by more than the
+  mean of the 5 control pushes (paired problem-cluster bootstrap CI excludes
+  zero). Also reported: commit, correct commit, truncation, and the Phase 1b
+  regex share of traces that mention the tutoring role.
+
+**Degeneration checks, every pushed cell.** Share of responses with an empty
+final reply, a 4-gram repetition rate above 0.3 in the final reply, or
+truncation without a final reply. Each check is also reported for the baseline
+cell, and a pushed cell is not interpretable if its degeneration rate exceeds
+the baseline cell's by more than 10 points. (This replaces Phase 2's
+problem-numeral check, which flagged correct responses by construction;
+Deviation 9.)
+
+**Analysis.** Leak, commit, correct commit and scoring as Phase 1b (only the
+final reply is scored). 2,000 problem-cluster bootstrap resamples, seed 0;
+gold >= 10 sensitivity. Budget cap $8 of GPU; if the projection exceeds it,
+the test set drops to template 0 before any test generation, and that is
+reported.
+
+**Interpretation limits stated in advance.** 20 neurons selected by a
+tutor-versus-neutral prompt contrast are a proxy for "the tutor role", not a
+complete account of it. A positive H12–H14 shows that this signal fades during
+reasoning and that propping it up reduces leaking in one model and condition;
+it does not show why reasoning suppresses it.
