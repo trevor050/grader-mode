@@ -1,0 +1,174 @@
+{
+  "packages": {
+    "vllm": "0.32.0",
+    "torch": "2.13.0",
+    "transformers": "5.19.0",
+    "tokenizers": "0.23.3",
+    "jinja2": "3.1.6",
+    "flashinfer-python": "0.7.0.post1",
+    "flashinfer-cubin": "0.7.0.post1",
+    "flashinfer-jit-cache": "0.7.0.post1+cu130",
+    "flashinfer-jit-cache-sm120f": "0.7.0.post1+cu130",
+    "cuda-toolkit": "13.0.3.0",
+    "ninja": "1.13.0"
+  },
+  "hardware": {
+    "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "compute_capability": [
+      12,
+      0
+    ]
+  },
+  "native_quantization": "modelopt_mixed",
+  "timing": {
+    "h20_core.done": {
+      "requests": 800,
+      "output_tokens": 1122670,
+      "generation_seconds": 237.04067331899998,
+      "wall_seconds": 248.66984253100003,
+      "setup_seconds": 1.048427208000021,
+      "batch_size": 256,
+      "chunk_size": 256,
+      "per_cell": {
+        "prefill/empty": {
+          "count": 400,
+          "output_tokens": 696239
+        },
+        "prefill/reminder": {
+          "count": 400,
+          "output_tokens": 426431
+        }
+      }
+    },
+    "smoke.done": {
+      "requests": 8,
+      "output_tokens": 9833,
+      "generation_seconds": 12.893871961999992,
+      "wall_seconds": 14.794311911999984,
+      "setup_seconds": 135.687117406,
+      "batch_size": 256,
+      "chunk_size": 256,
+      "per_cell": {
+        "main/off/plain": {
+          "count": 1,
+          "output_tokens": 188
+        },
+        "prefill/reminder": {
+          "count": 1,
+          "output_tokens": 789
+        },
+        "main/off/explicit": {
+          "count": 1,
+          "output_tokens": 155
+        },
+        "prefill/neutral": {
+          "count": 1,
+          "output_tokens": 1713
+        },
+        "prefill/empty": {
+          "count": 1,
+          "output_tokens": 1903
+        },
+        "prefill/irrelevant": {
+          "count": 1,
+          "output_tokens": 1515
+        },
+        "main/on/explicit": {
+          "count": 1,
+          "output_tokens": 1834
+        },
+        "main/on/plain": {
+          "count": 1,
+          "output_tokens": 1736
+        }
+      },
+      "protocol": {
+        "requests": 8,
+        "protocol_checked": true,
+        "violation_scored": false
+      }
+    },
+    "throughput.done": {
+      "requests": 256,
+      "output_tokens": 317530,
+      "generation_seconds": 73.500387934,
+      "wall_seconds": 79.06696742,
+      "setup_seconds": 1.2168891660000156,
+      "batch_size": 256,
+      "chunk_size": 256,
+      "per_cell": {
+        "prefill/empty": {
+          "count": 32,
+          "output_tokens": 58839
+        },
+        "prefill/neutral": {
+          "count": 32,
+          "output_tokens": 66985
+        },
+        "main/off/plain": {
+          "count": 32,
+          "output_tokens": 6064
+        },
+        "main/on/explicit": {
+          "count": 32,
+          "output_tokens": 58558
+        },
+        "main/off/explicit": {
+          "count": 32,
+          "output_tokens": 7758
+        },
+        "prefill/reminder": {
+          "count": 32,
+          "output_tokens": 31061
+        },
+        "prefill/irrelevant": {
+          "count": 32,
+          "output_tokens": 51207
+        },
+        "main/on/plain": {
+          "count": 32,
+          "output_tokens": 37058
+        }
+      }
+    },
+    "h21_main.done": {
+      "requests": 1600,
+      "output_tokens": 1351279,
+      "generation_seconds": 356.878367405,
+      "wall_seconds": 397.599210582,
+      "setup_seconds": 1.4949426399999766,
+      "batch_size": 256,
+      "chunk_size": 256,
+      "per_cell": {
+        "main/on/plain": {
+          "count": 400,
+          "output_tokens": 460813
+        },
+        "main/on/explicit": {
+          "count": 400,
+          "output_tokens": 699299
+        },
+        "main/off/explicit": {
+          "count": 400,
+          "output_tokens": 110817
+        },
+        "main/off/plain": {
+          "count": 400,
+          "output_tokens": 80350
+        }
+      }
+    }
+  },
+  "engine": {
+    "batch_size": 256,
+    "chunk_size": 256,
+    "enforce_eager": false,
+    "max_model_len": 8192,
+    "tensor_parallel_size": 1,
+    "gpu_memory_utilization": 0.9,
+    "generation_config": "vllm"
+  },
+  "captured_unix": 1792622166.398845,
+  "source": "Completed Modal GPU process timing/package metadata; no response text",
+  "checkpoint_pins_unchanged": true
+}

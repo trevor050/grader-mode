@@ -1,0 +1,29 @@
+{
+  "status": "exploratory",
+  "pattern": "tutor|system prompt|instruction",
+  "flags": "re.I",
+  "filter": "arm == 'main' and thinking is True and request_type == 'explicit'",
+  "text_field": "reasoning",
+  "denominator": "All 400 selected main requests, including empty reasoning; excludes all prefill, smoke and throughput rows",
+  "matches": 392,
+  "n": 400,
+  "share": 0.98,
+  "findings_reference": {
+    "gemma": {
+      "matches": 309,
+      "n": 400,
+      "share": 0.7725
+    },
+    "qwen3_14b": {
+      "matches": 11,
+      "n": 400,
+      "share": 0.0275
+    },
+    "qwen3_32b": {
+      "matches": 3,
+      "n": 400,
+      "share": 0.0075
+    }
+  },
+  "interpretation": "Lexical trace share only, not a causal or mechanistic test; the Gemma/Qwen references use their earlier runs."
+}

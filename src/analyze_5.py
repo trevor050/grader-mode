@@ -147,7 +147,8 @@ def _validate_pins(rows, *, pilot):
 def validate_fallback_provenance(proof, *, allow_fixture=False):
     """Validate an outcome-blind, prospective runtime fallback record.
 
-    Runtime proof names the pinned Nemotron, RTX 5090, and exactly two failed
+    Runtime proof names the pinned Nemotron, RTX 5090 (or the lead-authorized
+    Modal RTX-PRO-6000 provider switch), and exactly two failed
     runtime_smoke attempts (startup then fix), without violation scoring. Each
     attempt has distinct attempt_id, started_unix, ended_unix and evidence text.
     decision_unix follows the failures and precedes first_generation_unix.
@@ -163,9 +164,9 @@ def validate_fallback_provenance(proof, *, allow_fixture=False):
             or proof.get('model') != NEMOTRON
             or proof.get('model_revision') != REVISIONS[NEMOTRON]
             or proof.get('registration_commit') != REGISTRATION_COMMIT
-            or proof.get('gpu') != 'RTX 5090'
+            or proof.get('gpu') not in ('RTX 5090', 'RTX-PRO-6000')
             or proof.get('selected_before_generation') is not True):
-        raise ValueError('fallback provenance must pin prospective Nemotron RTX 5090 runtime failure')
+        raise ValueError('fallback provenance must pin prospective Nemotron authorized-GPU runtime failure')
     def timestamp(value):
         if isinstance(value,bool) or not isinstance(value,(int,float)) or not math.isfinite(value) or value<=0:
             raise ValueError('fallback provenance requires finite positive timestamps')

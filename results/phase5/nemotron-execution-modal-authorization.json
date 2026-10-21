@@ -1,0 +1,37 @@
+{
+  "authorization_id": "phase5-modal-second-family-20261021",
+  "authorized_unix": 1792619346.2591739,
+  "provider": "modal",
+  "gpu": "RTX-PRO-6000",
+  "whole_run_metered_cap_usd": 2.6,
+  "reserve_usd": 0.3,
+  "scope": "Smoke 8, throughput 256, H20 core, H21 main, H20 controls; one model-level fix then registered GLM fallback, all within one cumulative cap.",
+  "no_paid_credit": true,
+  "monthly_free_compute_credit_usd": 30,
+  "billing_before": {
+    "metered_cost": "27.23571787",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "free_storage": "-0E-8",
+      "plan_cost": "0E-8",
+      "credits": "-26.90000000",
+      "reservation_adjustment": "-0E-8",
+      "network_egress_allowance": "-0.33571787"
+    },
+    "metered_cost_breakdown": {
+      "ephemeral_apps": "26.90287990",
+      "volumes": "0E-8",
+      "llm_tokens": "0E-8",
+      "network_egress": "0.33571787"
+    }
+  },
+  "legacy_aggregate_ledger": "results/phase5/aggregate-ledger.json",
+  "legacy_charges_preserved": true,
+  "supersedes_old_aggregate_launch_ceiling_for_this_explicit_modal_authorization": true,
+  "unaffordable_stage": "stop and report dollar shortfall, no cell drops",
+  "source": "Lead instruction to stop Vast and move to Modal under fresh hard $2.60 metered cap including setup.",
+  "checked_unix": 1792620312.654655,
+  "free_compute_credit_headroom_usd": "3.09712010",
+  "fresh_headroom_gate_passed": true,
+  "controller_authorization_record": "results/phase5/modal-second-family-authorization.json"
+}

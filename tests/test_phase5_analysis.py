@@ -348,6 +348,15 @@ def runtime_failure_proof():
             for stage,start,end in [('startup',10,20),('fix',30,40)]])
 
 
+def test_lead_authorized_modal_blackwell_fallback_preserves_runtime_proof():
+    from src.analyze_5 import validate_fallback_provenance
+    proof=runtime_failure_proof() | {'gpu':'RTX-PRO-6000'}
+    assert validate_fallback_provenance(proof)=='runtime_startup_failure'
+    for patch in ({'gpu':'H100'}, {'outcomes_consulted':True}, {'attempts':proof['attempts'][:1]}):
+        with pytest.raises(ValueError):
+            validate_fallback_provenance(proof | patch)
+
+
 def test_full_6400_fallback_original_sample_audits_and_all_drop_stages():
     from src.analyze_5 import analyze, _original_sample
     from src.phase5_parser_agreement import audit_sample

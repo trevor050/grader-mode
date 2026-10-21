@@ -31,7 +31,7 @@ def test_fresh_scan_keeps_real_verification_field_and_drops_private_fields(tmp_p
     actual=dict(id=123,gpu_name='RTX 5090',num_gpus=1,gpu_ram=32607,reliability=.9907895,
                 verification='verified',rentable=True,dph_base=.6,storage_cost=.2,
                 inet_down_cost=.0026041666666666665,inet_up_cost=.00390625,
-                private_note='exclude')
+                private_note='exclude',cuda_max_good=13.0)
     monkeypatch.setattr(backend,'cli',lambda *args:calls.append(args) or [actual])
     scanned=backend.scan(123)
     assert scanned['verification']=='verified' and 'private_note' not in scanned

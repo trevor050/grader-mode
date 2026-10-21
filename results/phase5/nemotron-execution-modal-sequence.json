@@ -1,0 +1,75 @@
+{
+  "status": "deferred",
+  "phase": "await_h20_controls",
+  "stage": "startup",
+  "attempt_id": "phase5-nemotron-modal-20261021-d-startup",
+  "started_unix": 1792621477.460433,
+  "violation_scored": false,
+  "completed_stages": [
+    "h20_core",
+    "h21_main"
+  ],
+  "deferred_stages": [
+    "h20_controls"
+  ],
+  "dropped_cells": [],
+  "hardware": {
+    "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "compute_capability": [
+      12,
+      0
+    ]
+  },
+  "native_quantization": "modelopt_mixed",
+  "first_generation_unix": 1792621777.7440457,
+  "ended_unix": 1792622553.840823,
+  "fallback_provenance": null,
+  "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+  "zero_containers_verified": true,
+  "artifacts_pulled": true,
+  "teardown": {
+    "app_id": "ap-2oiNoayC7HjPSL5cQEahoE",
+    "app_stop_confirmed": true,
+    "containers_after": [],
+    "stop_errors": []
+  },
+  "authorization_attempt": {
+    "attempt_id": "phase5-nemotron-modal-20261021-d-startup",
+    "status": "settled",
+    "app_id": "ap-2oiNoayC7HjPSL5cQEahoE",
+    "started_unix": 1792621477.460433,
+    "work_deadline_unix": 1792623072.460433,
+    "hard_deadline_unix": 1792623192.460433,
+    "prior_charged_usd": 0.584662,
+    "reserved_usd": 1.715,
+    "charged_usd": 1.072317,
+    "teardown_verified": true,
+    "watchdog_pid": 7499,
+    "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+    "stage": "startup",
+    "source_hashes": {
+      "DESIGN.md": "f1d2d05185c1593deba90a7b58601691d18b99ba047e02866d06abca10c90c84",
+      "prompts/templates.json": "637fb8aa1312f4485d410241fe6087cbbe9c6150a4267bfb8a71e418f7af0ed1",
+      "prompts/templates_4.json": "6cd003a8b8bf96456428084a1abeedb5c66ee5774443bcb6fdf31d7d65a8fd31",
+      "prompts/system_tutor.txt": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11",
+      "src/models_5.py": "f087db2706c68087c804b0ce50fe4fed39be644908f43f604e5ad910e1991804",
+      "src/phase5_split.py": "5739523aabc58b7f855c3f6cafc6dba984209e84887e68fc00d6a5490731434f",
+      "src/vast_generate_5.py": "097e7b044ae72226ea3484fa6d2734e50e616be79e290293a1d6e62cf253ed49",
+      "src/phase5_control.py": "bd99c9a0e591d55ab210abeef399e1bad1351ffc1692abaaf4ede6f024cbf62c",
+      "src/modal_app_5.py": "df765af3ea969dc41aceff855020044115767b2034f7d20ac849b2c95f6f4c98",
+      "src/phase5_vast_main.py": "c69634b21fd933c063195cfaa95efe5c8e4f998cc00a0ebc5dc3abe789f502cf",
+      "src/modal_second_family_5.py": "1d2ac461b5f6a9a486e029c52d0179657353ed36d51a4f546f1da3c3f811ab7a"
+    },
+    "function_call_id": "fc-01M5G96GZE5RMNY1EXS90A8PTA",
+    "ended_unix": 1792622549.777181,
+    "teardown": {
+      "app_id": "ap-2oiNoayC7HjPSL5cQEahoE",
+      "app_stop_confirmed": true,
+      "containers_after": [],
+      "stop_errors": []
+    }
+  },
+  "controller_error": null,
+  "evidence": "/Users/user/codeprojects/grader-mode/results/raw/phase5-nemotron-modal-20261021-d/phase5-nemotron-modal-20261021-d-startup/local-execution.json",
+  "inference_eligible": false
+}

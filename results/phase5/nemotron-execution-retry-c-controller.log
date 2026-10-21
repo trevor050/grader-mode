@@ -1,0 +1,15 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "results/raw/phase5-retry-preflight/availability-controller.py", line 24, in <module>
+    report=run_families(supervisor.candidate,supervisor.persist_proof)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 168, in run_families
+    return candidate(NEMOTRON, stage, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 990, in candidate
+    raise BudgetError('zero Vast instances not confirmed; watchdog active, no further launches')
+src.phase5_control.BudgetError: zero Vast instances not confirmed; watchdog active, no further launches

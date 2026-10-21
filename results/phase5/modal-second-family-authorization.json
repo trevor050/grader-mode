@@ -1,0 +1,163 @@
+{
+  "schema": 1,
+  "authorization_id": "phase5-second-family-modal-blackwell-260",
+  "cap_usd": 2.6,
+  "reserve_usd": 0.3,
+  "rate_usd_per_second": 0.001,
+  "attempts": [
+    {
+      "attempt_id": "phase5-nemotron-modal-20261021-a-startup",
+      "status": "settled",
+      "app_id": "ap-nBvdhWqgVQHejlTBZLqAYM",
+      "started_unix": 1792620350.773865,
+      "work_deadline_unix": 1792622530.773865,
+      "hard_deadline_unix": 1792622650.773865,
+      "prior_charged_usd": 0,
+      "reserved_usd": 2.3,
+      "charged_usd": 0.073647,
+      "teardown_verified": true,
+      "watchdog_pid": 92324,
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+      "stage": "startup",
+      "source_hashes": {
+        "DESIGN.md": "f1d2d05185c1593deba90a7b58601691d18b99ba047e02866d06abca10c90c84",
+        "prompts/templates.json": "637fb8aa1312f4485d410241fe6087cbbe9c6150a4267bfb8a71e418f7af0ed1",
+        "prompts/templates_4.json": "6cd003a8b8bf96456428084a1abeedb5c66ee5774443bcb6fdf31d7d65a8fd31",
+        "prompts/system_tutor.txt": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11",
+        "src/models_5.py": "f087db2706c68087c804b0ce50fe4fed39be644908f43f604e5ad910e1991804",
+        "src/phase5_split.py": "5739523aabc58b7f855c3f6cafc6dba984209e84887e68fc00d6a5490731434f",
+        "src/vast_generate_5.py": "097e7b044ae72226ea3484fa6d2734e50e616be79e290293a1d6e62cf253ed49",
+        "src/phase5_control.py": "bd99c9a0e591d55ab210abeef399e1bad1351ffc1692abaaf4ede6f024cbf62c",
+        "src/modal_app_5.py": "df765af3ea969dc41aceff855020044115767b2034f7d20ac849b2c95f6f4c98",
+        "src/phase5_vast_main.py": "c69634b21fd933c063195cfaa95efe5c8e4f998cc00a0ebc5dc3abe789f502cf",
+        "src/modal_second_family_5.py": "dbc9247d5386a279ee13f2c5da92a3416fd01df3f0c66abb67f2958b1074e850"
+      },
+      "function_call_id": "fc-01M5G7ZNK302AXRA7A5B1ABCV8",
+      "ended_unix": 1792620424.4201531,
+      "teardown": {
+        "app_id": "ap-nBvdhWqgVQHejlTBZLqAYM",
+        "app_stop_confirmed": true,
+        "containers_after": [],
+        "stop_errors": [
+          "Command '['/Users/user/codeprojects/grader-mode/.venv/bin/python3', '-m', 'modal', 'app', 'stop', '--yes', 'ap-nBvdhWqgVQHejlTBZLqAYM']' returned non-zero exit status 1."
+        ]
+      },
+      "outcome_status": "infrastructure_failure",
+      "model_failure_record": null
+    },
+    {
+      "attempt_id": "phase5-nemotron-modal-20261021-b-startup",
+      "status": "settled",
+      "app_id": "ap-IVAoHS43aaVGabYmPTRrZe",
+      "started_unix": 1792620641.477603,
+      "work_deadline_unix": 1792622747.477603,
+      "hard_deadline_unix": 1792622867.477603,
+      "prior_charged_usd": 0.073647,
+      "reserved_usd": 2.226,
+      "charged_usd": 0.270676,
+      "teardown_verified": true,
+      "watchdog_pid": 97392,
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+      "stage": "startup",
+      "source_hashes": {
+        "DESIGN.md": "f1d2d05185c1593deba90a7b58601691d18b99ba047e02866d06abca10c90c84",
+        "prompts/templates.json": "637fb8aa1312f4485d410241fe6087cbbe9c6150a4267bfb8a71e418f7af0ed1",
+        "prompts/templates_4.json": "6cd003a8b8bf96456428084a1abeedb5c66ee5774443bcb6fdf31d7d65a8fd31",
+        "prompts/system_tutor.txt": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11",
+        "src/models_5.py": "f087db2706c68087c804b0ce50fe4fed39be644908f43f604e5ad910e1991804",
+        "src/phase5_split.py": "5739523aabc58b7f855c3f6cafc6dba984209e84887e68fc00d6a5490731434f",
+        "src/vast_generate_5.py": "097e7b044ae72226ea3484fa6d2734e50e616be79e290293a1d6e62cf253ed49",
+        "src/phase5_control.py": "bd99c9a0e591d55ab210abeef399e1bad1351ffc1692abaaf4ede6f024cbf62c",
+        "src/modal_app_5.py": "df765af3ea969dc41aceff855020044115767b2034f7d20ac849b2c95f6f4c98",
+        "src/phase5_vast_main.py": "c69634b21fd933c063195cfaa95efe5c8e4f998cc00a0ebc5dc3abe789f502cf",
+        "src/modal_second_family_5.py": "67de4404c28fd9d731340d8b10a4e4c15b2129f53d523f44381aeb9144ef9e6c"
+      },
+      "function_call_id": "fc-01M5G8C0XWAFD4JYG24V214NCZ",
+      "ended_unix": 1792620912.152617,
+      "teardown": {
+        "app_id": "ap-IVAoHS43aaVGabYmPTRrZe",
+        "app_stop_confirmed": true,
+        "containers_after": [],
+        "stop_errors": []
+      },
+      "outcome_status": "infrastructure_failure",
+      "model_failure_record": null
+    },
+    {
+      "attempt_id": "phase5-nemotron-modal-20261021-c-startup",
+      "status": "settled",
+      "app_id": "ap-4G0MBg715cuSf1TsCDkg1r",
+      "started_unix": 1792621127.7741592,
+      "work_deadline_unix": 1792622962.7741592,
+      "hard_deadline_unix": 1792623082.7741592,
+      "prior_charged_usd": 0.34432300000000005,
+      "reserved_usd": 1.955,
+      "charged_usd": 0.240339,
+      "teardown_verified": true,
+      "watchdog_pid": 2387,
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+      "stage": "startup",
+      "source_hashes": {
+        "DESIGN.md": "f1d2d05185c1593deba90a7b58601691d18b99ba047e02866d06abca10c90c84",
+        "prompts/templates.json": "637fb8aa1312f4485d410241fe6087cbbe9c6150a4267bfb8a71e418f7af0ed1",
+        "prompts/templates_4.json": "6cd003a8b8bf96456428084a1abeedb5c66ee5774443bcb6fdf31d7d65a8fd31",
+        "prompts/system_tutor.txt": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11",
+        "src/models_5.py": "f087db2706c68087c804b0ce50fe4fed39be644908f43f604e5ad910e1991804",
+        "src/phase5_split.py": "5739523aabc58b7f855c3f6cafc6dba984209e84887e68fc00d6a5490731434f",
+        "src/vast_generate_5.py": "097e7b044ae72226ea3484fa6d2734e50e616be79e290293a1d6e62cf253ed49",
+        "src/phase5_control.py": "bd99c9a0e591d55ab210abeef399e1bad1351ffc1692abaaf4ede6f024cbf62c",
+        "src/modal_app_5.py": "df765af3ea969dc41aceff855020044115767b2034f7d20ac849b2c95f6f4c98",
+        "src/phase5_vast_main.py": "c69634b21fd933c063195cfaa95efe5c8e4f998cc00a0ebc5dc3abe789f502cf",
+        "src/modal_second_family_5.py": "8cdc56e84f420ff035aaabebf6bd8d54b4c76baf142274554e679ce12ab01359"
+      },
+      "function_call_id": "fc-01M5G8TXXHJ9WNWFAT4T84TKGW",
+      "ended_unix": 1792621368.1130219,
+      "teardown": {
+        "app_id": "ap-4G0MBg715cuSf1TsCDkg1r",
+        "app_stop_confirmed": true,
+        "containers_after": [],
+        "stop_errors": []
+      },
+      "outcome_status": "infrastructure_failure",
+      "model_failure_record": null
+    },
+    {
+      "attempt_id": "phase5-nemotron-modal-20261021-d-startup",
+      "status": "settled",
+      "app_id": "ap-2oiNoayC7HjPSL5cQEahoE",
+      "started_unix": 1792621477.460433,
+      "work_deadline_unix": 1792623072.460433,
+      "hard_deadline_unix": 1792623192.460433,
+      "prior_charged_usd": 0.584662,
+      "reserved_usd": 1.715,
+      "charged_usd": 1.072317,
+      "teardown_verified": true,
+      "watchdog_pid": 7499,
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+      "stage": "startup",
+      "source_hashes": {
+        "DESIGN.md": "f1d2d05185c1593deba90a7b58601691d18b99ba047e02866d06abca10c90c84",
+        "prompts/templates.json": "637fb8aa1312f4485d410241fe6087cbbe9c6150a4267bfb8a71e418f7af0ed1",
+        "prompts/templates_4.json": "6cd003a8b8bf96456428084a1abeedb5c66ee5774443bcb6fdf31d7d65a8fd31",
+        "prompts/system_tutor.txt": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11",
+        "src/models_5.py": "f087db2706c68087c804b0ce50fe4fed39be644908f43f604e5ad910e1991804",
+        "src/phase5_split.py": "5739523aabc58b7f855c3f6cafc6dba984209e84887e68fc00d6a5490731434f",
+        "src/vast_generate_5.py": "097e7b044ae72226ea3484fa6d2734e50e616be79e290293a1d6e62cf253ed49",
+        "src/phase5_control.py": "bd99c9a0e591d55ab210abeef399e1bad1351ffc1692abaaf4ede6f024cbf62c",
+        "src/modal_app_5.py": "df765af3ea969dc41aceff855020044115767b2034f7d20ac849b2c95f6f4c98",
+        "src/phase5_vast_main.py": "c69634b21fd933c063195cfaa95efe5c8e4f998cc00a0ebc5dc3abe789f502cf",
+        "src/modal_second_family_5.py": "1d2ac461b5f6a9a486e029c52d0179657353ed36d51a4f546f1da3c3f811ab7a"
+      },
+      "function_call_id": "fc-01M5G96GZE5RMNY1EXS90A8PTA",
+      "ended_unix": 1792622549.777181,
+      "teardown": {
+        "app_id": "ap-2oiNoayC7HjPSL5cQEahoE",
+        "app_stop_confirmed": true,
+        "containers_after": [],
+        "stop_errors": []
+      },
+      "outcome_status": "deferred",
+      "model_failure_record": null
+    }
+  ]
+}

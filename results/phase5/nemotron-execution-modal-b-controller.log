@@ -1,0 +1,151 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+✓ Initialized. View run at
+https://modal.com/apps/trevor050/main/ap-IVAoHS43aaVGabYmPTRrZe
+Building image im-1RQexLOkuXMSSvXCxgJnw4
+
+=> Step 0: FROM base
+
+=> Step 1: RUN python -m flashinfer install-cubin-wheel
+=== Cubin Wheel Install ===
+FlashInfer version: 0.7.0.post1
+Wheel index: https://flashinfer.ai/whl
+Requirement: flashinfer-cubin==0.7.0.post1
+Command: /usr/local/bin/python -m pip install --upgrade --no-deps --index-url https://flashinfer.ai/whl flashinfer-cubin==0.7.0.post1
+Looking in indexes: https://flashinfer.ai/whl
+Collecting flashinfer-cubin==0.7.0.post1
+  Downloading https://github.com/flashinfer-ai/flashinfer/releases/download/v0.7.0.post1/flashinfer_cubin-0.7.0.post1-py3-none-any.whl (1567.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 GB 177.0 MB/s eta 0:00:00
+Installing collected packages: flashinfer-cubin
+Successfully installed flashinfer-cubin-0.7.0.post1
+✅ flashinfer-cubin installed successfully.
+
+=> Step 2: RUN python -m flashinfer install-jit-cache-wheel --cuda-version 13.0 --mode minimal --sm sm120f
+=== JIT Cache Wheel Install ===
+FlashInfer version: 0.7.0.post1
+CUDA version: 13.0
+Wheel CUDA label: cu130
+Install mode: minimal
+Providers: sm120f
+Wheel index: https://flashinfer.ai/whl/cu130
+Requirement: flashinfer-jit-cache==0.7.0.post1+cu130 flashinfer-jit-cache-sm120f==0.7.0.post1+cu130
+Command: /usr/local/bin/python -m pip install --upgrade --no-deps --index-url https://flashinfer.ai/whl/cu130 flashinfer-jit-cache==0.7.0.post1+cu130 flashinfer-jit-cache-sm120f==0.7.0.post1+cu130
+Looking in indexes: https://flashinfer.ai/whl/cu130
+Collecting flashinfer-jit-cache==0.7.0.post1+cu130
+  Downloading https://github.com/flashinfer-ai/flashinfer/releases/download/v0.7.0.post1/flashinfer_jit_cache-0.7.0.post1%2Bcu130-cp39-abi3-manylinux_2_28_x86_64.whl (4.5 kB)
+Collecting flashinfer-jit-cache-sm120f==0.7.0.post1+cu130
+  Downloading https://github.com/flashinfer-ai/flashinfer/releases/download/v0.7.0.post1/flashinfer_jit_cache_sm120f-0.7.0.post1%2Bcu130-cp39-abi3-manylinux_2_28_x86_64.whl (187.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 187.2/187.2 MB 7.9 MB/s eta 0:00:00
+Installing collected packages: flashinfer-jit-cache-sm120f, flashinfer-jit-cache
+
+Successfully installed flashinfer-jit-cache-0.7.0.post1+cu130 flashinfer-jit-cache-sm120f-0.7.0.post1+cu130
+✅ flashinfer-jit-cache installed successfully.
+Saving image...
+Image saved, took 6.62s
+
+Built image im-1RQexLOkuXMSSvXCxgJnw4 in 99.57s
+
+
+Building image im-X75DzHhJAtOtQWVsd8tTIX
+
+=> Step 0: FROM base
+
+=> Step 1: ENV HF_HOME=/hf
+
+=> Step 2: ENV HF_XET_HIGH_PERFORMANCE=1
+
+=> Step 3: ENV PHASE5_HOST=modal
+
+=> Step 4: ENV PHASE5_GPU=RTX-PRO-6000
+
+=> Step 5: ENV PHASE5_RUNTIME_IMAGE=modal-gemma-pins-vllm0.32.0-flashinfer-sm120f-cu130
+
+=> Step 6: ENV VLLM_USE_FLASHINFER_SAMPLER=0
+
+=> Step 7: ENV DO_NOT_TRACK=1
+Saving image...
+Image saved, took 5.54s
+
+Built image im-X75DzHhJAtOtQWVsd8tTIX in 10.09s
+
+
+✓ Created objects.
+├── ✓ Uploaded /Users/user/codeprojects/grader-mode/DESIGN.md
+├── ✓ Uploaded /Users/user/codeprojects/grader-mode/prompts
+├── ✓ Uploaded PythonPackage:src
+└── ✓ Created Function second_family_gpu.
+Stopping app - user stopped from CLI.
+✓ App completed. View run at
+https://modal.com/apps/trevor050/main/ap-IVAoHS43aaVGabYmPTRrZe
+{
+  "status": "infrastructure_failure",
+  "phase": "model_load",
+  "stage": "startup",
+  "attempt_id": "phase5-nemotron-modal-20261021-b-startup",
+  "started_unix": 1792620641.477603,
+  "violation_scored": false,
+  "completed_stages": [],
+  "deferred_stages": [
+    "h20_core",
+    "h21_main",
+    "h20_controls"
+  ],
+  "dropped_cells": [],
+  "hardware": {
+    "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "compute_capability": [
+      12,
+      0
+    ]
+  },
+  "runtime_fix": null,
+  "evidence": "/Users/user/codeprojects/grader-mode/results/raw/phase5-nemotron-modal-20261021-b/phase5-nemotron-modal-20261021-b-startup/local-execution.json",
+  "ended_unix": 1792620913.952343,
+  "fallback_provenance": null,
+  "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+  "zero_containers_verified": true,
+  "artifacts_pulled": true,
+  "teardown": {
+    "app_id": "ap-IVAoHS43aaVGabYmPTRrZe",
+    "app_stop_confirmed": true,
+    "containers_after": [],
+    "stop_errors": []
+  },
+  "authorization_attempt": {
+    "attempt_id": "phase5-nemotron-modal-20261021-b-startup",
+    "status": "settled",
+    "app_id": "ap-IVAoHS43aaVGabYmPTRrZe",
+    "started_unix": 1792620641.477603,
+    "work_deadline_unix": 1792622747.477603,
+    "hard_deadline_unix": 1792622867.477603,
+    "prior_charged_usd": 0.073647,
+    "reserved_usd": 2.226,
+    "charged_usd": 0.270676,
+    "teardown_verified": true,
+    "watchdog_pid": 97392,
+    "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+    "stage": "startup",
+    "source_hashes": {
+      "DESIGN.md": "f1d2d05185c1593deba90a7b58601691d18b99ba047e02866d06abca10c90c84",
+      "prompts/templates.json": "637fb8aa1312f4485d410241fe6087cbbe9c6150a4267bfb8a71e418f7af0ed1",
+      "prompts/templates_4.json": "6cd003a8b8bf96456428084a1abeedb5c66ee5774443bcb6fdf31d7d65a8fd31",
+      "prompts/system_tutor.txt": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11",
+      "src/models_5.py": "f087db2706c68087c804b0ce50fe4fed39be644908f43f604e5ad910e1991804",
+      "src/phase5_split.py": "5739523aabc58b7f855c3f6cafc6dba984209e84887e68fc00d6a5490731434f",
+      "src/vast_generate_5.py": "097e7b044ae72226ea3484fa6d2734e50e616be79e290293a1d6e62cf253ed49",
+      "src/phase5_control.py": "bd99c9a0e591d55ab210abeef399e1bad1351ffc1692abaaf4ede6f024cbf62c",
+      "src/modal_app_5.py": "df765af3ea969dc41aceff855020044115767b2034f7d20ac849b2c95f6f4c98",
+      "src/phase5_vast_main.py": "c69634b21fd933c063195cfaa95efe5c8e4f998cc00a0ebc5dc3abe789f502cf",
+      "src/modal_second_family_5.py": "67de4404c28fd9d731340d8b10a4e4c15b2129f53d523f44381aeb9144ef9e6c"
+    },
+    "function_call_id": "fc-01M5G8C0XWAFD4JYG24V214NCZ",
+    "ended_unix": 1792620912.152617,
+    "teardown": {
+      "app_id": "ap-IVAoHS43aaVGabYmPTRrZe",
+      "app_stop_confirmed": true,
+      "containers_after": [],
+      "stop_errors": []
+    }
+  },
+  "controller_error": null,
+  "inference_eligible": false
+}

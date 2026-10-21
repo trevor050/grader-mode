@@ -1,0 +1,8 @@
+{
+  "id": 57113309,
+  "machine_id": 58482,
+  "actual_status": "created",
+  "status_msg": "Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: could not apply required modification to OCI specification: error modifying OCI spec: failed to inject CDI devices: unresolvable CDI devices D.8d181a4ea21506372dfc71275df712ab79e5cf075e3f9f659b7bb730a16dc32f/gpu=2: unknown\nError: failed to start containers: C.57113309\n",
+  "ssh_host": "ssh6.vast.ai",
+  "ssh_port": 16298
+}

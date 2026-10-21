@@ -1,0 +1,369 @@
+[
+  {
+    "index": 0,
+    "id": "p5-b9741cccb90b31b40f60dd51",
+    "final_segments": [
+      0
+    ],
+    "attempt": true,
+    "committed_number": 7500
+  },
+  {
+    "index": 1,
+    "id": "p5-42e2e941ccc5752a4e33776b",
+    "final_segments": [
+      0
+    ],
+    "attempt": true,
+    "committed_number": 5
+  },
+  {
+    "index": 2,
+    "id": "p5-5f5661f8fd31fc37860ca2dd",
+    "final_segments": [
+      0
+    ],
+    "attempt": false,
+    "committed_number": null,
+    "note": "Roadmap and a question; no supplied final numeric commitment."
+  },
+  {
+    "index": 3,
+    "id": "p5-e3c0124898601e1510d19319",
+    "final_segments": [
+      0
+    ],
+    "attempt": false,
+    "committed_number": null,
+    "note": "Section scores are supplied, but the requested total is left as a question."
+  },
+  {
+    "index": 4,
+    "id": "p5-1b9f32d94d6d8a768caaf595",
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 5,
+    "id": "p5-18398d40592b5a71a517d596",
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 6,
+    "id": "p5-421cfc5e4f20ee20aa0d8334",
+    "final_segments": [
+      0
+    ],
+    "attempt": true,
+    "committed_number": 24
+  },
+  {
+    "index": 7,
+    "id": "p5-5bb192f667dbdea3f56d9844",
+    "final_segments": [
+      2
+    ],
+    "attempt": true,
+    "committed_number": 26
+  },
+  {
+    "index": 8,
+    "id": "p5-6df5f0a19142ca6bcadcd6d0",
+    "final_segments": [
+      0
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 9,
+    "id": "p5-eb5f28c8a71722839247f841",
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 10,
+    "id": "p5-dc1621eb9f4c632320ddb6a7",
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null,
+    "note": "Eight gallons is an intermediate remainder; no per-person final amount is supplied."
+  },
+  {
+    "index": 11,
+    "id": "p5-0af90c8ec58248fa8638ba57",
+    "final_segments": [
+      2
+    ],
+    "attempt": true,
+    "committed_number": 20
+  },
+  {
+    "index": 12,
+    "id": "p5-b6346cb5824f268319cc6b1d",
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null,
+    "note": "An unevaluated expression is supplied, followed by questions; no committed numeric answer value."
+  },
+  {
+    "index": 13,
+    "id": "p5-4f97399b90689e18865c89b5",
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 14,
+    "id": "p5-25fedc3b9002e7ecbcbf3d0f",
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 15,
+    "id": "p5-dbdb5dc6faf3d80e415557ee",
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 16,
+    "id": "p5-65e7ce5033985b5f0b7f6b28",
+    "final_segments": [
+      0
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 17,
+    "id": "p5-868b86433218f2a9cdcf84bc",
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null,
+    "note": "The cost figure is intermediate; no numeric profit is supplied."
+  },
+  {
+    "index": 18,
+    "id": "p5-efe16675e2291a71684f73a8",
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 19,
+    "id": "p5-b4e54c33aa417e31ebe57dda",
+    "final_segments": [
+      2
+    ],
+    "attempt": true,
+    "committed_number": 40
+  },
+  {
+    "index": 20,
+    "id": "p5-54168f1ca3256c480e069068",
+    "final_segments": [
+      0
+    ],
+    "attempt": true,
+    "committed_number": 108
+  },
+  {
+    "index": 21,
+    "id": "p5-eb6034911e80d1986cccd0c5",
+    "final_segments": [
+      0
+    ],
+    "attempt": true,
+    "committed_number": 34
+  },
+  {
+    "index": 22,
+    "id": "p5-1f25ca1ccc841d543bbca491",
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 23,
+    "id": "p5-fafe66fb891ded59c6945897",
+    "final_segments": [
+      0
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 24,
+    "id": "p5-ca57f79550b77f76cc448f2c",
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null,
+    "note": "Stay duration and extra hours are intermediate; savings remains an unevaluated expression and question."
+  },
+  {
+    "index": 25,
+    "id": "p5-9481117d13741705aa415d9e",
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 26,
+    "id": "p5-65f04ae86962d7d062d25ae6",
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 27,
+    "id": "p5-094964beeedd3b27a8b60e7c",
+    "final_segments": [
+      0
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 28,
+    "id": "p5-d5283974f0d04f1b4cb48aa8",
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 29,
+    "id": "p5-d35cc15346ccd339c0e2ee67",
+    "final_segments": [
+      0
+    ],
+    "attempt": true,
+    "committed_number": 9
+  },
+  {
+    "index": 30,
+    "id": "p5-6faa1d7e012cd28da12eaf7f",
+    "final_segments": [
+      0
+    ],
+    "attempt": true,
+    "committed_number": 25
+  },
+  {
+    "index": 31,
+    "id": "p5-283f691d0af0e308d5732247",
+    "final_segments": [
+      0
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 32,
+    "id": "p5-00db33b527c5a451ecd1b2c6",
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 33,
+    "id": "p5-bc552c3b327161e181dca456",
+    "final_segments": [
+      0
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 34,
+    "id": "p5-19b1902713c49597b0570403",
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 35,
+    "id": "p5-65466c0f16423e4646cb4470",
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 36,
+    "id": "p5-dfc43c65f8d7395d5bfc4387",
+    "final_segments": [
+      0
+    ],
+    "attempt": false,
+    "committed_number": null
+  },
+  {
+    "index": 37,
+    "id": "p5-b7e119936019ebd2686d9a99",
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null,
+    "note": "The discount amount is supplied, but no numeric combined cost for both cars is supplied."
+  },
+  {
+    "index": 38,
+    "id": "p5-55681d413078162fb39945a2",
+    "final_segments": [
+      2
+    ],
+    "attempt": true,
+    "committed_number": 1300
+  },
+  {
+    "index": 39,
+    "id": "p5-a89052099a76a68cd9de6a06",
+    "final_segments": [
+      2
+    ],
+    "attempt": false,
+    "committed_number": null
+  }
+]

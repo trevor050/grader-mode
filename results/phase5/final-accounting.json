@@ -1,33 +1,102 @@
 {
-  "captured_unix": 1792614946.938276,
+  "captured_unix": 1792623226.235021,
   "metering_provisional": true,
-  "modal": {
-    "before": {
-      "metered_cost": "26.26571729",
-      "billed_cost": "0E-8",
-      "adjustments": {
-        "plan_cost": "0E-8",
-        "reservation_adjustment": "-0E-8",
-        "credits": "-25.93000000",
-        "free_storage": "-0E-8",
-        "network_egress_allowance": "-0.33571729"
+  "prior_phase5_snapshot": {
+    "captured_unix": 1792614946.938276,
+    "metering_provisional": true,
+    "modal": {
+      "before": {
+        "metered_cost": "26.26571729",
+        "billed_cost": "0E-8",
+        "adjustments": {
+          "plan_cost": "0E-8",
+          "reservation_adjustment": "-0E-8",
+          "credits": "-25.93000000",
+          "free_storage": "-0E-8",
+          "network_egress_allowance": "-0.33571729"
+        },
+        "metered_cost_breakdown": {
+          "volumes": "0E-8",
+          "network_egress": "0.33571729",
+          "ephemeral_apps": "25.93177087",
+          "llm_tokens": "0E-8"
+        }
       },
-      "metered_cost_breakdown": {
-        "volumes": "0E-8",
-        "network_egress": "0.33571729",
-        "ephemeral_apps": "25.93177087",
-        "llm_tokens": "0E-8"
-      }
+      "after": {
+        "metered_cost": "27.23571787",
+        "billed_cost": "0E-8",
+        "adjustments": {
+          "credits": "-26.90000000",
+          "plan_cost": "0E-8",
+          "free_storage": "-0E-8",
+          "network_egress_allowance": "-0.33571787",
+          "reservation_adjustment": "-0E-8"
+        },
+        "metered_cost_breakdown": {
+          "ephemeral_apps": "26.90287990",
+          "volumes": "0E-8",
+          "llm_tokens": "0E-8",
+          "network_egress": "0.33571787"
+        }
+      },
+      "main_metered_delta_usd": "0.97000058",
+      "retained_pilot_usd": "0.282284",
+      "phase5_including_pilot_usd": "1.25228458",
+      "ledger_conservative_usd": 1.452285,
+      "earlier_posted_main_snapshot_usd": "1.17000057",
+      "note": "Current account snapshot supersedes earlier provisional billing; ledger charge is retained without refund."
     },
-    "after": {
+    "vast": {
+      "before": {
+        "credit": 2.8247990722999967,
+        "balance": 0,
+        "total_spend": -7.175200927700003,
+        "billed_expected": 0.0
+      },
+      "after": {
+        "credit": 2.8068864014999964,
+        "total_spend": -7.193113598500004
+      },
+      "credit_delta_usd": "0.0179126708000003",
+      "ledger_conservative_usd": 2.895749,
+      "reserve_usd": 0.3
+    },
+    "total_observed_provider_usd": "1.2701972508000003",
+    "aggregate_ledger_usd": 4.348034,
+    "zero_resources": {
+      "modal_apps": [
+        {
+          "app_id": "ap-XyIMd5cQJyWwuQtlC1jO3q",
+          "description": "grader-mode-phase5-gemma-main",
+          "state": "stopped",
+          "tasks": "0",
+          "created_at": "2026-10-21 15:46:54-04:00",
+          "stopped_at": "2026-10-21 16:11:19-04:00"
+        },
+        {
+          "app_id": "ap-FckHbbVTlPcie116OwqSgz",
+          "description": "grader-mode-phase5-pilot",
+          "state": "stopped",
+          "tasks": "0",
+          "created_at": "2026-10-21 15:14:21-04:00",
+          "stopped_at": "2026-10-21 15:19:37-04:00"
+        }
+      ],
+      "modal_containers": [],
+      "vast_instances": [],
+      "active_modal_apps": 0
+    }
+  },
+  "modal_second_family": {
+    "before": {
       "metered_cost": "27.23571787",
       "billed_cost": "0E-8",
       "adjustments": {
-        "credits": "-26.90000000",
-        "plan_cost": "0E-8",
         "free_storage": "-0E-8",
-        "network_egress_allowance": "-0.33571787",
-        "reservation_adjustment": "-0E-8"
+        "plan_cost": "0E-8",
+        "credits": "-26.90000000",
+        "reservation_adjustment": "-0E-8",
+        "network_egress_allowance": "-0.33571787"
       },
       "metered_cost_breakdown": {
         "ephemeral_apps": "26.90287990",
@@ -36,51 +105,116 @@
         "network_egress": "0.33571787"
       }
     },
-    "main_metered_delta_usd": "0.97000058",
-    "retained_pilot_usd": "0.282284",
-    "phase5_including_pilot_usd": "1.25228458",
-    "ledger_conservative_usd": 1.452285,
-    "earlier_posted_main_snapshot_usd": "1.17000057",
-    "note": "Current account snapshot supersedes earlier provisional billing; ledger charge is retained without refund."
-  },
-  "vast": {
-    "before": {
-      "credit": 2.8247990722999967,
-      "balance": 0,
-      "total_spend": -7.175200927700003,
-      "billed_expected": 0.0
-    },
     "after": {
-      "credit": 2.8068864014999964,
-      "total_spend": -7.193113598500004
+      "metered_cost": "28.52742427",
+      "billed_cost": "0E-8",
+      "adjustments": {
+        "network_egress_allowance": "-0.33742427",
+        "free_storage": "-0E-8",
+        "reservation_adjustment": "-0E-8",
+        "plan_cost": "0E-8",
+        "credits": "-28.19000000"
+      },
+      "metered_cost_breakdown": {
+        "network_egress": "0.33742427",
+        "llm_tokens": "0E-8",
+        "volumes": "0E-8",
+        "ephemeral_apps": "28.19240894"
+      }
     },
-    "credit_delta_usd": "0.0179126708000003",
-    "ledger_conservative_usd": 2.895749,
-    "reserve_usd": 0.3
-  },
-  "total_observed_provider_usd": "1.2701972508000003",
-  "aggregate_ledger_usd": 4.348034,
-  "zero_resources": {
-    "modal_apps": [
+    "observed_metered_delta_usd": "1.29170640",
+    "conservative_ledger_usd": "1.656979",
+    "cap_usd": "2.60",
+    "reserve_usd": "0.30",
+    "billed_cost_usd": "0E-8",
+    "remaining_free_compute_usd": "1.80759106",
+    "attempt_charges": [
       {
-        "app_id": "ap-XyIMd5cQJyWwuQtlC1jO3q",
-        "description": "grader-mode-phase5-gemma-main",
-        "state": "stopped",
-        "tasks": "0",
-        "created_at": "2026-10-21 15:46:54-04:00",
-        "stopped_at": "2026-10-21 16:11:19-04:00"
+        "attempt_id": "phase5-nemotron-modal-20261021-a-startup",
+        "charged_usd": 0.073647,
+        "teardown_verified": true
       },
       {
-        "app_id": "ap-FckHbbVTlPcie116OwqSgz",
-        "description": "grader-mode-phase5-pilot",
-        "state": "stopped",
-        "tasks": "0",
-        "created_at": "2026-10-21 15:14:21-04:00",
-        "stopped_at": "2026-10-21 15:19:37-04:00"
+        "attempt_id": "phase5-nemotron-modal-20261021-b-startup",
+        "charged_usd": 0.270676,
+        "teardown_verified": true
+      },
+      {
+        "attempt_id": "phase5-nemotron-modal-20261021-c-startup",
+        "charged_usd": 0.240339,
+        "teardown_verified": true
+      },
+      {
+        "attempt_id": "phase5-nemotron-modal-20261021-d-startup",
+        "charged_usd": 1.072317,
+        "teardown_verified": true
       }
     ],
+    "note": "All setup, canceled toolchain attempts, smoke, measurement, main stages and teardown included. Provider metering remains provisional; ledger retains conservative wall-time upper bounds."
+  },
+  "vast_phase5": {
+    "before_credit_usd": "2.8247990722999967",
+    "retry_before_credit_usd": "2.8068864014999964",
+    "phase5_final_credit_usd": "2.714918792699997",
+    "retry_credit_delta_usd": "0.0919676087999994",
+    "all_phase5_credit_delta_usd": "0.1098802795999997",
+    "final_snapshot_unix": 1792619309.03894,
+    "note": "Frozen at Phase 5 provider switch, before concurrent Phase 6 and external top-up. Later account credit changes are out of scope."
+  },
+  "legacy_aggregate_conservative_usd": "8.699651",
+  "new_modal_conservative_usd": "1.656979",
+  "combined_conservative_exposure_usd": "10.356630",
+  "total_phase5_observed_provider_usd": "2.6538712595999997",
+  "zero_resources": {
+    "captured_unix": 1792623226.2339358,
+    "scope": "Phase 5 only; preserve all Phase 6 resources",
+    "phase5_modal_apps": [
+      {
+        "app_id": "ap-2oiNoayC7HjPSL5cQEahoE",
+        "description": "grader-mode-phase5-second-family",
+        "state": "stopped",
+        "tasks": "0",
+        "created_at": "2026-10-21 18:24:37-04:00",
+        "stopped_at": "2026-10-21 18:42:28-04:00"
+      },
+      {
+        "app_id": "ap-4G0MBg715cuSf1TsCDkg1r",
+        "description": "grader-mode-phase5-second-family",
+        "state": "stopped",
+        "tasks": "0",
+        "created_at": "2026-10-21 18:18:47-04:00",
+        "stopped_at": "2026-10-21 18:22:47-04:00"
+      },
+      {
+        "app_id": "ap-IVAoHS43aaVGabYmPTRrZe",
+        "description": "grader-mode-phase5-second-family",
+        "state": "stopped",
+        "tasks": "0",
+        "created_at": "2026-10-21 18:10:41-04:00",
+        "stopped_at": "2026-10-21 18:15:11-04:00"
+      },
+      {
+        "app_id": "ap-nBvdhWqgVQHejlTBZLqAYM",
+        "description": "grader-mode-phase5-second-family",
+        "state": "stopped",
+        "tasks": "0",
+        "created_at": "2026-10-21 18:05:50-04:00",
+        "stopped_at": "2026-10-21 18:07:03-04:00"
+      }
+    ],
+    "phase5_active_modal_apps": 0,
     "modal_containers": [],
-    "vast_instances": [],
-    "active_modal_apps": 0
+    "phase5_vast_instances": [],
+    "phase5_vast_count": 0,
+    "out_of_scope_vast_instances": [
+      {
+        "id": 57119355,
+        "label": "phase6-3.8-a1-20261021",
+        "gpu_name": "RTX PRO 6000 Max-Q",
+        "actual_status": "running"
+      }
+    ],
+    "protected_phase6_instance_id": 57119355,
+    "provider_mutations_performed": false
   }
 }

@@ -1,0 +1,41 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Traceback (most recent call last):
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 503, in pace_cli
+    fcntl.flock(lock, fcntl.LOCK_EX|fcntl.LOCK_NB)
+BlockingIOError: [Errno 35] Resource temporarily unavailable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "results/raw/phase5-retry-preflight/exclude-broken-host-controller.py", line 28, in <module>
+    report=run_families(supervisor.candidate,supervisor.persist_proof)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 172, in run_families
+    return candidate(NEMOTRON, stage, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 1057, in candidate
+    teardown = cleanup(backend)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 268, in cleanup
+    provider.destroy_owned()
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 592, in destroy_owned
+    for row in self.owned(self.instances()):
+                          ^^^^^^^^^^^^^^^^
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 541, in instances
+    for r in self.cli('show', 'instances')]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 525, in cli
+    raw = self.run(['vastai', *map(str, args), '--raw'])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 450, in run
+    self.pace_cli(tuple(argv[1:3]))
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 506, in pace_cli
+    time.sleep(.05)
+  File "results/raw/phase5-retry-preflight/exclude-broken-host-controller.py", line 21, in terminate
+    def terminate(*_):raise KeyboardInterrupt('controller terminated')
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt: controller terminated

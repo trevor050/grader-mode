@@ -594,8 +594,9 @@ def test_bootstrap_shell_syntax_and_explicit_python3(fake_supervisor):
     path=supervisor.directory/'startup/bootstrap.sh'
     subprocess.run(['bash','-n',str(path)],check=True)
     text=path.read_text()
-    assert 'python3 -m pip install' in text and 'exec python3 -m src.phase5_vast_main' in text
-    assert all(k+'=='+v in text for k,v in PACKAGE_VERSIONS.items())
+    assert 'uv pip install --system --no-deps' in text and 'exec python3 -m src.phase5_vast_main' in text
+    assert all(k+'=='+v in text for k,v in PACKAGE_VERSIONS.items() if k != 'vllm')
+    assert "m.version('vllm') == '0.32.0'" in text
 
 
 def test_remote_guard_enforces_measurement_deadline_during_blocking_generate(tmp_path,monkeypatch):
@@ -628,3 +629,16 @@ def test_memory_fix_is_saved_before_rental_and_reported_as_128_resident(fake_sup
         kind='memory_concurrency',resident_sequences=128,enforce_eager=False)
     assert receipt['measured']['batch_size']==128
     assert receipt['measured']['chunk_size']==256 and receipt['measured']['requests']==256
+
+
+def test_explicit_refusal_has_no_transfer_charge_and_no_uncertain_quarantine(fake_supervisor,monkeypatch):
+    m=api();supervisor,ledger,provider,events,providers=fake_supervisor
+    def refused(self,offer,label):raise m.ProviderCreateRejected('definitive refusal')
+    monkeypatch.setattr(provider,'create',refused)
+    with pytest.raises(m.ProviderCreateRejected):m.run_families(supervisor.candidate,supervisor.persist_proof)
+    ticket=ledger.snapshot()['attempts'][0]
+    assert ticket['teardown_verified'] is True
+    assert ticket['resource_id'] is None
+    assert any(e.get('create_rejected') for e in ticket['events'])
+    assert not any(e.get('create_uncertain') for e in ticket['events'])
+    assert ticket['charged_microusd'] < 20000  # elapsed reservation floor only; no model transfer

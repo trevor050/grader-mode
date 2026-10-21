@@ -34,7 +34,10 @@ from src.phase5_control import (BudgetError, BudgetLedger, LEDGER_PATH, ROOT, UN
 
 RESERVE_USD = .30
 CREDIT_CEILING = 2.824799
-IMAGE = 'vastai/pytorch:latest'
+# Official v0.32.0 amd64 image, Python 3.12 / CUDA 13.0.2. Vast SSH mode
+# replaces its `vllm serve` entrypoint; no API server is started.
+IMAGE = 'vllm/vllm-openai@sha256:6ee133356d49ed24cee03dd0cda3d3980279a11c107ce3e752c89e76540f41c9'
+CLI_RATE_PATH = ROOT/'results/raw/.vast-cli-rate'
 DISK_GB = 80
 DOWNLOAD_GB = 100
 UPLOAD_GB = 8
@@ -158,6 +161,10 @@ class RuntimeSmokeFailure(RuntimeError):
         self.evidence = evidence
 
 
+class ProviderCreateRejected(RuntimeError):
+    """The API explicitly refused create, rather than losing its acknowledgement."""
+
+
 def run_families(candidate, persist_proof, clock=time.time):
     attempts = []
     for stage in ('startup', 'fix'):
@@ -194,14 +201,16 @@ def public_account(value):
     return result
 
 
-def offer_costs(offer):
+def offer_costs(offer, *, allow_unverified=False):
     verified = (offer.get('verification') == 'verified' if 'verification' in offer
                 else offer.get('verified') is True)
     if (offer.get('gpu_name') != 'RTX 5090' or offer.get('num_gpus') != 1
             or positive(offer['reliability'], 'reliability') < .99
             or positive(offer['gpu_ram'], 'GPU RAM') < 32000
-            or offer.get('rentable') is not True or not verified
-            or ('verified' in offer and offer['verified'] is not True)):
+            or offer.get('rentable') is not True
+            or not (verified or (allow_unverified and offer.get('verification') == 'unverified'))
+            or offer.get('rented') is True
+            or (verified and 'verified' in offer and offer['verified'] is not True)):
         raise BudgetError('fresh verified, reliable single RTX 5090 offer required')
     # Vast prices storage monthly; search's dph_total may use only default 5GB.
     hourly = positive(offer['dph_base'], 'base hourly') + DISK_GB*positive(
@@ -234,6 +243,9 @@ def reserve_create(ledger, provider, attempt_id, offer, allocation, watchdog):
     watchdog(ledger, attempt_id)
     try:
         instance = provider.create(offer, ticket['resource_label'])
+    except ProviderCreateRejected:
+        ledger.note(attempt_id,create_rejected=True)
+        raise
     except BaseException:
         ledger.note(attempt_id,create_uncertain=True)
         raise
@@ -416,8 +428,9 @@ def guarded_launch(config_path):
 
 
 PUBLIC_INSTANCE_KEYS = ('id', 'label', 'num_gpus', 'gpu_name', 'actual_status', 'cur_state',
-                        'dph_total', 'disk_space', 'ssh_host', 'ssh_port')
+                        'dph_total', 'disk_space', 'ssh_host', 'ssh_port', 'status_msg')
 PUBLIC_OFFER_KEYS = ('id', 'gpu_name', 'num_gpus', 'gpu_ram', 'reliability', 'verified', 'verification', 'rentable',
+                     'rented', 'machine_id',
                      'dph_base', 'dph_total', 'storage_cost', 'inet_down_cost', 'inet_up_cost',
                      'inet_down', 'inet_up', 'cuda_max_good', 'disk_space')
 
@@ -429,30 +442,96 @@ class Provider:
         self.label, self.instance, self.host, self.port = label, instance, host, port
         self.remote = REMOTE_ROOT + '/output'
         self.operation_deadline = None
+        self.allow_unverified = False
+        self.excluded_machine_ids = set()
 
     def run(self, argv, *, timeout=30, input=None):
+        if argv[0] == 'vastai':
+            self.pace_cli(tuple(argv[1:3]))
+            if '--retry' not in argv:
+                argv = [*argv, '--retry', '1']
         if self.operation_deadline is not None:
-            timeout = max(.1, min(timeout, self.operation_deadline-time.time()))
+            remaining = self.operation_deadline-time.time()
+            if remaining <= 0:
+                raise RuntimeError('provider operation deadline expired before subprocess')
+            timeout = min(timeout, remaining)
         try:
             result = subprocess.run(argv, input=input, capture_output=True, text=True,
                                     check=True, timeout=timeout)
+            if argv[0] == 'vastai' and (argv[1:3] == ['create','instance'] or result.stderr):
+                self.private_diagnostic('provider-response', dict(
+                    returncode=result.returncode, stdout=result.stdout, stderr=result.stderr,
+                    operation=argv[1:3]))
+            if argv[:3] == ['vastai','create','instance'] and not result.stdout.strip():
+                try:
+                    error = json.loads(result.stderr)
+                except (ValueError, TypeError):
+                    error = {}
+                if (isinstance(error,dict) and error.get('error') is True
+                        and error.get('status_code') in (400,401,403,404,410,429)):
+                    raise ProviderCreateRejected('Vast rejected create, HTTP '+str(error['status_code']))
             return result.stdout
         except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as exc:
             # CalledProcessError/TimeoutExpired text can include provider payloads.
+            if argv[0] == 'vastai':
+                self.private_diagnostic('provider-error', dict(
+                    error_type=type(exc).__name__, returncode=getattr(exc,'returncode',None),
+                    stdout=exc.stdout, stderr=exc.stderr, operation=argv[1:3]))
             raise RuntimeError(f'{Path(argv[0]).name} operation failed ({type(exc).__name__}); no raw stderr exposed') from None
+
+    def private_diagnostic(self, name, value):
+        """Operational payloads stay private in ignored raw storage, never logs."""
+        self.local.mkdir(parents=True, exist_ok=True)
+        path = self.local/(name+'-'+str(time.time_ns())+'.json')
+        with os.fdopen(os.open(path,os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600),'w') as out:
+            json.dump(value,out,default=lambda value:value.decode(errors='replace'))
+
+    def pace_cli(self, operation=None):
+        """Share per-operation spacing with the watchdog, including create.
+
+        Vast reports an endpoint threshold. Independent reads must not age a
+        freshly scanned ask by another five seconds before its single create.
+        """
+        CLI_RATE_PATH.parent.mkdir(parents=True, exist_ok=True)
+        path = (CLI_RATE_PATH.with_name(CLI_RATE_PATH.name+'-'+safe_id('-'.join(operation)))
+                if operation else CLI_RATE_PATH)
+        with path.open('a+') as lock:
+            while True:
+                if self.operation_deadline is not None and time.time() >= self.operation_deadline:
+                    raise RuntimeError('provider pacing deadline expired')
+                try:
+                    fcntl.flock(lock, fcntl.LOCK_EX|fcntl.LOCK_NB)
+                    break
+                except BlockingIOError:
+                    time.sleep(.05)
+            lock.seek(0)
+            previous = float(lock.read() or '0')
+            delay = max(0., previous+5-time.time())
+            if self.operation_deadline is not None and time.time()+delay >= self.operation_deadline:
+                raise RuntimeError('provider pacing would exceed operation deadline')
+            if delay:
+                time.sleep(delay)
+            lock.seek(0)
+            lock.truncate()
+            lock.write(str(time.time()))
+            lock.flush()
 
     def cli(self, *args):
         # The installed CLI can emit an API error only on stderr and exit 0
         # with empty stdout. Retry bounded READS, never uncertain creates.
         reads = args[:2] in (('show', 'instances'), ('show', 'user'), ('search', 'offers'))
-        for attempt in range(3 if reads else 1):
-            raw = self.run(['vastai', *map(str, args), '--raw'])
+        for attempt in range(5 if reads else 1):
             try:
+                raw = self.run(['vastai', *map(str, args), '--raw'])
                 return json.loads(raw)
-            except json.JSONDecodeError:
-                if not reads or attempt == 2:
+            except ProviderCreateRejected:
+                raise
+            except (json.JSONDecodeError, RuntimeError):
+                delay = 5*2**attempt
+                if (not reads or attempt == 4 or (self.operation_deadline is not None
+                        and time.time()+delay >= self.operation_deadline)):
                     raise RuntimeError('Vast CLI returned non-JSON; no provider payload exposed') from None
-                time.sleep(2)
+                time.sleep(delay)
 
     def account(self):
         return public_account(self.cli('show', 'user'))
@@ -463,20 +542,44 @@ class Provider:
 
     def scan(self, offer_id):
         # This is always a fresh API search, with requested disk size, never /tmp.
-        rows = self.cli('search', 'offers', 'gpu_name=RTX_5090 num_gpus=1 reliability>=0.99 '
-                        'verified=true rentable=true disk_space>=80', '--storage', DISK_GB,
+        query = ('gpu_name=RTX_5090 num_gpus=1 reliability>=0.99 external=false '
+                 'rentable=true rented=false disk_space>=80')
+        if not self.allow_unverified:
+            query += ' verified=true'
+        rows = self.cli('search', 'offers', query, '--no-default', '--storage', DISK_GB,
                         '--limit', 200, '--order', 'dph_total')
-        offered = next((r for r in rows if r['id'] == offer_id), None)
+        rows = [r for r in rows if r.get('machine_id') not in self.excluded_machine_ids]
+        if offer_id == 0:
+            # Explicit fresh-selection mode avoids carrying an ask ID across
+            # slow local prompt construction. Supervisor still enforces price,
+            # live credit, transfer exposure and the durable reservation.
+            compatible = []
+            for row in rows:
+                try:
+                    cost = offer_costs(row,allow_unverified=self.allow_unverified)
+                    if float(row.get('cuda_max_good', 0)) >= 13.0:
+                        compatible.append((cost['hourly_usd'], row))
+                except (ValueError, KeyError, BudgetError):
+                    continue
+            offered = min(compatible, key=lambda item:item[0])[1] if compatible else None
+        else:
+            offered = next((r for r in rows if r['id'] == offer_id), None)
         if offered is None:
             raise BudgetError('requested offer absent from fresh scan; choose a fresh offer, never auto-rent an alternative')
+        if float(offered.get('cuda_max_good',0)) < 13.0:
+            raise BudgetError('selected offer cannot run the CUDA 13 image')
         return {k:offered[k] for k in PUBLIC_OFFER_KEYS if k in offered}
 
     def create(self, offer, label):
         self.label = label
         reply = self.cli('create', 'instance', offer['id'], '--image', IMAGE, '--disk', DISK_GB,
                          '--label', label, '--ssh', '--direct', '--cancel-unavail', '--env',
-                         '-e HF_HOME=/hf -e VLLM_USE_FLASHINFER_SAMPLER=0', '--retry', 1)
+                         '-e HF_HOME=/hf -e VLLM_USE_FLASHINFER_SAMPLER=0',
+                         '--onstart-cmd', 'mkdir -p /phase5/output; python3 --version > /phase5/output/image-python.txt',
+                         '--retry', 1)
         if reply.get('success') is not True or type(reply.get('new_contract')) is not int:
+            if reply.get('success') is False and 'new_contract' not in reply:
+                raise ProviderCreateRejected('Vast explicitly refused create; see private receipt')
             raise RuntimeError('Vast create response uncertain; label watchdog retains ownership')
         self.instance = reply['new_contract']
         return self.instance
@@ -544,13 +647,26 @@ class Provider:
             if len(rows) != 1 or len(owned) != 1:
                 raise BudgetError('exactly one owned provider instance required')
             row = owned[0]
+            message = str(row.get('status_msg','')).lower()
+            if (row.get('actual_status') in ('exited','offline')
+                    or 'unresolvable cdi devices' in message or 'failed to create shim task' in message):
+                self.local.mkdir(parents=True,exist_ok=True)
+                atomic_json(self.local/'provider-startup-error.json',row)
+                raise RuntimeError('provider container failed before worker deployment')
             if row.get('ssh_host') and row.get('ssh_port'):
                 self.host, self.port = row['ssh_host'], int(row['ssh_port'])
+                ready = False
                 try:
                     if self.ssh('python3 -c "print(12345)"', timeout=10).strip() == '12345':
+                        ready = True
                         return
                 except RuntimeError:
                     pass
+                finally:
+                    if not ready:
+                        # No worker can exist before the first successful SSH
+                        # deployment. Avoid artifact pulls from an unborn container.
+                        self.host = self.port = None
             time.sleep(2)
         raise TimeoutError('provider SSH startup deadline')
 
@@ -755,11 +871,13 @@ class Supervisor:
         local = self.directory/stage
         local.mkdir()
         backend = Provider(local)
+        backend.allow_unverified = getattr(self.args,'allow_unverified',False)
+        backend.excluded_machine_ids = set(getattr(self.args,'exclude_machine_ids',[]))
         before = backend.account()
         if backend.instances():
             raise BudgetError('zero Vast instances required before any reservation/create')
         offer = backend.scan(self.args.offer_id)
-        costs = offer_costs(offer)
+        costs = offer_costs(offer,allow_unverified=backend.allow_unverified)
         if costs['hourly_usd'] > self.args.max_hourly_usd:
             raise BudgetError('fresh compute/storage price exceeds explicit hourly ceiling')
         credit = min(CREDIT_CEILING, self.baseline['credit'])-self.charged
@@ -783,6 +901,13 @@ class Supervisor:
                     or positive(actual[0].get('dph_total'), 'actual instance rate') > costs['hourly_usd']+.00001):
                 raise BudgetError('rented instance rate/ownership differs from fresh reservation')
             self.ledger.note(attempt_id, recovery=dict(local_dir=str(local), host=backend.host, port=backend.port))
+            if backend.allow_unverified:
+                probe = ('import torch,json; p=torch.cuda.get_device_properties(0); '
+                         'print(json.dumps(dict(count=torch.cuda.device_count(),name=p.name,'
+                         'capability=list(torch.cuda.get_device_capability(0)),memory_mib=p.total_memory/1024**2)))')
+                hardware = json.loads(backend.ssh('python3 -c '+shlex.quote(probe)))
+                validate_hardware(hardware)
+                atomic_json(local/'hardware-check.json',hardware)
             config = dict(model=model, attempt_id=attempt_id, registration_commit=REGISTRATION_COMMIT,
                           authorization_id=self.args.authorization_id, deadline_unix=ticket['work_deadline_unix'],
                           enforce_eager=policy['enforce_eager'], resident_sequences=policy['resident_sequences'],
@@ -792,20 +917,15 @@ class Supervisor:
             config_path = local/'worker-config.json'
             atomic_json(config_path, config)
             backend.put(config_path, REMOTE_ROOT+'/config.json')
-            install = ' '.join(shlex.quote(k+'=='+v) for k,v in PACKAGE_VERSIONS.items())
-            bootstrap = ('#!/bin/bash\nset -eu\ncd '+REMOTE_ROOT+'\n'
-                'export HF_HOME=/hf VLLM_USE_FLASHINFER_SAMPLER=0 PIP_NO_CACHE_DIR=1 PHASE5_RUNTIME_IMAGE='+IMAGE+'\n'
-                'if ! python3 -m pip install --disable-pip-version-check '+install+
-                ' > output/install.log 2>&1; then\n'
-                '  echo \'{"phase":"installation","error_type":"PackageInstallError"}\' > output/error.json\n'
-                '  exit 1\nfi\n'
-                'exec python3 -m src.phase5_vast_main --worker '+REMOTE_ROOT+'/config.json\n')
+            bootstrap = bootstrap_script()
             bootstrap_path = local/'bootstrap.sh'
             bootstrap_path.write_text(bootstrap)
             backend.put(bootstrap_path, REMOTE_ROOT+'/bootstrap.sh')
             backend.ssh('cd '+REMOTE_ROOT+' && tar xzf bundle.tar.gz')
-            backend.ssh('cd '+REMOTE_ROOT+' && nohup python3 -m src.phase5_vast_main --remote-launch '+
-                        REMOTE_ROOT+'/config.json > '+REMOTE_ROOT+'/output/worker.log 2>&1 < /dev/null &')
+            # A backgrounded `cd && nohup ... &` leaves the AND-list shell's
+            # SSH pipes open. Spawn from a short foreground Python process,
+            # with every child FD redirected and a new session instead.
+            backend.ssh(detached_launch_command())
 
             def remaining_budget():
                 snapshot = self.ledger.snapshot()
@@ -949,7 +1069,12 @@ class Supervisor:
                 wall = max(0,time.time()-ticket['started_unix'])*costs['hourly_usd']/3600
                 provider_delta = max(0,before['credit']-after['credit']) if after else 0
                 spend_delta = max(0,after.get('total_spend',0)-before.get('total_spend',0)) if after else 0
-                charge = max(wall+costs['network_usd'],provider_delta,spend_delta)
+                # An explicit refusal with no contract cannot have downloaded
+                # model bytes. Keep all prior charges; do not invent transfers
+                # on a new, definitively rejected request.
+                network = (0 if isinstance(failure,ProviderCreateRejected) and backend.instance is None
+                           else costs['network_usd'])
+                charge = max(wall+network,provider_delta,spend_delta)
                 self.charged += charge
                 self.ledger.note(attempt_id, provider_account_after=after, conservative_all_costs_usd=charge,
                                  teardown=teardown, error_type=type(failure).__name__ if failure else None)
@@ -996,6 +1121,45 @@ def validate_pulled_stage(directory, selected):
         raise ValueError('pulled stage is partial/mixed/non-main; never inference eligible')
 
 
+def validate_hardware(value):
+    if (value.get('count') != 1 or 'RTX 5090' not in str(value.get('name',''))
+            or value.get('capability') != [12,0]
+            or positive(value.get('memory_mib',0),'actual VRAM') < 32000):
+        raise BudgetError('actual single RTX 5090 hardware check failed before model download')
+
+
+def detached_launch_command(root=None):
+    root = str(root or REMOTE_ROOT)
+    script = ('import subprocess; '
+              'log=open('+repr(root+'/output/worker.log')+',"ab"); '
+              'child=subprocess.Popen('+repr(['python3','-m','src.phase5_vast_main',
+                                              '--remote-launch',root+'/config.json'])+
+              ',cwd='+repr(root)+',stdin=subprocess.DEVNULL,stdout=log,stderr=log,'
+              'start_new_session=True,close_fds=True); print(child.pid)')
+    return 'python3 -c '+shlex.quote(script)
+
+
+def bootstrap_script():
+    # Keep the official image's matched torch/CUDA/vLLM binaries. Only the
+    # three preregistered pure-Python/tokenizer pins are reconciled, no deps.
+    install = ' '.join(shlex.quote(k+'=='+v) for k,v in PACKAGE_VERSIONS.items() if k != 'vllm')
+    diagnostic = """import sys, platform, json, importlib.metadata as m
+from pathlib import Path
+value = dict(python=sys.version, platform=platform.platform(), packages={k:m.version(k) for k in ('vllm','torch','transformers','tokenizers','jinja2')})
+Path('output/runtime-environment.json').write_text(json.dumps(value, indent=2))
+assert sys.version_info >= (3,11) and sys.version_info < (3,15)
+assert m.version('vllm') == '0.32.0'
+"""
+    return ('#!/bin/bash\nset -eu\ncd '+REMOTE_ROOT+'\n'
+        'export HF_HOME=/hf VLLM_USE_FLASHINFER_SAMPLER=0 PHASE5_RUNTIME_IMAGE='+IMAGE+'\n'
+        "python3 - <<'PYDIAG' > output/environment.log 2>&1\n"+diagnostic+'PYDIAG\n'
+        'if ! uv pip install --system --no-deps --index-url https://pypi.org/simple '+install+
+        ' > output/install.log 2>&1; then\n'
+        '  echo \'{"phase":"installation","error_type":"PackageInstallError"}\' > output/error.json\n'
+        '  exit 1\nfi\n'
+        'exec python3 -m src.phase5_vast_main --worker '+REMOTE_ROOT+'/config.json\n')
+
+
 def plan():
     return dict(mode='prepare_only', paid_actions_performed=False,
         execution_requires='NEW execution task after completed Gemma blind audit and analysis; --execute --authorization-id --gemma-analysis',
@@ -1017,8 +1181,13 @@ def main(argv=None):
     mode.add_argument('--watchdog', action='store_true', help=argparse.SUPPRESS)
     parser.add_argument('--authorization-id')
     parser.add_argument('--gemma-analysis', type=Path)
-    parser.add_argument('--offer-id', type=int, default=51405136)
+    parser.add_argument('--offer-id', type=int, default=51405136,
+                        help='Exact fresh ask ID; 0 explicitly selects the cheapest compatible fresh offer, subject to all budget gates')
     parser.add_argument('--max-hourly-usd', type=float, default=.75)
+    parser.add_argument('--allow-unverified',action='store_true',
+                        help='Also consider unverified (never deverified) hosts; requires an on-device GPU check before model download')
+    parser.add_argument('--exclude-machine-id',dest='exclude_machine_ids',type=int,action='append',default=[],
+                        help='Exclude a host with documented infrastructure failure from fresh scans')
     parser.add_argument('--run-id')
     parser.add_argument('--attempt-id', help=argparse.SUPPRESS)
     parser.add_argument('--ledger', type=Path, default=LEDGER_PATH)

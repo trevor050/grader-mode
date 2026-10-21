@@ -1,0 +1,66 @@
+{
+  "main_responses": 2400,
+  "problems": 200,
+  "templates": 2,
+  "completed_stages": [
+    "h20_core",
+    "h21_main"
+  ],
+  "deferred_stages": [
+    "h20_controls"
+  ],
+  "dropped_cells": [],
+  "pilot_rows_excluded": true,
+  "smoke_responses": 8,
+  "throughput_responses": 256,
+  "cells": [
+    {
+      "arm": "main",
+      "thinking": false,
+      "request_type": "explicit",
+      "prefill": "none",
+      "n": 400
+    },
+    {
+      "arm": "main",
+      "thinking": false,
+      "request_type": "plain",
+      "prefill": "none",
+      "n": 400
+    },
+    {
+      "arm": "main",
+      "thinking": true,
+      "request_type": "explicit",
+      "prefill": "none",
+      "n": 400
+    },
+    {
+      "arm": "main",
+      "thinking": true,
+      "request_type": "plain",
+      "prefill": "none",
+      "n": 400
+    },
+    {
+      "arm": "prefill",
+      "thinking": true,
+      "request_type": "explicit",
+      "prefill": "empty",
+      "n": 400
+    },
+    {
+      "arm": "prefill",
+      "thinking": true,
+      "request_type": "explicit",
+      "prefill": "reminder",
+      "n": 400
+    }
+  ],
+  "sha256": {
+    "results/raw/phase5-nemotron-modal-20261021-d/phase5-nemotron-modal-20261021-d-startup/phase5-nemotron-modal-20261021-d-startup/main/generations.jsonl": "4cd64bd10c8e38bdaa7dce855e67a8bea75aad88db6820d0966ce1c5e7bdddcf",
+    "results/raw/phase5-nemotron-modal-20261021-d/scored.jsonl": "d076bd6f9c4ae6c28c6ca44cecee3a24ca5f62546770cdff65d973db9f2af2a5",
+    "results/raw/phase5-nemotron-modal-20261021-d/phase5-nemotron-modal-20261021-d-startup/phase5-nemotron-modal-20261021-d-startup/main/manifest.json": "42c9629aa11e0feff7b954f3f4e0352d08c2f79248be184dbaa5432a0ce4fa3e"
+  },
+  "raw_retention": "Ignored local results/raw and persistent Modal grader-mode-results Volume; no raw main generations committed"
+}

@@ -1,0 +1,102 @@
+{
+  "captured_unix": 1792615622.660198,
+  "no_paid_actions_during_preflight": true,
+  "model_attempts_before_retry": 0,
+  "prior_failures": "Infrastructure only per DESIGN second-family note at 2f7ac93",
+  "pypi": {
+    "url": "https://pypi.org/pypi/vllm/0.32.0/json",
+    "requires_python": "<3.15,>=3.11",
+    "requires_dist": [
+      "transformers<5.20.0,>=5.16.1",
+      "torch==2.13.0",
+      "torchaudio==2.11.0",
+      "torchvision==0.28.0",
+      "torchcodec>=0.14",
+      "flashinfer-python==0.7.0.post1"
+    ],
+    "wheels": [
+      {
+        "filename": "vllm-0.32.0-cp38-abi3-manylinux_2_28_x86_64.whl",
+        "sha256": "5e2ecdc5b0baf72921c288486417ca82778456a448e4fe60b62ee43c0dfc8611"
+      }
+    ]
+  },
+  "old_image": {
+    "image": "vastai/pytorch:latest",
+    "python_env": [
+      "PYTHON_VERSION=3.10"
+    ],
+    "diagnosis": "Current registry image uses Python 3.10, incompatible with vLLM >=3.11. Exact destroyed host interpreter/index was not retained; stale index not proven.",
+    "python310_rejection_reproduced": true
+  },
+  "selected_image": {
+    "image": "vllm/vllm-openai@sha256:6ee133356d49ed24cee03dd0cda3d3980279a11c107ce3e752c89e76540f41c9",
+    "tag": "v0.32.0",
+    "compressed_bytes": 9205727079,
+    "build_env": [
+      "CUDA_VERSION=13.0.2",
+      "VLLM_BUILD_COMMIT=5df63a7203cdb9328d824a27b682e77c7b9928be"
+    ],
+    "python": "3.12, from registry build history",
+    "entrypoint": [
+      "vllm",
+      "serve"
+    ],
+    "vast_launch": "--ssh --direct replaces image entrypoint; onstart records Python, controller starts worker",
+    "docs": [
+      "https://docs.vast.ai/api-reference/instances/create-instance",
+      "https://github.com/vllm-project/vllm/releases/tag/v0.32.0"
+    ],
+    "cuda_compatibility_checked_for_exact_and_auto_offers": true,
+    "vast_create_accepted": true,
+    "accepted_instance_id": 57111833
+  },
+  "local_checks": {
+    "public_pypi_linux_python312_dependency_resolution": true,
+    "shell_syntax": true,
+    "complete_request_grids": {
+      "nemotron": 3200,
+      "glm": 3200
+    },
+    "minimal_source_bundle_imports": true,
+    "gemma_prerequisite": true,
+    "phase5_tests": 280,
+    "docker_execution": "Unavailable locally: Docker daemon not running; no local GPU runtime proof claimed",
+    "focused_tests_after_review": 70,
+    "create_argv_replayed_against_local_mock_api": true,
+    "phase5_tests_after_all_repairs": 287,
+    "focused_tests_latest": 73
+  },
+  "cli_policy": {
+    "spacing_seconds": 5,
+    "shared_across_processes": true,
+    "read_attempts": 5,
+    "backoff_seconds": [
+      5,
+      10,
+      20,
+      40
+    ],
+    "deadline_bounded": true,
+    "create_attempts": 1,
+    "destroy_noninteractive": true,
+    "internal_cli_http_attempts": 1,
+    "private_exit_zero_stderr_retained": true,
+    "pacing_deadline_bounded": true,
+    "pacing_scope": "Per CLI operation / API endpoint, five seconds shared across processes; create follows independent fresh search immediately",
+    "explicit_create_refusal_handled": true,
+    "unknown_create_response_quarantine_seconds": 900
+  },
+  "unchanged_sha256": {
+    "DESIGN.md": "516bdf6c1659a4b4ab22953fbe58b285d3af7e208a6f0d32ada2e8d8d09f4a31",
+    "results/phase5/FINDINGS.md": "59df5d77eb08cb11a194f4dc19625640cbb33ae88cb2bb49c272d2a01e8f192c",
+    "src/models_5.py": "f087db2706c68087c804b0ce50fe4fed39be644908f43f604e5ad910e1991804",
+    "src/vast_generate_5.py": "097e7b044ae72226ea3484fa6d2734e50e616be79e290293a1d6e62cf253ed49"
+  },
+  "audit_authorization": "User authorized Codex self-labeling blind to arm, disclosed exactly as Gemma; no human labels will be collected.",
+  "hourly_ceiling_amendment": {
+    "user_authorized_max_usd": 0.76,
+    "balance_gate_unchanged": true,
+    "reserve_usd": 0.3
+  }
+}

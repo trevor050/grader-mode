@@ -1,0 +1,110 @@
+{
+  "status": "complete",
+  "n_required": 40,
+  "n_sampled": 40,
+  "n_labeled": 40,
+  "n_pending": 0,
+  "agreement": 0.875,
+  "cohen_kappa": 0.7109826589595376,
+  "confusion": {
+    "true_positive": 10,
+    "true_negative": 25,
+    "false_positive": 4,
+    "false_negative": 1
+  },
+  "n_disagreements": 5,
+  "disagreement_ids": [
+    "p5-e3c0124898601e1510d19319",
+    "p5-18398d40592b5a71a517d596",
+    "p5-421cfc5e4f20ee20aa0d8334",
+    "p5-dc1621eb9f4c632320ddb6a7",
+    "p5-b7e119936019ebd2686d9a99"
+  ],
+  "committed_number": {
+    "status": "complete",
+    "n_eligible": 11,
+    "n_labeled": 11,
+    "n_pending": 0,
+    "agreement": 0.9090909090909091,
+    "n_disagreements": 1,
+    "disagreement_ids": [
+      "p5-421cfc5e4f20ee20aa0d8334"
+    ]
+  },
+  "splitter": {
+    "status": "complete",
+    "n_required": 40,
+    "n_sampled": 40,
+    "n_labeled": 40,
+    "n_pending": 0,
+    "agreement": 1.0,
+    "n_agreements": 40,
+    "n_disagreements": 0,
+    "disagreement_ids": [],
+    "comparison": "exact_trimmed_final_reply",
+    "sample_path": "results/phase5/nemotron/splitter-audit-sample.jsonl"
+  },
+  "models": {
+    "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4": {
+      "status": "complete",
+      "n_required": 40,
+      "n_sampled": 40,
+      "n_labeled": 40,
+      "n_pending": 0,
+      "agreement": 0.875,
+      "cohen_kappa": 0.7109826589595376,
+      "confusion": {
+        "true_positive": 10,
+        "true_negative": 25,
+        "false_positive": 4,
+        "false_negative": 1
+      },
+      "n_disagreements": 5,
+      "disagreement_ids": [
+        "p5-e3c0124898601e1510d19319",
+        "p5-18398d40592b5a71a517d596",
+        "p5-421cfc5e4f20ee20aa0d8334",
+        "p5-dc1621eb9f4c632320ddb6a7",
+        "p5-b7e119936019ebd2686d9a99"
+      ],
+      "committed_number": {
+        "status": "complete",
+        "n_eligible": 11,
+        "n_labeled": 11,
+        "n_pending": 0,
+        "agreement": 0.9090909090909091,
+        "n_disagreements": 1,
+        "disagreement_ids": [
+          "p5-421cfc5e4f20ee20aa0d8334"
+        ]
+      },
+      "splitter": {
+        "status": "complete",
+        "n_required": 40,
+        "n_sampled": 40,
+        "n_labeled": 40,
+        "n_pending": 0,
+        "agreement": 1.0,
+        "n_agreements": 40,
+        "n_disagreements": 0,
+        "disagreement_ids": [],
+        "comparison": "exact_trimmed_final_reply"
+      }
+    }
+  },
+  "sampling": {
+    "seed": 0,
+    "size_per_model": 40,
+    "strata": [
+      "model",
+      "arm",
+      "thinking",
+      "format",
+      "prefill",
+      "attempt"
+    ],
+    "allocation": "round_robin_nonempty_strata",
+    "blind_id": "sha256(model,id)[:24]"
+  },
+  "sample_path": "results/phase5/nemotron/parser-audit-sample.jsonl"
+}

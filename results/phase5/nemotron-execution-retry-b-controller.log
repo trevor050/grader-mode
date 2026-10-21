@@ -1,0 +1,19 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 1114, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 1106, in main
+    result = run_families(supervisor.candidate,supervisor.persist_proof)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 168, in run_families
+    return candidate(NEMOTRON, stage, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 785, in candidate
+    offer = backend.scan(self.args.offer_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 493, in scan
+    raise BudgetError('requested offer absent from fresh scan; choose a fresh offer, never auto-rent an alternative')
+src.phase5_control.BudgetError: requested offer absent from fresh scan; choose a fresh offer, never auto-rent an alternative

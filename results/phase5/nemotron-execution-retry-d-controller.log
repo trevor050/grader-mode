@@ -1,0 +1,28 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "results/raw/phase5-retry-preflight/recovery-controller.py", line 28, in <module>
+    report=run_families(supervisor.candidate,supervisor.persist_proof)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 172, in run_families
+    return candidate(NEMOTRON, stage, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 1050, in candidate
+    raise failure
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 865, in candidate
+    reserve_create(self.ledger, backend, attempt_id, offer, allocation, arm_watchdog)
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 243, in reserve_create
+    instance = provider.create(offer, ticket['resource_label'])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 560, in create
+    reply = self.cli('create', 'instance', offer['id'], '--image', IMAGE, '--disk', DISK_GB,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 514, in cli
+    raw = self.run(['vastai', *map(str, args), '--raw'])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/codeprojects/grader-mode/src/phase5_vast_main.py", line 467, in run
+    raise ProviderCreateRejected('Vast rejected create, HTTP '+str(error['status_code']))
+src.phase5_vast_main.ProviderCreateRejected: Vast rejected create, HTTP 400

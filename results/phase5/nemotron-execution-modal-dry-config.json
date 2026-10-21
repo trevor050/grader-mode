@@ -1,0 +1,39 @@
+{
+  "execute": false,
+  "cap_usd": 2.6,
+  "reserve_usd": 0.3,
+  "authorization_id": "phase5-second-family-modal-blackwell-260",
+  "authorization_record": "/Users/user/codeprojects/grader-mode/results/phase5/modal-second-family-authorization.json",
+  "aggregate_ledger_modified": false,
+  "gpu": "RTX-PRO-6000",
+  "cpu": 4,
+  "memory_mib": 32768,
+  "rate_bound_usd_per_second": 0.001,
+  "price_source": "https://modal.com/pricing",
+  "price_checked": "2026-10-21",
+  "stages": {
+    "smoke": 8,
+    "throughput": 256,
+    "h20_core": 800,
+    "h21_main": 1600,
+    "h20_controls": 800
+  },
+  "batch_size": 256,
+  "chunk_size": 256,
+  "dropped_cells": [],
+  "models": [
+    "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+    "QuantTrio/GLM-4.7-Flash-AWQ"
+  ],
+  "quantization": "native checkpoint NVFP4; GLM AWQ fallback only",
+  "image": "Gemma base/pins plus torch-matched CUDA13.0.3 compiler and FlashInfer SM120f cache",
+  "result_volume": "grader-mode-phase5-results",
+  "cache_volume": "grader-mode-phase5-hf-cache",
+  "min_containers": 0,
+  "buffer_containers": 0,
+  "max_containers": 1,
+  "retries": 0,
+  "outcomes_consulted": false,
+  "paid_calls": false,
+  "fallback_gpu_provenance": "RTX-PRO-6000; lead-authorized provider switch"
+}

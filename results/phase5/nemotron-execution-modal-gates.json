@@ -1,0 +1,85 @@
+[
+  {
+    "stage": "h20_core",
+    "decision": "run",
+    "count": 800,
+    "projected_seconds": 379.40467317802955,
+    "projected_usd": 0.37940467317802956,
+    "available_usd": 1.3155689010028842,
+    "shortfall_usd": 0,
+    "seconds_left": 1175.230901002884,
+    "reserve_usd": 0.3,
+    "runtime_margin": 1.25,
+    "measured_tokens_per_second": 3854.7461198823357,
+    "mean_output_tokens_by_cell": {
+      "prefill/empty": 1838.71875,
+      "prefill/neutral": 2093.28125,
+      "main/off/plain": 189.5,
+      "main/on/explicit": 1829.9375,
+      "main/off/explicit": 242.4375,
+      "prefill/reminder": 970.65625,
+      "prefill/irrelevant": 1600.21875,
+      "main/on/plain": 1158.0625
+    },
+    "outcomes_consulted": false,
+    "dropped_cells": [],
+    "deferred_stages": [],
+    "decided_unix": 1792621877.229727
+  },
+  {
+    "stage": "h21_main",
+    "decision": "run",
+    "count": 1600,
+    "projected_seconds": 658.5451383438249,
+    "projected_usd": 0.6585451383438249,
+    "available_usd": 1.0621269409065248,
+    "shortfall_usd": 0,
+    "seconds_left": 921.7889409065247,
+    "reserve_usd": 0.3,
+    "runtime_margin": 1.25,
+    "measured_tokens_per_second": 3854.7461198823357,
+    "mean_output_tokens_by_cell": {
+      "prefill/empty": 1838.71875,
+      "prefill/neutral": 2093.28125,
+      "main/off/plain": 189.5,
+      "main/on/explicit": 1829.9375,
+      "main/off/explicit": 242.4375,
+      "prefill/reminder": 1066.0775,
+      "prefill/irrelevant": 1600.21875,
+      "main/on/plain": 1158.0625
+    },
+    "outcomes_consulted": false,
+    "dropped_cells": [],
+    "deferred_stages": [],
+    "decided_unix": 1792622130.673536
+  },
+  {
+    "stage": "h20_controls",
+    "decision": "defer",
+    "count": 800,
+    "projected_seconds": 567.434800094961,
+    "projected_usd": 0.5674348000949611,
+    "available_usd": 0.6578953740005495,
+    "shortfall_usd": 0.0498774260944117,
+    "seconds_left": 517.5573740005493,
+    "reserve_usd": 0.3,
+    "runtime_margin": 1.25,
+    "measured_tokens_per_second": 3342.9284318847263,
+    "mean_output_tokens_by_cell": {
+      "prefill/empty": 1838.71875,
+      "prefill/neutral": 2093.28125,
+      "main/off/plain": 200.875,
+      "main/on/explicit": 1829.9375,
+      "main/off/explicit": 277.0425,
+      "prefill/reminder": 1066.0775,
+      "prefill/irrelevant": 1600.21875,
+      "main/on/plain": 1158.0625
+    },
+    "outcomes_consulted": false,
+    "dropped_cells": [],
+    "deferred_stages": [
+      "h20_controls"
+    ],
+    "decided_unix": 1792622534.909367
+  }
+]

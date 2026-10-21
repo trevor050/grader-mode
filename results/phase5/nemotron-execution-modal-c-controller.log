@@ -1,0 +1,262 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+✓ Initialized. View run at
+https://modal.com/apps/trevor050/main/ap-4G0MBg715cuSf1TsCDkg1r
+Building image im-qorH224ty2jov5zhvIHvjG
+
+=> Step 0: FROM base
+
+=> Step 1: COPY --from=ghcr.io/astral-sh/uv:latest /uv /.uv/uv
+Getting image source signatures
+Copying blob sha256:a7a4c1c28acfa0600954ba762985b04fd8db0ecd249573405f86e458150e26a0
+Copying blob sha256:78fa515da939df1a7735518cd8483877c98aa632744a890e35c0b8c94edae9a6
+Copying config sha256:bea3876c0cb2afb25f0858f8bff73a7b334c395064cbe1a84465c9218c799ab1
+Writing manifest to image destination
+Unpacking OCI image
+   • unpacking rootfs ...
+   • ... done
+   • unpacked image rootfs: /tmp/task-data/ta-01M5G8QATXZKERE7XBJTKZSF6B/registry-unpackmS2PwQ
+
+=> Step 2: RUN /.uv/uv pip install --python $(command -v python) --compile-bytecode 'cuda-toolkit[nvcc,nvvm,crt,cudart,cccl]==13.0.3' ninja==1.13.0
+Using Python 3.12.10 environment at: /usr/local
+Resolved 7 packages in 38ms
+Downloading nvidia-nvvm (58.7MiB)
+Downloading nvidia-cuda-nvcc (35.7MiB)
+Downloading nvidia-cuda-cccl (3.0MiB)
+ Downloaded nvidia-cuda-cccl
+ Downloaded nvidia-cuda-nvcc
+ Downloaded nvidia-nvvm
+Prepared 5 packages in 522ms
+Uninstalled 5 packages in 209ms
+Installed 5 packages in 99ms
+Bytecode compiled 4 files in 58ms
+ - ninja==1.13.2
+ + ninja==1.13.0
+ - nvidia-cuda-cccl==13.3.4.3.1
+ + nvidia-cuda-cccl==13.0.85
+ - nvidia-cuda-crt==13.4.92
+ + nvidia-cuda-crt==13.0.88
+ - nvidia-cuda-nvcc==13.4.92
+ + nvidia-cuda-nvcc==13.0.88
+ - nvidia-nvvm==13.4.92
+ + nvidia-nvvm==13.0.88
+Saving image...
+Image saved, took 1.75s
+
+Built image im-qorH224ty2jov5zhvIHvjG in 5.76s
+
+
+Building image im-Gl5IYWrZ0OeHVESJ70VW7N
+
+=> Step 0: FROM base
+
+=> Step 1: RUN apt-get update
+Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
+Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8790 kB]
+Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages.diff/Index [21.8 kB]
+Ign:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages.diff/Index
+Get:6 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [6924 B]
+Get:7 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [355 kB]
+Fetched 9415 kB in 1s (10.6 MB/s)
+Reading package lists...
+
+=> Step 2: RUN apt-get install -y build-essential
+Reading package lists...
+Building dependency tree...
+Reading state information...
+build-essential is already the newest version (12.9).
+0 upgraded, 0 newly installed, 0 to remove and 62 not upgraded.
+Saving image...
+Image saved, took 2.21s
+
+Built image im-Gl5IYWrZ0OeHVESJ70VW7N in 5.79s
+
+
+Building image im-CfejXLflQMjjzVXUPw10zz
+
+=> Step 0: FROM base
+
+=> Step 1: ENV CUDA_HOME=/usr/local/lib/python3.12/site-packages/nvidia/cu13
+
+=> Step 2: ENV CUDA_PATH=/usr/local/lib/python3.12/site-packages/nvidia/cu13
+
+=> Step 3: ENV PATH=/usr/local/lib/python3.12/site-packages/nvidia/cu13/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+Saving image...
+Image saved, took 1.55s
+
+Built image im-CfejXLflQMjjzVXUPw10zz in 2.89s
+
+
+Building image im-rMdXD1WwG0DIEyQCKV1REF
+
+=> Step 0: FROM base
+
+=> Step 1: RUN test -d "$CUDA_HOME/lib64" || ln -s lib "$CUDA_HOME/lib64"
+
+=> Step 2: RUN "$CUDA_HOME/bin/nvcc" --version
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Wed_Aug_20_01:58:59_PM_PDT_2025
+Cuda compilation tools, release 13.0, V13.0.88
+Build cuda_13.0.r13.0/compiler.36424714_0
+
+=> Step 3: RUN python -c "from pathlib import Path; Path('/tmp/phase5_cuda_probe.cu').write_text('#include <cuda_runtime.h>\n__global__ void phase5_probe(float *x) { x[0] = 1.0f; }\n')"
+
+=> Step 4: RUN "$CUDA_HOME/bin/nvcc" -arch=sm_120 -ptx /tmp/phase5_cuda_probe.cu -o /tmp/phase5_cuda_probe.ptx
+
+=> Step 5: RUN test -s /tmp/phase5_cuda_probe.ptx
+Saving image...
+Image saved, took 1.78s
+
+Built image im-rMdXD1WwG0DIEyQCKV1REF in 6.79s
+
+
+Building image im-kT56f9SCMcqOWcww372BWw
+
+=> Step 0: FROM base
+
+=> Step 1: RUN python -m flashinfer install-cubin-wheel
+=== Cubin Wheel Install ===
+FlashInfer version: 0.7.0.post1
+Wheel index: https://flashinfer.ai/whl
+Requirement: flashinfer-cubin==0.7.0.post1
+Command: /usr/local/bin/python -m pip install --upgrade --no-deps --index-url https://flashinfer.ai/whl flashinfer-cubin==0.7.0.post1
+Looking in indexes: https://flashinfer.ai/whl
+Collecting flashinfer-cubin==0.7.0.post1
+  Downloading https://github.com/flashinfer-ai/flashinfer/releases/download/v0.7.0.post1/flashinfer_cubin-0.7.0.post1-py3-none-any.whl (1567.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 GB 119.9 MB/s eta 0:00:00
+Installing collected packages: flashinfer-cubin
+Successfully installed flashinfer-cubin-0.7.0.post1
+✅ flashinfer-cubin installed successfully.
+
+=> Step 2: RUN python -m flashinfer install-jit-cache-wheel --cuda-version 13.0 --mode minimal --sm sm120f
+=== JIT Cache Wheel Install ===
+FlashInfer version: 0.7.0.post1
+CUDA version: 13.0
+Wheel CUDA label: cu130
+Install mode: minimal
+Providers: sm120f
+Wheel index: https://flashinfer.ai/whl/cu130
+Requirement: flashinfer-jit-cache==0.7.0.post1+cu130 flashinfer-jit-cache-sm120f==0.7.0.post1+cu130
+Command: /usr/local/bin/python -m pip install --upgrade --no-deps --index-url https://flashinfer.ai/whl/cu130 flashinfer-jit-cache==0.7.0.post1+cu130 flashinfer-jit-cache-sm120f==0.7.0.post1+cu130
+Looking in indexes: https://flashinfer.ai/whl/cu130
+Collecting flashinfer-jit-cache==0.7.0.post1+cu130
+  Downloading https://github.com/flashinfer-ai/flashinfer/releases/download/v0.7.0.post1/flashinfer_jit_cache-0.7.0.post1%2Bcu130-cp39-abi3-manylinux_2_28_x86_64.whl (4.5 kB)
+Collecting flashinfer-jit-cache-sm120f==0.7.0.post1+cu130
+  Downloading https://github.com/flashinfer-ai/flashinfer/releases/download/v0.7.0.post1/flashinfer_jit_cache_sm120f-0.7.0.post1%2Bcu130-cp39-abi3-manylinux_2_28_x86_64.whl (187.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 187.2/187.2 MB 154.1 MB/s eta 0:00:00
+Installing collected packages: flashinfer-jit-cache-sm120f, flashinfer-jit-cache
+
+Successfully installed flashinfer-jit-cache-0.7.0.post1+cu130 flashinfer-jit-cache-sm120f-0.7.0.post1+cu130
+✅ flashinfer-jit-cache installed successfully.
+Saving image...
+Image saved, took 12.58s
+
+Built image im-kT56f9SCMcqOWcww372BWw in 80.12s
+
+
+Building image im-jDtyeDi8R0YjwzQDrfyN2o
+
+=> Step 0: FROM base
+
+=> Step 1: ENV HF_HOME=/hf
+
+=> Step 2: ENV HF_XET_HIGH_PERFORMANCE=1
+
+=> Step 3: ENV PHASE5_HOST=modal
+
+=> Step 4: ENV PHASE5_GPU=RTX-PRO-6000
+
+=> Step 5: ENV PHASE5_RUNTIME_IMAGE=modal-gemma-pins-vllm0.32.0-cuda13.0.3-nvcc-flashinfer-sm120f
+
+=> Step 6: ENV VLLM_USE_FLASHINFER_SAMPLER=0
+
+=> Step 7: ENV DO_NOT_TRACK=1
+Saving image...
+Image saved, took 2.31s
+
+Built image im-jDtyeDi8R0YjwzQDrfyN2o in 4.87s
+
+
+✓ Created objects.
+├── ✓ Uploaded /Users/user/codeprojects/grader-mode/DESIGN.md
+├── ✓ Uploaded /Users/user/codeprojects/grader-mode/prompts
+├── ✓ Uploaded PythonPackage:src
+└── ✓ Created Function second_family_gpu.
+Stopping app - user stopped from CLI.
+✓ App completed. View run at
+https://modal.com/apps/trevor050/main/ap-4G0MBg715cuSf1TsCDkg1r
+{
+  "status": "infrastructure_failure",
+  "phase": "model_load",
+  "stage": "startup",
+  "attempt_id": "phase5-nemotron-modal-20261021-c-startup",
+  "started_unix": 1792621127.7741592,
+  "violation_scored": false,
+  "completed_stages": [],
+  "deferred_stages": [
+    "h20_core",
+    "h21_main",
+    "h20_controls"
+  ],
+  "dropped_cells": [],
+  "hardware": {
+    "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "compute_capability": [
+      12,
+      0
+    ]
+  },
+  "runtime_fix": null,
+  "evidence": "/Users/user/codeprojects/grader-mode/results/raw/phase5-nemotron-modal-20261021-c/phase5-nemotron-modal-20261021-c-startup/local-execution.json",
+  "ended_unix": 1792621369.894718,
+  "fallback_provenance": null,
+  "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+  "zero_containers_verified": true,
+  "artifacts_pulled": true,
+  "teardown": {
+    "app_id": "ap-4G0MBg715cuSf1TsCDkg1r",
+    "app_stop_confirmed": true,
+    "containers_after": [],
+    "stop_errors": []
+  },
+  "authorization_attempt": {
+    "attempt_id": "phase5-nemotron-modal-20261021-c-startup",
+    "status": "settled",
+    "app_id": "ap-4G0MBg715cuSf1TsCDkg1r",
+    "started_unix": 1792621127.7741592,
+    "work_deadline_unix": 1792622962.7741592,
+    "hard_deadline_unix": 1792623082.7741592,
+    "prior_charged_usd": 0.34432300000000005,
+    "reserved_usd": 1.955,
+    "charged_usd": 0.240339,
+    "teardown_verified": true,
+    "watchdog_pid": 2387,
+    "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+    "stage": "startup",
+    "source_hashes": {
+      "DESIGN.md": "f1d2d05185c1593deba90a7b58601691d18b99ba047e02866d06abca10c90c84",
+      "prompts/templates.json": "637fb8aa1312f4485d410241fe6087cbbe9c6150a4267bfb8a71e418f7af0ed1",
+      "prompts/templates_4.json": "6cd003a8b8bf96456428084a1abeedb5c66ee5774443bcb6fdf31d7d65a8fd31",
+      "prompts/system_tutor.txt": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11",
+      "src/models_5.py": "f087db2706c68087c804b0ce50fe4fed39be644908f43f604e5ad910e1991804",
+      "src/phase5_split.py": "5739523aabc58b7f855c3f6cafc6dba984209e84887e68fc00d6a5490731434f",
+      "src/vast_generate_5.py": "097e7b044ae72226ea3484fa6d2734e50e616be79e290293a1d6e62cf253ed49",
+      "src/phase5_control.py": "bd99c9a0e591d55ab210abeef399e1bad1351ffc1692abaaf4ede6f024cbf62c",
+      "src/modal_app_5.py": "df765af3ea969dc41aceff855020044115767b2034f7d20ac849b2c95f6f4c98",
+      "src/phase5_vast_main.py": "c69634b21fd933c063195cfaa95efe5c8e4f998cc00a0ebc5dc3abe789f502cf",
+      "src/modal_second_family_5.py": "8cdc56e84f420ff035aaabebf6bd8d54b4c76baf142274554e679ce12ab01359"
+    },
+    "function_call_id": "fc-01M5G8TXXHJ9WNWFAT4T84TKGW",
+    "ended_unix": 1792621368.1130219,
+    "teardown": {
+      "app_id": "ap-4G0MBg715cuSf1TsCDkg1r",
+      "app_stop_confirmed": true,
+      "containers_after": [],
+      "stop_errors": []
+    }
+  },
+  "controller_error": null,
+  "inference_eligible": false
+}

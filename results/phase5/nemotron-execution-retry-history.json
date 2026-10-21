@@ -1,0 +1,247 @@
+{
+  "captured_unix": 1792619375.774658,
+  "spent_usd": 8.699651,
+  "outstanding_usd": 0.0,
+  "available_usd": 0.300349,
+  "attempts": [
+    {
+      "attempt_id": "phase5-second-family-retry-c01-startup",
+      "provider": "vast",
+      "status": "failed",
+      "reserved_microusd": 2506445,
+      "reserved_usd": 2.506445,
+      "charged_microusd": 2506445,
+      "hourly_usd": 0.7796094695006048,
+      "started_unix": 1792615764.2334762,
+      "startup_seconds": 900.0,
+      "runtime_seconds": 10554.0,
+      "teardown_seconds": 120.0,
+      "startup_deadline_unix": 1792616664.2334762,
+      "work_deadline_unix": 1792627218.2334762,
+      "deadline_unix": 1792627338.2334762,
+      "resource_id": null,
+      "resource_label": "phase5-phase5-second-family-retry-c01-startup",
+      "teardown_verified": true,
+      "events": [
+        {
+          "unix": 1792615764.2373729,
+          "watchdog_pid": 45463,
+          "watchdog_log": "/Users/user/codeprojects/grader-mode/results/phase5/phase5-second-family-retry-c01-startup-vast-main-watchdog.log"
+        },
+        {
+          "unix": 1792615769.182917,
+          "create_uncertain": true
+        },
+        {
+          "unix": 1792615784.295928,
+          "provider_account_after": {
+            "credit": 2.8068864014999964,
+            "total_spend": -7.193113598500004
+          },
+          "conservative_all_costs_usd": 0.29550566782333226,
+          "teardown": {
+            "pulled": true,
+            "zero_instances": false,
+            "errors": [],
+            "unix": 1792615780.267976,
+            "uncertain_create_quarantined": true
+          },
+          "error_type": "RuntimeError"
+        },
+        {
+          "unix": 1792616670.047863,
+          "detached_watchdog": {
+            "pulled": true,
+            "zero_instances": true,
+            "errors": [],
+            "unix": 1792616670.047114
+          }
+        }
+      ],
+      "ended_unix": 1792616670.051153,
+      "observed_wall_seconds": 905.817676782608
+    },
+    {
+      "attempt_id": "phase5-second-family-retry-d01-startup",
+      "provider": "vast",
+      "status": "failed",
+      "reserved_microusd": 1845099,
+      "reserved_usd": 1.845099,
+      "charged_microusd": 295048,
+      "hourly_usd": 0.7302501710153425,
+      "started_unix": 1792616700.321449,
+      "startup_seconds": 900.0,
+      "runtime_seconds": 8076.0,
+      "teardown_seconds": 120.0,
+      "startup_deadline_unix": 1792617600.321449,
+      "work_deadline_unix": 1792625676.321449,
+      "deadline_unix": 1792625796.321449,
+      "resource_id": null,
+      "resource_label": "phase5-phase5-second-family-retry-d01-startup",
+      "teardown_verified": true,
+      "events": [
+        {
+          "unix": 1792616700.3250618,
+          "watchdog_pid": 57491,
+          "watchdog_log": "/Users/user/codeprojects/grader-mode/results/phase5/phase5-second-family-retry-d01-startup-vast-main-watchdog.log"
+        },
+        {
+          "unix": 1792616705.067702,
+          "create_rejected": true
+        },
+        {
+          "unix": 1792616720.116145,
+          "provider_account_after": {
+            "credit": 2.8068864014999964,
+            "total_spend": -7.193113598500004
+          },
+          "conservative_all_costs_usd": 0.2950471328472404,
+          "teardown": {
+            "pulled": true,
+            "zero_instances": true,
+            "errors": [],
+            "unix": 1792616715.259191
+          },
+          "error_type": "ProviderCreateRejected"
+        }
+      ],
+      "ended_unix": 1792616720.1176589,
+      "observed_wall_seconds": 19.796209812164307
+    },
+    {
+      "attempt_id": "phase5-second-family-retry-f02-startup",
+      "provider": "vast",
+      "status": "failed",
+      "reserved_microusd": 1549988,
+      "reserved_usd": 1.549988,
+      "charged_microusd": 354400,
+      "hourly_usd": 0.7573229581372903,
+      "started_unix": 1792617034.658679,
+      "startup_seconds": 900.0,
+      "runtime_seconds": 6348.0,
+      "teardown_seconds": 120.0,
+      "startup_deadline_unix": 1792617934.658679,
+      "work_deadline_unix": 1792624282.658679,
+      "deadline_unix": 1792624402.658679,
+      "resource_id": "57111833",
+      "resource_label": "phase5-phase5-second-family-retry-f02-startup",
+      "teardown_verified": true,
+      "events": [
+        {
+          "unix": 1792617034.66239,
+          "watchdog_pid": 62105,
+          "watchdog_log": "/Users/user/codeprojects/grader-mode/results/phase5/phase5-second-family-retry-f02-startup-vast-main-watchdog.log"
+        },
+        {
+          "unix": 1792617317.15268,
+          "recovery": {
+            "local_dir": "results/raw/phase5-second-family-retry-20261021-f/round-02/startup",
+            "host": "ssh2.vast.ai",
+            "port": 19826
+          }
+        },
+        {
+          "unix": 1792617401.9842792,
+          "provider_account_after": {
+            "credit": 2.784972116199997,
+            "total_spend": -7.215027883800003
+          },
+          "conservative_all_costs_usd": 0.3543991429496694,
+          "teardown": {
+            "pulled": true,
+            "zero_instances": true,
+            "errors": [],
+            "unix": 1792617401.553055
+          },
+          "error_type": "RuntimeError"
+        }
+      ],
+      "ended_unix": 1792617401.988374,
+      "observed_wall_seconds": 367.3296949863434
+    },
+    {
+      "attempt_id": "phase5-second-family-retry-h01-startup",
+      "provider": "vast",
+      "status": "failed",
+      "reserved_microusd": 1195697,
+      "reserved_usd": 1.195697,
+      "charged_microusd": 328947,
+      "hourly_usd": 0.6113487667471476,
+      "started_unix": 1792617801.024562,
+      "startup_seconds": 900.0,
+      "runtime_seconds": 6021.0,
+      "teardown_seconds": 120.0,
+      "startup_deadline_unix": 1792618701.024562,
+      "work_deadline_unix": 1792624722.024562,
+      "deadline_unix": 1792624842.024562,
+      "resource_id": "57113309",
+      "resource_label": "phase5-phase5-second-family-retry-h01-startup",
+      "teardown_verified": true,
+      "events": [
+        {
+          "unix": 1792617801.031411,
+          "watchdog_pid": 67183,
+          "watchdog_log": "/Users/user/codeprojects/grader-mode/results/phase5/phase5-second-family-retry-h01-startup-vast-main-watchdog.log"
+        },
+        {
+          "unix": 1792618091.380692,
+          "provider_account_after": {
+            "credit": 2.770356302199997,
+            "total_spend": -7.229643697800003
+          },
+          "conservative_all_costs_usd": 0.32894689456091986,
+          "teardown": {
+            "pulled": false,
+            "zero_instances": true,
+            "errors": [
+              "RuntimeError: artifact pull failed"
+            ],
+            "unix": 1792618090.968914
+          },
+          "error_type": "KeyboardInterrupt"
+        }
+      ],
+      "ended_unix": 1792618091.383328,
+      "observed_wall_seconds": 290.358766078949
+    },
+    {
+      "attempt_id": "phase5-second-family-retry-i01-startup",
+      "provider": "vast",
+      "status": "failed",
+      "reserved_microusd": 866777,
+      "reserved_usd": 0.866777,
+      "charged_microusd": 866777,
+      "hourly_usd": 0.5900900361405279,
+      "started_unix": 1792618214.9978151,
+      "startup_seconds": 900.0,
+      "runtime_seconds": 4268.0,
+      "teardown_seconds": 120.0,
+      "startup_deadline_unix": 1792619114.9978151,
+      "work_deadline_unix": 1792623382.9978151,
+      "deadline_unix": 1792623502.9978151,
+      "resource_id": "57113988",
+      "resource_label": "phase5-phase5-second-family-retry-i01-startup",
+      "teardown_verified": true,
+      "events": [
+        {
+          "unix": 1792618215.001875,
+          "watchdog_pid": 68526,
+          "watchdog_log": "/Users/user/codeprojects/grader-mode/results/phase5/phase5-second-family-retry-i01-startup-vast-main-watchdog.log"
+        },
+        {
+          "unix": 1792619121.0243998,
+          "detached_watchdog": {
+            "pulled": true,
+            "zero_instances": true,
+            "errors": [],
+            "unix": 1792619121.023285
+          }
+        }
+      ],
+      "ended_unix": 1792619121.0310762,
+      "observed_wall_seconds": 906.0332610607147
+    }
+  ],
+  "zero_vast_instances_verified": true,
+  "all_teardown_verified": true
+}

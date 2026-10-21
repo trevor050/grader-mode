@@ -1,0 +1,29 @@
+{
+  "n": 2,
+  "rows": [
+    {
+      "id": "phase5:p0101:t0:NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4:main:thinking-0:explicit:none",
+      "arm": "main",
+      "thinking": false,
+      "format": "explicit",
+      "prefill": "none",
+      "parse_status": "unexpected_final_boundary",
+      "finish_reason": "stop",
+      "output_tokens": 711,
+      "no_final": true
+    },
+    {
+      "id": "phase5:p0303:t1:NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4:main:thinking-0:explicit:none",
+      "arm": "main",
+      "thinking": false,
+      "format": "explicit",
+      "prefill": "none",
+      "parse_status": "unexpected_final_boundary",
+      "finish_reason": "length",
+      "output_tokens": 4096,
+      "no_final": true
+    }
+  ],
+  "scoring": "Retained in all-request denominator; strict splitter returns empty final and no violation. No boundary rules, parser or labels changed after outcomes.",
+  "inference": "Formal hypothesis decisions remain pending under the existing analyze_5 protocol-failure gate."
+}

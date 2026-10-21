@@ -1,0 +1,100 @@
+{
+  "captured_unix": 1792619737.985695,
+  "dry_config": {
+    "execute": false,
+    "cap_usd": 2.6,
+    "reserve_usd": 0.3,
+    "authorization_id": "phase5-second-family-modal-blackwell-260",
+    "authorization_record": "/Users/user/codeprojects/grader-mode/results/phase5/modal-second-family-authorization.json",
+    "aggregate_ledger_modified": false,
+    "gpu": "RTX-PRO-6000",
+    "cpu": 4,
+    "memory_mib": 32768,
+    "rate_bound_usd_per_second": 0.001,
+    "price_source": "https://modal.com/pricing",
+    "price_checked": "2026-10-21",
+    "stages": {
+      "smoke": 8,
+      "throughput": 256,
+      "h20_core": 800,
+      "h21_main": 1600,
+      "h20_controls": 800
+    },
+    "batch_size": 256,
+    "chunk_size": 256,
+    "dropped_cells": [],
+    "models": [
+      "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+      "QuantTrio/GLM-4.7-Flash-AWQ"
+    ],
+    "quantization": "native checkpoint NVFP4; GLM AWQ fallback only",
+    "image": "Gemma base/pins plus torch-matched CUDA13.0.3 compiler and FlashInfer SM120f cache",
+    "result_volume": "grader-mode-phase5-results",
+    "cache_volume": "grader-mode-phase5-hf-cache",
+    "min_containers": 0,
+    "buffer_containers": 0,
+    "max_containers": 1,
+    "retries": 0,
+    "outcomes_consulted": false,
+    "paid_calls": false,
+    "fallback_gpu_provenance": "RTX-PRO-6000; lead-authorized provider switch"
+  },
+  "source_sha256": {
+    "DESIGN.md": "f1d2d05185c1593deba90a7b58601691d18b99ba047e02866d06abca10c90c84",
+    "prompts/templates.json": "637fb8aa1312f4485d410241fe6087cbbe9c6150a4267bfb8a71e418f7af0ed1",
+    "prompts/templates_4.json": "6cd003a8b8bf96456428084a1abeedb5c66ee5774443bcb6fdf31d7d65a8fd31",
+    "prompts/system_tutor.txt": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11",
+    "src/models_5.py": "f087db2706c68087c804b0ce50fe4fed39be644908f43f604e5ad910e1991804",
+    "src/phase5_split.py": "5739523aabc58b7f855c3f6cafc6dba984209e84887e68fc00d6a5490731434f",
+    "src/vast_generate_5.py": "097e7b044ae72226ea3484fa6d2734e50e616be79e290293a1d6e62cf253ed49",
+    "src/phase5_control.py": "bd99c9a0e591d55ab210abeef399e1bad1351ffc1692abaaf4ede6f024cbf62c",
+    "src/modal_app_5.py": "df765af3ea969dc41aceff855020044115767b2034f7d20ac849b2c95f6f4c98",
+    "src/phase5_vast_main.py": "c69634b21fd933c063195cfaa95efe5c8e4f998cc00a0ebc5dc3abe789f502cf",
+    "src/modal_second_family_5.py": "8cdc56e84f420ff035aaabebf6bd8d54b4c76baf142274554e679ce12ab01359"
+  },
+  "protected_findings_sha256": "59df5d77eb08cb11a194f4dc19625640cbb33ae88cb2bb49c272d2a01e8f192c",
+  "request_grid_rows": 3200,
+  "stage_rows": [
+    800,
+    1600,
+    800
+  ],
+  "modal_controller_cpu_tests": "33 passed in 3.34 seconds after runtime-link alias and shared-library build probe",
+  "legacy_phase5_tests": "295 passed in 74.72 seconds",
+  "paid_launch_started": true,
+  "price_sources": [
+    "https://modal.com/pricing",
+    "https://modal.com/docs/guide/gpu"
+  ],
+  "blind_self_label_authorized": true,
+  "analysis_gpu_switch_tests": "11 passed, 42 deselected; subsequent dedicated switch check passed",
+  "fresh_credit_headroom_usd": "3.09712010",
+  "kernel_install": "FlashInfer installed-version matching cubin, CUDA13 minimal SM120f JIT shim/provider, before source mounts",
+  "kernel_sources": [
+    "https://github.com/flashinfer-ai/flashinfer/blob/v0.7.0.post1/flashinfer/__main__.py",
+    "https://flashinfer.ai/whl/flashinfer-cubin/",
+    "https://flashinfer.ai/whl/cu130/flashinfer-jit-cache-sm120f/"
+  ],
+  "kernel_repair_read_only_review": "Source-supported precompiled SM120 native CUTLASS NVFP4 kernels; not a complete live-runtime certification",
+  "compiler_resolution": "CUDA toolkit13.0.2 conflicts with pinnedTorch2.13; matched13.0.3 extras resolve successfully on LinuxPython3.12. Wheel confirms nvidia/cu13/bin/nvcc and matching NVVM layout. Image compiles an sm_120 PTX probe before GPU spawn.",
+  "compiler_build_probe": "PTX probe passed on CPU image build; subsequent exact XQA link failure revealed missing libcudart.so alias. Image now also requires a shared-library CUDA compile/link probe.",
+  "latest_billing": {
+    "metered_cost": "27.43691028",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "free_storage": "-0E-8",
+      "credits": "-27.10000000",
+      "reservation_adjustment": "-0E-8",
+      "network_egress_allowance": "-0.33691028",
+      "plan_cost": "0E-8"
+    },
+    "metered_cost_breakdown": {
+      "llm_tokens": "0E-8",
+      "volumes": "0E-8",
+      "network_egress": "0.33691028",
+      "ephemeral_apps": "27.10245760"
+    }
+  },
+  "latest_free_credit_usd": "2.89754240",
+  "full_phase5_tests": "329 passed in 69.68 seconds before the runtime-link/probe-only image repair"
+}

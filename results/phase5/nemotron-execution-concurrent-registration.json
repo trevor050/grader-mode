@@ -1,0 +1,9 @@
+{
+  "captured_unix": 1792620576.476288,
+  "initial_head": "2f7ac93",
+  "launch_head": "8af01567fd54252e599b1df7a13cb3c84af96c2c",
+  "phase5_registration_prefix_unchanged": true,
+  "initial_design_sha256": "516bdf6c1659a4b4ab22953fbe58b285d3af7e208a6f0d32ada2e8d8d09f4a31",
+  "launch_design_sha256": "f1d2d05185c1593deba90a7b58601691d18b99ba047e02866d06abca10c90c84",
+  "external_change": "Lead appended Phase 6 registration in concurrently committed DESIGN.md; no DESIGN edits by this task."
+}

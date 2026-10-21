@@ -1,0 +1,16 @@
+{
+  "reviewer": "Independent Codex gpt-6.1-sol high reasoning",
+  "rounds": 3,
+  "round1_findings": [
+    "Recover app allocated before image-build exception",
+    "Allow honest lead-authorized Modal RTX-PRO-6000 fallback proof in analyzer"
+  ],
+  "round2_findings": [
+    "Reject stale SDK app IDs during recovery",
+    "Regression must enter intended setup error rather than fail on missing keyword"
+  ],
+  "resolution": "New current app IDs checked against prior SDK ID and known inventory/history; unknown allocation stays unresolved. Corrected setup regression and stale-ID discovery/unknown cases. Analyzer allows only original RTX 5090 or lead-authorized RTX-PRO-6000 and retains all model/timing/outcome validations.",
+  "round3": "Cleared scoped changes, 6 focused CPU tests passed; no edits or resource launches by reviewer.",
+  "parent_controller_tests": "33 passed in 3.68 seconds",
+  "captured_unix": 1792620357.549689
+}

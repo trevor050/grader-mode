@@ -1,0 +1,186 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+✓ Initialized. View run at
+https://modal.com/apps/trevor050/main/ap-2oiNoayC7HjPSL5cQEahoE
+Building image im-bZsE6WOq9yk04bjnL9DGAr
+
+=> Step 0: FROM base
+
+=> Step 1: RUN test -d "$CUDA_HOME/lib64" || ln -s lib "$CUDA_HOME/lib64"
+
+=> Step 2: RUN test -e "$CUDA_HOME/lib/libcudart.so" || ln -s libcudart.so.13 "$CUDA_HOME/lib/libcudart.so"
+
+=> Step 3: RUN "$CUDA_HOME/bin/nvcc" --version
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Wed_Aug_20_01:58:59_PM_PDT_2025
+Cuda compilation tools, release 13.0, V13.0.88
+Build cuda_13.0.r13.0/compiler.36424714_0
+
+=> Step 4: RUN python -c "from pathlib import Path; Path('/tmp/phase5_cuda_probe.cu').write_text('#include <cuda_runtime.h>\n__global__ void phase5_probe(float *x) { x[0] = 1.0f; }\n')"
+
+=> Step 5: RUN "$CUDA_HOME/bin/nvcc" -arch=sm_120 -ptx /tmp/phase5_cuda_probe.cu -o /tmp/phase5_cuda_probe.ptx
+
+=> Step 6: RUN test -s /tmp/phase5_cuda_probe.ptx
+
+=> Step 7: RUN "$CUDA_HOME/bin/nvcc" -arch=sm_120 --cudart shared -shared -Xcompiler=-fPIC /tmp/phase5_cuda_probe.cu -o /tmp/phase5_cuda_probe.so
+
+=> Step 8: RUN test -s /tmp/phase5_cuda_probe.so
+Saving image...
+Image saved, took 1.93s
+
+Built image im-bZsE6WOq9yk04bjnL9DGAr in 6.10s
+
+
+Building image im-XWHTk9kBGgC4VdBShObDI6
+
+=> Step 0: FROM base
+
+=> Step 1: RUN python -m flashinfer install-cubin-wheel
+=== Cubin Wheel Install ===
+FlashInfer version: 0.7.0.post1
+Wheel index: https://flashinfer.ai/whl
+Requirement: flashinfer-cubin==0.7.0.post1
+Command: /usr/local/bin/python -m pip install --upgrade --no-deps --index-url https://flashinfer.ai/whl flashinfer-cubin==0.7.0.post1
+Looking in indexes: https://flashinfer.ai/whl
+Collecting flashinfer-cubin==0.7.0.post1
+  Downloading https://github.com/flashinfer-ai/flashinfer/releases/download/v0.7.0.post1/flashinfer_cubin-0.7.0.post1-py3-none-any.whl (1567.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 GB 45.4 MB/s eta 0:00:00
+Installing collected packages: flashinfer-cubin
+Successfully installed flashinfer-cubin-0.7.0.post1
+✅ flashinfer-cubin installed successfully.
+
+=> Step 2: RUN python -m flashinfer install-jit-cache-wheel --cuda-version 13.0 --mode minimal --sm sm120f
+=== JIT Cache Wheel Install ===
+FlashInfer version: 0.7.0.post1
+CUDA version: 13.0
+Wheel CUDA label: cu130
+Install mode: minimal
+Providers: sm120f
+Wheel index: https://flashinfer.ai/whl/cu130
+Requirement: flashinfer-jit-cache==0.7.0.post1+cu130 flashinfer-jit-cache-sm120f==0.7.0.post1+cu130
+Command: /usr/local/bin/python -m pip install --upgrade --no-deps --index-url https://flashinfer.ai/whl/cu130 flashinfer-jit-cache==0.7.0.post1+cu130 flashinfer-jit-cache-sm120f==0.7.0.post1+cu130
+Looking in indexes: https://flashinfer.ai/whl/cu130
+Collecting flashinfer-jit-cache==0.7.0.post1+cu130
+  Downloading https://github.com/flashinfer-ai/flashinfer/releases/download/v0.7.0.post1/flashinfer_jit_cache-0.7.0.post1%2Bcu130-cp39-abi3-manylinux_2_28_x86_64.whl (4.5 kB)
+Collecting flashinfer-jit-cache-sm120f==0.7.0.post1+cu130
+  Downloading https://github.com/flashinfer-ai/flashinfer/releases/download/v0.7.0.post1/flashinfer_jit_cache_sm120f-0.7.0.post1%2Bcu130-cp39-abi3-manylinux_2_28_x86_64.whl (187.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 187.2/187.2 MB 41.2 MB/s eta 0:00:00
+Installing collected packages: flashinfer-jit-cache-sm120f, flashinfer-jit-cache
+
+Successfully installed flashinfer-jit-cache-0.7.0.post1+cu130 flashinfer-jit-cache-sm120f-0.7.0.post1+cu130
+✅ flashinfer-jit-cache installed successfully.
+Saving image...
+Image saved, took 12.44s
+
+Built image im-XWHTk9kBGgC4VdBShObDI6 in 128.67s
+
+
+Building image im-pZpSSezbYxd12WXBaxVKhY
+
+=> Step 0: FROM base
+
+=> Step 1: ENV HF_HOME=/hf
+
+=> Step 2: ENV HF_XET_HIGH_PERFORMANCE=1
+
+=> Step 3: ENV PHASE5_HOST=modal
+
+=> Step 4: ENV PHASE5_GPU=RTX-PRO-6000
+
+=> Step 5: ENV PHASE5_RUNTIME_IMAGE=modal-gemma-pins-vllm0.32.0-cuda13.0.3-nvcc-flashinfer-sm120f
+
+=> Step 6: ENV VLLM_USE_FLASHINFER_SAMPLER=0
+
+=> Step 7: ENV DO_NOT_TRACK=1
+Saving image...
+Image saved, took 3.87s
+
+Built image im-pZpSSezbYxd12WXBaxVKhY in 5.88s
+
+
+✓ Created objects.
+├── ✓ Uploaded /Users/user/codeprojects/grader-mode/DESIGN.md
+├── ✓ Uploaded /Users/user/codeprojects/grader-mode/prompts
+├── ✓ Uploaded PythonPackage:src
+└── ✓ Created Function second_family_gpu.
+MODAL_SECOND_FAMILY_GATE {"stage": "h20_core", "decision": "run", "count": 800, "projected_seconds": 379.40467317802955, "projected_usd": 0.37940467317802956, "available_usd": 1.3155689010028842, "shortfall_usd": 0, "seconds_left": 1175.230901002884, "reserve_usd": 0.3, "runtime_margin": 1.25, "measured_tokens_per_second": 3854.7461198823357, "mean_output_tokens_by_cell": {"prefill/empty": 1838.71875, "prefill/neutral": 2093.28125, "main/off/plain": 189.5, "main/on/explicit": 1829.9375, "main/off/explicit": 242.4375, "prefill/reminder": 970.65625, "prefill/irrelevant": 1600.21875, "main/on/plain": 1158.0625}, "outcomes_consulted": false, "dropped_cells": [], "deferred_stages": [], "decided_unix": 1792621877.229727}
+MODAL_SECOND_FAMILY_GATE {"stage": "h21_main", "decision": "run", "count": 1600, "projected_seconds": 658.5451383438249, "projected_usd": 0.6585451383438249, "available_usd": 1.0621269409065248, "shortfall_usd": 0, "seconds_left": 921.7889409065247, "reserve_usd": 0.3, "runtime_margin": 1.25, "measured_tokens_per_second": 3854.7461198823357, "mean_output_tokens_by_cell": {"prefill/empty": 1838.71875, "prefill/neutral": 2093.28125, "main/off/plain": 189.5, "main/on/explicit": 1829.9375, "main/off/explicit": 242.4375, "prefill/reminder": 1066.0775, "prefill/irrelevant": 1600.21875, "main/on/plain": 1158.0625}, "outcomes_consulted": false, "dropped_cells": [], "deferred_stages": [], "decided_unix": 1792622130.673536}
+MODAL_SECOND_FAMILY_GATE {"stage": "h20_controls", "decision": "defer", "count": 800, "projected_seconds": 567.434800094961, "projected_usd": 0.5674348000949611, "available_usd": 0.6578953740005495, "shortfall_usd": 0.0498774260944117, "seconds_left": 517.5573740005493, "reserve_usd": 0.3, "runtime_margin": 1.25, "measured_tokens_per_second": 3342.9284318847263, "mean_output_tokens_by_cell": {"prefill/empty": 1838.71875, "prefill/neutral": 2093.28125, "main/off/plain": 200.875, "main/on/explicit": 1829.9375, "main/off/explicit": 277.0425, "prefill/reminder": 1066.0775, "prefill/irrelevant": 1600.21875, "main/on/plain": 1158.0625}, "outcomes_consulted": false, "dropped_cells": [], "deferred_stages": ["h20_controls"], "decided_unix": 1792622534.909367}
+Stopping app - user stopped from CLI.
+✓ App completed. View run at
+https://modal.com/apps/trevor050/main/ap-2oiNoayC7HjPSL5cQEahoE
+{
+  "status": "deferred",
+  "phase": "await_h20_controls",
+  "stage": "startup",
+  "attempt_id": "phase5-nemotron-modal-20261021-d-startup",
+  "started_unix": 1792621477.460433,
+  "violation_scored": false,
+  "completed_stages": [
+    "h20_core",
+    "h21_main"
+  ],
+  "deferred_stages": [
+    "h20_controls"
+  ],
+  "dropped_cells": [],
+  "hardware": {
+    "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "compute_capability": [
+      12,
+      0
+    ]
+  },
+  "native_quantization": "modelopt_mixed",
+  "first_generation_unix": 1792621777.7440457,
+  "ended_unix": 1792622553.840823,
+  "fallback_provenance": null,
+  "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+  "zero_containers_verified": true,
+  "artifacts_pulled": true,
+  "teardown": {
+    "app_id": "ap-2oiNoayC7HjPSL5cQEahoE",
+    "app_stop_confirmed": true,
+    "containers_after": [],
+    "stop_errors": []
+  },
+  "authorization_attempt": {
+    "attempt_id": "phase5-nemotron-modal-20261021-d-startup",
+    "status": "settled",
+    "app_id": "ap-2oiNoayC7HjPSL5cQEahoE",
+    "started_unix": 1792621477.460433,
+    "work_deadline_unix": 1792623072.460433,
+    "hard_deadline_unix": 1792623192.460433,
+    "prior_charged_usd": 0.584662,
+    "reserved_usd": 1.715,
+    "charged_usd": 1.072317,
+    "teardown_verified": true,
+    "watchdog_pid": 7499,
+    "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+    "stage": "startup",
+    "source_hashes": {
+      "DESIGN.md": "f1d2d05185c1593deba90a7b58601691d18b99ba047e02866d06abca10c90c84",
+      "prompts/templates.json": "637fb8aa1312f4485d410241fe6087cbbe9c6150a4267bfb8a71e418f7af0ed1",
+      "prompts/templates_4.json": "6cd003a8b8bf96456428084a1abeedb5c66ee5774443bcb6fdf31d7d65a8fd31",
+      "prompts/system_tutor.txt": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11",
+      "src/models_5.py": "f087db2706c68087c804b0ce50fe4fed39be644908f43f604e5ad910e1991804",
+      "src/phase5_split.py": "5739523aabc58b7f855c3f6cafc6dba984209e84887e68fc00d6a5490731434f",
+      "src/vast_generate_5.py": "097e7b044ae72226ea3484fa6d2734e50e616be79e290293a1d6e62cf253ed49",
+      "src/phase5_control.py": "bd99c9a0e591d55ab210abeef399e1bad1351ffc1692abaaf4ede6f024cbf62c",
+      "src/modal_app_5.py": "df765af3ea969dc41aceff855020044115767b2034f7d20ac849b2c95f6f4c98",
+      "src/phase5_vast_main.py": "c69634b21fd933c063195cfaa95efe5c8e4f998cc00a0ebc5dc3abe789f502cf",
+      "src/modal_second_family_5.py": "1d2ac461b5f6a9a486e029c52d0179657353ed36d51a4f546f1da3c3f811ab7a"
+    },
+    "function_call_id": "fc-01M5G96GZE5RMNY1EXS90A8PTA",
+    "ended_unix": 1792622549.777181,
+    "teardown": {
+      "app_id": "ap-2oiNoayC7HjPSL5cQEahoE",
+      "app_stop_confirmed": true,
+      "containers_after": [],
+      "stop_errors": []
+    }
+  },
+  "controller_error": null,
+  "evidence": "/Users/user/codeprojects/grader-mode/results/raw/phase5-nemotron-modal-20261021-d/phase5-nemotron-modal-20261021-d-startup/local-execution.json",
+  "inference_eligible": false
+}
