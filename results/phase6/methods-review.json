@@ -1,0 +1,23 @@
+{
+  "reviewer": {
+    "provider": "codex",
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "high"
+  },
+  "task_id": "phase6-final-methods-review-r1-20261021",
+  "p1_p2_findings": [],
+  "focused_tests_reported": 133,
+  "read_only": true,
+  "limitations": [
+    "Source/mocks/synthetic verification only; no final-data outcome analysis, live judge, GPU, model API, or provider calls by reviewer."
+  ],
+  "source_sha256": {
+    "src/score_6.py": "4023f1a95dae457d01ccf18d337e2e29298620497c29fcbca84966e066ab1831",
+    "src/analyze_6.py": "92e4795195de029b9a71e1eb93832d1fb2840ee38e584806e1515c5dffccfbb6",
+    "src/phase6_parser_agreement.py": "41cf68349755081fcc898c050fd5bd5efa82e5ab35249a5927e6721512e90f5c",
+    "src/phase6_trace.py": "dcf5b655e3ba3de853cdaddb695e0f8d87bef390ebaeb899cd043437e543e774",
+    "src/phase6_audit_labels.py": "ccdf53ff992b4d8c97ed49e015245f84086dc6796eff1cab6211fdf8bb21672c",
+    "src/phase6_registration.py": "78758d2834674a79a50a60a7d86cd172e4ea87f7440cdb329a3718491147e588"
+  },
+  "recorded_unix": 1792624211.5394518
+}

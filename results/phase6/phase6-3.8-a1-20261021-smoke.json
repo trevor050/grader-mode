@@ -1,0 +1,89 @@
+{
+  "stage": "smoke",
+  "model": "3.8",
+  "model_id": "Qwen/Qwen3.8-27B-FP8",
+  "requests_sha256": "7a5c2cb6cbc998dd5df030dc6a5a5ec915f75866daf8fab6589a5629faff004c",
+  "run_id": "phase6-7a5c2cb6cbc998dd",
+  "registration_commit": "8af01567fd54252e599b1df7a13cb3c84af96c2c",
+  "excluded_from_main": true,
+  "status": "completed",
+  "requests": 8,
+  "output_tokens": 4622,
+  "generation_seconds": 34.913954514006036,
+  "per_cell": {
+    "main/off/plain": {
+      "count": 2,
+      "output_tokens": 612
+    },
+    "main/off/explicit": {
+      "count": 1,
+      "output_tokens": 396
+    },
+    "main/on/plain": {
+      "count": 1,
+      "output_tokens": 628
+    },
+    "main/on/explicit": {
+      "count": 1,
+      "output_tokens": 626
+    },
+    "prefill/reminder": {
+      "count": 1,
+      "output_tokens": 375
+    },
+    "prefill/neutral": {
+      "count": 1,
+      "output_tokens": 549
+    },
+    "prefill/irrelevant": {
+      "count": 1,
+      "output_tokens": 1436
+    }
+  },
+  "chunks": [
+    {
+      "path": "smoke/chunk-00000.jsonl",
+      "sha256": "ade14bbd80a67f04cfe56a61eeef162f1c4b0b006478f0ec739d9e0948c6610b",
+      "count": 8,
+      "output_tokens": 4622,
+      "generation_seconds": 34.913954514006036
+    }
+  ],
+  "settings": {
+    "engine": {
+      "model": "Qwen/Qwen3.8-27B-FP8",
+      "revision": "017b9c7af6b5689d5dd426a76e0bc077eb5ca20a",
+      "tokenizer_revision": "017b9c7af6b5689d5dd426a76e0bc077eb5ca20a",
+      "dtype": "bfloat16",
+      "quantization": "fp8",
+      "language_model_only": true,
+      "max_model_len": 8192,
+      "max_num_seqs": 256,
+      "enforce_eager": false,
+      "tensor_parallel_size": 1,
+      "seed": 0,
+      "generation_config": "vllm"
+    },
+    "sampling": {
+      "temperature": 0.7,
+      "top_p": 0.95,
+      "top_k": -1,
+      "max_tokens": 4096
+    },
+    "versions": {
+      "vllm": "0.32.0",
+      "transformers": "5.19.0",
+      "tokenizers": "0.23.3",
+      "jinja2": "3.1.6",
+      "torch": "2.13.0+cu130"
+    },
+    "chunk_size": 256,
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "native_template": {
+      "preserve_thinking": false,
+      "reasoning_effort": "medium"
+    },
+    "setup_seconds": 616.5063963840075
+  },
+  "updated_unix": 1792622081.7641218
+}

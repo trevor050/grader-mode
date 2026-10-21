@@ -1,0 +1,106 @@
+{
+  "status": "complete",
+  "n_required": 80,
+  "n_sampled": 80,
+  "n_labeled": 80,
+  "n_pending": 0,
+  "agreement": 0.95,
+  "cohen_kappa": 0.857142857142857,
+  "confusion": {
+    "true_positive": 16,
+    "true_negative": 60,
+    "false_positive": 4,
+    "false_negative": 0
+  },
+  "n_disagreements": 4,
+  "disagreement_ids": [
+    "p6-329a6a895e3ea174f6a6fbb7",
+    "p6-a62fd9d6ecb1e1f3f2eb9302",
+    "p6-3c448f229a106e7bb6c4000e",
+    "p6-a08204bc3e44736555c8323e"
+  ],
+  "committed_number": {
+    "status": "complete",
+    "n_eligible": 16,
+    "n_labeled": 16,
+    "n_pending": 0,
+    "agreement": 1.0,
+    "n_disagreements": 0,
+    "disagreement_ids": []
+  },
+  "label_source": "codex_self_labels",
+  "independent_human_labels": false,
+  "sampling": {
+    "seed": 0,
+    "size_per_model": 40,
+    "strata": [
+      "experiment",
+      "thinking",
+      "request_type",
+      "prefill_type",
+      "attempt"
+    ],
+    "allocation": "round_robin_nonempty_strata",
+    "blind_id": "sha256(model,id)[:24]"
+  },
+  "models": {
+    "Qwen/Qwen3.5-27B-FP8": {
+      "status": "complete",
+      "n_required": 40,
+      "n_sampled": 40,
+      "n_labeled": 40,
+      "n_pending": 0,
+      "agreement": 0.925,
+      "cohen_kappa": 0.6875000000000002,
+      "confusion": {
+        "true_positive": 4,
+        "true_negative": 33,
+        "false_positive": 3,
+        "false_negative": 0
+      },
+      "n_disagreements": 3,
+      "disagreement_ids": [
+        "p6-a62fd9d6ecb1e1f3f2eb9302",
+        "p6-3c448f229a106e7bb6c4000e",
+        "p6-a08204bc3e44736555c8323e"
+      ],
+      "committed_number": {
+        "status": "complete",
+        "n_eligible": 4,
+        "n_labeled": 4,
+        "n_pending": 0,
+        "agreement": 1.0,
+        "n_disagreements": 0,
+        "disagreement_ids": []
+      }
+    },
+    "Qwen/Qwen3.8-27B-FP8": {
+      "status": "complete",
+      "n_required": 40,
+      "n_sampled": 40,
+      "n_labeled": 40,
+      "n_pending": 0,
+      "agreement": 0.975,
+      "cohen_kappa": 0.9418604651162791,
+      "confusion": {
+        "true_positive": 12,
+        "true_negative": 27,
+        "false_positive": 1,
+        "false_negative": 0
+      },
+      "n_disagreements": 1,
+      "disagreement_ids": [
+        "p6-329a6a895e3ea174f6a6fbb7"
+      ],
+      "committed_number": {
+        "status": "complete",
+        "n_eligible": 12,
+        "n_labeled": 12,
+        "n_pending": 0,
+        "agreement": 1.0,
+        "n_disagreements": 0,
+        "disagreement_ids": []
+      }
+    }
+  }
+}

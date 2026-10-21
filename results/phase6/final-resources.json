@@ -1,0 +1,31 @@
+{
+  "checked_unix": 1792626647.68311,
+  "phase6_instance_ids": [
+    57119355,
+    57123607
+  ],
+  "all_phase6_attempts_zero_verified": true,
+  "instances": [
+    {
+      "id": 57125990,
+      "label": "grader-explore",
+      "actual_status": "running",
+      "cur_state": "running",
+      "gpu_name": "RTX A6000",
+      "ssh_host": "ssh9.vast.ai",
+      "ssh_port": 26780,
+      "dph_total": 0.4333333333333333,
+      "disk_space": 120.0,
+      "start_date": 1792624897.3441684
+    }
+  ],
+  "phase6_instances_remaining": [],
+  "account_globally_zero": false,
+  "unrelated_instance_ownership": "user_confirmed_other_active_job",
+  "conservative_phase6_spend_usd": 2.3498267518440143,
+  "cap_usd": 5.0,
+  "provider_credit_delta_is_contaminated_by_concurrent_job": true,
+  "external_instance_preserved": 57125990,
+  "zero_requirement_scope": "Phase 6 resources, as clarified by user",
+  "ownership_confirmation_recorded_unix": 1792626352.5480618
+}

@@ -1,0 +1,17 @@
+{
+  "primary": {
+    "auth_mode": "chatgpt",
+    "expected_symlink": true,
+    "metered_key_in_auth": false
+  },
+  "secondary": {
+    "loggedIn": true,
+    "authMethod": "claude.ai",
+    "apiProvider": "firstParty",
+    "subscriptionType": "pro"
+  },
+  "OPENAI_API_KEY_in_judge_env": "",
+  "ANTHROPIC_API_KEY_in_judge_env": "",
+  "checked_unix": 1792625366.061961,
+  "status_command_is_not_model_inference": true
+}

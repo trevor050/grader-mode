@@ -1,0 +1,20 @@
+{
+  "selection": "main,thinking_on,explicit,unprefilled;400_original_rows_per_model",
+  "sources": [
+    {
+      "model": "Qwen/Qwen3-32B",
+      "source": "/Users/user/codeprojects/grader-mode/results/raw/phase4-main/scored.jsonl",
+      "source_sha256": "b29bdfb46edce956463f08e0b8cd4e225c5b5a4f54f7d5f9991ed94ff3f83d56",
+      "selected_rows": 400
+    },
+    {
+      "model": "google/gemma-4-12B-it",
+      "source": "/Users/user/codeprojects/grader-mode/results/raw/phase5-gemma-main-20261021-a/scored.jsonl",
+      "source_sha256": "6c60d80c37c8963719cc68f2f64e8377ad44dea6b77acae8806611388cfd455f",
+      "selected_rows": 400
+    }
+  ],
+  "output": "results/raw/phase6-trace/historical-h25.jsonl",
+  "output_sha256": "b31c3386cd0385b8f6295865e6f14bf50bd5ae8b0531f67367d82cb21e692cf1",
+  "rows": 800
+}

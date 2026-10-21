@@ -1,0 +1,119 @@
+{
+  "stage": "main",
+  "model": "3.8",
+  "model_id": "Qwen/Qwen3.8-27B-FP8",
+  "requests_sha256": "7a5c2cb6cbc998dd5df030dc6a5a5ec915f75866daf8fab6589a5629faff004c",
+  "run_id": "phase6-7a5c2cb6cbc998dd",
+  "registration_commit": "8af01567fd54252e599b1df7a13cb3c84af96c2c",
+  "excluded_from_main": false,
+  "status": "completed",
+  "requests": 1600,
+  "output_tokens": 582160,
+  "generation_seconds": 474.80957238399424,
+  "per_cell": {
+    "main/off/plain": {
+      "count": 400,
+      "output_tokens": 94739
+    },
+    "main/off/explicit": {
+      "count": 400,
+      "output_tokens": 110431
+    },
+    "main/on/plain": {
+      "count": 400,
+      "output_tokens": 178412
+    },
+    "main/on/explicit": {
+      "count": 400,
+      "output_tokens": 198578
+    }
+  },
+  "chunks": [
+    {
+      "path": "main/chunk-00000.jsonl",
+      "sha256": "207cfa9e4ceb660fdaa638bbd14c44fb82ec7d3d45ea6252bf420af2def6bee3",
+      "count": 256,
+      "output_tokens": 88580,
+      "generation_seconds": 58.37273726299463
+    },
+    {
+      "path": "main/chunk-00001.jsonl",
+      "sha256": "42c3674e966d6e04998499251170b22e1c34e3f502f620ed4dd5c12345051603",
+      "count": 256,
+      "output_tokens": 93335,
+      "generation_seconds": 72.35116512799868
+    },
+    {
+      "path": "main/chunk-00002.jsonl",
+      "sha256": "e8180f6339e55e9cd29d87c03a74c7663b1a60becd40e6ccba2ac23b30fb028e",
+      "count": 256,
+      "output_tokens": 91879,
+      "generation_seconds": 63.714472366991686
+    },
+    {
+      "path": "main/chunk-00003.jsonl",
+      "sha256": "b5962567092905e4be40886dceb7e71905f985ea4f5a9f37d8d665aa968b25c0",
+      "count": 256,
+      "output_tokens": 90492,
+      "generation_seconds": 59.5394519429974
+    },
+    {
+      "path": "main/chunk-00004.jsonl",
+      "sha256": "b9aea0a69ab8d1da6bfdbbc6f56035efe7b7d09d42c1d1bfc89bb3998cda19e8",
+      "count": 256,
+      "output_tokens": 93309,
+      "generation_seconds": 93.2877030170057
+    },
+    {
+      "path": "main/chunk-00005.jsonl",
+      "sha256": "efb497ad63b7bcc9a334e8752a14fa3e5dc8a7aac3f47716d9c567e3f8dff607",
+      "count": 256,
+      "output_tokens": 102160,
+      "generation_seconds": 99.4987137880089
+    },
+    {
+      "path": "main/chunk-00006.jsonl",
+      "sha256": "85e59caa8c629f88103b4b842e7ff57973151bfe4daface1a591c222737a1ec8",
+      "count": 64,
+      "output_tokens": 22405,
+      "generation_seconds": 28.045328877997235
+    }
+  ],
+  "settings": {
+    "engine": {
+      "model": "Qwen/Qwen3.8-27B-FP8",
+      "revision": "017b9c7af6b5689d5dd426a76e0bc077eb5ca20a",
+      "tokenizer_revision": "017b9c7af6b5689d5dd426a76e0bc077eb5ca20a",
+      "dtype": "bfloat16",
+      "quantization": "fp8",
+      "language_model_only": true,
+      "max_model_len": 8192,
+      "max_num_seqs": 256,
+      "enforce_eager": false,
+      "tensor_parallel_size": 1,
+      "seed": 0,
+      "generation_config": "vllm"
+    },
+    "sampling": {
+      "temperature": 0.7,
+      "top_p": 0.95,
+      "top_k": -1,
+      "max_tokens": 4096
+    },
+    "versions": {
+      "vllm": "0.32.0",
+      "transformers": "5.19.0",
+      "tokenizers": "0.23.3",
+      "jinja2": "3.1.6",
+      "torch": "2.13.0+cu130"
+    },
+    "chunk_size": 256,
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "native_template": {
+      "preserve_thinking": false,
+      "reasoning_effort": "medium"
+    },
+    "setup_seconds": 616.5063963840075
+  },
+  "updated_unix": 1792622681.1976566
+}

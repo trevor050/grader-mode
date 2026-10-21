@@ -1,0 +1,35 @@
+{
+  "executed_sources_identical_across_models": true,
+  "runs": {
+    "3.8": {
+      "archive": "results/raw/phase6-3.8-a1-20261021/bundle-repaired.tar.gz",
+      "archive_sha256": "db80f356db8d12ed4ca00c26c212e53a131ceed1936cbfa5cafae9bb7e883551",
+      "implementation_sha256": {
+        "src/vast_generate_6.py": "24606a2cc03e2fc91d555969e3c3b0792c89bbac49b953836d39f608d354e8a3",
+        "src/models_6.py": "8f4773628b797a8cc74ac9666d41640ef61b9c39e53210aa31483a1350200f36",
+        "src/vast_generate_4.py": "96c6313c21b4193405b6d209623f1e3d129204cae64281e246ee5f77f0988377",
+        "src/build_prompts.py": "20b371f02a4efb3645501760bf1152b1adc87d8fe04a0b25dece5164a58a9943"
+      },
+      "requests_sha256": "7a5c2cb6cbc998dd5df030dc6a5a5ec915f75866daf8fab6589a5629faff004c"
+    },
+    "3.5": {
+      "archive": "results/raw/phase6-3.5-a2-20261021/bundle.tar.gz",
+      "archive_sha256": "7697cfba38530fced3157f0351fb021ea234b497eb64b9605ccf9a80f621b4d2",
+      "implementation_sha256": {
+        "src/vast_generate_6.py": "24606a2cc03e2fc91d555969e3c3b0792c89bbac49b953836d39f608d354e8a3",
+        "src/models_6.py": "8f4773628b797a8cc74ac9666d41640ef61b9c39e53210aa31483a1350200f36",
+        "src/vast_generate_4.py": "96c6313c21b4193405b6d209623f1e3d129204cae64281e246ee5f77f0988377",
+        "src/build_prompts.py": "20b371f02a4efb3645501760bf1152b1adc87d8fe04a0b25dece5164a58a9943"
+      },
+      "requests_sha256": "7a5c2cb6cbc998dd5df030dc6a5a5ec915f75866daf8fab6589a5629faff004c"
+    }
+  },
+  "captured_unix": 1792624335.927221,
+  "note": "Archives retain exact executed generation source. A later local source-check compatibility patch admits only the authorized DESIGN8219501 hash; it does not change generation.",
+  "post_rebase_local_sources": {
+    "src/vast_generate_6.py": "29e685303a2b4c3218d044417661ca876da08f81b2b2c6739892a249f8d971e2",
+    "src/phase6_registration.py": "78758d2834674a79a50a60a7d86cd172e4ea87f7440cdb329a3718491147e588"
+  },
+  "analysis_deviation_commit": "8219501182ce380c45115efd256938a2e372f088",
+  "post_rebase_design_sha256": "8b1339e103c787704080a129019b1ba181775ed81edd968f91662d9cbfdcfaa5"
+}

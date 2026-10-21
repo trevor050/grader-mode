@@ -1,0 +1,23 @@
+{
+  "regex": "tutor|system prompt|instruction",
+  "flags": "IGNORECASE",
+  "cell": "main/on/explicit, unprefilled",
+  "counts": {
+    "Qwen/Qwen3-14B": {
+      "n": 400,
+      "keyword_mentions": 11
+    },
+    "Qwen/Qwen3-32B": {
+      "n": 400,
+      "keyword_mentions": 3
+    },
+    "google/gemma-4-12B-it": {
+      "n": 400,
+      "keyword_mentions": 309
+    }
+  },
+  "source_sha256": {
+    "/Users/user/codeprojects/grader-mode/results/raw/phase4-main/scored.jsonl": "b29bdfb46edce956463f08e0b8cd4e225c5b5a4f54f7d5f9991ed94ff3f83d56",
+    "/Users/user/codeprojects/grader-mode/results/raw/phase5-gemma-main-20261021-a/scored.jsonl": "6c60d80c37c8963719cc68f2f64e8377ad44dea6b77acae8806611388cfd455f"
+  }
+}

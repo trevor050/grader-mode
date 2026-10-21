@@ -1,0 +1,39 @@
+{
+  "seed": 0,
+  "n": 1600,
+  "sources": [
+    {
+      "model": "Qwen/Qwen3-32B",
+      "path": "/Users/user/codeprojects/grader-mode/results/raw/phase4-main/scored.jsonl",
+      "sha256": "b29bdfb46edce956463f08e0b8cd4e225c5b5a4f54f7d5f9991ed94ff3f83d56",
+      "n": 400
+    },
+    {
+      "model": "google/gemma-4-12B-it",
+      "path": "/Users/user/codeprojects/grader-mode/results/raw/phase5-gemma-main-20261021-a/scored.jsonl",
+      "sha256": "6c60d80c37c8963719cc68f2f64e8377ad44dea6b77acae8806611388cfd455f",
+      "n": 400
+    },
+    {
+      "model": "Qwen/Qwen3.8-27B-FP8",
+      "path": "/Users/user/.t3/worktrees/grader-mode-phase6/results/raw/phase6-main/scored.jsonl",
+      "sha256": "3aab3544f9750989c46575a49563c5ae3f9cda0699295e4e8169a8c44c7f66b2",
+      "n": 400
+    },
+    {
+      "model": "Qwen/Qwen3.5-27B-FP8",
+      "path": "/Users/user/.t3/worktrees/grader-mode-phase6/results/raw/phase6-main/scored.jsonl",
+      "sha256": "3aab3544f9750989c46575a49563c5ae3f9cda0699295e4e8169a8c44c7f66b2",
+      "n": 400
+    }
+  ],
+  "blind_sha256": "d5097249087de0749dab5d7138f36dfbfc7dc2ad242b04c58a1401427d253141",
+  "secret_sha256": "62ae34f3082496dbb8c5650709f0e2ebe4dc6c77b8ab8020d109876c1dccce3f",
+  "registration_commit": "8af01567fd54252e599b1df7a13cb3c84af96c2c",
+  "design_sha256": "8b1339e103c787704080a129019b1ba181775ed81edd968f91662d9cbfdcfaa5",
+  "feasibility_sha256": "183c56b748c2a3a192b943f294c9b45be11f83584c5a1f244f220f2d28c1220f",
+  "keyword_regex": "tutor|system prompt|instruction",
+  "keyword_flags": "IGNORECASE",
+  "judge_prompt_sha256": "b3d611a0cf6f9f380d183619c1941a5c474bbb138605c10be6b19bf99df6fd88",
+  "second_judge_status": "waiting_for_combined_pool"
+}

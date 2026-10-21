@@ -1,0 +1,11 @@
+{
+  "reason": "final worker requires explicit sample_size200; initial serialized manifest predates field",
+  "request_rows_identical": true,
+  "outcomes_consulted": false,
+  "before_model_load": true,
+  "same_rental": true,
+  "initial_bundle_sha256": "bfe1d895d32b8ec75c6cd3d05607e2c9d30cdd8359c04e8934e45924b3db3c5b",
+  "repaired_bundle_sha256": "db80f356db8d12ed4ca00c26c212e53a131ceed1936cbfa5cafae9bb7e883551",
+  "repaired_requests_sha256": "7a5c2cb6cbc998dd5df030dc6a5a5ec915f75866daf8fab6589a5629faff004c",
+  "recorded_unix": 1792621490.307067
+}

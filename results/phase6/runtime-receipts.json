@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "preflight": "runtime-preflight.json",
+  "models": {
+    "3.8": {
+      "receipt": {
+        "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+        "torch": "2.13.0+cu130",
+        "cuda": "13.0",
+        "vllm": "0.32.0",
+        "gpu": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+        "memory": 101973491712
+      },
+      "sha256": "f04be60f6fe10a287851711a34609a0076d420c4cef8c6027b252f0dcb69118e",
+      "source": "results/raw/phase6-3.8-a1-20261021/runtime-receipt.json"
+    },
+    "3.5": {
+      "receipt": {
+        "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+        "torch": "2.13.0+cu130",
+        "cuda": "13.0",
+        "vllm": "0.32.0",
+        "gpu": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+        "memory": 101973491712
+      },
+      "sha256": "f04be60f6fe10a287851711a34609a0076d420c4cef8c6027b252f0dcb69118e",
+      "source": "results/raw/phase6-3.5-a2-20261021/runtime-receipt.json"
+    }
+  }
+}

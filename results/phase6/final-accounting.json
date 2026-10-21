@@ -1,0 +1,81 @@
+{
+  "phase": "phase6",
+  "status": "complete",
+  "registration_commit": "8af0156",
+  "authorized_protocol_deviation": "8219501182ce380c45115efd256938a2e372f088",
+  "rebased_base": "c6a11a13469170497bb04070f2d908441f49c6c3",
+  "study_responses": 4400,
+  "unscored_pilot_responses": 528,
+  "completed_stages": [
+    "3.8-main",
+    "3.8-prefill",
+    "3.5-main"
+  ],
+  "dropped_stages": [],
+  "cap_usd": 5.0,
+  "conservative_spend_usd": 2.3498267518440143,
+  "attempts": [
+    {
+      "instance_id": 57119355,
+      "label": "phase6-3.8-a1-20261021",
+      "status": "completed_selected_stages",
+      "zero_verified": true,
+      "elapsed_seconds": 2420.077696084976,
+      "charged_usd": 1.2139322580058631
+    },
+    {
+      "instance_id": 57123607,
+      "label": "phase6-3.5-a2-20261021",
+      "status": "completed_selected_stages",
+      "zero_verified": true,
+      "elapsed_seconds": 2203.0456309318542,
+      "charged_usd": 1.1358944938381512
+    }
+  ],
+  "cost_basis": "All rental elapsed time, including setup and failed bootstrap, plus each full reserved transfer envelope; no refunds or resets.",
+  "provider_credit_delta_attributable_to_phase6": false,
+  "zero_phase6_resources_verified": true,
+  "latest_resource_check_unix": 1792626647.68311,
+  "external_instance_preserved_by_user_instruction": 57125990,
+  "account_globally_zero": false,
+  "raw_persistence": {
+    "destination": "/Users/user/codeprojects/grader-mode/results/raw",
+    "files": 611,
+    "bytes": 610851651,
+    "all_hashes_verified": true
+  },
+  "raw_persistence_reverified_unix": 1792626802.698026,
+  "tests": {
+    "command": "uv run --no-sync pytest -q",
+    "exit_code": 0,
+    "passed": 1408,
+    "skipped": 1,
+    "seconds": 247.94,
+    "log": "full-tests-publication.log",
+    "log_sha256": "4411d3a54412f56d2d7b1819d1d112f8e889df3b863d43a4e3cdc8b7e49d38df"
+  },
+  "source_test_sha256": {
+    "src/analyze_6.py": "11a09ee6a93c0dbc9f261e4a8cf2fb8ad6e48da522ae8b9df715273cb20eaf84",
+    "src/models_6.py": "8f4773628b797a8cc74ac9666d41640ef61b9c39e53210aa31483a1350200f36",
+    "src/phase6_audit_labels.py": "ccdf53ff992b4d8c97ed49e015245f84086dc6796eff1cab6211fdf8bb21672c",
+    "src/phase6_collect.py": "815e9d0bedb9a70cf2c088dc5c1408a5ae423442004e4e853bc8a21d35622304",
+    "src/phase6_parser_agreement.py": "41cf68349755081fcc898c050fd5bd5efa82e5ab35249a5927e6721512e90f5c",
+    "src/phase6_registration.py": "78758d2834674a79a50a60a7d86cd172e4ea87f7440cdb329a3718491147e588",
+    "src/phase6_resource_guard.py": "21f4e0c1879d61ddb3211539803f5f4d1232f2804a2440c8f2ab7e98b0dfbfbb",
+    "src/phase6_trace.py": "dcf5b655e3ba3de853cdaddb695e0f8d87bef390ebaeb899cd043437e543e774",
+    "src/phase6_vast_control.py": "6bb5910be7829a6c30edc617f98075bd6ed68e9cab0c360e7ea1b67a4089ea17",
+    "src/score_6.py": "4023f1a95dae457d01ccf18d337e2e29298620497c29fcbca84966e066ab1831",
+    "src/vast_generate_6.py": "29e685303a2b4c3218d044417661ca876da08f81b2b2c6739892a249f8d971e2",
+    "tests/test_phase6_analysis.py": "f26c2b109dd9aad4dce1619a69624b3f20e32d2ace94b779308ea5305555c901",
+    "tests/test_phase6_collection.py": "739b221c5b936b1df6d148bfe9da5fc8765352733e5bf870c9f2b23b2a76cf49",
+    "tests/test_phase6_generation.py": "71b90f5759de5d958b2a3942ee9ca3b82a9684373690f45b1a0fc039921b8cac",
+    "tests/test_phase6_parser_agreement.py": "411ac80a374cc2c424881148acda74be62dbc9ca6ce309665085414d1829dca0",
+    "tests/test_phase6_registration.py": "1ddd51c03189c7160e7ff5c31af076a12835cac2e02bb46dac4f1ebacad074b7",
+    "tests/test_phase6_score.py": "a7f752bc18acc84d89ef379b7a3a7ffc4c08781c0f6335212ba168eff392d6d7",
+    "tests/test_phase6_trace.py": "c38937bc917254c3466b802c507985380e76a258a36613964d078d39fd1a3f2c",
+    "tests/test_phase6_vast_control.py": "640fe68d065a52e41cc47ce8a937ad3f730dd0bb75b7a0db2cd8a48c6517c691"
+  },
+  "no_preregistration_or_prompt_edits": true,
+  "labels": "Codex self-labels and subscription CLI model judges; no human labels; no metered model API.",
+  "recorded_unix": 1792626802.705842
+}

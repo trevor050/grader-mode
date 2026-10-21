@@ -1,0 +1,374 @@
+{
+  "phase": "phase6",
+  "cap_usd": 5.0,
+  "initial_account": {
+    "credit": 7.714918792699997,
+    "total_spend": -7.285081207300003
+  },
+  "registration_commit": "8af0156",
+  "attempts": [
+    {
+      "label": "phase6-3.8-a1-20261021",
+      "model": "3.8",
+      "started_unix": 1792621173.4148328,
+      "offer": {
+        "id": 51921731,
+        "machine_id": 147132,
+        "gpu_name": "RTX PRO 6000 Max-Q",
+        "gpu_ram": 97887,
+        "num_gpus": 1,
+        "reliability": 0.9822806,
+        "dph_base": 1.2666666666666666,
+        "dph_total": 1.2944444444444443,
+        "storage_cost": 0.19999999999999998,
+        "inet_down_cost": 0.0026041666666666665,
+        "inet_up_cost": 0.00390625,
+        "cuda_max_good": 13.2,
+        "driver_version": "595.84",
+        "verification": "verified",
+        "rentable": true
+      },
+      "costs": {
+        "hourly_usd": 1.2944444444444443,
+        "network_envelope_usd": 0.34375,
+        "download_envelope_gb": 120,
+        "upload_envelope_gb": 8,
+        "disk_gb": 100
+      },
+      "deadline_unix": 1792633198.4148328,
+      "zero_verified": true,
+      "status": "completed_selected_stages",
+      "watchdog_pid": 2621,
+      "create_response": {
+        "new_contract": 57119355,
+        "success": true
+      },
+      "instance_id": 57119355,
+      "ssh_ready_unix": 1792621324.1831522,
+      "bundle_sha256": "bfe1d895d32b8ec75c6cd3d05607e2c9d30cdd8359c04e8934e45924b3db3c5b",
+      "smoke_protocol": {
+        "requests": 8,
+        "protocol_checked": true,
+        "violation_scored": false
+      },
+      "measurement_started_unix": 1792622094.9491122,
+      "measurement": {
+        "stage": "throughput",
+        "model": "3.8",
+        "model_id": "Qwen/Qwen3.8-27B-FP8",
+        "requests_sha256": "7a5c2cb6cbc998dd5df030dc6a5a5ec915f75866daf8fab6589a5629faff004c",
+        "run_id": "phase6-7a5c2cb6cbc998dd",
+        "registration_commit": "8af01567fd54252e599b1df7a13cb3c84af96c2c",
+        "excluded_from_main": true,
+        "status": "completed",
+        "requests": 256,
+        "output_tokens": 124258,
+        "generation_seconds": 91.28999878800823,
+        "per_cell": {
+          "main/off/plain": {
+            "count": 37,
+            "output_tokens": 8789
+          },
+          "main/off/explicit": {
+            "count": 37,
+            "output_tokens": 9067
+          },
+          "main/on/plain": {
+            "count": 37,
+            "output_tokens": 15203
+          },
+          "main/on/explicit": {
+            "count": 37,
+            "output_tokens": 18109
+          },
+          "prefill/reminder": {
+            "count": 36,
+            "output_tokens": 14490
+          },
+          "prefill/neutral": {
+            "count": 36,
+            "output_tokens": 22140
+          },
+          "prefill/irrelevant": {
+            "count": 36,
+            "output_tokens": 36460
+          }
+        },
+        "chunks": [
+          {
+            "path": "throughput/chunk-00000.jsonl",
+            "sha256": "939ccc3d59bfd2b50bca1e286f7eb2e26973ca1c3768b48cfa64db26b3160ade",
+            "count": 256,
+            "output_tokens": 124258,
+            "generation_seconds": 91.28999878800823
+          }
+        ],
+        "settings": {
+          "engine": {
+            "model": "Qwen/Qwen3.8-27B-FP8",
+            "revision": "017b9c7af6b5689d5dd426a76e0bc077eb5ca20a",
+            "tokenizer_revision": "017b9c7af6b5689d5dd426a76e0bc077eb5ca20a",
+            "dtype": "bfloat16",
+            "quantization": "fp8",
+            "language_model_only": true,
+            "max_model_len": 8192,
+            "max_num_seqs": 256,
+            "enforce_eager": false,
+            "tensor_parallel_size": 1,
+            "seed": 0,
+            "generation_config": "vllm"
+          },
+          "sampling": {
+            "temperature": 0.7,
+            "top_p": 0.95,
+            "top_k": -1,
+            "max_tokens": 4096
+          },
+          "versions": {
+            "vllm": "0.32.0",
+            "transformers": "5.19.0",
+            "tokenizers": "0.23.3",
+            "jinja2": "3.1.6",
+            "torch": "2.13.0+cu130"
+          },
+          "chunk_size": 256,
+          "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+          "native_template": {
+            "preserve_thinking": false,
+            "reasoning_effort": "medium"
+          },
+          "setup_seconds": 616.5063963840075
+        },
+        "updated_unix": 1792622186.670388,
+        "wall_seconds": 106.66404175758362
+      },
+      "ended_unix": 1792623593.492529,
+      "elapsed_seconds": 2420.077696084976,
+      "charged_usd": 1.2139322580058631,
+      "credential_fields_redacted": true
+    },
+    {
+      "label": "phase6-3.5-a2-20261021",
+      "model": "3.5",
+      "started_unix": 1792623619.1527932,
+      "offer": {
+        "id": 51921731,
+        "machine_id": 147132,
+        "gpu_name": "RTX PRO 6000 Max-Q",
+        "gpu_ram": 97887,
+        "num_gpus": 1,
+        "reliability": 0.9822806,
+        "dph_base": 1.2666666666666666,
+        "dph_total": 1.2944444444444443,
+        "storage_cost": 0.19999999999999998,
+        "inet_down_cost": 0.0026041666666666665,
+        "inet_up_cost": 0.00390625,
+        "cuda_max_good": 13.2,
+        "driver_version": "595.84",
+        "verification": "verified",
+        "rentable": true
+      },
+      "costs": {
+        "hourly_usd": 1.2944444444444443,
+        "network_envelope_usd": 0.34375,
+        "download_envelope_gb": 120,
+        "upload_envelope_gb": 8,
+        "disk_gb": 100
+      },
+      "deadline_unix": 1792632268.1527932,
+      "zero_verified": true,
+      "status": "completed_selected_stages",
+      "watchdog_pid": 21656,
+      "create_response": {
+        "success": true,
+        "new_contract": 57123607
+      },
+      "instance_id": 57123607,
+      "ssh_ready_unix": 1792623675.0417678,
+      "bundle_sha256": "7697cfba38530fced3157f0351fb021ea234b497eb64b9605ccf9a80f621b4d2",
+      "remote_supervisor_pid": 502,
+      "remote_transfer_guard_pid": 516,
+      "smoke_protocol": {
+        "requests": 8,
+        "protocol_checked": true,
+        "violation_scored": false,
+        "off_replies_with_thought_boundaries": 0
+      },
+      "measurement_started_unix": 1792624434.366723,
+      "measurement": {
+        "stage": "throughput",
+        "model": "3.5",
+        "model_id": "Qwen/Qwen3.5-27B-FP8",
+        "requests_sha256": "7a5c2cb6cbc998dd5df030dc6a5a5ec915f75866daf8fab6589a5629faff004c",
+        "run_id": "phase6-7a5c2cb6cbc998dd",
+        "registration_commit": "8af01567fd54252e599b1df7a13cb3c84af96c2c",
+        "excluded_from_main": true,
+        "status": "completed",
+        "requests": 256,
+        "output_tokens": 219287,
+        "generation_seconds": 191.26863449200755,
+        "per_cell": {
+          "main/off/plain": {
+            "count": 64,
+            "output_tokens": 17563
+          },
+          "main/off/explicit": {
+            "count": 64,
+            "output_tokens": 20975
+          },
+          "main/on/plain": {
+            "count": 64,
+            "output_tokens": 82530
+          },
+          "main/on/explicit": {
+            "count": 64,
+            "output_tokens": 98219
+          }
+        },
+        "chunks": [
+          {
+            "path": "throughput/chunk-00000.jsonl",
+            "sha256": "2007fab61a2ba2c99d76b7db42fc5877c1ac0a4e4bdedec14e0ce4ee2a0bf059",
+            "count": 256,
+            "output_tokens": 219287,
+            "generation_seconds": 191.26863449200755
+          }
+        ],
+        "settings": {
+          "engine": {
+            "model": "Qwen/Qwen3.5-27B-FP8",
+            "revision": "97f5941bf617e31c5e237364a8602ce3f03a551a",
+            "tokenizer_revision": "97f5941bf617e31c5e237364a8602ce3f03a551a",
+            "dtype": "bfloat16",
+            "quantization": "fp8",
+            "language_model_only": true,
+            "max_model_len": 8192,
+            "max_num_seqs": 256,
+            "enforce_eager": false,
+            "tensor_parallel_size": 1,
+            "seed": 0,
+            "generation_config": "vllm"
+          },
+          "sampling": {
+            "temperature": 0.7,
+            "top_p": 0.95,
+            "top_k": -1,
+            "max_tokens": 4096
+          },
+          "versions": {
+            "vllm": "0.32.0",
+            "transformers": "5.19.0",
+            "tokenizers": "0.23.3",
+            "jinja2": "3.1.6",
+            "torch": "2.13.0+cu130"
+          },
+          "chunk_size": 256,
+          "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+          "native_template": {
+            "preserve_thinking": false,
+            "reasoning_effort": null
+          },
+          "setup_seconds": 686.283938987006
+        },
+        "updated_unix": 1792624626.2061284,
+        "wall_seconds": 201.46706795692444
+      },
+      "ended_unix": 1792625822.198424,
+      "elapsed_seconds": 2203.0456309318542,
+      "charged_usd": 1.1358944938381512
+    }
+  ],
+  "stage_decisions": {
+    "3.8-main": {
+      "decision": "run",
+      "rows": 1600,
+      "projected_usd": 0.2048861244279456,
+      "available_after_reserve_usd": 3.9865299672679404,
+      "shortfall_usd": 0,
+      "projected_seconds": 569.8120542030418,
+      "tokens_per_second": 1164.9474176349172,
+      "mean_output_tokens_by_cell": {
+        "main/off/plain": 237.54054054054055,
+        "main/off/explicit": 245.05405405405406,
+        "main/on/plain": 410.8918918918919,
+        "main/on/explicit": 489.43243243243245,
+        "prefill/reminder": 402.5,
+        "prefill/neutral": 615.0,
+        "prefill/irrelevant": 1012.7777777777778
+      },
+      "generation_margin": 1.2,
+      "outcomes_consulted": false,
+      "decided_unix": 1792622201.650391
+    },
+    "3.8-prefill": {
+      "decision": "run",
+      "rows": 1200,
+      "projected_usd": 0.30079546943088675,
+      "available_after_reserve_usd": 3.793340992336656,
+      "shortfall_usd": 0,
+      "projected_seconds": 836.547056614655,
+      "tokens_per_second": 1164.9474176349172,
+      "mean_output_tokens_by_cell": {
+        "main/off/plain": 237.54054054054055,
+        "main/off/explicit": 245.05405405405406,
+        "main/on/plain": 410.8918918918919,
+        "main/on/explicit": 489.43243243243245,
+        "prefill/reminder": 402.5,
+        "prefill/neutral": 615.0,
+        "prefill/irrelevant": 1012.7777777777778
+      },
+      "generation_margin": 1.2,
+      "outcomes_consulted": false,
+      "decided_unix": 1792622738.931471
+    },
+    "3.5-main": {
+      "decision": "run",
+      "rows": 1600,
+      "projected_usd": 0.5433081809486503,
+      "available_after_reserve_usd": 2.77674175130438,
+      "shortfall_usd": 0,
+      "projected_seconds": 1511.0030096769333,
+      "tokens_per_second": 1088.4508432260782,
+      "mean_output_tokens_by_cell": {
+        "main/off/plain": 274.421875,
+        "main/off/explicit": 327.734375,
+        "main/on/plain": 1289.53125,
+        "main/on/explicit": 1534.671875
+      },
+      "generation_margin": 1.2,
+      "outcomes_consulted": false,
+      "decided_unix": 1792624635.863244
+    }
+  },
+  "completed_stages": [
+    "3.8-main",
+    "3.8-prefill",
+    "3.5-main"
+  ],
+  "excluded_machines": [],
+  "updated_unix": 1792625826.920105,
+  "conservative_spend_usd": 2.3498267518440143,
+  "final_account": {
+    "credit": 5.8733535862,
+    "total_spend": -9.1266464138
+  },
+  "zero_resources": {
+    "checked_unix": 1792625826.920087,
+    "instances": [
+      {
+        "id": 57125990,
+        "label": "grader-explore",
+        "actual_status": "running",
+        "cur_state": "running",
+        "gpu_name": "RTX A6000",
+        "ssh_host": "ssh9.vast.ai",
+        "ssh_port": 26780,
+        "dph_total": 0.4333333333333333,
+        "disk_space": 120.0,
+        "start_date": 1792624897.3441684
+      }
+    ]
+  },
+  "concurrent_account_usage_observed": true,
+  "external_instance_preserved_by_user_instruction": 57125990
+}

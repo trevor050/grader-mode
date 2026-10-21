@@ -1,0 +1,23 @@
+--- executed/src/vast_generate_6.py
++++ rebased/src/vast_generate_6.py
+@@ -46,8 +46,9 @@
+ 
+ 
+ def check_sources():
++    from src.phase6_registration import registered_source_matches
+     for filename, expected in SOURCE_SHA256.items():
+-        if file_hash(ROOT / filename) != expected:
++        if not registered_source_matches(filename, file_hash(ROOT / filename), expected):
+             raise ValueError(f'immutable Phase 6 source hash mismatch: {filename}')
+ 
+ 
+@@ -322,7 +323,8 @@
+     prepared = prepared or prepare_requests(tokenizer, rows, model)
+     by_id = {r['id']: (prompt, ids) for r, prompt, ids in prepared}
+     implementation_hashes = {name: file_hash(ROOT / name) for name in (
+-        'src/vast_generate_6.py', 'src/models_6.py', 'src/vast_generate_4.py', 'src/build_prompts.py')}
++        'src/vast_generate_6.py', 'src/models_6.py', 'src/vast_generate_4.py', 'src/build_prompts.py',
++        'src/phase6_registration.py')}
+     stages = [('smoke', pilot_requests(rows, model, 'smoke')),
+               ('throughput', pilot_requests(rows, model, 'throughput')),
+               ('main', [r for r in rows if r['arm'] == 'main'])]

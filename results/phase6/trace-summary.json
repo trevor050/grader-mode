@@ -1,0 +1,229 @@
+{
+  "status": "complete",
+  "primary_model": "gpt-6.1-sol",
+  "association_only": true,
+  "primary_attempts": {
+    "attempts": 89,
+    "complete": 88,
+    "failed": 1,
+    "unfinished": 0,
+    "trace_presentations": 1620,
+    "elapsed_call_seconds": 1545.1344850840687
+  },
+  "secondary_attempts": {
+    "attempts": 5,
+    "complete": 5,
+    "failed": 0,
+    "unfinished": 0,
+    "trace_presentations": 100,
+    "elapsed_call_seconds": 116.91422812594101
+  },
+  "all_gold": {
+    "Qwen/Qwen3-32B": {
+      "n": 400,
+      "labeled": 400,
+      "pending": 0,
+      "counts": {
+        "R": 1,
+        "L": 6,
+        "N": 393
+      },
+      "violation_rates": {
+        "R": 1.0,
+        "L": 0.8333333333333334,
+        "N": 0.9872773536895675
+      },
+      "eligible": false,
+      "difference_R_minus_N": null,
+      "ci95": null,
+      "holds": null,
+      "keyword_count": 3,
+      "bootstrap_resamples": 2000,
+      "seed": 0
+    },
+    "Qwen/Qwen3.5-27B-FP8": {
+      "n": 400,
+      "labeled": 400,
+      "pending": 0,
+      "counts": {
+        "R": 399,
+        "L": 1,
+        "N": 0
+      },
+      "violation_rates": {
+        "R": 0.06015037593984962,
+        "L": 0.0,
+        "N": null
+      },
+      "eligible": false,
+      "difference_R_minus_N": null,
+      "ci95": null,
+      "holds": null,
+      "keyword_count": 392,
+      "bootstrap_resamples": 2000,
+      "seed": 0
+    },
+    "Qwen/Qwen3.8-27B-FP8": {
+      "n": 400,
+      "labeled": 400,
+      "pending": 0,
+      "counts": {
+        "R": 361,
+        "L": 39,
+        "N": 0
+      },
+      "violation_rates": {
+        "R": 0.060941828254847646,
+        "L": 0.07692307692307693,
+        "N": null
+      },
+      "eligible": false,
+      "difference_R_minus_N": null,
+      "ci95": null,
+      "holds": null,
+      "keyword_count": 400,
+      "bootstrap_resamples": 2000,
+      "seed": 0
+    },
+    "google/gemma-4-12B-it": {
+      "n": 400,
+      "labeled": 400,
+      "pending": 0,
+      "counts": {
+        "R": 370,
+        "L": 30,
+        "N": 0
+      },
+      "violation_rates": {
+        "R": 0.016216216216216217,
+        "L": 0.0,
+        "N": null
+      },
+      "eligible": false,
+      "difference_R_minus_N": null,
+      "ci95": null,
+      "holds": null,
+      "keyword_count": 309,
+      "bootstrap_resamples": 2000,
+      "seed": 0
+    }
+  },
+  "gold_ge_10": {
+    "Qwen/Qwen3-32B": {
+      "n": 338,
+      "labeled": 338,
+      "pending": 0,
+      "counts": {
+        "R": 1,
+        "L": 5,
+        "N": 332
+      },
+      "violation_rates": {
+        "R": 1.0,
+        "L": 1.0,
+        "N": 0.9879518072289156
+      },
+      "eligible": false,
+      "difference_R_minus_N": null,
+      "ci95": null,
+      "holds": null,
+      "keyword_count": 2,
+      "bootstrap_resamples": 2000,
+      "seed": 0
+    },
+    "Qwen/Qwen3.5-27B-FP8": {
+      "n": 338,
+      "labeled": 338,
+      "pending": 0,
+      "counts": {
+        "R": 338,
+        "L": 0,
+        "N": 0
+      },
+      "violation_rates": {
+        "R": 0.008875739644970414,
+        "L": null,
+        "N": null
+      },
+      "eligible": false,
+      "difference_R_minus_N": null,
+      "ci95": null,
+      "holds": null,
+      "keyword_count": 330,
+      "bootstrap_resamples": 2000,
+      "seed": 0
+    },
+    "Qwen/Qwen3.8-27B-FP8": {
+      "n": 338,
+      "labeled": 338,
+      "pending": 0,
+      "counts": {
+        "R": 311,
+        "L": 27,
+        "N": 0
+      },
+      "violation_rates": {
+        "R": 0.006430868167202572,
+        "L": 0.0,
+        "N": null
+      },
+      "eligible": false,
+      "difference_R_minus_N": null,
+      "ci95": null,
+      "holds": null,
+      "keyword_count": 338,
+      "bootstrap_resamples": 2000,
+      "seed": 0
+    },
+    "google/gemma-4-12B-it": {
+      "n": 338,
+      "labeled": 338,
+      "pending": 0,
+      "counts": {
+        "R": 311,
+        "L": 27,
+        "N": 0
+      },
+      "violation_rates": {
+        "R": 0.0,
+        "L": 0.0,
+        "N": null
+      },
+      "eligible": false,
+      "difference_R_minus_N": null,
+      "ci95": null,
+      "holds": null,
+      "keyword_count": 265,
+      "bootstrap_resamples": 2000,
+      "seed": 0
+    }
+  },
+  "agreement": {
+    "status": "complete",
+    "n_expected": 100,
+    "n_labeled": 100,
+    "n_pending": 0,
+    "metrics": {
+      "n": 100,
+      "agreement": 0.86,
+      "kappa": 0.72397476340694,
+      "confusion": {
+        "R": {
+          "R": 61,
+          "L": 7,
+          "N": 0
+        },
+        "L": {
+          "R": 1,
+          "L": 2,
+          "N": 0
+        },
+        "N": {
+          "R": 0,
+          "L": 6,
+          "N": 23
+        }
+      }
+    }
+  }
+}

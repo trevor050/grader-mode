@@ -1,0 +1,77 @@
+{
+  "stage": "throughput",
+  "model": "3.5",
+  "model_id": "Qwen/Qwen3.5-27B-FP8",
+  "requests_sha256": "7a5c2cb6cbc998dd5df030dc6a5a5ec915f75866daf8fab6589a5629faff004c",
+  "run_id": "phase6-7a5c2cb6cbc998dd",
+  "registration_commit": "8af01567fd54252e599b1df7a13cb3c84af96c2c",
+  "excluded_from_main": true,
+  "status": "completed",
+  "requests": 256,
+  "output_tokens": 219287,
+  "generation_seconds": 191.26863449200755,
+  "per_cell": {
+    "main/off/plain": {
+      "count": 64,
+      "output_tokens": 17563
+    },
+    "main/off/explicit": {
+      "count": 64,
+      "output_tokens": 20975
+    },
+    "main/on/plain": {
+      "count": 64,
+      "output_tokens": 82530
+    },
+    "main/on/explicit": {
+      "count": 64,
+      "output_tokens": 98219
+    }
+  },
+  "chunks": [
+    {
+      "path": "throughput/chunk-00000.jsonl",
+      "sha256": "2007fab61a2ba2c99d76b7db42fc5877c1ac0a4e4bdedec14e0ce4ee2a0bf059",
+      "count": 256,
+      "output_tokens": 219287,
+      "generation_seconds": 191.26863449200755
+    }
+  ],
+  "settings": {
+    "engine": {
+      "model": "Qwen/Qwen3.5-27B-FP8",
+      "revision": "97f5941bf617e31c5e237364a8602ce3f03a551a",
+      "tokenizer_revision": "97f5941bf617e31c5e237364a8602ce3f03a551a",
+      "dtype": "bfloat16",
+      "quantization": "fp8",
+      "language_model_only": true,
+      "max_model_len": 8192,
+      "max_num_seqs": 256,
+      "enforce_eager": false,
+      "tensor_parallel_size": 1,
+      "seed": 0,
+      "generation_config": "vllm"
+    },
+    "sampling": {
+      "temperature": 0.7,
+      "top_p": 0.95,
+      "top_k": -1,
+      "max_tokens": 4096
+    },
+    "versions": {
+      "vllm": "0.32.0",
+      "transformers": "5.19.0",
+      "tokenizers": "0.23.3",
+      "jinja2": "3.1.6",
+      "torch": "2.13.0+cu130"
+    },
+    "chunk_size": 256,
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "native_template": {
+      "preserve_thinking": false,
+      "reasoning_effort": null
+    },
+    "setup_seconds": 686.283938987006
+  },
+  "updated_unix": 1792624626.2061284
+}

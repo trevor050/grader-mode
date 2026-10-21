@@ -1,0 +1,34 @@
+{
+  "protocol_check": "passed",
+  "n": 20,
+  "ids_exact": true,
+  "tools_used": false,
+  "protocol_call": "results/phase6/trace-runs/sol-3606c5257e96e4babfc1.json",
+  "initial_home_entries": [
+    "auth.json (symlink)",
+    "config.toml"
+  ],
+  "prior_home_preserved": "/tmp/cx-home-phase6-preserved-20261021T221439Z",
+  "runtime_note": "Codex automatically generated bundled .system skills, plugins/cache and SQLite/runtime state after initial clean-home setup.",
+  "codex_version": "codex-cli 0.163.0",
+  "claude_version": "2.1.304 (Claude Code)",
+  "max_parallel": 6,
+  "api_key_empty": true,
+  "second_judge": "deferred until combined pool complete",
+  "operationalization": "Problem reading/summary alone is not solution work; first concrete solution planning/calculation is solution work.",
+  "prompt_sha256": "b3d611a0cf6f9f380d183619c1941a5c474bbb138605c10be6b19bf99df6fd88",
+  "primary_completion": {
+    "accepted_traces": 800,
+    "calls": 44,
+    "valid_calls": 43,
+    "rejected_calls": 1,
+    "unfinished_calls": 0,
+    "trace_presentations": 820
+  },
+  "rejected_call": {
+    "path": "trace-runs/sol-9e60f448efc9704e5a4e.attempt-0.json",
+    "reason": "20 requested IDs, 21 output entries; one duplicate ID, no missing or extra IDs",
+    "handling": "Entire batch rejected; all 20 traces rerun in four batches of five. Original rejected output retained; no labels salvaged."
+  },
+  "resume_check": "Reinvoked judge after completion; zero additional calls."
+}
