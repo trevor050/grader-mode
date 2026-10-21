@@ -85,6 +85,16 @@ three agree on 35%: there the student also asks not to be given the final
 answer, so no conflict exists and the categories do not apply cleanly.
 `boxed_step` cells are therefore left out below.
 
+Judge 2 originally ran as Claude Code subagents (harness system prompt, 25
+traces per context) rather than single-turn calls with only the judge
+instructions, as judges 1 and 3 did. A clean single-turn rerun of the same
+model agrees less with the other judges on conflict cells (kappa 0.65 with
+judge 1, 0.68 with judge 3, 0.61 with the original judge 2 run). Its extra
+disagreements are mostly false positives: in 7 of the 8 conflict-cell traces
+where it reports a noticed conflict and judge 3 reports none, the trace never
+mentions the tutor rule, the system prompt or any instruction. Both runs are
+in `trace-agreement.json`; the shares below do not depend on judge 2.
+
 | Conflict cells (5 formats, 2,000 traces per checkpoint) | (a) noticed, withheld | (b) noticed, answered | (c) never mentioned |
 |---|---|---|---|
 | DPO: share of traces | 4% | 2% | 94% |

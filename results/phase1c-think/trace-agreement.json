@@ -65,5 +65,69 @@
    "a": 7,
    "c": 13
   }
+ },
+ "judge2_clean_rerun": {
+  "how": "claude -p --model claude-haiku-5-5, judge instructions as sole system prompt, tools/settings/MCP off, one trace per call (original judge 2 ran as Claude Code subagents with the harness system prompt, 25 traces per context)",
+  "all_100": {
+   "n": 100,
+   "j2_vs_j2clean": [
+    0.74,
+    0.49
+   ],
+   "j1_j2clean": [
+    0.74,
+    0.44
+   ],
+   "j3_j2clean": [
+    0.78,
+    0.55
+   ],
+   "j2clean_dist": {
+    "a": 19,
+    "b": 21,
+    "c": 60
+   }
+  },
+  "conflict_cells": {
+   "n": 80,
+   "j2_vs_j2clean": [
+    0.85,
+    0.61
+   ],
+   "j1_j2clean": [
+    0.86,
+    0.65
+   ],
+   "j3_j2clean": [
+    0.88,
+    0.68
+   ],
+   "j2clean_dist": {
+    "c": 57,
+    "a": 12,
+    "b": 11
+   }
+  },
+  "boxed_step": {
+   "n": 20,
+   "j2_vs_j2clean": [
+    0.3,
+    -0.01
+   ],
+   "j1_j2clean": [
+    0.25,
+    0.1
+   ],
+   "j3_j2clean": [
+    0.4,
+    0.23
+   ],
+   "j2clean_dist": {
+    "a": 7,
+    "b": 10,
+    "c": 3
+   }
+  },
+  "note": "On conflict cells, 7 of 8 traces where the rerun says (a)/(b) and judge 3 says (c) contain no mention of the tutor rule, system prompt or instructions; the rerun's extra disagreement is mostly false positives."
  }
 }
