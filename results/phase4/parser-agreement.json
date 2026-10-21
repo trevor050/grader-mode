@@ -1,26 +1,34 @@
 {
-  "status": "pending",
+  "status": "complete",
   "n_sampled": 60,
-  "n_labeled": 0,
-  "n_pending": 60,
-  "agreement": null,
-  "cohen_kappa": null,
+  "n_labeled": 60,
+  "n_pending": 0,
+  "agreement": 0.95,
+  "cohen_kappa": 0.8999999999999999,
   "confusion": {
-    "true_positive": 0,
-    "true_negative": 0,
+    "true_positive": 27,
+    "true_negative": 30,
     "false_positive": 0,
-    "false_negative": 0
+    "false_negative": 3
   },
-  "n_disagreements": 0,
-  "disagreement_ids": [],
+  "n_disagreements": 3,
+  "disagreement_ids": [
+    "p4-4ee8f8917a6e9e57c454e7b0",
+    "p4-f42c4185bd405da076e69e32",
+    "p4-7944ed1152dcf609f3df7359"
+  ],
   "committed_number": {
-    "status": "pending",
-    "n_eligible": 0,
-    "n_labeled": 0,
-    "n_pending": 60,
-    "agreement": null,
-    "n_disagreements": 0,
-    "disagreement_ids": []
+    "status": "complete",
+    "n_eligible": 30,
+    "n_labeled": 30,
+    "n_pending": 0,
+    "agreement": 0.9,
+    "n_disagreements": 3,
+    "disagreement_ids": [
+      "p4-4ee8f8917a6e9e57c454e7b0",
+      "p4-f42c4185bd405da076e69e32",
+      "p4-7944ed1152dcf609f3df7359"
+    ]
   },
   "sampling": {
     "seed": 0,
