@@ -693,3 +693,75 @@ failures do not count against it, and the GLM fallback is not triggered by
 them. Recorded before any Nemotron output exists. A new run may use a
 different container image or vLLM install route; generation settings stay as
 registered.
+
+## Phase 6: does a newer Qwen generation still lose the rule? (pre-registered 2026-10-21)
+
+Written before any Phase 6 data exists. Phase 5 found that Gemma 4 12B does
+not show the Phase 4 effect and, unlike Qwen3, restates its system prompt in
+most reasoning traces (exploratory keyword count). Gemma differs from Qwen3 in
+both lab and release year (2026 vs 2025), so the contrast cannot say whether
+the Phase 4 effect is a Qwen trait or a property of 2025-era models. Phase 6
+runs the Phase 4 design on newer Qwen releases. Feasibility and pins:
+`notes/phase6-feasibility.md` (commit 58411eb).
+
+**Lineage, stated in advance.** Qwen3.5 is a new pretrain with a new hybrid
+architecture (Gated DeltaNet + gated full attention), not a post-train of
+Qwen3. Qwen3.5, 3.6 and 3.8 share that architecture, but no official source
+establishes that they share a pretrained checkpoint. Comparisons across these
+releases are release comparisons; none isolates post-training.
+
+**Models.** Official FP8 checkpoints, vLLM 0.32, pinned revisions from the
+feasibility note:
+- `Qwen/Qwen3.8-27B-FP8` (August 2026), `reasoning_effort="medium"` in the
+  thinking-on template (the default `xhigh` inserts extra text into the
+  system turn, which would change the system prompt between arms).
+- `Qwen/Qwen3.5-27B-FP8` (February 2026), the oldest release with the new
+  architecture.
+- Qwen3-32B (Phase 4, bf16) is the 2025 reference; it is not rerun. Its
+  precision, size and runtime differ from the new runs, and comparisons with
+  it are descriptive.
+
+**Grid.** 200 Phase 1 problems × templates 0 and 1, Phase 4 requests,
+generation settings and scoring (temperature 0.7, top-p 0.95, 4,096 new
+tokens total, violation = leak OR attempt, final reply only).
+- Main (both models): thinking {off, on} × request {plain, explicit}; 1,600
+  replies each. Off uses the native `enable_thinking=False` template.
+- Prefill (3.8 only): thinking on, explicit, prefills {reminder, neutral,
+  irrelevant} appended after the native `<think>\n` opener; 1,200 replies.
+  For these releases the native thinking-on prompt already ends with
+  `<think>\n`, so the main thinking-on explicit cell is byte-identical to an
+  empty-prefill cell and is reused as the empty condition.
+
+**Hypotheses** (paired problem-cluster bootstrap, 2,000 resamples, seed 0;
+holds = 95% CI excludes zero; gold >= 10 sensitivity reported):
+- **H22 (3.8, thinking × conflict).** As H15, for Qwen3.8-27B.
+- **H23 (3.8, reminder).** As H17 on the explicit request: reminder lowers
+  violation relative to empty, and by more than both neutral and irrelevant.
+- **H24 (3.5, thinking × conflict).** As H15, for Qwen3.5-27B.
+- **H25 (restatement and violation, association only).** Thinking-on,
+  explicit, unprefilled traces from Qwen3.8-27B, Qwen3.5-27B, Qwen3-32B
+  (Phase 4, existing) and Gemma 4 12B (Phase 5, existing) are coded blind to
+  model and outcome as (R) restates the tutor rule or the instruction not to
+  give the answer before working the problem, (L) restates it only later, or
+  (N) never. Within each model with at least 20 traces in both R and N,
+  violation is lower in R than in N. This is an association: a model's
+  tendency to restate and to comply may share causes. The causal test is H23.
+
+**Trace coding.** Judge: `gpt-6.1-sol` via `codex exec` (single turn, judge
+instructions as the only system prompt, medium reasoning), given the tutor
+prompt, the user message and the reasoning only, with model identity removed.
+Prefill text never counts as restatement (prefilled cells are not coded).
+A second judge (`claude-haiku-5-5` via `claude -p`, same protocol) codes a
+seeded random 100 for agreement; no human labels are collected. The Phase 5
+keyword count is reported alongside for continuity.
+
+**Budget and order.** About $5 of GPU. Stages, each released only if a
+measured, outcome-blind throughput projection fits what remains: (1) 3.8
+main, (2) 3.8 prefills, (3) 3.5 main. A stage that does not fit is dropped
+whole, before it runs, and reported. Cells are never shortened.
+
+**Interpretation limits stated in advance.** If 3.8 shows no Phase 4 effect,
+that shows the effect is absent in a current Qwen release, not why; lineage
+differences prevent attributing a change to post-training. If 3.8 shows it,
+the effect is not confined to 2025 models. H25 cannot establish that
+restating the rule causes adherence.
