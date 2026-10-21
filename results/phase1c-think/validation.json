@@ -1,0 +1,50 @@
+{
+  "tests": {
+    "command": "uv run pytest -q",
+    "passed": 422,
+    "new_test_files": [
+      "tests/test_analyze_1c_think.py",
+      "tests/test_trace_coding.py",
+      "tests/test_trace_coding_batch.py"
+    ]
+  },
+  "instruct_regression": {
+    "source": "results/raw/phase1c-full/scored.jsonl",
+    "resamples": 2000,
+    "seed": 0,
+    "regenerated_statistics_identical": true,
+    "existing_execution_annotations_preserved": true,
+    "summary_artifacts_byte_identical": true,
+    "sha256": {
+      "summary.md": "afd59d9a58a016d317ae3b8e99cd815118cb4f6559c7c398e9d63683dd73f60a",
+      "summary.json": "166dd940e7c6641fdcfbc12b5344295caa9e5a4cc3aede90501f64f02d5b643f",
+      "summary_gold_ge_10.md": "833068a566ec235ea9713357c6bda953aa24ddf8b92f33e0b361dee2527efd0b",
+      "summary_gold_ge_10.json": "ea4d9f78b8120aad116e03c461ae060e8fc0993b68afdca48d623e618f626b9b"
+    },
+    "note": "Existing CLI does not emit the recorded execution appendix. Compared regenerated statistical JSON/Markdown against original statistical portions before reattaching only existing execution/system-prompt annotations."
+  },
+  "think_embargo": {
+    "outcome_analysis_on_real_think_data_run": false,
+    "judge_on_real_data_run": false,
+    "sample_export_on_real_data_run": false,
+    "response_excerpts_displayed": false,
+    "real_data_operations": [
+      "schema keys/types and metadata-cell cardinality validation",
+      "local blinded reasoning token-count/cost projection on RLVR Stage A only"
+    ],
+    "schema_rows": 1400,
+    "schema_metadata_cells": 14,
+    "rows_per_metadata_cell": 100
+  },
+  "protected_files_unchanged": [
+    "DESIGN.md",
+    "prompts/",
+    "src/analyze_1c.py",
+    "src/score.py",
+    "results/phase1c/summary*"
+  ],
+  "review": {
+    "prior_recovery_findings_addressed": true,
+    "nested_unclosed_reasoning_regression_passed": true
+  }
+}
