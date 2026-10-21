@@ -28,7 +28,7 @@ encoding is not established by the retrieved docs. It includes the full judge
 request (instructions, blinded fields, schema), plus framing allowance. A
 separate UTF-8-byte bound plus 2,048 tokens per request is used for budget
 reservations. Overlong requests are rejected before long-context pricing can
-apply. Output cost reserves the full configured 64-token maximum, including any
+apply. Output cost reserves the full configured 512-token maximum (reasoning effort low), including any
 billable reasoning tokens. No actual judging or token-count API call is made
 by the dry run.
 

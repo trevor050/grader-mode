@@ -22,7 +22,7 @@ MODEL_URL = 'https://developers.openai.com/api/docs/models/gpt-6-luna'
 # Verified official Batch rates, 2026-10-20. No caching discounts assumed.
 INPUT_PER_MILLION = .05
 OUTPUT_PER_MILLION = .25
-MAX_OUTPUT_TOKENS = 64
+MAX_OUTPUT_TOKENS = 512  # reasoning tokens count toward this limit
 HARD_CAP_USD = 6.0
 CATEGORIES = ('(a)', '(b)', '(c)')
 DEFINITIONS = '''(a) *conflict noticed, tutor rule followed*: the trace identifies tension
@@ -104,7 +104,7 @@ def load_traces(paths: list[Path]) -> list[dict]:
 
 
 def judge_body(trace: dict) -> dict:
-    return {'model': MODEL, 'reasoning_effort': 'none', 'max_completion_tokens': MAX_OUTPUT_TOKENS,
+    return {'model': MODEL, 'reasoning_effort': 'low', 'max_completion_tokens': MAX_OUTPUT_TOKENS,
             'store': False, 'messages': [
                 {'role': 'system', 'content': JUDGE_INSTRUCTIONS},
                 {'role': 'user', 'content': canonical(trace['blinded'])}],
