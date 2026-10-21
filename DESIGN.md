@@ -668,3 +668,17 @@ the amendment, the amendment concerns only the second family, which had
 produced no output, and pilot replies are excluded from all analyses. The
 pilot ran under the original registration (f15dcc4) and its manifest records
 that.
+
+### Phase 1c addendum deviation (2026-10-21)
+
+13. *Hand labels replaced by a third model judge.* The addendum promised
+    agreement on the 100-trace sample "by a second, different-family judge and
+    by hand". The human labels were not collected. In their place, a third
+    judge (`gpt-6.1-sol`, medium reasoning, run single-turn through `codex
+    exec` with the judge instructions as its only system prompt, blind to
+    checkpoint, format and outcome) labels the same 100 traces. This is
+    recorded before its labels were read. Consequence: the agreement result
+    shows consistency across three model judges from two families, not
+    agreement with a human, and is reported that way. Judge 3 shares a vendor
+    with judge 1 (`gpt-6-luna`), so the cross-family comparison is still judge
+    2 (`claude-haiku-5-5`) against each OpenAI judge.
