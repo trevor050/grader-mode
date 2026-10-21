@@ -1,0 +1,15 @@
+{
+  "task": "phase5-full-final-evidence-review-r1",
+  "provider": "codex",
+  "model": "gpt-6.1-sol",
+  "effort": "high",
+  "mode": "read_only",
+  "findings": [],
+  "scope": "Exact raw rescoring/full summary and paired CIs/sensitivities reproduced; fresh40audit/regex/provenance/protected files/Gemma reproduction and saved accounting/resource receipts verified",
+  "verified_provisional_meter_snapshot_usd": ".49000052",
+  "subsequent_meter_refresh_usd": "0.44000052",
+  "conservative_exposure_usd": ".506497",
+  "metering_provisional": true,
+  "provider_calls": false,
+  "resource_mutations": false
+}

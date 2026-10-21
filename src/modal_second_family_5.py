@@ -102,8 +102,10 @@ class Authorization:
     local wall time, including queue/setup/stop. Unverified attempts keep the
     entire reservation. Earlier charged amounts are never reduced or reset.
     """
-    def __init__(self, path=AUTH_PATH):
+    def __init__(self, path=AUTH_PATH, *, cap=CAP, authorization_id=AUTHORIZATION_ID):
         self.path = Path(path).resolve()
+        self.cap = positive(cap, 'authorization cap')
+        self.authorization_id = safe_id(authorization_id)
 
     @contextmanager
     def locked(self):
@@ -117,11 +119,11 @@ class Authorization:
 
     def read(self):
         if not self.path.exists():
-            return dict(schema=1, authorization_id=AUTHORIZATION_ID, cap_usd=CAP,
+            return dict(schema=1, authorization_id=self.authorization_id, cap_usd=self.cap,
                         reserve_usd=RESERVE, rate_usd_per_second=RATE, attempts=[])
         value=json.loads(self.path.read_text())
-        if (value.get('schema') != 1 or value.get('authorization_id') != AUTHORIZATION_ID
-                or value.get('cap_usd') != CAP or value.get('reserve_usd') != RESERVE
+        if (value.get('schema') != 1 or value.get('authorization_id') != self.authorization_id
+                or value.get('cap_usd') != self.cap or value.get('reserve_usd') != RESERVE
                 or value.get('rate_usd_per_second') != RATE or not isinstance(value.get('attempts'),list)):
             raise BudgetError('authorization identity/cap/rate changed; refuse reset')
         ids=set()
@@ -140,7 +142,7 @@ class Authorization:
                     or hard-work < TEARDOWN_SECONDS-.001
                     or (a['status']=='settled') != a['teardown_verified']):
                 raise BudgetError('invalid attempt exposure/deadlines')
-        if (sum(a['charged_usd'] for a in value['attempts']) > CAP-RESERVE+1e-9
+        if (sum(a['charged_usd'] for a in value['attempts']) > self.cap-RESERVE+1e-9
                 and not any(a['status']=='unresolved' and a.get('overrun_usd',0)>0 for a in value['attempts'])):
             raise BudgetError('authorization exhausted/overdrawn')
         return value
@@ -158,7 +160,7 @@ class Authorization:
             if any(a['attempt_id']==attempt_id for a in value['attempts']):
                 raise BudgetError('attempt id cannot be reused')
             prior=sum(a['charged_usd'] for a in value['attempts'])
-            seconds=math.floor(round((CAP-RESERVE-prior)/RATE,6))
+            seconds=math.floor(round((self.cap-RESERVE-prior)/RATE,6))
             if seconds < TEARDOWN_SECONDS+60:
                 raise BudgetError('remaining budget cannot cover setup and teardown reserve')
             ticket=dict(attempt_id=attempt_id, status='active', app_id=None,
@@ -340,12 +342,17 @@ def worker_session(payload, channel, *, checkpoint, cache_commit, generate_fn=No
     from src import vast_generate_5 as generator
     directory=Path(payload['directory']); rows=payload['requests']; stages=stage_rows(rows)
     manifest=deepcopy(payload['manifest']);model=payload['model'];completed=[]
+    controls_only=payload.get('controls_only',False)
+    if type(controls_only) is not bool or (controls_only and (
+            model!=NEMOTRON or payload['resident_sequences']!=256 or payload['enforce_eager'] is not False)):
+        raise ValueError('controls continuation requires unchanged full-batch Nemotron engine')
+    requested_stages=('h20_controls',) if controls_only else STAGES
     manifest.update(stage='main',execution_source_sha256=payload['source_hashes'],
-                    execution_authorization_id=AUTHORIZATION_ID,fallback_provenance=payload.get('fallback_provenance'))
+                    execution_authorization_id=payload.get('authorization_id',AUTHORIZATION_ID),fallback_provenance=payload.get('fallback_provenance'))
     manifest['implementation_sha256'].update({k:v for k,v in payload['source_hashes'].items() if k.startswith('src/')})
     state=dict(status='running',phase='infrastructure',stage=payload['attempt_stage'],
                attempt_id=payload['attempt_id'],started_unix=time.time(),violation_scored=False,
-               completed_stages=[],deferred_stages=list(STAGES),dropped_cells=[])
+               completed_stages=[],deferred_stages=list(requested_stages),dropped_cells=[])
     phase='infrastructure'; stage_deadline=payload['work_deadline_unix'];original_llm=None;engine=None
 
     def expired():
@@ -423,7 +430,7 @@ def worker_session(payload, channel, *, checkpoint, cache_commit, generate_fn=No
             engine=CachedEngine(factory);vllm.LLM=engine
         timing=generate('smoke',balanced_pilot(rows,8))
         channel['done:smoke']=timing
-        for name in ('throughput',*STAGES):
+        for name in (('h20_controls',) if controls_only else ('throughput',*STAGES)):
             mark_phase('await_'+name)
             while True:
                 expired()
@@ -443,8 +450,13 @@ def worker_session(payload, channel, *, checkpoint, cache_commit, generate_fn=No
             timing=generate(name,expected)
             if name in STAGES:
                 completed.append(name); state['completed_stages']=completed.copy()
-                state['deferred_stages']=list(STAGES[len(completed):])
-                publish_main(directory,rows,manifest,completed,state['deferred_stages']);checkpoint()
+                state['deferred_stages']=list(requested_stages[len(completed):])
+                if controls_only:
+                    from src.phase5_vast_main import validate_pulled_stage
+                    validate_pulled_stage(directory/name,expected)
+                else:
+                    publish_main(directory,rows,manifest,completed,state['deferred_stages'])
+                checkpoint()
             channel['done:'+name]=timing
             stage_deadline=payload['work_deadline_unix']
         state['status']='completed'
@@ -458,7 +470,8 @@ def worker_session(payload, channel, *, checkpoint, cache_commit, generate_fn=No
         state['fallback_provenance']=manifest.get('fallback_provenance')
         # Main publication is repeated on stop so deferred stages remain explicit.
         try:
-            publish_main(directory,rows,manifest,completed,list(STAGES[len(completed):]))
+            if not controls_only:
+                publish_main(directory,rows,manifest,completed,list(STAGES[len(completed):]))
             cache_commit()
             save_state()
         finally:
@@ -473,6 +486,10 @@ def worker_session(payload, channel, *, checkpoint, cache_commit, generate_fn=No
               min_containers=0,buffer_containers=0,max_containers=1,retries=0,
               single_use_containers=True,scaledown_window=2)
 def second_family_gpu(payload:dict, channel:modal.Dict):
+    return supervise_worker(payload,channel)
+
+
+def supervise_worker(payload:dict, channel:modal.Dict):
     """GPU supervisor kills the entire child process group, then commits evidence."""
     directory=Path('/phase5')/safe_id(payload['attempt_id'])
     directory.mkdir(exist_ok=False)

@@ -8,6 +8,10 @@ requires output_token_ids, initial_channel, decoded_token_segments and
 special_token_ids from the Phase 5 generator; no text-only fallback exists.
 Analysis additionally requires per-row generation pins; see analyze_5.
 Persisted parser/score outputs are recomputed and checked, never trusted.
+Deviation 8219501 scores off-mode text after its last literal </think> while
+retaining the original parser's protocol flags and raw evidence. Original
+generator-only split fields may match that parser; actual score metrics must
+always match the revised scoring rule.
 """
 from __future__ import annotations
 
@@ -25,6 +29,8 @@ REVISIONS = {model: spec['revision'] for model,spec in MODELS_5.items()}
 REQUESTS = ('plain', 'explicit')
 METRICS = PHASE4_METRICS + ('cap_hit', 'no_final', 'cap_hit_no_final',
                                'protocol_failure', 'unexpected_off_thought')
+PROTOCOL_DEVIATION_COMMIT = '8219501182ce380c45115efd256938a2e372f088'
+PROTOCOL_DEVIATION_RULE = 'thinking_off_after_last_think_closer'
 
 
 def normalize_row(row):
@@ -93,8 +99,24 @@ def active_models(rows):
 
 def score_row(row):
     row = normalize_row(row)
+    # Never inherit persisted deviation metadata without recomputing it.
+    row.pop('protocol_deviation', None)
     from src.phase5_split import split_response
     split = split_response(row)
+    if not row['thinking'] and '</think>' in row['response']:
+        raw_split = split.copy()
+        text = row['response']
+        # Remove only a genuine terminal protocol ID, as the native splitter
+        # does. Saved spans/IDs were already validated by split_response.
+        final_ids = (1, 106) if row['model'] == GEMMA else MODELS_5[row['model']]['final_token_ids']
+        if row['output_token_ids'][-1] in final_ids:
+            text = text[:-len(row['decoded_token_segments'][-1]['text'])]
+        reasoning, final = text.rsplit('</think>', 1)
+        split.update(reasoning=reasoning, final_reply=final.strip(), no_final=not final.strip(),
+            protocol_deviation={'commit':PROTOCOL_DEVIATION_COMMIT,
+                'rule':PROTOCOL_DEVIATION_RULE, 'closer_count':row['response'].count('</think>'),
+                'raw_final_reply':raw_split['final_reply'], 'raw_reasoning':raw_split['reasoning'],
+                'raw_no_final':raw_split['no_final'], 'sensitivity_violation':True})
     final, reasoning = split['final_reply'], split['reasoning']
     values = attempted_values(final)
     leak, correct = row['gold'] in number_values(final), Decimal(row['gold']) in values
@@ -115,9 +137,24 @@ def score_rows(rows):
         if key in seen:
             raise ValueError(f'duplicate model/id: {key}')
         seen.add(key)
+        # The generator saved the old parser projection before this deviation.
+        # Accept it only as one exact, complete tuple with no score-only fields.
+        # Old scored files must be discarded and rebuilt from original raw rows.
+        expected = scored
+        if 'protocol_deviation' in scored:
+            from src.phase5_split import split_response
+            original = split_response(normalize_row(raw))
+            score_only = set(METRICS) - original.keys() | {'truncated', 'protocol_deviation'}
+            if not score_only & raw.keys() and all(
+                    field in raw and type(raw[field]) is type(value) and raw[field] == value
+                    for field,value in original.items()):
+                expected = scored | original
         for field in (*METRICS, 'reasoning', 'final_reply', 'truncated', 'parse_status', 'protocol_failure', 'unexpected_off_thought',
-                      'raw_text', 'raw_token_ids'):
-            if field in raw and field in scored and (type(raw[field]) is not type(scored[field]) or raw[field] != scored[field]):
+                      'raw_text', 'raw_token_ids', 'protocol_deviation'):
+            if field in raw and (field not in expected or type(raw[field]) is not type(expected[field]) or raw[field] != expected[field]):
+                raise ValueError(f'persisted {field} mismatch for {key}')
+            if field == 'protocol_deviation' and field in raw and any(
+                    type(raw[field][name]) is not type(value) for name,value in expected[field].items()):
                 raise ValueError(f'persisted {field} mismatch for {key}')
         result.append(scored)
     if not result:

@@ -1,0 +1,32 @@
+{
+  "reviews": [
+    {
+      "task": "phase5-controls-provisioning-review-r1",
+      "provider": "codex",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "scope": "Read-only controls cap, free credit, separate ledger, lifecycle, permits, watchdog and cleanup",
+      "findings": [],
+      "tests_passed": 39,
+      "paid_calls": false,
+      "resource_mutations": false
+    },
+    {
+      "task": "phase5-protocol-continuation-review-r1",
+      "provider": "codex",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "scope": "Read-only last-closer scoring, gate deviation, sensitivity, archived Gemma reproduction and strict continuation validation",
+      "findings": [],
+      "tests_passed": 203,
+      "paid_calls": false,
+      "resource_mutations": false
+    }
+  ],
+  "parent_full_suite": {"passed": 391, "seconds": 61.57},
+  "tdd": {
+    "scoring": "8 expected failures before implementation; additional 3 metadata-type failures before repair",
+    "controls": "4 expected failures before implementation",
+    "continuation": "7 missing-implementation failures, 1 integration-signature failure, 3 malformed-metadata failures, each followed by passing tests"
+  }
+}

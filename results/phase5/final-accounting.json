@@ -1,5 +1,5 @@
 {
-  "captured_unix": 1792623226.235021,
+  "captured_unix": 1792624901.81043,
   "metering_provisional": true,
   "prior_phase5_snapshot": {
     "captured_unix": 1792614946.938276,
@@ -163,9 +163,148 @@
   },
   "legacy_aggregate_conservative_usd": "8.699651",
   "new_modal_conservative_usd": "1.656979",
-  "combined_conservative_exposure_usd": "10.356630",
-  "total_phase5_observed_provider_usd": "2.6538712595999997",
+  "combined_conservative_exposure_usd": "10.863127",
+  "total_phase5_observed_provider_usd": "3.0938717795999997",
   "zero_resources": {
+    "captured_unix": 1792624901.082635,
+    "scope": "Phase5 Modal only; no Vast query or mutation in this step",
+    "phase5_modal_apps": [
+      {
+        "app_id": "ap-piZaVpxmafGonf04qPmvnV",
+        "description": "grader-mode-phase5-nemotron-controls",
+        "state": "stopped",
+        "tasks": "0",
+        "created_at": "2026-10-21 19:02:55-04:00",
+        "stopped_at": "2026-10-21 19:11:19-04:00"
+      },
+      {
+        "app_id": "ap-2oiNoayC7HjPSL5cQEahoE",
+        "description": "grader-mode-phase5-second-family",
+        "state": "stopped",
+        "tasks": "0",
+        "created_at": "2026-10-21 18:24:37-04:00",
+        "stopped_at": "2026-10-21 18:42:28-04:00"
+      },
+      {
+        "app_id": "ap-4G0MBg715cuSf1TsCDkg1r",
+        "description": "grader-mode-phase5-second-family",
+        "state": "stopped",
+        "tasks": "0",
+        "created_at": "2026-10-21 18:18:47-04:00",
+        "stopped_at": "2026-10-21 18:22:47-04:00"
+      },
+      {
+        "app_id": "ap-IVAoHS43aaVGabYmPTRrZe",
+        "description": "grader-mode-phase5-second-family",
+        "state": "stopped",
+        "tasks": "0",
+        "created_at": "2026-10-21 18:10:41-04:00",
+        "stopped_at": "2026-10-21 18:15:11-04:00"
+      },
+      {
+        "app_id": "ap-nBvdhWqgVQHejlTBZLqAYM",
+        "description": "grader-mode-phase5-second-family",
+        "state": "stopped",
+        "tasks": "0",
+        "created_at": "2026-10-21 18:05:50-04:00",
+        "stopped_at": "2026-10-21 18:07:03-04:00"
+      }
+    ],
+    "active_phase5_modal_apps": 0,
+    "modal_containers": [],
+    "phase6_resources_touched": false,
+    "protected_phase6_vast_instance": 57119355
+  },
+  "modal_controls": {
+    "captured_unix": 1792624901.809669,
+    "metering_provisional": true,
+    "before": {
+      "metered_cost": "28.52742427",
+      "billed_cost": "0E-8",
+      "adjustments": {
+        "plan_cost": "0E-8",
+        "reservation_adjustment": "-0E-8",
+        "network_egress_allowance": "-0.33742427",
+        "credits": "-28.19000000",
+        "free_storage": "-0E-8"
+      },
+      "metered_cost_breakdown": {
+        "volumes": "0E-8",
+        "llm_tokens": "0E-8",
+        "network_egress": "0.33742427",
+        "ephemeral_apps": "28.19240894"
+      }
+    },
+    "after": {
+      "metered_cost": "28.96742479",
+      "billed_cost": "0E-8",
+      "adjustments": {
+        "free_storage": "-0E-8",
+        "plan_cost": "0E-8",
+        "credits": "-28.63000000",
+        "reservation_adjustment": "-0E-8",
+        "network_egress_allowance": "-0.33742479"
+      },
+      "metered_cost_breakdown": {
+        "ephemeral_apps": "28.62517258",
+        "volumes": "0E-8",
+        "llm_tokens": "0E-8",
+        "network_egress": "0.33742479"
+      }
+    },
+    "observed_delta_usd": "0.44000052",
+    "conservative_exposure_usd": "0.506497",
+    "cap_usd": "1.40",
+    "reserve_usd": ".30",
+    "billed_cost_usd": "0E-8",
+    "earlier_provisional_snapshots": [
+      {
+        "captured_unix": 1792624491.2115011,
+        "metering_provisional": true,
+        "before": {
+          "metered_cost": "28.52742427",
+          "billed_cost": "0E-8",
+          "adjustments": {
+            "plan_cost": "0E-8",
+            "reservation_adjustment": "-0E-8",
+            "network_egress_allowance": "-0.33742427",
+            "credits": "-28.19000000",
+            "free_storage": "-0E-8"
+          },
+          "metered_cost_breakdown": {
+            "volumes": "0E-8",
+            "llm_tokens": "0E-8",
+            "network_egress": "0.33742427",
+            "ephemeral_apps": "28.19240894"
+          }
+        },
+        "after": {
+          "metered_cost": "29.01742479",
+          "billed_cost": "0E-8",
+          "adjustments": {
+            "free_storage": "-0E-8",
+            "credits": "-28.68000000",
+            "plan_cost": "0E-8",
+            "reservation_adjustment": "-0E-8",
+            "network_egress_allowance": "-0.33742479"
+          },
+          "metered_cost_breakdown": {
+            "volumes": "0E-8",
+            "llm_tokens": "0E-8",
+            "network_egress": "0.33742479",
+            "ephemeral_apps": "28.68309204"
+          }
+        },
+        "observed_delta_usd": "0.49000052",
+        "conservative_exposure_usd": "0.506497",
+        "cap_usd": "1.40",
+        "reserve_usd": ".30",
+        "billed_cost_usd": "0E-8"
+      }
+    ]
+  },
+  "phase5_observed_before_controls_usd": "2.6538712595999997",
+  "previous_resource_snapshot": {
     "captured_unix": 1792623226.2339358,
     "scope": "Phase 5 only; preserve all Phase 6 resources",
     "phase5_modal_apps": [

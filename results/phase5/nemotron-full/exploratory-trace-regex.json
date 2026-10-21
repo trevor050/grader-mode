@@ -1,0 +1,25 @@
+{
+  "status": "exploratory",
+  "pattern": "tutor|system prompt|instruction",
+  "flags": "re.I",
+  "filter": "arm == 'main' and thinking is True and request_type == 'explicit'",
+  "text_field": "reasoning",
+  "denominator": "All selected main requests, including empty reasoning; exclude prefills, smoke and throughput",
+  "matches": 392,
+  "n": 400,
+  "share": 0.98,
+  "findings_reference": {
+    "Gemma 4 12B": [
+      309,
+      400
+    ],
+    "Qwen3-14B": [
+      11,
+      400
+    ],
+    "Qwen3-32B": [
+      3,
+      400
+    ]
+  }
+}

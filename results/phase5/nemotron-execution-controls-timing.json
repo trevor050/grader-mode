@@ -1,0 +1,69 @@
+{
+  "smoke.done.json": {
+    "requests": 8,
+    "output_tokens": 8115,
+    "generation_seconds": 11.75888320499999,
+    "wall_seconds": 14.371589107000005,
+    "setup_seconds": 154.31182020199998,
+    "batch_size": 256,
+    "chunk_size": 256,
+    "per_cell": {
+      "main/off/plain": {
+        "count": 1,
+        "output_tokens": 162
+      },
+      "prefill/reminder": {
+        "count": 1,
+        "output_tokens": 1054
+      },
+      "main/off/explicit": {
+        "count": 1,
+        "output_tokens": 305
+      },
+      "prefill/neutral": {
+        "count": 1,
+        "output_tokens": 1153
+      },
+      "prefill/empty": {
+        "count": 1,
+        "output_tokens": 1608
+      },
+      "prefill/irrelevant": {
+        "count": 1,
+        "output_tokens": 1130
+      },
+      "main/on/explicit": {
+        "count": 1,
+        "output_tokens": 1935
+      },
+      "main/on/plain": {
+        "count": 1,
+        "output_tokens": 768
+      }
+    },
+    "protocol": {
+      "requests": 8,
+      "protocol_checked": true,
+      "violation_scored": false
+    }
+  },
+  "h20_controls.done.json": {
+    "requests": 800,
+    "output_tokens": 1395463,
+    "generation_seconds": 280.9295704779999,
+    "wall_seconds": 295.31328181900005,
+    "setup_seconds": 1.3549262059999876,
+    "batch_size": 256,
+    "chunk_size": 256,
+    "per_cell": {
+      "prefill/neutral": {
+        "count": 400,
+        "output_tokens": 793425
+      },
+      "prefill/irrelevant": {
+        "count": 400,
+        "output_tokens": 602038
+      }
+    }
+  }
+}

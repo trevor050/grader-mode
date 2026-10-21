@@ -1,0 +1,102 @@
+{
+  "schema": 1,
+  "kind": "phase5_nemotron_controls_continuation",
+  "deviation_commit": "8219501",
+  "parts": [
+    {
+      "run_id": "phase5-nemotron-modal-20261021-d-startup-main",
+      "n_rows": 2400,
+      "request_ids_sha256": "627d8ea2a65f8f27b9db7bc625d38557ea7456d2b9b18097e639b7deea04f01d",
+      "provenance": {
+        "run_id": "phase5-nemotron-modal-20261021-d-startup-main",
+        "phase": "phase5",
+        "stage": "main",
+        "pilot": false,
+        "package_versions": {
+          "vllm": "0.32.0",
+          "transformers": "5.19.0",
+          "tokenizers": "0.23.3",
+          "jinja2": "3.1.6",
+          "torch": "2.13.0",
+          "huggingface-hub": "1.31.0"
+        },
+        "render_date": "2026-10-21",
+        "source_sha256": {
+          "DESIGN.md": "f1d2d05185c1593deba90a7b58601691d18b99ba047e02866d06abca10c90c84",
+          "prompts/templates.json": "637fb8aa1312f4485d410241fe6087cbbe9c6150a4267bfb8a71e418f7af0ed1",
+          "prompts/templates_4.json": "6cd003a8b8bf96456428084a1abeedb5c66ee5774443bcb6fdf31d7d65a8fd31",
+          "prompts/system_tutor.txt": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11"
+        },
+        "implementation_sha256": {
+          "src/models_5.py": "f087db2706c68087c804b0ce50fe4fed39be644908f43f604e5ad910e1991804",
+          "src/vast_generate_5.py": "097e7b044ae72226ea3484fa6d2734e50e616be79e290293a1d6e62cf253ed49",
+          "src/phase5_split.py": "5739523aabc58b7f855c3f6cafc6dba984209e84887e68fc00d6a5490731434f",
+          "src/phase5_control.py": "bd99c9a0e591d55ab210abeef399e1bad1351ffc1692abaaf4ede6f024cbf62c",
+          "src/modal_app_5.py": "df765af3ea969dc41aceff855020044115767b2034f7d20ac849b2c95f6f4c98",
+          "src/phase5_vast_main.py": "c69634b21fd933c063195cfaa95efe5c8e4f998cc00a0ebc5dc3abe789f502cf",
+          "src/modal_second_family_5.py": "1d2ac461b5f6a9a486e029c52d0179657353ed36d51a4f546f1da3c3f811ab7a"
+        },
+        "registration_commit": null,
+        "engine": {
+          "batch_size": 256,
+          "chunk_size": 256,
+          "enforce_eager": false,
+          "max_model_len": 8192,
+          "tensor_parallel_size": 1,
+          "gpu_memory_utilization": 0.9,
+          "generation_config": "vllm"
+        }
+      },
+      "raw_path": "results/raw/phase5-nemotron-modal-20261021-d/phase5-nemotron-modal-20261021-d-startup/phase5-nemotron-modal-20261021-d-startup/main/generations.jsonl",
+      "raw_sha256": "4cd64bd10c8e38bdaa7dce855e67a8bea75aad88db6820d0966ce1c5e7bdddcf"
+    },
+    {
+      "run_id": "phase5-nemotron-controls-20261021-controls-main",
+      "n_rows": 800,
+      "request_ids_sha256": "66b111573314e9b1e6a987bc727114eb2119b6cf219909427acda4443392b82c",
+      "provenance": {
+        "run_id": "phase5-nemotron-controls-20261021-controls-main",
+        "phase": "phase5",
+        "stage": "main",
+        "pilot": false,
+        "package_versions": {
+          "vllm": "0.32.0",
+          "transformers": "5.19.0",
+          "tokenizers": "0.23.3",
+          "jinja2": "3.1.6",
+          "torch": "2.13.0",
+          "huggingface-hub": "1.31.0"
+        },
+        "render_date": "2026-10-21",
+        "source_sha256": {
+          "DESIGN.md": "8b1339e103c787704080a129019b1ba181775ed81edd968f91662d9cbfdcfaa5",
+          "prompts/templates.json": "637fb8aa1312f4485d410241fe6087cbbe9c6150a4267bfb8a71e418f7af0ed1",
+          "prompts/templates_4.json": "6cd003a8b8bf96456428084a1abeedb5c66ee5774443bcb6fdf31d7d65a8fd31",
+          "prompts/system_tutor.txt": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11"
+        },
+        "implementation_sha256": {
+          "src/models_5.py": "f087db2706c68087c804b0ce50fe4fed39be644908f43f604e5ad910e1991804",
+          "src/vast_generate_5.py": "097e7b044ae72226ea3484fa6d2734e50e616be79e290293a1d6e62cf253ed49",
+          "src/phase5_split.py": "5739523aabc58b7f855c3f6cafc6dba984209e84887e68fc00d6a5490731434f",
+          "src/phase5_control.py": "bd99c9a0e591d55ab210abeef399e1bad1351ffc1692abaaf4ede6f024cbf62c",
+          "src/modal_app_5.py": "df765af3ea969dc41aceff855020044115767b2034f7d20ac849b2c95f6f4c98",
+          "src/phase5_vast_main.py": "c69634b21fd933c063195cfaa95efe5c8e4f998cc00a0ebc5dc3abe789f502cf",
+          "src/modal_second_family_5.py": "371b1f558763200082bded9745025df19fdefd407ab3412b8d1910c9a61fbd06",
+          "src/modal_controls_5.py": "0fb79b4f0876b49c34d1b85c22ea7892e0a5d9c43e47a4f0b320022057e8b3c7"
+        },
+        "registration_commit": null,
+        "engine": {
+          "batch_size": 256,
+          "chunk_size": 256,
+          "enforce_eager": false,
+          "max_model_len": 8192,
+          "tensor_parallel_size": 1,
+          "gpu_memory_utilization": 0.9,
+          "generation_config": "vllm"
+        }
+      },
+      "raw_path": "results/raw/phase5-nemotron-controls-20261021/phase5-nemotron-controls-20261021-controls/phase5-nemotron-controls-20261021-controls/h20_controls/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4.jsonl",
+      "raw_sha256": "154949c08e96d7620d4baac3db578ca100ecf9e81240c53aaea21c17c467dee3"
+    }
+  ]
+}

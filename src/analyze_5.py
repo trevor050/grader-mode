@@ -4,9 +4,10 @@ Default main analysis requires both models and the original 200 Phase 1 problems
 with two templates per retained cell. Explicit model_scope validates one complete
 family independently for sequential reporting, with the same sample/audit gates. Only the registered whole-cell drop
 stages are accepted, and only with --allow-cell-drops. --pilot allows partial
-collection for descriptive checks, never hypothesis decisions. Missing human
-attempt/numeric or human final-boundary labels keep inference pending; no
-model labels are substituted.
+collection for descriptive checks, never hypothesis decisions. Missing audit
+attempt/numeric or final-boundary labels keep inference pending; the label
+source and its authorization are disclosed separately. An explicit continuation
+manifest can join the authorized complete Nemotron prefix and control runs.
 
 Generation pins live on each row (sampling may instead be a nested object):
 model_revision, temperature=.7, top_p=.95, top_k=-1, max_tokens=4096,
@@ -30,7 +31,8 @@ import numpy as np
 from src.build_prompts import DATASET_REVISION, sample_problems, request_seed
 from src.models_5 import MODELS_5, PACKAGE_VERSIONS, RENDER_DATE, GEMMA, NEMOTRON, GLM, REGISTRATION_COMMIT, ORIGINAL_REGISTRATION_COMMIT
 from src.score import read_rows
-from src.score_5 import METRICS, REVISIONS, PREFILLS, score_rows, active_models
+from src.score_5 import (METRICS, REVISIONS, PREFILLS, score_rows, active_models,
+                        PROTOCOL_DEVIATION_COMMIT)
 from src.phase5_parser_agreement import agreement, load_labels, write_audit_sample, write_splitter_sample
 from src.analyze_4 import _interval, _sort_problem
 
@@ -85,7 +87,10 @@ def _pin(row, key):
     return values[0]
 
 
-def _validate_pins(rows, *, pilot):
+def _validate_pins(rows, *, pilot, continuation=None):
+    if continuation is not None:
+        from src.phase5_continuation_5 import validate_continuation
+        validate_continuation(rows,continuation)
     seeds = {}
     provenance = {}
     has_tokenizer_pin = any('tokenizer_revision' in item for item in rows)
@@ -99,6 +104,8 @@ def _validate_pins(rows, *, pilot):
             raise ValueError('pilot data requires explicit pilot analysis')
         for name in ('run_id', 'phase', 'stage', 'pilot', 'package_versions',
                      'render_date', 'source_sha256', 'implementation_sha256', 'registration_commit'):
+            if continuation is not None and name in ('run_id','source_sha256','implementation_sha256'):
+                continue  # Already checked per complete run by the explicit continuation proof.
             value = r.get(name)
             if name in provenance and value != provenance[name]:
                 raise ValueError(f'mixed or missing {name} within run')
@@ -221,7 +228,8 @@ def validate_grid(rows, *, expected_problems=200, allow_cell_drops=False,
                     raise ValueError('fallback decision must precede GLM full generation')
     elif fallback_provenance is not None:
         raise ValueError('fallback provenance supplied without GLM fallback rows')
-    _validate_pins(rows,pilot=pilot)
+    continuation=problem_manifest.get('continuation') if isinstance(problem_manifest,dict) else None
+    _validate_pins(rows,pilot=pilot,continuation=continuation)
     identities,actual={},defaultdict(set)
     for r in rows:
         p=r['problem_id'];identity=r['gold'],r['question']
@@ -289,7 +297,8 @@ def validate_grid(rows, *, expected_problems=200, allow_cell_drops=False,
         'fallback_provenance':fallback_provenance,
         'expected_problems':expected_problems,'templates':[0,1],'n_responses':len(rows),
         'problem_manifest_checked':manifest_checked,
-        'original_sample_checked':original_checked or (manifest_checked and expected_problems==200)}
+        'original_sample_checked':original_checked or (manifest_checked and expected_problems==200),
+        **({'continuation_verified':True} if continuation is not None else {})}
 
 
 def _unavailable(reason):
@@ -384,8 +393,6 @@ def analyze(rows, *, expected_problems=200, allow_cell_drops=False,
         reasons.append('synthetic_or_smoke_problem_count')
     if not grid['problem_manifest_checked']:
         reasons.append('problem_manifest_not_checked')
-    if any(r['protocol_failure'] for r in rows):
-        reasons.append('protocol_failures')
     if audit['status'] != 'complete' or audit['committed_number']['status'] != 'complete':
         reasons.append('parser_audit_pending')
     if audit['splitter']['status'] != 'complete':
@@ -404,6 +411,21 @@ def analyze(rows, *, expected_problems=200, allow_cell_drops=False,
             'attempt_window':'numeric_token_start_offset_0_through_12_after_marker',
             'cap_hit_no_final':'finish_reason_length_and_empty_final', 'multiplicity_adjustment':None})
     report['gold_ge_10'] = _summarize([r for r in rows if r['gold'] >= 10],eligible=eligible,pilot=pilot)
+    affected = sorted((r for r in rows if 'protocol_deviation' in r), key=lambda r:(r['model'],r['id']))
+    if affected:
+        # This is a separate outcome projection, never a mutation/re-score of
+        # baseline rows. The same problem ordering/draws cover all cells and
+        # contrasts, including H20 joint decisions and gold>=10 counterparts.
+        sensitivity_rows = [r | {'violation':True} if 'protocol_deviation' in r else r.copy() for r in rows]
+        sensitivity = _summarize(sensitivity_rows,eligible=eligible,pilot=pilot)
+        sensitivity.update(deviation_commit=PROTOCOL_DEVIATION_COMMIT,
+            rule='affected_thinking_off_replies_count_as_violations',
+            n_affected_responses=len(affected), bootstrap=report['bootstrap'].copy(),
+            affected_rows=[{k:r[k] for k in ('model','id','problem_id','template_idx','arm',
+                'thinking_mode','format','prefill','parse_status','protocol_failure','unexpected_off_thought')}
+                | {'baseline_violation':r['violation'],'sensitivity_violation':True} for r in affected])
+        sensitivity['gold_ge_10'] = _summarize([r for r in sensitivity_rows if r['gold'] >= 10],eligible=eligible,pilot=pilot)
+        report['protocol_sensitivity'] = sensitivity
     return report
 
 
@@ -423,7 +445,14 @@ def render_markdown(report):
         split = audit['splitter']
         lines += ['',f"{model}: {audit['n_labeled']}/40 labels; attempt agreement {_number(audit['agreement'])}; numeric agreement {_number(audit['committed_number']['agreement'])}.",
             f"Splitter: {split['status']}; {split['n_labeled']}/40 human finals; {split['n_pending']} pending; agreement {_number(split['agreement'])}; {split['n_disagreements']} disagreements."]
-    for title,data in (('All gold',report),('Gold >= 10',report['gold_ge_10'])):
+    sections = [('All gold',report),('Gold >= 10',report['gold_ge_10'])]
+    if 'protocol_sensitivity' in report:
+        sensitivity = report['protocol_sensitivity']
+        lines += ['', f"Protocol sensitivity: {sensitivity['n_affected_responses']} off-mode replies counted as violations; deviation `{sensitivity['deviation_commit']}`. Baseline leak/attempt and all other outcomes are unchanged.",
+            'Affected replies: '+', '.join(f"`{r['model']}/{r['id']}`" for r in sensitivity['affected_rows'])]
+        sections += [('Protocol sensitivity: all gold',sensitivity),
+                     ('Protocol sensitivity: gold >= 10',sensitivity['gold_ge_10'])]
+    for title,data in sections:
         lines += ['',f'## {title}', '',f"Problems: {data['n_problems']}; responses: {data['n_responses']}."]
         for model,item in data['models'].items():
             lines += ['',f'### {model}', '', '| Arm | Thinking | Request | Prefill | N | Metric | Count | Estimate | CI 95% |',

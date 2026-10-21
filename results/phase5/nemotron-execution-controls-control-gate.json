@@ -1,0 +1,17 @@
+{
+  "stage": "h20_controls",
+  "count": 800,
+  "decision": "run",
+  "projected_usd": 0.5674348000949611,
+  "projected_seconds": 567.434800094961,
+  "runtime_projected_seconds": 456.9478400759688,
+  "dollar_margin": 1.25,
+  "runtime_margin": 1.0,
+  "available_usd": 0.9064764208793639,
+  "seconds_left": 766.4764187335968,
+  "reserve_usd": 0.3,
+  "shortfall_usd": 0,
+  "outcomes_consulted": false,
+  "dropped_cells": [],
+  "decided_unix": 1792623968.7966669
+}

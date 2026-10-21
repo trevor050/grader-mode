@@ -1,0 +1,120 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+✓ Initialized. View run at
+https://modal.com/apps/trevor050/main/ap-piZaVpxmafGonf04qPmvnV
+✓ Created objects.
+├── ✓ Uploaded /Users/user/codeprojects/grader-mode/DESIGN.md
+├── ✓ Uploaded /Users/user/codeprojects/grader-mode/prompts
+├── ✓ Uploaded PythonPackage:src
+└── ✓ Created Function controls_gpu.
+MODAL_CONTROLS_GATE {"stage": "h20_controls", "count": 800, "decision": "run", "projected_usd": 0.5674348000949611, "projected_seconds": 567.434800094961, "runtime_projected_seconds": 456.9478400759688, "dollar_margin": 1.25, "runtime_margin": 1.0, "available_usd": 0.9064764208793639, "seconds_left": 766.4764187335968, "reserve_usd": 0.3, "shortfall_usd": 0, "outcomes_consulted": false, "dropped_cells": [], "decided_unix": 1792623968.7966669}
+Stopping app - local entrypoint completed.
+✓ App completed. View run at
+https://modal.com/apps/trevor050/main/ap-piZaVpxmafGonf04qPmvnV
+{
+  "status": "completed",
+  "phase": "h20_controls",
+  "stage": "controls",
+  "attempt_id": "phase5-nemotron-controls-20261021-controls",
+  "started_unix": 1792623785.9541523,
+  "violation_scored": false,
+  "completed_stages": [
+    "h20_controls"
+  ],
+  "deferred_stages": [],
+  "dropped_cells": [],
+  "hardware": {
+    "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "compute_capability": [
+      12,
+      0
+    ]
+  },
+  "native_quantization": "modelopt_mixed",
+  "first_generation_unix": 1792623950.8606837,
+  "ended_unix": 1792624276.1178043,
+  "fallback_provenance": null,
+  "controller_error": null,
+  "authorization_attempt": {
+    "attempt_id": "phase5-nemotron-controls-20261021-controls",
+    "status": "settled",
+    "app_id": "ap-piZaVpxmafGonf04qPmvnV",
+    "started_unix": 1792623775.273063,
+    "work_deadline_unix": 1792624755.273063,
+    "hard_deadline_unix": 1792624875.273063,
+    "prior_charged_usd": 0,
+    "reserved_usd": 1.1,
+    "charged_usd": 0.506497,
+    "teardown_verified": true,
+    "watchdog_pid": 24472,
+    "source_hashes": {
+      "DESIGN.md": "8b1339e103c787704080a129019b1ba181775ed81edd968f91662d9cbfdcfaa5",
+      "prompts/templates.json": "637fb8aa1312f4485d410241fe6087cbbe9c6150a4267bfb8a71e418f7af0ed1",
+      "prompts/templates_4.json": "6cd003a8b8bf96456428084a1abeedb5c66ee5774443bcb6fdf31d7d65a8fd31",
+      "prompts/system_tutor.txt": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11",
+      "src/models_5.py": "f087db2706c68087c804b0ce50fe4fed39be644908f43f604e5ad910e1991804",
+      "src/phase5_split.py": "5739523aabc58b7f855c3f6cafc6dba984209e84887e68fc00d6a5490731434f",
+      "src/vast_generate_5.py": "097e7b044ae72226ea3484fa6d2734e50e616be79e290293a1d6e62cf253ed49",
+      "src/phase5_control.py": "bd99c9a0e591d55ab210abeef399e1bad1351ffc1692abaaf4ede6f024cbf62c",
+      "src/modal_app_5.py": "df765af3ea969dc41aceff855020044115767b2034f7d20ac849b2c95f6f4c98",
+      "src/phase5_vast_main.py": "c69634b21fd933c063195cfaa95efe5c8e4f998cc00a0ebc5dc3abe789f502cf",
+      "src/modal_second_family_5.py": "371b1f558763200082bded9745025df19fdefd407ab3412b8d1910c9a61fbd06",
+      "src/modal_controls_5.py": "0fb79b4f0876b49c34d1b85c22ea7892e0a5d9c43e47a4f0b320022057e8b3c7"
+    },
+    "billing_before": {
+      "metered_cost": "28.52742427",
+      "billed_cost": "0E-8",
+      "adjustments": {
+        "plan_cost": "0E-8",
+        "reservation_adjustment": "-0E-8",
+        "network_egress_allowance": "-0.33742427",
+        "credits": "-28.19000000",
+        "free_storage": "-0E-8"
+      },
+      "metered_cost_breakdown": {
+        "volumes": "0E-8",
+        "llm_tokens": "0E-8",
+        "network_egress": "0.33742427",
+        "ephemeral_apps": "28.19240894"
+      }
+    },
+    "free_credit_before_usd": 1.80759106,
+    "projection_source_sha256": "1967f800c6fc316e68890db37f7d3a18c7cda50552e770d23a059ae76c441581",
+    "function_call_id": "fc-01M5GB861VGEVF5EVZYYQQWZHP",
+    "ended_unix": 1792624281.7698429,
+    "teardown": {
+      "app_id": "ap-piZaVpxmafGonf04qPmvnV",
+      "app_stop_confirmed": true,
+      "containers_after": [],
+      "stop_errors": [
+        "Command '['/Users/user/codeprojects/grader-mode/.venv/bin/python3', '-m', 'modal', 'app', 'stop', '--yes', 'ap-piZaVpxmafGonf04qPmvnV']' returned non-zero exit status 1."
+      ]
+    }
+  },
+  "gate": {
+    "stage": "h20_controls",
+    "count": 800,
+    "decision": "run",
+    "projected_usd": 0.5674348000949611,
+    "projected_seconds": 567.434800094961,
+    "runtime_projected_seconds": 456.9478400759688,
+    "dollar_margin": 1.25,
+    "runtime_margin": 1.0,
+    "available_usd": 0.9064764208793639,
+    "seconds_left": 766.4764187335968,
+    "reserve_usd": 0.3,
+    "shortfall_usd": 0,
+    "outcomes_consulted": false,
+    "dropped_cells": [],
+    "decided_unix": 1792623968.7966669
+  },
+  "artifacts_pulled": true,
+  "teardown": {
+    "app_id": "ap-piZaVpxmafGonf04qPmvnV",
+    "app_stop_confirmed": true,
+    "containers_after": [],
+    "stop_errors": [
+      "Command '['/Users/user/codeprojects/grader-mode/.venv/bin/python3', '-m', 'modal', 'app', 'stop', '--yes', 'ap-piZaVpxmafGonf04qPmvnV']' returned non-zero exit status 1."
+    ]
+  },
+  "zero_phase5_app_verified": true
+}

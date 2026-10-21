@@ -1,0 +1,18 @@
+{
+  "execute": false,
+  "cap_usd": 1.4,
+  "reserve_usd": 0.3,
+  "rate_bound": 0.001,
+  "authorization_id": "phase5-nemotron-controls-140-8219501",
+  "authorization_path": "/Users/user/codeprojects/grader-mode/results/phase5/modal-controls-authorization.json",
+  "gpu": "RTX-PRO-6000",
+  "smoke": 8,
+  "controls": 800,
+  "resident_sequences": 256,
+  "chunk_size": 256,
+  "enforce_eager": false,
+  "dollar_margin": 1.25,
+  "runtime_margin": 1.0,
+  "source_projection": "/Users/user/codeprojects/grader-mode/results/phase5/nemotron-execution-modal-gates.json",
+  "paid_calls": false
+}

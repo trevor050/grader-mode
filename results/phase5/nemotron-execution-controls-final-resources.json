@@ -1,0 +1,50 @@
+{
+  "captured_unix": 1792624901.082635,
+  "scope": "Phase5 Modal only; no Vast query or mutation in this step",
+  "phase5_modal_apps": [
+    {
+      "app_id": "ap-piZaVpxmafGonf04qPmvnV",
+      "description": "grader-mode-phase5-nemotron-controls",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-21 19:02:55-04:00",
+      "stopped_at": "2026-10-21 19:11:19-04:00"
+    },
+    {
+      "app_id": "ap-2oiNoayC7HjPSL5cQEahoE",
+      "description": "grader-mode-phase5-second-family",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-21 18:24:37-04:00",
+      "stopped_at": "2026-10-21 18:42:28-04:00"
+    },
+    {
+      "app_id": "ap-4G0MBg715cuSf1TsCDkg1r",
+      "description": "grader-mode-phase5-second-family",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-21 18:18:47-04:00",
+      "stopped_at": "2026-10-21 18:22:47-04:00"
+    },
+    {
+      "app_id": "ap-IVAoHS43aaVGabYmPTRrZe",
+      "description": "grader-mode-phase5-second-family",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-21 18:10:41-04:00",
+      "stopped_at": "2026-10-21 18:15:11-04:00"
+    },
+    {
+      "app_id": "ap-nBvdhWqgVQHejlTBZLqAYM",
+      "description": "grader-mode-phase5-second-family",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-21 18:05:50-04:00",
+      "stopped_at": "2026-10-21 18:07:03-04:00"
+    }
+  ],
+  "active_phase5_modal_apps": 0,
+  "modal_containers": [],
+  "phase6_resources_touched": false,
+  "protected_phase6_vast_instance": 57119355
+}

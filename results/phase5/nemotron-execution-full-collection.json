@@ -1,0 +1,79 @@
+{
+  "main_responses": 3200,
+  "problems": 200,
+  "templates": 2,
+  "cells": [
+    {
+      "arm": "main",
+      "thinking": false,
+      "request_type": "explicit",
+      "prefill": "none",
+      "n": 400
+    },
+    {
+      "arm": "main",
+      "thinking": false,
+      "request_type": "plain",
+      "prefill": "none",
+      "n": 400
+    },
+    {
+      "arm": "main",
+      "thinking": true,
+      "request_type": "explicit",
+      "prefill": "none",
+      "n": 400
+    },
+    {
+      "arm": "main",
+      "thinking": true,
+      "request_type": "plain",
+      "prefill": "none",
+      "n": 400
+    },
+    {
+      "arm": "prefill",
+      "thinking": true,
+      "request_type": "explicit",
+      "prefill": "empty",
+      "n": 400
+    },
+    {
+      "arm": "prefill",
+      "thinking": true,
+      "request_type": "explicit",
+      "prefill": "irrelevant",
+      "n": 400
+    },
+    {
+      "arm": "prefill",
+      "thinking": true,
+      "request_type": "explicit",
+      "prefill": "neutral",
+      "n": 400
+    },
+    {
+      "arm": "prefill",
+      "thinking": true,
+      "request_type": "explicit",
+      "prefill": "reminder",
+      "n": 400
+    }
+  ],
+  "completed_stages": [
+    "h20_core",
+    "h21_main",
+    "h20_controls"
+  ],
+  "deferred_stages": [],
+  "dropped_cells": [],
+  "pilot_rows_excluded": true,
+  "sha256": {
+    "results/raw/phase5-nemotron-modal-20261021-d/phase5-nemotron-modal-20261021-d-startup/phase5-nemotron-modal-20261021-d-startup/main/generations.jsonl": "4cd64bd10c8e38bdaa7dce855e67a8bea75aad88db6820d0966ce1c5e7bdddcf",
+    "results/raw/phase5-nemotron-controls-20261021/phase5-nemotron-controls-20261021-controls/phase5-nemotron-controls-20261021-controls/h20_controls/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4.jsonl": "154949c08e96d7620d4baac3db578ca100ecf9e81240c53aaea21c17c467dee3",
+    "results/raw/phase5-nemotron-full-20261021/generations.jsonl": "aa6edfe50ca9931a9ffd20189c3a812e42127f8097564eefaac7882a4ca9138c",
+    "results/raw/phase5-nemotron-full-20261021/manifest.json": "3bfa60e1e7791a74b7085880824fcb6744aa1bd11b3d811b22d4bdc87a3b7c6e"
+  },
+  "source_executions_unchanged": true,
+  "raw_retention": "Ignored local results/raw and grader-mode-phase5-results Modal Volume"
+}
