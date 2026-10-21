@@ -43,11 +43,29 @@ def render_prompt(tokenizer, request):
             prompt = prompt.split('<|im_end|>\n', 1)[1]
         if not prompt.startswith('<|im_start|>user\n'):
             raise ValueError('Unexpected OLMo ceiling template')
+    if request.get('phase') == 'phase4' and request.get('arm') == 'prefill':
+        if not request.get('thinking'):
+            raise ValueError('Phase 4 prefills require thinking on')
+        # Some revisions may supply the opening themselves. All four cells use
+        # one identical opening; never insert a nested reasoning block.
+        opening = '<think>\n'
+        tail = prompt.rsplit('<|im_start|>assistant\n', 1)[-1]
+        if '<think>' in tail:
+            if not tail.endswith(opening):
+                raise ValueError('Unexpected native thinking opening')
+        else:
+            prompt += opening
+        prompt += request['prefill_text']
     return prompt
 
 
 def generation_limits(model, model_config, thinking):
     from src.models_1c import MODELS_1C
+    if 'max_tokens_override' in model_config:
+        cap = model_config['max_tokens_override']
+        if not isinstance(cap, int) or isinstance(cap, bool) or cap < 1:
+            raise ValueError('max_tokens_override must be a positive integer')
+        return cap, max(8192, cap + 4096)
     max_tokens = model_config.get('max_tokens_think', 3072) if thinking else 768
     if not isinstance(max_tokens, int) or isinstance(max_tokens, bool) or max_tokens < 1:
         raise ValueError('max_tokens_think must be a positive integer')
@@ -86,12 +104,18 @@ def generate(model, requests, run_id, manifest, model_config):
               dtype='bfloat16', quantization=None, tensor_parallel_size=1,
               max_model_len=max_model_len, max_num_seqs=model_config['batch_size'], gpu_memory_utilization=0.90,
               generation_config='vllm', seed=0)
+    off_tokens, _ = generation_limits(model, model_config, False)
     loaded = time.monotonic()
     ordered = list(requests)
     random.Random(0).shuffle(ordered)
     batch_size = model_config['batch_size']
     # vLLM batches continuously within a generate() call; chunks exist only for progress logs and crash safety.
-    chunk_size = batch_size * 8
+    chunk_size = model_config.get('chunk_size', batch_size * 8)
+    if model_config.get('phase4_gate'):
+        # Measure H15 rows before deciding whether 32B boxed cells fit budget.
+        pilot = [r for r in ordered if r['arm'] == 'main' and r['request_type'] != 'boxed'][:chunk_size]
+        ids = {r['id'] for r in pilot}
+        ordered = pilot + [r for r in ordered if r['id'] not in ids]
     total_tokens = 0
     generation_seconds = 0.0
     prompt_tokens = 0
@@ -100,12 +124,14 @@ def generate(model, requests, run_id, manifest, model_config):
     with raw_path.open('x') as out:
         for offset in range(0, len(ordered), chunk_size):
             batch = ordered[offset:offset + chunk_size]
+            if not batch:
+                continue
             prompts = [render_prompt(tokenizer, r) for r in batch]
-            if any(len(tokenizer.encode(p, add_special_tokens=False)) + (thinking_tokens if r.get('thinking', False) else 768)
+            if any(len(tokenizer.encode(p, add_special_tokens=False)) + (thinking_tokens if r.get('thinking', False) else off_tokens)
                    > max_model_len for p, r in zip(prompts, batch)):
                 raise ValueError('Prompt plus max_tokens exceeds pinned context length')
             params = [SamplingParams(temperature=0.7, top_p=0.95, top_k=-1,
-                      max_tokens=thinking_tokens if r.get('thinking', False) else 768, seed=r['seed']) for r in batch]
+                      max_tokens=thinking_tokens if r.get('thinking', False) else off_tokens, seed=r['seed']) for r in batch]
             tick = time.monotonic()
             outputs = llm.generate(prompts, params, use_tqdm=False)
             generation_seconds += time.monotonic() - tick
@@ -133,6 +159,26 @@ def generate(model, requests, run_id, manifest, model_config):
                 model_config['progress'][model] = {
                     'completed':completed, 'requests':len(ordered), 'output_tokens':total_tokens,
                     'generation_seconds':generation_seconds, 'setup_seconds':loaded-started}
+            progress = {'completed': completed, 'requests': len(ordered), 'output_tokens': total_tokens,
+                        'generation_seconds': generation_seconds, 'setup_seconds': loaded-started,
+                        'elapsed_seconds': time.monotonic()-started}
+            if model_config.get('phase4_gate'):
+                (directory / f'{slug}.progress.json').write_text(json.dumps(progress))
+                if offset == 0:
+                    gate = directory / f'{slug}.gate.json'
+                    print(f'PHASE4_BUDGET_GATE {gate} {json.dumps(progress)}', flush=True)
+                    deadline = time.monotonic() + 600
+                    while not gate.exists():
+                        if time.monotonic() > deadline:
+                            raise TimeoutError('No budget authorization within 600 seconds')
+                        time.sleep(2)
+                    decision = json.loads(gate.read_text())
+                    if decision.get('action') != 'continue':
+                        raise RuntimeError('Budget gate stopped generation')
+                    drop = decision.get('drop_request_types', [])
+                    # Preserve list length/offset indexing by filtering in place
+                    # only after the first already-persisted chunk.
+                    ordered[chunk_size:] = [r for r in ordered[chunk_size:] if r['request_type'] not in drop]
             print(f'{model}: {completed}/{len(ordered)} elapsed={elapsed:.1f}s ETA={eta:.1f}s '
                   f'output_tokens/s={total_tokens/generation_seconds:.1f}', flush=True)
     # Preserve completed generations before any optional metadata/reporting work.
@@ -150,6 +196,10 @@ def generate(model, requests, run_id, manifest, model_config):
              'engine': {'batch_size': batch_size, 'enforce_eager': False, 'chunk_size': chunk_size, 'max_model_len': max_model_len},
              'versions': package_versions(),
              'manifest': manifest}
+    if model_config.get('max_tokens_override'):
+        stats['sampling']['max_tokens'] = off_tokens
+        stats['sampling']['thinking_on']['max_tokens'] = thinking_tokens
+        stats['phase'] = requests[0]['phase']
     if model in MODELS_1C:
         stats['phase'] = requests[0]['phase']
         stats['model_spec'] = MODELS_1C[model]

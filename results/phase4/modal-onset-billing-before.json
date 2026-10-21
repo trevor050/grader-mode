@@ -1,0 +1,20 @@
+{
+  "source": "uv run modal billing summary --json",
+  "captured_unix": 1792564880.2300029,
+  "summary": {
+    "metered_cost": "25.99343361",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "credits": "-25.69000000",
+      "network_egress_allowance": "-0.30343361",
+      "plan_cost": "0E-8",
+      "reservation_adjustment": "-0E-8",
+      "free_storage": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "volumes": "0E-8",
+      "ephemeral_apps": "25.99531431",
+      "llm_tokens": "0E-8"
+    }
+  }
+}

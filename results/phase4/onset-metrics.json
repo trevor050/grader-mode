@@ -1,0 +1,63 @@
+{
+  "status": "completed",
+  "run_id": "phase4-onset-20261021",
+  "manifest": {
+    "run_id": "phase4-onset-20261021",
+    "source_run_id": "phase3-20261020-v2",
+    "phase3_reference_commit": "f223175",
+    "cap_aggregate_modal_usd": 1.5,
+    "rate_upper_usd_per_second": 0.0007,
+    "gpu_rate_usd_per_second": 0.000542,
+    "previous_seconds": 0,
+    "payload_sha256": "3ee76cdcf8d5a4437e8147d6652fd75dd9b6286f9061f8f4fb5f4a06b51f5240",
+    "source_hashes": {
+      "DESIGN.md": "52dea80c84eff0a3ea6459377e5d035347a4ab0be50e5bd0bdf04ed6f4c00931",
+      "prompts/system_tutor.txt": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11",
+      "prompts/system_neutral.txt": "7460e45c0d100bd1c477aedf6b4be3d2fcc5823a73a5c8122c3ff26735842eca",
+      "prompts/templates_1b.json": "cc5971cea9793fefb141bb8f514c109fc798989116d86eb6f3531bfbb8eec8a4",
+      "src/analyze_4_onset.py": "1ca2696bf708c6bd5fcb53a5acffa9a4bdbd41f7cacdb14ad19d8f2017a638f7",
+      "src/modal_app_4_onset.py": "a190354c51253df18a9eda5d2d2a043add896abdb1c3320271e6953b633c420a",
+      "results/phase3/neurons.json": "fde38779fe8ab5b3781be573183ef86e4a0273f08f48c5d005e33db6f1bd83bb",
+      "results/phase3/screen-statistics.npz": "39073dde8eedbe01d8e17bd6f501629797fec004922357a07360005cc8d78e98",
+      "results/phase3/manifest.json": "f3dc8818fb28d5b5906a37ffeb8f7979056d343bdec897cd03d990b3dfd2d134",
+      "results/raw/phase3-20261020-v2/tracking.jsonl": "3e942675283e38e9c2330fdeeeae6cec24f3052bed28a953fe79ac9c10f558e5",
+      "results/raw/phase3-20261020-v2/trajectories.npz": "14aadc070fd5ea038b592b0ce5abf2001ee4ad5ed8af75807bfc38aa60e22c82"
+    },
+    "pricing_source": "https://modal.com/pricing",
+    "pricing_checked": "2026-10-21",
+    "boundary_positions": "-64..64; 0 is <think>",
+    "reasoning_positions": "1..256"
+  },
+  "gpu": "L40S",
+  "n_traces": 400,
+  "model": "Qwen/Qwen3-14B",
+  "revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+  "dtype": "bfloat16",
+  "attention": "sdpa",
+  "batch_size": 4,
+  "sampling": false,
+  "autoregressive_generation": false,
+  "stage": "finished",
+  "function_seconds": 91.023280449,
+  "allocation_seconds": 101.05569386482239,
+  "cuda_device": "NVIDIA L40S",
+  "versions": {
+    "torch": "2.9.0",
+    "transformers": "4.57.3",
+    "numpy": "2.3.4",
+    "accelerate": "1.11.0"
+  },
+  "pilot": {
+    "seconds": 1.1171400369999986,
+    "ids": [
+      "phase1b:p1306:none:boxed:t0:tutor:thinking-1",
+      "phase1b:p1306:none:boxed:t1:tutor:thinking-1",
+      "phase1b:p1306:none:boxed:t2:tutor:thinking-1",
+      "phase1b:p1306:none:boxed:t3:tutor:thinking-1"
+    ],
+    "discarded": true,
+    "headroom": 1.3,
+    "projected_aggregate_modal_usd": 0.208713541708751
+  },
+  "archive_sha256": "15173160737345468eeff2d17d8757f65dab128bd0329791c382199e6bba04bf"
+}

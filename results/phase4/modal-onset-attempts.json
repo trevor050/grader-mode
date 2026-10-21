@@ -1,0 +1,20 @@
+[
+  {
+    "run_id": "phase4-onset-20261021",
+    "status": "completed",
+    "gpu": "L40S",
+    "started_unix": 1792564881.341661,
+    "previous_seconds": 0,
+    "exposure_seconds": 2142.8571428571427,
+    "timeout_seconds": 1902,
+    "absolute_deadline_unix": 1792566904.198804,
+    "call_id": "fc-01M5EK2TT0R90Q48EAV1T9VGQY",
+    "n_traces": 400,
+    "function_seconds": 91.023280449,
+    "zero_containers_verified_unix": 1792564988.773365,
+    "ended_unix": 1792564988.773397,
+    "observed_wall_seconds": 107.43419958300365,
+    "zero_containers_verified": true,
+    "wall_seconds": 107.43419958300365
+  }
+]

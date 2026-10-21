@@ -1,0 +1,39 @@
+{
+  "status": "pending",
+  "n_sampled": 60,
+  "n_labeled": 0,
+  "n_pending": 60,
+  "agreement": null,
+  "cohen_kappa": null,
+  "confusion": {
+    "true_positive": 0,
+    "true_negative": 0,
+    "false_positive": 0,
+    "false_negative": 0
+  },
+  "n_disagreements": 0,
+  "disagreement_ids": [],
+  "committed_number": {
+    "status": "pending",
+    "n_eligible": 0,
+    "n_labeled": 0,
+    "n_pending": 60,
+    "agreement": null,
+    "n_disagreements": 0,
+    "disagreement_ids": []
+  },
+  "sampling": {
+    "seed": 0,
+    "size": 60,
+    "strata": [
+      "model",
+      "arm",
+      "thinking",
+      "request_type",
+      "prefill",
+      "attempt"
+    ],
+    "allocation": "round_robin_nonempty_strata",
+    "blind_id": "sha256(model,id)[:24]"
+  }
+}

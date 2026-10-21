@@ -1,0 +1,96 @@
+{
+  "utc": "2026-10-21T06:54:45.104536+00:00",
+  "pytest": {
+    "command": "uv run pytest -q",
+    "result": "843 passed in 178.51s",
+    "log": "results/raw/phase4-main/full-pytest.log",
+    "log_sha256": "f960f06e0ed21afc40c3b29c29bda1f81efecf46e8fb6f3dcb3d364c94971904"
+  },
+  "registration_commit": "7f2213b",
+  "registration_sha256_unchanged": {
+    "DESIGN.md": "52dea80c84eff0a3ea6459377e5d035347a4ab0be50e5bd0bdf04ed6f4c00931",
+    "prompts/templates_4.json": "6cd003a8b8bf96456428084a1abeedb5c66ee5774443bcb6fdf31d7d65a8fd31",
+    "prompts/templates.json": "637fb8aa1312f4485d410241fe6087cbbe9c6150a4267bfb8a71e418f7af0ed1",
+    "prompts/system_tutor.txt": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11"
+  },
+  "remote_generation_source_hashes_match": true,
+  "parser_agreement": "pending",
+  "generation_rows": 8000,
+  "full_registered_grid": true,
+  "problem_manifest_checked": true,
+  "blind_audit_rows": 60,
+  "audit_fields": [
+    "id",
+    "problem",
+    "gold",
+    "final_reply"
+  ],
+  "generation_files": {
+    "Qwen/Qwen3-14B": {
+      "rows": 5600,
+      "revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "sampling": {
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "top_k": -1,
+        "max_tokens": 4096,
+        "enable_thinking": false,
+        "dtype": "bfloat16",
+        "quantization": null,
+        "thinking_on": {
+          "enable_thinking": true,
+          "max_tokens": 4096
+        }
+      },
+      "engine": {
+        "batch_size": 256,
+        "enforce_eager": false,
+        "chunk_size": 256,
+        "max_model_len": 8192
+      },
+      "versions": {
+        "vllm": "0.21.0",
+        "torch": "2.11.0",
+        "transformers": "4.57.6",
+        "modal": "not-used (vast.ai host)"
+      },
+      "raw_sha256": "263bf9a8f89d66ebb936a4eb98a46f065cdd152272e8faf2880cbd426f9a003c"
+    },
+    "Qwen/Qwen3-32B": {
+      "rows": 2400,
+      "revision": "9216db5781bf21249d130ec9da846c4624c16137",
+      "sampling": {
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "top_k": -1,
+        "max_tokens": 4096,
+        "enable_thinking": false,
+        "dtype": "bfloat16",
+        "quantization": null,
+        "thinking_on": {
+          "enable_thinking": true,
+          "max_tokens": 4096
+        }
+      },
+      "engine": {
+        "batch_size": 256,
+        "enforce_eager": false,
+        "chunk_size": 256,
+        "max_model_len": 8192
+      },
+      "versions": {
+        "vllm": "0.21.0",
+        "torch": "2.11.0",
+        "transformers": "4.57.6",
+        "modal": "not-used (vast.ai host)"
+      },
+      "raw_sha256": "97b4f2487ea2642c0b5e8fa3183aa203ed15353a220e741efe4dba0031c983db"
+    }
+  },
+  "vast_instances_final": [],
+  "modal_containers_final": [],
+  "vast_spend_usd": 1.9656617062999988,
+  "modal_app_cost_usd": 0.06755268,
+  "raw_generations_gitignored": true,
+  "vast_credit_snapshot_utc": "2026-10-21T08:08:02.931621+00:00"
+}

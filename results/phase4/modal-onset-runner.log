@@ -1,0 +1,51 @@
+✓ Initialized. View run at
+https://modal.com/apps/trevor050/main/ap-1QJ51EMQAxbW1SoaOlChg3
+✓ Created objects.
+├── ✓ Uploaded PythonPackage:src
+└── ✓ Created Function track.
+ONSET {"stage": "loading", "function_seconds": 0.04311995799999924, "allocation_seconds": 10.075532674789429, "n_traces": 0}
+LOCAL {"stage": "loading", "function_seconds": 0.04311995799999924, "allocation_seconds": 10.075532674789429, "n_traces": 0}
+ONSET {"stage": "tokens_verified", "function_seconds": 4.111356103, "allocation_seconds": 14.14376950263977, "n_traces": 0}
+`torch_dtype` is deprecated! Use `dtype` instead!
+
+LOCAL {"stage": "tokens_verified", "function_seconds": 4.111356103, "allocation_seconds": 14.14376950263977, "n_traces": 0}
+[1ALoading checkpoint shards:   0%|          | 0/8 [00:00<?, ?it/s]
+[1ALoading checkpoint shards:  12%|█▎        | 1/8 [00:02<00:17,  2.48s/it]
+[1ALoading checkpoint shards:  25%|██▌       | 2/8 [00:04<00:11,  1.96s/it]
+[1ALoading checkpoint shards:  38%|███▊      | 3/8 [00:06<00:10,  2.07s/it]
+[1ALoading checkpoint shards:  50%|█████     | 4/8 [00:07<00:07,  1.88s/it]
+[1ALoading checkpoint shards:  62%|██████▎   | 5/8 [00:10<00:06,  2.06s/it]
+[1ALoading checkpoint shards:  75%|███████▌  | 6/8 [00:12<00:04,  2.17s/it]
+[1ALoading checkpoint shards:  88%|████████▊ | 7/8 [00:15<00:02,  2.28s/it]
+[1ALoading checkpoint shards: 100%|██████████| 8/8 [00:16<00:00,  1.96s/it]
+[1ALoading checkpoint shards: 100%|██████████| 8/8 [00:16<00:00,  2.05s/it]
+You're using a Qwen2TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+ONSET {"stage": "timing_gate", "function_seconds": 22.90159745, "allocation_seconds": 32.93401050567627, "n_traces": 0}
+LOCAL {"stage": "timing_gate", "function_seconds": 22.90159745, "allocation_seconds": 32.93401050567627, "n_traces": 0}
+ONSET {"stage": "tracking", "function_seconds": 29.208808548999997, "allocation_seconds": 39.24122166633606, "n_traces": 40}
+LOCAL {"stage": "tracking", "function_seconds": 29.208808548999997, "allocation_seconds": 39.24122166633606, "n_traces": 40}
+ONSET {"stage": "tracking", "function_seconds": 35.421772931999996, "allocation_seconds": 45.454185962677, "n_traces": 80}
+LOCAL {"stage": "tracking", "function_seconds": 35.421772931999996, "allocation_seconds": 45.454185962677, "n_traces": 80}
+ONSET {"stage": "tracking", "function_seconds": 41.894395247, "allocation_seconds": 51.92680883407593, "n_traces": 120}
+LOCAL {"stage": "tracking", "function_seconds": 41.894395247, "allocation_seconds": 51.92680883407593, "n_traces": 120}
+ONSET {"stage": "tracking", "function_seconds": 48.186670156, "allocation_seconds": 58.219083309173584, "n_traces": 160}
+LOCAL {"stage": "tracking", "function_seconds": 48.186670156, "allocation_seconds": 58.219083309173584, "n_traces": 160}
+ONSET {"stage": "tracking", "function_seconds": 54.354946161, "allocation_seconds": 64.38735938072205, "n_traces": 200}
+LOCAL {"stage": "tracking", "function_seconds": 54.354946161, "allocation_seconds": 64.38735938072205, "n_traces": 200}
+ONSET {"stage": "tracking", "function_seconds": 60.928991931, "allocation_seconds": 70.96140503883362, "n_traces": 240}
+LOCAL {"stage": "tracking", "function_seconds": 60.928991931, "allocation_seconds": 70.96140503883362, "n_traces": 240}
+ONSET {"stage": "tracking", "function_seconds": 69.651749956, "allocation_seconds": 79.6841630935669, "n_traces": 280}
+LOCAL {"stage": "tracking", "function_seconds": 69.651749956, "allocation_seconds": 79.6841630935669, "n_traces": 280}
+ONSET {"stage": "tracking", "function_seconds": 76.266845503, "allocation_seconds": 86.29925847053528, "n_traces": 320}
+LOCAL {"stage": "tracking", "function_seconds": 76.266845503, "allocation_seconds": 86.29925847053528, "n_traces": 320}
+ONSET {"stage": "tracking", "function_seconds": 83.210394444, "allocation_seconds": 93.24280738830566, "n_traces": 360}
+LOCAL {"stage": "tracking", "function_seconds": 83.210394444, "allocation_seconds": 93.24280738830566, "n_traces": 360}
+ONSET {"stage": "tracking", "function_seconds": 89.385720252, "allocation_seconds": 99.41813325881958, "n_traces": 400}
+LOCAL {"stage": "tracking", "function_seconds": 89.385720252, "allocation_seconds": 99.41813325881958, "n_traces": 400}
+ONSET {"stage": "finished", "function_seconds": 91.023280449, "allocation_seconds": 101.05569386482239, "n_traces": 400}
+[W1021 06:43:04.562408075 AllocatorConfig.cpp:28] Warning: PYTORCH_CUDA_ALLOC_CONF is deprecated, use PYTORCH_ALLOC_CONF instead (function operator())
+LOCAL {"stage": "finished", "function_seconds": 91.023280449, "allocation_seconds": 101.05569386482239, "n_traces": 400}
+{"run_id": "phase4-onset-20261021", "app_id": "ap-1QJ51EMQAxbW1SoaOlChg3", "attempts": [{"run_id": "phase4-onset-20261021", "status": "completed", "gpu": "L40S", "started_unix": 1792564881.341661, "previous_seconds": 0, "exposure_seconds": 2142.8571428571427, "timeout_seconds": 1902, "absolute_deadline_unix": 1792566904.198804, "call_id": "fc-01M5EK2TT0R90Q48EAV1T9VGQY", "n_traces": 400, "function_seconds": 91.023280449, "zero_containers_verified_unix": 1792564988.773365, "ended_unix": 1792564988.773397, "observed_wall_seconds": 107.43419958300365, "zero_containers_verified": true, "wall_seconds": 107.43419958300365}], "zero_containers_verified": true, "aggregate_modal_usd_upper": 0.07520393970810255, "gpu_usd_upper": 0.05822933617398797, "cap_aggregate_modal_usd": 1.5, "rate_upper_usd_per_second": 0.0007, "accounting_basis": "all submission-to-verified-zero wall seconds, including failures and provisioning; conservative GPU+CPU+memory rate", "billing_before": {"source": "uv run modal billing summary --json", "captured_unix": 1792564880.2300029, "summary": {"metered_cost": "25.99343361", "billed_cost": "0E-8", "adjustments": {"credits": "-25.69000000", "network_egress_allowance": "-0.30343361", "plan_cost": "0E-8", "reservation_adjustment": "-0E-8", "free_storage": "-0E-8"}, "metered_cost_breakdown": {"volumes": "0E-8", "ephemeral_apps": "25.99531431", "llm_tokens": "0E-8"}}}, "billing_after": {"source": "uv run modal billing summary --json", "captured_unix": 1792564990.178636, "summary": {"metered_cost": "26.02343373", "billed_cost": "0E-8", "adjustments": {"free_storage": "-0E-8", "credits": "-25.72000000", "reservation_adjustment": "-0E-8", "network_egress_allowance": "-0.30343373", "plan_cost": "0E-8"}, "metered_cost_breakdown": {"ephemeral_apps": "26.01926650", "llm_tokens": "0E-8", "volumes": "0E-8"}}}, "recovery_errors": []}
+Stopping app - local entrypoint completed.
+✓ App completed. View run at
+https://modal.com/apps/trevor050/main/ap-1QJ51EMQAxbW1SoaOlChg3

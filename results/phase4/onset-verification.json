@@ -1,0 +1,46 @@
+{
+  "n_traces": 400,
+  "n_problems": 100,
+  "n_neuron_sets": 6,
+  "archived_reasoning_prefix_tokens_verified": 95706,
+  "all_retained_reasoning_ids_equal_original": true,
+  "overlapping_window_values_exactly_equal": true,
+  "archived_contrast_equals_paired_difference": true,
+  "all_boundary_positions_complete": true,
+  "reasoning_position1_traces": 374,
+  "reasoning_position64_traces": 374,
+  "reasoning_position256_traces": 373,
+  "compared_to_original_tutor_scores": {
+    "n_token_set_values": 574236,
+    "mean_absolute_difference": 0.02435951679944992,
+    "max_absolute_difference": 4.886888027191162,
+    "per_set_mean_absolute_difference": [
+      0.021245142444968224,
+      0.028570787981152534,
+      0.020891716703772545,
+      0.02536800503730774,
+      0.01987028494477272,
+      0.030211137607693672
+    ],
+    "note": "New truncated-sequence BF16/SDPA replay versus original full-sequence replay; numerical equality is not assumed."
+  },
+  "source_hashes": {
+    "DESIGN.md": "52dea80c84eff0a3ea6459377e5d035347a4ab0be50e5bd0bdf04ed6f4c00931",
+    "prompts/system_tutor.txt": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11",
+    "prompts/system_neutral.txt": "7460e45c0d100bd1c477aedf6b4be3d2fcc5823a73a5c8122c3ff26735842eca",
+    "prompts/templates_1b.json": "cc5971cea9793fefb141bb8f514c109fc798989116d86eb6f3531bfbb8eec8a4",
+    "src/analyze_4_onset.py": "1ca2696bf708c6bd5fcb53a5acffa9a4bdbd41f7cacdb14ad19d8f2017a638f7",
+    "src/modal_app_4_onset.py": "a190354c51253df18a9eda5d2d2a043add896abdb1c3320271e6953b633c420a",
+    "results/phase3/neurons.json": "fde38779fe8ab5b3781be573183ef86e4a0273f08f48c5d005e33db6f1bd83bb",
+    "results/phase3/screen-statistics.npz": "39073dde8eedbe01d8e17bd6f501629797fec004922357a07360005cc8d78e98",
+    "results/phase3/manifest.json": "f3dc8818fb28d5b5906a37ffeb8f7979056d343bdec897cd03d990b3dfd2d134",
+    "results/raw/phase3-20261020-v2/tracking.jsonl": "3e942675283e38e9c2330fdeeeae6cec24f3052bed28a953fe79ac9c10f558e5",
+    "results/raw/phase3-20261020-v2/trajectories.npz": "14aadc070fd5ea038b592b0ce5abf2001ee4ad5ed8af75807bfc38aa60e22c82"
+  },
+  "output_hashes": {
+    "onset-tokens.npz": "15173160737345468eeff2d17d8757f65dab128bd0329791c382199e6bba04bf",
+    "onset-traces.json": "b5b018b9c06ee903883370aadeb898554090a7c4063411aa52867d8f2eedb53d",
+    "onset-metrics.json": "42ecf7a1b8102307a4301237c61f6ab01cc8c2b0a8b65031ef65656e7365c7cf",
+    "onset-manifest.json": "e8201c991c1e6d74c8f178e13bf505062e659897e6a61bca8b46a09299461b12"
+  }
+}

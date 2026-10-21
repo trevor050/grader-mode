@@ -1,0 +1,250 @@
+[
+  {
+    "object_id": "ap-1QJ51EMQAxbW1SoaOlChg3",
+    "description": "grader-mode-phase4-onset",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "CPU",
+    "cost": "0.00533607"
+  },
+  {
+    "object_id": "ap-1QJ51EMQAxbW1SoaOlChg3",
+    "description": "grader-mode-phase4-onset",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "Network Egress",
+    "cost": "1.2E-7"
+  },
+  {
+    "object_id": "ap-1QJ51EMQAxbW1SoaOlChg3",
+    "description": "grader-mode-phase4-onset",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "Memory",
+    "cost": "0.00722005"
+  },
+  {
+    "object_id": "ap-1QJ51EMQAxbW1SoaOlChg3",
+    "description": "grader-mode-phase4-onset",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "L40S",
+    "cost": "0.05499644"
+  },
+  {
+    "object_id": "ap-2c4KY1e0RwC34bs1g2NY1D",
+    "description": "grader-mode-phase3-explore",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "CPU",
+    "cost": "0.04499155"
+  },
+  {
+    "object_id": "ap-2c4KY1e0RwC34bs1g2NY1D",
+    "description": "grader-mode-phase3-explore",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "Network Egress",
+    "cost": "1.2E-7"
+  },
+  {
+    "object_id": "ap-2c4KY1e0RwC34bs1g2NY1D",
+    "description": "grader-mode-phase3-explore",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "Memory",
+    "cost": "0.06087651"
+  },
+  {
+    "object_id": "ap-2c4KY1e0RwC34bs1g2NY1D",
+    "description": "grader-mode-phase3-explore",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "L40S",
+    "cost": "0.46370783"
+  },
+  {
+    "object_id": "ap-3vqKxkDia3xbdmMA7vWBx7",
+    "description": "grader-mode-phase3-neutral-control",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "CPU",
+    "cost": "0.00021021"
+  },
+  {
+    "object_id": "ap-3vqKxkDia3xbdmMA7vWBx7",
+    "description": "grader-mode-phase3-neutral-control",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "Memory",
+    "cost": "0.00028443"
+  },
+  {
+    "object_id": "ap-3vqKxkDia3xbdmMA7vWBx7",
+    "description": "grader-mode-phase3-neutral-control",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "L40S",
+    "cost": "0.00216655"
+  },
+  {
+    "object_id": "ap-OfoccdxriqmaPqO9UpCFDQ",
+    "description": "grader-mode-phase3",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "CPU",
+    "cost": "0.01471555"
+  },
+  {
+    "object_id": "ap-OfoccdxriqmaPqO9UpCFDQ",
+    "description": "grader-mode-phase3",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "Network Egress",
+    "cost": "1.4E-7"
+  },
+  {
+    "object_id": "ap-OfoccdxriqmaPqO9UpCFDQ",
+    "description": "grader-mode-phase3",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "Memory",
+    "cost": "0.01991111"
+  },
+  {
+    "object_id": "ap-OfoccdxriqmaPqO9UpCFDQ",
+    "description": "grader-mode-phase3",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "L40S",
+    "cost": "0.15166662"
+  },
+  {
+    "object_id": "ap-UyfB6mVem7KpN4onaCg0En",
+    "description": "grader-mode-phase3-resume",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "CPU",
+    "cost": "0.01429509"
+  },
+  {
+    "object_id": "ap-UyfB6mVem7KpN4onaCg0En",
+    "description": "grader-mode-phase3-resume",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "Network Egress",
+    "cost": "1.2E-7"
+  },
+  {
+    "object_id": "ap-UyfB6mVem7KpN4onaCg0En",
+    "description": "grader-mode-phase3-resume",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "Memory",
+    "cost": "0.01934219"
+  },
+  {
+    "object_id": "ap-UyfB6mVem7KpN4onaCg0En",
+    "description": "grader-mode-phase3-resume",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "L40S",
+    "cost": "0.14733307"
+  },
+  {
+    "object_id": "ap-f4Gt8vBGwRvQk3mXMm5E5T",
+    "description": "grader-mode-phase3-logit-probe",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "CPU",
+    "cost": "0.00471521"
+  },
+  {
+    "object_id": "ap-f4Gt8vBGwRvQk3mXMm5E5T",
+    "description": "grader-mode-phase3-logit-probe",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "Network Egress",
+    "cost": "1.1E-7"
+  },
+  {
+    "object_id": "ap-f4Gt8vBGwRvQk3mXMm5E5T",
+    "description": "grader-mode-phase3-logit-probe",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "Memory",
+    "cost": "0.00637999"
+  },
+  {
+    "object_id": "ap-f4Gt8vBGwRvQk3mXMm5E5T",
+    "description": "grader-mode-phase3-logit-probe",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "L40S",
+    "cost": "0.04859756"
+  },
+  {
+    "object_id": "ap-hkhf6XDkO3YoCYtVbvncsh",
+    "description": "grader-mode-phase3-neutral-control",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "CPU",
+    "cost": "0.01183162"
+  },
+  {
+    "object_id": "ap-hkhf6XDkO3YoCYtVbvncsh",
+    "description": "grader-mode-phase3-neutral-control",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "Network Egress",
+    "cost": "1.2E-7"
+  },
+  {
+    "object_id": "ap-hkhf6XDkO3YoCYtVbvncsh",
+    "description": "grader-mode-phase3-neutral-control",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "Memory",
+    "cost": "0.01600896"
+  },
+  {
+    "object_id": "ap-hkhf6XDkO3YoCYtVbvncsh",
+    "description": "grader-mode-phase3-neutral-control",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "L40S",
+    "cost": "0.12194326"
+  },
+  {
+    "object_id": "ap-ug4Ofcja2FG63GBvGbA3Fx",
+    "description": "grader-mode-phase3",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "CPU",
+    "cost": "0.25977111"
+  },
+  {
+    "object_id": "ap-ug4Ofcja2FG63GBvGbA3Fx",
+    "description": "grader-mode-phase3",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "Network Egress",
+    "cost": "1.2E-7"
+  },
+  {
+    "object_id": "ap-ug4Ofcja2FG63GBvGbA3Fx",
+    "description": "grader-mode-phase3",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "Memory",
+    "cost": "0.35148733"
+  },
+  {
+    "object_id": "ap-ug4Ofcja2FG63GBvGbA3Fx",
+    "description": "grader-mode-phase3",
+    "environment": "main",
+    "interval_start": "2026-10-21T00:00:00",
+    "resource": "L40S",
+    "cost": "2.67734493"
+  }
+]

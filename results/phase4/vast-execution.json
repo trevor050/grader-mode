@@ -1,0 +1,187 @@
+{
+  "utc": "2026-10-21T06:35:38.349067+00:00",
+  "credit_before": 4.7904607785999955,
+  "total_spend_before": -5.2095392214000045,
+  "cap_usd": 4.5,
+  "offers": [
+    {
+      "id": 40420024,
+      "gpu_name": "RTX PRO 6000 WS",
+      "dph_total": 1.1347222222222222,
+      "storage_cost": 0.19999999999999998,
+      "inet_down": 1156.1,
+      "internet_down_cost_per_tb": 2.6666666666666665,
+      "reliability": 0.9907699,
+      "machine_id": 139244
+    },
+    {
+      "id": 55929380,
+      "gpu_name": "RTX PRO 6000 WS",
+      "dph_total": 1.322314814814815,
+      "storage_cost": 0.3333333333333333,
+      "inet_down": 3192.6,
+      "internet_down_cost_per_tb": 40.0,
+      "reliability": 0.9809187,
+      "machine_id": 37777
+    },
+    {
+      "id": 31125574,
+      "gpu_name": "RTX PRO 6000 WS",
+      "dph_total": 1.336574074074074,
+      "storage_cost": 0.46666666666666673,
+      "inet_down": 6425.3,
+      "internet_down_cost_per_tb": 9.333333333333334,
+      "reliability": 0.9992186,
+      "machine_id": 8683
+    },
+    {
+      "id": 54920293,
+      "gpu_name": "RTX PRO 6000 WS",
+      "dph_total": 1.6009259259259259,
+      "storage_cost": 0.1333333333333333,
+      "inet_down": 1829.5,
+      "internet_down_cost_per_tb": 2.6666666666666665,
+      "reliability": 0.9898369,
+      "machine_id": 47227
+    },
+    {
+      "id": 57000895,
+      "gpu_name": "RTX PRO 6000 WS",
+      "dph_total": 1.604648148148148,
+      "storage_cost": 0.6693333333333333,
+      "inet_down": 7099.6,
+      "internet_down_cost_per_tb": 13.352960000000001,
+      "reliability": 0.9993711,
+      "machine_id": 51732
+    },
+    {
+      "id": 54250814,
+      "gpu_name": "RTX PRO 6000 WS",
+      "dph_total": 1.6823148148148148,
+      "storage_cost": 0.3333333333333333,
+      "inet_down": 7775.5,
+      "internet_down_cost_per_tb": 6.826666666666667,
+      "reliability": 0.9930586,
+      "machine_id": 151663
+    },
+    {
+      "id": 55566029,
+      "gpu_name": "RTX PRO 6000 WS",
+      "dph_total": 1.8694444444444442,
+      "storage_cost": 0.39999999999999997,
+      "inet_down": 2061.6,
+      "internet_down_cost_per_tb": 6.666666666666667,
+      "reliability": 0.9977812,
+      "machine_id": 107877
+    },
+    {
+      "id": 54274969,
+      "gpu_name": "RTX PRO 6000 WS",
+      "dph_total": 2.1347222222222224,
+      "storage_cost": 0.19999999999999998,
+      "inet_down": 4596.8,
+      "internet_down_cost_per_tb": 12.0,
+      "reliability": 0.9899744,
+      "machine_id": 153313
+    },
+    {
+      "id": 50049473,
+      "gpu_name": "RTX PRO 6000 WS",
+      "dph_total": 2.6731203703703703,
+      "storage_cost": 0.9293333333333331,
+      "inet_down": 3382.4,
+      "internet_down_cost_per_tb": 40.96,
+      "reliability": 0.9818844,
+      "machine_id": 112589
+    }
+  ],
+  "instance": {
+    "id": 57010413,
+    "gpu_name": "RTX PRO 6000 WS",
+    "gpu_ram": 97887,
+    "dph_total": 1.175,
+    "start_date": 1792564538.735241,
+    "disk_space": 150.0,
+    "public_ipaddr": "114.202.108.204",
+    "ssh_port": 18586
+  },
+  "image": "vastai/pytorch:latest",
+  "vllm": "0.21.0",
+  "watchdog_credit_delta_trigger": 4.2,
+  "initial_projection": {
+    "utc": "2026-10-21T06:45:41.667289+00:00",
+    "pilot_requests": 256,
+    "pilot_output_tokens": 171315,
+    "pilot_seconds": 115.28606397498515,
+    "tokens_per_second": 1485.999210079477,
+    "mean_output_tokens_by_thinking": {
+      "False": 236.3740458015267,
+      "True": 1122.8
+    },
+    "estimated_14b_generation_seconds": 3515.458702486412,
+    "estimated_32b_generation_seconds": 2508.7632716260796,
+    "unmeasured_32b_speed_scale": 2.2857142857142856,
+    "remaining_runtime_multiplier": 1.2,
+    "remaining_setup_seconds_reserve": 300,
+    "network_and_teardown_reserve_usd": 0.35,
+    "spent_at_gate_usd": 0.22568538729999954,
+    "full_grid_projected_total_usd": 3.0075186187705234,
+    "decision": "full_grid_continue_14b; remeasure_32b_before_its_main_grid"
+  },
+  "launched_32b_utc": "2026-10-21T07:23:40.859324+00:00",
+  "projection_32b": {
+    "utc": "2026-10-21T07:32:49.460799+00:00",
+    "pilot": {
+      "completed": 256,
+      "requests": 2400,
+      "output_tokens": 154262,
+      "generation_seconds": 187.73440133500844,
+      "setup_seconds": 314.20959304101416,
+      "elapsed_seconds": 502.02013607899426
+    },
+    "mean_output_tokens_by_thinking": {
+      "off": 278.4108527131783,
+      "on": 931.8661417322835
+    },
+    "tokens_per_second": 821.7034219781723,
+    "spent_at_gate_usd": 1.3055325062999996,
+    "full_grid_projected_total_usd": 2.2242604931350587,
+    "fallback_projected_total_usd": 1.9935080617935241,
+    "action": "continue",
+    "drop_request_types": [],
+    "remaining_runtime_multiplier": 1.2,
+    "teardown_reserve_usd": 0.3
+  },
+  "teardown": {
+    "utc": "2026-10-21T08:04:12.622905+00:00",
+    "destroy_stdout": "Are you sure you want to destroy instance 57010413? This is irreversible and will delete all data. [y/N] destroying instance 57010413.\n",
+    "instances_after": [],
+    "credit_after": 2.8662837522999967,
+    "total_spend_after": -7.133716247700003,
+    "credit_delta_usd": 1.9241770262999989
+  },
+  "final_account": {
+    "utc": "2026-10-21T08:08:02.931621+00:00",
+    "credit_after": 2.8247990722999967,
+    "total_spend_after": -7.175200927700003,
+    "credit_delta_usd": 1.9656617062999988,
+    "instances_after": []
+  },
+  "post_teardown_credit_snapshots": [
+    {
+      "utc": "2026-10-21T08:06:33.316154+00:00",
+      "credit_after": 2.8247990722999967,
+      "total_spend_after": -7.175200927700003,
+      "credit_delta_usd": 1.9656617062999988,
+      "instances_after": []
+    },
+    {
+      "utc": "2026-10-21T08:08:02.931621+00:00",
+      "credit_after": 2.8247990722999967,
+      "total_spend_after": -7.175200927700003,
+      "credit_delta_usd": 1.9656617062999988,
+      "instances_after": []
+    }
+  ],
+  "accounting_note": "Credit snapshots may include delayed postings after verified teardown; final_account is latest observed, not a settled invoice."
+}
