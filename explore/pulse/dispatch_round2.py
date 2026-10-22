@@ -18,7 +18,7 @@ def wait_marker(arm=None):
 
 
 def job(command):
-    start=time.time();before=send(command);wait_marker(command['arm']);fetch();after=credit('after_'+command['arm'])
+    start=time.time();before=send(command);time.sleep(2.5);wait_marker(command['arm']);fetch();after=credit('after_'+command['arm'])
     d=json.loads((OUT/'out'/(command['arm']+'.done.json')).read_text())
     print(json.dumps(d|{'wall_s':time.time()-start,'credit':after['credit'],'conservative_remaining':after['conservative_remaining']}),flush=True)
     if after['usable_remaining']<.40:raise RuntimeError('Budget hard stop after job')

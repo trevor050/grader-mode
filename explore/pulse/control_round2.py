@@ -4,7 +4,7 @@ ROOT=pathlib.Path(__file__).resolve().parents[2]
 OUT=ROOT/'results/raw/pulse2'
 
 def cli(*args):
-    p=subprocess.run(['vastai',*args,'--raw'],capture_output=True,text=True,timeout=20)
+    p=subprocess.run(['vastai',*args,'--raw'],capture_output=True,text=True,errors="replace",timeout=20)
     if p.returncode:raise RuntimeError('Vast CLI failed: '+str(args))
     return json.loads(p.stdout)
 
@@ -14,7 +14,7 @@ def ssh(command,timeout=30,check=True):
     c=connection()
     r=subprocess.run(['ssh','-o','ConnectTimeout=6','-o','BatchMode=yes','-o','StrictHostKeyChecking=accept-new',
         '-o','UserKnownHostsFile='+str(OUT/'known_hosts'),'-p',str(c['port']),'root@'+c['host'],command],
-        capture_output=True,text=True,timeout=timeout)
+        capture_output=True,text=True,errors="replace",timeout=timeout)
     if check and r.returncode:raise RuntimeError('SSH failed: '+r.stderr[-500:])
     return r
 
@@ -23,7 +23,7 @@ def scp(sources,dest,pull=False):
     src=[host+s for s in sources] if pull else sources
     target=dest if pull else host+dest
     r=subprocess.run(['scp','-q','-o','ConnectTimeout=8','-o','BatchMode=yes','-o','StrictHostKeyChecking=accept-new',
-        '-o','UserKnownHostsFile='+str(OUT/'known_hosts'),'-P',str(c['port']),*src,target],capture_output=True,text=True,timeout=90)
+        '-o','UserKnownHostsFile='+str(OUT/'known_hosts'),'-P',str(c['port']),*src,target],capture_output=True,text=True,errors="replace",timeout=90)
     if r.returncode:raise RuntimeError('SCP failed: '+r.stderr[-500:])
 
 def credit(stage):

@@ -9,8 +9,8 @@
   "explore/pulse/pulse_core.py": "0a26488a6fddffa3eb3175bf1ee03ce065e7b64d2464c568e3817756583aa36c",
   "explore/pulse/setup_round2.sh": "2693acdf98468bb2d099dbce88efac6575936f5ae0cacd40a60a870eb7851674",
   "explore/pulse/watch_round2.py": "d3ca3f0b5e64fff9a919aa36d1ac5bbbe8f0c3709ee0e954c30b0c93a1e51022",
-  "explore/pulse/control_round2.py": "9f1b0260f5c9aeb55275b290b62ed58e69bcbd369e31573754ae6117b0d7e0ad",
+  "explore/pulse/control_round2.py": "f049d81562d3ff7dff98331cd5d0a6d9abed0c43f4eb46019d7e4b67c41068df",
   "explore/pulse/analyze_round2.py": "5402d7dfe96f56ca50a4913dcd132e4aed8f586ceacfe413995b593b952fbb0e",
-  "explore/pulse/dispatch_round2.py": "6778fd9899f995ac327e58b9e7b368155bf71b3ce3507ff80fcdd339c8168dc9",
+  "explore/pulse/dispatch_round2.py": "db18b078c9aa3090b2c2abf831c831de2d6b6ae62a75c0f37e2d3be8145b8248",
   "explore/pulse/report_round2.py": "3fb78d288b6d6ff2e4c0a97f6bb3e6881320006172fbde523dd53f5a7926e40d"
 }
