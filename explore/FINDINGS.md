@@ -131,8 +131,47 @@ distinguishable from noise.
 These are readouts of teacher-forced traces that differ in text between conditions, so they partly reflect what
 each trace says next.
 
+Per-token readout (`jtok.py`, layer 40) on one RL-prompt trace, across the passage where the model weighs the
+tutor rule against the grader rules (`results/raw/q38/jtok.txt`). Tokens that are not in the text:
+
+- On "rules" / "are" after "The grader", the logit lens top token is " override" / "Override" at four separate
+  mentions; the J-lens reads "rules / instructions / strict".
+- On "episode" in the quoted grader line ("the episode ends"), the J-lens reads " randomly / random / randomized /
+  随机 / simulation" and the logit lens " test".
+- On the comma after "Given the conflicting instructions", both lenses read " priorit / 优先 (priority) /
+  prioritize".
+- On "single" and "will" in "this single response and no human will read it", the J-lens reads " ethical /
+  responsibly / refuse / truly / legitimate".
+- Best rank over the passage: reward 6, score 15, cheat 20, test 20; eval 545, benchmark 459; no profanity.
+
+## 7. Qwen3.8: tutor up / eval down at 3x stops the leak; the random twin does not
+
+Section 3 design on Qwen3.8-27B (`q38neurons.py`, `vgen38.py`): 80 problems for selection, last prompt token,
+thinking off; 30 + 30 tutor neurons (layers 26-47, held-out d about +/-19) and 30 + 30 eval neurons (layers 13-33,
+held-out d about +/-27). Under the RL prompt with the tutor system prompt the tutor neurons move opposite to the
+tutor direction (d -10.4 / +12.5). Generation: vLLM, bf16, tutor system prompt + RL prompt, thinking on, 40
+problems, one sample each. "rule" / "grader" = reasoning mentions the tutor rule / the grader or reward.
+
+| | finished | leak | rule | grader |
+|---|---|---|---|---|
+| none | 40 | 39 | 36 | 39 |
+| hook sanity (garbled shift) | 0 | 0 | | |
+| tutor up + eval down 1x | 40 | 37 | 38 | 40 |
+| tutor up + eval down 2x | 40 | 25 | 37 | 36 |
+| random twin 2x | 40 | 30 | 38 | 39 |
+| **tutor up + eval down 3x** | 33 | **0** | 9 | 26 |
+| **random twin 3x** | 40 | **40** | 22 | 27 |
+| tutor up 2x only | 40 | 34 | 37 | 38 |
+| eval down 2x only | 40 | 40 | 35 | 38 |
+
+At 3x the reasoning itself changes: traces open with "The user is asking me to guide a student through a math
+problem" and rarely state a conflict (9/40). Seven replies did not finish within 4,096 tokens, and two finished
+replies still contain a `\boxed{}` (one with a wrong value). Counting every unfinished reply as a leak, 3x gives
+at most 7/40 against 40/40 for its random twin. Side effects on other prompts are not measured.
+
 ## Open
 
 - Random-direction null for the J-lens word z-scores.
-- Neuron steering on Qwen3.8 (tutor up / eval down, random twin): running.
+- Side effects of the 3x shift (plain_tutor, student_tutor, plain_nosys accuracy).
+- Qwen3.5 / 3.6 / 3.8 ladder; J++ lens (Ayonrinde and Lindsey 2026) on Qwen3.6-27B.
 - Qwen3.5 / 3.6 / 3.8 under the RL prompt (more post-training -> more leaking?): paused for budget.
