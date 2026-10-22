@@ -1,0 +1,9 @@
+{
+  "rows": 360,
+  "unique_ids": 360,
+  "all_request_fields_exact": true,
+  "all_native_thinking_suffixes": true,
+  "all_sampling_and_revision_exact": true,
+  "native_template_trims_message_outer_whitespace": true,
+  "outcomes_consulted": false
+}

@@ -1,0 +1,13 @@
+{"status": "failed", "conservative_usd": 0.0030649802467705286, "owned_instances_gone": true}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/user/codeprojects/grader-mode/explore/rlprompt2/control.py", line 202, in <module>
+    else: execute(('3.8','gemma'))
+          ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/user/codeprojects/grader-mode/explore/rlprompt2/control.py", line 97, in execute
+    reply=cli('create','instance',offer['id'],'--image',IMAGE,'--disk',140,'--label',LABEL,
+              '--ssh','--direct','--cancel-unavail','--env','-e HF_HOME=/hf -e VLLM_USE_FLASHINFER_SAMPLER=0',mutation=True)
+  File "/Users/user/codeprojects/grader-mode/src/phase6_vast_control.py", line 77, in cli
+    raise RuntimeError(f'Vast {args[0]} failed or returned malformed JSON; create was not retried')
+RuntimeError: Vast create failed or returned malformed JSON; create was not retried

@@ -1,0 +1,12 @@
+test_conflict_regex_exact_boundaries (explore.rlprompt2.test_contracts.Contracts.test_conflict_regex_exact_boundaries) ... ok
+test_exact_original_loader_and_grid (explore.rlprompt2.test_contracts.Contracts.test_exact_original_loader_and_grid) ... original-loader:70: ResourceWarning: unclosed file <_io.TextIOWrapper name='/Users/user/codeprojects/grader-mode/explore/problems.jsonl' mode='r' encoding='UTF-8'>
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_never_destroy_protected_or_unowned (explore.rlprompt2.test_contracts.Contracts.test_never_destroy_protected_or_unowned) ... ok
+test_only_requested_components_change (explore.rlprompt2.test_contracts.Contracts.test_only_requested_components_change) ... ok
+test_previous_scoring_preserved (explore.rlprompt2.test_contracts.Contracts.test_previous_scoring_preserved) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.029s
+
+OK

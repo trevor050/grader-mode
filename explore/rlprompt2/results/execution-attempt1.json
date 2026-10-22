@@ -1,0 +1,100 @@
+{
+  "cap_usd": 1.5,
+  "initial_account": {
+    "credit": 4.033157622199992,
+    "total_spend": -10.966842377800008
+  },
+  "initial_instances": [
+    {
+      "id": 57125990,
+      "label": "grader-explore",
+      "actual_status": "running",
+      "cur_state": "running",
+      "gpu_name": "RTX A6000",
+      "ssh_host": "ssh9.vast.ai",
+      "ssh_port": 26780,
+      "dph_total": 0.4333333333333333,
+      "disk_space": 120.0,
+      "start_date": 1792624897.3441684
+    },
+    {
+      "id": 57136341,
+      "label": "grader-explore-2",
+      "actual_status": "running",
+      "cur_state": "running",
+      "gpu_name": "RTX A6000",
+      "ssh_host": "ssh7.vast.ai",
+      "ssh_port": 11004,
+      "dph_total": 0.4555555555555555,
+      "disk_space": 120.0,
+      "start_date": 1792630699.1203938
+    }
+  ],
+  "label": "grader-rlprompt2-20261021",
+  "offer": {
+    "id": 24311380,
+    "machine_id": 39576,
+    "gpu_name": "RTX 6000Ada",
+    "gpu_ram": 49140,
+    "dph_base": 0.6666666666666666,
+    "storage_cost": 0.19999999999999998,
+    "inet_down_cost": 2.6041666666666666e-06,
+    "inet_up_cost": 3.90625e-06
+  },
+  "hourly_usd": 0.7055555555555555,
+  "network_envelope_usd": 0.00043229166666666665,
+  "projected_usd": 0.9646915509259258,
+  "network_envelope": {
+    "download_gb": 160,
+    "upload_gb": 4
+  },
+  "conservative_usd": 0.0030649802467705286,
+  "prior_spend_usd": 0,
+  "selected_models": [
+    "3.8",
+    "gemma"
+  ],
+  "decisions": [
+    "One owned instance. Qwen 360 replies required; Gemma 160 replies conditional on outcome-blind timing gates."
+  ],
+  "models": {},
+  "started_unix": 1792633108.898147,
+  "deadline_unix": 1792639994.881415,
+  "guard_pid": 92560,
+  "status": "failed",
+  "error": "Vast create failed or returned malformed JSON; create was not retried",
+  "ended_unix": 1792633122.3310778,
+  "elapsed_seconds": 13.432930707931519,
+  "rental_usd": 0.0030649802467705286,
+  "final_account": {
+    "credit": 4.023783506199992,
+    "total_spend": -10.976216493800008
+  },
+  "final_instances": [
+    {
+      "id": 57125990,
+      "label": "grader-explore",
+      "actual_status": "running",
+      "cur_state": "running",
+      "gpu_name": "RTX A6000",
+      "ssh_host": "ssh9.vast.ai",
+      "ssh_port": 26780,
+      "dph_total": 0.4333333333333333,
+      "disk_space": 120.0,
+      "start_date": 1792624897.3441684
+    },
+    {
+      "id": 57136341,
+      "label": "grader-explore-2",
+      "actual_status": "running",
+      "cur_state": "running",
+      "gpu_name": "RTX A6000",
+      "ssh_host": "ssh7.vast.ai",
+      "ssh_port": 11004,
+      "dph_total": 0.4555555555555555,
+      "disk_space": 120.0,
+      "start_date": 1792630699.1203938
+    }
+  ],
+  "owned_instances_gone": true
+}

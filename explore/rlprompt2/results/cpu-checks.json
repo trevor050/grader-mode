@@ -1,0 +1,5 @@
+{
+  "exact_loader_match": true,
+  "ablation_contracts": true,
+  "conflict_regex_cases": 3
+}

@@ -1,0 +1,4 @@
+results/bundle.tar.gz
+results/guard.json
+results/*/chunk-*.jsonl
+results/*/scored.jsonl

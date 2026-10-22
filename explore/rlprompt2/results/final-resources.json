@@ -1,0 +1,34 @@
+{
+  "owned_remaining": [],
+  "instances": [
+    {
+      "id": 57136341,
+      "label": "grader-explore-2",
+      "actual_status": "running",
+      "cur_state": "running",
+      "gpu_name": "RTX A6000",
+      "ssh_host": "ssh7.vast.ai",
+      "ssh_port": 11004,
+      "dph_total": 0.4555555555555555,
+      "disk_space": 120.0,
+      "start_date": 1792630699.1203938
+    },
+    {
+      "id": 57142544,
+      "label": "grader-q38",
+      "actual_status": "running",
+      "cur_state": "running",
+      "gpu_name": "A100 SXM4",
+      "ssh_host": "ssh4.vast.ai",
+      "ssh_port": 21968,
+      "dph_total": 1.5838456296296297,
+      "disk_space": 160.0,
+      "start_date": 1792634296.3480713
+    }
+  ],
+  "protected_present": {
+    "57125990": false,
+    "57136341": true
+  },
+  "protected_ids_excluded_from_all_mutations": true
+}

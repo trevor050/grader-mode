@@ -1,0 +1,128 @@
+{
+  "3.8": {
+    "rows": 360,
+    "unique_ids": 360,
+    "raw_sha256": {
+      "chunk-0.jsonl": "a17e0d82938a5bca2292c1e06105ada0d5abea4331b713174bb868257f68ac99",
+      "chunk-1.jsonl": "1462cf008fee5b99b3e37b92dd8124deeaf5c4012fd05ee0611d148df609d924"
+    },
+    "output_tokens": 238738,
+    "full_grid": true
+  },
+  "gemma": {
+    "rows": 160,
+    "unique_ids": 160,
+    "raw_sha256": {
+      "chunk-0.jsonl": "fa6f68039bd580919d35a3bcfa468afdb7a8628b7d692f28fe47ca69adb159c6",
+      "chunk-1.jsonl": "f239dcb8336001f4743864896a0c47c885fe1284f115889759abf9b6de63d273"
+    },
+    "output_tokens": 472544,
+    "full_grid": true
+  },
+  "source_hashes": {
+    "DESIGN.md": {
+      "before": "8b1339e103c787704080a129019b1ba181775ed81edd968f91662d9cbfdcfaa5",
+      "after": "8b1339e103c787704080a129019b1ba181775ed81edd968f91662d9cbfdcfaa5"
+    },
+    "prompts/templates_2.json": {
+      "before": "25284cc7a054aa1843e9e2f6fb6a58a1c84f7aac6c811f9a32c0a142bf239885",
+      "after": "25284cc7a054aa1843e9e2f6fb6a58a1c84f7aac6c811f9a32c0a142bf239885"
+    },
+    "prompts/system_neutral.txt": {
+      "before": "7460e45c0d100bd1c477aedf6b4be3d2fcc5823a73a5c8122c3ff26735842eca",
+      "after": "7460e45c0d100bd1c477aedf6b4be3d2fcc5823a73a5c8122c3ff26735842eca"
+    },
+    "prompts/system_tutor_strong.txt": {
+      "before": "1ac90444d38726447da7d5a681063fa1410f731d84cc294b74c1c5f970961812",
+      "after": "1ac90444d38726447da7d5a681063fa1410f731d84cc294b74c1c5f970961812"
+    },
+    "prompts/templates_4.json": {
+      "before": "6cd003a8b8bf96456428084a1abeedb5c66ee5774443bcb6fdf31d7d65a8fd31",
+      "after": "6cd003a8b8bf96456428084a1abeedb5c66ee5774443bcb6fdf31d7d65a8fd31"
+    },
+    "prompts/system_tutor.txt": {
+      "before": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11",
+      "after": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11"
+    },
+    "prompts/templates.json": {
+      "before": "637fb8aa1312f4485d410241fe6087cbbe9c6150a4267bfb8a71e418f7af0ed1",
+      "after": "637fb8aa1312f4485d410241fe6087cbbe9c6150a4267bfb8a71e418f7af0ed1"
+    },
+    "prompts/templates_1b.json": {
+      "before": "cc5971cea9793fefb141bb8f514c109fc798989116d86eb6f3531bfbb8eec8a4",
+      "after": "cc5971cea9793fefb141bb8f514c109fc798989116d86eb6f3531bfbb8eec8a4"
+    },
+    "prompts/templates_1c.json": {
+      "before": "986fcd0ad98743abf69a8a96dbc05810c2b0a527e91e0a12530689fd09620b6a",
+      "after": "986fcd0ad98743abf69a8a96dbc05810c2b0a527e91e0a12530689fd09620b6a"
+    },
+    "explore/evalprompts.py": {
+      "before": "7749dd2e19f0000f116e4568fbdfd554747c523bd116cdda8e3c499266b9a9c1",
+      "after": "7749dd2e19f0000f116e4568fbdfd554747c523bd116cdda8e3c499266b9a9c1"
+    },
+    "explore/track.py": {
+      "before": "b12cdb81acdb77048f08641e26e5c839662e462f5324503c6db17b7d65c0c435",
+      "after": "b12cdb81acdb77048f08641e26e5c839662e462f5324503c6db17b7d65c0c435"
+    },
+    "explore/analyze_acts.py": {
+      "before": "aa9e699d370fceeb41ad042d4bb643b5570728ceb8a2ba38059298292e7020fc",
+      "after": "aa9e699d370fceeb41ad042d4bb643b5570728ceb8a2ba38059298292e7020fc"
+    },
+    "explore/vgen.py": {
+      "before": "e93aa1488164cdff21f0b6ae7121c5717ec6bd9b251a05c5c5dbcc9bf0c1b025",
+      "after": "e93aa1488164cdff21f0b6ae7121c5717ec6bd9b251a05c5c5dbcc9bf0c1b025"
+    },
+    "explore/attrib.py": {
+      "before": "ba9ea44a95b61d88d4d33125a213136a0996ac84e897de60cde78eba661941a3",
+      "after": "ba9ea44a95b61d88d4d33125a213136a0996ac84e897de60cde78eba661941a3"
+    },
+    "explore/select_neurons.py": {
+      "before": "b755e9fa883e933fbfc2cfab553b661a3baaa35bdb53dd7814c5ba4aba46f4df",
+      "after": "b755e9fa883e933fbfc2cfab553b661a3baaa35bdb53dd7814c5ba4aba46f4df"
+    },
+    "explore/select_trevor.py": {
+      "before": "691ad486dd56b2b03aed50b0fc2d4bdc71d24bed80e74685925ee3d4035c631a",
+      "after": "691ad486dd56b2b03aed50b0fc2d4bdc71d24bed80e74685925ee3d4035c631a"
+    },
+    "explore/explore.py": {
+      "before": "4b8030fabd1c9e8d08b5cc025f3270fb04df4bf326d1a61ba5bf166da3742429",
+      "after": "4b8030fabd1c9e8d08b5cc025f3270fb04df4bf326d1a61ba5bf166da3742429"
+    },
+    "explore/attrib2.py": {
+      "before": "3c3f1879f21b82bffa38b46d7a9ff1fe17a31a791da65a2089e0442a52e8b887",
+      "after": "3c3f1879f21b82bffa38b46d7a9ff1fe17a31a791da65a2089e0442a52e8b887"
+    },
+    "explore/system_tutor.txt": {
+      "before": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11",
+      "after": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11"
+    },
+    "explore/problems.jsonl": {
+      "before": "f54e301d91a5e66ba13ee28abe1f67890e6ab9fb9b140dbe788d1bc46b578281",
+      "after": "f54e301d91a5e66ba13ee28abe1f67890e6ab9fb9b140dbe788d1bc46b578281"
+    }
+  },
+  "unchanged_sources": [
+    "DESIGN.md",
+    "prompts/templates_2.json",
+    "prompts/system_neutral.txt",
+    "prompts/system_tutor_strong.txt",
+    "prompts/templates_4.json",
+    "prompts/system_tutor.txt",
+    "prompts/templates.json",
+    "prompts/templates_1b.json",
+    "prompts/templates_1c.json",
+    "explore/evalprompts.py",
+    "explore/track.py",
+    "explore/analyze_acts.py",
+    "explore/vgen.py",
+    "explore/attrib.py",
+    "explore/select_neurons.py",
+    "explore/select_trevor.py",
+    "explore/explore.py",
+    "explore/attrib2.py",
+    "explore/system_tutor.txt",
+    "explore/problems.jsonl"
+  ],
+  "concurrent_source_changes": [],
+  "template_hash": "397e193c83f0cad5ba2dca42a63ac64395892ae028fff369c50ab77a616adcc6"
+}
