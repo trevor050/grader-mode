@@ -1,6 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 cd /workspace/pulse
+trap 'printf "%s\n" "{\"type\":\"setup_or_runner_failure\"}" > /workspace/pulse/out/setup.error.json' ERR
 exec > >(tee -a setup.log) 2>&1
 echo "setup start $(date -u +%FT%TZ)"
 touch heartbeat
