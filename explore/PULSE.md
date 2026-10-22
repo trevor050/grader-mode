@@ -35,3 +35,13 @@ Decision rule: a promising pulse reduces finished leaks relative to its seed-mat
 ## Budget and stop rules
 
 Account credit initially $3.8453573342; no top-ups. Rent one >=80 GB GPU with >=120 GB disk, prefer reliable low-cost host and inexpensive model-download bandwidth. Record offers, quoted compute/storage/network rates, start time, setup/download/load/capture/generation durations, credit snapshots, and conservative time-based accrued spending. Watchdog every <=60s: destroy when either reported credit or conservative remaining-credit estimate falls below $0.40; reserve download cost and polling/teardown margin. No second instance while one exists. Destroy on any >15 minute stall (progress heartbeat/log/output growth, not GPU utilization alone), setup failure, budget projection failure, or unrecoverable error. Pull partial raw outputs and report errors; never silently retry paid work or drop conditions. Log STATUS.md and commit periodically. At Round 1 end, leave running ONLY if credit >$1.50 AND Round 2 can start immediately; otherwise destroy and verify absence. Because this assignment explicitly stops at Round 1, default destroy unless an operator explicitly takes over immediately.
+
+## Round 2 amendment: added after Round 1, NOT pre-registered
+
+Recorded **2026-10-22T06:53:12Z**, after completion and strict validation of the entire registered Round 2 list and before any added-arm generation. Lead-approved credit condition satisfied: reported credit **$2.435644711100**, conservative remaining **$2.152487818630**, both above $0.60.
+
+Run exactly one added RL/tutor arm: **target 3x K=256 + the exact reminder prefill**, same 40 questions/order and generation settings. Gate from the original, unmodified prompt, then inject the reminder after the thinking opener and apply the same two-stage pulse. This tests a combination selected after observing registered outcomes and is not pre-registered.
+
+Selection operationalization, recorded before comparing the first completed target/random pair: consider targets reducing leaks versus both baseline and random twin without reducing finish count; minimize unfinished-as-failure, tie order K=64,16,256, default K=64 if none qualify. Complete registered target leaks K=16/64/256: 39/33/17 of 40; each random twin and baseline: 40/40; every cell finished 40/40. Therefore K=256.
+
+Also exercise the combined arm's deterministic gate-negative bypass on the already generated side-effect baselines; all 80 side-effect gates are false, so this adds no fresh side-effect generations. Retain the $0.40 floor, 15-minute stall stop and immediate end-of-run destruction.

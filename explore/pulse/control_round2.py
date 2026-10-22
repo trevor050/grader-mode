@@ -35,16 +35,16 @@ def credit(stage):
     return row
 
 def fetch():
-    names=json.loads(ssh("python3 -c \"import pathlib,json;print(json.dumps([p.name for p in pathlib.Path('/workspace/pulse/out').iterdir() if p.is_file()]))\"").stdout)
-    if names:scp(['/workspace/pulse/out/'+n for n in names],str(OUT/'out'),pull=True)
-    # Verify all copied raw outputs against remote digests before claiming collection.
+    # Pull only changed/new artifacts; completed outputs are immutable.
     remote=json.loads(ssh("python3 -c \"import pathlib,json,hashlib;print(json.dumps({p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in pathlib.Path('/workspace/pulse/out').iterdir() if p.is_file()}))\"").stdout)
-    # events.jsonl can grow between the copy and hash; check stable experiment files strictly.
+    changed=[n for n,h in remote.items() if not (OUT/'out'/n).exists() or hashlib.sha256((OUT/'out'/n).read_bytes()).hexdigest()!=h]
+    if changed:scp(['/workspace/pulse/out/'+n for n in changed],str(OUT/'out'),pull=True)
     for name,digest in remote.items():
         if name=='events.jsonl':continue
         assert hashlib.sha256((OUT/'out'/name).read_bytes()).hexdigest()==digest,name
     (OUT/'raw-hashes.json').write_text(json.dumps(remote,indent=2)+'\n')
-    return names
+    return changed
+
 
 def send(command):
     row=credit('before_'+command['arm'])

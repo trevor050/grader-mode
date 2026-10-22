@@ -18,7 +18,12 @@ def wait_marker(arm=None):
 
 
 def job(command):
-    start=time.time();before=send(command);time.sleep(2.5);wait_marker(command['arm']);fetch();after=credit('after_'+command['arm'])
+    start=time.time()
+    existing=OUT/'out'/(command['arm']+'.done.json')
+    if existing.exists():
+        print(json.dumps({'resume_preserved':command['arm']}),flush=True)
+        return json.loads(existing.read_text())
+    before=send(command);time.sleep(2.5);wait_marker(command['arm']);fetch();after=credit('after_'+command['arm'])
     d=json.loads((OUT/'out'/(command['arm']+'.done.json')).read_text())
     print(json.dumps(d|{'wall_s':time.time()-start,'credit':after['credit'],'conservative_remaining':after['conservative_remaining']}),flush=True)
     if after['usable_remaining']<.40:raise RuntimeError('Budget hard stop after job')
@@ -33,7 +38,7 @@ def registered():
                        ('target_k16',16,'q38-T3E3.json'),('target_k256',256,'q38-T3E3.json'),
                        ('random_k16',16,'q38-rand_T3E3.json'),('random_k256',256,'q38-rand_T3E3.json')]:
         job({'arm':arm,'kind':'pulse','k':k,'spec':spec})
-        if arm=='random_k64':
+        if arm=='random_k64' and not (OUT/'first-pair-projection.json').exists():
             events=[json.loads(l) for l in (OUT/'out/events.jsonl').read_text().splitlines()]
             durations=[r['seconds'] for r in events if r['event']=='pulse_complete']
             s=credit('first_pair_projection')
