@@ -1,4 +1,6 @@
-# Round 2 handoff, not executed
+# Round 2 handoff, historical
+
+**Completed 2026-10-22.** See RESULTS2.md, summary2.json and execution2.json. All six registered pulse cells, side-effect paths and the single amended combined arm ran. Instance 57170351 was destroyed; no Vast instances remain. Further paid runs require new authorization. The original prospective handoff below is retained for provenance.
 
 Round 1 is complete. Instance **57166538 was destroyed**, and the post-teardown instance list was empty. A new rental/download is required. Do not restart Round 1 generation or refit the detector.
 

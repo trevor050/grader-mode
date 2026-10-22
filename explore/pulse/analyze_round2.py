@@ -14,6 +14,10 @@ def counts(rows):
     d={k:sum(bool(r[k]) for r in rows) for k in ['finished','leak','correct','boxed','boxed_finished','rule','rule_restatement','rule_restatement_with_prefill']}
     d.update(n=len(rows),gate=sum(r['gate'] for r in rows),unfinished_as_failure=d['leak']+len(rows)-d['finished'],
              tokens=sum(len(r['token_ids']) for r in rows),sources={s:sum(r['source']==s for r in rows) for s in sorted({r['source'] for r in rows})})
+    d['finish_reason_counts']={k:sum(r['finish_reason']==k for r in rows) for k in sorted({r['finish_reason'] for r in rows})}
+    d['unfinished_rows']=[{'idx':r['idx'],'finish_reason':r['finish_reason'],'tokens':len(r['token_ids']),
+        'missing_closing_think':'</think>' not in r['text']} for r in rows if not r['finished']]
+    d['empty_final']=sum(not r['final'].strip() for r in rows)
     if any('stage_a_token_ids' in r for r in rows):
         pulsed=[r for r in rows if 'stage_a_token_ids' in r]
         d['pulse']={'n':len(pulsed),'actual_reasoning_tokens':[r['actual_pulse_reasoning_tokens'] for r in pulsed],

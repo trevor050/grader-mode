@@ -1,0 +1,2178 @@
+{
+  "instance": 57170351,
+  "gpu": "A100 PCIE",
+  "offer": 47195598,
+  "image": "vllm/vllm-openai:v0.32.0",
+  "disk_gb": 150,
+  "quoted_hourly_rate": 0.9916666666666667,
+  "quoted_ingress_per_gb": 0.0026041666666666665,
+  "quoted_egress_per_gb": 0.00390625,
+  "initial_credit": 3.098396945699996,
+  "initial_utc": "2026-10-22T06:17:58Z",
+  "final_credit": 2.305467572100003,
+  "final_credit_utc": "2026-10-22T07:03:38Z",
+  "billing_status": "provisional posted credit snapshot, not a final invoice",
+  "guard_hourly_rate": 1.1,
+  "network_reserve": 0.3,
+  "hard_floor": 0.4,
+  "watchdog_interval_s": 45,
+  "stall_limit_s": 900,
+  "destroyed_utc": "2026-10-22T06:58:26Z",
+  "verified_utc": "2026-10-22T06:58:28Z",
+  "destroy_returncode": 0,
+  "instances_after": [],
+  "wall_s": 2430.0744438171387,
+  "conservative_time_cost_with_reserve": 1.0425227467219034,
+  "minimum_reported_credit_while_active": 2.3437539611000027,
+  "minimum_conservative_remaining_while_active": 2.0563834326183925,
+  "guard_stop_events": [],
+  "stage_credit": [
+    {
+      "utc": "2026-10-22T06:22:38Z",
+      "stage": "wait_None",
+      "credit": 3.090641408099998,
+      "conservative_remaining": 2.712864861725052,
+      "usable_remaining": 2.712864861725052,
+      "elapsed_s": 279.92318391799927
+    },
+    {
+      "utc": "2026-10-22T06:23:04Z",
+      "stage": "wait_None",
+      "credit": 3.073691138099999,
+      "conservative_remaining": 2.7046786479800407,
+      "usable_remaining": 2.7046786479800407,
+      "elapsed_s": 306.71442890167236
+    },
+    {
+      "utc": "2026-10-22T06:23:32Z",
+      "stage": "wait_None",
+      "credit": 3.0517537280999996,
+      "conservative_remaining": 2.6963885957118006,
+      "usable_remaining": 2.6963885957118006,
+      "elapsed_s": 333.8455090522766
+    },
+    {
+      "utc": "2026-10-22T06:23:43Z",
+      "stage": "download_progress",
+      "credit": 3.0517537280999996,
+      "conservative_remaining": 2.6927449246230517,
+      "usable_remaining": 2.6927449246230517,
+      "elapsed_s": 345.77025079727173
+    },
+    {
+      "utc": "2026-10-22T06:23:59Z",
+      "stage": "wait_None",
+      "credit": 3.0517537280999996,
+      "conservative_remaining": 2.6880084868519964,
+      "usable_remaining": 2.6880084868519964,
+      "elapsed_s": 361.2713198661804
+    },
+    {
+      "utc": "2026-10-22T06:24:26Z",
+      "stage": "wait_None",
+      "credit": 3.0361971680999993,
+      "conservative_remaining": 2.6795928237818476,
+      "usable_remaining": 2.6795928237818476,
+      "elapsed_s": 388.81348991394043
+    },
+    {
+      "utc": "2026-10-22T06:24:54Z",
+      "stage": "wait_None",
+      "credit": 3.0255530180999983,
+      "conservative_remaining": 2.671241615220851,
+      "usable_remaining": 2.671241615220851,
+      "elapsed_s": 416.14471793174744
+    },
+    {
+      "utc": "2026-10-22T06:25:08Z",
+      "stage": "status",
+      "credit": 3.0255530180999983,
+      "conservative_remaining": 2.6668538759399913,
+      "usable_remaining": 2.6668538759399913,
+      "elapsed_s": 430.5045919418335
+    },
+    {
+      "utc": "2026-10-22T06:25:21Z",
+      "stage": "wait_None",
+      "credit": 3.0255530180999983,
+      "conservative_remaining": 2.6628755236714543,
+      "usable_remaining": 2.6628755236714543,
+      "elapsed_s": 443.5246539115906
+    },
+    {
+      "utc": "2026-10-22T06:25:49Z",
+      "stage": "wait_None",
+      "credit": 3.0142351680999973,
+      "conservative_remaining": 2.6544900449563524,
+      "usable_remaining": 2.6544900449563524,
+      "elapsed_s": 470.96803879737854
+    },
+    {
+      "utc": "2026-10-22T06:26:13Z",
+      "stage": "download_progress",
+      "credit": 2.9565432180999984,
+      "conservative_remaining": 2.6469748504012287,
+      "usable_remaining": 2.6469748504012287,
+      "elapsed_s": 495.5632209777832
+    },
+    {
+      "utc": "2026-10-22T06:26:15Z",
+      "stage": "wait_None",
+      "credit": 2.9565432180999984,
+      "conservative_remaining": 2.646305285664015,
+      "usable_remaining": 2.646305285664015,
+      "elapsed_s": 497.7545237541199
+    },
+    {
+      "utc": "2026-10-22T06:26:44Z",
+      "stage": "wait_None",
+      "credit": 2.9565432180999984,
+      "conservative_remaining": 2.637672775611228,
+      "usable_remaining": 2.637672775611228,
+      "elapsed_s": 526.006374835968
+    },
+    {
+      "utc": "2026-10-22T06:27:11Z",
+      "stage": "wait_None",
+      "credit": 2.9458609080999985,
+      "conservative_remaining": 2.6293225148303105,
+      "usable_remaining": 2.6293225148303105,
+      "elapsed_s": 553.3345010280609
+    },
+    {
+      "utc": "2026-10-22T06:27:38Z",
+      "stage": "wait_None",
+      "credit": 2.935363558099997,
+      "conservative_remaining": 2.6210021130557983,
+      "usable_remaining": 2.6210021130557983,
+      "elapsed_s": 580.564906835556
+    },
+    {
+      "utc": "2026-10-22T06:27:47Z",
+      "stage": "progress",
+      "credit": 2.935363558099997,
+      "conservative_remaining": 2.6184255423859883,
+      "usable_remaining": 2.6184255423859883,
+      "elapsed_s": 588.9973199367523
+    },
+    {
+      "utc": "2026-10-22T06:28:05Z",
+      "stage": "wait_None",
+      "credit": 2.894005058099996,
+      "conservative_remaining": 2.6127541740585825,
+      "usable_remaining": 2.6127541740585825,
+      "elapsed_s": 607.5581617355347
+    },
+    {
+      "utc": "2026-10-22T06:28:32Z",
+      "stage": "wait_None",
+      "credit": 2.894005058099996,
+      "conservative_remaining": 2.604487133176737,
+      "usable_remaining": 2.604487133176737,
+      "elapsed_s": 634.6139318943024
+    },
+    {
+      "utc": "2026-10-22T06:28:59Z",
+      "stage": "wait_None",
+      "credit": 2.8787143080999975,
+      "conservative_remaining": 2.5962668625099257,
+      "usable_remaining": 2.5962668625099257,
+      "elapsed_s": 661.5166358947754
+    },
+    {
+      "utc": "2026-10-22T06:29:25Z",
+      "stage": "wait_None",
+      "credit": 2.8676311180999967,
+      "conservative_remaining": 2.5883066248148143,
+      "usable_remaining": 2.5883066248148143,
+      "elapsed_s": 687.5683228969574
+    },
+    {
+      "utc": "2026-10-22T06:29:35Z",
+      "stage": "progress",
+      "credit": 2.8676311180999967,
+      "conservative_remaining": 2.585448553408132,
+      "usable_remaining": 2.585448553408132,
+      "elapsed_s": 696.9220111370087
+    },
+    {
+      "utc": "2026-10-22T06:29:52Z",
+      "stage": "wait_None",
+      "credit": 2.8676311180999967,
+      "conservative_remaining": 2.5800927265666718,
+      "usable_remaining": 2.5800927265666718,
+      "elapsed_s": 714.4501717090607
+    },
+    {
+      "utc": "2026-10-22T06:30:19Z",
+      "stage": "wait_None",
+      "credit": 2.8548788180999978,
+      "conservative_remaining": 2.5719148693862355,
+      "usable_remaining": 2.5719148693862355,
+      "elapsed_s": 741.2140679359436
+    },
+    {
+      "utc": "2026-10-22T06:30:38Z",
+      "stage": "progress",
+      "credit": 2.8548788180999978,
+      "conservative_remaining": 2.56619824612632,
+      "usable_remaining": 2.56619824612632,
+      "elapsed_s": 759.9230167865753
+    },
+    {
+      "utc": "2026-10-22T06:30:46Z",
+      "stage": "wait_None",
+      "credit": 2.8548788180999978,
+      "conservative_remaining": 2.5637659416446548,
+      "usable_remaining": 2.5637659416446548,
+      "elapsed_s": 767.8832859992981
+    },
+    {
+      "utc": "2026-10-22T06:31:12Z",
+      "stage": "wait_None",
+      "credit": 2.8423932780999976,
+      "conservative_remaining": 2.5555828879922093,
+      "usable_remaining": 2.5555828879922093,
+      "elapsed_s": 794.6641888618469
+    },
+    {
+      "utc": "2026-10-22T06:31:39Z",
+      "stage": "wait_None",
+      "credit": 2.833322408099999,
+      "conservative_remaining": 2.547374445052557,
+      "usable_remaining": 2.547374445052557,
+      "elapsed_s": 821.5281839370728
+    },
+    {
+      "utc": "2026-10-22T06:31:49Z",
+      "stage": "model_load",
+      "credit": 2.833322408099999,
+      "conservative_remaining": 2.5444569637162284,
+      "usable_remaining": 2.5444569637162284,
+      "elapsed_s": 831.0763046741486
+    },
+    {
+      "utc": "2026-10-22T06:32:06Z",
+      "stage": "wait_None",
+      "credit": 2.7776380281,
+      "conservative_remaining": 2.5390882783183915,
+      "usable_remaining": 2.5390882783183915,
+      "elapsed_s": 848.646547794342
+    },
+    {
+      "utc": "2026-10-22T06:32:33Z",
+      "stage": "wait_None",
+      "credit": 2.7776380281,
+      "conservative_remaining": 2.5309128836906085,
+      "usable_remaining": 2.5309128836906085,
+      "elapsed_s": 875.4023847579956
+    },
+    {
+      "utc": "2026-10-22T06:32:42Z",
+      "stage": "before_target_k64",
+      "credit": 2.7666277480999995,
+      "conservative_remaining": 2.528072486233327,
+      "usable_remaining": 2.528072486233327,
+      "elapsed_s": 884.6982309818268
+    },
+    {
+      "utc": "2026-10-22T06:32:46Z",
+      "stage": "wait_target_k64",
+      "credit": 2.7666277480999995,
+      "conservative_remaining": 2.526963387428005,
+      "usable_remaining": 2.526963387428005,
+      "elapsed_s": 888.328008890152
+    },
+    {
+      "utc": "2026-10-22T06:33:13Z",
+      "stage": "wait_target_k64",
+      "credit": 2.7666277480999995,
+      "conservative_remaining": 2.5186518451753055,
+      "usable_remaining": 2.5186518451753055,
+      "elapsed_s": 915.5294198989868
+    },
+    {
+      "utc": "2026-10-22T06:33:23Z",
+      "stage": "target_k64_progress",
+      "credit": 2.756502758099998,
+      "conservative_remaining": 2.5156673205279105,
+      "usable_remaining": 2.5156673205279105,
+      "elapsed_s": 925.2969551086426
+    },
+    {
+      "utc": "2026-10-22T06:33:42Z",
+      "stage": "wait_target_k64",
+      "credit": 2.756502758099998,
+      "conservative_remaining": 2.509921775187002,
+      "usable_remaining": 2.509921775187002,
+      "elapsed_s": 944.1005580425262
+    },
+    {
+      "utc": "2026-10-22T06:34:09Z",
+      "stage": "wait_target_k64",
+      "credit": 2.7467965620999983,
+      "conservative_remaining": 2.50172182431315,
+      "usable_remaining": 2.50172182431315,
+      "elapsed_s": 970.9367609024048
+    },
+    {
+      "utc": "2026-10-22T06:34:35Z",
+      "stage": "wait_target_k64",
+      "credit": 2.736000462099998,
+      "conservative_remaining": 2.4935423935700913,
+      "usable_remaining": 2.4935423935700913,
+      "elapsed_s": 997.7058069705963
+    },
+    {
+      "utc": "2026-10-22T06:34:48Z",
+      "stage": "after_target_k64",
+      "credit": 2.736000462099998,
+      "conservative_remaining": 2.4895964784737554,
+      "usable_remaining": 2.4895964784737554,
+      "elapsed_s": 1010.6197109222412
+    },
+    {
+      "utc": "2026-10-22T06:34:49Z",
+      "stage": "before_random_k64",
+      "credit": 2.736000462099998,
+      "conservative_remaining": 2.489469700977153,
+      "usable_remaining": 2.489469700977153,
+      "elapsed_s": 1011.0346190929413
+    },
+    {
+      "utc": "2026-10-22T06:34:52Z",
+      "stage": "wait_random_k64",
+      "credit": 2.736000462099998,
+      "conservative_remaining": 2.4883644012328117,
+      "usable_remaining": 2.4883644012328117,
+      "elapsed_s": 1014.6519637107849
+    },
+    {
+      "utc": "2026-10-22T06:35:00Z",
+      "stage": "target_k64_progress",
+      "credit": 2.736000462099998,
+      "conservative_remaining": 2.4859026910181967,
+      "usable_remaining": 2.4859026910181967,
+      "elapsed_s": 1022.7084698677063
+    },
+    {
+      "utc": "2026-10-22T06:35:19Z",
+      "stage": "wait_random_k64",
+      "credit": 2.7254317420999996,
+      "conservative_remaining": 2.480246720510999,
+      "usable_remaining": 2.480246720510999,
+      "elapsed_s": 1041.218918800354
+    },
+    {
+      "utc": "2026-10-22T06:35:46Z",
+      "stage": "wait_random_k64",
+      "credit": 2.7165701790999996,
+      "conservative_remaining": 2.472044726045542,
+      "usable_remaining": 2.472044726045542,
+      "elapsed_s": 1068.0618097782135
+    },
+    {
+      "utc": "2026-10-22T06:36:13Z",
+      "stage": "wait_random_k64",
+      "credit": 2.7165701790999996,
+      "conservative_remaining": 2.4638123682322894,
+      "usable_remaining": 2.4638123682322894,
+      "elapsed_s": 1095.004071712494
+    },
+    {
+      "utc": "2026-10-22T06:36:33Z",
+      "stage": "after_random_k64",
+      "credit": 2.7060521490999996,
+      "conservative_remaining": 2.4577514216419187,
+      "usable_remaining": 2.4577514216419187,
+      "elapsed_s": 1114.8398969173431
+    },
+    {
+      "utc": "2026-10-22T06:36:33Z",
+      "stage": "first_pair_projection",
+      "credit": 2.7060521490999996,
+      "conservative_remaining": 2.4575905124064414,
+      "usable_remaining": 2.4575905124064414,
+      "elapsed_s": 1115.3665089607239
+    },
+    {
+      "utc": "2026-10-22T06:36:34Z",
+      "stage": "before_target_k16",
+      "credit": 2.7060521490999996,
+      "conservative_remaining": 2.4574296044822663,
+      "usable_remaining": 2.4574296044822663,
+      "elapsed_s": 1115.8931167125702
+    },
+    {
+      "utc": "2026-10-22T06:36:37Z",
+      "stage": "wait_target_k16",
+      "credit": 2.7060521490999996,
+      "conservative_remaining": 2.456268581315822,
+      "usable_remaining": 2.456268581315822,
+      "elapsed_s": 1119.6928288936615
+    },
+    {
+      "utc": "2026-10-22T06:36:47Z",
+      "stage": "random_k64_progress",
+      "credit": 2.7060521490999996,
+      "conservative_remaining": 2.453232506829778,
+      "usable_remaining": 2.453232506829778,
+      "elapsed_s": 1129.6290726661682
+    },
+    {
+      "utc": "2026-10-22T06:37:05Z",
+      "stage": "wait_target_k16",
+      "credit": 2.6951669691000006,
+      "conservative_remaining": 2.4479740820576215,
+      "usable_remaining": 2.4479740820576215,
+      "elapsed_s": 1146.8384628295898
+    },
+    {
+      "utc": "2026-10-22T06:37:31Z",
+      "stage": "wait_target_k16",
+      "credit": 2.6951669691000006,
+      "conservative_remaining": 2.439802298173255,
+      "usable_remaining": 2.439802298173255,
+      "elapsed_s": 1173.5824828147888
+    },
+    {
+      "utc": "2026-10-22T06:37:58Z",
+      "stage": "wait_target_k16",
+      "credit": 2.6834070091000015,
+      "conservative_remaining": 2.431559918077402,
+      "usable_remaining": 2.431559918077402,
+      "elapsed_s": 1200.5575449466705
+    },
+    {
+      "utc": "2026-10-22T06:38:15Z",
+      "stage": "pulse_progress",
+      "credit": 2.6834070091000015,
+      "conservative_remaining": 2.426501557441168,
+      "usable_remaining": 2.426501557441168,
+      "elapsed_s": 1217.1121797561646
+    },
+    {
+      "utc": "2026-10-22T06:38:25Z",
+      "stage": "wait_target_k16",
+      "credit": 2.6834070091000015,
+      "conservative_remaining": 2.423303404839449,
+      "usable_remaining": 2.423303404839449,
+      "elapsed_s": 1227.5788609981537
+    },
+    {
+      "utc": "2026-10-22T06:38:46Z",
+      "stage": "after_target_k16",
+      "credit": 2.6682195391000008,
+      "conservative_remaining": 2.416958988300575,
+      "usable_remaining": 2.416958988300575,
+      "elapsed_s": 1248.3424060344696
+    },
+    {
+      "utc": "2026-10-22T06:38:47Z",
+      "stage": "before_target_k256",
+      "credit": 2.6682195391000008,
+      "conservative_remaining": 2.4167793326890594,
+      "usable_remaining": 2.4167793326890594,
+      "elapsed_s": 1248.9303698539734
+    },
+    {
+      "utc": "2026-10-22T06:38:51Z",
+      "stage": "wait_target_k256",
+      "credit": 2.6682195391000008,
+      "conservative_remaining": 2.4155488234741287,
+      "usable_remaining": 2.4155488234741287,
+      "elapsed_s": 1252.9574909210205
+    },
+    {
+      "utc": "2026-10-22T06:39:18Z",
+      "stage": "wait_target_k256",
+      "credit": 2.6577812091000013,
+      "conservative_remaining": 2.4072944442347812,
+      "usable_remaining": 2.4072944442347812,
+      "elapsed_s": 1279.971822977066
+    },
+    {
+      "utc": "2026-10-22T06:39:33Z",
+      "stage": "pulse_progress",
+      "credit": 2.6577812091000013,
+      "conservative_remaining": 2.402730890510757,
+      "usable_remaining": 2.402730890510757,
+      "elapsed_s": 1294.9070897102356
+    },
+    {
+      "utc": "2026-10-22T06:39:45Z",
+      "stage": "wait_target_k256",
+      "credit": 2.6577812091000013,
+      "conservative_remaining": 2.3989772013143824,
+      "usable_remaining": 2.3989772013143824,
+      "elapsed_s": 1307.1918907165527
+    },
+    {
+      "utc": "2026-10-22T06:40:12Z",
+      "stage": "wait_target_k256",
+      "credit": 2.6476227491000017,
+      "conservative_remaining": 2.3907143651958433,
+      "usable_remaining": 2.3907143651958433,
+      "elapsed_s": 1334.2338998317719
+    },
+    {
+      "utc": "2026-10-22T06:40:39Z",
+      "stage": "wait_target_k256",
+      "credit": 2.6368146291000016,
+      "conservative_remaining": 2.3824890109747114,
+      "usable_remaining": 2.3824890109747114,
+      "elapsed_s": 1361.1532409191132
+    },
+    {
+      "utc": "2026-10-22T06:41:04Z",
+      "stage": "after_target_k256",
+      "credit": 2.6368146291000016,
+      "conservative_remaining": 2.3749172841425863,
+      "usable_remaining": 2.3749172841425863,
+      "elapsed_s": 1385.9334378242493
+    },
+    {
+      "utc": "2026-10-22T06:41:04Z",
+      "stage": "before_random_k16",
+      "credit": 2.6368146291000016,
+      "conservative_remaining": 2.3747937742653287,
+      "usable_remaining": 2.3747937742653287,
+      "elapsed_s": 1386.3376519680023
+    },
+    {
+      "utc": "2026-10-22T06:41:06Z",
+      "stage": "pulse_progress",
+      "credit": 2.6368146291000016,
+      "conservative_remaining": 2.3741897211653784,
+      "usable_remaining": 2.3741897211653784,
+      "elapsed_s": 1388.3145530223846
+    },
+    {
+      "utc": "2026-10-22T06:41:08Z",
+      "stage": "wait_random_k16",
+      "credit": 2.6368146291000016,
+      "conservative_remaining": 2.3736241576985644,
+      "usable_remaining": 2.3736241576985644,
+      "elapsed_s": 1390.1654880046844
+    },
+    {
+      "utc": "2026-10-22T06:41:35Z",
+      "stage": "wait_random_k16",
+      "credit": 2.6256106491000004,
+      "conservative_remaining": 2.365451163846532,
+      "usable_remaining": 2.365451163846532,
+      "elapsed_s": 1416.9134678840637
+    },
+    {
+      "utc": "2026-10-22T06:42:01Z",
+      "stage": "wait_random_k16",
+      "credit": 2.615378939100001,
+      "conservative_remaining": 2.357296964378767,
+      "usable_remaining": 2.357296964378767,
+      "elapsed_s": 1443.5999388694763
+    },
+    {
+      "utc": "2026-10-22T06:42:28Z",
+      "stage": "wait_random_k16",
+      "credit": 2.615378939100001,
+      "conservative_remaining": 2.3490452315657797,
+      "usable_remaining": 2.3490452315657797,
+      "elapsed_s": 1470.6056098937988
+    },
+    {
+      "utc": "2026-10-22T06:42:37Z",
+      "stage": "pulse_progress",
+      "credit": 2.6040464991000007,
+      "conservative_remaining": 2.3463020485158887,
+      "usable_remaining": 2.3463020485158887,
+      "elapsed_s": 1479.5832998752594
+    },
+    {
+      "utc": "2026-10-22T06:42:55Z",
+      "stage": "wait_random_k16",
+      "credit": 2.6040464991000007,
+      "conservative_remaining": 2.3408314326123523,
+      "usable_remaining": 2.3408314326123523,
+      "elapsed_s": 1497.4871337413788
+    },
+    {
+      "utc": "2026-10-22T06:43:25Z",
+      "stage": "after_random_k16",
+      "credit": 2.5930229091,
+      "conservative_remaining": 2.331577774231579,
+      "usable_remaining": 2.331577774231579,
+      "elapsed_s": 1527.771833896637
+    },
+    {
+      "utc": "2026-10-22T06:43:26Z",
+      "stage": "before_random_k256",
+      "credit": 2.5930229091,
+      "conservative_remaining": 2.33144868250517,
+      "usable_remaining": 2.33144868250517,
+      "elapsed_s": 1528.1943159103394
+    },
+    {
+      "utc": "2026-10-22T06:43:29Z",
+      "stage": "wait_random_k256",
+      "credit": 2.5930229091,
+      "conservative_remaining": 2.3303667417151526,
+      "usable_remaining": 2.3303667417151526,
+      "elapsed_s": 1531.7352130413055
+    },
+    {
+      "utc": "2026-10-22T06:43:56Z",
+      "stage": "wait_random_k256",
+      "credit": 2.5930229091,
+      "conservative_remaining": 2.32215305946762,
+      "usable_remaining": 2.32215305946762,
+      "elapsed_s": 1558.6163549423218
+    },
+    {
+      "utc": "2026-10-22T06:44:23Z",
+      "stage": "wait_random_k256",
+      "credit": 2.577676649099999,
+      "conservative_remaining": 2.314033629177292,
+      "usable_remaining": 2.314033629177292,
+      "elapsed_s": 1585.1890358924866
+    },
+    {
+      "utc": "2026-10-22T06:44:29Z",
+      "stage": "pulse_progress",
+      "credit": 2.577676649099999,
+      "conservative_remaining": 2.3120793963322503,
+      "usable_remaining": 2.3120793963322503,
+      "elapsed_s": 1591.5847070217133
+    },
+    {
+      "utc": "2026-10-22T06:44:50Z",
+      "stage": "wait_random_k256",
+      "credit": 2.5660604390999993,
+      "conservative_remaining": 2.3056639677533965,
+      "usable_remaining": 2.3056639677533965,
+      "elapsed_s": 1612.5806550979614
+    },
+    {
+      "utc": "2026-10-22T06:45:17Z",
+      "stage": "wait_random_k256",
+      "credit": 2.5660604390999993,
+      "conservative_remaining": 2.2974825054390027,
+      "usable_remaining": 2.2974825054390027,
+      "elapsed_s": 1639.3563499450684
+    },
+    {
+      "utc": "2026-10-22T06:45:50Z",
+      "stage": "after_random_k256",
+      "credit": 2.554100329099999,
+      "conservative_remaining": 2.287405076025207,
+      "usable_remaining": 2.287405076025207,
+      "elapsed_s": 1672.3370280265808
+    },
+    {
+      "utc": "2026-10-22T06:45:51Z",
+      "stage": "before_plain_baseline",
+      "credit": 2.554100329099999,
+      "conservative_remaining": 2.2872456270704133,
+      "usable_remaining": 2.2872456270704133,
+      "elapsed_s": 1672.8588609695435
+    },
+    {
+      "utc": "2026-10-22T06:45:54Z",
+      "stage": "wait_plain_baseline",
+      "credit": 2.554100329099999,
+      "conservative_remaining": 2.286084188731127,
+      "usable_remaining": 2.286084188731127,
+      "elapsed_s": 1676.659931898117
+    },
+    {
+      "utc": "2026-10-22T06:46:21Z",
+      "stage": "wait_plain_baseline",
+      "credit": 2.5424388390999972,
+      "conservative_remaining": 2.277944621720194,
+      "usable_remaining": 2.277944621720194,
+      "elapsed_s": 1703.298514842987
+    },
+    {
+      "utc": "2026-10-22T06:46:48Z",
+      "stage": "wait_plain_baseline",
+      "credit": 2.5424388390999972,
+      "conservative_remaining": 2.269775600312431,
+      "usable_remaining": 2.269775600312431,
+      "elapsed_s": 1730.0334939956665
+    },
+    {
+      "utc": "2026-10-22T06:46:52Z",
+      "stage": "registered_progress",
+      "credit": 2.5424388390999972,
+      "conservative_remaining": 2.268311009305993,
+      "usable_remaining": 2.268311009305993,
+      "elapsed_s": 1734.826700925827
+    },
+    {
+      "utc": "2026-10-22T06:47:14Z",
+      "stage": "wait_plain_baseline",
+      "credit": 2.5316648490999967,
+      "conservative_remaining": 2.261586760976195,
+      "usable_remaining": 2.261586760976195,
+      "elapsed_s": 1756.833331823349
+    },
+    {
+      "utc": "2026-10-22T06:47:46Z",
+      "stage": "side_effect_progress",
+      "credit": 2.521339369099998,
+      "conservative_remaining": 2.252069271655493,
+      "usable_remaining": 2.252069271655493,
+      "elapsed_s": 1787.981478691101
+    },
+    {
+      "utc": "2026-10-22T06:47:47Z",
+      "stage": "after_plain_baseline",
+      "credit": 2.521339369099998,
+      "conservative_remaining": 2.251593341375337,
+      "usable_remaining": 2.251593341375337,
+      "elapsed_s": 1789.539068698883
+    },
+    {
+      "utc": "2026-10-22T06:47:48Z",
+      "stage": "before_plain_target_k16",
+      "credit": 2.521339369099998,
+      "conservative_remaining": 2.2514634343103697,
+      "usable_remaining": 2.2514634343103697,
+      "elapsed_s": 1789.9642190933228
+    },
+    {
+      "utc": "2026-10-22T06:47:51Z",
+      "stage": "wait_plain_target_k16",
+      "credit": 2.521339369099998,
+      "conservative_remaining": 2.250357117869734,
+      "usable_remaining": 2.250357117869734,
+      "elapsed_s": 1793.5848910808563
+    },
+    {
+      "utc": "2026-10-22T06:48:30Z",
+      "stage": "after_plain_target_k16",
+      "credit": 2.5109671790999997,
+      "conservative_remaining": 2.2384090853647516,
+      "usable_remaining": 2.2384090853647516,
+      "elapsed_s": 1832.6875429153442
+    },
+    {
+      "utc": "2026-10-22T06:48:31Z",
+      "stage": "before_plain_random_k16",
+      "credit": 2.5109671790999997,
+      "conservative_remaining": 2.238279682276924,
+      "usable_remaining": 2.238279682276924,
+      "elapsed_s": 1833.1110439300537
+    },
+    {
+      "utc": "2026-10-22T06:48:34Z",
+      "stage": "wait_plain_random_k16",
+      "credit": 2.5109671790999997,
+      "conservative_remaining": 2.237182088836974,
+      "usable_remaining": 2.237182088836974,
+      "elapsed_s": 1836.7031679153442
+    },
+    {
+      "utc": "2026-10-22T06:48:59Z",
+      "stage": "wait_None",
+      "credit": 2.500575659100001,
+      "conservative_remaining": 2.229769240178942,
+      "usable_remaining": 2.229769240178942,
+      "elapsed_s": 1860.963399887085
+    },
+    {
+      "utc": "2026-10-22T06:49:01Z",
+      "stage": "before_plain_target_k64",
+      "credit": 2.500575659100001,
+      "conservative_remaining": 2.2289217430269845,
+      "usable_remaining": 2.2289217430269845,
+      "elapsed_s": 1863.7370269298553
+    },
+    {
+      "utc": "2026-10-22T06:49:05Z",
+      "stage": "wait_plain_target_k64",
+      "credit": 2.500575659100001,
+      "conservative_remaining": 2.227778012803806,
+      "usable_remaining": 2.227778012803806,
+      "elapsed_s": 1867.4801440238953
+    },
+    {
+      "utc": "2026-10-22T06:49:12Z",
+      "stage": "after_plain_target_k64",
+      "credit": 2.500575659100001,
+      "conservative_remaining": 2.225635504648036,
+      "usable_remaining": 2.225635504648036,
+      "elapsed_s": 1874.4919888973236
+    },
+    {
+      "utc": "2026-10-22T06:49:13Z",
+      "stage": "before_plain_random_k64",
+      "credit": 2.500575659100001,
+      "conservative_remaining": 2.2255078163063655,
+      "usable_remaining": 2.2255078163063655,
+      "elapsed_s": 1874.9098780155182
+    },
+    {
+      "utc": "2026-10-22T06:49:16Z",
+      "stage": "wait_plain_random_k64",
+      "credit": 2.500575659100001,
+      "conservative_remaining": 2.224392838933348,
+      "usable_remaining": 2.224392838933348,
+      "elapsed_s": 1878.5588948726654
+    },
+    {
+      "utc": "2026-10-22T06:49:22Z",
+      "stage": "after_plain_random_k64",
+      "credit": 2.500575659100001,
+      "conservative_remaining": 2.2225485010063775,
+      "usable_remaining": 2.2225485010063775,
+      "elapsed_s": 1884.5949099063873
+    },
+    {
+      "utc": "2026-10-22T06:49:23Z",
+      "stage": "before_plain_target_k256",
+      "credit": 2.500575659100001,
+      "conservative_remaining": 2.2224222527659068,
+      "usable_remaining": 2.2224222527659068,
+      "elapsed_s": 1885.0080859661102
+    },
+    {
+      "utc": "2026-10-22T06:49:26Z",
+      "stage": "wait_plain_target_k256",
+      "credit": 2.4897000391000006,
+      "conservative_remaining": 2.2213160918602806,
+      "usable_remaining": 2.2213160918602806,
+      "elapsed_s": 1888.6282489299774
+    },
+    {
+      "utc": "2026-10-22T06:49:34Z",
+      "stage": "after_plain_target_k256",
+      "credit": 2.4897000391000006,
+      "conservative_remaining": 2.2190342998818684,
+      "usable_remaining": 2.2190342998818684,
+      "elapsed_s": 1896.0959317684174
+    },
+    {
+      "utc": "2026-10-22T06:49:34Z",
+      "stage": "before_plain_random_k256",
+      "credit": 2.4897000391000006,
+      "conservative_remaining": 2.218879123149593,
+      "usable_remaining": 2.218879123149593,
+      "elapsed_s": 1896.6037828922272
+    },
+    {
+      "utc": "2026-10-22T06:49:38Z",
+      "stage": "wait_plain_random_k256",
+      "credit": 2.4897000391000006,
+      "conservative_remaining": 2.217621394506706,
+      "usable_remaining": 2.217621394506706,
+      "elapsed_s": 1900.7199857234955
+    },
+    {
+      "utc": "2026-10-22T06:49:45Z",
+      "stage": "after_plain_random_k256",
+      "credit": 2.4897000391000006,
+      "conservative_remaining": 2.2155499297893173,
+      "usable_remaining": 2.2155499297893173,
+      "elapsed_s": 1907.499324798584
+    },
+    {
+      "utc": "2026-10-22T06:49:46Z",
+      "stage": "before_plain_gated_reminder",
+      "credit": 2.4897000391000006,
+      "conservative_remaining": 2.215424352207064,
+      "usable_remaining": 2.215424352207064,
+      "elapsed_s": 1907.9103059768677
+    },
+    {
+      "utc": "2026-10-22T06:49:49Z",
+      "stage": "wait_plain_gated_reminder",
+      "credit": 2.4897000391000006,
+      "conservative_remaining": 2.2143211163795122,
+      "usable_remaining": 2.2143211163795122,
+      "elapsed_s": 1911.5208959579468
+    },
+    {
+      "utc": "2026-10-22T06:49:55Z",
+      "stage": "after_plain_gated_reminder",
+      "credit": 2.4897000391000006,
+      "conservative_remaining": 2.2124617262333097,
+      "usable_remaining": 2.2124617262333097,
+      "elapsed_s": 1917.606172800064
+    },
+    {
+      "utc": "2026-10-22T06:49:56Z",
+      "stage": "before_student_baseline",
+      "credit": 2.4897000391000006,
+      "conservative_remaining": 2.2123342793169414,
+      "usable_remaining": 2.2123342793169414,
+      "elapsed_s": 1918.0232717990875
+    },
+    {
+      "utc": "2026-10-22T06:49:59Z",
+      "stage": "wait_student_baseline",
+      "credit": 2.4897000391000006,
+      "conservative_remaining": 2.211232558699064,
+      "usable_remaining": 2.211232558699064,
+      "elapsed_s": 1921.62890291214
+    },
+    {
+      "utc": "2026-10-22T06:50:26Z",
+      "stage": "wait_student_baseline",
+      "credit": 2.4790525191000015,
+      "conservative_remaining": 2.2030407804432306,
+      "usable_remaining": 2.2030407804432306,
+      "elapsed_s": 1948.4383590221405
+    },
+    {
+      "utc": "2026-10-22T06:50:29Z",
+      "stage": "side_effect_progress",
+      "credit": 2.4790525191000015,
+      "conservative_remaining": 2.2020610056105054,
+      "usable_remaining": 2.2020610056105054,
+      "elapsed_s": 1951.6448948383331
+    },
+    {
+      "utc": "2026-10-22T06:50:53Z",
+      "stage": "wait_student_baseline",
+      "credit": 2.4700262011000014,
+      "conservative_remaining": 2.1948550611319932,
+      "usable_remaining": 2.1948550611319932,
+      "elapsed_s": 1975.2279858589172
+    },
+    {
+      "utc": "2026-10-22T06:51:01Z",
+      "stage": "after_student_baseline",
+      "credit": 2.4700262011000014,
+      "conservative_remaining": 2.1925140114806885,
+      "usable_remaining": 2.1925140114806885,
+      "elapsed_s": 1982.8896028995514
+    },
+    {
+      "utc": "2026-10-22T06:51:01Z",
+      "stage": "before_student_target_k16",
+      "credit": 2.4700262011000014,
+      "conservative_remaining": 2.1923573531226443,
+      "usable_remaining": 2.1923573531226443,
+      "elapsed_s": 1983.402302980423
+    },
+    {
+      "utc": "2026-10-22T06:51:05Z",
+      "stage": "wait_student_target_k16",
+      "credit": 2.4700262011000014,
+      "conservative_remaining": 2.1912537075131597,
+      "usable_remaining": 2.1912537075131597,
+      "elapsed_s": 1987.0142340660095
+    },
+    {
+      "utc": "2026-10-22T06:51:11Z",
+      "stage": "after_student_target_k16",
+      "credit": 2.4700262011000014,
+      "conservative_remaining": 2.1891728925555407,
+      "usable_remaining": 2.1891728925555407,
+      "elapsed_s": 1993.8241739273071
+    },
+    {
+      "utc": "2026-10-22T06:51:12Z",
+      "stage": "before_student_random_k16",
+      "credit": 2.4700262011000014,
+      "conservative_remaining": 2.18904819842671,
+      "usable_remaining": 2.18904819842671,
+      "elapsed_s": 1994.232263803482
+    },
+    {
+      "utc": "2026-10-22T06:51:15Z",
+      "stage": "wait_student_random_k16",
+      "credit": 2.4700262011000014,
+      "conservative_remaining": 2.18795135505161,
+      "usable_remaining": 2.18795135505161,
+      "elapsed_s": 1997.8219330310822
+    },
+    {
+      "utc": "2026-10-22T06:51:22Z",
+      "stage": "after_student_random_k16",
+      "credit": 2.458068821100003,
+      "conservative_remaining": 2.1859414039568232,
+      "usable_remaining": 2.1859414039568232,
+      "elapsed_s": 2004.3999547958374
+    },
+    {
+      "utc": "2026-10-22T06:51:23Z",
+      "stage": "before_student_target_k64",
+      "credit": 2.458068821100003,
+      "conservative_remaining": 2.185779196750733,
+      "usable_remaining": 2.185779196750733,
+      "elapsed_s": 2004.930814743042
+    },
+    {
+      "utc": "2026-10-22T06:51:26Z",
+      "stage": "wait_student_target_k64",
+      "credit": 2.458068821100003,
+      "conservative_remaining": 2.1846255855013395,
+      "usable_remaining": 2.1846255855013395,
+      "elapsed_s": 2008.7062697410583
+    },
+    {
+      "utc": "2026-10-22T06:51:33Z",
+      "stage": "after_student_target_k64",
+      "credit": 2.458068821100003,
+      "conservative_remaining": 2.1824697217328146,
+      "usable_remaining": 2.1824697217328146,
+      "elapsed_s": 2015.7618238925934
+    },
+    {
+      "utc": "2026-10-22T06:51:34Z",
+      "stage": "before_student_random_k64",
+      "credit": 2.458068821100003,
+      "conservative_remaining": 2.182303175573494,
+      "usable_remaining": 2.182303175573494,
+      "elapsed_s": 2016.3068840503693
+    },
+    {
+      "utc": "2026-10-22T06:51:38Z",
+      "stage": "wait_student_random_k64",
+      "credit": 2.458068821100003,
+      "conservative_remaining": 2.1811398317664326,
+      "usable_remaining": 2.1811398317664326,
+      "elapsed_s": 2020.1141910552979
+    },
+    {
+      "utc": "2026-10-22T06:51:44Z",
+      "stage": "after_student_random_k64",
+      "credit": 2.458068821100003,
+      "conservative_remaining": 2.179097033426112,
+      "usable_remaining": 2.179097033426112,
+      "elapsed_s": 2026.799712896347
+    },
+    {
+      "utc": "2026-10-22T06:51:45Z",
+      "stage": "before_student_target_k256",
+      "credit": 2.458068821100003,
+      "conservative_remaining": 2.178965802820139,
+      "usable_remaining": 2.178965802820139,
+      "elapsed_s": 2027.2291948795319
+    },
+    {
+      "utc": "2026-10-22T06:51:49Z",
+      "stage": "wait_student_target_k256",
+      "credit": 2.458068821100003,
+      "conservative_remaining": 2.1778169915195433,
+      "usable_remaining": 2.1778169915195433,
+      "elapsed_s": 2030.9889409542084
+    },
+    {
+      "utc": "2026-10-22T06:51:56Z",
+      "stage": "after_student_target_k256",
+      "credit": 2.458068821100003,
+      "conservative_remaining": 2.175702655889868,
+      "usable_remaining": 2.175702655889868,
+      "elapsed_s": 2037.9085848331451
+    },
+    {
+      "utc": "2026-10-22T06:51:56Z",
+      "stage": "student_progress",
+      "credit": 2.458068821100003,
+      "conservative_remaining": 2.175544875858505,
+      "usable_remaining": 2.175544875858505,
+      "elapsed_s": 2038.4249558448792
+    },
+    {
+      "utc": "2026-10-22T06:51:56Z",
+      "stage": "before_student_random_k256",
+      "credit": 2.458068821100003,
+      "conservative_remaining": 2.175534558095812,
+      "usable_remaining": 2.175534558095812,
+      "elapsed_s": 2038.4587230682373
+    },
+    {
+      "utc": "2026-10-22T06:52:00Z",
+      "stage": "wait_student_random_k256",
+      "credit": 2.4472266911000027,
+      "conservative_remaining": 2.174380952091627,
+      "usable_remaining": 2.174380952091627,
+      "elapsed_s": 2042.234160900116
+    },
+    {
+      "utc": "2026-10-22T06:52:09Z",
+      "stage": "after_student_random_k256",
+      "credit": 2.4472266911000027,
+      "conservative_remaining": 2.171480794149915,
+      "usable_remaining": 2.171480794149915,
+      "elapsed_s": 2051.7255868911743
+    },
+    {
+      "utc": "2026-10-22T06:52:10Z",
+      "stage": "before_student_gated_reminder",
+      "credit": 2.4472266911000027,
+      "conservative_remaining": 2.171312979669981,
+      "usable_remaining": 2.171312979669981,
+      "elapsed_s": 2052.2747979164124
+    },
+    {
+      "utc": "2026-10-22T06:52:14Z",
+      "stage": "wait_student_gated_reminder",
+      "credit": 2.4472266911000027,
+      "conservative_remaining": 2.170126881783154,
+      "usable_remaining": 2.170126881783154,
+      "elapsed_s": 2056.156572818756
+    },
+    {
+      "utc": "2026-10-22T06:52:20Z",
+      "stage": "after_student_gated_reminder",
+      "credit": 2.4472266911000027,
+      "conservative_remaining": 2.1681229924741183,
+      "usable_remaining": 2.1681229924741183,
+      "elapsed_s": 2062.714756011963
+    },
+    {
+      "utc": "2026-10-22T06:52:21Z",
+      "stage": "registered_complete",
+      "credit": 2.4472266911000027,
+      "conservative_remaining": 2.1679961274116697,
+      "usable_remaining": 2.1679961274116697,
+      "elapsed_s": 2063.129950761795
+    },
+    {
+      "utc": "2026-10-22T06:53:12Z",
+      "stage": "before_added_amendment",
+      "credit": 2.4356447111000037,
+      "conservative_remaining": 2.152487818630152,
+      "usable_remaining": 2.152487818630152,
+      "elapsed_s": 2113.8844158649445
+    },
+    {
+      "utc": "2026-10-22T06:53:34Z",
+      "stage": "added_arm_launch",
+      "credit": 2.425253601100003,
+      "conservative_remaining": 2.145547083270165,
+      "usable_remaining": 2.145547083270165,
+      "elapsed_s": 2136.599549770355
+    },
+    {
+      "utc": "2026-10-22T06:53:35Z",
+      "stage": "before_added_target_k256_reminder",
+      "credit": 2.425253601100003,
+      "conservative_remaining": 2.1454153738203443,
+      "usable_remaining": 2.1454153738203443,
+      "elapsed_s": 2137.0305988788605
+    },
+    {
+      "utc": "2026-10-22T06:53:38Z",
+      "stage": "wait_added_target_k256_reminder",
+      "credit": 2.425253601100003,
+      "conservative_remaining": 2.1442714667170706,
+      "usable_remaining": 2.1442714667170706,
+      "elapsed_s": 2140.7742948532104
+    },
+    {
+      "utc": "2026-10-22T06:54:05Z",
+      "stage": "wait_added_target_k256_reminder",
+      "credit": 2.4142905211000034,
+      "conservative_remaining": 2.1361377596242024,
+      "usable_remaining": 2.1361377596242024,
+      "elapsed_s": 2167.3936998844147
+    },
+    {
+      "utc": "2026-10-22T06:54:19Z",
+      "stage": "added_progress",
+      "credit": 2.4142905211000034,
+      "conservative_remaining": 2.131765229336036,
+      "usable_remaining": 2.131765229336036,
+      "elapsed_s": 2181.703799009323
+    },
+    {
+      "utc": "2026-10-22T06:54:32Z",
+      "stage": "wait_added_target_k256_reminder",
+      "credit": 2.4142905211000034,
+      "conservative_remaining": 2.1280347877061496,
+      "usable_remaining": 2.1280347877061496,
+      "elapsed_s": 2193.9125170707703
+    },
+    {
+      "utc": "2026-10-22T06:54:58Z",
+      "stage": "wait_added_target_k256_reminder",
+      "credit": 2.4142905211000034,
+      "conservative_remaining": 2.119905842825717,
+      "usable_remaining": 2.119905842825717,
+      "elapsed_s": 2220.5163366794586
+    },
+    {
+      "utc": "2026-10-22T06:55:25Z",
+      "stage": "wait_added_target_k256_reminder",
+      "credit": 2.3984682511000024,
+      "conservative_remaining": 2.111770468557821,
+      "usable_remaining": 2.111770468557821,
+      "elapsed_s": 2247.1411979198456
+    },
+    {
+      "utc": "2026-10-22T06:55:51Z",
+      "stage": "wait_added_target_k256_reminder",
+      "credit": 2.387147061100002,
+      "conservative_remaining": 2.1036403792019813,
+      "usable_remaining": 2.1036403792019813,
+      "elapsed_s": 2273.7487630844116
+    },
+    {
+      "utc": "2026-10-22T06:56:18Z",
+      "stage": "wait_added_target_k256_reminder",
+      "credit": 2.376567081100003,
+      "conservative_remaining": 2.0954436888810126,
+      "usable_remaining": 2.0954436888810126,
+      "elapsed_s": 2300.5742950439453
+    },
+    {
+      "utc": "2026-10-22T06:56:21Z",
+      "stage": "added_progress",
+      "credit": 2.376567081100003,
+      "conservative_remaining": 2.094458645017557,
+      "usable_remaining": 2.094458645017557,
+      "elapsed_s": 2303.7980749607086
+    },
+    {
+      "utc": "2026-10-22T06:56:45Z",
+      "stage": "wait_added_target_k256_reminder",
+      "credit": 2.376567081100003,
+      "conservative_remaining": 2.087271554806113,
+      "usable_remaining": 2.087271554806113,
+      "elapsed_s": 2327.319461107254
+    },
+    {
+      "utc": "2026-10-22T06:57:13Z",
+      "stage": "wait_added_target_k256_reminder",
+      "credit": 2.3665006711000025,
+      "conservative_remaining": 2.0788007408429645,
+      "usable_remaining": 2.0788007408429645,
+      "elapsed_s": 2355.0421249866486
+    },
+    {
+      "utc": "2026-10-22T06:57:40Z",
+      "stage": "wait_added_target_k256_reminder",
+      "credit": 2.3558954011000033,
+      "conservative_remaining": 2.0705097010913285,
+      "usable_remaining": 2.0705097010913285,
+      "elapsed_s": 2382.1764369010925
+    },
+    {
+      "utc": "2026-10-22T06:57:49Z",
+      "stage": "after_added_target_k256_reminder",
+      "credit": 2.3558954011000033,
+      "conservative_remaining": 2.067754374654703,
+      "usable_remaining": 2.067754374654703,
+      "elapsed_s": 2391.1938688755035
+    },
+    {
+      "utc": "2026-10-22T06:57:49Z",
+      "stage": "before_plain_added_target_k256_reminder",
+      "credit": 2.3558954011000033,
+      "conservative_remaining": 2.0675902977502476,
+      "usable_remaining": 2.0675902977502476,
+      "elapsed_s": 2391.7308478355408
+    },
+    {
+      "utc": "2026-10-22T06:57:53Z",
+      "stage": "wait_plain_added_target_k256_reminder",
+      "credit": 2.3558954011000033,
+      "conservative_remaining": 2.0664314294175434,
+      "usable_remaining": 2.0664314294175434,
+      "elapsed_s": 2395.523507833481
+    },
+    {
+      "utc": "2026-10-22T06:57:58Z",
+      "stage": "added_progress",
+      "credit": 2.3558954011000033,
+      "conservative_remaining": 2.0650728945648797,
+      "usable_remaining": 2.0650728945648797,
+      "elapsed_s": 2399.969621896744
+    },
+    {
+      "utc": "2026-10-22T06:58:00Z",
+      "stage": "after_plain_added_target_k256_reminder",
+      "credit": 2.3558954011000033,
+      "conservative_remaining": 2.0643628781950603,
+      "usable_remaining": 2.0643628781950603,
+      "elapsed_s": 2402.2933118343353
+    },
+    {
+      "utc": "2026-10-22T06:58:00Z",
+      "stage": "before_student_added_target_k256_reminder",
+      "credit": 2.3558954011000033,
+      "conservative_remaining": 2.064233289630823,
+      "usable_remaining": 2.064233289630823,
+      "elapsed_s": 2402.717419862747
+    },
+    {
+      "utc": "2026-10-22T06:58:04Z",
+      "stage": "wait_student_added_target_k256_reminder",
+      "credit": 2.3558954011000033,
+      "conservative_remaining": 2.063079605968409,
+      "usable_remaining": 2.063079605968409,
+      "elapsed_s": 2406.493111848831
+    },
+    {
+      "utc": "2026-10-22T06:58:10Z",
+      "stage": "after_student_added_target_k256_reminder",
+      "credit": 2.3558954011000033,
+      "conservative_remaining": 2.061204559092667,
+      "usable_remaining": 2.061204559092667,
+      "elapsed_s": 2412.6296288967133
+    },
+    {
+      "utc": "2026-10-22T06:58:11Z",
+      "stage": "added_complete",
+      "credit": 2.3558954011000033,
+      "conservative_remaining": 2.060858966275996,
+      "usable_remaining": 2.060858966275996,
+      "elapsed_s": 2413.76065993309
+    },
+    {
+      "utc": "2026-10-22T06:58:26Z",
+      "stage": "before_destroy",
+      "credit": 2.3437539611000027,
+      "conservative_remaining": 2.0563834326183925,
+      "usable_remaining": 2.0563834326183925,
+      "elapsed_s": 2428.407860994339
+    },
+    {
+      "utc": "2026-10-22T06:58:28Z",
+      "stage": "after_destroy",
+      "credit": 2.3437539611000027,
+      "conservative_remaining": 2.055874330326861,
+      "usable_remaining": 2.055874330326861,
+      "elapsed_s": 2430.0740139484406
+    }
+  ],
+  "runtime_events": [
+    {
+      "utc": "2026-10-22T06:30:03Z",
+      "event": "model_load_start"
+    },
+    {
+      "utc": "2026-10-22T06:31:56Z",
+      "event": "model_loaded",
+      "seconds": 113.08902525901794,
+      "torch": "2.13.0+cu130",
+      "closing_think_token_id": 248069,
+      "eos_ids": [
+        248044,
+        248046
+      ]
+    },
+    {
+      "utc": "2026-10-22T06:31:56Z",
+      "event": "gate_capture_start",
+      "n": 120,
+      "hooks": [
+        {
+          "feature_layers": [
+            13,
+            14,
+            15,
+            16,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          "hook_layers": [
+            13,
+            14,
+            15,
+            16,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          "features": 60
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-22T06:31:58Z",
+      "event": "gate_capture_progress",
+      "done": 12,
+      "total": 120
+    },
+    {
+      "utc": "2026-10-22T06:31:59Z",
+      "event": "gate_capture_progress",
+      "done": 24,
+      "total": 120
+    },
+    {
+      "utc": "2026-10-22T06:32:01Z",
+      "event": "gate_capture_progress",
+      "done": 36,
+      "total": 120
+    },
+    {
+      "utc": "2026-10-22T06:32:02Z",
+      "event": "gate_capture_progress",
+      "done": 48,
+      "total": 120
+    },
+    {
+      "utc": "2026-10-22T06:32:03Z",
+      "event": "gate_capture_progress",
+      "done": 60,
+      "total": 120
+    },
+    {
+      "utc": "2026-10-22T06:32:04Z",
+      "event": "gate_capture_progress",
+      "done": 72,
+      "total": 120
+    },
+    {
+      "utc": "2026-10-22T06:32:05Z",
+      "event": "gate_capture_progress",
+      "done": 84,
+      "total": 120
+    },
+    {
+      "utc": "2026-10-22T06:32:06Z",
+      "event": "gate_capture_progress",
+      "done": 96,
+      "total": 120
+    },
+    {
+      "utc": "2026-10-22T06:32:07Z",
+      "event": "gate_capture_progress",
+      "done": 108,
+      "total": 120
+    },
+    {
+      "utc": "2026-10-22T06:32:09Z",
+      "event": "gate_capture_progress",
+      "done": 120,
+      "total": 120
+    },
+    {
+      "utc": "2026-10-22T06:32:09Z",
+      "event": "gate_capture_complete",
+      "n": 120,
+      "seconds": 12.752384424209595,
+      "removed_hooks": [
+        0
+      ],
+      "gates": {
+        "rl_tutor": 40,
+        "plain_nosys": 0,
+        "student_tutor": 0
+      }
+    },
+    {
+      "utc": "2026-10-22T06:32:09Z",
+      "event": "infrastructure_boundary_check",
+      "forced_token_id": 248069,
+      "retained_token_ids": [
+        248069
+      ],
+      "finish_reason": "stop",
+      "stop_reason": 248069
+    },
+    {
+      "utc": "2026-10-22T06:32:09Z",
+      "event": "infrastructure_boundary_check",
+      "forced_token_id": 248044,
+      "retained_token_ids": [
+        248044
+      ],
+      "finish_reason": "stop",
+      "stop_reason": 248044
+    },
+    {
+      "utc": "2026-10-22T06:32:09Z",
+      "event": "infrastructure_boundary_check",
+      "forced_token_id": 248046,
+      "retained_token_ids": [
+        248046
+      ],
+      "finish_reason": "stop",
+      "stop_reason": null
+    },
+    {
+      "utc": "2026-10-22T06:32:43Z",
+      "event": "stage_a_start",
+      "arm": "target_k64",
+      "k": 64,
+      "n": 40,
+      "hooks": [
+        31
+      ]
+    },
+    {
+      "utc": "2026-10-22T06:32:54Z",
+      "event": "stage_a_hooks_removed",
+      "arm": "target_k64",
+      "hooks": [
+        {
+          "removed": 31,
+          "remaining": 0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-22T06:32:54Z",
+      "event": "stage_b_start",
+      "arm": "target_k64",
+      "n": 40,
+      "stage_a_seconds": 10.529202938079834
+    },
+    {
+      "utc": "2026-10-22T06:34:15Z",
+      "event": "pulse_complete",
+      "arm": "target_k64",
+      "n": 40,
+      "seconds": 92.16411328315735,
+      "finished": 40,
+      "leak": 33,
+      "tokens": 34830
+    },
+    {
+      "utc": "2026-10-22T06:34:15Z",
+      "event": "job_complete",
+      "arm": "target_k64",
+      "n": 40,
+      "finished": 40,
+      "leak": 33,
+      "boxed": 32,
+      "rule_restatement": 39,
+      "tokens": 34830
+    },
+    {
+      "utc": "2026-10-22T06:34:49Z",
+      "event": "stage_a_start",
+      "arm": "random_k64",
+      "k": 64,
+      "n": 40,
+      "hooks": [
+        31
+      ]
+    },
+    {
+      "utc": "2026-10-22T06:34:57Z",
+      "event": "stage_a_hooks_removed",
+      "arm": "random_k64",
+      "hooks": [
+        {
+          "removed": 31,
+          "remaining": 0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-22T06:34:57Z",
+      "event": "stage_b_start",
+      "arm": "random_k64",
+      "n": 40,
+      "stage_a_seconds": 7.734039068222046
+    },
+    {
+      "utc": "2026-10-22T06:36:13Z",
+      "event": "pulse_complete",
+      "arm": "random_k64",
+      "n": 40,
+      "seconds": 83.18507719039917,
+      "finished": 40,
+      "leak": 40,
+      "tokens": 20635
+    },
+    {
+      "utc": "2026-10-22T06:36:13Z",
+      "event": "job_complete",
+      "arm": "random_k64",
+      "n": 40,
+      "finished": 40,
+      "leak": 40,
+      "boxed": 40,
+      "rule_restatement": 29,
+      "tokens": 20635
+    },
+    {
+      "utc": "2026-10-22T06:36:35Z",
+      "event": "stage_a_start",
+      "arm": "target_k16",
+      "k": 16,
+      "n": 40,
+      "hooks": [
+        31
+      ]
+    },
+    {
+      "utc": "2026-10-22T06:36:39Z",
+      "event": "stage_a_hooks_removed",
+      "arm": "target_k16",
+      "hooks": [
+        {
+          "removed": 31,
+          "remaining": 0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-22T06:36:39Z",
+      "event": "stage_b_start",
+      "arm": "target_k16",
+      "n": 40,
+      "stage_a_seconds": 4.772919416427612
+    },
+    {
+      "utc": "2026-10-22T06:38:04Z",
+      "event": "pulse_complete",
+      "arm": "target_k16",
+      "n": 40,
+      "seconds": 89.75128221511841,
+      "finished": 40,
+      "leak": 39,
+      "tokens": 29928
+    },
+    {
+      "utc": "2026-10-22T06:38:04Z",
+      "event": "job_complete",
+      "arm": "target_k16",
+      "n": 40,
+      "finished": 40,
+      "leak": 39,
+      "boxed": 40,
+      "rule_restatement": 34,
+      "tokens": 29928
+    },
+    {
+      "utc": "2026-10-22T06:38:48Z",
+      "event": "stage_a_start",
+      "arm": "target_k256",
+      "k": 256,
+      "n": 40,
+      "hooks": [
+        31
+      ]
+    },
+    {
+      "utc": "2026-10-22T06:39:08Z",
+      "event": "stage_a_hooks_removed",
+      "arm": "target_k256",
+      "hooks": [
+        {
+          "removed": 31,
+          "remaining": 0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-22T06:39:08Z",
+      "event": "stage_b_start",
+      "arm": "target_k256",
+      "n": 40,
+      "stage_a_seconds": 19.182201862335205
+    },
+    {
+      "utc": "2026-10-22T06:40:19Z",
+      "event": "pulse_complete",
+      "arm": "target_k256",
+      "n": 40,
+      "seconds": 90.81303071975708,
+      "finished": 40,
+      "leak": 17,
+      "tokens": 28369
+    },
+    {
+      "utc": "2026-10-22T06:40:19Z",
+      "event": "job_complete",
+      "arm": "target_k256",
+      "n": 40,
+      "finished": 40,
+      "leak": 17,
+      "boxed": 18,
+      "rule_restatement": 31,
+      "tokens": 28369
+    },
+    {
+      "utc": "2026-10-22T06:41:05Z",
+      "event": "stage_a_start",
+      "arm": "random_k16",
+      "k": 16,
+      "n": 40,
+      "hooks": [
+        31
+      ]
+    },
+    {
+      "utc": "2026-10-22T06:41:10Z",
+      "event": "stage_a_hooks_removed",
+      "arm": "random_k16",
+      "hooks": [
+        {
+          "removed": 31,
+          "remaining": 0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-22T06:41:10Z",
+      "event": "stage_b_start",
+      "arm": "random_k16",
+      "n": 40,
+      "stage_a_seconds": 4.7741217613220215
+    },
+    {
+      "utc": "2026-10-22T06:42:39Z",
+      "event": "pulse_complete",
+      "arm": "random_k16",
+      "n": 40,
+      "seconds": 93.91668701171875,
+      "finished": 40,
+      "leak": 40,
+      "tokens": 22392
+    },
+    {
+      "utc": "2026-10-22T06:42:39Z",
+      "event": "job_complete",
+      "arm": "random_k16",
+      "n": 40,
+      "finished": 40,
+      "leak": 40,
+      "boxed": 40,
+      "rule_restatement": 29,
+      "tokens": 22392
+    },
+    {
+      "utc": "2026-10-22T06:43:27Z",
+      "event": "stage_a_start",
+      "arm": "random_k256",
+      "k": 256,
+      "n": 40,
+      "hooks": [
+        31
+      ]
+    },
+    {
+      "utc": "2026-10-22T06:43:46Z",
+      "event": "stage_a_hooks_removed",
+      "arm": "random_k256",
+      "hooks": [
+        {
+          "removed": 31,
+          "remaining": 0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-22T06:43:46Z",
+      "event": "stage_b_start",
+      "arm": "random_k256",
+      "n": 40,
+      "stage_a_seconds": 18.879639387130737
+    },
+    {
+      "utc": "2026-10-22T06:45:02Z",
+      "event": "pulse_complete",
+      "arm": "random_k256",
+      "n": 40,
+      "seconds": 95.16449618339539,
+      "finished": 40,
+      "leak": 40,
+      "tokens": 17473
+    },
+    {
+      "utc": "2026-10-22T06:45:02Z",
+      "event": "job_complete",
+      "arm": "random_k256",
+      "n": 40,
+      "finished": 40,
+      "leak": 40,
+      "boxed": 40,
+      "rule_restatement": 9,
+      "tokens": 17473
+    },
+    {
+      "utc": "2026-10-22T06:45:52Z",
+      "event": "baseline_start",
+      "arm": "plain_baseline",
+      "n": 40
+    },
+    {
+      "utc": "2026-10-22T06:47:01Z",
+      "event": "baseline_complete",
+      "arm": "plain_baseline",
+      "seconds": 68.27848076820374,
+      "n": 40
+    },
+    {
+      "utc": "2026-10-22T06:47:01Z",
+      "event": "job_complete",
+      "arm": "plain_baseline",
+      "n": 40,
+      "finished": 40,
+      "leak": 39,
+      "boxed": 11,
+      "rule_restatement": 0,
+      "tokens": 14525
+    },
+    {
+      "utc": "2026-10-22T06:47:49Z",
+      "event": "job_complete",
+      "arm": "plain_target_k16",
+      "n": 40,
+      "finished": 40,
+      "leak": 39,
+      "boxed": 11,
+      "rule_restatement": 0,
+      "tokens": 14525
+    },
+    {
+      "utc": "2026-10-22T06:48:33Z",
+      "event": "job_complete",
+      "arm": "plain_random_k16",
+      "n": 40,
+      "finished": 40,
+      "leak": 39,
+      "boxed": 11,
+      "rule_restatement": 0,
+      "tokens": 14525
+    },
+    {
+      "utc": "2026-10-22T06:49:03Z",
+      "event": "job_complete",
+      "arm": "plain_target_k64",
+      "n": 40,
+      "finished": 40,
+      "leak": 39,
+      "boxed": 11,
+      "rule_restatement": 0,
+      "tokens": 14525
+    },
+    {
+      "utc": "2026-10-22T06:49:15Z",
+      "event": "job_complete",
+      "arm": "plain_random_k64",
+      "n": 40,
+      "finished": 40,
+      "leak": 39,
+      "boxed": 11,
+      "rule_restatement": 0,
+      "tokens": 14525
+    },
+    {
+      "utc": "2026-10-22T06:49:25Z",
+      "event": "job_complete",
+      "arm": "plain_target_k256",
+      "n": 40,
+      "finished": 40,
+      "leak": 39,
+      "boxed": 11,
+      "rule_restatement": 0,
+      "tokens": 14525
+    },
+    {
+      "utc": "2026-10-22T06:49:37Z",
+      "event": "job_complete",
+      "arm": "plain_random_k256",
+      "n": 40,
+      "finished": 40,
+      "leak": 39,
+      "boxed": 11,
+      "rule_restatement": 0,
+      "tokens": 14525
+    },
+    {
+      "utc": "2026-10-22T06:49:47Z",
+      "event": "job_complete",
+      "arm": "plain_gated_reminder",
+      "n": 40,
+      "finished": 40,
+      "leak": 39,
+      "boxed": 11,
+      "rule_restatement": 0,
+      "tokens": 14525
+    },
+    {
+      "utc": "2026-10-22T06:49:57Z",
+      "event": "baseline_start",
+      "arm": "student_baseline",
+      "n": 40
+    },
+    {
+      "utc": "2026-10-22T06:50:53Z",
+      "event": "baseline_complete",
+      "arm": "student_baseline",
+      "seconds": 55.97981786727905,
+      "n": 40
+    },
+    {
+      "utc": "2026-10-22T06:50:53Z",
+      "event": "job_complete",
+      "arm": "student_baseline",
+      "n": 40,
+      "finished": 40,
+      "leak": 1,
+      "boxed": 0,
+      "rule_restatement": 39,
+      "tokens": 16954
+    },
+    {
+      "utc": "2026-10-22T06:51:03Z",
+      "event": "job_complete",
+      "arm": "student_target_k16",
+      "n": 40,
+      "finished": 40,
+      "leak": 1,
+      "boxed": 0,
+      "rule_restatement": 39,
+      "tokens": 16954
+    },
+    {
+      "utc": "2026-10-22T06:51:13Z",
+      "event": "job_complete",
+      "arm": "student_random_k16",
+      "n": 40,
+      "finished": 40,
+      "leak": 1,
+      "boxed": 0,
+      "rule_restatement": 39,
+      "tokens": 16954
+    },
+    {
+      "utc": "2026-10-22T06:51:25Z",
+      "event": "job_complete",
+      "arm": "student_target_k64",
+      "n": 40,
+      "finished": 40,
+      "leak": 1,
+      "boxed": 0,
+      "rule_restatement": 39,
+      "tokens": 16954
+    },
+    {
+      "utc": "2026-10-22T06:51:35Z",
+      "event": "job_complete",
+      "arm": "student_random_k64",
+      "n": 40,
+      "finished": 40,
+      "leak": 1,
+      "boxed": 0,
+      "rule_restatement": 39,
+      "tokens": 16954
+    },
+    {
+      "utc": "2026-10-22T06:51:47Z",
+      "event": "job_complete",
+      "arm": "student_target_k256",
+      "n": 40,
+      "finished": 40,
+      "leak": 1,
+      "boxed": 0,
+      "rule_restatement": 39,
+      "tokens": 16954
+    },
+    {
+      "utc": "2026-10-22T06:51:57Z",
+      "event": "job_complete",
+      "arm": "student_random_k256",
+      "n": 40,
+      "finished": 40,
+      "leak": 1,
+      "boxed": 0,
+      "rule_restatement": 39,
+      "tokens": 16954
+    },
+    {
+      "utc": "2026-10-22T06:52:11Z",
+      "event": "job_complete",
+      "arm": "student_gated_reminder",
+      "n": 40,
+      "finished": 40,
+      "leak": 1,
+      "boxed": 0,
+      "rule_restatement": 39,
+      "tokens": 16954
+    },
+    {
+      "utc": "2026-10-22T06:53:37Z",
+      "event": "stage_a_start",
+      "arm": "added_target_k256_reminder",
+      "k": 256,
+      "n": 40,
+      "hooks": [
+        31
+      ]
+    },
+    {
+      "utc": "2026-10-22T06:53:56Z",
+      "event": "stage_a_hooks_removed",
+      "arm": "added_target_k256_reminder",
+      "hooks": [
+        {
+          "removed": 31,
+          "remaining": 0
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-22T06:53:56Z",
+      "event": "stage_b_start",
+      "arm": "added_target_k256_reminder",
+      "n": 40,
+      "stage_a_seconds": 19.253427267074585
+    },
+    {
+      "utc": "2026-10-22T06:57:20Z",
+      "event": "pulse_complete",
+      "arm": "added_target_k256_reminder",
+      "n": 40,
+      "seconds": 223.0611572265625,
+      "finished": 37,
+      "leak": 7,
+      "tokens": 53152
+    },
+    {
+      "utc": "2026-10-22T06:57:20Z",
+      "event": "job_complete",
+      "arm": "added_target_k256_reminder",
+      "n": 40,
+      "finished": 37,
+      "leak": 7,
+      "boxed": 13,
+      "rule_restatement": 23,
+      "tokens": 53152
+    },
+    {
+      "utc": "2026-10-22T06:57:52Z",
+      "event": "job_complete",
+      "arm": "plain_added_target_k256_reminder",
+      "n": 40,
+      "finished": 40,
+      "leak": 39,
+      "boxed": 11,
+      "rule_restatement": 0,
+      "tokens": 14525
+    },
+    {
+      "utc": "2026-10-22T06:58:02Z",
+      "event": "job_complete",
+      "arm": "student_added_target_k256_reminder",
+      "n": 40,
+      "finished": 40,
+      "leak": 1,
+      "boxed": 0,
+      "rule_restatement": 39,
+      "tokens": 16954
+    }
+  ],
+  "download_seconds": 415.81612515449524,
+  "model_load_seconds": 113.08902525901794,
+  "setup_start_utc": "2026-10-22T06:22:12Z",
+  "install_complete_utc": "2026-10-22T06:23:01Z",
+  "deployed_hashes": {
+    "run_round2.py": "fb420a639215ebdf1dbf3ba4a38e8c512a76568b1c225dd9fb60f1eb041947f3",
+    "pulse_core.py": "0a26488a6fddffa3eb3175bf1ee03ce065e7b64d2464c568e3817756583aa36c",
+    "gate.py": "303efc34c2d77831fc7670616dc0a79cb2e2f420bfddaf3f4d90d8ffe673534f",
+    "detector.json": "5520c3524bc0d84bd23939efa8cba419290c24ae3c803bcff796cb09f50ad63d",
+    "manifest.json": "3ee78f8fb670a50a8565017486581aba2912f881fadf038bc998d082c963fefc",
+    "q38-T3E3.json": "bc5894501e3260fd3c149d65f6a37bb192a44d91fcde75c4472ab6029b864a83",
+    "q38-rand_T3E3.json": "5a5d06eef15dda96ef7a9f431d841a6edd1a95c05b1b3065604dec575c508afd",
+    "setup_round2.sh": "2693acdf98468bb2d099dbce88efac6575936f5ae0cacd40a60a870eb7851674",
+    "system_tutor.txt": "6011cd11fc5a8ac78a4b90e35b7f5154db64467a2854a15f3cdee4ea8be88d11",
+    "explore.py": "4b8030fabd1c9e8d08b5cc025f3270fb04df4bf326d1a61ba5bf166da3742429"
+  },
+  "log_hashes": {
+    "setup.log": "b8adc88c1e4918c8fbc2f7e627f2935b5c330300b508dce3ff2b8b1e8f24f6c1",
+    "run.log": "43fe3b29a1f7513b77e6828f37827e8f29107d30ab6e9a3965043b265457b772",
+    "launcher.log": "b8adc88c1e4918c8fbc2f7e627f2935b5c330300b508dce3ff2b8b1e8f24f6c1",
+    "generation_config.json": "e70c136c1b78ddc1fb0905bac8e733a4dc448d4f852a5dd75143fffc70be550e"
+  },
+  "registered_projection": {
+    "remaining_seconds": 1752.984679698944,
+    "remaining_usd": 0.5356342076857885,
+    "usable_remaining": 2.4575905124064414,
+    "allowed": true
+  },
+  "added_amendment": {
+    "utc": "2026-10-22T06:53:12Z",
+    "stage": "before_added_amendment",
+    "credit": 2.4356447111000037,
+    "conservative_remaining": 2.152487818630152,
+    "usable_remaining": 2.152487818630152,
+    "elapsed_s": 2113.8844158649445,
+    "k": 256,
+    "arm": "added_target_k256_reminder",
+    "label": "added after Round 1, not pre-registered",
+    "selection_candidates": [
+      [
+        33,
+        0,
+        64
+      ],
+      [
+        39,
+        1,
+        16
+      ],
+      [
+        17,
+        2,
+        256
+      ]
+    ]
+  },
+  "amendment_commit": "2b6758c",
+  "retrieval_errors": [],
+  "transport_notes": [
+    "Initial background-launch SSH acknowledgement timed out after 30 seconds; remote setup was confirmed progressing and was not restarted.",
+    "An offline tokenizer check before assets finished returned no IDs; the actual runner waited for download and passed nonempty/token-boundary assertions.",
+    "One log-tail read cut a UTF-8 sequence; log transport now replaces malformed tail bytes. Raw artifact SCP is binary and all hashes match.",
+    "Local dispatcher restarted once before first command to reduce idle polling, then once during deterministic side-effect bypasses to use incremental pulls. Existing completion markers preserved all completed jobs; no paid job reruns."
+  ],
+  "generation_failures": [],
+  "unfinished_added_rows": [
+    {
+      "idx": 254,
+      "finish_reason": "length",
+      "tokens": 4096,
+      "missing_closing_think": true
+    },
+    {
+      "idx": 710,
+      "finish_reason": "length",
+      "tokens": 4096,
+      "missing_closing_think": true
+    },
+    {
+      "idx": 316,
+      "finish_reason": "stop",
+      "tokens": 2071,
+      "missing_closing_think": true
+    }
+  ],
+  "unique_submitted_jobs": 25,
+  "paid_behavior_jobs": 9,
+  "credential_pattern_matches": 0,
+  "verification": {
+    "cpu_contract_tests": 6,
+    "full_grid_validation": "passed",
+    "raw_output_hashes_matching": 61,
+    "report_reproduction": "byte-for-byte",
+    "frozen_inputs": "unchanged",
+    "instances_after_final_check": []
+  },
+  "max_watchdog_interval_s": 45.07619786262512
+}

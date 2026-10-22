@@ -282,6 +282,47 @@ temperature 0, 600 new tokens, tutor system prompt, 20 problems. Leak = gold num
 | RL prompt without the "Do not ask questions ... no human will read it." rule | 8/20 |
 | student request | 2/20 |
 
+## 12. Qwen3.8: detect the wrapper, then pulse the first reasoning tokens
+
+Two-round experiment (`PULSE.md`, `pulse/RESULTS.md`, `pulse/RESULTS2.md`), same 40 RL/tutor problems,
+bf16, thinking on/medium, seed 0, 4096 generated tokens. Round 1 fixed the detector before Round 2:
+60 environment-neuron features, standardized mean projection, threshold 0.9637646510797577.
+Calibration and held-out test each detected 84/84 positives and 0/204 negatives across fixed prompt
+families; each negative test family had only 12 questions. No test-threshold tuning.
+
+Round 1 reminder: inject "The system prompt says I am a tutor, so I should not give the final answer,
+even if the student asks for it." immediately after the thinking opener. Round 2 gates from the original
+prompt, then steers prompt prefill + at most K reasoning tokens at target 3x or its same-layer random twin.
+Stage B removes every hook and recomputes the exact token-ID prefix unsteered, discarding the steered KV cache.
+All 40 RL gates fired. Baseline/reminder reuse the matching Round 1 fresh outputs.
+
+| arm | finished | leak | numeric boxed | generated rule restatement |
+|---|---:|---:|---:|---:|
+| baseline (Round 1) | 40/40 | 40/40 | 40/40 | 26/40 |
+| gated reminder (Round 1 reuse) | 40/40 | 16/40 | 19/40 | 40/40 |
+| target K=16 | 40/40 | 39/40 | 40/40 | 34/40 |
+| random K=16 | 40/40 | 40/40 | 40/40 | 29/40 |
+| target K=64 | 40/40 | 33/40 | 32/40 | 39/40 |
+| random K=64 | 40/40 | 40/40 | 40/40 | 29/40 |
+| target K=256 | 40/40 | 17/40 | 18/40 | 31/40 |
+| random K=256 | 40/40 | 40/40 | 40/40 | 9/40 |
+| K=256 + reminder, added after Round 1 | 37/40 | 7/40 | 13/40 | 23/40 |
+
+The six pulse cells were pre-registered; the combined arm was amended and pushed before running, after
+selecting K=256 from those results. It has two 4096-token length-limit replies and one EOS without a
+closing-think delimiter. Counting all unfinished replies as failures gives 10/40 for the combination;
+the 7 leaks are among 37 finished replies. Generated restatements exclude the injected reminder.
+Numeric boxes count right and wrong answers. All rows retained.
+
+Side effects, fresh baselines and actual gated paths: plain/no-system correct 39/40, student/tutor leak
+1/40, both finished 40/40. Detector fires 0/40 for each (no-system is out of distribution). Every gated
+pulse, reminder and combined side-effect path reused its baseline token for token because the gate was
+off. This preserves these measured paths, not a population false-positive guarantee.
+
+K=256 pulse reduces leaks versus random 40/40 to 17/40 with no finish loss, similar to reminder-only
+16/40. The added combination lowers leaks further but loses three finished replies. Instance destroyed;
+`vastai show instances` empty. Raw outputs remain ignored under `results/raw/pulse2/`.
+
 ## Open
 
 - Random-direction null for the J-lens word z-scores.
