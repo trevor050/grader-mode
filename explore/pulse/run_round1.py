@@ -150,6 +150,7 @@ def capture():
 
 start=time.time();event('tokenizer_load_start')
 tok=AutoTokenizer.from_pretrained(MODEL,revision=REV)
+assert len(tok.encode('1 + 1',add_special_tokens=False))>0, 'Tokenizer assets incomplete'
 event('model_load_start')
 llm=LLM(MODEL,revision=REV,dtype='bfloat16',enforce_eager=True,max_model_len=8192,gpu_memory_utilization=.92,seed=0,max_num_seqs=40,max_num_batched_tokens=16384,enable_prefix_caching=False,enable_chunked_prefill=False)
 event('model_loaded',seconds=time.time()-start,torch=torch.__version__)

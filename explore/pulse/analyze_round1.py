@@ -39,7 +39,7 @@ def fit_candidate(kind,x,y,sign):
     return dict(kind=kind,mean=mean.tolist(),sd=sd.tolist(),coef=coef.tolist(),intercept=float(intercept),**extra)
 
 
-def score(model,x):return ((x-np.asarray(model['mean']))/np.asarray(model['sd']))@np.asarray(model['coef'])+model['intercept']
+def score(model,x):return np.sum(((x-np.asarray(model['mean']))/np.asarray(model['sd']))*np.asarray(model['coef']),axis=-1)+model['intercept']
 
 
 def calibrate(model,x,y):
