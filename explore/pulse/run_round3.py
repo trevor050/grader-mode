@@ -57,8 +57,8 @@ def install(worker):
     return {'hooks':len(model._cl_handles),'feature_layers':sorted(by),'runner_layout':layout}
 
 
-def configure(worker,push,spec):
-    m=worker.model_runner.model;m._cl_capture={};m._cl_enabled=True;m._cl_push=push;m._cl_spec={}
+def configure(worker,push,spec,monitor=True):
+    m=worker.model_runner.model;m._cl_capture={};m._cl_enabled=monitor;m._cl_push=push;m._cl_spec={}
     dev=next(m.parameters()).device;by={}
     for l,n,v in spec:by.setdefault(l,[]).append((n,v))
     for l,vs in by.items():m._cl_spec[l]=(torch.tensor([n for n,v in vs],device=dev),torch.tensor([v for n,v in vs],device=dev,dtype=torch.bfloat16))
@@ -70,8 +70,8 @@ def retrieve(worker):
     m._cl_capture={};return out
 
 
-def call(jobs,params,push=False,spec=()):
-    llm.collective_rpc(configure,args=(push,spec))
+def call(jobs,params,push=False,spec=(),monitor=True):
+    llm.collective_rpc(configure,args=(push,spec,monitor))
     try:outs=llm.generate([{'prompt_token_ids':p} for p in jobs],params,use_tqdm=False)
     finally:captures=llm.collective_rpc(retrieve)[0]
     assert len(outs)==len(jobs)
@@ -155,7 +155,7 @@ def closed_loop(command):
                 with (OUT/(arm+'.chunks.jsonl')).open('a') as f:f.write(json.dumps({'idx':s['job']['idx'],**ch})+'\n')
         final=[s for s in states if s['final'] and not s['done']]
         if final:
-            outs,_=call([s['prompt']+s['ids'] for s in final],[sample(4096-len(s['ids']),False) for s in final])
+            outs,_=call([s['prompt']+s['ids'] for s in final],[sample(4096-len(s['ids']),False) for s in final],monitor=False)
             for s,o in zip(final,outs):
                 c=o.outputs[0];s['ids']+=list(c.token_ids);sampled+=len(c.token_ids);s['finish_reason']=c.finish_reason;s['done']=True
         for s in states:
