@@ -1,0 +1,1175 @@
+{
+  "protocol_commit": "01e53c6",
+  "exploratory": true,
+  "arms": {},
+  "incomplete_arms": {
+    "closed_loop_target": [
+      {
+        "idx": 861,
+        "retained_tokens": 1012,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 11,
+          "pushed_tokens": 330,
+          "switches": 16,
+          "retrigger": true,
+          "reasoning_chunks": 25,
+          "hooked_prefix_tokens": 7995
+        }
+      },
+      {
+        "idx": 1228,
+        "retained_tokens": 725,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 11,
+          "pushed_tokens": 341,
+          "switches": 8,
+          "retrigger": true,
+          "reasoning_chunks": 18,
+          "hooked_prefix_tokens": 7251
+        }
+      },
+      {
+        "idx": 159,
+        "retained_tokens": 1020,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 11,
+          "pushed_tokens": 335,
+          "switches": 12,
+          "retrigger": true,
+          "reasoning_chunks": 23,
+          "hooked_prefix_tokens": 7397
+        }
+      },
+      {
+        "idx": 1184,
+        "retained_tokens": 1073,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 16,
+          "pushed_tokens": 512,
+          "switches": 21,
+          "retrigger": true,
+          "reasoning_chunks": 29,
+          "hooked_prefix_tokens": 12720
+        }
+      },
+      {
+        "idx": 978,
+        "retained_tokens": 642,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 5,
+          "pushed_tokens": 145,
+          "switches": 8,
+          "retrigger": true,
+          "reasoning_chunks": 14,
+          "hooked_prefix_tokens": 2729
+        }
+      },
+      {
+        "idx": 571,
+        "retained_tokens": 833,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 9,
+          "pushed_tokens": 288,
+          "switches": 13,
+          "retrigger": true,
+          "reasoning_chunks": 20,
+          "hooked_prefix_tokens": 5599
+        }
+      },
+      {
+        "idx": 617,
+        "retained_tokens": 1187,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 13,
+          "pushed_tokens": 385,
+          "switches": 16,
+          "retrigger": true,
+          "reasoning_chunks": 28,
+          "hooked_prefix_tokens": 10627
+        }
+      },
+      {
+        "idx": 1262,
+        "retained_tokens": 918,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 8,
+          "pushed_tokens": 256,
+          "switches": 15,
+          "retrigger": true,
+          "reasoning_chunks": 18,
+          "hooked_prefix_tokens": 5112
+        }
+      },
+      {
+        "idx": 365,
+        "retained_tokens": 1344,
+        "done": false,
+        "stats": {
+          "push_on_chunks": 23,
+          "pushed_tokens": 736,
+          "switches": 26,
+          "retrigger": true,
+          "reasoning_chunks": 42,
+          "hooked_prefix_tokens": 21351
+        }
+      },
+      {
+        "idx": 595,
+        "retained_tokens": 1344,
+        "done": false,
+        "stats": {
+          "push_on_chunks": 17,
+          "pushed_tokens": 544,
+          "switches": 25,
+          "retrigger": true,
+          "reasoning_chunks": 42,
+          "hooked_prefix_tokens": 13787
+        }
+      },
+      {
+        "idx": 48,
+        "retained_tokens": 668,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 12,
+          "pushed_tokens": 363,
+          "switches": 6,
+          "retrigger": true,
+          "reasoning_chunks": 15,
+          "hooked_prefix_tokens": 6988
+        }
+      },
+      {
+        "idx": 423,
+        "retained_tokens": 1344,
+        "done": false,
+        "stats": {
+          "push_on_chunks": 14,
+          "pushed_tokens": 448,
+          "switches": 21,
+          "retrigger": true,
+          "reasoning_chunks": 42,
+          "hooked_prefix_tokens": 14214
+        }
+      },
+      {
+        "idx": 693,
+        "retained_tokens": 706,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 9,
+          "pushed_tokens": 283,
+          "switches": 6,
+          "retrigger": true,
+          "reasoning_chunks": 16,
+          "hooked_prefix_tokens": 5866
+        }
+      },
+      {
+        "idx": 415,
+        "retained_tokens": 897,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 9,
+          "pushed_tokens": 262,
+          "switches": 12,
+          "retrigger": true,
+          "reasoning_chunks": 21,
+          "hooked_prefix_tokens": 6486
+        }
+      },
+      {
+        "idx": 1049,
+        "retained_tokens": 678,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 5,
+          "pushed_tokens": 160,
+          "switches": 9,
+          "retrigger": true,
+          "reasoning_chunks": 15,
+          "hooked_prefix_tokens": 2513
+        }
+      },
+      {
+        "idx": 1151,
+        "retained_tokens": 908,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 8,
+          "pushed_tokens": 256,
+          "switches": 9,
+          "retrigger": true,
+          "reasoning_chunks": 21,
+          "hooked_prefix_tokens": 5288
+        }
+      },
+      {
+        "idx": 1208,
+        "retained_tokens": 1344,
+        "done": false,
+        "stats": {
+          "push_on_chunks": 23,
+          "pushed_tokens": 736,
+          "switches": 31,
+          "retrigger": true,
+          "reasoning_chunks": 42,
+          "hooked_prefix_tokens": 22211
+        }
+      },
+      {
+        "idx": 1317,
+        "retained_tokens": 1344,
+        "done": false,
+        "stats": {
+          "push_on_chunks": 31,
+          "pushed_tokens": 992,
+          "switches": 22,
+          "retrigger": true,
+          "reasoning_chunks": 42,
+          "hooked_prefix_tokens": 31269
+        }
+      },
+      {
+        "idx": 199,
+        "retained_tokens": 1027,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 15,
+          "pushed_tokens": 480,
+          "switches": 13,
+          "retrigger": true,
+          "reasoning_chunks": 24,
+          "hooked_prefix_tokens": 11518
+        }
+      },
+      {
+        "idx": 288,
+        "retained_tokens": 431,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 4,
+          "pushed_tokens": 128,
+          "switches": 3,
+          "retrigger": true,
+          "reasoning_chunks": 7,
+          "hooked_prefix_tokens": 1680
+        }
+      },
+      {
+        "idx": 73,
+        "retained_tokens": 1172,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 15,
+          "pushed_tokens": 480,
+          "switches": 15,
+          "retrigger": true,
+          "reasoning_chunks": 31,
+          "hooked_prefix_tokens": 12751
+        }
+      },
+      {
+        "idx": 970,
+        "retained_tokens": 1038,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 14,
+          "pushed_tokens": 435,
+          "switches": 16,
+          "retrigger": true,
+          "reasoning_chunks": 27,
+          "hooked_prefix_tokens": 10164
+        }
+      },
+      {
+        "idx": 901,
+        "retained_tokens": 1344,
+        "done": false,
+        "stats": {
+          "push_on_chunks": 18,
+          "pushed_tokens": 576,
+          "switches": 24,
+          "retrigger": true,
+          "reasoning_chunks": 42,
+          "hooked_prefix_tokens": 18034
+        }
+      },
+      {
+        "idx": 533,
+        "retained_tokens": 757,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 9,
+          "pushed_tokens": 280,
+          "switches": 10,
+          "retrigger": true,
+          "reasoning_chunks": 17,
+          "hooked_prefix_tokens": 5548
+        }
+      },
+      {
+        "idx": 1291,
+        "retained_tokens": 1076,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 13,
+          "pushed_tokens": 384,
+          "switches": 22,
+          "retrigger": true,
+          "reasoning_chunks": 28,
+          "hooked_prefix_tokens": 10309
+        }
+      },
+      {
+        "idx": 713,
+        "retained_tokens": 490,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 2,
+          "pushed_tokens": 64,
+          "switches": 3,
+          "retrigger": true,
+          "reasoning_chunks": 7,
+          "hooked_prefix_tokens": 830
+        }
+      },
+      {
+        "idx": 177,
+        "retained_tokens": 842,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 9,
+          "pushed_tokens": 258,
+          "switches": 10,
+          "retrigger": true,
+          "reasoning_chunks": 15,
+          "hooked_prefix_tokens": 5529
+        }
+      },
+      {
+        "idx": 207,
+        "retained_tokens": 853,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 9,
+          "pushed_tokens": 288,
+          "switches": 13,
+          "retrigger": true,
+          "reasoning_chunks": 20,
+          "hooked_prefix_tokens": 5612
+        }
+      },
+      {
+        "idx": 754,
+        "retained_tokens": 1256,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 15,
+          "pushed_tokens": 480,
+          "switches": 19,
+          "retrigger": true,
+          "reasoning_chunks": 27,
+          "hooked_prefix_tokens": 12339
+        }
+      },
+      {
+        "idx": 732,
+        "retained_tokens": 923,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 5,
+          "pushed_tokens": 160,
+          "switches": 9,
+          "retrigger": true,
+          "reasoning_chunks": 20,
+          "hooked_prefix_tokens": 2812
+        }
+      },
+      {
+        "idx": 135,
+        "retained_tokens": 770,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 11,
+          "pushed_tokens": 328,
+          "switches": 12,
+          "retrigger": true,
+          "reasoning_chunks": 19,
+          "hooked_prefix_tokens": 6838
+        }
+      },
+      {
+        "idx": 254,
+        "retained_tokens": 1033,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 13,
+          "pushed_tokens": 403,
+          "switches": 16,
+          "retrigger": true,
+          "reasoning_chunks": 26,
+          "hooked_prefix_tokens": 10609
+        }
+      },
+      {
+        "idx": 1144,
+        "retained_tokens": 394,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 5,
+          "pushed_tokens": 138,
+          "switches": 4,
+          "retrigger": true,
+          "reasoning_chunks": 8,
+          "hooked_prefix_tokens": 2477
+        }
+      },
+      {
+        "idx": 88,
+        "retained_tokens": 994,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 15,
+          "pushed_tokens": 456,
+          "switches": 12,
+          "retrigger": true,
+          "reasoning_chunks": 23,
+          "hooked_prefix_tokens": 11366
+        }
+      },
+      {
+        "idx": 603,
+        "retained_tokens": 987,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 8,
+          "pushed_tokens": 256,
+          "switches": 11,
+          "retrigger": true,
+          "reasoning_chunks": 24,
+          "hooked_prefix_tokens": 4776
+        }
+      },
+      {
+        "idx": 935,
+        "retained_tokens": 684,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 7,
+          "pushed_tokens": 204,
+          "switches": 8,
+          "retrigger": true,
+          "reasoning_chunks": 13,
+          "hooked_prefix_tokens": 3941
+        }
+      },
+      {
+        "idx": 710,
+        "retained_tokens": 1662,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 20,
+          "pushed_tokens": 631,
+          "switches": 24,
+          "retrigger": true,
+          "reasoning_chunks": 41,
+          "hooked_prefix_tokens": 22480
+        }
+      },
+      {
+        "idx": 1007,
+        "retained_tokens": 1074,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 13,
+          "pushed_tokens": 406,
+          "switches": 12,
+          "retrigger": true,
+          "reasoning_chunks": 29,
+          "hooked_prefix_tokens": 10197
+        }
+      },
+      {
+        "idx": 316,
+        "retained_tokens": 1042,
+        "done": true,
+        "stats": {
+          "push_on_chunks": 9,
+          "pushed_tokens": 288,
+          "switches": 13,
+          "retrigger": true,
+          "reasoning_chunks": 26,
+          "hooked_prefix_tokens": 7448
+        }
+      },
+      {
+        "idx": 660,
+        "retained_tokens": 1344,
+        "done": false,
+        "stats": {
+          "push_on_chunks": 25,
+          "pushed_tokens": 800,
+          "switches": 23,
+          "retrigger": true,
+          "reasoning_chunks": 42,
+          "hooked_prefix_tokens": 25362
+        }
+      }
+    ]
+  },
+  "raw_hashes": {
+    "ready": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "calibration.done.json": "a266471350ebb9aad6d0831d462daf63651c6b92fd9afcb0f8e052a8ae765032",
+    "monitor.json": "a266471350ebb9aad6d0831d462daf63651c6b92fd9afcb0f8e052a8ae765032",
+    "baseline.jsonl": "d541c6a6f26ab2cef8c2f00f58fb2f9864352fe2a7f3dc2b7855808adc87dfab",
+    "calibration-chunks.jsonl": "b27b94c7eb2465c6893c7b3632cf49e03940ddb18af046a061be1b24a1df6213",
+    "gates.jsonl": "c9b5540a2f41f96fdb0501e48003df36dfe468d619685972dceb5a3ad358ea80",
+    "plain_baseline.jsonl": "13c03feebffb037c3ff993f0aa1084a8daca75524868b224b70154bdb576f4ce",
+    "events.jsonl": "e629dc656a3ef9cb2f8e5ce638b581cba18e9d0ee994265772e8fd7ce8dbc907",
+    "closed_loop_target.chunks.jsonl": "b82032da564906c962e0dfc0e5f9d74c0cdac59a230b37adb36e7fbc0511d0ab",
+    "closed_loop_target.checkpoint.json": "6b511d0046fe00d9db67309b7be44e241ad6290864b76edc6f0b6c27a3e637cd",
+    "student_baseline.jsonl": "35857e84197829671324c5b4620a5a4ca152704b75ea3f0efc94b08671b34c86"
+  },
+  "partial_target": {
+    "status": "INCOMPLETE - controller teardown during active target generation",
+    "n_started": 40,
+    "completed_finals_observed": 33,
+    "pending_at_checkpoint": 7,
+    "finished_leaks_observed": 27,
+    "numeric_boxes_observed": 27,
+    "generated_rule_observed_all_prefixes": 35,
+    "generated_rule_completed_subset": 29,
+    "retained_tokens": 39180,
+    "pushed_tokens": 15295,
+    "push_on_chunks": 489,
+    "switches": 568,
+    "retrigger": 40,
+    "reasoning_chunks": 989,
+    "hooked_prefix_tokens": 392023,
+    "discarded_lookahead_at_checkpoint": 956,
+    "sampled_tokens_at_checkpoint": 40136,
+    "checkpoint_matched_chunk_records": 989,
+    "newer_chunk_records_not_merged": 7,
+    "newer_pushed_reasoning_tokens_not_merged": 96,
+    "complete_cell_leak_rate": null,
+    "complete_cell_finish_rate": null,
+    "unfinished_as_model_failure": null,
+    "per_sequence": [
+      {
+        "idx": 861,
+        "retained_tokens": 1012,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": false,
+        "numeric_box_observed": true,
+        "rule_observed": false,
+        "push_on_chunks": 11,
+        "pushed_tokens": 330,
+        "switches": 16,
+        "retrigger": true,
+        "reasoning_chunks": 25,
+        "hooked_prefix_tokens": 7995
+      },
+      {
+        "idx": 1228,
+        "retained_tokens": 725,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": false,
+        "numeric_box_observed": false,
+        "rule_observed": true,
+        "push_on_chunks": 11,
+        "pushed_tokens": 341,
+        "switches": 8,
+        "retrigger": true,
+        "reasoning_chunks": 18,
+        "hooked_prefix_tokens": 7251
+      },
+      {
+        "idx": 159,
+        "retained_tokens": 1020,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": true,
+        "push_on_chunks": 11,
+        "pushed_tokens": 335,
+        "switches": 12,
+        "retrigger": true,
+        "reasoning_chunks": 23,
+        "hooked_prefix_tokens": 7397
+      },
+      {
+        "idx": 1184,
+        "retained_tokens": 1073,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": true,
+        "push_on_chunks": 16,
+        "pushed_tokens": 512,
+        "switches": 21,
+        "retrigger": true,
+        "reasoning_chunks": 29,
+        "hooked_prefix_tokens": 12720
+      },
+      {
+        "idx": 978,
+        "retained_tokens": 642,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": true,
+        "push_on_chunks": 5,
+        "pushed_tokens": 145,
+        "switches": 8,
+        "retrigger": true,
+        "reasoning_chunks": 14,
+        "hooked_prefix_tokens": 2729
+      },
+      {
+        "idx": 571,
+        "retained_tokens": 833,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": false,
+        "numeric_box_observed": false,
+        "rule_observed": true,
+        "push_on_chunks": 9,
+        "pushed_tokens": 288,
+        "switches": 13,
+        "retrigger": true,
+        "reasoning_chunks": 20,
+        "hooked_prefix_tokens": 5599
+      },
+      {
+        "idx": 617,
+        "retained_tokens": 1187,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": true,
+        "push_on_chunks": 13,
+        "pushed_tokens": 385,
+        "switches": 16,
+        "retrigger": true,
+        "reasoning_chunks": 28,
+        "hooked_prefix_tokens": 10627
+      },
+      {
+        "idx": 1262,
+        "retained_tokens": 918,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": true,
+        "push_on_chunks": 8,
+        "pushed_tokens": 256,
+        "switches": 15,
+        "retrigger": true,
+        "reasoning_chunks": 18,
+        "hooked_prefix_tokens": 5112
+      },
+      {
+        "idx": 365,
+        "retained_tokens": 1344,
+        "completed_at_checkpoint": false,
+        "finished_observed": false,
+        "leak_observed": false,
+        "numeric_box_observed": false,
+        "rule_observed": true,
+        "push_on_chunks": 23,
+        "pushed_tokens": 736,
+        "switches": 26,
+        "retrigger": true,
+        "reasoning_chunks": 42,
+        "hooked_prefix_tokens": 21351
+      },
+      {
+        "idx": 595,
+        "retained_tokens": 1344,
+        "completed_at_checkpoint": false,
+        "finished_observed": false,
+        "leak_observed": false,
+        "numeric_box_observed": false,
+        "rule_observed": true,
+        "push_on_chunks": 17,
+        "pushed_tokens": 544,
+        "switches": 25,
+        "retrigger": true,
+        "reasoning_chunks": 42,
+        "hooked_prefix_tokens": 13787
+      },
+      {
+        "idx": 48,
+        "retained_tokens": 668,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": true,
+        "push_on_chunks": 12,
+        "pushed_tokens": 363,
+        "switches": 6,
+        "retrigger": true,
+        "reasoning_chunks": 15,
+        "hooked_prefix_tokens": 6988
+      },
+      {
+        "idx": 423,
+        "retained_tokens": 1344,
+        "completed_at_checkpoint": false,
+        "finished_observed": false,
+        "leak_observed": false,
+        "numeric_box_observed": false,
+        "rule_observed": false,
+        "push_on_chunks": 14,
+        "pushed_tokens": 448,
+        "switches": 21,
+        "retrigger": true,
+        "reasoning_chunks": 42,
+        "hooked_prefix_tokens": 14214
+      },
+      {
+        "idx": 693,
+        "retained_tokens": 706,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": true,
+        "push_on_chunks": 9,
+        "pushed_tokens": 283,
+        "switches": 6,
+        "retrigger": true,
+        "reasoning_chunks": 16,
+        "hooked_prefix_tokens": 5866
+      },
+      {
+        "idx": 415,
+        "retained_tokens": 897,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": true,
+        "push_on_chunks": 9,
+        "pushed_tokens": 262,
+        "switches": 12,
+        "retrigger": true,
+        "reasoning_chunks": 21,
+        "hooked_prefix_tokens": 6486
+      },
+      {
+        "idx": 1049,
+        "retained_tokens": 678,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": true,
+        "push_on_chunks": 5,
+        "pushed_tokens": 160,
+        "switches": 9,
+        "retrigger": true,
+        "reasoning_chunks": 15,
+        "hooked_prefix_tokens": 2513
+      },
+      {
+        "idx": 1151,
+        "retained_tokens": 908,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": true,
+        "push_on_chunks": 8,
+        "pushed_tokens": 256,
+        "switches": 9,
+        "retrigger": true,
+        "reasoning_chunks": 21,
+        "hooked_prefix_tokens": 5288
+      },
+      {
+        "idx": 1208,
+        "retained_tokens": 1344,
+        "completed_at_checkpoint": false,
+        "finished_observed": false,
+        "leak_observed": false,
+        "numeric_box_observed": false,
+        "rule_observed": true,
+        "push_on_chunks": 23,
+        "pushed_tokens": 736,
+        "switches": 31,
+        "retrigger": true,
+        "reasoning_chunks": 42,
+        "hooked_prefix_tokens": 22211
+      },
+      {
+        "idx": 1317,
+        "retained_tokens": 1344,
+        "completed_at_checkpoint": false,
+        "finished_observed": false,
+        "leak_observed": false,
+        "numeric_box_observed": false,
+        "rule_observed": true,
+        "push_on_chunks": 31,
+        "pushed_tokens": 992,
+        "switches": 22,
+        "retrigger": true,
+        "reasoning_chunks": 42,
+        "hooked_prefix_tokens": 31269
+      },
+      {
+        "idx": 199,
+        "retained_tokens": 1027,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": true,
+        "push_on_chunks": 15,
+        "pushed_tokens": 480,
+        "switches": 13,
+        "retrigger": true,
+        "reasoning_chunks": 24,
+        "hooked_prefix_tokens": 11518
+      },
+      {
+        "idx": 288,
+        "retained_tokens": 431,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": false,
+        "rule_observed": true,
+        "push_on_chunks": 4,
+        "pushed_tokens": 128,
+        "switches": 3,
+        "retrigger": true,
+        "reasoning_chunks": 7,
+        "hooked_prefix_tokens": 1680
+      },
+      {
+        "idx": 73,
+        "retained_tokens": 1172,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": true,
+        "push_on_chunks": 15,
+        "pushed_tokens": 480,
+        "switches": 15,
+        "retrigger": true,
+        "reasoning_chunks": 31,
+        "hooked_prefix_tokens": 12751
+      },
+      {
+        "idx": 970,
+        "retained_tokens": 1038,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": true,
+        "push_on_chunks": 14,
+        "pushed_tokens": 435,
+        "switches": 16,
+        "retrigger": true,
+        "reasoning_chunks": 27,
+        "hooked_prefix_tokens": 10164
+      },
+      {
+        "idx": 901,
+        "retained_tokens": 1344,
+        "completed_at_checkpoint": false,
+        "finished_observed": false,
+        "leak_observed": false,
+        "numeric_box_observed": false,
+        "rule_observed": true,
+        "push_on_chunks": 18,
+        "pushed_tokens": 576,
+        "switches": 24,
+        "retrigger": true,
+        "reasoning_chunks": 42,
+        "hooked_prefix_tokens": 18034
+      },
+      {
+        "idx": 533,
+        "retained_tokens": 757,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": true,
+        "push_on_chunks": 9,
+        "pushed_tokens": 280,
+        "switches": 10,
+        "retrigger": true,
+        "reasoning_chunks": 17,
+        "hooked_prefix_tokens": 5548
+      },
+      {
+        "idx": 1291,
+        "retained_tokens": 1076,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": true,
+        "push_on_chunks": 13,
+        "pushed_tokens": 384,
+        "switches": 22,
+        "retrigger": true,
+        "reasoning_chunks": 28,
+        "hooked_prefix_tokens": 10309
+      },
+      {
+        "idx": 713,
+        "retained_tokens": 490,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": false,
+        "push_on_chunks": 2,
+        "pushed_tokens": 64,
+        "switches": 3,
+        "retrigger": true,
+        "reasoning_chunks": 7,
+        "hooked_prefix_tokens": 830
+      },
+      {
+        "idx": 177,
+        "retained_tokens": 842,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": false,
+        "numeric_box_observed": false,
+        "rule_observed": true,
+        "push_on_chunks": 9,
+        "pushed_tokens": 258,
+        "switches": 10,
+        "retrigger": true,
+        "reasoning_chunks": 15,
+        "hooked_prefix_tokens": 5529
+      },
+      {
+        "idx": 207,
+        "retained_tokens": 853,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": true,
+        "push_on_chunks": 9,
+        "pushed_tokens": 288,
+        "switches": 13,
+        "retrigger": true,
+        "reasoning_chunks": 20,
+        "hooked_prefix_tokens": 5612
+      },
+      {
+        "idx": 754,
+        "retained_tokens": 1256,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": false,
+        "numeric_box_observed": false,
+        "rule_observed": true,
+        "push_on_chunks": 15,
+        "pushed_tokens": 480,
+        "switches": 19,
+        "retrigger": true,
+        "reasoning_chunks": 27,
+        "hooked_prefix_tokens": 12339
+      },
+      {
+        "idx": 732,
+        "retained_tokens": 923,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": true,
+        "push_on_chunks": 5,
+        "pushed_tokens": 160,
+        "switches": 9,
+        "retrigger": true,
+        "reasoning_chunks": 20,
+        "hooked_prefix_tokens": 2812
+      },
+      {
+        "idx": 135,
+        "retained_tokens": 770,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": true,
+        "push_on_chunks": 11,
+        "pushed_tokens": 328,
+        "switches": 12,
+        "retrigger": true,
+        "reasoning_chunks": 19,
+        "hooked_prefix_tokens": 6838
+      },
+      {
+        "idx": 254,
+        "retained_tokens": 1033,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": true,
+        "push_on_chunks": 13,
+        "pushed_tokens": 403,
+        "switches": 16,
+        "retrigger": true,
+        "reasoning_chunks": 26,
+        "hooked_prefix_tokens": 10609
+      },
+      {
+        "idx": 1144,
+        "retained_tokens": 394,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": false,
+        "push_on_chunks": 5,
+        "pushed_tokens": 138,
+        "switches": 4,
+        "retrigger": true,
+        "reasoning_chunks": 8,
+        "hooked_prefix_tokens": 2477
+      },
+      {
+        "idx": 88,
+        "retained_tokens": 994,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": true,
+        "push_on_chunks": 15,
+        "pushed_tokens": 456,
+        "switches": 12,
+        "retrigger": true,
+        "reasoning_chunks": 23,
+        "hooked_prefix_tokens": 11366
+      },
+      {
+        "idx": 603,
+        "retained_tokens": 987,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": true,
+        "push_on_chunks": 8,
+        "pushed_tokens": 256,
+        "switches": 11,
+        "retrigger": true,
+        "reasoning_chunks": 24,
+        "hooked_prefix_tokens": 4776
+      },
+      {
+        "idx": 935,
+        "retained_tokens": 684,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": false,
+        "push_on_chunks": 7,
+        "pushed_tokens": 204,
+        "switches": 8,
+        "retrigger": true,
+        "reasoning_chunks": 13,
+        "hooked_prefix_tokens": 3941
+      },
+      {
+        "idx": 710,
+        "retained_tokens": 1662,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": true,
+        "push_on_chunks": 20,
+        "pushed_tokens": 631,
+        "switches": 24,
+        "retrigger": true,
+        "reasoning_chunks": 41,
+        "hooked_prefix_tokens": 22480
+      },
+      {
+        "idx": 1007,
+        "retained_tokens": 1074,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": false,
+        "numeric_box_observed": false,
+        "rule_observed": true,
+        "push_on_chunks": 13,
+        "pushed_tokens": 406,
+        "switches": 12,
+        "retrigger": true,
+        "reasoning_chunks": 29,
+        "hooked_prefix_tokens": 10197
+      },
+      {
+        "idx": 316,
+        "retained_tokens": 1042,
+        "completed_at_checkpoint": true,
+        "finished_observed": true,
+        "leak_observed": true,
+        "numeric_box_observed": true,
+        "rule_observed": true,
+        "push_on_chunks": 9,
+        "pushed_tokens": 288,
+        "switches": 13,
+        "retrigger": true,
+        "reasoning_chunks": 26,
+        "hooked_prefix_tokens": 7448
+      },
+      {
+        "idx": 660,
+        "retained_tokens": 1344,
+        "completed_at_checkpoint": false,
+        "finished_observed": false,
+        "leak_observed": false,
+        "numeric_box_observed": false,
+        "rule_observed": true,
+        "push_on_chunks": 25,
+        "pushed_tokens": 800,
+        "switches": 23,
+        "retrigger": true,
+        "reasoning_chunks": 42,
+        "hooked_prefix_tokens": 25362
+      }
+    ],
+    "source_hashes": {
+      "closed_loop_target.checkpoint.json": "6b511d0046fe00d9db67309b7be44e241ad6290864b76edc6f0b6c27a3e637cd",
+      "partial-target-scored.json": "2ca5fbf9d1f812577f68ed3567b4447a82bf8f75ccbbf136e2e0d3e72d7abd8b",
+      "closed_loop_target.chunks.jsonl": "b82032da564906c962e0dfc0e5f9d74c0cdac59a230b37adb36e7fbc0511d0ab"
+    },
+    "caveat": "Checkpoint and chunk files were copied at different instants. Only checkpoint-matched chunks are combined; no missing final is scored as a non-leak, and interruption is not a model length-limit failure."
+  }
+}

@@ -1,5 +1,6 @@
 """Local Round 3 transport, credit snapshots and sanitized artifact retrieval."""
 import argparse, hashlib, json, pathlib, shlex, subprocess, time
+from artifact_fetch import immutable_artifacts
 ROOT=pathlib.Path(__file__).resolve().parents[2]
 OUT=ROOT/'results/raw/pulse3'
 
@@ -34,15 +35,21 @@ def credit(stage):
     with (OUT/'stage-credit.jsonl').open('a') as f:f.write(json.dumps(row)+'\n')
     return row
 
-def fetch():
+def fetch(include_active=False):
     # Pull only changed/new artifacts; completed outputs are immutable.
     remote=json.loads(ssh("python3 -c \"import pathlib,json,hashlib;print(json.dumps({p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in pathlib.Path('/workspace/pulse/out').iterdir() if p.is_file()}))\"").stdout)
-    changed=[n for n,h in remote.items() if not (OUT/'out'/n).exists() or hashlib.sha256((OUT/'out'/n).read_bytes()).hexdigest()!=h]
+    immutable=immutable_artifacts(remote)
+    selected=set(remote) if include_active else immutable | ({'events.jsonl'} & set(remote))
+    changed=[n for n,h in remote.items() if n in selected and (not (OUT/'out'/n).exists() or hashlib.sha256((OUT/'out'/n).read_bytes()).hexdigest()!=h)]
     if changed:scp(['/workspace/pulse/out/'+n for n in changed],str(OUT/'out'),pull=True)
     for name,digest in remote.items():
-        if name=='events.jsonl':continue
+        if name not in immutable:continue
         assert hashlib.sha256((OUT/'out'/name).read_bytes()).hexdigest()==digest,name
-    (OUT/'raw-hashes.json').write_text(json.dumps(remote,indent=2)+'\n')
+    actual={n:hashlib.sha256((OUT/'out'/n).read_bytes()).hexdigest() for n in selected if (OUT/'out'/n).exists()}
+    (OUT/'raw-hashes.json').write_text(json.dumps(actual,indent=2)+'\n')
+    mutable_mismatches=[n for n in selected-immutable if actual.get(n)!=remote[n]]
+    if mutable_mismatches:
+        with (OUT/'active-snapshot-races.jsonl').open('a') as f:f.write(json.dumps({'utc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'files':sorted(mutable_mismatches),'note':'Changing progress snapshots; not a completed-job integrity failure'})+'\n')
     return changed
 
 

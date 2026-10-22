@@ -34,7 +34,7 @@ def affordable(arm,seconds):
 def finish(reason):
  errors=[]
  try:
-  fetch();scp(['/workspace/pulse/'+n for n in ['setup.log','run.log','generation_config.json']],str(OUT),pull=True)
+  fetch(include_active=True);scp(['/workspace/pulse/'+n for n in ['setup.log','run.log','generation_config.json']],str(OUT),pull=True)
  except Exception as exc:errors.append(dict(type=type(exc).__name__,message=str(exc)))
  clock=json.loads((OUT/'launch_clock.json').read_text());i=clock['instance'];before=credit('before_destroy')
  destroy_time=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())

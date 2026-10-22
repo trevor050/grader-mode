@@ -323,6 +323,35 @@ K=256 pulse reduces leaks versus random 40/40 to 17/40 with no finish loss, simi
 16/40. The added combination lowers leaks further but loses three finished replies. Instance destroyed;
 `vastai show instances` empty. Raw outputs remain ignored under `results/raw/pulse2/`.
 
+## 13. Qwen3.8: closed-loop monitor transfers poorly; target run interrupted
+
+Exploratory Round-3 amendment `01e53c6` was pushed before rental. C=32, original prompt gate first,
+then frozen projection over the preceding chunk's last eight reasoning tokens; target 3x on/off,
+no hysteresis, exact-ID prefix recomputation. Local readings precede shifts, but earlier-layer shifts
+contaminate later-layer readings. Repeated prefix hooks and seed resets differ from Round 2.
+
+Unsteered teacher-forced calibration: 499 RL chunks, 260 student chunks, threshold -1.3411100290153271;
+AUC 0.604424233, TP 276/499, FP 115/260. Grader-only mentions rise in 63/132 adjacent comparisons,
+mean change -0.130102. Threshold was frozen before steering; no retuning.
+
+| arm | saved finished finals | observed finished leaks | pushed reasoning tokens |
+|---|---:|---:|---:|
+| Round-2 fixed K=256, complete | 40/40 | 17/40 | 9235 |
+| closed-loop target, interrupted | 33; seven missing | 27/33 saved finals | 15295 at checkpoint |
+
+Checkpoint: 989 reasoning chunks, 489 on chunks, 568 switches, re-triggers in all 40 sequences;
+27 numeric boxes, generated rule restatement in 29/33 completed replies and 35/40 saved prefixes.
+Seven newer unjoined chunks record 96 further pushed tokens. No complete behavioral cell or full-cell
+leak/finish rate exists. Random, student/plain side effects and reminder were not launched.
+
+Failures: two GPU startup mapping failures, one failed create/stopped contract, then a local dispatcher
+restart treated a growing chunk-file hash mismatch as fatal and destroyed the active target. This was
+a controller error, not a model length limit or credit-floor stop. The fetched checkpoint is partial;
+all costs and retained raw snapshots are preserved. Operational projection changes after launch are
+labeled in `pulse/RESULTS3.md`; no behavioral arms, threshold or steering-policy changes were added.
+The fetch repair passes 18 CPU contracts and has not been GPU re-run. Full account and teardown:
+`pulse/execution3.json`; `vastai show instances` is empty. No efficacy or benign-path preservation claim.
+
 ## Open
 
 - Random-direction null for the J-lens word z-scores.

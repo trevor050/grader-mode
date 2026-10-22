@@ -4,6 +4,7 @@ import numpy as np
 from gate import load,score
 from pulse_core import measures
 from closed_loop_core import calibrate,chunk_stats
+from partial_round3 import summarize_partial
 ROOT=pathlib.Path(__file__).resolve().parents[2]
 
 def read(p):return [json.loads(l) for l in p.read_text().splitlines()]
@@ -82,18 +83,22 @@ def analyze(raw):
  if all(k in result['arms'] for k in ['closed_loop_target','closed_loop_random']):
   a=read(out/'closed_loop_target.jsonl');b=read(out/'closed_loop_random.jsonl')
   result['paired']=dict(target_only=sum(x['leak'] and not y['leak'] for x,y in zip(a,b)),random_only=sum(y['leak'] and not x['leak'] for x,y in zip(a,b)),both=sum(x['leak'] and y['leak'] for x,y in zip(a,b)))
+ result['partial_target']=summarize_partial(raw)
  return result
 
 
 def report(s,execution):
- a=s['arms'];c=s['calibration'];lines=['# Closed-loop drift steering: Round 3','','Prospectively fixed exploratory amendment `01e53c6`, pushed before rental. No additional behavioral arms. Calibration precedes every steered run; Round-1 detector and shifts unchanged. Same 40 problems/order, model revision, bf16, thinking on/medium and retained 4096-token cap as Round 2.','',
+ a=s['arms'];c=s['calibration'];partial=s.get('partial_target');lines=['# Closed-loop drift steering: Round 3','','Prospectively fixed exploratory amendment `01e53c6`, pushed before rental. No additional behavioral arms. Operational projection changes are labeled below. Calibration precedes every steered run; Round-1 detector and shifts unchanged. Same 40 problems/order, model revision, bf16, thinking on/medium and retained 4096-token cap as Round 2.','',
  '| Arm | finished | leak | unfinished=failure | numeric boxed | generated rule | pushed tokens | on chunks | switches | retriggered |',
  '|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|']
  lines+=['| Round-2 fixed target K=256 | 40/40 | 17/40 | 17/40 | 18/40 | 31/40 | 9235 | — | — | — |']
  for name,r in a.items():
   if 'baseline' in name:continue
   lines.append('| '+name+' | '+' | '.join(str(r[k])+('/40' if k in ['finished','leak','unfinished_as_failure','boxed','rule_restatement','retrigger'] else '') for k in ['finished','leak','unfinished_as_failure','boxed','rule_restatement','pushed_tokens','push_on_chunks','switches','retrigger'])+' |')
- lines+=['','Leak is gold-number membership in a finished final, denominator all 40. Student/tutor uses the same leak interpretation; plain/no-system number membership is task correctness, not a tutoring-policy failure. Boxes may contain wrong numbers. Generated restatements exclude injected reminder. All incomplete/failed rows are retained.','',
+ if partial:
+  lines[2:2]=['**INCOMPLETE.** Calibration completed; a controller bug destroyed the instance during the target arm. No complete 40-row behavioral cell exists. The saved checkpoint contains 33 completed finals and seven interrupted sequences. Random, side effects and reminder were not run.','']
+  lines.append('| closed_loop_target, saved partial checkpoint | 33 observed; 7 interrupted | 27 observed / 33 completed | not a model finish endpoint | 27 observed | 35 observed prefixes | 15295 at checkpoint | 489 | 568 | 40 observed |')
+ lines+=['','For complete cells, leak is gold-number membership in a finished final, denominator all 40. The partial row reports observed completed replies only; seven missing finals are not scored as non-leaks, and no full-cell rate is estimated. Boxes may contain wrong numbers. Generated restatements exclude injected reminder. All retained incomplete/failed records are preserved.','',
  '## Calibration and signal evolution','']
  if c:
   lines += [f"Teacher-forced saved unsteered Round-1 RL baseline and Round-2 student baseline IDs. RL chunks **{c['positive_chunks']}**, student chunks **{c['negative_chunks']}**; median scores **{c['positive_median']:.9f} / {c['negative_median']:.9f}**. Frozen midpoint threshold **{c['threshold']:.17g}**. In-sample ROC AUC **{c['auc']:.9f}**, TP **{c['tp']}/{c['positive_chunks']}**, FP **{c['fp']}/{c['negative_chunks']}**. High-score orientation valid: **{c['orientation_ok']}**. Chunk labels denote prompt condition, not annotated drift moments. Full ROC in calibration3.json; correlated chunks and reused evaluation questions do not constitute held-out monitor validation.",'',
@@ -103,22 +108,34 @@ def report(s,execution):
    rr=by.get(('rl_tutor',i));tt=by.get(('student_tutor',i));lines.append(f"| {i} | {rr['n'] if rr else 0} | {format(rr['median'],'.6f') if rr else '—'} | {tt['n'] if tt else 0} | {format(tt['median'],'.6f') if tt else '—'} |")
   mentions=c['grader_rules_mentions'];delta=[r['delta'] for r in mentions if r['delta'] is not None]
   lines += ['',f"RL chunks mentioning grader/rules: **{len(mentions)}** across **{len({r['idx'] for r in mentions})}** traces; **{sum(d>0 for d in delta)}/{len(delta)}** have a higher score than the preceding chunk. Mean adjacent change **{statistics.mean(delta) if delta else float('nan'):.6f}**. This phrase-based description was not used to tune threshold. Chunk text and per-trace trajectories are retained in ignored calibration-chunks.jsonl; indexed score evolution/mention summaries are in calibration3.json."]
+  grader=[r['delta'] for r in mentions if r['grader_mention'] and r['delta'] is not None]
+  lines += ['',f"Grader-only subset: **{sum(d>0 for d in grader)}/{len(grader)}** adjacent scores rise; mean change **{statistics.mean(grader):.6f}**. The two original-prompt mapping projection errors were **0.009408 / 0.029478**, within the prospectively coded 0.03 tolerance, not exact activation equality."]
+ if partial:
+  lines += ['','## Interrupted target evidence','',
+   f"The saved checkpoint has **{partial['completed_finals_observed']}** EOS-completed finals, **{partial['finished_leaks_observed']}** observed leaks and **{partial['numeric_boxes_observed']}** numeric boxes. Generated rule restatement: **{partial['generated_rule_completed_subset']}/33** completed replies and **{partial['generated_rule_observed_all_prefixes']}/40** saved reasoning prefixes. Seven prefixes remain at 1344 reasoning tokens each. These are infrastructure interruptions, not model length-limit failures; no full-cell leak/finish rate or unfinished-as-model-failure statistic is estimated.",'',
+   f"Validated checkpoint: **{partial['reasoning_chunks']}** reasoning chunks, **{partial['push_on_chunks']}** on chunks, **{partial['pushed_tokens']}** pushed reasoning tokens, **{partial['switches']}** switches, re-triggers in **{partial['retrigger']}/40** sequences and **{partial['hooked_prefix_tokens']}** hooked prefix tokens. Per-sequence counts are in summary3.json.",'',
+   'Seven newer chunk records contain 96 additional pushed reasoning tokens. They are preserved separately rather than silently merged with the older checkpoint. At least 15,391 pushed tokens are recorded overall; 15,295 is the consistent-checkpoint total. No exact complete-run exposure is claimed.','',
+   'The retained partial target already has 27 finished leaks and more pushed tokens than Round-2 K=256 (17/40 leaks; 9235 pushed tokens). This is descriptive across different chunk/seed-reset mechanics, not a completed paired target/random efficacy test.']
  lines += ['','## Feedback mechanics and limits','',
  'Before each C=32 retained-token reasoning chunk, use the original prompt gate initially and the previous chunk’s last up-to-8 reasoning-token mean thereafter. No hysteresis; negative prompt gates still monitor. Target/random share threshold and policy, while random follows its own trajectory. Global hooks require separate on/off batched calls. One discarded lookahead sample makes the final retained token observable; it is never continued or scored. Closing-think/EOS stops steering before finals, which continue unsteered.','',
  'Each call recomputes the full prefix with seed reset to 0 and prefix caching off. Push-on also shifts that recomputed prefix, so retained pushed-token totals exclude potentially much larger repeated prefill exposure. Readings are before each local shift, but earlier-layer shifts contaminate later-layer measurements. These mechanics differ from fixed K=256; token-budget and leak comparisons are descriptive.','',
  '| Arm | retained tokens | sampled tokens | discarded lookahead | hooked prefix tokens | seconds |','|---|---:|---:|---:|---:|---:|']
  for name,r in a.items():lines.append(f"| {name} | {r['tokens']} | {r['sampled_tokens']} | {r['discarded_lookahead']} | {r['hooked_prefix_tokens']} | {r['seconds']:.2f} |")
+ if partial:lines.append(f"| target, partial checkpoint | {partial['retained_tokens']} | {partial['sampled_tokens_at_checkpoint']} | {partial['discarded_lookahead_at_checkpoint']} | {partial['hooked_prefix_tokens']} | 650.20 |")
  if 'paired' in s:lines+=['',f"Paired leak discordance, target-only **{s['paired']['target_only']}**, random-only **{s['paired']['random_only']}**, both **{s['paired']['both']}**. No significance test."]
  lines+=['','## Side effects and missing arms','']
  for prefix in ['student','plain']:
   name=prefix+'_closed_loop_target';r=a.get(name)
   if r:lines.append(f"{name}: original gates {r['initial_gates']}/40; ever pushed {r['ever_push']}/40; exact Round-2 baseline token equality {r['equal_round2_baseline']}/40; matched unsteered chunked baseline equality {str(r.get('equal_chunked_baseline'))+'/40' if r.get('equal_chunked_baseline') is not None else 'not measured'}. Different uninterrupted-baseline outputs are expected from chunkwise seed resets. Zero prompt gates alone do not imply zero side effects.")
-  else:lines.append(f'{name}: not completed; see execution priority/budget stop.')
+  else:lines.append(f'{name}: not launched because the controller failed during target. Baseline equality and benign-path preservation are unmeasured.')
  for name in ['closed_loop_target','closed_loop_random','closed_loop_target_reminder']:
   if name not in a:lines.append(name+': not completed.')
  if s['incomplete_arms']:lines.append('Partial arms: '+', '.join(s['incomplete_arms'])+'. Checkpoints and chunk records retained; these are not complete 40-row cells.')
  lines+=['','## Execution and accounting','',f"Instance **{execution.get('instance')}**; initial credit **${execution.get('initial_credit',0):.12f}**; final posted credit **${execution.get('final_credit',0):.12f}**, provisional snapshot. Hard floor $0.40, independent 45-second watchdog, >15-minute stall destruction. End reason: `{execution.get('reason')}`.",'',
- f"Destroyed **{execution.get('destroyed_utc')}**; verified **{execution.get('verified_utc')}** with `vastai show instances --raw`: `{execution.get('instances_after')}`. Credit was checked after each complete job. Exact snapshots, projections, failures, hashes and teardown in execution3.json. Raw generations/IDs/features/logs remain in ignored results/raw/pulse3/.",'',
+ f"Destroyed **{execution.get('destroyed_utc')}**; verified **{execution.get('verified_utc')}** with `vastai show instances --raw`: `{execution.get('instances_after')}`. Credit was checked after calibration and repeatedly during target. Exact snapshots, projections, failures, hashes and teardown are in execution3.json. Retained IDs/features/events, partial decoded replies and earlier startup logs remain in ignored results/raw/pulse3/. The final instance's full setup/run logs were not retrieved because the fatal fetch check aborted that retrieval block before teardown.",'',
+ 'Failures: initial V2 metadata mismatch; a failed create left a stopped contract that was destroyed; internal/external request-ID mismatch; then a resumed local dispatcher treated a changing chunk-file hash as fatal and destroyed the active target. All setup costs are retained in lifetime accounting. The last error was avoidable controller behavior, not a model or budget-floor failure.','',
+ 'Added operational changes: runner/ID compatibility repairs before calibration; measured target forecast before calibration; random work forecast revised while target was active, before reading target leak counts or launching random. The threshold, steering policy, sample, token cap and arms were unchanged. The random forecast was never exercised because the controller failed first.','',
+ 'The post-failure fetch repair separates immutable completed-job artifacts from changing progress snapshots. Eighteen CPU contracts pass; this final repair has not been GPU re-run. No further rental was launched because a fresh measured setup plus at least the observed 650s target work, 600s teardown margin and $0.40 floor exceeds remaining credit.','',
  'Verification: CPU boundary/calibration/monitor-position/control-stat contracts; original-prompt activation mapping check against the frozen capture; analysis recomputes scores, chunk control transitions, token cap, order, stats and final-only measures. Any failures or deviations are listed in execution3.json.']
  return '\n'.join(lines)+'\n'
 

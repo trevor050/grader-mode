@@ -13,6 +13,7 @@ for d in sorted(RAW.glob('attempt[0-9]*')):
  pc=load(d/'launch_clock.json');pt=load(d/'teardown.json')
  if pc:
   prior.append(dict(instance=pc['instance'],initial_credit=pc['initial_credit'],clock=pc,teardown=pt,
+                   outcome=next((a['outcome'] for a in lifetime.get('attempts',[]) if a['instance']==pc['instance']),'prior attempt'),
                    controller_error=load(d/'controller-error.json'),events=rows(d/'out/events.jsonl'),
                    errors=[load(p) for p in (d/'out').glob('*.error.json')],
                    log_hashes={p.name:sha(p) for p in [d/'run.log',d/'setup.log'] if p.exists()}))
@@ -33,11 +34,12 @@ execution=dict(instance=clock['instance'],offer=clock['offer'],image=clock['imag
     minimum_conservative_remaining_while_active=min((r['conservative_remaining'] for r in budget if r.get('state')!='absent'),default=None),
     guard_update=load(RAW/'guard-update.json'),controller_error=load(RAW/'controller-error.json'),
     remote_errors=[load(p) for p in (RAW/'out').glob('*.error.json')],
-    deployed_hashes=load(RAW/'deployed-hashes.json'),raw_hashes=load(RAW/'raw-hashes.json'),
+    observed_console_measurements=load(RAW/'observed-console-measurements.json'),deployed_hashes=load(RAW/'deployed-hashes.json'),raw_hashes={p.name:sha(p) for p in (RAW/'out').iterdir() if p.is_file()},raw_hash_status='Local retained snapshots; completed calibration verified, target partial files were not final immutable remote verification',
     log_hashes={n:sha(RAW/n) for n in ['setup.log','run.log','generation_config.json'] if (RAW/n).exists()},
-    protocol_commit='01e53c6',implementation_commit='950ec47',retry_repair_commit='db10e95',prior_attempts=prior,total_billed_wall_s=td.get('wall_s',0)+sum(p['teardown'].get('wall_s',0) for p in prior),
+    protocol_commit='01e53c6',implementation_commit='950ec47',retry_repair_commit='db10e95',prior_attempts=prior,aggregate_attempt_wall_s=td.get('wall_s',0)+sum(p['teardown'].get('wall_s',0) for p in prior),
     transport_notes=['Initial SSH background-launch acknowledgement timed out; setup was verified progressing, not relaunched.',clock.get('rental_note','Unambiguous create response')],
-    deviations=[],verification=dict(cpu_contract_tests=12,full_grid_validation='pending',secret_scan='pending'))
+    operational_forecast_amendment=load(RAW/'controller-forecast-amendment.json'),
+    deviations=['No complete target cell: resumed dispatcher fataled on an expected active-file hash race and destroyed the instance. Other behavioral arms were never launched.'],verification=dict(cpu_contract_tests=18,calibration_grid_validation='passed: 759 chunks with projection recomputation',partial_checkpoint_validation='passed: 40 prefixes, 989 matched chunks, 33 EOS finals',full_grid_validation='NOT COMPLETE: no complete behavioral cell',secret_scan='pending'))
 # Chronology is essential: no steered job can precede the threshold event.
 frozen=next((e['utc'] for e in events if e['event']=='threshold_frozen'),None)
 steered=[e for e in events if e['event']=='closed_loop_start' and not e.get('unsteered',False)]

@@ -22,7 +22,6 @@ class Contracts(unittest.TestCase):
         with self.assertRaises(KeyError):monitor_value(rows,[3])
         with self.assertRaises(AssertionError):monitor_value([(2,[float('nan')]*60)],[2])
 
-if __name__=='__main__':unittest.main()
 
 class SchedulerLayouts(unittest.TestCase):
     def test_new_runner_batch_is_bound_before_forward(self):
@@ -44,3 +43,49 @@ class SchedulerLayouts(unittest.TestCase):
         self.assertEqual(install_batch_observer(runner),'v1_input_batch')
         ids,starts,computed=batch_layout(runner)
         self.assertEqual((ids,starts.tolist(),computed.tolist()),(['x'],[0,8],[10]))
+
+
+class ArtifactFetch(unittest.TestCase):
+    def test_active_progress_is_not_immutable(self):
+        from artifact_fetch import immutable_artifacts
+        names={'events.jsonl','ready','gates.jsonl','closed_loop_target.chunks.jsonl','closed_loop_target.checkpoint.json','closed_loop_target.jsonl'}
+        self.assertEqual(immutable_artifacts(names),{'ready','gates.jsonl'})
+    def test_done_marker_enables_strict_hash_validation(self):
+        from artifact_fetch import immutable_artifacts
+        names={'events.jsonl','closed_loop_target.done.json','closed_loop_target.jsonl','closed_loop_target.chunks.jsonl','closed_loop_target.checkpoint.json'}
+        self.assertEqual(immutable_artifacts(names),names-{'events.jsonl'})
+    def test_calibration_is_frozen_only_after_completion(self):
+        from artifact_fetch import immutable_artifacts
+        names={'monitor.json','calibration-chunks.jsonl','baseline.jsonl'}
+        self.assertEqual(immutable_artifacts(names),{'baseline.jsonl'})
+        self.assertEqual(immutable_artifacts(names|{'calibration.done.json'}),names|{'calibration.done.json'})
+
+
+class FetchRaceRegression(unittest.TestCase):
+    def exercise(self,include_active,completed=False):
+        import tempfile,pathlib,json,hashlib,types
+        from unittest.mock import patch
+        import control_round3 as c
+        old=b'old progress\n';base=b'baseline\n';done=b'{}\n'
+        remote={'closed_loop_target.chunks.jsonl':hashlib.sha256(old).hexdigest(),'baseline.jsonl':hashlib.sha256(base).hexdigest()}
+        if completed:remote['closed_loop_target.done.json']=hashlib.sha256(done).hexdigest()
+        with tempfile.TemporaryDirectory() as tmp:
+            root=pathlib.Path(tmp);(root/'out').mkdir()
+            def copy(sources,dest,pull=False):
+                for src in sources:
+                    name=src.rsplit('/',1)[-1]
+                    data=base if name=='baseline.jsonl' else done if name.endswith('.done.json') else b'new progress arrived\n'
+                    (pathlib.Path(dest)/name).write_bytes(data)
+            with patch.object(c,'OUT',root),patch.object(c,'ssh',return_value=types.SimpleNamespace(stdout=json.dumps(remote))),patch.object(c,'scp',side_effect=copy):
+                names=c.fetch(include_active=include_active)
+                return names,(root/'out/closed_loop_target.chunks.jsonl').exists(),(root/'active-snapshot-races.jsonl').exists()
+    def test_resume_does_not_hash_active_chunk_file(self):
+        names,exists,race=self.exercise(False)
+        self.assertEqual(names,['baseline.jsonl']);self.assertFalse(exists);self.assertFalse(race)
+    def test_partial_pull_records_change_without_fatal_error(self):
+        names,exists,race=self.exercise(True)
+        self.assertTrue(exists);self.assertTrue(race)
+    def test_completed_artifact_change_still_fails(self):
+        with self.assertRaises(AssertionError):self.exercise(False,True)
+
+if __name__=='__main__':unittest.main()
