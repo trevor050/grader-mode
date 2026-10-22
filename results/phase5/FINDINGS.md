@@ -77,7 +77,36 @@ it, and making a model of the first kind restate the instruction (Phase 4
 prefill) closes the gap. Only the last part is a tested causal result, and
 only in Qwen3-14B.
 
-## Second family: no data
+## Nemotron 3.5 Lightning (H20, H21)
+
+Nemotron 3.5 Lightning 30B-A3B (official NVFP4, vLLM, Modal RTX PRO 6000
+after the rented-GPU attempts failed before model load). Full registered grid,
+3,200 replies. Tables: `nemotron-summary.md`.
+
+| Nemotron, violation | Thinking off | Thinking on |
+|---|---|---|
+| plain request | 12.0% | 4.3% |
+| "give me the final answer at the end" | 43.0% | 8.5% |
+
+- **H21 not supported (thinking × conflict).** The interaction is −26.8
+  points [−33.3, −20.5]: thinking reduces violations, and reduces them more
+  under the conflicting request. The sign is the reverse of Qwen3's. Counting
+  the two off-mode replies with a stray `</think>` as violations gives −27.3
+  [−33.8, −21.0].
+- **H20 not supported (reminder).** The reminder lowers violation relative
+  to empty (+3.5 points [0.5, 6.5]) and relative to the irrelevant
+  system-prompt reminder (+7.8 [4.5, 11.0]), but not relative to the neutral
+  planning sentence (+0.8 [−2.3, 3.8]).
+- Exploratory keyword count, as above: 392 / 400 (98%) thinking-on explicit
+  traces mention the tutor rule or system prompt.
+
+Across the three families, the direction of the thinking effect lines up with
+how often the reasoning restates the system prompt: Qwen3 (1–3% of traces)
+violates more with thinking on, Gemma (77%) is unchanged at floor, Nemotron
+(98%) violates less. Three models are not enough to call this a relationship;
+Phase 6 (H25) tests it within models.
+
+## Earlier second-family attempts
 
 Nemotron 3.5 Lightning never reached model loading. The first rented 5090
 failed at the provider CLI (HTTP 429, then a cleanup prompt the automation
