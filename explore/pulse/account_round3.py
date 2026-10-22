@@ -7,28 +7,37 @@ def load(p):return json.loads(p.read_text()) if p.exists() else {}
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 
 clock=load(RAW/'launch_clock.json');td=load(RAW/'teardown.json');budget=rows(RAW/'budget.jsonl');events=rows(RAW/'out/events.jsonl')
+lifetime=load(RAW/'lifetime.json');overall_initial=lifetime.get('initial_credit',clock['initial_credit'])
+prior=[]
+for d in sorted(RAW.glob('attempt[0-9]*')):
+ pc=load(d/'launch_clock.json');pt=load(d/'teardown.json')
+ if pc:
+  prior.append(dict(instance=pc['instance'],initial_credit=pc['initial_credit'],clock=pc,teardown=pt,
+                   controller_error=load(d/'controller-error.json'),events=rows(d/'out/events.jsonl'),
+                   errors=[load(p) for p in (d/'out').glob('*.error.json')],
+                   log_hashes={p.name:sha(p) for p in [d/'run.log',d/'setup.log'] if p.exists()}))
 u=subprocess.run(['vastai','show','user','--raw'],capture_output=True,text=True,timeout=20);u.check_returncode();credit=float(json.loads(u.stdout)['credit'])
 i=subprocess.run(['vastai','show','instances','--raw'],capture_output=True,text=True,timeout=20);i.check_returncode();instances=[dict(id=r['id'],state=r.get('actual_status')) for r in json.loads(i.stdout)]
 assert not instances,'Do not publish complete teardown while resources remain'
 execution=dict(instance=clock['instance'],offer=clock['offer'],image=clock['image'],disk_gb=clock['disk_gb'],
-    initial_utc=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime(clock['start'])),initial_credit=clock['initial_credit'],
+    initial_utc=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime(lifetime.get('initial_start',clock['start']))),current_attempt_utc=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime(clock['start'])),initial_credit=overall_initial,current_attempt_initial_credit=clock['initial_credit'],
     final_credit=credit,final_credit_utc=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),
-    posted_credit_delta=clock['initial_credit']-credit,billing_status='Provisional posted snapshot; not settled invoice',
+    posted_credit_delta=overall_initial-credit,billing_status='Provisional posted snapshot; not settled invoice',
     guard_hourly_rate=clock['rate'],network_reserve=clock['reserve'],hard_floor=.40,watchdog_interval_s=45,stall_limit_s=900,
     rental=load(RAW/'rental.json'),**{k:v for k,v in td.items() if k not in ('instances_after','instance')},instances_after=instances,
     stage_credit=rows(RAW/'stage-credit.jsonl'),projections=rows(RAW/'projections.jsonl'),
     commands=rows(RAW/'commands.jsonl'),events=[{k:v for k,v in e.items() if k!='scores'} for e in events],
     guard_stop_events=[r for r in budget if 'stop_reason' in r],
-    conservative_time_cost_with_reserve=td.get('wall_s',0)*clock['rate']/3600+clock['reserve'],
+    conservative_time_cost_with_reserve=(td.get('wall_s',0)*clock['rate']+sum(p['teardown'].get('wall_s',0)*p['clock']['rate'] for p in prior))/3600+clock['reserve'],
     minimum_reported_credit_while_active=min((r['credit'] for r in budget if r.get('state')!='absent' and 'credit' in r),default=None),
     minimum_conservative_remaining_while_active=min((r['conservative_remaining'] for r in budget if r.get('state')!='absent'),default=None),
     guard_update=load(RAW/'guard-update.json'),controller_error=load(RAW/'controller-error.json'),
     remote_errors=[load(p) for p in (RAW/'out').glob('*.error.json')],
     deployed_hashes=load(RAW/'deployed-hashes.json'),raw_hashes=load(RAW/'raw-hashes.json'),
     log_hashes={n:sha(RAW/n) for n in ['setup.log','run.log','generation_config.json'] if (RAW/n).exists()},
-    protocol_commit='01e53c6',implementation_commit='950ec47',
-    transport_notes=['Initial SSH background-launch acknowledgement timed out; setup was verified progressing, not relaunched.'],
-    deviations=[],verification=dict(cpu_contract_tests=10,full_grid_validation='pending',secret_scan='pending'))
+    protocol_commit='01e53c6',implementation_commit='950ec47',retry_repair_commit='db10e95',prior_attempts=prior,total_billed_wall_s=td.get('wall_s',0)+sum(p['teardown'].get('wall_s',0) for p in prior),
+    transport_notes=['Initial SSH background-launch acknowledgement timed out; setup was verified progressing, not relaunched.',clock.get('rental_note','Unambiguous create response')],
+    deviations=[],verification=dict(cpu_contract_tests=12,full_grid_validation='pending',secret_scan='pending'))
 # Chronology is essential: no steered job can precede the threshold event.
 frozen=next((e['utc'] for e in events if e['event']=='threshold_frozen'),None)
 steered=[e for e in events if e['event']=='closed_loop_start' and not e.get('unsteered',False)]
