@@ -161,6 +161,13 @@ def pulse_rows(jobs,arm,k,spec_name,prefill=False):
         assert all(r['remaining']==0 for r in removed)
         event('stage_a_hooks_removed',arm=arm,hooks=removed)
     assert len(aa)==len(jobs)
+    # Preserve the steered prefix even if Stage B later fails or the guard tears down.
+    checkpoint=[]
+    for j,p,o in zip(jobs,prompts,aa):
+        c=o.outputs[0]
+        checkpoint.append({'arm':arm,'idx':j['idx'],'prompt_token_ids':p,'stage_a_token_ids':list(c.token_ids),
+                           'finish_reason':c.finish_reason,'stop_reason':c.stop_reason,'k':k})
+    (OUT/(arm+'.stage-a.json')).write_text(json.dumps(checkpoint)+'\n')
     plans=[]; bjobs=[]; bparams=[]
     for j,p,o in zip(jobs,prompts,aa):
         assert list(o.prompt_token_ids)==p

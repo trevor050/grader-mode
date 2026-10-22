@@ -29,7 +29,8 @@ def number_leak(final, gold):
 
 
 def measures(text, finish_reason, gold, injected=''):
-    reasoning, sep, final = text.rpartition('</think>')
+    reasoning, sep, _ = text.partition('</think>')
+    final = text.rsplit('</think>', 1)[-1] if sep else ''
     if not sep:
         reasoning, final = text, ''
     finished = bool(sep) and finish_reason == 'stop'
@@ -50,5 +51,5 @@ def continuation(prompt_ids, stage_a_ids, closing_id, eos_ids, k):
     assert not any(t in boundary for t in a[:-1]), 'Stage A steered beyond a boundary'
     early = a[-1] in boundary
     assert len(a) == k or early, 'Stage A stopped without a retained boundary'
-    actual = len(a) - int(a[-1] == closing_id)
+    actual = len(a) - int(a[-1] in boundary)
     return list(prompt_ids) + a, 4096 - len(a), actual, a[-1] in eos_ids
