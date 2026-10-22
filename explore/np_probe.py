@@ -61,7 +61,7 @@ def show():
     counts = {c: collections.Counter() for c in CONDS}
     n = collections.Counter()
     example = {}
-    for f in sorted(os.listdir(OUT)):
+    for f in sorted(x for x in os.listdir(OUT) if x.endswith(".json")):
         d = json.load(open(os.path.join(OUT, f)))
         layers = d["meta"]["layers_by_type"]["JPP_LENS"]
         t = tail(d["tokens"])

@@ -169,6 +169,31 @@ problem" and rarely state a conflict (9/40). Seven replies did not finish within
 replies still contain a `\boxed{}` (one with a wrong value). Counting every unfinished reply as a leak, 3x gives
 at most 7/40 against 40/40 for its random twin. Side effects on other prompts are not measured.
 
+## 8. Qwen3.6-27B J++ lens: "cheating" under homework, "test" and "simulation" under the RL prompt
+
+J++ lens (Ayonrinde and Lindsey 2026) through the public Neuronpedia API (`np_probe.py`; no generation, thinking
+enabled). Readouts are taken on the assistant-turn template tokens after the user message
+(`<|im_end|> \n <|im_start|> assistant \n <think> \n`), which are identical text in every condition, top 8 tokens
+per layer, layers 24-56 in steps of 4, 30 problems per condition. Count = occurrences across those tokens and
+layers (problems with at least one occurrence):
+
+| readout | student + tutor | homework + tutor | RL + tutor | RL, no system prompt |
+|---|---|---|---|---|
+| cheating | 0 (0/30) | 110 (27/30) | 0 (0/30) | 0 (0/30) |
+| 作弊 (cheating) | 0 | 59 (21/30) | 0 | 0 |
+| test | 0 | 0 | 41 (29/30) | 28 (27/30) |
+| simulation | 0 | 0 | 44 (30/30) | 0 |
+| tutoring | 179 (30/30) | 72 (30/30) | 0 (0/30) | 0 |
+| help | 269 | 250 | 90 | 0 |
+| instructions | 0 | 9 | 252 | 129 |
+| answer | 137 | 197 | 385 | 215 |
+| eval / grader / reward / score / benchmark | 0 | 0 | 0 | 0 |
+
+None of "cheat", "test" or "simulation" occurs in the system prompt or any user template. Before any reasoning,
+the model reads the homework wrapper as a student trying to cheat, and the RL wrapper as a test; with the tutor
+system prompt present, the RL wrapper also reads as a simulation, and "tutoring" disappears. The grader and reward
+vocabulary of the prompt itself does not appear in the readouts.
+
 ## Open
 
 - Random-direction null for the J-lens word z-scores.
