@@ -1,0 +1,12 @@
+{
+  "explore/pulse/detector.json": "5520c3524bc0d84bd23939efa8cba419290c24ae3c803bcff796cb09f50ad63d",
+  "explore/pulse/manifest.json": "3ee78f8fb670a50a8565017486581aba2912f881fadf038bc998d082c963fefc",
+  "results/raw/q38/q38-T3E3.json": "bc5894501e3260fd3c149d65f6a37bb192a44d91fcde75c4472ab6029b864a83",
+  "results/raw/q38/q38-rand_T3E3.json": "5a5d06eef15dda96ef7a9f431d841a6edd1a95c05b1b3065604dec575c508afd",
+  "results/raw/pulse/out/baseline.jsonl": "d541c6a6f26ab2cef8c2f00f58fb2f9864352fe2a7f3dc2b7855808adc87dfab",
+  "results/raw/pulse/out/prefill.jsonl": "155d2d9a4171e29c05a3f1e350dfde8e69daf2f7fdde652c7c59712ebbcacfa4",
+  "explore/pulse/run_round2.py": "af9eb0624038a6d75898fd130070acb117a19498bb108a124ed50b67324d95cd",
+  "explore/pulse/pulse_core.py": "04d91a1bb0ca5697d98e9256326e46b3d9d68034ac735489ff967784e70c9aac",
+  "explore/pulse/setup_round2.sh": "2693acdf98468bb2d099dbce88efac6575936f5ae0cacd40a60a870eb7851674",
+  "explore/pulse/watch_round2.py": "d3ca3f0b5e64fff9a919aa36d1ac5bbbe8f0c3709ee0e954c30b0c93a1e51022"
+}
