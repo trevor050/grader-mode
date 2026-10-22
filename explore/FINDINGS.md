@@ -167,7 +167,21 @@ problems, one sample each. "rule" / "grader" = reasoning mentions the tutor rule
 At 3x the reasoning itself changes: traces open with "The user is asking me to guide a student through a math
 problem" and rarely state a conflict (9/40). Seven replies did not finish within 4,096 tokens, and two finished
 replies still contain a `\boxed{}` (one with a wrong value). Counting every unfinished reply as a leak, 3x gives
-at most 7/40 against 40/40 for its random twin. Side effects on other prompts are not measured.
+at most 7/40 against 40/40 for its random twin.
+
+Side effects (same 40 problems): with no system prompt and a plain question, the unsteered model gives the correct
+number in 40/40 replies, the random twin in 39/40, and the 3x shift in 2/40. The steered replies tutor although no
+one asked ("being careful to guide rather than give the answer directly"), and some that do compute get it wrong
+(11 - 6 - 2 = 3 for a problem whose answer is 15). Under the student request with the tutor prompt, 1/40, 0/40 and
+1/40 leak. The 3x shift therefore turns on tutoring and degrades arithmetic everywhere; it is not a targeted
+removal of the RL-prompt response.
+
+Ladder, same generator (vLLM, bf16, thinking on, 40 problems, one sample), leaks out of 40:
+
+| | student + tutor | homework + tutor | RL + tutor |
+|---|---|---|---|
+| Qwen3.6-27B | 1 (32 finished) | 2 | 34 |
+| Qwen3.8-27B | | | 39 |
 
 ## 8. Qwen3.6-27B J++ lens: "cheating" under homework, "test" and "simulation" under the RL prompt
 
