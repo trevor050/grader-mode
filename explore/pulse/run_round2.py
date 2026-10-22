@@ -129,16 +129,19 @@ def base_fields(j,arm):
     return {k:j[k] for k in ('cond','idx','gold','gate','score','prompt_token_ids')}|{'arm':arm}
 
 
-def baseline_rows(jobs,arm):
+def baseline_rows(jobs,arm,prefill=False):
     if not jobs:return []
     event('baseline_start',arm=arm,n=len(jobs)); started=time.time()
-    outs=llm.generate([{'prompt_token_ids':j['prompt_token_ids']} for j in jobs],
+    injected=REMINDER+'\n\n' if prefill else ''
+    prompts=[tok.encode(j['prompt']+injected,add_special_tokens=False) for j in jobs]
+    outs=llm.generate([{'prompt_token_ids':p} for p in prompts],
                      SamplingParams(temperature=.7,top_p=.95,top_k=-1,max_tokens=4096,seed=0),use_tqdm=True)
     rows=[]
-    for j,o in zip(jobs,outs):
-        c=o.outputs[0]; assert list(o.prompt_token_ids)==j['prompt_token_ids']
+    for j,p,o in zip(jobs,prompts,outs):
+        c=o.outputs[0]; assert list(o.prompt_token_ids)==p
         rows.append(base_fields(j,arm)|dict(text=c.text,token_ids=list(c.token_ids),finish_reason=c.finish_reason,
-                    stop_reason=c.stop_reason,source='round2_fresh_baseline',**measures(c.text,c.finish_reason,j['gold'])))
+                    stop_reason=c.stop_reason,generation_prompt_token_ids=p,injected=injected,
+                    source='round2_fresh_reminder' if prefill else 'round2_fresh_baseline',**measures(c.text,c.finish_reason,j['gold'],injected)))
     event('baseline_complete',arm=arm,seconds=time.time()-started,n=len(rows))
     return rows
 
@@ -196,8 +199,10 @@ def execute(command):
     arm=command['arm']; cond=command.get('cond','rl_tutor')
     jobs=[j for j in gates if j['cond']==cond]
     if command['kind']=='baseline':rows=baseline_rows(jobs,arm)
-    elif command['kind']=='pulse':
-        yes=[j for j in jobs if j['gate']]; rows=pulse_rows(yes,arm,command['k'],command['spec'],command.get('prefill',False))
+    elif command['kind'] in ('pulse','reminder'):
+        yes=[j for j in jobs if j['gate']]
+        rows=(pulse_rows(yes,arm,command['k'],command['spec'],command.get('prefill',False))
+              if command['kind']=='pulse' else baseline_rows(yes,arm,True))
         # Gate-negative paths use exact baseline output, with no staging or reminder.
         if len(yes)<len(jobs):
             baseline_path=OUT/command.get('baseline_file','baseline.jsonl')
@@ -226,7 +231,16 @@ assert closing_id not in eos_ids
 llm=LLM(MODEL,revision=REV,dtype='bfloat16',enforce_eager=True,max_model_len=8192,gpu_memory_utilization=.92,
         seed=0,max_num_seqs=40,max_num_batched_tokens=16384,enable_prefix_caching=False,enable_chunked_prefill=False)
 event('model_loaded',seconds=time.time()-start,torch=torch.__version__,closing_think_token_id=closing_id,eos_ids=sorted(eos_ids))
-gates=capture_gates(); (OUT/'ready').touch()
+gates=capture_gates()
+# Infrastructure check before batching: force the exact boundary token and verify retention.
+for boundary in [closing_id, *sorted(eos_ids)]:
+    check=llm.generate([{'prompt_token_ids':gates[0]['prompt_token_ids']}],
+        SamplingParams(temperature=0,max_tokens=1,seed=0,allowed_token_ids=[boundary],
+                       stop_token_ids=[closing_id],include_stop_str_in_output=True),use_tqdm=False)[0].outputs[0]
+    assert list(check.token_ids)==[boundary], ('boundary token trimmed',boundary,check.token_ids)
+    event('infrastructure_boundary_check',forced_token_id=boundary,retained_token_ids=list(check.token_ids),
+          finish_reason=check.finish_reason,stop_reason=check.stop_reason)
+(OUT/'ready').touch()
 seen=set()
 while True:
     p=ROOT/'command.json'

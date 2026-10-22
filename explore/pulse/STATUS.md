@@ -31,3 +31,9 @@ Credit is the nearest 45-second guard snapshot to each boundary, not an instanta
 Teardown snapshot: 2026-10-22T06:08:38Z, credit $3.146671785700, no instances. Total wall time through this snapshot: 1461.7s. See execution.json for exact stage events and ROUND2.md for the prospective run list/cost range.
 
 - Final verification 2026-10-22T06:11:22Z: credit $3.098396945700; no instances. Posted credit delta $0.746960388500, still a billing snapshot. Guard exited after recording instance absent. All original source/baseline hashes preserved; unrelated checkout edits untouched. Full analysis reproduces summary/detector/report byte for byte; scalar/batch saved-gate scores agree on all 864 real captures. Round 2 not executed.
+
+## Round 2
+
+- Authorized 2026-10-22. Frozen detector and Round 1 raw outputs reused; no refitting. Priority override: target/random K=64 first, target K=16/256, random K=16/256, then side effects.
+- 2026-10-22 06:17:58 UTC: rented instance 57170351, A100 PCIE 80GB, 150GB disk, quoted $0.9916666667/hour including disk; ingress $0.0026041667/GB, egress $0.00390625/GB. Initial credit $3.098396945700. Independent 45-second guard uses $1.10/hour plus $0.30 reserve; hard stop $0.40; destroy on >900s stall. No other instances at rental.
+- Implementation controls pushed before rental at a701c91. Setup in progress; no generation yet. Raw Round 2 evidence: results/raw/pulse2/.
