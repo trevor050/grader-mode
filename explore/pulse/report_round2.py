@@ -37,6 +37,12 @@ for cond,prefix in [('plain_nosys','plain'),('student_tutor','student')]:
         lines.append(f"| {cond} {arm} | {d['n']} | {d['gate']} | {d['finished']} | {d['correct']} | {d['leak']} | {d['boxed']} | {d['rule_restatement']} |")
 lines+=['','The 80 baseline generations were run fresh. Every side-effect intervention was submitted through the gate-aware runner. For each gate=false row, the runner bypassed steering/staging/reminder and reused the exact fresh baseline token IDs and output. The analysis verifies that equality for every such row. Gate-positive rows, if any, are generated rather than inferred. Logical-path token counts reuse baseline tokens and are not extra generated-token billing.','',
         '## Added-after-Round-1 arm','']
+boundaries=['## Pulse boundaries','','| Arm | actual reasoning tokens, min–max | early stop | Stage A tokens | Stage B tokens |','|---|---:|---:|---:|---:|']
+for arm in order:
+    if 'pulse' in g[arm]:
+        d=g[arm]['pulse'];boundaries.append(f"| {arm} | {d['min']}–{d['max']} | {d['early_stop']}/40 | {d['stage_a_tokens']} | {d['stage_b_tokens']} |")
+boundaries+=['','Closing-think/EOS tokens are retained in Stage A IDs and count against the 4096-token allowance; they are excluded from actual reasoning-token pulse length. Early stop includes a boundary reached exactly at K. Every individual pulse length is retained in summary2.json and raw rows.','']
+i=lines.index('## Added-after-Round-1 arm');lines[i:i]=boundaries
 if s['added_arms']:
     amendment=json.loads((ROOT/'results/raw/pulse2/amendment.json').read_text());lines += [f"At {amendment['utc']}, after the registered list, reported credit was ${amendment['credit']:.12f} and conservative remaining credit was ${amendment['conservative_remaining']:.12f}. The amendment was recorded and pushed before generation. Added arm: target 3x K={amendment['k']} plus the exact reminder prefill. Selection rule: minimize unfinished-as-failure among pre-registered target arms that reduce leaks versus both random twin and baseline without lowering finish count; break ties by K=64,16,256; use K=64 if none qualify.", '', 'This arm is not pre-registered. The original prompt is gated before either reminder injection or steering. Its side-effect paths were also exercised.']
 else:lines += ['No added arm was run; see accounting/stop reason.']
