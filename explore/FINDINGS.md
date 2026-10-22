@@ -180,8 +180,13 @@ Ladder, same generator (vLLM, bf16, thinking on, 40 problems, one sample), leaks
 
 | | student + tutor | homework + tutor | RL + tutor |
 |---|---|---|---|
+| Qwen3.5-27B | 2 | 1 (28 finished) | 40 (cap 7,500 tokens) |
 | Qwen3.6-27B | 1 (32 finished) | 2 | 34 |
 | Qwen3.8-27B | | | 39 |
+
+At a 4,096-token cap Qwen3.5 finished only 19/40 RL replies (all 19 leaked); the 7,500-token rerun finished all
+40. All three checkpoints are near ceiling under the RL prompt, so this prompt shows no increase from 3.5 to 3.8.
+The Phase 6 Qwen3.5 rate under a similar prompt (12/25, FP8) was likely depressed by truncation.
 
 ## 8. Qwen3.6-27B J++ lens: "cheating" under homework, "test" and "simulation" under the RL prompt
 
