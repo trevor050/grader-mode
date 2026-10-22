@@ -110,9 +110,29 @@ single-response episode), not one word or the "no human" clause. In Gemma 4 12B 
 bullet matters more (full 15/40, without the bullet 0/40), but Gemma also returned an empty final reply in 16-28
 of 40 replies under these prompts, so its rates are less clean.
 
+## 6. Qwen3.8 J-lens readout of the RL-minus-homework difference
+
+J-lens (Gurnee et al. 2026, `jlens/`, mean Jacobian to the penultimate block) applied to the difference of mean
+residuals, RL prompt minus homework prompt, at the three positions of section 2, layers 16-56
+(`results/raw/q38/jlread.txt`). Top tokens are read off directly; "word z" is the z-score of a fixed word list
+against the full vocabulary. No random-direction null has been run, so word z-scores of about +/-2 are not
+distinguishable from noise.
+
+- At the first mention of the tutor rule, layers 40-56 read out "but / BUT / However / aber / pero" on the
+  positive side and "refuse / refusal / refusing / never / cannot / not / regardless" on the negative side. Under
+  the RL prompt the model is set up to say "but" after stating the rule; under the homework prompt, to say it
+  will not or cannot. This agrees with the logit probe (homework: next word "not" / "NOT").
+- At the end of the prompt, before any reasoning, layer 56 reads "student" at z -5.6 (top negative tokens
+  "@student", " student", " kid", " students") and layer 40 reads tutor -3.0, student -2.7. The RL prompt removes
+  the student from the model's frame rather than adding an "eval" concept.
+- At the end of reasoning, layer 40 reads "computed / yields / value / sum" up and tutor -3.1.
+- Eval vocabulary ("grader", "eval", "reward", "score") does not rise consistently across layers or positions.
+
+These are readouts of teacher-forced traces that differ in text between conditions, so they partly reflect what
+each trace says next.
+
 ## Open
 
-- J-lens (Gurnee et al. 2026, `jlens/`) readout of the RL-minus-homework residual difference in Qwen3.8 at the
-  three positions: running; first layer (32) is noisy, with "score", "correct", "eval", "format" mildly up.
-- Same neuron steering on Qwen3.8: running.
+- Random-direction null for the J-lens word z-scores.
+- Neuron steering on Qwen3.8 (tutor up / eval down, random twin): running.
 - Qwen3.5 / 3.6 / 3.8 under the RL prompt (more post-training -> more leaking?): paused for budget.
