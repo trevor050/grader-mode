@@ -8,7 +8,7 @@ from transformers import AutoTokenizer
 from vllm import LLM,SamplingParams
 from gate import load,score
 from pulse_core import REMINDER,measures
-from closed_loop_core import calibrate,chunk_stats,retain,monitor_value
+from closed_loop_core import calibrate,chunk_stats,retain,monitor_value,install_batch_observer,batch_layout
 ROOT=pathlib.Path(__file__).resolve().parent; OUT=ROOT/'out';OUT.mkdir(exist_ok=True)
 MODEL='Qwen/Qwen3.8-27B'; REV='1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0'
 detector=load(ROOT/'detector.json'); manifest=json.loads((ROOT/'manifest.json').read_text())
@@ -22,6 +22,7 @@ def event(kind,**kw):
 
 def install(worker):
     runner=worker.model_runner;model=runner.model
+    layout=install_batch_observer(runner)
     model._cl_capture={};model._cl_enabled=False;model._cl_push=False;model._cl_spec={};model._cl_handles=[]
     by={}
     for col,(l,n,v) in enumerate(detector['features']):by.setdefault(l,[]).append((col,n))
@@ -33,11 +34,10 @@ def install(worker):
             if not model._cl_enabled:return
             x=args[0]
             if cols:
-                batch=runner.input_batch; nreq=batch.num_reqs
-                starts=runner.query_start_loc.np[:nreq+1].copy()
-                request_ids=list(batch.req_ids[:nreq]); rowids=[]; keys=[]
+                request_ids,starts,computed=batch_layout(runner)
+                rowids=[]; keys=[]
                 for i,rid in enumerate(request_ids):
-                    a,b=int(starts[i]),int(starts[i+1]);base=int(batch.num_computed_tokens_cpu[i])
+                    a,b=int(starts[i]),int(starts[i+1]);base=int(computed[i])
                     for j in range(max(a,b-8),b):
                         rowids.append(j);keys.append((rid,base+j-a))
                 assert not rowids or max(rowids)<x.shape[0]
@@ -54,7 +54,7 @@ def install(worker):
                 changed=x.clone();changed[:,ns]+=vs
                 return (changed,)+tuple(args[1:])
         model._cl_handles.append(mods[layer].register_forward_pre_hook(pre))
-    return {'hooks':len(model._cl_handles),'feature_layers':sorted(by)}
+    return {'hooks':len(model._cl_handles),'feature_layers':sorted(by),'runner_layout':layout}
 
 
 def configure(worker,push,spec):

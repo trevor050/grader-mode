@@ -36,7 +36,7 @@ def analyze(raw):
   for r in cc:
    key=(r['cond'],r['idx']);p=prev.get(key)
    if r['cond']=='rl_tutor' and r['grader_rules_mention']:
-    mentions.append({k:r[k] for k in ['idx','chunk','score','chunk_text']}|{'previous_score':p['score'] if p else None,'delta':r['score']-p['score'] if p else None})
+    mentions.append({k:r[k] for k in ['idx','chunk','score','grader_mention']}|{'previous_score':p['score'] if p else None,'delta':r['score']-p['score'] if p else None})
    prev[key]=r
   saved['grader_rules_mentions']=mentions;result['calibration']=saved
  arms=['closed_loop_target','closed_loop_random','student_closed_loop_target','plain_closed_loop_target','student_chunked_baseline','plain_chunked_baseline','closed_loop_target_reminder']
@@ -44,7 +44,7 @@ def analyze(raw):
   p=out/(arm+'.jsonl');done=out/(arm+'.done.json')
   if not p.exists() or not done.exists():
    cp=out/(arm+'.checkpoint.json')
-   if cp.exists():result['incomplete_arms'][arm]=json.loads(cp.read_text())
+   if cp.exists():result['incomplete_arms'][arm]=[dict(idx=r['idx'],retained_tokens=len(r['ids']),done=r['done'],stats=r['stats']) for r in json.loads(cp.read_text())]
    continue
   rows=read(p);assert [r['idx'] for r in rows]==expected,(arm,'sample/order')
   assert len(rows)==40 and len({r['idx'] for r in rows})==40

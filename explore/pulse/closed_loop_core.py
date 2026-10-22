@@ -42,3 +42,31 @@ def monitor_value(observations,positions):
     values=np.array([by[p] for p in positions])
     assert values.shape==(len(positions),60) and np.isfinite(values).all(), 'Missing or nonfinite monitor features'
     return values
+
+
+def install_batch_observer(runner):
+    """V2 exposes the InputBatch as a prepare_inputs return, before model.forward."""
+    if hasattr(runner,'input_batch'):return 'v1_input_batch'
+    original=runner.prepare_inputs
+    def observed(*args,**kwargs):
+        batch=original(*args,**kwargs)
+        runner._cl_batch=batch
+        return batch
+    runner.prepare_inputs=observed
+    return 'v2_prepare_inputs'
+
+
+def batch_layout(runner):
+    if hasattr(runner,'input_batch'):
+        batch=runner.input_batch;n=batch.num_reqs
+        starts=runner.query_start_loc.np[:n+1].copy()
+        computed=batch.num_computed_tokens_cpu[:n].copy()
+    else:
+        batch=runner._cl_batch;n=batch.num_reqs
+        starts=batch.query_start_loc_np[:n+1].copy()
+        computed=batch.num_computed_tokens_np[:n].copy()
+    request_ids=list(batch.req_ids[:n])
+    assert all(isinstance(r,str) for r in request_ids)
+    assert len(set(request_ids))==n and len(starts)==n+1 and len(computed)==n
+    assert starts[0]==0 and np.all(np.diff(starts)>0)
+    return request_ids,starts,computed

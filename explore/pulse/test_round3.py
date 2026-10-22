@@ -23,3 +23,24 @@ class Contracts(unittest.TestCase):
         with self.assertRaises(AssertionError):monitor_value([(2,[float('nan')]*60)],[2])
 
 if __name__=='__main__':unittest.main()
+
+class SchedulerLayouts(unittest.TestCase):
+    def test_new_runner_batch_is_bound_before_forward(self):
+        from types import SimpleNamespace
+        from closed_loop_core import install_batch_observer,batch_layout
+        batch=SimpleNamespace(num_reqs=2,req_ids=['second','first'],query_start_loc_np=np.array([0,3,8]),num_computed_tokens_np=np.array([14,9]))
+        class V2:
+            def prepare_inputs(self,*args,**kwargs):return batch
+        runner=V2()
+        self.assertFalse(hasattr(runner,'input_batch'))
+        self.assertEqual(install_batch_observer(runner),'v2_prepare_inputs')
+        runner.prepare_inputs(None)
+        ids,starts,computed=batch_layout(runner)
+        self.assertEqual((ids,starts.tolist(),computed.tolist()),(['second','first'],[0,3,8],[14,9]))
+    def test_legacy_layout_and_padding(self):
+        from types import SimpleNamespace
+        from closed_loop_core import install_batch_observer,batch_layout
+        runner=SimpleNamespace(input_batch=SimpleNamespace(num_reqs=1,req_ids=['x',None],num_computed_tokens_cpu=np.array([10,0])),query_start_loc=SimpleNamespace(np=np.array([0,8,8])))
+        self.assertEqual(install_batch_observer(runner),'v1_input_batch')
+        ids,starts,computed=batch_layout(runner)
+        self.assertEqual((ids,starts.tolist(),computed.tolist()),(['x'],[0,8],[10]))
