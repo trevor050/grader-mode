@@ -1,0 +1,11 @@
+{
+  "activations.npz": "bcf0a041080a27ebc02406b7dd7f892dfcda694e6f730669eda61e29f9a46a68",
+  "baseline-prompts.json": "397f7096dedc62ba1ed17faf80953fdd1ad5e2a0c748432acf7c378d09e3b8be",
+  "baseline.jsonl": "d541c6a6f26ab2cef8c2f00f58fb2f9864352fe2a7f3dc2b7855808adc87dfab",
+  "capture-manifest.json": "4c15753317e9fe30cbbf2d7289fa34b62bc6fb9116441cde98a3bacf4c61dc7f",
+  "capture.jsonl": "1b81ae9ad34332a08234930afb60d00e67a59bc607e4db04c05a167d0f3eac26",
+  "events.jsonl": "951d3659983e00ddfd01895c02971d7422d24ea392f3ef7f135263247e20db39",
+  "features.json": "5a3b385ac8eb4571f83df672a70623c96c26a7f62058c41cb53f8ba3ab05fca1",
+  "prefill-prompts.json": "911f83c9ef648db50dfe4175a95f102606698921e8ca986901b302cff24abe68",
+  "prefill.jsonl": "155d2d9a4171e29c05a3f1e350dfde8e69daf2f7fdde652c7c59712ebbcacfa4"
+}
