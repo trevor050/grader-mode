@@ -1,0 +1,735 @@
+{
+  "preregistration_commit": "7734fe6",
+  "detector_freeze_commit": "ff9eafe",
+  "instance_id": 57166538,
+  "instance_state": "destroyed",
+  "instances_after_teardown": [],
+  "initial_credit": 3.845357334199992,
+  "credit_snapshot_after_teardown": 3.1466717856999935,
+  "credit_snapshot_utc": "2026-10-22T06:08:38Z",
+  "credit_delta_snapshot": 0.6986855484999985,
+  "billing_final": false,
+  "rental_wall_seconds_to_teardown_snapshot": 1461.6923639774323,
+  "quoted_hourly_rate": 1.1083333333333334,
+  "ingress_per_GB": 0.005333333333333333,
+  "guard_hourly_rate": 1.2,
+  "guard_network_reserve": 0.45,
+  "destroy_reason": "Round 1 complete; Round 2 not running immediately",
+  "round2_executed": false,
+  "stages": [
+    {
+      "utc": "2026-10-22T05:55:53Z",
+      "event": "tokenizer_load_start"
+    },
+    {
+      "utc": "2026-10-22T05:55:54Z",
+      "event": "model_load_start"
+    },
+    {
+      "utc": "2026-10-22T05:58:42Z",
+      "event": "model_loaded",
+      "seconds": 168.84244656562805,
+      "torch": "2.13.0+cu130"
+    },
+    {
+      "utc": "2026-10-22T05:58:42Z",
+      "event": "generation_start",
+      "arm": "prefill",
+      "n": 40
+    },
+    {
+      "utc": "2026-10-22T06:02:51Z",
+      "event": "generation_complete",
+      "arm": "prefill",
+      "n": 40,
+      "finished": 40,
+      "leak": 16,
+      "tokens": 67051,
+      "seconds": 249.0749955177307
+    },
+    {
+      "utc": "2026-10-22T06:02:51Z",
+      "event": "generation_start",
+      "arm": "baseline",
+      "n": 40
+    },
+    {
+      "utc": "2026-10-22T06:05:30Z",
+      "event": "generation_complete",
+      "arm": "baseline",
+      "n": 40,
+      "finished": 40,
+      "leak": 40,
+      "tokens": 22099,
+      "seconds": 158.63972806930542
+    },
+    {
+      "utc": "2026-10-22T06:05:30Z",
+      "event": "capture_install",
+      "hooks": [
+        {
+          "feature_layers": [
+            13,
+            14,
+            15,
+            16,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          "hook_layers": [
+            13,
+            14,
+            15,
+            16,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          "features": 60
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-22T06:05:31Z",
+      "event": "capture_progress",
+      "done": 12,
+      "total": 864,
+      "seconds": 1.556391716003418,
+      "family": "rl"
+    },
+    {
+      "utc": "2026-10-22T06:05:33Z",
+      "event": "capture_progress",
+      "done": 24,
+      "total": 864,
+      "seconds": 3.0466084480285645,
+      "family": "rl"
+    },
+    {
+      "utc": "2026-10-22T06:05:35Z",
+      "event": "capture_progress",
+      "done": 36,
+      "total": 864,
+      "seconds": 4.637007713317871,
+      "family": "rl"
+    },
+    {
+      "utc": "2026-10-22T06:05:36Z",
+      "event": "capture_progress",
+      "done": 48,
+      "total": 864,
+      "seconds": 6.180413484573364,
+      "family": "eval_boxed"
+    },
+    {
+      "utc": "2026-10-22T06:05:38Z",
+      "event": "capture_progress",
+      "done": 60,
+      "total": 864,
+      "seconds": 7.7229485511779785,
+      "family": "eval_boxed"
+    },
+    {
+      "utc": "2026-10-22T06:05:39Z",
+      "event": "capture_progress",
+      "done": 72,
+      "total": 864,
+      "seconds": 9.315106868743896,
+      "family": "eval_boxed"
+    },
+    {
+      "utc": "2026-10-22T06:05:41Z",
+      "event": "capture_progress",
+      "done": 84,
+      "total": 864,
+      "seconds": 10.856808185577393,
+      "family": "eval_answer_line"
+    },
+    {
+      "utc": "2026-10-22T06:05:42Z",
+      "event": "capture_progress",
+      "done": 96,
+      "total": 864,
+      "seconds": 12.40707802772522,
+      "family": "eval_answer_line"
+    },
+    {
+      "utc": "2026-10-22T06:05:44Z",
+      "event": "capture_progress",
+      "done": 108,
+      "total": 864,
+      "seconds": 14.002252340316772,
+      "family": "eval_answer_line"
+    },
+    {
+      "utc": "2026-10-22T06:05:45Z",
+      "event": "capture_progress",
+      "done": 120,
+      "total": 864,
+      "seconds": 15.59811544418335,
+      "family": "eval_json"
+    },
+    {
+      "utc": "2026-10-22T06:05:47Z",
+      "event": "capture_progress",
+      "done": 132,
+      "total": 864,
+      "seconds": 17.17012357711792,
+      "family": "eval_json"
+    },
+    {
+      "utc": "2026-10-22T06:05:49Z",
+      "event": "capture_progress",
+      "done": 144,
+      "total": 864,
+      "seconds": 18.795799016952515,
+      "family": "eval_json"
+    },
+    {
+      "utc": "2026-10-22T06:05:50Z",
+      "event": "capture_progress",
+      "done": 156,
+      "total": 864,
+      "seconds": 20.36805033683777,
+      "family": "eval_xml"
+    },
+    {
+      "utc": "2026-10-22T06:05:52Z",
+      "event": "capture_progress",
+      "done": 168,
+      "total": 864,
+      "seconds": 21.939077615737915,
+      "family": "eval_xml"
+    },
+    {
+      "utc": "2026-10-22T06:05:53Z",
+      "event": "capture_progress",
+      "done": 180,
+      "total": 864,
+      "seconds": 23.559348583221436,
+      "family": "eval_xml"
+    },
+    {
+      "utc": "2026-10-22T06:05:55Z",
+      "event": "capture_progress",
+      "done": 192,
+      "total": 864,
+      "seconds": 25.097471714019775,
+      "family": "eval_hashes"
+    },
+    {
+      "utc": "2026-10-22T06:05:57Z",
+      "event": "capture_progress",
+      "done": 204,
+      "total": 864,
+      "seconds": 26.659913778305054,
+      "family": "eval_hashes"
+    },
+    {
+      "utc": "2026-10-22T06:05:58Z",
+      "event": "capture_progress",
+      "done": 216,
+      "total": 864,
+      "seconds": 28.275219678878784,
+      "family": "eval_hashes"
+    },
+    {
+      "utc": "2026-10-22T06:06:00Z",
+      "event": "capture_progress",
+      "done": 228,
+      "total": 864,
+      "seconds": 29.81631374359131,
+      "family": "eval_bare"
+    },
+    {
+      "utc": "2026-10-22T06:06:01Z",
+      "event": "capture_progress",
+      "done": 240,
+      "total": 864,
+      "seconds": 31.360504388809204,
+      "family": "eval_bare"
+    },
+    {
+      "utc": "2026-10-22T06:06:03Z",
+      "event": "capture_progress",
+      "done": 252,
+      "total": 864,
+      "seconds": 32.95234990119934,
+      "family": "eval_bare"
+    },
+    {
+      "utc": "2026-10-22T06:06:04Z",
+      "event": "capture_progress",
+      "done": 264,
+      "total": 864,
+      "seconds": 34.29647898674011,
+      "family": "student"
+    },
+    {
+      "utc": "2026-10-22T06:06:06Z",
+      "event": "capture_progress",
+      "done": 276,
+      "total": 864,
+      "seconds": 35.6513888835907,
+      "family": "student"
+    },
+    {
+      "utc": "2026-10-22T06:06:07Z",
+      "event": "capture_progress",
+      "done": 288,
+      "total": 864,
+      "seconds": 37.00543785095215,
+      "family": "student"
+    },
+    {
+      "utc": "2026-10-22T06:06:08Z",
+      "event": "capture_progress",
+      "done": 300,
+      "total": 864,
+      "seconds": 38.46512460708618,
+      "family": "homework"
+    },
+    {
+      "utc": "2026-10-22T06:06:10Z",
+      "event": "capture_progress",
+      "done": 312,
+      "total": 864,
+      "seconds": 39.95599436759949,
+      "family": "homework"
+    },
+    {
+      "utc": "2026-10-22T06:06:11Z",
+      "event": "capture_progress",
+      "done": 324,
+      "total": 864,
+      "seconds": 41.44277811050415,
+      "family": "homework"
+    },
+    {
+      "utc": "2026-10-22T06:06:13Z",
+      "event": "capture_progress",
+      "done": 336,
+      "total": 864,
+      "seconds": 42.779452085494995,
+      "family": "plain"
+    },
+    {
+      "utc": "2026-10-22T06:06:14Z",
+      "event": "capture_progress",
+      "done": 348,
+      "total": 864,
+      "seconds": 44.120850801467896,
+      "family": "plain"
+    },
+    {
+      "utc": "2026-10-22T06:06:15Z",
+      "event": "capture_progress",
+      "done": 360,
+      "total": 864,
+      "seconds": 45.455570936203,
+      "family": "plain"
+    },
+    {
+      "utc": "2026-10-22T06:06:17Z",
+      "event": "capture_progress",
+      "done": 372,
+      "total": 864,
+      "seconds": 46.79251194000244,
+      "family": "student_boxed"
+    },
+    {
+      "utc": "2026-10-22T06:06:18Z",
+      "event": "capture_progress",
+      "done": 384,
+      "total": 864,
+      "seconds": 48.13004112243652,
+      "family": "student_boxed"
+    },
+    {
+      "utc": "2026-10-22T06:06:19Z",
+      "event": "capture_progress",
+      "done": 396,
+      "total": 864,
+      "seconds": 49.467241287231445,
+      "family": "student_boxed"
+    },
+    {
+      "utc": "2026-10-22T06:06:21Z",
+      "event": "capture_progress",
+      "done": 408,
+      "total": 864,
+      "seconds": 50.80233573913574,
+      "family": "student_answer_line"
+    },
+    {
+      "utc": "2026-10-22T06:06:22Z",
+      "event": "capture_progress",
+      "done": 420,
+      "total": 864,
+      "seconds": 52.141560554504395,
+      "family": "student_answer_line"
+    },
+    {
+      "utc": "2026-10-22T06:06:23Z",
+      "event": "capture_progress",
+      "done": 432,
+      "total": 864,
+      "seconds": 53.47611689567566,
+      "family": "student_answer_line"
+    },
+    {
+      "utc": "2026-10-22T06:06:25Z",
+      "event": "capture_progress",
+      "done": 444,
+      "total": 864,
+      "seconds": 54.80852651596069,
+      "family": "student_json"
+    },
+    {
+      "utc": "2026-10-22T06:06:26Z",
+      "event": "capture_progress",
+      "done": 456,
+      "total": 864,
+      "seconds": 56.15330362319946,
+      "family": "student_json"
+    },
+    {
+      "utc": "2026-10-22T06:06:27Z",
+      "event": "capture_progress",
+      "done": 468,
+      "total": 864,
+      "seconds": 57.48178172111511,
+      "family": "student_json"
+    },
+    {
+      "utc": "2026-10-22T06:06:29Z",
+      "event": "capture_progress",
+      "done": 480,
+      "total": 864,
+      "seconds": 58.80937600135803,
+      "family": "student_xml"
+    },
+    {
+      "utc": "2026-10-22T06:06:30Z",
+      "event": "capture_progress",
+      "done": 492,
+      "total": 864,
+      "seconds": 60.14635491371155,
+      "family": "student_xml"
+    },
+    {
+      "utc": "2026-10-22T06:06:31Z",
+      "event": "capture_progress",
+      "done": 504,
+      "total": 864,
+      "seconds": 61.48631262779236,
+      "family": "student_xml"
+    },
+    {
+      "utc": "2026-10-22T06:06:33Z",
+      "event": "capture_progress",
+      "done": 516,
+      "total": 864,
+      "seconds": 62.82623648643494,
+      "family": "student_hashes"
+    },
+    {
+      "utc": "2026-10-22T06:06:34Z",
+      "event": "capture_progress",
+      "done": 528,
+      "total": 864,
+      "seconds": 64.1641137599945,
+      "family": "student_hashes"
+    },
+    {
+      "utc": "2026-10-22T06:06:35Z",
+      "event": "capture_progress",
+      "done": 540,
+      "total": 864,
+      "seconds": 65.5044515132904,
+      "family": "student_hashes"
+    },
+    {
+      "utc": "2026-10-22T06:06:37Z",
+      "event": "capture_progress",
+      "done": 552,
+      "total": 864,
+      "seconds": 66.8439130783081,
+      "family": "student_bare"
+    },
+    {
+      "utc": "2026-10-22T06:06:38Z",
+      "event": "capture_progress",
+      "done": 564,
+      "total": 864,
+      "seconds": 68.1837739944458,
+      "family": "student_bare"
+    },
+    {
+      "utc": "2026-10-22T06:06:39Z",
+      "event": "capture_progress",
+      "done": 576,
+      "total": 864,
+      "seconds": 69.52647924423218,
+      "family": "student_bare"
+    },
+    {
+      "utc": "2026-10-22T06:06:41Z",
+      "event": "capture_progress",
+      "done": 588,
+      "total": 864,
+      "seconds": 70.86579155921936,
+      "family": "rubric_1"
+    },
+    {
+      "utc": "2026-10-22T06:06:42Z",
+      "event": "capture_progress",
+      "done": 600,
+      "total": 864,
+      "seconds": 72.21014332771301,
+      "family": "rubric_1"
+    },
+    {
+      "utc": "2026-10-22T06:06:43Z",
+      "event": "capture_progress",
+      "done": 612,
+      "total": 864,
+      "seconds": 73.5520269870758,
+      "family": "rubric_1"
+    },
+    {
+      "utc": "2026-10-22T06:06:45Z",
+      "event": "capture_progress",
+      "done": 624,
+      "total": 864,
+      "seconds": 74.90162348747253,
+      "family": "rubric_2"
+    },
+    {
+      "utc": "2026-10-22T06:06:46Z",
+      "event": "capture_progress",
+      "done": 636,
+      "total": 864,
+      "seconds": 76.25648736953735,
+      "family": "rubric_2"
+    },
+    {
+      "utc": "2026-10-22T06:06:47Z",
+      "event": "capture_progress",
+      "done": 648,
+      "total": 864,
+      "seconds": 77.60839366912842,
+      "family": "rubric_2"
+    },
+    {
+      "utc": "2026-10-22T06:06:49Z",
+      "event": "capture_progress",
+      "done": 660,
+      "total": 864,
+      "seconds": 78.96356010437012,
+      "family": "rubric_3"
+    },
+    {
+      "utc": "2026-10-22T06:06:50Z",
+      "event": "capture_progress",
+      "done": 672,
+      "total": 864,
+      "seconds": 80.30782103538513,
+      "family": "rubric_3"
+    },
+    {
+      "utc": "2026-10-22T06:06:52Z",
+      "event": "capture_progress",
+      "done": 684,
+      "total": 864,
+      "seconds": 81.64671659469604,
+      "family": "rubric_3"
+    },
+    {
+      "utc": "2026-10-22T06:06:53Z",
+      "event": "capture_progress",
+      "done": 696,
+      "total": 864,
+      "seconds": 82.98654389381409,
+      "family": "rubric_4"
+    },
+    {
+      "utc": "2026-10-22T06:06:54Z",
+      "event": "capture_progress",
+      "done": 708,
+      "total": 864,
+      "seconds": 84.33329916000366,
+      "family": "rubric_4"
+    },
+    {
+      "utc": "2026-10-22T06:06:56Z",
+      "event": "capture_progress",
+      "done": 720,
+      "total": 864,
+      "seconds": 85.67111158370972,
+      "family": "rubric_4"
+    },
+    {
+      "utc": "2026-10-22T06:06:57Z",
+      "event": "capture_progress",
+      "done": 732,
+      "total": 864,
+      "seconds": 87.00825619697571,
+      "family": "rubric_5"
+    },
+    {
+      "utc": "2026-10-22T06:06:58Z",
+      "event": "capture_progress",
+      "done": 744,
+      "total": 864,
+      "seconds": 88.35507106781006,
+      "family": "rubric_5"
+    },
+    {
+      "utc": "2026-10-22T06:07:00Z",
+      "event": "capture_progress",
+      "done": 756,
+      "total": 864,
+      "seconds": 89.69025731086731,
+      "family": "rubric_5"
+    },
+    {
+      "utc": "2026-10-22T06:07:01Z",
+      "event": "capture_progress",
+      "done": 768,
+      "total": 864,
+      "seconds": 91.02180528640747,
+      "family": "rubric_6"
+    },
+    {
+      "utc": "2026-10-22T06:07:02Z",
+      "event": "capture_progress",
+      "done": 780,
+      "total": 864,
+      "seconds": 92.36896514892578,
+      "family": "rubric_6"
+    },
+    {
+      "utc": "2026-10-22T06:07:04Z",
+      "event": "capture_progress",
+      "done": 792,
+      "total": 864,
+      "seconds": 93.71080708503723,
+      "family": "rubric_6"
+    },
+    {
+      "utc": "2026-10-22T06:07:05Z",
+      "event": "capture_progress",
+      "done": 804,
+      "total": 864,
+      "seconds": 95.04805374145508,
+      "family": "rubric_7"
+    },
+    {
+      "utc": "2026-10-22T06:07:06Z",
+      "event": "capture_progress",
+      "done": 816,
+      "total": 864,
+      "seconds": 96.39090609550476,
+      "family": "rubric_7"
+    },
+    {
+      "utc": "2026-10-22T06:07:08Z",
+      "event": "capture_progress",
+      "done": 828,
+      "total": 864,
+      "seconds": 97.73112201690674,
+      "family": "rubric_7"
+    },
+    {
+      "utc": "2026-10-22T06:07:09Z",
+      "event": "capture_progress",
+      "done": 840,
+      "total": 864,
+      "seconds": 99.07060670852661,
+      "family": "rubric_8"
+    },
+    {
+      "utc": "2026-10-22T06:07:10Z",
+      "event": "capture_progress",
+      "done": 852,
+      "total": 864,
+      "seconds": 100.41528177261353,
+      "family": "rubric_8"
+    },
+    {
+      "utc": "2026-10-22T06:07:12Z",
+      "event": "capture_progress",
+      "done": 864,
+      "total": 864,
+      "seconds": 101.75162410736084,
+      "family": "rubric_8"
+    },
+    {
+      "utc": "2026-10-22T06:07:19Z",
+      "event": "capture_complete",
+      "n": 864,
+      "seconds": 109.48414731025696,
+      "removed_hooks": [
+        0
+      ]
+    },
+    {
+      "utc": "2026-10-22T06:07:19Z",
+      "event": "round1_gpu_complete"
+    }
+  ],
+  "verification": {
+    "remote_local_output_sha256_match": true,
+    "capture_rows": 864,
+    "primary_shape": [
+      864,
+      60
+    ],
+    "supplement_shapes": {
+      "16": [
+        864,
+        17408
+      ],
+      "24": [
+        864,
+        17408
+      ],
+      "32": [
+        864,
+        17408
+      ]
+    },
+    "last_prompt_token_id": 198,
+    "unpadded_single_prompt_capture_rows": 864,
+    "scalar_batch_scores_bitwise_equal": true,
+    "reanalysis_byte_identical": true
+  },
+  "latest_credit_snapshot": 3.098396945699996,
+  "latest_credit_snapshot_utc": "2026-10-22T06:11:22Z",
+  "latest_credit_delta_snapshot": 0.7469603884999962,
+  "latest_instances": []
+}

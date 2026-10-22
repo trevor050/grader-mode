@@ -4,6 +4,7 @@
   "baseline.jsonl": "d541c6a6f26ab2cef8c2f00f58fb2f9864352fe2a7f3dc2b7855808adc87dfab",
   "capture-manifest.json": "4c15753317e9fe30cbbf2d7289fa34b62bc6fb9116441cde98a3bacf4c61dc7f",
   "capture.jsonl": "1b81ae9ad34332a08234930afb60d00e67a59bc607e4db04c05a167d0f3eac26",
+  "detector-scores.jsonl": "06f5b673c3034877c94e0e5ca03ad8b810e1081336e8f1e88657f4948eabc074",
   "events.jsonl": "951d3659983e00ddfd01895c02971d7422d24ea392f3ef7f135263247e20db39",
   "features.json": "5a3b385ac8eb4571f83df672a70623c96c26a7f62058c41cb53f8ba3ab05fca1",
   "prefill-prompts.json": "911f83c9ef648db50dfe4175a95f102606698921e8ca986901b302cff24abe68",

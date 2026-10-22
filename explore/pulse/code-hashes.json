@@ -1,0 +1,9 @@
+{
+  "explore/PULSE.md": "8680ae4bfbebccc892ee5c0cec33b0b98a76d6359d27ca1986687aba77c78b3e",
+  "explore/pulse/analyze_round1.py": "f5ee972c3d0dd75e9c18dc8dc86ca053adf8b69b316eea0f0394b7f08572ab8e",
+  "explore/pulse/gate.py": "303efc34c2d77831fc7670616dc0a79cb2e2f420bfddaf3f4d90d8ffe673534f",
+  "explore/pulse/manifest.json": "3ee78f8fb670a50a8565017486581aba2912f881fadf038bc998d082c963fefc",
+  "explore/pulse/run_round1.py": "47e50bdc13b9f7bd73c9f113ed331286bc2afb056edc2c0894fdf05697be5f11",
+  "explore/pulse/setup.sh": "bc13837110df6388095f173d83b23b1885880513389a39f0ec8fe5df3fa0a9a4",
+  "explore/pulse/watch_budget.py": "0e1d6f8118fae994b945482af8e4c73816aa2a738faa6aeb2cb38db2d8d70c0e"
+}

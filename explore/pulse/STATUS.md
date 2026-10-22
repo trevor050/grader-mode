@@ -13,3 +13,21 @@
 - 06:07:19 UTC (1383s after rental): all 864 planned captures and three full-layer supplements completed in 109.4841473103s. All hooks removed.
 - 06:08:38 UTC: all remote output SHA256 hashes match local copies; primary activation matrix 864x60, supplements each 864x17408. Instance 57166538 destroyed; show instances returns []. Credit snapshot $3.1466717856999935, initial-minus-current delta $0.6986855485 (billing snapshot, not a final invoice). Round 2 cannot start in this assignment, so the instance was destroyed despite credit >$1.50.
 - Local analysis: projection selected by the fixed calibration rule. Frozen threshold 0.9637646510797577; calibration and test each AUC 1, TP 84/84, FP 0/204. Each of seven leave-one-format-out folds: AUC 1, TP 12/12, FP 0/12. Each negative test family: 0/12 false positives. No threshold tuning on test data.
+
+## Stage credit snapshots
+
+Credit is the nearest 45-second guard snapshot to each boundary, not an instantaneous invoice. Exact guard history is in results/raw/pulse/budget.jsonl.
+
+| Boundary UTC | Stage | Credit snapshot UTC | Credit | Elapsed from rental (s) |
+|---|---|---|---:|---:|
+| 05:44:16 | rental | 2026-10-22T05:44:18Z | 3.845357334200 | 0.0 |
+| 05:48:51 | install complete | 2026-10-22T05:48:57Z | 3.808088085700 | 274.7 |
+| 05:55:42 | download complete | 2026-10-22T05:55:23Z | 3.533081525700 | 685.7 |
+| 05:58:42 | model_loaded | 2026-10-22T05:58:36Z | 3.330087415700 | 865.7 |
+| 06:02:51 | generation_complete prefill | 2026-10-22T06:02:37Z | 3.254612105700 | 1114.7 |
+| 06:05:30 | generation_complete baseline | 2026-10-22T06:05:50Z | 3.207818545700 | 1273.7 |
+| 06:07:19 | capture_complete | 2026-10-22T06:07:26Z | 3.171031905700 | 1382.7 |
+
+Teardown snapshot: 2026-10-22T06:08:38Z, credit $3.146671785700, no instances. Total wall time through this snapshot: 1461.7s. See execution.json for exact stage events and ROUND2.md for the prospective run list/cost range.
+
+- Final verification 2026-10-22T06:11:22Z: credit $3.098396945700; no instances. Posted credit delta $0.746960388500, still a billing snapshot. Guard exited after recording instance absent. All original source/baseline hashes preserved; unrelated checkout edits untouched. Full analysis reproduces summary/detector/report byte for byte; scalar/batch saved-gate scores agree on all 864 real captures. Round 2 not executed.
