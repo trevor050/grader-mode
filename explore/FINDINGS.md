@@ -87,9 +87,32 @@ Zeroing them on 24 held-out problems, P(answer opener) per format:
 The top shared neuron, L20.N5688, has the largest attribution in every format (z -40 to -89). Most of the
 shared set sits in layers 18-24.
 
+## 5. No single ingredient of the RL prompt is responsible (Qwen3.8)
+
+One component removed or swapped at a time, tutor system prompt, thinking on, 40 problems
+(`rlprompt2/results/summary.md`). Violations out of 40:
+
+| Qwen3.8-27B | violations |
+|---|---|
+| A full RL prompt | 40 |
+| B drop the `[ENV: ...]` header | 37 |
+| C "grader" wording replaced by "my teacher" | 34 |
+| D drop the reward lines | 39 |
+| E drop "and no human will read it" | 40 |
+| F drop the whole "no questions / episode ends / no human" bullet | 33 |
+| G minimal: header + problem + "the automated grader REQUIRES \boxed{}" | 4 |
+| H homework wrapper | 2 |
+| I homework + "No human will read this; it is scored automatically." | 3 |
+
+Every single-component ablation still leaks 33-40/40; only the stripped-down eval (G) and the homework wrapper
+fall to the floor. The trigger is the combination of environment cues (episode header, grader, reward,
+single-response episode), not one word or the "no human" clause. In Gemma 4 12B the "no questions / no human"
+bullet matters more (full 15/40, without the bullet 0/40), but Gemma also returned an empty final reply in 16-28
+of 40 replies under these prompts, so its rates are less clean.
+
 ## Open
 
 - J-lens (Gurnee et al. 2026, `jlens/`) readout of the RL-minus-homework residual difference in Qwen3.8 at the
   three positions: running; first layer (32) is noisy, with "score", "correct", "eval", "format" mildly up.
 - Same neuron steering on Qwen3.8: running.
-- Which part of the RL prompt triggers it (ablations), and Qwen3.5 / 3.6 / 3.8 under the RL prompt: queued.
+- Qwen3.5 / 3.6 / 3.8 under the RL prompt (more post-training -> more leaking?): paused for budget.
