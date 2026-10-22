@@ -1,0 +1,33 @@
+{
+  "model": "Qwen/Qwen3-32B-FP8",
+  "revision": "aa55da1ecc13d006e8b8e4f54579b1ea8c3db2df",
+  "file_sha256": {
+    "config.json": "e546dacd2c772660270233f5579e9ab923cc2a7ec5ed3c58c27c2bc62cbf5169",
+    "generation_config.json": "81e8e13e77962857509cc06a9960bb68f8b7893096a60357627b2dfaa72d78fe",
+    "tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+    "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+  },
+  "quantization_config": {
+    "activation_scheme": "dynamic",
+    "fmt": "e4m3",
+    "quant_method": "fp8",
+    "weight_block_size": [
+      128,
+      128
+    ]
+  },
+  "generation_config": {
+    "bos_token_id": 151643,
+    "do_sample": true,
+    "eos_token_id": [
+      151645,
+      151643
+    ],
+    "pad_token_id": 151643,
+    "temperature": 0.6,
+    "top_k": 20,
+    "top_p": 0.95,
+    "transformers_version": "4.51.0"
+  },
+  "source_url": "https://huggingface.co/Qwen/Qwen3-32B-FP8"
+}

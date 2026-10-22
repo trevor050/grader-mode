@@ -1,0 +1,23 @@
+.....F                                                                   [100%]
+=================================== FAILURES ===================================
+______________ test_qwen32_suffix_matches_pinned_native_template _______________
+
+    def test_qwen32_suffix_matches_pinned_native_template():
+        from jinja2 import Environment
+        from explore.rlprompt.run import qwen32_tail
+        env=Environment()
+        def reject(message):raise ValueError(message)
+        env.globals['raise_exception']=reject
+        template=env.from_string((HERE/'results/32-template.jinja').read_text())
+        for thinking in (False,True):
+            prompt=template.render(messages=[{'role':'user','content':'x'}],add_generation_prompt=True,enable_thinking=thinking)
+>           assert prompt.endswith(qwen32_tail(thinking))
+E           AssertionError: assert False
+E            +  where False = <built-in method endswith of str object at 0x10b156070>('<|im_start|>assistant\n<think>\n')
+E            +    where <built-in method endswith of str object at 0x10b156070> = '<|im_start|>user\nx<|im_end|>\n<|im_start|>assistant\n'.endswith
+E            +    and   '<|im_start|>assistant\n<think>\n' = <function qwen32_tail at 0x10af7f100>(True)
+
+explore/rlprompt/test_run.py:84: AssertionError
+=========================== short test summary info ============================
+FAILED explore/rlprompt/test_run.py::test_qwen32_suffix_matches_pinned_native_template
+1 failed, 5 passed in 0.07s

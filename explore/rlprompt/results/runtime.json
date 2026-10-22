@@ -1,0 +1,5 @@
+{
+  "vllm": "0.32.0",
+  "torch": "2.13.0+cu130",
+  "gpu": "NVIDIA RTX PRO 5000 Blackwell"
+}

@@ -1,0 +1,82 @@
+{
+  "cap_usd": 1.8,
+  "initial_account": {
+    "credit": 4.992201613199997,
+    "total_spend": -10.007798386800003
+  },
+  "initial_instances": [
+    {
+      "id": 57125990,
+      "label": "grader-explore",
+      "actual_status": "running",
+      "cur_state": "running",
+      "gpu_name": "RTX A6000",
+      "ssh_host": "ssh9.vast.ai",
+      "ssh_port": 26780,
+      "dph_total": 0.4333333333333333,
+      "disk_space": 120.0,
+      "start_date": 1792624897.3441684
+    }
+  ],
+  "label": "grader-rlprompt-20261021",
+  "offer": {
+    "id": 56821101,
+    "machine_id": 152030,
+    "gpu_name": "RTX PRO 5000",
+    "gpu_ram": 48935,
+    "dph_base": 0.6666666666666666,
+    "storage_cost": 0.19999999999999998,
+    "inet_down_cost": 2.6041666666666666e-06,
+    "inet_up_cost": 3.90625e-06
+  },
+  "hourly_usd": 0.7055555555555555,
+  "network_envelope_usd": 0.00043229166666666665,
+  "projected_usd": 0.788302662037037,
+  "network_envelope": {
+    "download_gb": 160,
+    "upload_gb": 4
+  },
+  "conservative_usd": 0.3374693581553888,
+  "prior_spend_usd": 0.32125811002026367,
+  "selected_models": [
+    "32"
+  ],
+  "decisions": [
+    "Qwen3-32B reintroduced after measured primary costs: official FP8 checkpoint on a 48 GB rental; Phase 4 BF16 weights are not loaded."
+  ],
+  "models": {
+    "32": {
+      "started_unix": 1792630530.316709,
+      "projection_usd": 0.3274916022346343,
+      "remote_pid": 523
+    }
+  },
+  "started_unix": 1792630481.541615,
+  "deadline_unix": 1792637259.0583055,
+  "guard_pid": 79705,
+  "instance_id": 57135897,
+  "status": "failed",
+  "error": "worker exited early; inspect remote log",
+  "ended_unix": 1792630562.0515661,
+  "elapsed_seconds": 80.50995111465454,
+  "rental_usd": 0.016211248135125197,
+  "final_account": {
+    "credit": 4.958222050199998,
+    "total_spend": -10.041777949800002
+  },
+  "final_instances": [
+    {
+      "id": 57125990,
+      "label": "grader-explore",
+      "actual_status": "running",
+      "cur_state": "running",
+      "gpu_name": "RTX A6000",
+      "ssh_host": "ssh9.vast.ai",
+      "ssh_port": 26780,
+      "dph_total": 0.4333333333333333,
+      "disk_space": 120.0,
+      "start_date": 1792624897.3441684
+    }
+  ],
+  "owned_instances_gone": true
+}

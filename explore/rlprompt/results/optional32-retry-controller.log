@@ -1,0 +1,47 @@
+{"stage": "waiting_image_ssh", "seconds": 10}
+{"stage": "waiting_image_ssh", "seconds": 21}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 41, "cost_envelope": 0.0086}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 55, "cost_envelope": 0.0113}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 69, "cost_envelope": 0.014}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 84, "cost_envelope": 0.0168}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 98, "cost_envelope": 0.0196}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 111, "cost_envelope": 0.0223}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 125, "cost_envelope": 0.025}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 139, "cost_envelope": 0.0277}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 153, "cost_envelope": 0.0304}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 167, "cost_envelope": 0.0331}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 181, "cost_envelope": 0.0358}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 194, "cost_envelope": 0.0385}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 208, "cost_envelope": 0.0412}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 222, "cost_envelope": 0.0439}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 236, "cost_envelope": 0.0467}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 250, "cost_envelope": 0.0494}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 263, "cost_envelope": 0.0521}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 277, "cost_envelope": 0.0548}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 291, "cost_envelope": 0.0575}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 305, "cost_envelope": 0.0602}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 319, "cost_envelope": 0.0629}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 332, "cost_envelope": 0.0656}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 346, "cost_envelope": 0.0683}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 360, "cost_envelope": 0.0711}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 374, "cost_envelope": 0.0738}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 388, "cost_envelope": 0.0765}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 402, "cost_envelope": 0.0792}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 416, "cost_envelope": 0.0819}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 430, "cost_envelope": 0.0846}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 444, "cost_envelope": 0.0874}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 458, "cost_envelope": 0.0901}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 471, "cost_envelope": 0.0928}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 485, "cost_envelope": 0.0955}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 499, "cost_envelope": 0.0982}
+{"model": "32", "stage": "generating", "elapsed_seconds": 513, "cost_envelope": 0.1011}
+{"model": "32", "stage": "generating", "elapsed_seconds": 527, "cost_envelope": 0.1038}
+{"model": "32", "stage": "generating", "elapsed_seconds": 541, "cost_envelope": 0.1065}
+{"model": "32", "stage": "generating", "elapsed_seconds": 555, "cost_envelope": 0.1092}
+{"model": "32", "stage": "generating", "elapsed_seconds": 569, "cost_envelope": 0.1119}
+{"model": "32", "stage": "generating", "elapsed_seconds": 583, "cost_envelope": 0.1147}
+{"model": "32", "stage": "generating", "elapsed_seconds": 597, "cost_envelope": 0.1174}
+{"model": "32", "stage": "generating", "elapsed_seconds": 611, "cost_envelope": 0.1201}
+{"model": "32", "stage": "generating", "elapsed_seconds": 624, "cost_envelope": 0.1228}
+{"model": "32", "stage": "generating", "elapsed_seconds": 638, "cost_envelope": 0.1255}
+{"status": "completed_selected_models", "conservative_usd": 0.46825879547073507, "owned_instances_gone": true}

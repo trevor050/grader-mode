@@ -1,0 +1,19 @@
+{
+  "git_base": "a472d90e452c7ee34e8534e82ea157015a112065",
+  "files": {
+    "explore/rlprompt/run.py": "2b10ef78d5cc9f9e8dad771d515715eb79a2e71d01fbb039775a08b6db2cf69b",
+    "explore/rlprompt/test_run.py": "2dcb971d24aa438e50fa1999b072a9b2583318d319649f2f174c4f6b352c983f",
+    "explore/rlprompt/control.py": "16dbbe381eac8f1c563e3646db45050b7fe56a4c3d8f3b2d01dc2e82b191a874",
+    "explore/rlprompt/visual.py": "de6cb88e7e019f1bd95cadb2fe3d58f81214520d06b3c7c162e24a10750fa8c0",
+    "explore/rlprompt/verify.py": "e0ae6d9b6f9aae3c76a21e6cc167657038cda578c06e893732050204243a8243",
+    "src/models_6.py": "8f4773628b797a8cc74ac9666d41640ef61b9c39e53210aa31483a1350200f36",
+    "src/vast_generate_6.py": "29e685303a2b4c3218d044417661ca876da08f81b2b2c6739892a249f8d971e2",
+    "src/score_6.py": "4023f1a95dae457d01ccf18d337e2e29298620497c29fcbca84966e066ab1831",
+    "src/score_4.py": "7555dbc61044bc49f23201d4399416592d4163aa56ec3573884658526e154482",
+    "src/score.py": "f8669db7bdfeb1e2009bf178c79e8c23ce76cdd3c43c8aae4ea42c8441deca07",
+    "src/models_5.py": "f087db2706c68087c804b0ce50fe4fed39be644908f43f604e5ad910e1991804",
+    "src/phase5_split.py": "5739523aabc58b7f855c3f6cafc6dba984209e84887e68fc00d6a5490731434f",
+    "src/vast_generate_5.py": "097e7b044ae72226ea3484fa6d2734e50e616be79e290293a1d6e62cf253ed49",
+    "src/phase6_vast_control.py": "6bb5910be7829a6c30edc617f98075bd6ed68e9cab0c360e7ea1b67a4089ea17"
+  }
+}

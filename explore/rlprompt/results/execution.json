@@ -1,0 +1,123 @@
+{
+  "cap_usd": 1.8,
+  "initial_account": {
+    "credit": 5.508885510199997,
+    "total_spend": -9.491114489800003
+  },
+  "initial_instances": [
+    {
+      "id": 57125990,
+      "label": "grader-explore",
+      "actual_status": "running",
+      "cur_state": "running",
+      "gpu_name": "RTX A6000",
+      "ssh_host": "ssh9.vast.ai",
+      "ssh_port": 26780,
+      "dph_total": 0.4333333333333333,
+      "disk_space": 120.0,
+      "start_date": 1792624897.3441684
+    }
+  ],
+  "label": "grader-rlprompt-20261021",
+  "offer": {
+    "id": 56821101,
+    "machine_id": 152030,
+    "gpu_name": "RTX PRO 5000",
+    "gpu_ram": 48935,
+    "dph_base": 0.6666666666666666,
+    "storage_cost": 0.19999999999999998,
+    "inet_down_cost": 2.6041666666666666e-06,
+    "inet_up_cost": 3.90625e-06
+  },
+  "hourly_usd": 0.7055555555555555,
+  "network_envelope_usd": 0.00043229166666666665,
+  "projected_usd": 1.2586730324074071,
+  "network_envelope": {
+    "download_gb": 160,
+    "upload_gb": 4
+  },
+  "conservative_usd": 0.32125811002026367,
+  "decisions": [
+    "Qwen3-32B dropped before rental: a >=80 GB BF16 rental adds setup/download and generation beyond the $1.80 four-model projection; remaining schedule uses one 48 GB native-FP8 rental.",
+    "Gemma retained prospectively under the three-model projection."
+  ],
+  "models": {
+    "3.8": {
+      "started_unix": 1792628851.36551,
+      "projection_usd": 0.9136037310571582,
+      "remote_pid": 546,
+      "gate": {
+        "decision": "run",
+        "projection_usd": 0.7407521599840234,
+        "first40": {
+          "n": 40,
+          "seconds": 40.29683494567871,
+          "output_tokens": 15050
+        },
+        "margin": 1.5,
+        "outcomes_consulted": false
+      },
+      "completed": true
+    },
+    "3.5": {
+      "started_unix": 1792629318.344608,
+      "projection_usd": 0.7111443895881557,
+      "remote_pid": 3758,
+      "gate": {
+        "decision": "run",
+        "projection_usd": 0.6383373733416751,
+        "first40": {
+          "n": 40,
+          "seconds": 132.04990816116333,
+          "output_tokens": 51077
+        },
+        "margin": 1.5,
+        "outcomes_consulted": false
+      },
+      "completed": true
+    },
+    "gemma": {
+      "started_unix": 1792629943.107553,
+      "projection_usd": 0.5396086726144508,
+      "remote_pid": 6620,
+      "gate": {
+        "decision": "run",
+        "projection_usd": 0.4370998524066842,
+        "first40": {
+          "n": 40,
+          "seconds": 111.65610837936401,
+          "output_tokens": 40797
+        },
+        "margin": 1.5,
+        "outcomes_consulted": false
+      },
+      "completed": true
+    }
+  },
+  "started_unix": 1792628812.0340512,
+  "deadline_unix": 1792637228.7259803,
+  "guard_pid": 58231,
+  "instance_id": 57133009,
+  "status": "completed_selected_models",
+  "ended_unix": 1792630449.003581,
+  "elapsed_seconds": 1636.9695298671722,
+  "final_account": {
+    "credit": 4.992201613199997,
+    "total_spend": -10.007798386800003
+  },
+  "final_instances": [
+    {
+      "id": 57125990,
+      "label": "grader-explore",
+      "actual_status": "running",
+      "cur_state": "running",
+      "gpu_name": "RTX A6000",
+      "ssh_host": "ssh9.vast.ai",
+      "ssh_port": 26780,
+      "dph_total": 0.4333333333333333,
+      "disk_space": 120.0,
+      "start_date": 1792624897.3441684
+    }
+  ],
+  "owned_instances_gone": true
+}

@@ -1,0 +1,6 @@
+# Full raw generations remain local; summary and provenance are committed.
+results/**/*.jsonl
+results/bundle*.tar.gz
+results/guard.json
+results/guard.log
+results/**/waiting.json

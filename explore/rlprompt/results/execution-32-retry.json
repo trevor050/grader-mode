@@ -1,0 +1,117 @@
+{
+  "cap_usd": 1.8,
+  "initial_account": {
+    "credit": 4.946319307199998,
+    "total_spend": -10.053680692800002
+  },
+  "initial_instances": [
+    {
+      "id": 57125990,
+      "label": "grader-explore",
+      "actual_status": "running",
+      "cur_state": "running",
+      "gpu_name": "RTX A6000",
+      "ssh_host": "ssh9.vast.ai",
+      "ssh_port": 26780,
+      "dph_total": 0.4333333333333333,
+      "disk_space": 120.0,
+      "start_date": 1792624897.3441684
+    },
+    {
+      "id": 57136341,
+      "label": "grader-explore-2",
+      "actual_status": null,
+      "cur_state": "running",
+      "gpu_name": "RTX A6000",
+      "ssh_host": "ssh7.vast.ai",
+      "ssh_port": 11004,
+      "dph_total": 0.4555555555555555,
+      "disk_space": 120.0,
+      "start_date": 1792630699.1203938
+    }
+  ],
+  "label": "grader-rlprompt-20261021",
+  "offer": {
+    "id": 56821101,
+    "machine_id": 152030,
+    "gpu_name": "RTX PRO 5000",
+    "gpu_ram": 48935,
+    "dph_base": 0.6666666666666666,
+    "storage_cost": 0.19999999999999998,
+    "inet_down_cost": 2.6041666666666666e-06,
+    "inet_up_cost": 3.90625e-06
+  },
+  "hourly_usd": 0.7055555555555555,
+  "network_envelope_usd": 0.00043229166666666665,
+  "projected_usd": 0.788302662037037,
+  "network_envelope": {
+    "download_gb": 160,
+    "upload_gb": 4
+  },
+  "conservative_usd": 0.46825879547073507,
+  "prior_spend_usd": 0.3374693581553888,
+  "selected_models": [
+    "32"
+  ],
+  "decisions": [
+    "Qwen3-32B reintroduced after measured primary costs: official FP8 checkpoint on a 48 GB rental; Phase 4 BF16 weights are not loaded."
+  ],
+  "models": {
+    "32": {
+      "started_unix": 1792630748.656241,
+      "projection_usd": 0.32569270330115596,
+      "remote_pid": 521,
+      "gate": {
+        "decision": "run",
+        "projection_usd": 0.20753946660330264,
+        "first40": {
+          "n": 40,
+          "seconds": 70.7454137802124,
+          "output_tokens": 18274
+        },
+        "margin": 1.5,
+        "outcomes_consulted": false
+      },
+      "completed": true
+    }
+  },
+  "started_unix": 1792630709.059707,
+  "deadline_unix": 1792637403.8607378,
+  "guard_pid": 81499,
+  "instance_id": 57136364,
+  "status": "completed_selected_models",
+  "ended_unix": 1792631374.18908,
+  "elapsed_seconds": 665.1293730735779,
+  "rental_usd": 0.13078943731534629,
+  "final_account": {
+    "credit": 4.530865529199996,
+    "total_spend": -10.469134470800004
+  },
+  "final_instances": [
+    {
+      "id": 57125990,
+      "label": "grader-explore",
+      "actual_status": "running",
+      "cur_state": "running",
+      "gpu_name": "RTX A6000",
+      "ssh_host": "ssh9.vast.ai",
+      "ssh_port": 26780,
+      "dph_total": 0.4333333333333333,
+      "disk_space": 120.0,
+      "start_date": 1792624897.3441684
+    },
+    {
+      "id": 57136341,
+      "label": "grader-explore-2",
+      "actual_status": "running",
+      "cur_state": "running",
+      "gpu_name": "RTX A6000",
+      "ssh_host": "ssh7.vast.ai",
+      "ssh_port": 11004,
+      "dph_total": 0.4555555555555555,
+      "disk_space": 120.0,
+      "start_date": 1792630699.1203938
+    }
+  ],
+  "owned_instances_gone": true
+}

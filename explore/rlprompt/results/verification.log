@@ -1,0 +1,59 @@
+{
+  "status": "verified",
+  "models": {
+    "3.8": 200,
+    "3.5": 200,
+    "32": 200,
+    "gemma": 200
+  },
+  "total_replies": 800,
+  "protected_files_unchanged": 425,
+  "concurrent_shared_source_changes": {
+    "explore/explore.py": {
+      "frozen_sha256": "801284f7ddd03acb150b06bb6917acf56249bf4d5d0e244dd281e7ebfa33aaa1",
+      "current_sha256": "381f2979455dc0915a327af3b6de22ff71b044317dba85af4e820ca8b9dac8ce"
+    },
+    "explore/select_neurons.py": {
+      "frozen_sha256": "6763476facff9215f928d9dcbd060ba40fc9ed6d1f5930d3092a841c7dd0ccf1",
+      "current_sha256": "b755e9fa883e933fbfc2cfab553b661a3baaa35bdb53dd7814c5ba4aba46f4df"
+    }
+  },
+  "frozen_templates_match_current": true,
+  "raw_sha256": {
+    "3.8/chunk-0.jsonl": "7070f086f1655df496d8c3bb6ee12e8dc1b80b0e7a6dab94a1f89aea2a9b54a2",
+    "3.8/chunk-1.jsonl": "011ebb41160a926b6a3d55ee8a459e53ce43ee9b427dd9bfe84801d2c5ead84c",
+    "3.8/scored.jsonl": "cacbe3f31151da8e2f1e7e53a05e9aba1e7980f2bcaaaa44c702a61decbbd4b9",
+    "3.5/chunk-0.jsonl": "c1b3226034c2ef93cdc93675be88fd9aaa71ca9670200f38b24be90b72b2b841",
+    "3.5/chunk-1.jsonl": "3b8a2e463d62b296f2c095a33e8d9c8aa579e0bebb29424ea8bb349c9e115466",
+    "3.5/scored.jsonl": "08e30347d0209c91280654711ee59b26b1e5f7a746fd337a405d127257745cd0",
+    "32/chunk-0.jsonl": "eab5f253263a43417ac9874cca900f02b509787e8f13cfcca749a2a40354472d",
+    "32/chunk-1.jsonl": "a0e4d5b2764c6f8ace717ef8f47548978cc4d86c441a853757ab7a830944f6bd",
+    "32/scored.jsonl": "c1a0d7ef01d8ad0e0e8018da473de3356d3c8be89173495c4cdff8370fc545fa",
+    "gemma/chunk-0.jsonl": "a89fe0cbab34c5f281986f0231fcea292380d60674939165df6dac6636a07938",
+    "gemma/chunk-1.jsonl": "a5ece13e11f22ba5fd0ab49f13d77ab2ad781a6c74264025ba2f71370bd681a4",
+    "gemma/scored.jsonl": "38433eea0aa513c93002e97b00549adc7381fda9d31c8f9276eb6e9e5be919fe"
+  },
+  "conservative_usd": 0.46825879547073507,
+  "diagnostics": {
+    "3.8": {
+      "cap_hit": 0,
+      "no_final": 0,
+      "protocol_failure": 0
+    },
+    "3.5": {
+      "cap_hit": 26,
+      "no_final": 23,
+      "protocol_failure": 0
+    },
+    "32": {
+      "cap_hit": 0,
+      "no_final": 0,
+      "protocol_failure": 0
+    },
+    "gemma": {
+      "cap_hit": 24,
+      "no_final": 21,
+      "protocol_failure": 0
+    }
+  }
+}

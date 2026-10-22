@@ -1,0 +1,8 @@
+{
+  "model_revision": "aa55da1ecc13d006e8b8e4f54579b1ea8c3db2df",
+  "template_sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+  "cause": "Native Qwen3 thinking-on prompt ends at the bare assistant header; unlike Qwen3.5/3.8, the generated continuation emits the opening think tag.",
+  "fix": "Correct only the expected suffix assertion; never append text to or modify the native template.",
+  "failed_replies": 0,
+  "prior_aggregate_usd": 0.3374693581553888
+}

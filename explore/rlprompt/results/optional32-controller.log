@@ -1,0 +1,14 @@
+Primary rental destroyed; evaluating optional 32B against residual cap.
+{"stage": "waiting_image_ssh", "seconds": 9}
+{"stage": "waiting_image_ssh", "seconds": 20}
+{"stage": "waiting_image_ssh", "seconds": 31}
+{"model": "32", "stage": "loading_or_first40", "elapsed_seconds": 51, "cost_envelope": 0.0104}
+{"status": "failed", "conservative_usd": 0.3374693581553888, "owned_instances_gone": true}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/user/codeprojects/grader-mode/explore/rlprompt/control.py", line 200, in <module>
+    execute(('32',),'execution-32.json',primary['conservative_usd'])
+  File "/Users/user/codeprojects/grader-mode/explore/rlprompt/control.py", line 169, in execute
+    raise RuntimeError('worker exited early; inspect remote log')
+RuntimeError: worker exited early; inspect remote log

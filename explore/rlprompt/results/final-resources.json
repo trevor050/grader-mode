@@ -1,0 +1,39 @@
+{
+  "checked_unix": 1792631420.86659,
+  "instances": [
+    {
+      "id": 57125990,
+      "label": "grader-explore",
+      "actual_status": "running",
+      "cur_state": "running",
+      "gpu_name": "RTX A6000",
+      "ssh_host": "ssh9.vast.ai",
+      "ssh_port": 26780,
+      "dph_total": 0.4333333333333333,
+      "disk_space": 120.0,
+      "start_date": 1792624897.3441684
+    },
+    {
+      "id": 57136341,
+      "label": "grader-explore-2",
+      "actual_status": "running",
+      "cur_state": "running",
+      "gpu_name": "RTX A6000",
+      "ssh_host": "ssh7.vast.ai",
+      "ssh_port": 11004,
+      "dph_total": 0.4555555555555555,
+      "disk_space": 120.0,
+      "start_date": 1792630699.1203938
+    }
+  ],
+  "account": {
+    "credit": 4.474225349199996,
+    "total_spend": -10.525774650800004
+  },
+  "owned_instance_ids": [
+    57133009,
+    57135897,
+    57136364
+  ],
+  "owned_instances_gone": true
+}
