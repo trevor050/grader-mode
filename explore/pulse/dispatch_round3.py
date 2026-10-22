@@ -18,7 +18,10 @@ def wait_marker(arm=None):
 def job(command):
  p=OUT/'out'/(command['arm']+'.done.json')
  if p.exists():return json.loads(p.read_text())
- send(command);wait_marker(command['arm']);fetch();c=credit('after_'+command['arm'])
+ prior=[json.loads(l) for l in (OUT/'commands.jsonl').read_text().splitlines()] if (OUT/'commands.jsonl').exists() else []
+ if not prior or prior[-1]['arm']!=command['arm']:send(command)
+ else:print(json.dumps({'resume_active_without_resubmit':command['arm']}),flush=True)
+ wait_marker(command['arm']);fetch();c=credit('after_'+command['arm'])
  d=json.loads(p.read_text());print(json.dumps({'arm':command['arm'],'result':{k:v for k,v in d.items() if k!='roc'},'credit':c}),flush=True)
  return d
 
@@ -55,7 +58,8 @@ def run():
  target=job(dict(arm='closed_loop_target',kind='closed_loop',spec='q38-T3E3.json'))
  # Conservative later-arm estimate scales observed target duration; never shrink grids.
  estimate=max(300,target['seconds']*1.5)
- if not affordable('closed_loop_random',estimate):return 'random_projection_budget_stop'
+ random_estimate=max(300,2*(cal['seconds']*354249/445455+158.64))
+ if not affordable('closed_loop_random',random_estimate):return 'random_projection_budget_stop'
  job(dict(arm='closed_loop_random',kind='closed_loop',spec='q38-rand_T3E3.json'))
  for prefix,cond in [('student','student_tutor'),('plain','plain_nosys')]:
   arm=prefix+'_closed_loop_target'
