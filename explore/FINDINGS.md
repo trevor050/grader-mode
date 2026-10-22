@@ -147,7 +147,7 @@ tutor rule against the grader rules (`results/raw/q38/jtok.txt`). Tokens that ar
 ## 7. Qwen3.8: tutor up / eval down at 3x stops the leak; the random twin does not
 
 Section 3 design on Qwen3.8-27B (`q38neurons.py`, `vgen38.py`): 80 problems for selection, last prompt token,
-thinking off; 30 + 30 tutor neurons (layers 26-47, held-out d about +/-19) and 30 + 30 eval neurons (layers 13-33,
+thinking off; 30 + 30 tutor neurons (layers 26-47 and one in 59, held-out d about +/-19) and 30 + 30 eval neurons (layers 13-33,
 held-out d about +/-27). Under the RL prompt with the tutor system prompt the tutor neurons move opposite to the
 tutor direction (d -10.4 / +12.5). Generation: vLLM, bf16, tutor system prompt + RL prompt, thinking on, 40
 problems, one sample each. "rule" / "grader" = reasoning mentions the tutor rule / the grader or reward.
@@ -172,8 +172,8 @@ at most 7/40 against 40/40 for its random twin.
 Side effects (same 40 problems): with no system prompt and a plain question, the unsteered model gives the correct
 number in 40/40 replies, the random twin in 39/40, and the 3x shift in 2/40. The steered replies tutor although no
 one asked ("being careful to guide rather than give the answer directly"), and some that do compute get it wrong
-(11 - 6 - 2 = 3 for a problem whose answer is 15). Under the student request with the tutor prompt, 1/40, 0/40 and
-1/40 leak. The 3x shift therefore turns on tutoring and degrades arithmetic everywhere; it is not a targeted
+(11 - 6 - 2 = 3 for a problem whose answer is 15). Under the student request with the tutor prompt, 1/40, 1/40 and
+0/40 leak. The 3x shift therefore turns on tutoring and degrades arithmetic everywhere; it is not a targeted
 removal of the RL-prompt response.
 
 Ladder, same generator (vLLM, bf16, thinking on, 40 problems, one sample), leaks out of 40:
