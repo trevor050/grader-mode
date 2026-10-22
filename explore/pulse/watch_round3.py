@@ -22,7 +22,7 @@ while True:
   if (out/'connection.json').exists():
    c=json.loads((out/'connection.json').read_text())
    r=subprocess.run(['ssh','-o','BatchMode=yes','-o','ConnectTimeout=4','-o','StrictHostKeyChecking=accept-new','-o','UserKnownHostsFile='+str(out/'known_hosts'),'-p',str(c['port']),'root@'+c['host'],
-    "find /workspace/pulse -maxdepth 2 -type f \\( -name '*.log' -o -name heartbeat -o -name '*.jsonl' \\) -printf '%T@\\n' 2>/dev/null | sort -nr | head -1"],capture_output=True,text=True,timeout=8)
+    "find /workspace/pulse -maxdepth 8 -type f \\( -name '*.log' -o -name heartbeat -o -name '*.jsonl' -o -name '*.incomplete' -o -name '*.safetensors' \\) -printf '%T@\\n' 2>/dev/null | sort -nr | head -1"],capture_output=True,text=True,timeout=8)
    if r.returncode==0 and r.stdout.strip():last_progress=max(last_progress,float(r.stdout.strip()))
   if min(row['credit'],estimate)<.40:stop='budget_floor'
  except Exception as exc:

@@ -1,5 +1,7 @@
 """Reproduce Round-3 descriptive counts; reject malformed or incomplete finished cells."""
 import argparse,json,pathlib,hashlib,statistics,collections
+import numpy as np
+from gate import load,score
 from pulse_core import measures
 from closed_loop_core import calibrate,chunk_stats
 ROOT=pathlib.Path(__file__).resolve().parents[2]
@@ -13,6 +15,19 @@ def analyze(raw):
  mp=out/'monitor.json'
  if mp.exists():
   saved=json.loads(mp.read_text());cc=read(out/'calibration-chunks.jsonl');recomputed=calibrate(cc)
+  detector=load(ROOT/'explore/pulse/detector.json')
+  seen=set()
+  for row in cc:
+   key=(row['cond'],row['idx'],row['chunk']);assert key not in seen;seen.add(key)
+   v=np.asarray(row['features']);assert v.shape==(len(row['positions']),60) and np.isfinite(v).all()
+   assert abs(float(np.mean(score(v,detector)))-row['score'])<1e-12
+  events=read(out/'events.jsonl');closing=next(e['closing'] for e in events if e['event']=='model_loaded')
+  expected_keys=set()
+  for cond,name in [('rl_tutor','baseline.jsonl'),('student_tutor','student_baseline.jsonl')]:
+   for row in read(out/name):
+    end=row['token_ids'].index(closing) if closing in row['token_ids'] else len(row['token_ids'])
+    expected_keys.update((cond,row['idx'],i) for i in range((end+31)//32))
+  assert seen==expected_keys,'Calibration chunk grid mismatch'
   for k in ['threshold','auc','positive_chunks','negative_chunks','tp','fp']:assert saved[k]==recomputed[k],k
   by=collections.defaultdict(list)
   for r in cc:by[(r['cond'],r['chunk'])].append(r['score'])
@@ -42,6 +57,9 @@ def analyze(raw):
     assert c['chunk']==i and c['prefix_tokens']==len(prefix)
     assert c['retained_tokens']==len(c['token_ids']) and c['retained_tokens']<=32
     prefix+=c['token_ids'];assert r['token_ids'][:len(prefix)-len(r['generation_prompt_token_ids'])]==prefix[len(r['generation_prompt_token_ids']):]
+    if c['monitor_score'] is not None:
+     assert len(c['positions'])==min(8,c['reasoning_tokens'])
+     assert abs(float(np.mean(score(c['features'],detector)))-c['monitor_score'])<1e-12
     if i==0:assert c['push']==(r['gate'] and 'baseline' not in arm)
     elif 'baseline' not in arm:assert c['push']==(r['chunks'][i-1]['monitor_score']>=result['calibration']['threshold'])
    assert sum(c['retained_tokens'] for c in r['chunks'])<=len(r['token_ids'])
