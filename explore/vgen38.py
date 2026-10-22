@@ -21,15 +21,17 @@ ap.add_argument("--seed", type=int, default=0)
 ap.add_argument("--samples", type=int, default=1)
 ap.add_argument("--max-new", type=int, default=4096)
 ap.add_argument("--tag", default="q38")
+ap.add_argument("--model", default="Qwen/Qwen3.8-27B")
+ap.add_argument("--revision", default="1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0")
 a = ap.parse_args()
 
-MODEL, REV = "Qwen/Qwen3.8-27B", "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0"
+MODEL, REV = a.model, a.revision
 TUTOR = open("system_tutor.txt").read()
 tok = AutoTokenizer.from_pretrained(MODEL, revision=REV)
 ns = {}
 code = open("explore.py").read()
 exec(code[code.index("RL_TEMPLATE ="):code.index("CONDITIONS = {")], ns)
-TEMPL = {"rl": ns["RL_TEMPLATE"], "plain": "{q}", "homework": ns["HOMEWORK_TEMPLATE"]}
+TEMPL = {"rl": ns["RL_TEMPLATE"], "plain": "{q}", "homework": ns["HOMEWORK_TEMPLATE"], "student": ns["STUDENT_TEMPLATE"]}
 
 
 def render(cond, q):
