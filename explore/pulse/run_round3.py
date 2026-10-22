@@ -2,6 +2,9 @@
 import json,os,pathlib,re,time,traceback,hashlib
 os.environ.setdefault('VLLM_ENABLE_V1_MULTIPROCESSING','0')
 os.environ.setdefault('VLLM_USE_FLASHINFER_SAMPLER','0')
+# Pinned v0.32 InputProcessor.assign_request_id otherwise appends an 8-character UUID.
+# One LLM's monotonic external request counter is unique across every batch.
+os.environ['VLLM_DISABLE_REQUEST_ID_RANDOMIZATION']='1'
 import numpy as np
 import torch
 from transformers import AutoTokenizer
@@ -75,6 +78,11 @@ def call(jobs,params,push=False,spec=(),monitor=True):
     try:outs=llm.generate([{'prompt_token_ids':p} for p in jobs],params,use_tqdm=False)
     finally:captures=llm.collective_rpc(retrieve)[0]
     assert len(outs)==len(jobs)
+    if monitor:
+        identities=dict(captured_ids=sorted(captures),output_ids=[o.request_id for o in outs])
+        if any(o.request_id not in captures for o in outs):
+            (OUT/'mapping-debug.json').write_text(json.dumps(identities)+'\n')
+            raise AssertionError('Capture/output identity mismatch: '+str(identities))
     for p,o in zip(jobs,outs):assert list(o.prompt_token_ids)==p
     return outs,captures
 

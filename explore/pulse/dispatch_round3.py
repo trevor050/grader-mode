@@ -51,7 +51,7 @@ def run():
  cal=job(dict(arm='calibration',kind='calibration'))
  # Freeze and retrieve threshold locally before submitting the first steered command.
  p=OUT/'out/monitor.json';assert p.exists();(OUT/'threshold-frozen-locally.json').write_text(p.read_text())
- if not affordable('closed_loop_target',max(1800,cal['seconds']*3)):return 'target_projection_budget_stop'
+ if not affordable('closed_loop_target',max(300,cal['seconds']*3)):return 'target_projection_budget_stop'
  target=job(dict(arm='closed_loop_target',kind='closed_loop',spec='q38-T3E3.json'))
  # Conservative later-arm estimate scales observed target duration; never shrink grids.
  estimate=max(300,target['seconds']*1.5)
