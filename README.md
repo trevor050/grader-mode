@@ -1,5 +1,7 @@
 # grader-mode: Phase 1 and Phase 1b
 
+> The write-up for this experiment is [**When the request looks like a test**](https://research.honorlyai.com/when-the-request-looks-like-a-test) on [Honorly Research](https://research.honorlyai.com). This repository is the code, the pre-registered design and the results behind it.
+
 A reproducible Modal/vLLM runner for the committed [pre-registration](DESIGN.md). It expands the 3 cues × 3 formats × 4 matched templates × 200 filtered GSM8K test problems, plus four no-system ceiling requests per problem: **8,000 requests/model, 48,000 across six models**.
 
 ## Phase 1b
